@@ -1,0 +1,267 @@
+[
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an input array of strings words and a maximum width maxWidth, format the text such that each line has exactly maxWidth characters and is fully justified. You should pack the words together in such a way that each line should have exactly maxWidth characters and should not exceed it. Add extra space between words so that each line has exactly maxWidth characters. Extra space between words is distributed evenly, and any extra spaces are placed at the end of the line. If the last line contains fewer than maxWidth characters, the extra space should be left-justified. The last line of a paragraph should be left-justified and no extra space is inserted.",
+    "topic": "String",
+    "subtopic": "Text Justification",
+    "tags": [
+      "String",
+      "Justification",
+      "Formatting"
+    ],
+    "input_format": "An array of strings words and an integer maxWidth.",
+    "output_format": "An array of strings representing the fully justified text.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 100",
+      "1 <= maxWidth <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "This",
+            "is",
+            "an",
+            "example",
+            "of",
+            "text",
+            "justification."
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "This    is    an",
+          "example  of text",
+          "justification.  "
+        ],
+        "explanation": "The first line contains 4 words and we justify the text with spaces. The second line contains 3 words, and the last line is left-justified."
+      },
+      {
+        "input": {
+          "words": [
+            "What",
+            "must",
+            "be",
+            "acknowledgment",
+            "shall",
+            "be"
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "What   must   be",
+          "acknowledgment  ",
+          "shall be        "
+        ],
+        "explanation": "Spaces are distributed as evenly as possible across the lines."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to distribute spaces evenly between words.",
+      "Handle the last line of the text differently from the others.",
+      "Think about edge cases with fewer words or words fitting exactly into maxWidth."
+    ],
+    "company": "Moveworks"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Uncommon Substring in an Array",
+    "description": "Given an array of strings 'words', find the length of the shortest substring that is not a substring of any string in the array. A substring can be of any length, including 1. If no uncommon substring exists, return -1.",
+    "topic": "String",
+    "subtopic": "Substring",
+    "tags": [
+      "String",
+      "Substring",
+      "Array"
+    ],
+    "input_format": "An array of strings words (1 <= words.length <= 100, 1 <= words[i].length <= 20).",
+    "output_format": "An integer representing the length of the shortest uncommon substring, or -1 if none exists.",
+    "constraints": [
+      "1 <= words.length <= 100",
+      "1 <= words[i].length <= 20",
+      "All words are composed of lowercase letters only."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"a\", \"b\", \"c\"]",
+        "output": "1",
+        "explanation": "Substrings 'a', 'b', and 'c' exist in the words, but 'd' does not, so the shortest uncommon substring length is 1."
+      },
+      {
+        "input": "words = [\"abc\", \"ab\", \"bc\"]",
+        "output": "1",
+        "explanation": "Each single character 'a', 'b', or 'c' appears in the given words, but 'd' does not exist, hence the result is 1."
+      },
+      {
+        "input": "words = [\"apple\", \"banana\", \"orange\"]",
+        "output": "1",
+        "explanation": "All single character substrings can be formed with existing characters from the words, but 'x' is not present, yielding 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the possible lengths of substrings you need to check.",
+      "Utilize a set to store all existing substrings.",
+      "Check substrings from length 1 upwards until you find an uncommon one."
+    ],
+    "company": "Moveworks"
+  },
+  {
+    "question_id": "",
+    "title": "Synonymous Sentences",
+    "description": "Given a set of sentences, return all the synonymous sentences that can be formed by replacing words in the original sentence with their given synonyms. A word can only be replaced if it has a synonym in the provided mapping. The output should be a list of all unique synonymous sentences formed, sorted lexicographically.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Synonyms"
+    ],
+    "input_format": "A string 'sentence' representing the original sentence and a dictionary 'synonyms' mapping string words to lists of their synonyms.",
+    "output_format": "A list of strings representing all unique synonymous sentences.",
+    "constraints": [
+      "1 <= sentence.length <= 100",
+      "The number of synonyms does not exceed 100.",
+      "Each word in the sentence is composed of lowercase letters and is separated by spaces."
+    ],
+    "examples": [
+      {
+        "input": {
+          "sentence": "I like eating apples",
+          "synonyms": {
+            "like": [
+              "enjoy",
+              "love"
+            ],
+            "eating": [
+              "consuming"
+            ],
+            "apples": [
+              "fruits",
+              "snacks"
+            ]
+          }
+        },
+        "output": [
+          "I enjoy consuming apples",
+          "I enjoy consuming fruits",
+          "I enjoy consuming snacks",
+          "I love consuming apples",
+          "I love consuming fruits",
+          "I love consuming snacks"
+        ],
+        "explanation": "By replacing the words 'like', 'eating', and 'apples', we form all possible synonymous sentences."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the use of recursion or backtracking to generate sentence combinations.",
+      "Utilize a set to avoid duplicate sentences in the output."
+    ],
+    "company": "Moveworks"
+  },
+  {
+    "question_id": "",
+    "title": "Word Break II",
+    "description": "Given a string s and a dictionary of strings wordDict, return all possible segmentations of s that can be composed of one or more dictionary words. Each segmentation should be a space-separated sequence of one or more dictionary words. The same word in the dictionary may be reused multiple times in the segmentation.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Backtracking",
+    "tags": [
+      "Backtracking",
+      "Dynamic Programming",
+      "String"
+    ],
+    "input_format": "A string s and a list of strings wordDict, where s consists of lowercase English letters.",
+    "output_format": "A list of all possible segmentations of the string s.",
+    "constraints": [
+      "1 <= s.length <= 20",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 10",
+      "All string inputs are lowercase."
+    ],
+    "examples": [
+      {
+        "input": {
+          "s": "catsanddog",
+          "wordDict": [
+            "cat",
+            "cats",
+            "and",
+            "sand",
+            "dog"
+          ]
+        },
+        "output": [
+          "cats and dog",
+          "cat sand dog"
+        ],
+        "explanation": "The string 'catsanddog' can be segmented into 'cats and dog' or 'cat sand dog' using words from the dictionary."
+      },
+      {
+        "input": {
+          "s": "pineapplepenapple",
+          "wordDict": [
+            "apple",
+            "pen",
+            "applepen",
+            "pine",
+            "pineapple"
+          ]
+        },
+        "output": [
+          "pine apple pen apple",
+          "pineapple pen apple",
+          "pine applepen apple"
+        ],
+        "explanation": "Multiple valid segmentations exist for the given string with the provided dictionary."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using backtracking to build solutions.",
+      "Using a set for wordDict can speed up the lookup process.",
+      "Remember to handle various combinations of words."
+    ],
+    "company": "Moveworks"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Removable Characters",
+    "description": "You are given a string s and a string p. You can remove any character from s, but you want to maximize the number of characters you can remove while still being able to form the string p with the remaining characters in s. Return the maximum number of characters you can remove from s.",
+    "topic": "String",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "String",
+      "Two Pointers",
+      "Greedy"
+    ],
+    "input_format": "Two strings s and p (1 <= s.length, p.length <= 10^5).",
+    "output_format": "An integer representing the maximum number of characters that can be removed from s.",
+    "constraints": [
+      "1 <= s.length, p.length <= 10^5",
+      "s consists of lowercase English letters.",
+      "p consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcde', p = 'ace'",
+        "output": "2",
+        "explanation": "You can remove 'b' and 'd' from 'abcde' to still be able to form 'ace'."
+      },
+      {
+        "input": "s = 'aaaaa', p = 'a'",
+        "output": "4",
+        "explanation": "You can remove 4 'a's and still form 'a' from the remaining 'a'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the order of characters in s when forming p.",
+      "Use a frequency count to determine how many characters are needed."
+    ],
+    "company": "Moveworks"
+  }
+]

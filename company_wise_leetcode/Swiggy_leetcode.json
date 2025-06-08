@@ -1,0 +1,1230 @@
+[
+  {
+    "question_id": "",
+    "title": "Maximize Area of Square Hole in Grid",
+    "description": "You are given a 2D grid of integers representing heights. Your task is to find the maximum area of a square hole that can be cut out from the grid, such that the height of the square is less than or equal to a given maximum height. The square can only be cut in a straight line parallel to the grid axes, and it must fit entirely within the grid. Return the area of the largest square hole possible.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Matrix Operations",
+    "tags": [
+      "Dynamic Programming",
+      "Matrix",
+      "Area"
+    ],
+    "input_format": "A 2D grid of integers heights and a single integer maxHeight.",
+    "output_format": "An integer representing the area of the largest square hole.",
+    "constraints": [
+      "1 <= heights.length, heights[i].length <= 100",
+      "1 <= heights[i][j] <= 10^5",
+      "1 <= maxHeight <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": {
+          "heights": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              3,
+              4,
+              5
+            ]
+          ],
+          "maxHeight": 3
+        },
+        "output": "4",
+        "explanation": "The largest square that can fit has size 2x2 with a maximum height of 3."
+      },
+      {
+        "input": {
+          "heights": [
+            [
+              5,
+              5,
+              5
+            ],
+            [
+              5,
+              5,
+              5
+            ],
+            [
+              5,
+              5,
+              5
+            ]
+          ],
+          "maxHeight": 5
+        },
+        "output": "9",
+        "explanation": "The entire grid can be cut out as a square with area 3x3 = 9."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to track the maximum side length of a square that can fit at each grid position.",
+      "Use dynamic programming to build solutions to smaller sub-problems."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Value to Get Positive Step by Step Sum",
+    "description": "You are given an array of integers. You need to determine the minimum positive integer that you need to add to the beginning of the array so that the cumulative sum of the array becomes positive at every step. In other words, if you start with an initial value of `x`, the sums generated at every step (adding one element at a time) should remain positive throughout. If it is not possible to make the cumulative sum positive, return -1.",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "Prefix Sum",
+      "Cumulative Sum"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the minimum value needed for positive cumulative sum, or -1 if not possible.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, -2, -3]",
+        "output": "7",
+        "explanation": "If we add 7 at the beginning, the cumulative sums will be [7, 6, 4, 1] which are all positive."
+      },
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "1",
+        "explanation": "If we add 1 at the beginning, the cumulative sums will be [1, 2, 4, 7] which are all positive."
+      },
+      {
+        "input": "nums = [-1, 1, -2, 2]",
+        "output": "1",
+        "explanation": "Adding 1 at the beginning gives cumulative sums [1, 0, 1, 3] which are all positive."
+      },
+      {
+        "input": "nums = [-5, -3, -2]",
+        "output": "11",
+        "explanation": "Adding 11 at the beginning yields a cumulative sum of [11, 6, 3, 1], all positive."
+      },
+      {
+        "input": "nums = [-1]",
+        "output": "2",
+        "explanation": "Adds 2 results in the cumulative sum [2, 1] which is positive."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the running total as you iterate through the array.",
+      "You can calculate the minimum value needed to offset negative sums."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Colors",
+    "description": "Given an array nums consisting of 0s, 1s, and 2s, sort the array in-place so that all 0s come first, followed by all 1s, and all 2s. You must solve this problem without using the library's built-in sort function.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums where each integer is either 0, 1, or 2.",
+    "output_format": "The sorted array of integers in-place.",
+    "constraints": [
+      "1 <= nums.length <= 300",
+      "nums[i] is either 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 0, 2, 1, 1, 0]",
+        "output": "[0, 0, 1, 1, 2, 2]",
+        "explanation": "After sorting, all 0s are at the front, followed by 1s and then 2s."
+      },
+      {
+        "input": "nums = [2, 0, 1]",
+        "output": "[0, 1, 2]",
+        "explanation": "The sorted order is 0s first, then 1s, and finally 2s."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a two-pointer technique.",
+      "Keep track of the position for 0s and 2s."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is considered valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of parentheses characters.",
+    "output_format": "A boolean value indicating whether the input string is valid or not.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The string contains a single pair of valid parentheses."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "The string contains multiple valid pairs of parentheses."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The brackets are not of matching types."
+      },
+      {
+        "input": "s = '([)]'",
+        "output": "false",
+        "explanation": "The opening brackets are not closed in the correct order."
+      },
+      {
+        "input": "s = '{[]}'",
+        "output": "true",
+        "explanation": "All brackets are closed in the correct order and are of matching types."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to track opening brackets.",
+      "For each closing bracket, check if it matches the most recent opening bracket."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Next Greater Element I",
+    "description": "You are given two arrays of integers, nums1 and nums2, where nums1 is a subset of nums2. For each element in nums1, you need to find the next greater element in nums2. If there is no next greater element, return -1 for that element.",
+    "topic": "Array",
+    "subtopic": "Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Monotonic Stack"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2.",
+    "output_format": "An array of integers representing the next greater elements corresponding to each element in nums1.",
+    "constraints": [
+      "1 <= nums1.length <= 1000",
+      "1 <= nums2.length <= 1000",
+      "0 <= nums1[i], nums2[i] <= 10^4",
+      "nums1 is a subset of nums2."
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [4, 1, 2], nums2 = [1, 3, 4, 2]",
+        "output": "-1, 3, -1",
+        "explanation": "For 4 in nums1, there is no greater element in nums2. For 1, the next greater element is 3. For 2, there is no greater element."
+      },
+      {
+        "input": "nums1 = [2, 4], nums2 = [1, 2, 3, 4]",
+        "output": "3, -1",
+        "explanation": "For 2, the next greater element is 3, and for 4, there is no greater element."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of elements in nums2.",
+      "Iterate through nums2 and maintain the order of elements."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Profit in Job Scheduling",
+    "description": "You are given a list of jobs where each job has a start time, an end time, and a profit associated with it. Your goal is to find the maximum profit that can be obtained by scheduling non-overlapping jobs. Each job can only be scheduled if it does not overlap with previously scheduled jobs. You need to return the maximum profit possible.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Job Scheduling",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Interval Scheduling"
+    ],
+    "input_format": "A list of jobs where each job is represented as a tuple (start, end, profit).",
+    "output_format": "An integer representing the maximum profit possible.",
+    "constraints": [
+      "1 <= jobs.length <= 10^5",
+      "0 <= start < end <= 10^9",
+      "0 <= profit <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "jobs = [(1, 3, 50), (3, 5, 20), (6, 19, 100), (2, 100, 200)]",
+        "output": "250",
+        "explanation": "The optimal job scheduling is to take jobs (1, 3, 50), (3, 5, 20), and (6, 19, 100) for a total profit of 50 + 20 + 100 = 170."
+      },
+      {
+        "input": "jobs = [(1, 2, 100), (2, 3, 200), (1, 3, 150)]",
+        "output": "300",
+        "explanation": "Choosing jobs (1, 2, 100) and (2, 3, 200) gives the maximum profit of 100 + 200 = 300."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider sorting the jobs based on their end time.",
+      "Use dynamic programming to keep track of maximum profits."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "You are given two sorted integer arrays nums1 and nums2. You need to merge nums2 into nums1 as one sorted array. The initial elements of nums1 denote the number of elements that should be merged from nums2. Note that nums1 has a size equal to m + n, where n is the length of nums2 and m is the number of elements initialized in nums1.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2 along with two integers m and n.",
+    "output_format": "The merged sorted array in nums1.",
+    "constraints": [
+      "0 <= m, n <= 200",
+      "1 <= m + n <= 200",
+      "-10^9 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3",
+        "output": "[1,2,2,3,5,6]",
+        "explanation": "After merging, nums1 becomes [1,2,2,3,5,6]."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "Since nums2 is empty, nums1 remains the same."
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "explanation": "All elements from nums2 are added to nums1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a two-pointer technique to merge both arrays.",
+      "Start merging from the end of nums1 to utilize its empty space."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Count Good Meals",
+    "description": "You are given an array of integers where each integer represents the number of calories in a meal. A 'good meal' is defined as a pair of meals where the sum of their calories is less than or equal to the target value 30. Your task is to find the number of good meal pairs (i, j) such that 0 <= i < j < len(calories) and calories[i] + calories[j] <= 30.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Counting"
+    ],
+    "input_format": "An array of integers, calories, representing the calorie counts of meals.",
+    "output_format": "An integer representing the total number of good meal pairs.",
+    "constraints": [
+      "1 <= calories.length <= 1000",
+      "0 <= calories[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "calories = [10, 20, 15, 5, 25]",
+        "output": "6",
+        "explanation": "The good meal pairs are (10, 20), (10, 15), (10, 5), (10, 25), (20, 5), and (15, 5), leading to a total of 6 pairs."
+      },
+      {
+        "input": "calories = [1, 1, 1, 1]",
+        "output": "6",
+        "explanation": "All possible pairs (1, 1), (1, 1), (1, 1) yield sums of 2, which are valid. There are 6 pairs (0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using a sorting technique to efficiently find valid pairs.",
+      "Consider using a two-pointer technique after sorting the array."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Fair Candy Swap",
+    "description": "Alice and Bob have a different number of candies. They want to make their candy counts equal by exchanging some candies. Given two integer arrays 'A' and 'B' representing the candies that Alice and Bob have, return the amount of candies each needs to exchange to make their candy counts equal. If it is not possible to make the quantities equal, return an empty array.",
+    "topic": "Array",
+    "subtopic": "Set Operations",
+    "tags": [
+      "Array",
+      "Set",
+      "Greedy"
+    ],
+    "input_format": "Two integer arrays A and B representing the number of candies held by Alice and Bob respectively.",
+    "output_format": "An array of two integers representing the candies Alice and Bob need to exchange. If not possible, return an empty array.",
+    "constraints": [
+      "1 <= A.length, B.length <= 100000",
+      "0 <= A[i], B[i] <= 100000"
+    ],
+    "examples": [
+      {
+        "input": "A = [1, 1], B = [2, 2]",
+        "output": "[1, 2]",
+        "explanation": "Alice can give 1 candy to Bob, making both have 2 candies."
+      },
+      {
+        "input": "A = [1, 2, 5], B = [2, 4]",
+        "output": "[]",
+        "explanation": "No exchange can make the candy counts equal."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Calculate the total candies for both and derive the expected values to exchange.",
+      "Use sets to identify possible candy exchanges."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Happy Number",
+    "description": "A happy number is defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle that does not include 1. A number is happy if it ends in 1. For example, 19 is a happy number because: 1\u00b2 + 9\u00b2 = 82, 8\u00b2 + 2\u00b2 = 68, 6\u00b2 + 8\u00b2 = 100, 1\u00b2 + 0\u00b2 + 0\u00b2 = 1. Write a function to determine if a given number is a happy number.",
+    "topic": "Number Theory",
+    "subtopic": "Mathematical Operations",
+    "tags": [
+      "Number Theory",
+      "Math",
+      "Logic"
+    ],
+    "input_format": "An integer n (1 <= n <= 2^31 - 1).",
+    "output_format": "A boolean value indicating whether n is a happy number.",
+    "constraints": [
+      "1 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 19",
+        "output": "true",
+        "explanation": "19 is a happy number as it eventually reaches 1."
+      },
+      {
+        "input": "n = 2",
+        "output": "false",
+        "explanation": "2 is not a happy number as it falls into a cycle that does not include 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a set to track numbers you've seen to detect cycles.",
+      "The transition from n to the sum of its squared digits can be performed using modulo and division."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Daily Temperatures",
+    "description": "Given an array of daily temperatures, return an array such that, for each day in the input, tells you how many days you have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead. The output array should have the same length as the input array.",
+    "topic": "Array",
+    "subtopic": "Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Monotonic Stack"
+    ],
+    "input_format": "An array of integers temperatures, where 1 <= temperatures.length <= 30000 and 30 <= temperatures[i] <= 100.",
+    "output_format": "An array of integers representing the waiting days for each temperature.",
+    "constraints": [
+      "1 <= temperatures.length <= 30000",
+      "30 <= temperatures[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "temperatures = [73, 74, 75, 71, 69, 72, 76, 73]",
+        "output": "[1, 1, 4, 2, 1, 1, 0, 0]",
+        "explanation": "For each day, we check the next days to find a warmer temperature."
+      },
+      {
+        "input": "temperatures = [30, 40, 50, 60]",
+        "output": "[1, 1, 1, 0]",
+        "explanation": "Each day has a unique warmer day ahead except the last one."
+      },
+      {
+        "input": "temperatures = [100, 90, 80, 70]",
+        "output": "[0, 0, 0, 0]",
+        "explanation": "There are no warmer days ahead for any of the days."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the indices of the temperature array.",
+      "Iterate from the end of the array to the beginning to find warmer temperatures."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to Roman",
+    "description": "Given an integer, convert it to a Roman numeral. The conversion should follow the rules of the Roman numeral system, which uses combinations of letters from the Latin alphabet. The character mapping is as follows: 1 -> 'I', 4 -> 'IV', 5 -> 'V', 9 -> 'IX', 10 -> 'X', 40 -> 'XL', 50 -> 'L', 90 -> 'XC', 100 -> 'C', 400 -> 'CD', 500 -> 'D', 900 -> 'CM', and 1000 -> 'M'. You can assume the input is always valid and within the range of 1 to 3999.",
+    "topic": "Math",
+    "subtopic": "Integer Conversion",
+    "tags": [
+      "Math",
+      "String",
+      "Conversion"
+    ],
+    "input_format": "An integer num where 1 <= num <= 3999.",
+    "output_format": "A string representing the Roman numeral equivalent of the integer.",
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "examples": [
+      {
+        "input": "num = 3",
+        "output": "III",
+        "explanation": "The Roman numeral for 3 is 'III'."
+      },
+      {
+        "input": "num = 58",
+        "output": "LVIII",
+        "explanation": "The Roman numeral for 58 is 'LVIII' which is 'L' (50) + 'V' (5) + 'III' (3)."
+      },
+      {
+        "input": "num = 1994",
+        "output": "MCMXCIV",
+        "explanation": "The Roman numeral for 1994 is 'MCMXCIV' which is 'M' (1000) + 'CM' (900) + 'XC' (90) + 'IV' (4)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider creating a mapping of integers to their Roman numeral counterparts.",
+      "Start by converting the largest values down to the smallest."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers where each integer represents the stock price on that particular day.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate the profit for each day's price and keep track of the maximum profit."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given a list of courses you need to take before you can graduate, where each course has some prerequisite courses. Your task is to determine if it is possible for you to finish all courses throughout all semesters. You can take zero or more courses in each semester, but a course can only be taken if all its prerequisites have been completed.",
+    "topic": "Graph",
+    "subtopic": "Topological Sort",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS"
+    ],
+    "input_format": "An integer numCourses representing the number of courses, and a list of prerequisite pairs, where each pair [a, b] indicates that course b must be completed before course a.",
+    "output_format": "Return true if you can finish all courses, otherwise return false.",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2",
+      "0 <= prerequisites[i][0], prerequisites[i][1] < numCourses"
+    ],
+    "examples": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1, 0]]",
+        "output": "true",
+        "explanation": "You can take course 0 first, and then take course 1."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1, 0], [0, 1]]",
+        "output": "false",
+        "explanation": "There is a circular dependency, so you cannot finish all courses."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using depth-first search to detect cycles.",
+      "Consider using Kahn's algorithm for topological sorting."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "K Closest Points to Origin",
+    "description": "Given an array of points where each point is represented as an array of two integers [x, y], return the K closest points to the origin (0, 0). The distance between two points is the euclidean distance. You may return the answer in any order. The result can be in any order as long as the points belong to the K closest points.",
+    "topic": "Sorting",
+    "subtopic": "Priority Queue",
+    "tags": [
+      "Sorting",
+      "Geometry",
+      "Heap"
+    ],
+    "input_format": "An array of points where each point is represented by an array of two integers [x, y], followed by an integer K.",
+    "output_format": "An array of K arrays, each representing the closest points to the origin.",
+    "constraints": [
+      "1 <= K <= N <= 10^4",
+      "-10^4 <= x, y <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "points = [[1, 3], [-2, 2], [5, 8], [0, 1]], K = 2",
+        "output": "[[-2, 2], [1, 3]]",
+        "explanation": "The distance from the origin to the points are: sqrt(1^2 + 3^2) = sqrt(10), sqrt((-2)^2 + 2^2) = sqrt(8), sqrt(5^2 + 8^2) = sqrt(89), and sqrt(0^2 + 1^2) = 1. The closest points are [-2, 2] and [1, 3]."
+      },
+      {
+        "input": "points = [[3, 3], [5, -1], [-2, 4]], K = 1",
+        "output": "[[3, 3]]",
+        "explanation": "The closest point to the origin is [3, 3]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the distance formula to calculate the distance from the origin.",
+      "Consider using a max-heap to keep track of the closest K points."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Score From Removing Substrings",
+    "description": "You are given a string s consisting of lowercase letters. Your task is to remove substrings of the form 'ab' or 'ba' from the string, where removing a substring earns you a score of 1 per removed substring. Your goal is to maximize the score by strategically removing these substrings from the string. Calculate the maximum score you can achieve.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Greedy",
+      "Simulation"
+    ],
+    "input_format": "A single string s (1 <= s.length <= 100).",
+    "output_format": "An integer representing the maximum score.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists only of lowercase letters."
+    ],
+    "examples": [
+      {
+        "input": "abba",
+        "output": "2",
+        "explanation": "Removing 'ab' gives us 'ba', and we can remove 'ba' next, giving a total score of 2."
+      },
+      {
+        "input": "ababaa",
+        "output": "3",
+        "explanation": "The substring 'ab' can be removed at least 3 times, resulting in the maximum score of 3."
+      },
+      {
+        "input": "aaaa",
+        "output": "0",
+        "explanation": "No 'ab' or 'ba' substrings can be removed, so the score is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider pairs of characters in the string.",
+      "Use a stack to help with substring removal efficiently."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. The mapping of digits to letters is similar to that of telephone keypads. Note that 1 does not map to any letters and should be ignored. The output combinations should be returned in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Generation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Combination"
+    ],
+    "input_format": "A string of digits where each digit is between '2' and '9'.",
+    "output_format": "A list of strings representing all possible letter combinations.",
+    "constraints": [
+      "0 <= digits.length <= 4",
+      "digits[i] is a digit in the range ['2', '9']."
+    ],
+    "examples": [
+      {
+        "input": "digits = '23'",
+        "output": "['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']",
+        "explanation": "The digit '2' maps to ['a', 'b', 'c'] and '3' maps to ['d', 'e', 'f'], resulting in combinations by connecting each letter from '2' with each letter from '3'."
+      },
+      {
+        "input": "digits = ''",
+        "output": "[]",
+        "explanation": "An empty input yields no combinations."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a backtracking approach to explore all possible combinations.",
+      "Use a mapping to associate digits with their corresponding letters."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Immediate Food Delivery II",
+    "description": "You are tasked with optimizing a food delivery service that processes orders in real-time. Given a list of food orders, determine the maximum number of orders that can be delivered within a given time limit. Each order comes with a preparation time and a delivery time. The total time for each order is the sum of its preparation and delivery times. The goal is to maximize the number of completed orders within the specified time limit.",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Sorting",
+      "Interval Scheduling"
+    ],
+    "input_format": "A list of tuples `orders`, where each tuple contains two integers: (preparation_time, delivery_time). An integer `time_limit` representing the total available time.",
+    "output_format": "An integer representing the maximum number of orders that can be delivered within the time limit.",
+    "constraints": [
+      "1 <= len(orders) <= 2000",
+      "1 <= preparation_time, delivery_time <= 1000",
+      "1 <= time_limit <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "orders = [(1, 2), (2, 3), (3, 4)], time_limit = 10",
+        "output": "3",
+        "explanation": "All three orders can be completed with a total time of 1+2 + 2+3 + 3+4 = 15 which is less than the time limit of 10."
+      },
+      {
+        "input": "orders = [(5, 2), (2, 2), (1, 1)], time_limit = 5",
+        "output": "2",
+        "explanation": "The second and third orders can be completed within the time limit, but the first one cannot."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort orders based on their total processing time.",
+      "Use a greedy approach to maximize the count."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Work Sessions to Finish the Tasks",
+    "description": "You are given an array of tasks, each represented by a positive integer indicating its duration, and an integer 'sessionTime' which represents the maximum total duration of tasks that can be completed in one work session. Your goal is to determine the minimum number of work sessions required to finish all the tasks. Each task must be completed in a session, and you cannot split tasks between sessions.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Backtracking",
+    "tags": [
+      "Dynamic Programming",
+      "Backtracking",
+      "Greedy"
+    ],
+    "input_format": "An array of integers tasks and an integer sessionTime.",
+    "output_format": "An integer representing the minimum number of work sessions required.",
+    "constraints": [
+      "1 <= tasks.length <= 15",
+      "1 <= tasks[i] <= 10^4",
+      "1 <= sessionTime <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "tasks = [1, 2, 3, 4, 5], sessionTime = 5",
+        "output": "3",
+        "explanation": "You can complete tasks in the following sessions: [1, 4], [2, 3], and [5]. Therefore, 3 sessions are required."
+      },
+      {
+        "input": "tasks = [5, 5, 4, 4, 4], sessionTime = 8",
+        "output": "4",
+        "explanation": "You can complete each task independently given the session time limit. Each task requires its own session."
+      },
+      {
+        "input": "tasks = [1, 1, 1, 1, 1], sessionTime = 2",
+        "output": "3",
+        "explanation": "You can combine tasks into sessions: [1, 1], [1, 1], and [1]. Thus, 3 sessions are required."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a backtracking approach to explore all possible task combinations.",
+      "Use pruning techniques to eliminate non-optimal paths during exploration."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Subarray Sum Equals K",
+    "description": "Given an integer array nums and an integer k, return the total number of continuous subarrays whose sum equals to k.",
+    "topic": "Array",
+    "subtopic": "Subarray",
+    "tags": [
+      "Array",
+      "Subarray",
+      "Sum",
+      "Hash Map"
+    ],
+    "input_format": "An integer array nums followed by an integer k.",
+    "output_format": "An integer representing the total number of continuous subarrays whose sum equals to k.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "-1000 <= nums[i] <= 1000",
+      "-10^7 <= k <= 10^7"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 1], k = 2",
+        "output": "2",
+        "explanation": "The subarrays [1, 1] and [1, 1] both sum to 2. Thus, there are 2 subarrays."
+      },
+      {
+        "input": "nums = [1, 2, 3], k = 3",
+        "output": "2",
+        "explanation": "The subarrays [3] and [1, 2] both sum to 3. Thus, there are 2 subarrays."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to store the cumulative sums.",
+      "Think about how you can find the number of subarrays based on cumulative sums."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Median"
+    ],
+    "input_format": "Two sorted integer arrays nums1 and nums2.",
+    "output_format": "A double representing the median of the two sorted arrays.",
+    "constraints": [
+      "0 <= m <= 1000",
+      "0 <= n <= 1000",
+      "1 <= m + n <= 2000",
+      "-10^6 <= nums1[i], nums2[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 3], nums2 = [2]",
+        "output": "2.0",
+        "explanation": "The combined array is [1, 2, 3] and the median is 2."
+      },
+      {
+        "input": "nums1 = [1, 2], nums2 = [3, 4]",
+        "output": "2.5",
+        "explanation": "The combined array is [1, 2, 3, 4] and the median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the properties of median.",
+      "Use binary search to find the correct partition."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Sorted Lists",
+    "description": "You are given two sorted linked lists. Merge them into a single sorted linked list and return it. The resulting linked list should be made by splicing together the nodes of the first two lists.",
+    "topic": "Linked List",
+    "subtopic": "Merging Lists",
+    "tags": [
+      "Linked List",
+      "Merge",
+      "Sorting"
+    ],
+    "input_format": "Two heads of sorted linked lists, List1 and List2.",
+    "output_format": "The head of the merged sorted linked list.",
+    "constraints": [
+      "The number of nodes in either list is between 0 and 100.",
+      "The values of the nodes are between -10^4 and 10^4."
+    ],
+    "examples": [
+      {
+        "input": "List1 = [1, 2, 4], List2 = [1, 3, 4]",
+        "output": "[1, 1, 2, 3, 4, 4]",
+        "explanation": "The merged linked list contains the nodes from both lists in sorted order."
+      },
+      {
+        "input": "List1 = [], List2 = [0]",
+        "output": "[0]",
+        "explanation": "As List1 is empty, the merged linked list is just List2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a dummy node to simplify the merging process.",
+      "Use two pointers to traverse through both linked lists."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "First Missing Positive",
+    "description": "Given an unsorted integer array nums, find the smallest missing positive integer. You must implement a solution that runs in O(n) time and uses constant extra space.",
+    "topic": "Array",
+    "subtopic": "Search",
+    "tags": [
+      "Array",
+      "Searching",
+      "Optimization"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer that represents the smallest missing positive integer.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, -1, 1]",
+        "output": "2",
+        "explanation": "The smallest missing positive integer is 2."
+      },
+      {
+        "input": "nums = [1, 2, 0]",
+        "output": "3",
+        "explanation": "The smallest missing positive integer is 3."
+      },
+      {
+        "input": "nums = [7, 8, 9, 11, 12]",
+        "output": "1",
+        "explanation": "The smallest missing positive integer is 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider placing each number in its corresponding index.",
+      "Ignore non-positive numbers.",
+      "Iterate through the modified array to find the first missing positive."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. Implement the LRUCache class with the following methods: \n\n- `LRUCache(int capacity)` Initializes the LRU cache with a positive size `capacity`. \n- `int get(int key)` Returns the value of the key if the key exists, otherwise returns -1. \n- `void put(int key, int value)` Updates the value of the key if the key exists. Otherwise, it adds the key-value pair to the cache. If the number of keys exceeds the capacity, it should invalidate the least recently used key before inserting a new key-value pair.",
+    "topic": "Design",
+    "subtopic": "Cache",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Cache"
+    ],
+    "input_format": "The class should be initialized and methods should be called with the specified parameters.",
+    "output_format": "The output of the `get` method should return an integer. The `put` method does not return anything.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^5",
+      "At most 2 * 10^5 calls will be made to get and put"
+    ],
+    "examples": [
+      {
+        "input": "LRUCache cache = new LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1,-1,3,4]",
+        "explanation": "The expected output reflects the values retrieved by the `get` calls, where -1 indicates that key 2 has been evicted from the cache."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap for O(1) access and a doubly linked list to keep track of the order of usage."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Consecutive Sequence",
+    "description": "Given an unsorted array of integers, find the length of the longest consecutive elements sequence. Your algorithm should run in O(n) complexity.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Set"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest consecutive elements sequence.",
+    "constraints": [
+      "0 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [100, 4, 200, 1, 3, 2]",
+        "output": "4",
+        "explanation": "The longest consecutive sequence is [1, 2, 3, 4]. Its length is 4."
+      },
+      {
+        "input": "nums = [0, 0, 1, 1, 2, 2, 3, 3, 4]",
+        "output": "5",
+        "explanation": "The longest consecutive sequence is [0, 1, 2, 3, 4]. Its length is 5."
+      },
+      {
+        "input": "nums = []",
+        "output": "0",
+        "explanation": "There are no elements in the array, so the length is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a set to store the numbers for O(1) access.",
+      "For each number, check if it starts a new sequence."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Majority Element",
+    "description": "Given an array of size n, find the majority element. The majority element is the element that appears more than n / 2 times in the array. You may assume that the majority element always exists in the array.",
+    "topic": "Array",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Array",
+      "Counting",
+      "Majority Element"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the majority element in the array.",
+    "constraints": [
+      "1 <= nums.length <= 5 * 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 2, 1, 1, 1, 2, 2]",
+        "output": "2",
+        "explanation": "The majority element is 2, which appears 4 times (more than n/2)."
+      },
+      {
+        "input": "nums = [3, 3, 4, 2, 4, 4, 2, 4, 4]",
+        "output": "4",
+        "explanation": "The majority element is 4, which appears 5 times (more than n/2)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hash map to count occurrences.",
+      "Try to solve it in linear time."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Length of Pair Chain",
+    "description": "You are given a collection of pairs, where each pair consists of two integers (start, end). A pair (a, b) can follow another pair (c, d) if and only if b < c. You want to find the maximum length of a chain of pairs that can be formed. Write a function that returns this maximum length.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "A list of pairs represented as a list of tuples, where each tuple consists of two integers.",
+    "output_format": "An integer representing the maximum length of the pair chain.",
+    "constraints": [
+      "1 <= pairs.length <= 1000",
+      "-1000 <= pairs[i][0], pairs[i][1] <= 1000",
+      "pairs[i][0] < pairs[i][1] for all i"
+    ],
+    "examples": [
+      {
+        "input": "pairs = [[1,2],[2,3],[3,4]]",
+        "output": "2",
+        "explanation": "The longest chain is [1,2] -> [3,4] which has a length of 2."
+      },
+      {
+        "input": "pairs = [[5,24],[39,60],[15,25],[27,40],[50,90]]",
+        "output": "3",
+        "explanation": "The longest chain is [5,24] -> [39,60] -> [50,90] which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the pairs by their end values.",
+      "Use a greedy approach to build the longest chain."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Subsets II",
+    "description": "Given a collection of integers that might contain duplicates, return all possible unique subsets (the power set). The solution set must not contain duplicate subsets. Elements in a subset must be in non-descending order. The order of subsets does not matter.",
+    "topic": "Backtracking",
+    "subtopic": "Subsets",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "Subset Generation"
+    ],
+    "input_format": "An array of integers nums of size n.",
+    "output_format": "A list of lists of integers representing all unique subsets.",
+    "constraints": [
+      "0 <= n <= 10^6",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2]",
+        "output": "[[], [1], [1, 2], [1, 2, 2], [2], [2, 2]]",
+        "explanation": "The unique subsets are: the empty subset, subsets containing 1, 2, and the subsets containing the duplicates."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[[], [0]]",
+        "explanation": "With only one element, the empty subset and the subset containing 0 are the only unique subsets."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to explore all subsets.",
+      "To handle duplicates, sort the array first."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Climbing Stairs",
+    "description": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "topic": "Dynamic Programming",
+    "subtopic": "Climbing Stairs",
+    "tags": [
+      "Dynamic Programming",
+      "Recursion",
+      "Math"
+    ],
+    "input_format": "An integer n representing the total number of steps.",
+    "output_format": "An integer representing the number of distinct ways to climb to the top.",
+    "constraints": [
+      "1 <= n <= 45"
+    ],
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "There are two ways to climb to the top: 1 step + 1 step or 2 steps."
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "explanation": "There are three ways to climb to the top: 1 step + 1 step + 1 step, 1 step + 2 steps, or 2 steps + 1 step."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think about the number of ways to reach the top based on the last step taken."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of integers representing the height of bars in a histogram, compute how much water can be trapped after raining. The width of each bar is 1. Bar heights can be viewed as a series of vertical lines, and water can be trapped between these lines when it rains.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Two Pointers"
+    ],
+    "input_format": "An array of non-negative integers height, where height[i] represents the height of the i-th bar.",
+    "output_format": "An integer representing the total amount of trapped rain water.",
+    "constraints": [
+      "0 <= height.length <= 2 * 10^4",
+      "0 <= height[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water trapped can be calculated as 1 + 2 + 3 = 6 units."
+      },
+      {
+        "input": "height = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water trapped is calculated between the bars, resulting in a total of 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two pointers to find boundaries.",
+      "Think about using a stack to calculate trapped water."
+    ],
+    "company": "Swiggy"
+  },
+  {
+    "question_id": "",
+    "title": "Two City Scheduling",
+    "description": "There are n people planning to attend a citywide event. Each person can be sent to one of two cities, City A or City B. The cost of sending the i-th person to city A is cost[i][0], and the cost of sending the i-th person to city B is cost[i][1]. Your goal is to send exactly n/2 people to City A and n/2 people to City B, minimizing the total cost. Return the minimum cost to send these people to the cities.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Min Cost"
+    ],
+    "input_format": "A 2D array of costs with dimensions n x 2, where n is even.",
+    "output_format": "An integer representing the minimum total cost of sending n/2 people to each city.",
+    "constraints": [
+      "1 <= n <= 100",
+      "cost.length == n",
+      "cost[i].length == 2",
+      "0 <= cost[i][0], cost[i][1] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "cost = [[10,20],[30,200],[50,30],[15,5]]",
+        "output": "65",
+        "explanation": "The minimum cost is achieved by sending the first person to City A, the second person to City B, the third person to City A, and the fourth person to City B (10 + 5 + 50 + 0 = 65)."
+      },
+      {
+        "input": "cost = [[512, 256],[625, 12],[23, 87],[4, 5]]",
+        "output": "283",
+        "explanation": "The optimal assignment is to send the first person to City B, second person to City A, third person to City B, and fourth person to City A (256 + 625 + 87 + 4 = 283)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the costs based on the difference between city A and city B.",
+      "You might want to keep track of how many people you've assigned to each city."
+    ],
+    "company": "Swiggy"
+  }
+]

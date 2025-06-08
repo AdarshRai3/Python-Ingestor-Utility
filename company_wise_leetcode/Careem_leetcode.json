@@ -1,0 +1,126 @@
+[
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers 'nums' and an integer 'target', return the indices of the two numbers such that they add up to 'target'. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers 'nums' and an integer 'target'.",
+    "output_format": "An array of two indices that add up to 'target'.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9",
+      "Only one valid answer exists."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9, hence the indices are 0 and 1."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6, hence the indices are 1 and 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash table to store the difference between the target and the current element."
+    ],
+    "company": "Careem"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an integer array 'nums', return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "An integer array 'nums'.",
+    "output_format": "A list of lists of triplets that sum up to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "There are no numbers to form a triplet, hence the output is an empty list."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "No triplet can sum to zero, hence the output is an empty list."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to sort the array first.",
+      "Use a two-pointer technique to find pairs that sum to a specific value."
+    ],
+    "company": "Careem"
+  },
+  {
+    "question_id": "",
+    "title": "Design Hit Counter",
+    "description": "Design a hit counter that counts the number of hits received in the past 5 minutes. Each time a user hits the counter, the current timestamp is recorded. The counter should provide a method to get the number of hits that occurred in the past 5 minutes from any given timestamp.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Queue"
+    ],
+    "input_format": "A hit counter that records hit timestamps and provides a method to retrieve the number of hits in the past 5 minutes.",
+    "output_format": "An integer representing the number of hits in the last 5 minutes.",
+    "constraints": [
+      "Each timestamp is a positive integer.",
+      "The number of hits can be as large as 10000."
+    ],
+    "examples": [
+      {
+        "input": "counter.hit(1); counter.hit(2); counter.hit(3); counter.getHits(4);",
+        "output": "3",
+        "explanation": "All hits are within 5 minutes from timestamp 4."
+      },
+      {
+        "input": "counter.hit(1); counter.hit(2); counter.hit(3); counter.getHits(300);",
+        "output": "3",
+        "explanation": "All hits are within 5 minutes from timestamp 300."
+      },
+      {
+        "input": "counter.hit(1); counter.getHits(300);",
+        "output": "1",
+        "explanation": "Only one hit recorded at timestamp 1, which is within the 5-minute window."
+      },
+      {
+        "input": "counter.hit(1); counter.hit(2); counter.hit(3); counter.getHits(301);",
+        "output": "3",
+        "explanation": "All hits are within 5 minutes from timestamp 301."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a data structure to store hit timestamps efficiently.",
+      "Consider using deque or list for maintaining the timestamps."
+    ],
+    "company": "Careem"
+  }
+]

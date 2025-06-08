@@ -1,0 +1,77 @@
+[
+  {
+    "question_id": "",
+    "title": "Active Users",
+    "description": "You are given a list of user activity logs, where each log contains the user ID and the timestamp of an activity. Your task is to determine the number of unique active users in a specified time window. A user is considered active if they have at least one activity log within that time window. Implement a function that takes the activity logs and a time range, and returns the count of unique active users.",
+    "topic": "Database",
+    "subtopic": "Data Aggregation",
+    "tags": [
+      "Database",
+      "Counting",
+      "Sets"
+    ],
+    "input_format": "A list of tuples where each tuple contains a user ID (string) and a timestamp (string in ISO 8601 format). A time window specified as a tuple of two strings representing the start and end of the time range also in ISO 8601 format.",
+    "output_format": "An integer representing the count of unique active users within the specified time window.",
+    "constraints": [
+      "1 <= logs.length <= 10^5",
+      "Each user ID is a non-empty string with at most 100 characters.",
+      "The timestamps are provided in valid ISO 8601 format.",
+      "The start timestamp is always before the end timestamp."
+    ],
+    "examples": [
+      {
+        "input": "logs = [('user1', '2023-10-01T10:00:00'), ('user2', '2023-10-01T11:00:00'), ('user1', '2023-10-01T12:00:00')], time_window = ('2023-10-01T09:00:00', '2023-10-01T11:30:00')",
+        "output": "2",
+        "explanation": "Both user1 and user2 have activities within the time range, making 2 unique active users."
+      },
+      {
+        "input": "logs = [('user3', '2023-10-01T09:00:00'), ('user4', '2023-10-01T15:00:00')], time_window = ('2023-10-01T10:00:00', '2023-10-01T11:00:00')",
+        "output": "0",
+        "explanation": "No users have activities within the specified time window, resulting in 0 active users."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a set to store unique user IDs.",
+      "Parsing timestamps may help in comparison."
+    ],
+    "company": "ciena"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Unique Flavors After Sharing K Candies",
+    "description": "You are given an array of integers where each integer represents the flavor of a candy. You need to determine how many unique flavors can be obtained after sharing K candies. A candy can be shared with one other person at most, meaning each unique flavor can be shared once. If a flavor is shared, it counts as one less unique flavor. Calculate the total number of unique flavors remaining.",
+    "topic": "Array",
+    "subtopic": "Set Operations",
+    "tags": [
+      "Array",
+      "Set",
+      "Unique"
+    ],
+    "input_format": "An array of integers candies, followed by an integer K.",
+    "output_format": "An integer representing the number of unique flavors remaining after sharing K candies.",
+    "constraints": [
+      "1 <= candies.length <= 10^5",
+      "1 <= candies[i] <= 10^5",
+      "0 <= K <= min(candies.length, 10^5)"
+    ],
+    "examples": [
+      {
+        "input": "candies = [1, 2, 3, 4, 1, 2], K = 2",
+        "output": "3",
+        "explanation": "With 2 candies shared, flavors 1 and 2 can be removed, leaving unique flavors 3 and 4."
+      },
+      {
+        "input": "candies = [5, 5, 5, 5], K = 1",
+        "output": "0",
+        "explanation": "Sharing the only flavor, 5, results in no remaining unique flavors."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a set to store unique flavors.",
+      "Keep track of how many unique flavors can be shared."
+    ],
+    "company": "ciena"
+  }
+]

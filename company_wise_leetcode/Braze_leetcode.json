@@ -1,0 +1,133 @@
+[
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Note that an empty string is also considered valid.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Parentheses"
+    ],
+    "input_format": "A string s consisting of parentheses.",
+    "output_format": "A boolean value indicating whether the string s is valid.",
+    "constraints": [
+      "0 <= s.length <= 10^4",
+      "s consists of parentheses only '()', '{}', '[]'."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are correctly matched."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "All types of parentheses are correctly matched."
+      },
+      {
+        "input": "s = '(]')",
+        "output": "false",
+        "explanation": "The brackets are not correctly matched; a parentheses is closed incorrectly."
+      },
+      {
+        "input": "s = '([)]'",
+        "output": "false",
+        "explanation": "The parentheses are closed in the wrong order."
+      },
+      {
+        "input": "s = '{[]}'}",
+        "output": "true",
+        "explanation": "The brackets are correctly matched and closed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Pop the stack when you find a closing bracket and check if it matches.",
+      "The stack should be empty at the end for the string to be valid."
+    ],
+    "company": "Braze"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to the target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums of length n and an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "Assume that there is exactly one solution."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "Because nums[1] + nums[2] == 6, we return [1, 2]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hash map for quick lookups.",
+      "Think about how you can find the complement of the current number."
+    ],
+    "company": "Braze"
+  },
+  {
+    "question_id": "",
+    "title": "Candy Crush",
+    "description": "You are given a string representing a candy crush game board where each character indicates a type of candy. You can crush candies in vertically and horizontally aligned sequence of 3 or more same candies. Write a function that processes the candy crush game and returns the final state of the board after all possible crushes have been performed.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Simulation",
+      "Game"
+    ],
+    "input_format": "A non-empty string s representing the board state with characters denoting different candies.",
+    "output_format": "A string representing the final state of the board after all possible crushes.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of uppercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"AAABBCCDDD\"",
+        "output": "A",
+        "explanation": "The sequence 'AAABB' can be crushed to form 'A' as there are no more sequences of 3 or more same candies left."
+      },
+      {
+        "input": "s = \"AABBCC\"",
+        "output": "",
+        "explanation": "All candies can be crushed as there are no sequences of 3 or more."
+      },
+      {
+        "input": "s = \"AAABBBCCDAA\"",
+        "output": "D",
+        "explanation": "The sequences 'AAABBB' can be crushed, leaving 'CCDAA', which cannot be further crushed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Look for groups of identical candies.",
+      "Use a stack to assist in tracking groups that can be crushed.",
+      "After crushing candies, you might need to repeat the process."
+    ],
+    "company": "Braze"
+  }
+]

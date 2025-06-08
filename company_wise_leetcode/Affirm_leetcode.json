@@ -1,0 +1,413 @@
+[
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations in average O(1) time complexity: insert, delete, and getRandom. Your task is to implement the RandomizedSet class: 1. bool insert(int val) - Inserts an item val into the set. Returns true if the item was not present already. 2. bool remove(int val) - Removes an item val from the set. Returns true if the item was present. 3. int getRandom() - Returns a random element from the current set of elements (it's guaranteed that at least one element exists when this method is called). You must implement the class such that all three operations run in average O(1) time complexity.",
+    "topic": "Data Structure",
+    "subtopic": "Hash Map & Array",
+    "tags": [
+      "HashMap",
+      "Array",
+      "Random"
+    ],
+    "input_format": "Methods of the RandomizedSet class will be called independently.",
+    "output_format": "For insert and remove methods, return true or false. For getRandom, return an integer.",
+    "constraints": [
+      "-2^31 <= val <= 2^31 - 1",
+      "All values will be unique in the set.",
+      "The number of calls to insert, remove, and getRandom will not exceed 2 * 10^4."
+    ],
+    "examples": [
+      {
+        "input": "RandomizedSet randomizedSet = new RandomizedSet();\nrandomizedSet.insert(1);\nrandomizedSet.remove(2);\nrandomizedSet.insert(2);\nrandomizedSet.getRandom();",
+        "output": "1 or 2",
+        "explanation": "RandomizedSet now contains [1, 2]. getRandom() could return either 1 or 2 randomly."
+      },
+      {
+        "input": "randomizedSet.remove(1);\nrandomizedSet.insert(2);\nrandomizedSet.getRandom();",
+        "output": "2",
+        "explanation": "RandomizedSet now contains [2]. getRandom() will return 2 since it's the only element."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to store value and its index.",
+      "Maintain a dynamic array to facilitate random access."
+    ],
+    "company": "Affirm"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Uncommon Substring in an Array",
+    "description": "Given an array of strings, find the shortest substring that is not a substring of any string in the array. A substring is defined as a contiguous sequence of characters within a string. If no uncommon substring exists, return an empty string.",
+    "topic": "String",
+    "subtopic": "Substring Search",
+    "tags": [
+      "String",
+      "Substring",
+      "Searching"
+    ],
+    "input_format": "An array of strings 'words'.",
+    "output_format": "A string representing the shortest uncommon substring.",
+    "constraints": [
+      "1 <= words.length <= 100",
+      "1 <= words[i].length <= 20",
+      "All strings in words are distinct."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"a\", \"b\", \"c\"]",
+        "output": "ab",
+        "explanation": "The uncommon substrings are 'a', 'b', 'c', 'ab', 'ac', 'bc', ..., and 'ab' is the shortest."
+      },
+      {
+        "input": "words = [\"aaa\", \"aa\", \"a\"]",
+        "output": "aaaa",
+        "explanation": "All substrings of length 1, 2, and 3 are present, so 'aaaa' is the shortest uncommon substring."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try generating substrings systematically and check for commonality.",
+      "Use a set for fast lookup of known substrings."
+    ],
+    "company": "Affirm"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is defined as a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Grouping"
+    ],
+    "input_format": "An array of strings 'strs'.",
+    "output_format": "A list of lists, where each sublist contains strings that are anagrams of each other.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"eat\",\"tea\",\"ate\"],[\"nat\",\"tan\"],[\"bat\"]]",
+        "explanation": "The strings 'eat', 'tea', and 'ate' are anagrams, so they form one group."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "The input list contains only an empty string, which is an anagram of itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "The single character 'a' forms its own group as there are no anagrams."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to group the words.",
+      "Think about how you can represent an anagram with a unique key."
+    ],
+    "company": "Affirm"
+  },
+  {
+    "question_id": "",
+    "title": "Design Hit Counter",
+    "description": "Design a hit counter that counts hits received in the past 5 minutes. Each time a hit is made, it will record the exact timestamp in seconds. The counter should be able to return the number of hits received in the last 5 minutes from any given timestamp.",
+    "topic": "Design",
+    "subtopic": "System Design",
+    "tags": [
+      "Design",
+      "Counters",
+      "System Design"
+    ],
+    "input_format": "A timestamp integer representing the second at which a hit occurs.",
+    "output_format": "An integer representing the number of hits received in the last 5 minutes from the given timestamp.",
+    "constraints": [
+      "Every timestamp is a positive integer.",
+      "The number of hits can be up to 30000."
+    ],
+    "examples": [
+      {
+        "input": "hit(1), hit(2), hit(3), hit(300), hit(300), hit(301)",
+        "output": "6",
+        "explanation": "Hits at timestamps 1, 2, 3, and the next hits at 300 and 301 are all within 5 minutes of the last hit (301)."
+      },
+      {
+        "input": "hit(1), hit(2), hit(3), hit(700), hit(800), hit(900)",
+        "output": "3",
+        "explanation": "Only the hits at 1, 2, and 3 are within the 5-minute window of each other."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a data structure to store timestamps efficiently.",
+      "Consider the sliding window technique to handle the 5-minute time frame."
+    ],
+    "company": "Affirm"
+  },
+  {
+    "question_id": "",
+    "title": "Parse Lisp Expression",
+    "description": "Given a string that represents a Lisp expression, write a function to evaluate the expression and return the result. The expression may contain integers, nested lists, and the following operators: +, -, and *. The evaluation follows standard rules of arithmetic. Each operator is guaranteed to be followed by the appropriate number of operands.",
+    "topic": "String",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Parsing",
+      "Evaluation"
+    ],
+    "input_format": "A single string representing a Lisp expression, which is valid according to the definition provided.",
+    "output_format": "An integer that represents the result of the evaluated expression.",
+    "constraints": [
+      "The input string is valid and follows the Lisp syntax.",
+      "The operators are guaranteed to have valid operands.",
+      "The total number of operators and operands will not exceed 1000."
+    ],
+    "examples": [
+      {
+        "input": "(+ 1 2)",
+        "output": "3",
+        "explanation": "This expression adds 1 and 2."
+      },
+      {
+        "input": "(+ 1 (* 2 3))",
+        "output": "7",
+        "explanation": "This expression evaluates to 1 + (2 * 3) = 1 + 6 = 7."
+      },
+      {
+        "input": "(* (+ 2 3) (+ 4 5))",
+        "output": "63",
+        "explanation": "This expression evaluates to (2 + 3) * (4 + 5) = 5 * 9 = 45."
+      },
+      {
+        "input": "(- 3 2)",
+        "output": "1",
+        "explanation": "This expression subtracts 2 from 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a stack to handle the nested structure of the expression.",
+      "Consider using recursion to evaluate nested lists."
+    ],
+    "company": "Affirm"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1) - Duplicates Allowed",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. The operations should be performed in O(1) average time complexity. Duplicates are allowed in the data structure.\n\n- insert(val): Inserts an item val into the data structure. Returns true if the item was not already present.\n- remove(val): Removes an item val from the data structure. Returns true if the item was present.\n- getRandom: Returns a random element from the current set of elements. Each element must have the same probability of being returned.\n\nYou must implement your solution using a data structure that supports these operations efficiently.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Hash Table",
+      "Array",
+      "Random"
+    ],
+    "input_format": "Operations consisting of 'insert(val)', 'remove(val)', and 'getRandom'.",
+    "output_format": "For 'insert' and 'remove', return a boolean indicating success. For 'getRandom', return a random element from the current set.",
+    "constraints": [
+      "The number of operations will be at most 10^4.",
+      "The value of val will be in the range of [-10^9, 10^9]."
+    ],
+    "examples": [
+      {
+        "input": "insert(1); insert(1); insert(2); remove(1); getRandom();",
+        "output": "1 or 2",
+        "explanation": "After inserting 1 twice and 2 once, removing 1, we can randomly get either 1 (from the duplicate) or 2."
+      },
+      {
+        "input": "insert(1); remove(1); getRandom();",
+        "output": "null",
+        "explanation": "After inserting 1 and immediately removing it, getRandom cannot return any value."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a hash map to store the indices of values.",
+      "Use an array to store the values for easy random access."
+    ],
+    "company": "Affirm"
+  },
+  {
+    "question_id": "",
+    "title": "String Compression",
+    "description": "Given a string representing a sequence of characters, implement a method to compress the string by replacing consecutive identical characters with the character followed by the count of occurrences. For example, the string 'aabcccccaaa' would become 'a2b1c5a3'. If the compressed string is not shorter than the original string, return the original string instead.",
+    "topic": "String",
+    "subtopic": "Compression",
+    "tags": [
+      "String",
+      "Compression",
+      "Algorithm"
+    ],
+    "input_format": "A single string s (1 <= s.length <= 1000), consisting of uppercase and lowercase letters.",
+    "output_format": "A string representing the compressed version of the input string, or the original string if the compressed version is not shorter.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only letters (a-z, A-Z)."
+    ],
+    "examples": [
+      {
+        "input": "s = 'aabcccccaaa'",
+        "output": "a2b1c5a3",
+        "explanation": "The character 'a' appears 2 times, 'b' appears 1 time, 'c' appears 5 times, and 'a' appears 3 times."
+      },
+      {
+        "input": "s = ' abc '",
+        "output": " abc ",
+        "explanation": "The compressed version ' a1b1c1 ' is not shorter than the original string, so we return the original."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a loop to traverse the string and count consecutive characters.",
+      "Consider Edge Cases like empty strings or strings with all distinct characters."
+    ],
+    "company": "Affirm"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, return true if t is an anagram of s, and false otherwise. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "Strings",
+    "subtopic": "Anagram Checking",
+    "tags": [
+      "String",
+      "Anagram",
+      "Hash Table"
+    ],
+    "input_format": "Two strings s and t, where 1 <= s.length, t.length <= 5 * 10^4.",
+    "output_format": "A boolean value indicating whether t is an anagram of s.",
+    "constraints": [
+      "The inputs consist of lowercase English letters.",
+      "The lengths of the strings can be the same or different."
+    ],
+    "examples": [
+      {
+        "input": "s = \"anagram\", t = \"nagaram\"",
+        "output": "true",
+        "explanation": "Both strings have the same characters counted equally. Hence, they are anagrams."
+      },
+      {
+        "input": "s = \"rat\", t = \"car\"",
+        "output": "false",
+        "explanation": "\"rat\" and \"car\" do not have the same letters."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think about counting the characters in both strings.",
+      "Can you use a hash table to store the counts?"
+    ],
+    "company": "Affirm"
+  },
+  {
+    "question_id": "",
+    "title": "Coin Change",
+    "description": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. You want to determine the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Coin Change Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An integer array coins and an integer amount.",
+    "output_format": "An integer representing the fewest number of coins needed to make up the amount, or -1 if it's not possible.",
+    "constraints": [
+      "1 <= coins.length <= 12",
+      "1 <= coins[i] <= 2^31 - 1",
+      "0 <= amount <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "coins = [1, 2, 5], amount = 11",
+        "output": "3",
+        "explanation": "The optimal combination is 5 + 5 + 1."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "-1",
+        "explanation": "It is not possible to make the amount 3 with a coin of denomination 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using dynamic programming to build up to the solution.",
+      "Consider how you can minimize the number of coins at each step."
+    ],
+    "company": "Affirm"
+  },
+  {
+    "question_id": "",
+    "title": "String Compression III",
+    "description": "Given a string `s`, perform basic string compression using the counts of repeated characters. For example, the string 'aabbcc' would become 'a2b2c2'. If the compressed string would not become smaller than the original string, the original string should be returned. You must perform the compression in linear time.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Compression",
+      "Manipulation"
+    ],
+    "input_format": "A single string `s` consisting only of lowercase letters.",
+    "output_format": "A compressed string representing the input string `s`.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'aaabbbcc'",
+        "output": "a3b3c2",
+        "explanation": "The characters 'a', 'b', and 'c' appear 3, 3, and 2 times respectively."
+      },
+      {
+        "input": "s = 'abc'",
+        "output": "abc",
+        "explanation": "The original string 'abc' is not compressed as it would not be smaller."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two pointers to traverse the string.",
+      "Think about how to count consecutive characters efficiently."
+    ],
+    "company": "Affirm"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Recent Calls",
+    "description": "Design a class RecentCounter that counts recent requests. Your class should have the following methods: \\n - RecentCounter(): Initializes the counter with zero requests. \\n - ping(t): Accepts a timestamp t (in milliseconds) and adds a new request at that timestamp. It should return the number of requests that has occurred in the past 3000 milliseconds (including the new request). A request is counted if it was made in the inclusive range [t - 3000, t].",
+    "topic": "Design",
+    "subtopic": "System Design",
+    "tags": [
+      "Design",
+      "Queue",
+      "Data Structure"
+    ],
+    "input_format": "An integer t representing the timestamp of the request in milliseconds.",
+    "output_format": "An integer representing the number of requests in the past 3000 milliseconds.",
+    "constraints": [
+      "0 <= t <= 10^9",
+      "Each call to ping() will have a higher value of t than before."
+    ],
+    "examples": [
+      {
+        "input": "rc = RecentCounter(); rc.ping(1); rc.ping(100); rc.ping(3001); rc.ping(3002);",
+        "output": "[1, 2, 3, 3]",
+        "explanation": "At timestamp 1, there's 1 request. At timestamp 100, there are 2 requests (1 and 100). At timestamp 3001, there are 3 requests (1, 100, and 3001). At timestamp 3002, there are still 3 requests in the past 3000 ms."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a queue to store timestamps of the pings.",
+      "Remove timestamps that are older than 3000 ms from the current timestamp."
+    ],
+    "company": "Affirm"
+  }
+]

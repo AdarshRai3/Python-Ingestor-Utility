@@ -1,0 +1,384 @@
+[
+  {
+    "question_id": "",
+    "title": "Decode String",
+    "description": "Given an encoded string, your task is to decode it. The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. For instance, if the input is '3[a2[bc]]', it should return 'abcbcabcbcabcbc'. You can assume that the input string is always valid; no extra square brackets, and integers will always appear at the beginning of the substring.",
+    "topic": "String",
+    "subtopic": "Decoding",
+    "tags": [
+      "String",
+      "Decoding",
+      "Stack"
+    ],
+    "input_format": "A string representing the encoded string to be decoded.",
+    "output_format": "A string representing the decoded result.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of digits and lowercase English letters.",
+      "The input string is guaranteed to be a valid encoded string."
+    ],
+    "examples": [
+      {
+        "input": "3[a2[bc]]",
+        "output": "abcbcabcbcabcbc",
+        "explanation": "The substring 'a2[bc]' expands to 'abcb' and is repeated 3 times."
+      },
+      {
+        "input": "2[xyz]3[ab]",
+        "output": "xyzxyzababab",
+        "explanation": "The substring 'xyz' is repeated 2 times and 'ab' is repeated 3 times."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the current string and the number of repetitions.",
+      "On encountering a digit, parse the full number before the next '['.",
+      "On encountering ']', pop from the stack to get the string to repeat."
+    ],
+    "company": "Flexport"
+  },
+  {
+    "question_id": "",
+    "title": "Clone Graph",
+    "description": "Given a reference of a node in a connected undirected graph, return a deep copy (clone) of the graph. Each node in the graph contains a value (int) and a list (List[Node]) of its neighbors. The graph is represented using nodes, where each node can have a different number of neighbors. The cloning process must handle cycles and ensure that the nodes are properly referenced.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Clone"
+    ],
+    "input_format": "A pointer to a Node of the graph.",
+    "output_format": "A pointer to the cloned graph.",
+    "constraints": [
+      "The number of nodes in the graph is in the range [0, 100].",
+      "Each node's value is in the range [-100, 100].",
+      "The graph is guaranteed to be connected."
+    ],
+    "examples": [
+      {
+        "input": "Input: adjList = [[2,4],[1,3],[2,4],[1,3]]",
+        "output": "Output: [[2,4],[1,3],[2,4],[1,3]]",
+        "explanation": "Each node and its connections are cloned, yielding an identical structure."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to track cloned nodes.",
+      "Consider using DFS or BFS for graph traversal."
+    ],
+    "company": "Flexport"
+  },
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value data structure that can be used to store key-value pairs along with their corresponding timestamps. You need to implement the following methods: \n\n1. `set(key: str, value: str, timestamp: int)`: stores the key-value pair alongside the timestamp. \n2. `get(key: str, timestamp: int)`: returns the value associated with the given key at the given timestamp. If the key does not exist or there is no value stored for the timestamp, return an empty string. The retrieved value should be the most recent one before or at the given timestamp.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Key-Value Store"
+    ],
+    "input_format": "The input consists of a series of method calls for `set` and `get` with their respective parameters.",
+    "output_format": "The output should consist of return values from the `get` method calls.",
+    "constraints": [
+      "1 <= key.length <= 100",
+      "1 <= value.length <= 100",
+      "1 <= timestamp <= 10^7",
+      "The key and value consist of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "set('foo', 'bar', 1); set('foo', 'baz', 2); get('foo', 1); get('foo', 3); get('foo', 2); get('foo', 4);",
+        "output": "bar, baz, baz, baz",
+        "explanation": "At timestamp 1, the value of 'foo' is 'bar'. At timestamp 2, it becomes 'baz'. At timestamps 3 and 4, the last known value is still 'baz'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "You can use a hashmap to store the key-value pairs, where each key points to a list of timestamp-value pairs.",
+      "Consider using binary search to efficiently find the most recent value for a given timestamp."
+    ],
+    "company": "Flexport"
+  },
+  {
+    "question_id": "",
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. A mapping of digit to letters is given as follows: 2 -> 'abc', 3 -> 'def', 4 -> 'ghi', 5 -> 'jkl', 6 -> 'mno', 7 -> 'pqrs', 8 -> 'tuv', 9 -> 'wxyz'. Return the combinations in any order.",
+    "topic": "Backtracking",
+    "subtopic": "String Combinations",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Combination"
+    ],
+    "input_format": "A string of digits, where each digit is between '2' and '9'.",
+    "output_format": "A list of strings containing all possible letter combinations.",
+    "constraints": [
+      "0 <= digits.length <= 4",
+      "digits[i] is a digit in '2' to '9'."
+    ],
+    "examples": [
+      {
+        "input": "digits = '23'",
+        "output": "['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']",
+        "explanation": "The digit '2' maps to ['a', 'b', 'c'] and digit '3' maps to ['d', 'e', 'f']. The combinations formed are the Cartesian product of these two sets."
+      },
+      {
+        "input": "digits = ''",
+        "output": "[]",
+        "explanation": "An empty input means there are no digits to map, resulting in an empty list."
+      },
+      {
+        "input": "digits = '2'",
+        "output": "['a', 'b', 'c']",
+        "explanation": "The digit '2' maps to ['a', 'b', 'c']. So the output is simply the list of these letters."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to explore all combinations.",
+      "You may want to use a map to link digits to their corresponding letters."
+    ],
+    "company": "Flexport"
+  },
+  {
+    "question_id": "",
+    "title": "My Calendar I",
+    "description": "You are implementing a calendar system where you can add new events and check for conflicts. Each event is represented by a start time and an end time. You need to create a function `book(start: int, end: int) -> bool` that adds an event to the calendar if it does not conflict with existing events. If it conflicts, return false. A conflict occurs if two events overlap, meaning one event starts before another one ends, and vice versa.",
+    "topic": "Design",
+    "subtopic": "Calendar",
+    "tags": [
+      "Design",
+      "Calendar",
+      "Data Structure"
+    ],
+    "input_format": "Two integers representing the start and end time of an event, where 0 <= start < end <= 10^9.",
+    "output_format": "A boolean indicating whether the event was successfully added to the calendar.",
+    "constraints": [
+      "The number of calls to `book` will be at most 1000.",
+      "Start and end times will always be valid."
+    ],
+    "examples": [
+      {
+        "input": "book(10, 20)",
+        "output": "true",
+        "explanation": "The calendar is empty, so the event can be added."
+      },
+      {
+        "input": "book(15, 25)",
+        "output": "false",
+        "explanation": "The new event (15, 25) conflicts with the existing event (10, 20)."
+      },
+      {
+        "input": "book(20, 30)",
+        "output": "true",
+        "explanation": "The new event (20, 30) does not conflict with the existing event (10, 20)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a data structure to maintain the events.",
+      "Sorting can help in efficiently finding conflicts."
+    ],
+    "company": "Flexport"
+  },
+  {
+    "question_id": "",
+    "title": "Count Zero Request Servers",
+    "description": "You are tasked with managing a server request system in which each server can handle multiple requests. However, occasionally some requests may result in a failure, indicated by zero. Your goal is to compute the number of servers that receive at least one zero request. Given an array of integers representing the request counts of each server, count how many servers have received at least one request that has a count of zero.",
+    "topic": "Array",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Array",
+      "Counting",
+      "Zero"
+    ],
+    "input_format": "An array of integers requests, where each integer represents the request count for a server.",
+    "output_format": "An integer representing the count of servers that received at least one zero request.",
+    "constraints": [
+      "1 <= requests.length <= 10^5",
+      "-10^4 <= requests[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "requests = [0, 1, 2, 3, 0, 4]",
+        "output": "2",
+        "explanation": "The servers at index 0 and 4 received zero requests."
+      },
+      {
+        "input": "requests = [1, 2, 3, 4, 5]",
+        "output": "0",
+        "explanation": "No server received a zero request."
+      },
+      {
+        "input": "requests = [0, 0, 0, 0, 0]",
+        "output": "5",
+        "explanation": "All servers received zero requests."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "You can use a set to track the unique server indices that have received zero requests.",
+      "Iterate through the requests and check for zeros."
+    ],
+    "company": "Flexport"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Increasing Subsequence",
+    "description": "Given an integer array nums, return the length of the longest strictly increasing subsequence.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Longest Subsequence Problem",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Subsequence"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest increasing subsequence.",
+    "constraints": [
+      "1 <= nums.length <= 2500",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 9, 2, 5, 3, 7, 101, 18]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [2, 3, 7, 101], which has a length of 4."
+      },
+      {
+        "input": "nums = [0, 1, 0, 3, 2, 3]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [0, 1, 2, 3], which has a length of 4."
+      },
+      {
+        "input": "nums = [7, 7, 7, 7, 7, 7, 7]",
+        "output": "1",
+        "explanation": "Since all elements are the same, the longest increasing subsequence has a length of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming techniques.",
+      "You can use a binary search approach for optimization."
+    ],
+    "company": "Flexport"
+  },
+  {
+    "question_id": "",
+    "title": "Subarray Product Less Than K",
+    "description": "Given an array of positive integers nums and an integer k, return the number of contiguous subarrays where the product of all the elements in the subarray is less than k.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Product"
+    ],
+    "input_format": "An array of positive integers nums and an integer k.",
+    "output_format": "An integer representing the number of contiguous subarrays with a product less than k.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "1 <= nums[i] <= 1000",
+      "0 <= k <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 5, 2, 6], k = 100",
+        "output": "8",
+        "explanation": "Subarrays with products less than 100 are: [10], [5], [2], [6], [10, 5], [5, 2], [2, 6], [10, 5, 2]."
+      },
+      {
+        "input": "nums = [1, 2, 3], k = 0",
+        "output": "0",
+        "explanation": "No subarrays can have a product less than 0 since all elements are positive."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "Keep track of the product of the current window."
+    ],
+    "company": "Flexport"
+  },
+  {
+    "question_id": "",
+    "title": "Bag of Tokens",
+    "description": "You have a bag of tokens, each with a positive integer value. You can perform one of two actions with your tokens: either buy a power level (costing the token's value) or earn tokens back by achieving a certain power level (gaining tokens corresponding to the level). Given an array of token values and an initial power level, your goal is to determine the maximum number of tokens you can collect by optimally buying power levels and earning tokens back. You can only spend the tokens in the bag to buy the power levels.",
+    "topic": "Greedy",
+    "subtopic": "Optimal Strategy",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Simulation"
+    ],
+    "input_format": "An array of integers tokens, representing the token values, and an integer power representing the initial power level.",
+    "output_format": "An integer representing the maximum number of tokens you can collect.",
+    "constraints": [
+      "1 <= tokens.length <= 10^4",
+      "1 <= tokens[i] <= 10^4",
+      "0 <= power <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "tokens = [1, 2, 3, 4], power = 5",
+        "output": "2",
+        "explanation": "You can buy the tokens with values 1 and 2, which will remain in your bag when you have power 5, allowing you to earn back 2 tokens."
+      },
+      {
+        "input": "tokens = [100, 200, 300, 400], power = 200",
+        "output": "1",
+        "explanation": "You can buy the token with value 100, which gives you the maximum number of tokens collected."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try sorting the tokens and using a two-pointer approach.",
+      "Consider the trade-off between spending power and gaining tokens."
+    ],
+    "company": "Flexport"
+  },
+  {
+    "question_id": "",
+    "title": "Validate IP Address",
+    "description": "Given a string s, determine if it is a valid IPv4 or IPv6 address. A valid IPv4 address consists of four decimal numbers (0-255) separated by dots (.), while a valid IPv6 address consists of eight groups of four hexadecimal digits separated by colons (:). All groups must be valid according to their respective format.",
+    "topic": "String Manipulation",
+    "subtopic": "Validation",
+    "tags": [
+      "String",
+      "Validation",
+      "IP Address"
+    ],
+    "input_format": "A single string s representing the IP address to be validated.",
+    "output_format": "Return 'IPv4' if the input is a valid IPv4 address, 'IPv6' if valid IPv6, or 'Neither' if it is neither.",
+    "constraints": [
+      "1 <= s.length <= 40"
+    ],
+    "examples": [
+      {
+        "input": "s = \"192.168.1.1\"",
+        "output": "IPv4",
+        "explanation": "The string is a valid IPv4 address with valid decimal numbers."
+      },
+      {
+        "input": "s = \"2001:0db8:85a3:0000:0000:8a2e:0370:7334\"",
+        "output": "IPv6",
+        "explanation": "The string is a valid IPv6 address consisting of valid hexadecimal groups."
+      },
+      {
+        "input": "s = \"256.256.256.256\"",
+        "output": "Neither",
+        "explanation": "The numbers in the IPv4 address exceed the maximum value of 255."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "For IPv4, split by '.' and validate each segment.",
+      "For IPv6, split by ':' and ensure valid hexadecimal for each segment."
+    ],
+    "company": "Flexport"
+  }
+]

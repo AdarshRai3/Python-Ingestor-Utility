@@ -1,0 +1,774 @@
+[
+  {
+    "question_id": "",
+    "title": "Coin Change",
+    "description": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. You want to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1. You may assume that you have an infinite number of each kind of coin.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Coin Change Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "DP"
+    ],
+    "input_format": "An integer array coins and an integer amount.",
+    "output_format": "An integer representing the fewest number of coins needed to make up the given amount.",
+    "constraints": [
+      "1 <= coins.length <= 12",
+      "1 <= coins[i] <= 2^31 - 1",
+      "0 <= amount <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "coins = [1, 2, 5], amount = 11",
+        "output": "3",
+        "explanation": "11 can be made up of 5 + 5 + 1."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "-1",
+        "explanation": "3 cannot be made up using only 2."
+      },
+      {
+        "input": "coins = [1], amount = 0",
+        "output": "0",
+        "explanation": "Amount 0 can be made up with 0 coins."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to solve the problem.",
+      "Start by defining your base cases clearly.",
+      "Think about how to build the solution for the current amount using smaller amounts."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Most Common Word",
+    "description": "Given a paragraph and a list of banned words, find the most frequent word in the paragraph that is not present in the banned list. The words are case insensitive and may contain punctuation which should be removed. If there is a tie, return the word that comes first lexicographically.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Hash Map",
+      "Frequency Count"
+    ],
+    "input_format": "A string paragraph and a list of strings banned.",
+    "output_format": "A string representing the most common non-banned word.",
+    "constraints": [
+      "1 <= paragraph.length <= 1000",
+      "0 <= banned.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "paragraph": "Bob hit a ball, the hit BALL flew far after it was hit.",
+          "banned": [
+            "hit"
+          ]
+        },
+        "output": "ball",
+        "explanation": "The word 'ball' is the most frequent non-banned word in the paragraph."
+      },
+      {
+        "input": {
+          "paragraph": "a.",
+          "banned": []
+        },
+        "output": "a",
+        "explanation": "The only word is 'a', which is not banned."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider converting the paragraph to lower case and stripping punctuation.",
+      "You can use a hash map to count the frequencies of the words."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Depth of N-ary Tree",
+    "description": "Given a root of an N-ary tree, return its maximum depth. The maximum depth is the length of the longest downward path from the root node to the farthest leaf node.",
+    "topic": "Tree",
+    "subtopic": "N-ary Tree",
+    "tags": [
+      "Tree",
+      "Depth",
+      "N-ary"
+    ],
+    "input_format": "An N-ary tree node represented as a Node object with a value and a list of children.",
+    "output_format": "An integer representing the maximum depth of the tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "The depth of the tree will not exceed 1000."
+    ],
+    "examples": [
+      {
+        "input": "root = [1,null,[3,2,4],[5]]",
+        "output": "3",
+        "explanation": "The longest path is from 1 to 3 to 5, which has a length of 3."
+      },
+      {
+        "input": "root = [1,[2],[3,[4,[5]]]]",
+        "output": "5",
+        "explanation": "The longest path is from 1 to 3 to 4 to 5, which has a length of 4."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a recursive approach to traverse the tree.",
+      "Keep track of the depth as you explore each node."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Word Abbreviation",
+    "description": "Given a word and an abbreviation, determine if the abbreviation is valid. An abbreviation is valid if it transforms the word into a shorter representation. The abbreviations can consist of letters and a number representing how many letters are skipped. For example, 'word' can be abbreviated as 'w3d', meaning 'o', 'r' are skipped. If the abbreviation is too long or cannot be formed from the given word, return false.",
+    "topic": "Strings",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Abbreviation",
+      "Validation"
+    ],
+    "input_format": "A string word and a string abbreviation.",
+    "output_format": "A boolean indicating whether the abbreviation is valid for the given word.",
+    "constraints": [
+      "1 <= word.length <= 100",
+      "1 <= abbr.length <= 100",
+      "The abbreviation will only contain lowercase letters and digits."
+    ],
+    "examples": [
+      {
+        "input": {
+          "word": "internationalization",
+          "abbr": "i12iz4n"
+        },
+        "output": true,
+        "explanation": "The abbreviation 'i12iz4n' correctly represents 'internationalization' by skipping 12 letters."
+      },
+      {
+        "input": {
+          "word": "apple",
+          "abbr": "a2e"
+        },
+        "output": false,
+        "explanation": "'a2e' is not a valid abbreviation for 'apple' because it cannot represent the skipped letters correctly."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how to parse the abbreviation to extract numbers and letters.",
+      "Keep track of your position in both the word and the abbreviation."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Design Circular Queue",
+    "description": "Implement a circular queue data structure. A circular queue is a linear data structure that follows the FIFO (First In First Out) principle but the last position is connected back to the first position to make a circle. It supports the following operations: enqueue, dequeue, front, rear, and isEmpty.",
+    "topic": "Data Structure",
+    "subtopic": "Queue",
+    "tags": [
+      "Queue",
+      "Data Structure",
+      "Circular"
+    ],
+    "input_format": "A circular queue can be instantiated with a specified size. It allows the following operations: enqueue(value), dequeue(), front(), rear(), and isEmpty().",
+    "output_format": "Return the results of each operation performed on the circular queue.",
+    "constraints": [
+      "1 <= size <= 1000",
+      "enqueue(value): 0 <= value <= 1000",
+      "All operations must be handled in O(1) time."
+    ],
+    "examples": [
+      {
+        "input": "CircularQueue cq = new CircularQueue(3); cq.enqueue(1); cq.enqueue(2); cq.enqueue(3);",
+        "output": "false; 1; 3",
+        "explanation": "After enqueuing 1, 2, and 3, the queue is full. isEmpty() returns false, front() returns 1, and rear() returns 3."
+      },
+      {
+        "input": "cq.dequeue(); cq.enqueue(4); cq.front(); cq.rear();",
+        "output": "2; 4",
+        "explanation": "Dequeueing removes 1, the new front is 2, and after enqueueing 4, the rear is now 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a fixed-size array to represent the queue.",
+      "Maintain a head and tail index to track the front and rear of the queue.",
+      "Wrap around the indices using modulo operation."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Meeting Scheduler",
+    "description": "You are given two lists of intervals representing time slots during which two people are available. Your goal is to find a time slot that works for both people. Each interval is represented as an array of two integers [start, end], indicating that the person is available from 'start' to 'end' (exclusive). If there is no common available time, return an empty list.",
+    "topic": "Intervals",
+    "subtopic": "Merging Intervals",
+    "tags": [
+      "Intervals",
+      "Scheduling",
+      "Merging"
+    ],
+    "input_format": "Two lists of intervals, `personA` and `personB`, where each interval is a list of two integers.",
+    "output_format": "A list of intervals representing the common available time slots.",
+    "constraints": [
+      "1 <= personA.length, personB.length <= 10^4",
+      "0 <= personA[i][0] < personA[i][1] <= 24",
+      "0 <= personB[i][0] < personB[i][1] <= 24"
+    ],
+    "examples": [
+      {
+        "input": "personA = [[1, 3], [5, 6], [7, 9]], personB = [[2, 4], [6, 8]]",
+        "output": "[[2, 3], [6, 6]]",
+        "explanation": "The common available time slots are from 2 to 3 and from 6 to 6."
+      },
+      {
+        "input": "personA = [[1, 3], [4, 5]], personB = [[5, 6]]",
+        "output": "[]",
+        "explanation": "There are no common available time slots."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort both lists of intervals based on their starting times.",
+      "Use two pointers to iterate through both lists."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Vacation Days",
+    "description": "You are given a list of vacation days for each employee at a company, represented as a matrix where each row represents an employee, and each column represents a day of the year. Each value in the matrix indicates whether that employee can take a vacation on that day. Your task is to find the maximum number of vacation days that can be taken by a single employee based on their vacation schedule, ensuring that they take the vacation days continuously. You may assume that each year has exactly 365 days.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "Matrix",
+      "Greedy"
+    ],
+    "input_format": "A 2D integer matrix, vacation, where vacation[i][j] is 1 if employee i can take a vacation on day j, otherwise 0.",
+    "output_format": "An integer representing the maximum number of vacation days that can be taken continuously by any employee.",
+    "constraints": [
+      "1 <= vacation.length <= 100",
+      "1 <= vacation[i].length <= 365",
+      "vacation[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "vacation = [[1, 0, 1, 1, 0], [0, 1, 1, 0, 1], [1, 1, 0, 0, 1]]",
+        "output": "3",
+        "explanation": "Employee 0 can take a vacation on days 2 and 3, totaling 3 days."
+      },
+      {
+        "input": "vacation = [[1, 1, 1, 1, 1], [1, 1, 0, 0, 0], [0, 0, 1, 1, 1]]",
+        "output": "5",
+        "explanation": "Employee 0 can take a vacation on all days, totaling 5 days."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider a sliding window approach to count continuous vacation days.",
+      "Think about how to handle overlapping vacation days among employees."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Median",
+    "description": "You are given an array of integers `nums` and an integer `k`. You need to return the median of each sliding window of size `k` as it moves from the start to the end of the array. The median is defined as the middle element when the elements are sorted. If the size of the window is even, the median is the average of the two middle elements.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Median"
+    ],
+    "input_format": "An array of integers nums and an integer k (1 <= k <= nums.length).",
+    "output_format": "An array of doubles representing the medians of the sliding windows.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, -1, -3, 5, 3, 6, 7], k = 3",
+        "output": "[1.0, -1.0, 3.0, 5.0, 6.0]",
+        "explanation": "The medians of the windows are: [1], [1, 3, -1] -> -1, [-1, 3, 5] -> 3, [3, 5, 3] -> 5, [5, 3, 6] -> 6."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5], k = 2",
+        "output": "[1.5, 2.5, 3.5, 4.5]",
+        "explanation": "The medians are (1+2)/2, (2+3)/2, (3+4)/2, (4+5)/2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a balanced data structure to maintain the sliding window.",
+      "Consider using two heaps to efficiently manage the lower and upper halves of the window."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "People Whose List of Favorite Companies Is Not a Subset of Another List",
+    "description": "You are given a list of people where each person has a list of favorite companies. Your task is to find all the people whose list of favorite companies is not a subset of another person's list of favorite companies. A list A is a subset of list B if every element of A is contained in B. Return the list of such people's indices in ascending order.",
+    "topic": "Array",
+    "subtopic": "Set Operations",
+    "tags": [
+      "Array",
+      "Set",
+      "Subset"
+    ],
+    "input_format": "A list of lists where each sublist contains strings representing the favorite companies of a person.",
+    "output_format": "A list of integers representing the indices of people whose favorite companies list is not a subset of another list.",
+    "constraints": [
+      "1 <= people.length <= 100",
+      "1 <= people[i].length <= 100",
+      "1 <= people[i][j].length <= 100",
+      "All strings are unique within a person's favorite list."
+    ],
+    "examples": [
+      {
+        "input": "[['Apple', 'Google'], ['Apple'], ['Google', 'Microsoft']]",
+        "output": "[0, 2]",
+        "explanation": "Person at index 0 has a favorite list that is not a subset of any other, similarly for person at index 2. Person at index 1 is just a subset of 0."
+      },
+      {
+        "input": "[['Facebook', 'Twitter'], ['Twitter'], ['Snapchat', 'Facebook']]",
+        "output": "[0, 2]",
+        "explanation": "Person at index 0 has favorites that are unique compared to the others."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using sets for easy subset comparison.",
+      "Iterate through each person's list and compare it against all others."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Design Add and Search Words Data Structure",
+    "description": "Implement a data structure that supports the following operations: adding a word and searching a word. The search operation can search a word or a prefix of the word. The search word may contain the '.' wildcard character to represent any letter. For example, searching 'a.' should return true if there is any word in the data structure that starts with 'a' and is followed by any letter.",
+    "topic": "Design",
+    "subtopic": "Trie",
+    "tags": [
+      "Design",
+      "Trie",
+      "Data Structure"
+    ],
+    "input_format": "You need to implement the WordDictionary class, which has the following methods:\n1. `addWord(word: str)`: Adds a word into the data structure.\n2. `search(word: str) -> bool`: Returns true if the word is in the data structure. A word could contain the '.' wildcard to represent any letter.",
+    "output_format": "A boolean value indicating whether the searched word exists in the data structure.",
+    "constraints": [
+      "1 <= word.length <= 25",
+      "You can add at most 10^5 words to the data structure."
+    ],
+    "examples": [
+      {
+        "input": "WordDictionary wordDictionary = new WordDictionary();\nwordDictionary.addWord(\"bad\");\nwordDictionary.addWord(\"dad\");\nwordDictionary.addWord(\"mad\");\nwordDictionary.search(\"pad\");",
+        "output": "false",
+        "explanation": "The word 'pad' is not in the dictionary."
+      },
+      {
+        "input": "wordDictionary.search(\"bad\");",
+        "output": "true",
+        "explanation": "The word 'bad' is in the dictionary."
+      },
+      {
+        "input": "wordDictionary.search(\"b..\");",
+        "output": "true",
+        "explanation": "The '.' wildcard can match any letter, so 'b..' can match 'bad'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a Trie for efficient storage and retrieval.",
+      "For the search method, handle each character individually, especially for '.'."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Maximum Path Sum",
+    "description": "Given a non-empty binary tree, find the maximum path sum. A path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root. The path sum is the sum of the node values along the path.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Binary Tree",
+      "Depth-First Search",
+      "Recursion"
+    ],
+    "input_format": "The input consists of the root node of a binary tree.",
+    "output_format": "An integer representing the maximum path sum in the binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 3 * 10^4].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "[1, 2, 3]",
+        "output": "6",
+        "explanation": "The maximum path sum is 2 + 1 + 3 = 6."
+      },
+      {
+        "input": "[\u221210, 9, 20, null, null, 15, 7]",
+        "output": "42",
+        "explanation": "The maximum path sum is 15 + 20 + 7 = 42."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider paths that go through the left or right child.",
+      "Track the maximum path sum as you backtrack through the tree."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were robbed on the same night. Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.",
+    "topic": "Dynamic Programming",
+    "subtopic": "1D DP",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An integer array nums where 1 <= nums.length <= 100 and 0 <= nums[i] <= 400.",
+    "output_format": "An integer representing the maximum amount of money that can be robbed.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 400"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 9, 3, 1]",
+        "output": "12",
+        "explanation": "Robbing houses 1, 3 and 5 gives: 2 + 9 + 1 = 12."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Robbing houses 1 and 3 gives: 1 + 3 = 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to store the maximum amount that can be robbed up to each house.",
+      "You may choose to rob a house or skip it. Think about the implications of each choice."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Check If It Is a Straight Line",
+    "description": "You are given an array of points where points[i] = [x, y] represents a point on a 2D plane. You need to determine if these points lie on a straight line. Return true if they do, otherwise return false.",
+    "topic": "Geometry",
+    "subtopic": "Line and Points",
+    "tags": [
+      "Geometry",
+      "Math",
+      "Line"
+    ],
+    "input_format": "An array of points represented as a 2D array, where each point is an array of two integers [x, y].",
+    "output_format": "A boolean indicating whether the points lie on a straight line.",
+    "constraints": [
+      "2 <= points.length <= 1000",
+      "-10^4 <= points[i][0], points[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "points = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6]]",
+        "output": "true",
+        "explanation": "All the given points lie on the line y = x + 1."
+      },
+      {
+        "input": "points = [[1, 1], [2, 2], [3, 4], [4, 5], [5, 6]]",
+        "output": "false",
+        "explanation": "The points do not all lie on the same straight line."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use the slope formula to compare points.",
+      "Two points define a line; calculate the slopes."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber II",
+    "description": "You are a professional robber planning to rob houses along a circular street. Each house has a certain amount of money stashed, and adjacent houses have a security system connected. Therefore, robbing two adjacent houses will alert the police. Given an integer array 'nums' representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police. Note that you cannot rob the first and the last house simultaneously due to the circular arrangement.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Robbery Planning",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers nums representing the amount of money at each house.",
+    "output_format": "An integer representing the maximum amount of money that can be robbed.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 2]",
+        "output": "3",
+        "explanation": "Robbing the second house will yield the maximum amount of 3."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Robbing the first and third houses will yield a total of 1 + 3 = 4."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "0",
+        "explanation": "There is no money to rob."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider breaking it into two separate cases: one excluding the first house and the other excluding the last house.",
+      "Think about how to use dynamic programming for a single row of houses."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Search Tree to Greater Sum Tree",
+    "description": "Given a binary search tree (BST), transform it into a Greater Sum Tree (GST) where each node contains the sum of all greater keys in the original tree. The same node's value is replaced with the sum of all values greater than or equal to it. You must perform the transformation in-place and return the root of the modified BST.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Trees",
+    "tags": [
+      "Tree",
+      "BST",
+      "Recursion",
+      "In-place"
+    ],
+    "input_format": "A binary search tree represented by its root node.",
+    "output_format": "The root node of the transformed Greater Sum Tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 100].",
+      "Each node's value is unique and is in the range [-10^4, 10^4]."
+    ],
+    "examples": [
+      {
+        "input": "root = [4, 1, 6, 0, 2, 5, 7, null, null, null, 3]",
+        "output": "[30, 36, 21, 36, 35, 26, 15, null, null, null, 33]",
+        "explanation": "The original nodes were transformed such that each node's value now reflects the sum of all greater node values."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using reverse in-order traversal to achieve the required transformation.",
+      "Keep track of the cumulative sum while traversing the tree."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Greatest Common Divisor of Strings",
+    "description": "Given two strings str1 and str2, return the largest string that can be formed by concatenating a certain number of copies of the string, such that it can play the role of both str1 and str2. If there is no such string, return an empty string.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "GCD",
+      "Concatenation"
+    ],
+    "input_format": "Two strings str1 and str2 separated by a space.",
+    "output_format": "A string representing the greatest common divisor of the two input strings.",
+    "constraints": [
+      "1 <= str1.length, str2.length <= 100",
+      "str1 and str2 consist of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "str1 = \"ABCABC\", str2 = \"ABC\"",
+        "output": "ABC",
+        "explanation": "The common divisor string is 'ABC', which can be repeated to form both str1 and str2."
+      },
+      {
+        "input": "str1 = \"ABABAB\", str2 = \"ABAB\"",
+        "output": "ABAB",
+        "explanation": "'ABAB' can be repeated to form both str1 and str2."
+      },
+      {
+        "input": "str1 = \"LEET\", str2 = \"CODE\"",
+        "output": "",
+        "explanation": "There is no string that can be repeated to form both str1 and str2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think about the properties of string division.",
+      "Try using the greatest common divisor of the lengths of the strings."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Find Words That Can Be Formed by Characters",
+    "description": "Given an array of strings words and a string chars, return the number of words in words that can be formed by characters from chars. Each character in chars can only be used once in each word. You can assume that chars consists only of lowercase English letters.",
+    "topic": "String",
+    "subtopic": "Character Counting",
+    "tags": [
+      "String",
+      "Counting",
+      "Greedy"
+    ],
+    "input_format": "An array of strings words and a string chars.",
+    "output_format": "An integer representing the number of words that can be formed by characters from chars.",
+    "constraints": [
+      "1 <= words.length <= 100",
+      "1 <= words[i].length <= 100",
+      "1 <= chars.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "words = [\"cat\", \"bt\", \"hat\", \"tree\"], chars = \"atach\"",
+        "output": "2",
+        "explanation": "The words 'cat' and 'hat' can be formed by characters from 'atach'."
+      },
+      {
+        "input": "words = [\"hello\", \"world\", \"leetcode\"], chars = \"welldonehoneyr\"",
+        "output": "1",
+        "explanation": "The word 'hello' is the only word that can be formed by characters from 'welldonehoneyr'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Count the frequency of each character in chars.",
+      "Check each word by reducing the frequency of characters in chars."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Odd String Difference",
+    "description": "You are given two strings, 's1' and 's2'. Your task is to find the absolute difference between the number of characters that appear an odd number of times in 's1' and 's2'. A character is considered to appear 'odd' if its frequency in a string is odd. Return the absolute difference as an integer.",
+    "topic": "String",
+    "subtopic": "Frequency Count",
+    "tags": [
+      "String",
+      "Frequency",
+      "Counting"
+    ],
+    "input_format": "Two strings 's1' and 's2' where 1 <= |s1|, |s2| <= 100.",
+    "output_format": "An integer representing the absolute difference between the number of odd frequency characters in 's1' and 's2'.",
+    "constraints": [
+      "1 <= |s1|, |s2| <= 100",
+      "s1 and s2 consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s1 = \"abcabc\", s2 = \"ab\"",
+        "output": "0",
+        "explanation": "In s1, all characters appear an even number of times (0 with odd frequency). In s2, both characters a and b appear 1 time (2 with odd frequency). Absolute difference is |0 - 2| = 2."
+      },
+      {
+        "input": "s1 = \"aaaabbbb\", s2 = \"abcd\"",
+        "output": "2",
+        "explanation": "In s1, 0 characters have odd frequency. In s2, all characters appear once (4 with odd frequency). Absolute difference is |0 - 4| = 4."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Count the frequency of each character in both strings.",
+      "Use a hash table or dictionary to keep track of character counts."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Number of Occurrences",
+    "description": "Given an array of integers, return true if the number of occurrences of each value in the array is unique. Otherwise, return false.",
+    "topic": "Array",
+    "subtopic": "Frequency Count",
+    "tags": [
+      "Array",
+      "HashMap",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A boolean value indicating whether the occurrences of each value are unique.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 1, 1, 3]",
+        "output": "true",
+        "explanation": "The occurrences are {1: 3, 2: 2, 3: 1}, all counts are unique."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "true",
+        "explanation": "The occurrences are {1: 1, 2: 1, 3: 1, 4: 1}, all counts are unique."
+      },
+      {
+        "input": "nums = [1, 1, 2, 2, 3, 3]",
+        "output": "false",
+        "explanation": "The occurrences are {1: 2, 2: 2, 3: 2}, counts of '1', '2', and '3' are not unique."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to count the occurrences of each number.",
+      "Check if the values in the hash map are unique."
+    ],
+    "company": "Datadog"
+  },
+  {
+    "question_id": "",
+    "title": "Path Sum",
+    "description": "Given a binary tree, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals a given sum. A leaf is a node with no children.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Binary Tree"
+    ],
+    "input_format": "The first line contains the target sum as an integer. The second line contains the serialized representation of the binary tree.",
+    "output_format": "A boolean value indicating whether such a path exists.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 1000].",
+      "-1000 <= Node.val <= 1000",
+      "-1000 <= targetSum <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "targetSum = 22\nroot = [5,4,8,11,null,13,4,7,2,null,null,5,1]",
+        "output": "true",
+        "explanation": "The path 5 -> 4 -> 11 -> 2 sums to 22."
+      },
+      {
+        "input": "targetSum = 26\nroot = [5,4,8,11,null,13,4,7,2,null,null,5,1]",
+        "output": "true",
+        "explanation": "The path 5 -> 8 -> 13 sums to 26."
+      },
+      {
+        "input": "targetSum = 18\nroot = [1,2,3]",
+        "output": "false",
+        "explanation": "There is no path that sums to 18."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using Depth First Search (DFS) to traverse the tree.",
+      "Keep track of the remaining sum as you traverse down the path."
+    ],
+    "company": "Datadog"
+  }
+]

@@ -1,0 +1,3487 @@
+[
+  {
+    "question_id": "",
+    "title": "Design In-Memory File System",
+    "description": "Create a data structure that simulates a simple in-memory file system. The system should allow for the creation, deletion, and retrieval of files and directories. Each file has a unique name, and each directory can contain files and/or other directories. The root directory is always '/' and cannot be deleted. Implement the following commands: 'mkdir', 'addFile', 'delete', 'getFileContent', and 'ls'. The commands should support nested directory structures.",
+    "topic": "Design",
+    "subtopic": "File System",
+    "tags": [
+      "Design",
+      "File System",
+      "Data Structure"
+    ],
+    "input_format": "Commands in the form of strings, which will be processed sequentially.",
+    "output_format": "Outputs based on commands. 'getFileContent' returns the content of the file, 'ls' returns a list of files/directories, others return success messages.",
+    "constraints": [
+      "File names and directory names are non-empty strings.",
+      "File names must be unique within their respective directories.",
+      "Directory names may not conflict with file names."
+    ],
+    "examples": [
+      {
+        "input": [
+          "mkdir /a",
+          "addFile /a/file1.txt Hello",
+          "ls /a",
+          "getFileContent /a/file1.txt"
+        ],
+        "output": [
+          "Success",
+          "Success",
+          [
+            "file1.txt"
+          ],
+          "Hello"
+        ],
+        "explanation": "This sequence creates a directory 'a', adds a file 'file1.txt' with the content 'Hello', lists the contents of directory 'a' showing the file, and then retrieves the content of that file."
+      },
+      {
+        "input": [
+          "mkdir /b",
+          "addFile /b/file2.txt World",
+          "delete /b/file2.txt",
+          "ls /b"
+        ],
+        "output": [
+          "Success",
+          "Success",
+          "Success",
+          []
+        ],
+        "explanation": "This sequence creates a directory 'b', adds a file 'file2.txt', deletes it, and lists the contents of directory 'b' showing it is empty."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a tree structure to represent directories and files.",
+      "Recursion might be useful for listing contents of nested directories."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Happy Number",
+    "description": "A happy number is defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle that does not include 1. Those numbers for which this process ends in 1 are happy numbers. Write a function to determine if a given number is a happy number.",
+    "topic": "Math",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Math",
+      "Number Theory",
+      "Simulation"
+    ],
+    "input_format": "A single integer n (1 <= n <= 2^31 - 1) representing the starting number.",
+    "output_format": "A boolean value indicating whether the number is a happy number (true) or not (false).",
+    "constraints": [
+      "1 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 19",
+        "output": "true",
+        "explanation": "19 is a happy number: 1^2 + 9^2 = 82; 8^2 + 2^2 = 68; 6^2 + 8^2 = 100; 1^2 + 0^2 + 0^2 = 1."
+      },
+      {
+        "input": "n = 2",
+        "output": "false",
+        "explanation": "2 is not a happy number: it leads to a cycle between 2, 4, 16, 37, 58, 89, 145, 42, 20, and back to 4."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a set to track previously seen numbers to detect cycles.",
+      "Consider using a helper function to calculate the sum of the squares of digits."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule II",
+    "description": "Given the total number of courses and a list of prerequisite pairs, determine the order of courses one should take to finish all courses. If it is impossible to complete all courses, return an empty array. This problem can be modeled as a directed graph where prerequisites are directed edges.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sorting",
+      "DFS"
+    ],
+    "input_format": "An integer numCourses representing the total number of courses and a 2D array prerequisites where prerequisites[i] = [a, b] indicates that course b is a prerequisite of course a.",
+    "output_format": "A 1D array representing the order of courses. If no valid order exists, return an empty array.",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2",
+      "All course numbers are distinct."
+    ],
+    "examples": [
+      {
+        "input": "numCourses = 4, prerequisites = [[2,0],[1,0],[3,1],[3,2]]",
+        "output": "[0,1,2,3]",
+        "explanation": "A valid order of courses can be 0 -> 1 -> 2 -> 3."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "[]",
+        "explanation": "There is a cycle, so it's impossible to finish all courses."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use depth-first search (DFS) or Kahn's algorithm for topological sorting.",
+      "Keep track of visited nodes to detect cycles."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search II",
+    "description": "Given a 2D board and a list of words, find all words in the board. Each word must be constructed from sequentially adjacent cells (horizontal or vertical), where 'adjacent' cells are those horizontally or vertically neighboring. The same letter cell may not be used twice in a single word. You have to return the list of all words found on the board.",
+    "topic": "Backtracking",
+    "subtopic": "Trie",
+    "tags": [
+      "Backtracking",
+      "Trie",
+      "Matrix"
+    ],
+    "input_format": "A 2D board represented as a list of lists of characters and a list of words.",
+    "output_format": "A list of strings containing all the words found on the board.",
+    "constraints": [
+      "1 <= board.length, board[i].length <= 12",
+      "1 <= words.length <= 3 * 10^4",
+      "1 <= words[i].length <= 10"
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "o",
+              "a",
+              "a",
+              "n"
+            ],
+            [
+              "e",
+              "t",
+              "a",
+              "e"
+            ],
+            [
+              "i",
+              "h",
+              "k",
+              "r"
+            ],
+            [
+              "i",
+              "f",
+              "l",
+              "v"
+            ]
+          ],
+          "words": [
+            "oath",
+            "pea",
+            "eat",
+            "rain"
+          ]
+        },
+        "output": [
+          "eat",
+          "oath"
+        ],
+        "explanation": "Both 'eat' and 'oath' can be found on the board through adjacent letters."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "c",
+              "d"
+            ]
+          ],
+          "words": [
+            "abcb"
+          ]
+        },
+        "output": [],
+        "explanation": "The word 'abcb' cannot be found on the board."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a Trie to store the words for efficient search.",
+      "DFS can be used to explore possible paths on the board."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Find All Anagrams in a String",
+    "description": "Given two strings 's' and 'p', return all the start indices of p's anagrams in s. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Anagram"
+    ],
+    "input_format": "Two strings s and p, where 1 <= s.length, p.length <= 20,000.",
+    "output_format": "A list of integers representing the starting indices of each anagram of p in s.",
+    "constraints": [
+      "1 <= s.length, p.length <= 20000",
+      "s and p consist of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "s = \"cbaebabacd\", p = \"abc\"",
+        "output": "[0, 6]",
+        "explanation": "The substring with start index = 0 is \"cba\" which is an anagram of \"abc\". The substring starting at index 6 is \"bac\" which is also an anagram of \"abc\"."
+      },
+      {
+        "input": "s = \"abab\", p = \"ab\"",
+        "output": "[0, 1, 2]",
+        "explanation": "The substrings starting at index 0, 1, and 2 are all anagrams of \"ab\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to count occurrences of characters.",
+      "Use a sliding window approach to track current characters."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "String Transformation",
+    "description": "Given two strings, `s1` and `s2`, determine if it is possible to transform `s1` into `s2` using a series of character transformations. A transformation allows you to change one character in `s1` to any other character, but you can only perform up to `k` transformations. Additionally, the transformation is also restricted to only change characters to specific ones provided in a transformation map. Return true if the transformation is possible within `k` operations, otherwise return false.",
+    "topic": "String",
+    "subtopic": "Transformation",
+    "tags": [
+      "String",
+      "Transformation",
+      "Graph"
+    ],
+    "input_format": "Two strings `s1` and `s2`, and a transformation map represented by a list of pairs where each pair indicates a character transformation.",
+    "output_format": "A boolean indicating if the transformation is possible.",
+    "constraints": [
+      "1 <= s1.length, s2.length <= 100",
+      "1 <= k <= 100",
+      "All characters in s1 and s2 are lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": {
+          "s1": "abc",
+          "s2": "bbc",
+          "transformations": [
+            [
+              "a",
+              "b"
+            ]
+          ],
+          "k": 1
+        },
+        "output": "true",
+        "explanation": "You can transform 'a' in 'abc' to 'b' to get 'bbc' with one transformation."
+      },
+      {
+        "input": {
+          "s1": "abc",
+          "s2": "bbc",
+          "transformations": [
+            [
+              "a",
+              "b"
+            ]
+          ],
+          "k": 0
+        },
+        "output": "false",
+        "explanation": "You cannot transform 'a' to 'b' without using transformations since k = 0."
+      },
+      {
+        "input": {
+          "s1": "abcd",
+          "s2": "efgh",
+          "transformations": [
+            [
+              "a",
+              "e"
+            ],
+            [
+              "b",
+              "f"
+            ],
+            [
+              "c",
+              "g"
+            ],
+            [
+              "d",
+              "h"
+            ]
+          ],
+          "k": 4
+        },
+        "output": "true",
+        "explanation": "You can transform each character of 'abcd' into 'efgh' using the respective transformations."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider creating a mapping of characters for transformations.",
+      "Track how many transformations you are using compared to k."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Step-By-Step Directions From a Binary Tree Node to Another",
+    "description": "Given a binary tree and two nodes in the tree, return the path from the first node to the second node, including both nodes. The path should be represented as a list of the node values in order. If there is no path, return an empty list.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Pathfinding"
+    ],
+    "input_format": "The input consists of a binary tree represented by its root node, and two integers representing the values of the two nodes.",
+    "output_format": "A list of integers representing the path from the first node to the second node, inclusive.",
+    "constraints": [
+      "1 <= number of nodes in the tree <= 10^4",
+      "Node values are unique and within the range of [-10^5, 10^5]"
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4, 5, 6, 7], node1 = 4, node2 = 5",
+        "output": "[4, 2, 1, 3, 5]",
+        "explanation": "The path from node 4 to node 5 goes up to the root (1), then to the right child (3), and finally to node 5."
+      },
+      {
+        "input": "root = [1, 2], node1 = 2, node2 = 1",
+        "output": "[2, 1]",
+        "explanation": "The path from node 2 to node 1 is direct, as 2 is a child of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a depth-first search (DFS) approach to find the path.",
+      "Keep track of the parent nodes during traversal to construct the full path."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Upgradable Servers",
+    "description": "In a given 2D grid representing servers, you need to find the maximum number of servers that can be upgraded. A server at cell (i, j) in the grid can only be upgraded if it meets the condition that both its row and column have at least one free cell. A free cell is represented by a 0, and an occupied cell is represented by a 1. Your task is to determine how many servers can be upgraded based on the given conditions.",
+    "topic": "Matrix",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Matrix",
+      "Grid",
+      "Traversal"
+    ],
+    "input_format": "A 2D grid of integers, where grid[i][j] is either 0 (free) or 1 (occupied).",
+    "output_format": "An integer representing the maximum number of upgradable servers.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0, 1, 0], [0, 0, 1], [1, 0, 0]]",
+        "output": "3",
+        "explanation": "All three servers in this grid can be upgraded since they all meet the condition."
+      },
+      {
+        "input": "grid = [[1, 0], [0, 1]]",
+        "output": "2",
+        "explanation": "Both servers can be upgraded as both rows and columns have free cells."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count the free cells in each row and column.",
+      "A server can be upgraded if its corresponding row and column are not fully occupied."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Profit in Job Scheduling",
+    "description": "You are given a list of jobs where each job is represented by a start time, an end time, and a profit. Your task is to schedule jobs such that you maximize the total profit while ensuring that no two jobs overlap in time. You must return the maximum profit that can be obtained from scheduling the jobs optimally.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Interval Scheduling"
+    ],
+    "input_format": "A list of jobs, where each job is represented as (start, end, profit).",
+    "output_format": "An integer representing the maximum profit achievable from the scheduled jobs.",
+    "constraints": [
+      "1 <= jobs.length <= 10^4",
+      "0 <= start < end <= 10^9",
+      "0 <= profit <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "jobs = [[1, 2, 50], [3, 5, 20], [2, 3, 30], [6, 8, 80]]",
+        "output": "130",
+        "explanation": "The jobs can be scheduled as follows: job 1 (1, 2, 50), job 3 (2, 3, 30), and job 4 (6, 8, 80). Total profit = 50 + 30 + 80 = 160."
+      },
+      {
+        "input": "jobs = [[1, 3, 100], [2, 5, 200], [3, 4, 150], [6, 8, 250]]",
+        "output": "350",
+        "explanation": "The optimal schedule includes jobs 1 (1, 3, 100) and 4 (6, 8, 250) for a total profit of 350."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider sorting the jobs by their end times.",
+      "Use dynamic programming to keep track of the maximum profit up to each job.",
+      "You may need to use binary search to find the last non-conflicting job."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Painting the Walls",
+    "description": "You are given a row of walls, each wall has a certain height. You have to paint these walls with different colors while ensuring no adjacent walls have the same color. The cost of painting each wall varies depending on the color. Given a list of costs where costs[i][j] represents the cost of painting wall i with color j, your task is to find the minimum cost to paint all the walls according to the rules mentioned.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Minimum Cost Path",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Minimum Cost"
+    ],
+    "input_format": "A 2D array of integers costs, where costs[i][j] is the cost of painting the i-th wall with color j.",
+    "output_format": "An integer representing the minimum cost to paint all the walls.",
+    "constraints": [
+      "1 <= costs.length <= 100",
+      "1 <= costs[i].length <= 20",
+      "0 <= costs[i][j] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "costs = [[1, 5, 3], [2, 9, 4], [5, 4, 2]]",
+        "output": "5",
+        "explanation": "One optimal way is to paint wall 0 with color 0 (cost 1), wall 1 with color 2 (cost 4), and wall 2 with color 1 (cost 0), giving a total cost of 1 + 4 + 0 = 5."
+      },
+      {
+        "input": "costs = [[8, 4, 5], [6, 1, 6], [7, 5, 2]]",
+        "output": "5",
+        "explanation": "Optimal painting would be wall 0 with color 1 (cost 4), wall 1 with color 2 (cost 6), and wall 2 with color 0 (cost 5), leading to a total cost of 4 + 6 + 5 = 15. (Choosing different colors for adjacent walls leads to a minimum cost configuration.)"
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to keep track of the minimum costs.",
+      "Use a DP table where dp[i][j] represents the minimum cost to paint wall i with color j."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the height of walls, compute how much water can be trapped after raining. The water trapped on top of a wall is determined by the minimum height of the walls surrounding it.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers heights where heights[i] represents the height of the ith wall.",
+    "output_format": "An integer representing the total amount of water trapped.",
+    "constraints": [
+      "0 <= heights.length <= 2 * 10^4",
+      "0 <= heights[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water trapped above the walls forms 6 units in total."
+      },
+      {
+        "input": "heights = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water trapped above the walls forms 9 units in total."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two pointers to track the left and right boundaries.",
+      "Calculate the trapped water using the height of the walls on both sides."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Array Length After Pair Removals",
+    "description": "You are given an array of integers. Your task is to determine the minimum length of the array after performing a series of pair removals. A pair consists of two adjacent integers that are the same. When a pair is removed, the two integers disappear, and the next elements will shift to fill the gap. You must continue removing adjacent pairs until no more pairs can be removed. Return the final length of the array after all possible pair removals.",
+    "topic": "Array",
+    "subtopic": "Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Greedy"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the minimum length of the array after all pair removals.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3, 3, 4]",
+        "output": "2",
+        "explanation": "The pairs (2, 2) and (3, 3) can be removed, leaving [1, 4] which is of length 2."
+      },
+      {
+        "input": "nums = [1, 1, 1, 2, 2, 2]",
+        "output": "3",
+        "explanation": "The pairs (1, 1) can be removed leaving [1, 2, 2] then (2, 2) can be removed, leaving [1]. The final length is 1."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "4",
+        "explanation": "No pairs to remove, so the length remains 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to keep track of elements.",
+      "If the current element matches the element on top of the stack, pop the stack."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Maximum Length of a Good Subsequence I",
+    "description": "Given a string s consisting of lowercase letters, a 'good' subsequence is defined as a sequence that contains at least one occurrence of each unique character from the string. Your task is to find the maximum length of a good subsequence of the string.",
+    "topic": "String",
+    "subtopic": "Subsequence",
+    "tags": [
+      "String",
+      "Subsequence",
+      "Greedy"
+    ],
+    "input_format": "A single string s, consisting of lowercase letters.",
+    "output_format": "An integer representing the maximum length of a good subsequence.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters"
+    ],
+    "examples": [
+      {
+        "input": "abcabc",
+        "output": "3",
+        "explanation": "The unique characters are 'a', 'b', and 'c'. The good subsequence can be 'abc' which has a length of 3."
+      },
+      {
+        "input": "aabb",
+        "output": "2",
+        "explanation": "The unique characters are 'a' and 'b'. The good subsequence 'ab' or 'ba' both have a maximum length of 2."
+      },
+      {
+        "input": "abcd",
+        "output": "4",
+        "explanation": "All characters are unique, hence the good subsequence is 'abcd' itself with a length of 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the unique characters in the string.",
+      "Keep track of the length of subsequences you can form."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Ways to Form a Target String Given a Dictionary",
+    "description": "Given an array of strings `words` and a string `target`, return the number of ways to form the `target` string by combining the characters from the words in `words`. Each character can be used only once from a single word, but multiple words can be used concurrently. The words in the list can be of different lengths, and the order of characters must be preserved from each word.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Count"
+    ],
+    "input_format": "An array of strings words and a string target.",
+    "output_format": "An integer representing the number of ways to form the target string.",
+    "constraints": [
+      "1 <= words.length <= 100",
+      "1 <= words[i].length <= 100",
+      "1 <= target.length <= 100",
+      "All strings consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "cat",
+            "bat",
+            "hat"
+          ],
+          "target": "bat"
+        },
+        "output": "1",
+        "explanation": "The only way to form 'bat' is to take 'bat' directly from the words array."
+      },
+      {
+        "input": {
+          "words": [
+            "a",
+            "b",
+            "c",
+            "ab",
+            "bc",
+            "abc"
+          ],
+          "target": "abc"
+        },
+        "output": "5",
+        "explanation": "You can form 'abc' by using 'abc' directly, 'ab' + 'c', 'a' + 'b' + 'c', or using different combinations of the subwords."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to keep track of the number of ways to form prefixes of the target.",
+      "Think about how to efficiently count characters available from the words."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Maximum Length of a Good Subsequence II",
+    "description": "Given an array of integers, a good subsequence is defined as a sequence where each pair of adjacent elements is distinct. Your task is to find the maximum length of such a good subsequence. Note that you can choose any elements from the array to form the subsequence, but no two adjacent elements in the subsequence should be the same.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Subsequence"
+    ],
+    "input_format": "An array of integers nums, where 1 <= nums.length <= 10^5.",
+    "output_format": "An integer representing the maximum length of a good subsequence.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 1, 2, 3]",
+        "output": "5",
+        "explanation": "A good subsequence could be the entire array: [1, 2, 1, 2, 3]."
+      },
+      {
+        "input": "nums = [5, 5, 5, 5, 5]",
+        "output": "1",
+        "explanation": "The only good subsequence you can form is [5]."
+      },
+      {
+        "input": "nums = [1, 2, 3, 2, 1, 3, 4]",
+        "output": "7",
+        "explanation": "A good subsequence can be [1, 2, 3, 2, 1, 3, 4], which has a length of 7."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a frequency map to count occurrences of each number.",
+      "Look for patterns in how to select elements while maintaining the good subsequence property.",
+      "Think of ways to eliminate adjacent duplicates in your subsequence."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Parallel Courses III",
+    "description": "You are given an integer n representing the number of courses, and a 2D array relations of prerequisites where relations[i] = [ai, bi] indicates that you must take the course bi before you can take the course ai. Your task is to return the minimum number of semesters required to finish all courses if you can take up to k courses per semester. If it is impossible to finish all courses, return -1.",
+    "topic": "Graph",
+    "subtopic": "Topological Sort",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "BFS",
+      "DFS"
+    ],
+    "input_format": "Two integers n and k, followed by a 2D list of integers relations.",
+    "output_format": "An integer representing the minimum number of semesters required to finish all courses, or -1 if it is impossible.",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= relations.length <= 10^4",
+      "1 <= relations[i][0], relations[i][1] <= n",
+      "1 <= k <= n"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, k = 2, relations = [[2,1],[3,1],[1,4]]",
+        "output": "3",
+        "explanation": "Take courses 2 and 3 in the first semester, course 1 in the second semester, and course 4 in the third semester."
+      },
+      {
+        "input": "n = 5, k = 2, relations = [[2,1],[3,1],[1,4],[4,5]]",
+        "output": "4",
+        "explanation": "Take courses 2 and 3 in the first semester, course 1 and 4 in the second semester, and course 5 in the third semester."
+      },
+      {
+        "input": "n = 2, k = 1, relations = [[1,2],[2,1]]",
+        "output": "-1",
+        "explanation": "It's impossible to finish the courses because they depend on each other."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using Kahn's algorithm for topological sorting.",
+      "You may need to maintain an in-degree array to track prerequisites.",
+      "Think about how to manage the number of courses taken each semester."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator",
+    "description": "Implement a basic calculator to evaluate a simple expression string containing non-negative integers, '+', '-', '*', and '/' operators, and empty spaces. The expression is evaluated following the standard mathematical precedence rules. The division should truncate towards zero.",
+    "topic": "Math",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "Calculator",
+      "Math",
+      "Expression"
+    ],
+    "input_format": "A string expression containing non-negative integers and operators (+, -, *, /).",
+    "output_format": "An integer result of the evaluated expression.",
+    "constraints": [
+      "The given expression is guaranteed to be valid.",
+      "The expression will contain no more than 100 characters."
+    ],
+    "examples": [
+      {
+        "input": "s = '3+2*2'",
+        "output": "7",
+        "explanation": "The expression evaluates to 3 + (2 * 2) = 7."
+      },
+      {
+        "input": "s = ' 3/2 '",
+        "output": "1",
+        "explanation": "The expression evaluates to 3 divided by 2, which is 1 after truncation."
+      },
+      {
+        "input": "s = ' 3+5 / 2 '",
+        "output": "5",
+        "explanation": "The expression evaluates to 3 + (5 / 2) = 3 + 2 = 5 after truncation."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a stack to handle operator precedence.",
+      "Consider using two variables to track the current number and the previous operator.",
+      "Remember to handle spaces carefully."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given a linked list, reverse the nodes of a linked list k at a time and return its modified list. You may not alter the values in the nodes, only nodes themselves may be changed. If the number of nodes is not a multiple of k, then left-out nodes in the end should remain as-is. You must solve the problem in O(n) time complexity and allow O(1) extra space.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Two Pointers"
+    ],
+    "input_format": "A linked list where each node contains an integer value and a pointer to the next node, along with an integer k.",
+    "output_format": "A modified linked list with nodes reversed in k-group.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000].",
+      "0 <= Node's value <= 1000.",
+      "1 <= k <= 5000."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[2, 1, 4, 3, 5]",
+        "explanation": "After reversing every two nodes, the list becomes 2 -> 1 -> 4 -> 3 -> 5."
+      },
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 3",
+        "output": "[3, 2, 1, 4, 5]",
+        "explanation": "After reversing every three nodes, the list becomes 3 -> 2 -> 1 -> 4 -> 5."
+      },
+      {
+        "input": "head = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Only one node, so no reversal happens."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a dummy node to simplify the reversal logic.",
+      "Consider edge cases like the end of the list not being a multiple of k.",
+      "Be careful with maintaining the connections between the nodes during reversal."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Boundary of Binary Tree",
+    "description": "Given the root of a binary tree, return the values of its boundary in anti-clockwise order starting from the root. The boundary includes the root, all left boundary nodes (except the leaf nodes), all leaf nodes from left to right, and all right boundary nodes (except the leaf nodes) in reverse order.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Binary Tree",
+      "Traversal",
+      "DFS"
+    ],
+    "input_format": "A binary tree node represented as the root of the tree.",
+    "output_format": "A list of integers representing the boundary values of the tree.",
+    "constraints": [
+      "The number of nodes in the binary tree is in the range [1, 10^4].",
+      "Each node's value is between -1000 and 1000."
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4, 5, null, 6, 7, null, null, null, null, 8]",
+        "output": "[1, 2, 4, 7, 8, 6, 3]",
+        "explanation": "The boundary is made up of root (1), left boundary (2, 4), leaf nodes (7, 8), and right boundary (6, 3 in reverse)."
+      },
+      {
+        "input": "root = [1]",
+        "output": "[1]",
+        "explanation": "There's only one node which is the root."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS to traverse and collect left and right boundaries.",
+      "Make sure to handle leaf nodes separately.",
+      "Consider using a stack to reverse the right boundary."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Regular Expression Matching",
+    "description": "Implement a function that supports full or partial matching of a string against a pattern. The pattern may contain the characters '.' which matches any single character and '*' which matches zero or more of the preceding element. You need to determine if the entire input string matches the pattern according to these rules.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Matching",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Matching",
+      "Regular Expression"
+    ],
+    "input_format": "A string s and a pattern p.",
+    "output_format": "Boolean value indicating whether the string matches the pattern.",
+    "constraints": [
+      "1 <= s.length <= 20",
+      "1 <= p.length <= 20",
+      "s and p consist of lowercase English letters, '.' and '*'"
+    ],
+    "examples": [
+      {
+        "input": "s = 'aab', p = 'c*a*b'",
+        "output": "true",
+        "explanation": "The pattern 'c*a*b' can be interpreted as 'aab' because 'c*' can match zero 'c's and 'a*b' matches 'aab'."
+      },
+      {
+        "input": "s = 'mississippi', p = 'mis*is*p*.'",
+        "output": "false",
+        "explanation": "The given string cannot be matched by the pattern."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how the '*' character affects both the pattern and the string.",
+      "Use dynamic programming to keep track of matches."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Count Vowel Substrings of a String",
+    "description": "Given a string, count the number of substrings that consist only of vowels. A substring is defined as a contiguous sequence of characters within the string. Vowels are defined as 'a', 'e', 'i', 'o', 'u' (case-insensitive).",
+    "topic": "String",
+    "subtopic": "Substring Count",
+    "tags": [
+      "String",
+      "Substring",
+      "Counting"
+    ],
+    "input_format": "A string s consisting of lowercase and uppercase English letters.",
+    "output_format": "An integer representing the total number of contiguous substrings that are made up of vowels.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists only of uppercase and lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'hello'",
+        "output": "2",
+        "explanation": "The substrings consisting only of vowels are 'e' and 'o'."
+      },
+      {
+        "input": "s = 'aeiou'",
+        "output": "15",
+        "explanation": "All possible substrings are made up of vowels. Each substring can be formed by combining different lengths: 'a', 'e', 'i', 'o', 'u', 'ae', 'ai',... 'aeiou'."
+      },
+      {
+        "input": "s = 'abcde'",
+        "output": "1",
+        "explanation": "The only vowel in the string is 'a'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider all possible starting and ending indices for substrings.",
+      "Track the length of consecutive vowels to count valid substrings."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Design Hit Counter",
+    "description": "Design a hit counter that counts the number of hits received in the past 5 minutes. Each hit is represented as a timestamp (in seconds) and can be received at any time. Your implementation should support a `hit(timestamp)` function that records a hit at the given timestamp, and a `getHits(timestamp)` function that returns the number of hits in the last 5 minutes (300 seconds) from the given timestamp.",
+    "topic": "Design",
+    "subtopic": "System Design",
+    "tags": [
+      "Design",
+      "System Design",
+      "Queue"
+    ],
+    "input_format": "A timestamp integer for the hit function and a timestamp integer for the getHits function.",
+    "output_format": "An integer representing the number of hits in the last 5 minutes.",
+    "constraints": [
+      "0 <= timestamp <= 2 * 10^9",
+      "All timestamps will be non-decreasing."
+    ],
+    "examples": [
+      {
+        "input": "hit(1); hit(2); hit(3); getHits(4);",
+        "output": "3",
+        "explanation": "There are 3 hits in the last 5 minutes (timestamps 1, 2, 3)."
+      },
+      {
+        "input": "hit(300); hit(300); hit(300); getHits(300);",
+        "output": "3",
+        "explanation": "At timestamp 300, there are 3 hits (all at time 300)."
+      },
+      {
+        "input": "getHits(301);",
+        "output": "0",
+        "explanation": "At timestamp 301, there are 0 hits in the last 5 minutes."
+      },
+      {
+        "input": "hit(500); getHits(600);",
+        "output": "1",
+        "explanation": "Only the hit at timestamp 500 is counted since it is in the last 5 minutes from 600."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a data structure that allows for efficient insertion and removal.",
+      "Think about how to maintain only relevant hit timestamps."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value store that supports the following operations:\n\n1. `set(key: str, value: str, timestamp: int)`: Stores the `value` associated with the `key`, at the given `timestamp` (in seconds).\n2. `get(key: str, timestamp: int) -> str`: Returns the value associated with the `key` that was set at the most recent timestamp less than or equal to the given `timestamp`. If no such value exists, return an empty string.\n\nImplement your key-value store using a data structure that allows efficient lookups and updates.",
+    "topic": "Design",
+    "subtopic": "System Design",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Map",
+      "HashMap"
+    ],
+    "input_format": "Two functions: `set` and `get`, defined as above.",
+    "output_format": "Return the string value associated with the key at the required timestamp for the `get` operation.",
+    "constraints": [
+      "The number of calls to `set` and `get` will be at most 100,000.",
+      "The `timestamp` will be a positive integer.",
+      "The `key` and `value` strings have length at most 100."
+    ],
+    "examples": [
+      {
+        "input": "obj = TimeMap(); obj.set('foo', 'bar', 1); obj.get('foo', 1)",
+        "output": "'bar'",
+        "explanation": "At timestamp 1, the key 'foo' is associated with value 'bar'."
+      },
+      {
+        "input": "obj.set('foo', 'bar', 1); obj.set('foo', 'baz', 3); obj.get('foo', 2)",
+        "output": "'bar'",
+        "explanation": "At timestamp 2, 'foo' has the last known value 'bar' which was set at timestamp 1."
+      },
+      {
+        "input": "obj.get('foo', 4)",
+        "output": "'baz'",
+        "explanation": "At timestamp 4, the last value set for 'foo' was 'baz' at timestamp 3."
+      },
+      {
+        "input": "obj.get('foo', 0)",
+        "output": "''",
+        "explanation": "At timestamp 0, no value has been set for 'foo'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dictionary to map keys to a list of tuples (timestamp, value).",
+      "Binary search might help to find the right timestamp."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Encode and Decode Strings",
+    "description": "Design a method to encode a list of strings to a single string and a method to decode a single string back to a list of strings. The encoded string should be able to uniquely represent the original list of strings, and you must consider cases like empty strings and strings that might contain special characters.",
+    "topic": "Strings",
+    "subtopic": "Encoding and Decoding",
+    "tags": [
+      "Strings",
+      "Encoding",
+      "Decoding"
+    ],
+    "input_format": "A list of strings, where 1 <= strings.length <= 10^4, and the length of each string is between 0 and 10^6.",
+    "output_format": "The encoded string after concatenating the original strings, and a decoded list of strings when decoding the encoded string.",
+    "constraints": [
+      "1 <= strings.length <= 10^4",
+      "0 <= strings[i].length <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "strings = [\"Hello\", \"World\", \"\"]",
+        "output": "\"Hello|World||\"",
+        "explanation": "The strings are concatenated with a delimiter '|'. The empty string is also included."
+      },
+      {
+        "input": "strings = [\"Leet\", \"Code\"]",
+        "output": "\"Leet|Code\"",
+        "explanation": "The strings are concatenated using '|' as delimiter."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Choose a unique delimiter that does not occur in the original strings.",
+      "Consider how to handle edge cases like empty strings."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Populating Next Right Pointers in Each Node II",
+    "description": "You are given a perfect binary tree where all leaves are on the same level, and every parent has two children. The tree should be modified so that each next pointer points to its next right node. If there is no next right node, the next pointer should be set to NULL. Initially, all next pointers are set to NULL. Implement a function that takes the root of the tree and populates these next pointers.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Depth-First Search",
+      "Breadth-First Search"
+    ],
+    "input_format": "The input is the root node of a perfect binary tree.",
+    "output_format": "Return the root node of the tree after populating the next right pointers.",
+    "constraints": [
+      "The number of nodes in the tree is between 0 and 6000.",
+      "Each node's value is unique."
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4, 5, 6, 7]",
+        "output": "[1,#,2,3,#,4,5,6,7,#]",
+        "explanation": "Each node is connected to its next right node in their respective levels."
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "explanation": "An empty tree should also return an empty array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a queue to keep track of nodes at each level.",
+      "You can traverse the tree level by level."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Throne Inheritance",
+    "description": "In a kingdom, there is a family tree where each member has a unique name and may have children. You are tasked with determining the inheritance order of the throne based on a given family tree structure. The king is at the root of the tree and can have multiple heirs. The inheritance follows the order from the king to his children and then to their children in depth-first order. If a member has no children, they are skipped. A member can only inherit the throne if they have not been skipped or removed due to specific conditions. Write a function that returns the rightful order of inheritance as a list of names.",
+    "topic": "Tree",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Inheritance"
+    ],
+    "input_format": "The input consists of a tree structure where each node has a name and a list of children.",
+    "output_format": "A list of strings representing the order of inheritance.",
+    "constraints": [
+      "1 <= number of members <= 1000",
+      "Each member has a unique name consisting of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "king -> [andy, michael], andy -> [david, josh]",
+        "output": "['king', 'andy', 'david', 'josh', 'michael']",
+        "explanation": "The king has two children: andy and michael. Andy has two children: david and josh. The order of inheritance is from king to andy, then to andy's children: david and josh, before michael."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use recursion to traverse the tree.",
+      "Consider using a list to collect the names in order."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Design HashMap",
+    "description": "Design and implement a HashMap that supports the basic operations: get, put, and remove. The implementation should handle collisions using chaining. Multiple keys can map to the same index, and you need to ensure that retrieving a value using a key that doesn't exist returns null.",
+    "topic": "Data Structures",
+    "subtopic": "Hash Table",
+    "tags": [
+      "HashMap",
+      "Data Structures",
+      "Design"
+    ],
+    "input_format": "Operations are provided as a list of strings where each string represents an operation in the form of 'put(key, value)', 'get(key)', or 'remove(key)'.",
+    "output_format": "The output should be the response of 'get' operations as an array of integers, where each entry corresponds to the value returned for its respective 'get' operation.",
+    "constraints": [
+      "All keys are non-negative integers.",
+      "The number of operations will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "operations = ['put(1, 1)', 'put(2, 2)', 'get(1)', 'get(3)', 'put(2, 1)', 'get(2)', 'remove(2)', 'get(2)']",
+        "output": "[1, null, 1, null]",
+        "explanation": "Initially, we put (1, 1) and (2, 2). Then, getting key 1 returns 1, getting key 3 returns null (as it doesn't exist). After updating key 2 to value 1, we get key 2 which returns 1. After removing key 2, getting key 2 returns null."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a list of lists for handling collisions.",
+      "Think about how to compute the index from a key."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Max Area of Island",
+    "description": "You are given a 2D grid of 0s (water) and 1s (land). An island is formed by connecting adjacent lands horizontally or vertically. Write a function that returns the maximum area of an island in the grid. If there is no island, return 0.",
+    "topic": "Depth-First Search",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "DFS",
+      "Graph",
+      "Matrix"
+    ],
+    "input_format": "A 2D list of integers grid where grid[i][j] represents the type of cell (0 or 1).",
+    "output_format": "An integer representing the maximum area of an island.",
+    "constraints": [
+      "Rows, R = grid.length",
+      "Columns, C = grid[i].length",
+      "1 <= R, C <= 50",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0,0,0,0,0],[0,1,1,0,0],[0,1,0,0,0],[0,0,0,1,1]]",
+        "output": "3",
+        "explanation": "The largest island has an area of 3 formed by the cells at (1,1), (1,2), and (2,1)."
+      },
+      {
+        "input": "grid = [[0,0,0],[0,0,0],[0,0,0]]",
+        "output": "0",
+        "explanation": "There are no islands in the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use Depth-First Search (DFS) to explore the island and count its area.",
+      "Keep track of the maximum area while traversing the grid."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers, return the indices of the two numbers that add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Map",
+    "tags": [
+      "Array",
+      "Hash Map",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers that add up to the target.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "Each input would have exactly one solution."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9, so the answer is [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6, so the answer is [1, 2]."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 3 + 3 = 6, so the answer is [0, 1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the difference between target and each number.",
+      "Check if the current number exists in the hash map."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given a list of courses and a list of prerequisites, where each course is represented by a unique integer. A prerequisite consists of a pair of courses, where the first course must be completed before the second course can be taken. Determine if it is possible to finish all courses given the prerequisites.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS"
+    ],
+    "input_format": "An integer numCourses representing the total number of courses, and a list of prerequisite pairs.",
+    "output_format": "A boolean indicating whether all courses can be finished.",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0]]",
+        "output": "true",
+        "explanation": "You can take course 0 first, then take course 1."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "false",
+        "explanation": "There is a circular dependency between courses 0 and 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a graph representation to track dependencies.",
+      "Use a topological sort algorithm to check for cycles."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Task Scheduler",
+    "description": "You are given a list of tasks that need to be executed, each represented as a character. You need to schedule these tasks in such a way that the same tasks are not executed next to each other. To enforce this, you may introduce idle time between the same tasks. Your goal is to return the minimum time required to complete all tasks. If it is not possible to complete all tasks due to constraints, return -1.",
+    "topic": "Heap",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Heap",
+      "Greedy",
+      "Task Scheduling"
+    ],
+    "input_format": "A string tasks representing the tasks to be executed.",
+    "output_format": "An integer representing the minimum time required to complete all tasks, or -1 if not possible.",
+    "constraints": [
+      "1 <= tasks.length <= 10^5",
+      "tasks consist of uppercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "tasks = 'AAABBB'",
+        "output": "6",
+        "explanation": "The tasks can be scheduled as 'ABABAB', taking a total of 6 time units."
+      },
+      {
+        "input": "tasks = 'AAAB'",
+        "output": "7",
+        "explanation": "The tasks can be scheduled as 'ABAB_ A', where '_' indicates an idle time, taking a total of 7 time units."
+      },
+      {
+        "input": "tasks = 'AAA'",
+        "output": "-1",
+        "explanation": "It is impossible to schedule all tasks without having the same tasks next to each other."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the frequencies of each task.",
+      "Use a max heap to manage task execution.",
+      "Think about idle time as a way to separate tasks."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Median",
+    "description": "Given an integer array nums and an integer k, return an array of the medians of each sliding window of size k. The median is the middle value of a sorted array. If the size of the array is even, return the average of the two middle values. You should implement the solution with an optimized approach to maintain the sliding window efficiently.",
+    "topic": "Sliding Window",
+    "subtopic": "Median",
+    "tags": [
+      "Sliding Window",
+      "Median",
+      "Sorting"
+    ],
+    "input_format": "An integer array nums and an integer k representing the size of the sliding window.",
+    "output_format": "An array of doubles representing the medians of each sliding window.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^6",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,3,-1,-3,5,3,6,7], k = 3",
+        "output": "[1.0,-1.0,3.0,5.0]",
+        "explanation": "For each sliding window of size 3, the medians are calculated as follows: [1,3,-1] => 1, [3,-1,-3] => -1, [-1,-3,5] => 3, [-3,5,3] => 5, [5,3,6] => 6, [3,6,7] => 6. The results are [1.0,-1.0,3.0,5.0,6.0]."
+      },
+      {
+        "input": "nums = [2,4,6,8], k = 2",
+        "output": "[3.0,5.0,7.0]",
+        "explanation": "The medians for each sliding window of size 2 are (2,4) => 3, (4,6) => 5, (6,8) => 7. Hence, the output is [3.0,5.0,7.0]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a data structure that efficiently supports insertions and deletions.",
+      "Keep track of the two halves of the sliding window to calculate the median."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) cache. It should support the following operations: get and put. The get(key) method retrieves the value of the key if the key exists in the cache, otherwise returns -1. The put(key, value) method updates or inserts the value if the key is not already present. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Design",
+    "subtopic": "Cache Implementation",
+    "tags": [
+      "Design",
+      "Cache",
+      "Linked List",
+      "Hash Map"
+    ],
+    "input_format": "The methods of the LRUCache include: LRUCache(int capacity), int get(int key), void put(int key, int value).",
+    "output_format": "The output is the result of the get operation, returning the associated value or -1 if not found.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^5",
+      "The functions get and put must each be called at most 10^4 times."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache(2), put(1, 1), put(2, 2), get(1), put(3, 3), get(2), put(4, 4), get(1), get(3), get(4)",
+        "output": "[null,null,null,1,null,-1,null,-1,3,4]",
+        "explanation": "Operations performed on the cache show that once the cache reached its limit, the least recently used item was removed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hash map and a doubly linked list.",
+      "Keep track of the order in which items are accessed."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to English Words",
+    "description": "Convert a non-negative integer to its English words representation. The integer can be between 0 and 2^31 - 1 (inclusive). For example, 123 should be converted to 'One Hundred Twenty Three'.",
+    "topic": "Math",
+    "subtopic": "Number Representation",
+    "tags": [
+      "Math",
+      "Strings",
+      "Conversion"
+    ],
+    "input_format": "A single integer num, where 0 <= num <= 2^31 - 1.",
+    "output_format": "A string representing the English words of the given integer.",
+    "constraints": [
+      "0 <= num <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "num = 123",
+        "output": "One Hundred Twenty Three",
+        "explanation": "The number 123 is broken down into One Hundred (100) and Twenty Three (23)."
+      },
+      {
+        "input": "num = 1000000",
+        "output": "One Million",
+        "explanation": "The number 1000000 translates to One Million directly."
+      },
+      {
+        "input": "num = 0",
+        "output": "Zero",
+        "explanation": "The integer 0 is represented as 'Zero'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Break down the number into segments of thousands.",
+      "Use a mapping for numbers below 20 and the tens."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Populating Next Right Pointers in Each Node",
+    "description": "You are given a perfect binary tree where all leaves are at the same level, and every parent has two children. The binary tree is represented by its nodes, and each node contains an additional pointer, 'next', which initially points to null. You need to populate these 'next' pointers to point to the adjacent node on the same level. If there is no adjacent node, the next pointer should be set to null.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Pointer"
+    ],
+    "input_format": "The root node of a perfect binary tree.",
+    "output_format": "Return the root of the tree after populating the next right pointers.",
+    "constraints": [
+      "The number of nodes in the tree is between 1 and 2^12 - 1.",
+      "Each node in the tree contains unique values."
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4, 5, 6, 7]",
+        "output": "The next pointers should be connected: 1 -> null, 2 -> 3, 3 -> null, 4 -> 5, 5 -> 6, 6 -> 7, 7 -> null",
+        "explanation": "The tree structure connects adjacent nodes on the same level, and the last node on each level points to null."
+      },
+      {
+        "input": "root = [1]",
+        "output": "1 -> null",
+        "explanation": "With only one node, its next pointer must point to null."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a level-order traversal approach.",
+      "Keep track of the current level and connect nodes as you traverse."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Graph Valid Tree",
+    "description": "Given an undirected graph represented as an array of edges, determine if the graph forms a valid tree. A valid tree must be connected and acyclic, which means there should be no cycles in the graph and all nodes must be reachable from one another.",
+    "topic": "Graph",
+    "subtopic": "Union Find",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Union Find"
+    ],
+    "input_format": "An integer n denoting the number of nodes in the graph, and a list of edges where each edge is represented as an array of two integers [u, v] indicating a connection between node u and node v.",
+    "output_format": "A boolean value, true if the graph forms a valid tree, false otherwise.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "0 <= edges.length <= 10^4",
+      "edges[i].length == 2",
+      "0 <= edges[i][0], edges[i][1] < n"
+    ],
+    "examples": [
+      {
+        "input": {
+          "n": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        "output": true,
+        "explanation": "The graph is connected and has no cycles, thus forming a valid tree."
+      },
+      {
+        "input": {
+          "n": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              2
+            ]
+          ]
+        },
+        "output": false,
+        "explanation": "The graph contains a cycle (2-3-4-2), so it is not a valid tree."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "A valid tree has exactly n - 1 edges.",
+      "Use Depth First Search (DFS) or Breadth First Search (BFS) to check if all nodes are connected."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Sorted Lists",
+    "description": "You are given the heads of two sorted linked lists. Merge the two lists into one sorted list. The merged list should be made by splicing together the nodes of the first two lists. Return the head of the merged linked list.",
+    "topic": "Linked List",
+    "subtopic": "Merging Linked Lists",
+    "tags": [
+      "Linked List",
+      "Merge",
+      "Sorting"
+    ],
+    "input_format": "The input consists of the heads of two sorted linked lists, List1 and List2.",
+    "output_format": "The output should be the head of the merged sorted linked list.",
+    "constraints": [
+      "The nodes in the input lists are sorted in non-decreasing order.",
+      "The number of nodes in each list is at most 100.",
+      "The value of each node is within the range [-100, 100]."
+    ],
+    "examples": [
+      {
+        "input": "List1: 1 -> 2 -> 4, List2: 1 -> 3 -> 4",
+        "output": "1 -> 1 -> 2 -> 3 -> 4 -> 4",
+        "explanation": "By merging both lists, we get a new sorted linked list."
+      },
+      {
+        "input": "List1: 2 -> 6, List2: 5 -> 7 -> 8",
+        "output": "2 -> 5 -> 6 -> 7 -> 8",
+        "explanation": "The merged list is sorted by combining elements from both lists."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a dummy node to simplify list merging.",
+      "Compare nodes from both lists and keep track of the head of the new list."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Swap Nodes in Pairs",
+    "description": "Given a linked list, swap every two adjacent nodes and return its head. You must perform the operation in place without modifying the values in the nodes. The input linked list should be treated as a 1-indexed list. If the list contains an odd number of nodes, the last node should remain in its position.",
+    "topic": "Linked List",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Linked List",
+      "In-place",
+      "Swap"
+    ],
+    "input_format": "A head node of a singly linked list where each node contains an integer value.",
+    "output_format": "The head node of the modified linked list after swapping adjacent nodes.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 100].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4]",
+        "output": "[2, 1, 4, 3]",
+        "explanation": "Swapping the first pair (1, 2) gives 2, 1, and swapping the second pair (3, 4) gives 4, 3."
+      },
+      {
+        "input": "head = [1]",
+        "output": "[1]",
+        "explanation": "Since there is only one node, no swapping is needed."
+      },
+      {
+        "input": "head = []",
+        "output": "[]",
+        "explanation": "The list is empty, so the output is also an empty list."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to iterate through the linked list.",
+      "Maintain pointers to the current node and the next node.",
+      "Think about how to handle the tail end of the list."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Patching Array",
+    "description": "Given a sorted integer array 'nums' and an integer 'n', you can add any positive integer value to the array 'nums' such that the array becomes able to form every integer sum from 1 to 'n'. You need to find the minimum number of integers you need to add to 'nums' to achieve that. Return this minimum number required.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers nums and an integer n.",
+    "output_format": "An integer representing the minimum number of integers needed to add.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "1 <= n <= 10^9",
+      "1 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3], n = 6",
+        "output": "1",
+        "explanation": "We can add the number 2 to the array to be able to form sums from 1 to 6."
+      },
+      {
+        "input": "nums = [1, 5, 10], n = 20",
+        "output": "2",
+        "explanation": "We need to add 2 and 4 to be able to form sums from 1 to 20."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the largest sum you can form with the current array.",
+      "Keep track of what sums are achievable and where the gaps are."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Univalue Path",
+    "description": "Given a binary tree, find the length of the longest path where each node in the path has the same value. This path can start and end at any node in the tree. The length of the path between two nodes is represented by the number of edges between them.",
+    "topic": "Tree",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Recursion"
+    ],
+    "input_format": "The root of a binary tree, where each node contains a value.",
+    "output_format": "An integer representing the length of the longest univalue path.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10000].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [5,4,5,1,1,5]",
+        "output": "2",
+        "explanation": "The longest univalue path is the path from the leaf node with value 5 to its parent with value 5, which has 2 edges."
+      },
+      {
+        "input": "root = [1, 4, 5, 4, 4, 5]",
+        "output": "2",
+        "explanation": "The univalue path can be represented through two of the 4's, which has a length of 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use depth-first search to explore each node.",
+      "Keep track of the current length of the univalue path as you traverse."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. An interval is represented as a pair of integers [start, end], where start is the starting point and end is the ending point of the interval. You should return a list of merged intervals in the order of their starting point.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A list of intervals, where each interval is represented by two integers [start, end].",
+    "output_format": "A list of merged intervals in the format [[start1, end1], [start2, end2], ...].",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "-10^4 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they are merged into [1,6]. The other intervals do not overlap."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] overlap at the endpoint 4, so they are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals by their starting points.",
+      "Use a loop to compare each interval with the last merged interval."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Operations to Make Numbers Non-positive",
+    "description": "You are given an integer array nums of length n. Your task is to determine the minimum number of operations required to make all elements in the array non-positive. An operation is defined as incrementing any element by 1 or decrementing any element by 1. You can perform any number of operations on any element, but you want to minimize the total number of operations across the entire array.",
+    "topic": "Array",
+    "subtopic": "Operations",
+    "tags": [
+      "Array",
+      "Manipulation",
+      "Minimum Operations"
+    ],
+    "input_format": "An integer array nums of length n. (1 <= n <= 10^5; -10^6 <= nums[i] <= 10^6)",
+    "output_format": "An integer representing the minimum number of operations required to make all elements non-positive.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, -1]",
+        "output": "6",
+        "explanation": "To make all numbers non-positive, we need to perform the following operations: 1->0 (1 operation), 2->0 (2 operations), 3->0 (3 operations). Total operations = 1 + 2 + 3 = 6."
+      },
+      {
+        "input": "nums = [-3, -2, -1, 0]",
+        "output": "0",
+        "explanation": "All numbers are already non-positive, so no operations are needed."
+      },
+      {
+        "input": "nums = [4, 5, 6]",
+        "output": "15",
+        "explanation": "To make all numbers non-positive, we need to perform the following operations: 4->0 (4 operations), 5->0 (5 operations), 6->0 (6 operations). Total operations = 4 + 5 + 6 = 15."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the absolute value of the positive numbers.",
+      "Think about how to minimize the sum of increments needed."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Copy List with Random Pointer",
+    "description": "You are given a linked list where each node contains an additional random pointer, which could point to any node in the list or null. Create a deep copy of the list. The copied list should have the same structure as the original list but should not share any references with it.",
+    "topic": "Linked List",
+    "subtopic": "Clone Linked List",
+    "tags": [
+      "Linked List",
+      "Clone",
+      "Deep Copy"
+    ],
+    "input_format": "The head of the linked list with random pointers.",
+    "output_format": "The head of the new cloned linked list.",
+    "constraints": [
+      "1 <= Number of nodes <= 1000",
+      "No cycles in the list."
+    ],
+    "examples": [
+      {
+        "input": "head = [[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "output": "[[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "explanation": "The cloned list is a deep copy of the original list."
+      },
+      {
+        "input": "head = [[1,1],[2,1]]",
+        "output": "[[1,1],[2,1]]",
+        "explanation": "Both nodes are connected through the random pointer."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a mapping to store the relationship between the original and the clone.",
+      "Consider how to handle the random pointers while copying."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. All operations should be done in average O(1) time complexity. The insert operation should add an item to the collection, the delete operation should remove an item from the collection, and the getRandom operation should return a random element from the collection. Each operation must be efficient in terms of time complexity.",
+    "topic": "Data Structure",
+    "subtopic": "Randomized Collection",
+    "tags": [
+      "Data Structure",
+      "Randomized",
+      "Implementation"
+    ],
+    "input_format": "You will be given commands in the form of a list. Each command will be one of 'insert x', 'delete x', or 'getRandom'.",
+    "output_format": "Return the results of the getRandom command, or a boolean result for the insert and delete commands.",
+    "constraints": [
+      "The `insert` operation will always be called with a value that is not currently in the collection.",
+      "The `delete` operation will be called with a value that currently exists in the collection.",
+      "The collection will contain at most 10^4 elements at any time."
+    ],
+    "examples": [
+      {
+        "input": "Commands: [['insert', 1], ['insert', 2], ['getRandom'], ['delete', 1], ['getRandom']]",
+        "output": "[2, 2]",
+        "explanation": "First we insert 1 and 2. getRandom can return either 1 or 2, then we delete 1. The next getRandom will return 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to store the elements and their indices.",
+      "Use an array to maintain the order and allow random access."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Merge k Sorted Lists",
+    "description": "You are given an array of k linked lists, each linked list is sorted in ascending order. Merge all the linked lists into one sorted linked list and return it. The resulting linked list should also be sorted.",
+    "topic": "Linked List",
+    "subtopic": "Merge Sorted List",
+    "tags": [
+      "Linked List",
+      "Sorting",
+      "Merge"
+    ],
+    "input_format": "An array of k linked lists where each linked list is represented by its head node.",
+    "output_format": "A single linked list representing the merged sorted list.",
+    "constraints": [
+      "k == lists.length",
+      "0 <= k <= 10^4",
+      "0 <= lists[i].length <= 500",
+      "-10^4 <= lists[i][j] <= 10^4",
+      "The nodes in each linked list are sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "lists = [[1,4,5],[1,3,4],[2,6]]",
+        "output": "[1,1,2,3,4,4,5,6]",
+        "explanation": "The merged linked list is 1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6."
+      },
+      {
+        "input": "lists = []",
+        "output": "[]",
+        "explanation": "If there are no linked lists, the result is an empty list."
+      },
+      {
+        "input": "lists = [[-1, 5, 11], [2, 6], []]",
+        "output": "[-1, 2, 5, 6, 11]",
+        "explanation": "The merged linked list is -1 -> 2 -> 5 -> 6 -> 11."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a priority queue to keep track of the smallest head node of each list.",
+      "You can implement the merging using a divide-and-conquer approach."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Find Median from Data Stream",
+    "description": "Design a data structure that supports the following two operations: Add a number and Find the median of all added numbers. The median is the middle number in a sorted list of numbers. If there is an even number of elements, the median is the average of the two middle numbers.",
+    "topic": "Data Structure",
+    "subtopic": "Heap",
+    "tags": [
+      "Data Structure",
+      "Heap",
+      "Median"
+    ],
+    "input_format": "An integer representing the number to be added to the data stream.",
+    "output_format": "A floating point number representing the current median after the number has been added.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "addNum(1); addNum(2); findMedian();",
+        "output": "1.5",
+        "explanation": "The numbers added so far are [1, 2]. The median is (1 + 2) / 2 = 1.5."
+      },
+      {
+        "input": "addNum(3); findMedian();",
+        "output": "2.0",
+        "explanation": "The numbers added so far are [1, 2, 3]. The median is 2."
+      },
+      {
+        "input": "addNum(4); findMedian();",
+        "output": "2.5",
+        "explanation": "The numbers added so far are [1, 2, 3, 4]. The median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two heaps to maintain the median.",
+      "The lower half of numbers can be stored in a max heap and the upper half in a min heap."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Random Pick with Weight",
+    "description": "You are given an array of integers w where w[i] represents the weight of the ith index. You need to implement a function that selects an index randomly with a probability proportional to its weight. In other words, an index i should be chosen with the probability of w[i] / sum(w). Your task is to design a class that supports this functionality.",
+    "topic": "Design",
+    "subtopic": "Randomization",
+    "tags": [
+      "Design",
+      "Probability",
+      "Randomization"
+    ],
+    "input_format": "An array of integers w of length n (1 <= n <= 10^5, 1 <= w[i] <= 10^6).",
+    "output_format": "An integer representing the randomly picked index based on the weights.",
+    "constraints": [
+      "1 <= w.length <= 10^5",
+      "1 <= w[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "w = [1, 3]",
+        "output": "1",
+        "explanation": "The total weight is 4. The probability of picking index 0 is 1/4 and index 1 is 3/4. Index 1 has a higher chance to be picked."
+      },
+      {
+        "input": "w = [1, 4]",
+        "output": "1",
+        "explanation": "Again, index 1 is more likely to be returned due to its larger weight relative to index 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using prefix sums to handle weights.",
+      "Binary search may be useful for picking an index based on a weight threshold."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Min Stack",
+    "description": "Design a stack that supports push, pop, top, and retrieving the minimum element in constant time. Your stack should support the following operations: \n\n- `push(x)`: Pushes the element x onto the stack.\n- `pop()`: Removes the element on the top of the stack.\n- `top()`: Get the top element of the stack.\n- `getMin()`: Retrieve the minimum element in the stack.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Stack",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "A series of operations on the stack in the form of commands: `push`, `pop`, `top`, and `getMin`.",
+    "output_format": "The output of the commands when applicable, especially for `top` and `getMin`.",
+    "constraints": [
+      "The total number of operations will not exceed 1000.",
+      "-10^6 <= x <= 10^6 (for `push` operations)"
+    ],
+    "examples": [
+      {
+        "input": "stack.push(-2); stack.push(0); stack.push(-3); stack.getMin(); stack.pop(); stack.top(); stack.getMin();",
+        "output": "-3\n0\n-2",
+        "explanation": "After pushing -2, 0, and -3, the minimum is -3. After popping, the top is 0 and the minimum is -2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to use an additional stack to keep track of the minimum values."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "N-Queens II",
+    "description": "The N-Queens II problem is to determine the number of distinct solutions to the N-Queens puzzle. In the N-Queens puzzle, you have to place N queens on an N\u00d7N chessboard so that no two queens threaten each other. This means that no two queens can share the same row, column, or diagonal. Your task is to return the total number of distinct arrangements of N queens on a chessboard.",
+    "topic": "Backtracking",
+    "subtopic": "N-Queens",
+    "tags": [
+      "Backtracking",
+      "DFS",
+      "Recursion"
+    ],
+    "input_format": "An integer n, representing the size of the chessboard (N x N).",
+    "output_format": "An integer representing the number of distinct solutions to the N-Queens problem.",
+    "constraints": [
+      "1 <= n <= 15"
+    ],
+    "examples": [
+      {
+        "input": "n = 4",
+        "output": "2",
+        "explanation": "The two distinct solutions for 4-queens are:\n1. .Q..\n   ...Q\n   Q...\n   ..Q.\n\n2. ..Q.\n   Q...\n   ...Q\n   .Q.."
+      },
+      {
+        "input": "n = 1",
+        "output": "1",
+        "explanation": "There is only one way to place one queen on a 1x1 chessboard."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider columns, left diagonals, and right diagonals to track the placement of queens.",
+      "Use backtracking to explore all possibilities of placing queens."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Profit From Trading Stocks",
+    "description": "You are given an array of integers where each integer represents the price of a given stock on that day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Max Profit",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where 1 <= prices.length <= 10^5 and 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the minimum price encountered so far.",
+      "Calculate potential profit at each price point and update max profit accordingly."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Container With Most Water",
+    "description": "Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with the x-axis forms a container, such that the container contains the most water. Return the maximum amount of water a container can store.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Greedy"
+    ],
+    "input_format": "An array of integers heights where heights[i] represents the height of the line at position i.",
+    "output_format": "An integer representing the maximum amount of water that can be contained.",
+    "constraints": [
+      "2 <= heights.length <= 10^5",
+      "0 <= heights[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "heights = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The lines at index 1 and 8 (height 8 and 7) can contain water up to 7 units, and the width between them is 7, so the area is 7 * 7 = 49."
+      },
+      {
+        "input": "heights = [1,1]",
+        "output": "1",
+        "explanation": "The only container formed by the lines at index 0 and 1 has a width of 1 and height 1, so the area is 1 * 1 = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two pointers to explore potential containers.",
+      "The area is determined by the shorter line."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Remove K Digits",
+    "description": "Given a non-negative integer num represented as a string, remove k digits from the number such that the new number is the smallest possible. If the resulting number is empty, return '0'.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Greedy",
+      "Stack"
+    ],
+    "input_format": "A string num representing a non-negative integer, and an integer k.",
+    "output_format": "A string representing the smallest number possible after removing k digits.",
+    "constraints": [
+      "1 <= num.length <= 100",
+      "0 <= k <= num.length",
+      "num does not have any leading zeros except the number '0' itself."
+    ],
+    "examples": [
+      {
+        "input": "num = '1432219', k = 3",
+        "output": "1219",
+        "explanation": "Removing '4', '3', and '2' yields the smallest number '1219'."
+      },
+      {
+        "input": "num = '10200', k = 1",
+        "output": "200",
+        "explanation": "Removing '1' yields '0200', but we return '200' as the smallest number."
+      },
+      {
+        "input": "num = '10', k = 2",
+        "output": "0",
+        "explanation": "Removing all digits leads to an empty string, which should return '0'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Look for the first digit that is greater than the next digit to remove.",
+      "Consider using a stack to help manage the digits."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Cheapest Flights Within K Stops",
+    "description": "Given a list of flights represented by a 2D array where flights[i] = [from_i, to_i, price_i], represents a flight from city from_i to city to_i with a given price price_i. You want to find the cheapest price from the starting city (src) to the destination city (dst), with at most K stops. If there is no such route, return -1.",
+    "topic": "Graph",
+    "subtopic": "Shortest Path",
+    "tags": [
+      "Graph",
+      "Minimum Cost",
+      "Dijkstra"
+    ],
+    "input_format": "The first parameter is an integer n (number of cities), the second parameter is a 2D array flights, the third parameter is an integer src (starting city), the fourth parameter is an integer dst (destination city), and the fifth parameter is an integer K (maximum number of stops).",
+    "output_format": "An integer representing the cheapest price to travel from src to dst with at most K stops. Return -1 if no such route exists.",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= flights.length <= 600",
+      "flights[i].length == 3",
+      "0 <= from_i, to_i < n",
+      "1 <= price_i <= 10^4",
+      "0 <= K <= n - 1",
+      "src != dst"
+    ],
+    "examples": [
+      {
+        "input": "n = 3, flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, K = 1",
+        "output": "200",
+        "explanation": "The cheapest flight from city 0 to city 2 with at most 1 stop goes from 0 to 1 to 2 at a cost of 100 + 100 = 200."
+      },
+      {
+        "input": "n = 3, flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, K = 0",
+        "output": "500",
+        "explanation": "The cheapest flight from city 0 to city 2 with no stops goes directly from 0 to 2 at a cost of 500."
+      },
+      {
+        "input": "n = 3, flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, K = 2",
+        "output": "300",
+        "explanation": "The cheapest flight from city 0 to city 2 with at most 2 stops is 0 to 1 to 2 (100 + 100) or 0 to 1 to 0 to 2. Both cost 200."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a modified version of Dijkstra's algorithm or BFS.",
+      "Use a priority queue to manage the cities to visit based on cost."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Count Subarrays With Fixed Bounds",
+    "description": "Given an integer array nums and two integers minK and maxK, return the number of contiguous subarrays such that there is at least one occurrence of minK and maxK in the subarray. A subarray is defined as a contiguous part of the array. Your goal is to count such subarrays efficiently.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Counting"
+    ],
+    "input_format": "An integer array nums followed by two integers minK and maxK.",
+    "output_format": "An integer representing the number of valid subarrays.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^9",
+      "0 <= minK <= maxK <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 5, 2, 8, 1, 4], minK = 1, maxK = 5",
+        "output": "11",
+        "explanation": "The valid subarrays are [1], [1, 3], [1, 3, 5], [3, 5], [5], [1, 3, 5, 2], [1, 3, 5, 2, 8], [3, 5, 2], [5, 2], [5, 2, 8], [2, 8]."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1, 3], minK = 1, maxK = 3",
+        "output": "9",
+        "explanation": "The valid subarrays include all possible combinations having both 1 and 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use two pointers to manage the window.",
+      "Track the indices of minK and maxK within the current window.",
+      "Count valid subarrays as you expand and contract the window."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Count Nodes Equal to Average of Subtree",
+    "description": "Given the root of a binary tree, return the count of nodes where the value of the node is equal to the average of the values of the nodes in its subtree. A subtree of a node is defined as the node itself and all of its descendants.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "DFS",
+      "Recursion"
+    ],
+    "input_format": "A binary tree represented by its root node.",
+    "output_format": "An integer representing the count of nodes equal to the average of their subtree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 10^4].",
+      "-10^5 <= Node.val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "root = [4,8,5,0,1,null,6]",
+        "output": "5",
+        "explanation": "The nodes 4, 8, 5, 0, and 1 are equal to the average of their respective subtrees."
+      },
+      {
+        "input": "root = [1]",
+        "output": "1",
+        "explanation": "The single node is equal to its own value, which is also the average of its subtree."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS to traverse the tree.",
+      "Calculate the sum and count of nodes in each subtree."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Meeting Rooms II",
+    "description": "Suppose you have a list of meeting intervals where each interval has a start time and an end time. Your task is to find the minimum number of meeting rooms required to accommodate all the meetings without any overlaps. Each room can only accommodate one meeting at a time.",
+    "topic": "Interval",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Intervals",
+      "Greedy",
+      "Sorting"
+    ],
+    "input_format": "An array of intervals, where each interval is represented as a pair of integers [start, end].",
+    "output_format": "An integer representing the minimum number of meeting rooms required.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "0 <= start < end <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[0, 30], [5, 10], [15, 20]]",
+        "output": "2",
+        "explanation": "The meetings [0, 30] and [5, 10] overlap, thus at least 2 rooms are needed."
+      },
+      {
+        "input": "intervals = [[7, 10], [2, 4]]",
+        "output": "1",
+        "explanation": "The meetings [7, 10] and [2, 4] do not overlap, thus only 1 room is needed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals by start time.",
+      "Use a priority queue to track the end times of meetings."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator II",
+    "description": "Implement a basic calculator to evaluate a simple expression string containing non-negative integers, '+', '-', '*', and '/' operators. The expression should be evaluated according to the standard operator precedence where multiplication and division have higher precedence than addition and subtraction. Ensure the expression is evaluated from left to right and handle any whitespace present in the string.",
+    "topic": "String",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "String",
+      "Math",
+      "Stack"
+    ],
+    "input_format": "A string expression containing non-negative integers and operators.",
+    "output_format": "An integer representing the result of the evaluated expression.",
+    "constraints": [
+      "The expression is guaranteed to be valid.",
+      "1 <= expression.length <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "expression = '3+2*2'",
+        "output": "7",
+        "explanation": "2*2 is evaluated first to get 4, then 3+4 gives 7."
+      },
+      {
+        "input": "expression = ' 3/2 '",
+        "output": "1",
+        "explanation": "The result of 3/2 is 1 after flooring the result, as per the problem statement."
+      },
+      {
+        "input": "expression = ' 3+5 / 2 '",
+        "output": "5",
+        "explanation": "5/2 is evaluated first to get 2 (as an integer division), then 3+2 gives 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to evaluate multi-operator expressions.",
+      "Take care of operator precedence while evaluating."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Sub-Folders from the Filesystem",
+    "description": "Given a list of strings representing paths to files or folders in a filesystem, you need to remove all sub-folder paths. A sub-folder is defined as a folder that is contained within another folder. The result should be a simplified list of unique top-level folders that are not sub-folders of any other folder.",
+    "topic": "String",
+    "subtopic": "Path Manipulation",
+    "tags": [
+      "String",
+      "Path",
+      "Simulation"
+    ],
+    "input_format": "An array of strings paths where each string represents a folder path.",
+    "output_format": "An array of strings representing the remaining top-level folder paths after removing sub-folders.",
+    "constraints": [
+      "1 <= paths.length <= 1000",
+      "1 <= paths[i].length <= 100",
+      "The paths will be represented in a standard UNIX-style format."
+    ],
+    "examples": [
+      {
+        "input": "paths = [\"/a/b/c\",\"/a/b/d\",\"/a/b/c/e\",\"/a/b/d/e\" ]",
+        "output": "[\"/a/b/c\",\"/a/b/d\"]",
+        "explanation": "The paths '/a/b/c/e' and '/a/b/d/e' are sub-folders of '/a/b/c' and '/a/b/d' respectively. Thus, they are removed."
+      },
+      {
+        "input": "paths = [\"/a/b/c\",\"/a/b/ca\",\"/a/b/cb\"]",
+        "output": "[\"/a/b/c\"]",
+        "explanation": "All entries are sub-folders of '/a/b/c'. Only '/a/b/c' is returned."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the paths to process them in order.",
+      "Use a stack or a list to keep track of the result."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Trie (Prefix Tree)",
+    "description": "Design and implement a Trie (Prefix Tree) with the following methods: `insert`, `search`, and `startsWith`. A Trie is a tree-like data structure that is used to store a dynamic set of strings where the keys are usually strings. The search operations for the string can be done in a time complexity proportional to the length of the string. Implement the following methods: \n\n- `insert(word: str)`: Inserts the string `word` into the Trie. \n- `search(word: str)`: Returns true if the string `word` is in the Trie (i.e., was inserted before), and false otherwise. \n- `startsWith(prefix: str)`: Returns true if there is any string in the Trie that starts with the given prefix.",
+    "topic": "Data Structures",
+    "subtopic": "Trie",
+    "tags": [
+      "Trie",
+      "Data Structure",
+      "Tree"
+    ],
+    "input_format": "The input consists of multiple operations on a list of strings, including `insert`, `search`, and `startsWith`.",
+    "output_format": "Return true or false depending on the result of the `search` or `startsWith` operations.",
+    "constraints": [
+      "1 <= word.length, prefix.length <= 200",
+      "The input consists of lowercase English letters only.",
+      "The number of operations does not exceed 10000."
+    ],
+    "examples": [
+      {
+        "input": "insert('apple'), search('apple'), search('app'), startsWith('app')",
+        "output": "[null, true, false, true]",
+        "explanation": "'apple' is inserted, so search for 'apple' returns true, search for 'app' returns false, but 'app' starts with 'apple'."
+      },
+      {
+        "input": "insert('app'), search('app'), search('apple'), startsWith('ap')",
+        "output": "[null, true, true, true]",
+        "explanation": "'app' is inserted, search for 'app' and 'apple' returns true, and 'ap' is a prefix for both."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how you can represent characters in a Trie.",
+      "Consider using a nested structure for every character in the Trie."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Path With Minimum Effort",
+    "description": "You are given a 2D grid of integers heights where heights[i][j] represents the height of a cell in the grid. You are to determine the path from the top-left corner (0, 0) to the bottom-right corner (m-1, n-1) that minimizes the maximum effort required to traverse the path. The effort between two adjacent cells is defined as the absolute difference of their heights. Return the minimum effort needed to travel from (0, 0) to (m-1, n-1).",
+    "topic": "Graph",
+    "subtopic": "Dijkstra's Algorithm",
+    "tags": [
+      "Graph",
+      "Dijkstra",
+      "Pathfinding"
+    ],
+    "input_format": "A 2D list of integers heights with dimensions m x n.",
+    "output_format": "An integer representing the minimum effort required to reach the bottom-right corner.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "1 <= heights[i][j] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "heights = [[1,2,3],[3,8,4],[5,3,5]]",
+        "output": "1",
+        "explanation": "The path from (0,0) to (2,2) that minimizes the maximum effort is: (0,0) -> (0,1) -> (1,1) -> (2,1) -> (2,2) with an effort of 1."
+      },
+      {
+        "input": "heights = [[1,2,3],[3,8,4],[5,3,5]]",
+        "output": "0",
+        "explanation": "The path from (0,0) to (1,1) is direct and requires no effort as all cells are of equal height."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a priority queue to explore paths by effort.",
+      "Consider using Dijkstra's algorithm to find the minimum effort path."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Events That Can Be Attended",
+    "description": "You are given an array of events where each event is represented by a start time and an end time. Your goal is to attend the maximum number of non-overlapping events. You can only attend one event at a time. Write a function that determines the maximum number of events that you can attend.",
+    "topic": "Greedy Algorithm",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Interval",
+      "Scheduling"
+    ],
+    "input_format": "An array of events, where each event is represented as an array of two integers [start, end].",
+    "output_format": "An integer representing the maximum number of non-overlapping events you can attend.",
+    "constraints": [
+      "1 <= events.length <= 10^4",
+      "0 <= start < end <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "events = [[1, 3], [2, 4], [3, 5]]",
+        "output": "2",
+        "explanation": "You can attend the events (1, 3) and (3, 5)."
+      },
+      {
+        "input": "events = [[1, 2], [3, 4], [2, 3]]",
+        "output": "3",
+        "explanation": "You can attend all events since they do not overlap."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the events by their ending times.",
+      "Use a greedy approach to select the next event that starts after the current one ends."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the i-th day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Stock Price Optimization",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the stock prices.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "There is no opportunity to make a profit. In this case, the best choice is to not buy at all."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price observed so far.",
+      "Calculate profit for each price and update maximum profit."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Roman to Integer",
+    "description": "Given a string representing a Roman numeral, convert it to an integer. The Roman numeral system uses the following symbols: I, V, X, L, C, D, M. Each symbol can represent different values: I=1, V=5, X=10, L=50, C=100, D=500, M=1000. In a Roman numeral, the value of a symbol can be added to the total, but if it precedes a symbol of greater value, it must be subtracted.",
+    "topic": "String",
+    "subtopic": "Parsing and Conversion",
+    "tags": [
+      "String",
+      "Conversion",
+      "Roman Numerals"
+    ],
+    "input_format": "A string s representing a Roman numeral (1 <= s.length <= 15).",
+    "output_format": "An integer representing the value of the Roman numeral.",
+    "constraints": [
+      "1 <= s.length <= 15",
+      "s consists of valid Roman numeral characters: I, V, X, L, C, D, M."
+    ],
+    "examples": [
+      {
+        "input": "s = \"III\"",
+        "output": "3",
+        "explanation": "The Roman numeral III is equivalent to 3."
+      },
+      {
+        "input": "s = \"IV\"",
+        "output": "4",
+        "explanation": "The Roman numeral IV is equivalent to 4 (5 - 1)."
+      },
+      {
+        "input": "s = \"IX\"",
+        "output": "9",
+        "explanation": "The Roman numeral IX is equivalent to 9 (10 - 1)."
+      },
+      {
+        "input": "s = \"LVIII\"",
+        "output": "58",
+        "explanation": "The Roman numeral LVIII is equivalent to 58 (50 + 5 + 3)."
+      },
+      {
+        "input": "s = \"MCMXCIV\"",
+        "output": "1994",
+        "explanation": "The Roman numeral MCMXCIV is equivalent to 1994 (1000 + 900 + 90 + 4)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the value of each numeral and how they interact.",
+      "Check the character order to determine addition or subtraction."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Design Add and Search Words Data Structure",
+    "description": "Implement a data structure that supports adding new words and searching for a word in a given set of words. The search may involve wildcards. A word is represented as a string consisting of lowercase English letters. The wildcard character '.' can be used to represent any letter. For example, 'a.b' should match 'acb', but not 'bbb'.",
+    "topic": "Data Structures",
+    "subtopic": "Trie",
+    "tags": [
+      "Trie",
+      "Data Structure",
+      "Search"
+    ],
+    "input_format": "The input consists of a sequence of operations, where each operation is either 'addWord(word)' to add a word or 'search(word)' to search for a word with possible wildcards.",
+    "output_format": "The output should be a boolean value indicating whether the searched word exists in the data structure.",
+    "constraints": [
+      "1 <= word.length <= 25",
+      "All words consist of lowercase English letters",
+      "The number of operations will not exceed 1000"
+    ],
+    "examples": [
+      {
+        "input": "addWord('bad'), addWord('dad'), addWord('mad'), search('pad')",
+        "output": "false",
+        "explanation": "'pad' does not match any of the words in the data structure."
+      },
+      {
+        "input": "search('bad')",
+        "output": "true",
+        "explanation": "'bad' is one of the added words."
+      },
+      {
+        "input": "search('.ad')",
+        "output": "true",
+        "explanation": "The wildcard '.' matches 'b', 'd', and 'm', resulting in matches with 'bad', 'dad', and 'mad'."
+      },
+      {
+        "input": "search('b..')",
+        "output": "true",
+        "explanation": "Wildcard '.' can match 'a' or 'd', giving matches for 'bad'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a Trie for efficient prefix and full-word searches.",
+      "Handle wildcards by exploring all possible characters at that position."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Single Element in a Sorted Array",
+    "description": "You are given a sorted array consisting of integers. Every element appears exactly twice, except for one element which appears only once. Write a function to find and return the single element that appears only once in the array.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Bit Manipulation"
+    ],
+    "input_format": "A sorted array of integers, nums.",
+    "output_format": "An integer representing the single element in the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "nums[i] must be sorted in ascending order.",
+      "All duplicates appear exactly twice, except for one."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2, 2, 3, 3, 4, 4, 5]",
+        "output": "5",
+        "explanation": "All numbers except for 5 appear twice. Therefore, the answer is 5."
+      },
+      {
+        "input": "nums = [0, 1, 1, 2, 2, 3, 3, 4, 4]",
+        "output": "0",
+        "explanation": "All numbers except for 0 appear twice. Therefore, the answer is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a binary search approach.",
+      "The single element's index will be different from expected index patterns."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "N-Queens",
+    "description": "The N-Queens puzzle is the challenge of placing N chess queens on an N\u00d7N chessboard so that no two queens threaten each other. The objective is to write a function that returns all distinct solutions to the N-Queens puzzle, where each solution is represented as a list of strings. Each string represents a row of the chessboard and contains '.' for an empty space and 'Q' for a queen.",
+    "topic": "Backtracking",
+    "subtopic": "N-Queens Problem",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "Chess"
+    ],
+    "input_format": "An integer n, the size of the chessboard (n x n).",
+    "output_format": "A list of solutions, where each solution is a list of strings representing the positions of the queens.",
+    "constraints": [
+      "1 <= n <= 9"
+    ],
+    "examples": [
+      {
+        "input": "n = 4",
+        "output": "[\".Q..\", \"...Q\", \"Q...\", \"..Q.\"], [\"..Q.\", \"Q...\", \"...Q\", \".Q..\"]",
+        "explanation": "There are two distinct solutions to the 4-Queens problem."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Try to place queens one by one in different columns.",
+      "Use backtracking to explore all possibilities."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Walls and Gates",
+    "description": "You are given a 2D grid of integers where each cell can be either a wall (represented by -1), a gate (represented by 0), or an empty room (represented by infinity, represented by 2147483647). Fill each empty room with the distance to its nearest gate. If it is impossible to reach a gate, the distance should remain as infinity.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid represented as a list of lists of integers.",
+    "output_format": "The same grid with empty rooms filled with the distance to the nearest gate.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 250",
+      "-1 <= grid[i][j] <= 2147483647"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[2147483647, -1, 0, 2147483647], [2147483647, 2147483647, 2147483647, -1], [2147483647, -1, 2147483647, -1], [0, -1, 2147483647, 2147483647]]",
+        "output": "[[3, -1, 0, 1], [2, 2, 1, -1], [1, -1, 2, -1], [0, -1, 3, 4]]",
+        "explanation": "The closest gate from each empty room is computed based on BFS traversal."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using BFS to explore the grid starting from the gates.",
+      "Check all 4 possible directions for each empty room."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Simplify Path",
+    "description": "Given a string representing an absolute path for a file (Unix-style), you need to simplify it. In a Unix-style file system, a path is represented as a sequence of directory names separated by slashes ('/'). Your goal is to return the simplified canonical path.",
+    "topic": "String",
+    "subtopic": "Path Manipulation",
+    "tags": [
+      "String",
+      "Path",
+      "Manipulation"
+    ],
+    "input_format": "A string path representing an absolute file path.",
+    "output_format": "A string representing the simplified canonical path.",
+    "constraints": [
+      "1 <= path.length <= 3000",
+      "path consists of English letters, digits, '/'' and '.'"
+    ],
+    "examples": [
+      {
+        "input": "/home/",
+        "output": "/home",
+        "explanation": "The trailing slash is not needed in the canonical path."
+      },
+      {
+        "input": "/../",
+        "output": "/",
+        "explanation": "Going to the parent directory from the root does not change the current directory."
+      },
+      {
+        "input": "/home//foo/",
+        "output": "/home/foo",
+        "explanation": "The duplicated slashes are unnecessary in the canonical path."
+      },
+      {
+        "input": "/a/./b/../../c/",
+        "output": "/c",
+        "explanation": "The current directory 'b' is simplified out."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider a stack data structure to keep track of the directories.",
+      "Use split and join methods effectively to handle slashes."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Swapping Nodes in a Linked List",
+    "description": "You are given the head of a linked list and two integer values, k and n. Your task is to swap the k-th node from the beginning with the n-th node from the end of the list. You should return the head of the modified linked list. If either k or n is out of bounds, simply return the original list.",
+    "topic": "Linked List",
+    "subtopic": "Node Manipulation",
+    "tags": [
+      "Linked List",
+      "Node",
+      "Swap"
+    ],
+    "input_format": "The head of a singly linked list and two integer values k and n.",
+    "output_format": "The head of the modified linked list after swapping the specified nodes.",
+    "constraints": [
+      "The linked list has at least 1 node.",
+      "1 <= k, n <= length of linked list."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2, n = 2",
+        "output": "[1, 4, 3, 2, 5]",
+        "explanation": "Swapping the 2nd node (value 2) from the beginning with the 2nd node (value 4) from the end results in the list [1, 4, 3, 2, 5]."
+      },
+      {
+        "input": "head = [1, 2, 3], k = 1, n = 3",
+        "output": "[3, 2, 1]",
+        "explanation": "Swapping the 1st node (value 1) from the beginning with the 1st node (value 3) from the end results in the reversed list [3, 2, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Track the length of the linked list first.",
+      "Use two pointers to find the nodes to be swapped.",
+      "Consider edge cases for head swapping and invalid k or n."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Elements",
+    "description": "Given a non-empty array of integers, return the k most frequent elements. You may return the answer in any order. The elements in the array can be negative, and the frequency of the elements will be used to determine their order.",
+    "topic": "Hash Table",
+    "subtopic": "Frequency Counting",
+    "tags": [
+      "Hash Table",
+      "Sorting",
+      "Heap"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An array of the k most frequent elements.",
+    "constraints": [
+      "1 <= k <= nums.length",
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,1,1,2,2,3], k = 2",
+        "output": "[1, 2]",
+        "explanation": "The element 1 appears three times and 2 appears two times."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "The only element is 1."
+      },
+      {
+        "input": "nums = [1,2,2,3,3,3], k = 2",
+        "output": "[3, 2]",
+        "explanation": "The elements 3 and 2 are the most frequent, appearing three and two times respectively."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to count the frequency of each number.",
+      "Consider using a min-heap to keep track of the top k elements."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within the string. You need to implement a function that efficiently computes the length of this substring.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A string s, where 1 <= s.length <= 10^5.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of English letters, digits, symbols and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The answer is \"abc\", with the length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The answer is \"b\", with the length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The answer is \"wke\", with the length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window to keep track of the characters.",
+      "A HashMap can be helpful to store the last positions of characters.",
+      "Try to optimize the search for repeating characters."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Word Abbreviation",
+    "description": "Given a string 'word' and a string 'abbr', return true if 'abbr' is a valid abbreviation of 'word'. A string 'abbr' is a valid abbreviation of 'word' if for some integer 'n', the following conditions hold: The length of 'abbr' is equal to or less than the length of 'word', and for each character in 'abbr', it represents either a single character in 'word' or a sequence of digits that represents the number of characters to skip in 'word'. For example, abbr 'a1b' means 'a' followed by 1 character from 'word' followed by 'b'.",
+    "topic": "String",
+    "subtopic": "Abbreviation",
+    "tags": [
+      "Strings",
+      "Abbreviation",
+      "Validation"
+    ],
+    "input_format": "A string 'word' and a string 'abbr'.",
+    "output_format": "A boolean indicating whether 'abbr' is a valid abbreviation of 'word'.",
+    "constraints": [
+      "1 <= word.length <= 100",
+      "1 <= abbr.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "word = 'international', abbr = 'i12nal'",
+        "output": "true",
+        "explanation": "'i12nal' represents 'i' followed by 12 characters, then 'n', 'a', 'l'."
+      },
+      {
+        "input": "word = 'apple', abbr = 'a2e'",
+        "output": "false",
+        "explanation": "'a2e' would mean 2 characters between 'a' and 'e', which cannot match 'apple'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how to parse digits in the abbreviation.",
+      "Use pointers to traverse both 'word' and 'abbr'."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Maximize Distance to Closest Person",
+    "description": "You are given an array representing a row of seats where seats[i] = 1 represents a person sitting in the ith seat, and seats[i] = 0 represents an empty seat. Maximize the distance between the closest person and the newly occupied seat. Return the maximum distance to the closest person for a new seat that can be occupied.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Greedy"
+    ],
+    "input_format": "An integer array seats of size n (1 \u2264 n \u2264 2 * 10^4) where each element is either 0 or 1.",
+    "output_format": "An integer representing the maximum distance to the closest person.",
+    "constraints": [
+      "The array seats is sorted in non-decreasing order.",
+      "There will be at least one empty seat."
+    ],
+    "examples": [
+      {
+        "input": "seats = [1,0,0,0,1]",
+        "output": "2",
+        "explanation": "The maximum distance to the closest person is 2 for the seat at index 2."
+      },
+      {
+        "input": "seats = [1,0,0,0,0,1]",
+        "output": "2",
+        "explanation": "The maximum distance is again 2 for the seat at index 2 or 3."
+      },
+      {
+        "input": "seats = [0,1]",
+        "output": "1",
+        "explanation": "The only valid distance is 1 when placing at index 0 or index 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the distances between occupied seats.",
+      "Use binary search to find the optimal placement."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Snapshot Array",
+    "description": "Design a snapshot array that can save and restore array states efficiently. The snapshot array is initialized with an array of integers. You can take a snapshot of the current array state, and then modify the array. After modifications, you can return the array as it was at the time of the snapshot. Implement the SnapshotArray class with the following methods: \n\n1. SnapshotArray(int length): Initializes the array with the specified length, with all elements set to 0.\n2. void set(int index, int val): Sets the element at the specified index to the given value.\n3. int snap(): Takes a snapshot of the current array state and returns the snapshot ID.\n4. int get(int index, int snap_id): Returns the value at the specified index at the time of the given snapshot ID.",
+    "topic": "Array",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Array",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "The class should be instantiated with an integer length. Operations can be called in the order described above.",
+    "output_format": "The methods should return the specified values as described in the methods.",
+    "constraints": [
+      "1 <= length <= 500",
+      "0 <= index <= length - 1",
+      "0 <= val <= 10^9",
+      "0 <= snap_id <= number of snaps taken"
+    ],
+    "examples": [
+      {
+        "input": "SnapshotArray snapshotArr = new SnapshotArray(3);\nsnapshotArr.set(0, 5);\nsnapshotArr.snap();\nsnapshotArr.set(0, 6);\nsnapshotArr.get(0, 0);",
+        "output": "5",
+        "explanation": "The value at index 0 was set to 5 before the snapshot was taken, so it returns 5."
+      },
+      {
+        "input": "SnapshotArray snapshotArr = new SnapshotArray(3);\nsnapshotArr.set(0, 5);\nsnapshotArr.snap();\nsnapshotArr.set(0, 6);\nsnapshotArr.snap();\nsnapshotArr.get(0, 1);",
+        "output": "6",
+        "explanation": "After the second snapshot, the current value is 6, so it returns 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a list of lists to manage the snapshots.",
+      "An efficient way to store snapshots and their respective IDs will improve performance.",
+      "Remember to handle edge cases when the snapshot array is accessed."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Most Profitable Path in a Tree",
+    "description": "You are given a tree where each node has a value representing profit. You can start from any node and traverse the tree according to the edges. Your task is to find the path that maximizes the total profit. A path is defined as a sequence of nodes where each consecutive node is connected by an edge. You may not visit the same node more than once.",
+    "topic": "Tree",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Tree",
+      "Dynamic Programming",
+      "DFS"
+    ],
+    "input_format": "A list of edges, where each edge is represented as a pair of integers [u, v], indicating a connection between nodes u and v. Additionally, a list of integers representing the profit at each node.",
+    "output_format": "An integer representing the maximum profit obtainable from any path in the tree.",
+    "constraints": [
+      "1 <= number of nodes <= 10^5",
+      "-10^4 <= profit[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": {
+          "edges": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          "profit": [
+            0,
+            5,
+            10,
+            20,
+            15
+          ]
+        },
+        "output": "30",
+        "explanation": "The path 2 -> 4 gives a profit of 10 + 20 = 30."
+      },
+      {
+        "input": {
+          "edges": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "profit": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "output": "6",
+        "explanation": "The best path is 1 -> 2 -> 4 which gives a profit of 1 + 2 + 4 = 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using depth-first search (DFS) to explore paths.",
+      "Keep track of the maximum profit on each path.",
+      "You can use a recursive function to evaluate each branch of the tree."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+    "description": "Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Construction",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Recursion"
+    ],
+    "input_format": "Two integer arrays, preorder and inorder, representing the preorder and inorder traversal of a binary tree.",
+    "output_format": "The root node of the constructed binary tree.",
+    "constraints": [
+      "1 <= preorder.length <= 3000",
+      "preorder.length == inorder.length",
+      "preorder and inorder consist of unique values",
+      "Each value of preorder and inorder is a whole number."
+    ],
+    "examples": [
+      {
+        "input": "preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]",
+        "output": "TreeNode(3, TreeNode(9), TreeNode(20, TreeNode(15), TreeNode(7)))",
+        "explanation": "The binary tree is constructed as follows: root is 3, left child is 9, right child is 20 with children 15 and 7."
+      },
+      {
+        "input": "preorder = [1,2], inorder = [2,1]",
+        "output": "TreeNode(1, TreeNode(2))",
+        "explanation": "The binary tree consists of root 1 and a left child 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the first element of the preorder array as the root.",
+      "Use the inorder array to determine the left and right subtrees.",
+      "Recursively construct the left and right subtrees."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Word Break",
+    "description": "Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Backtracking"
+    ],
+    "input_format": "A string s followed by a list of strings wordDict.",
+    "output_format": "A boolean value indicating whether s can be segmented into words from the dictionary.",
+    "constraints": [
+      "1 <= s.length <= 300",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 20",
+      "All strings in wordDict are lowercase."
+    ],
+    "examples": [
+      {
+        "input": "s = 'leetcode', wordDict = ['leet', 'code']",
+        "output": "true",
+        "explanation": "The string 'leetcode' can be segmented as 'leet code'."
+      },
+      {
+        "input": "s = 'applepenapple', wordDict = ['apple', 'pen']",
+        "output": "true",
+        "explanation": "The string 'applepenapple' can be segmented as 'apple pen apple'."
+      },
+      {
+        "input": "s = 'catsandog', wordDict = ['cats', 'dog', 'sand', 'and', 'cat']",
+        "output": "false",
+        "explanation": "The string 'catsandog' cannot be segmented into words from the dictionary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dynamic programming approach.",
+      "You might want to keep track of valid partitions up to each index."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "DFS",
+      "Graph",
+      "Union Find",
+      "Grid"
+    ],
+    "input_format": "A 2D binary grid represented as a list of lists.",
+    "output_format": "An integer representing the number of islands.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [['1','1','1','1','0'], ['1','1','0','1','0'], ['1','1','0','0','0'], ['0','0','0','0','0']]",
+        "output": "1",
+        "explanation": "There is one island in the grid."
+      },
+      {
+        "input": "grid = [['1','1','0','0','0'], ['1','1','0','0','0'], ['0','0','1','0','0'], ['0','0','0','1','1']]",
+        "output": "3",
+        "explanation": "There are three islands in total."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Depth-First Search to explore the grid.",
+      "Iterate through each cell and initiate DFS when you find an unvisited land cell."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Leaf-Similar Trees",
+    "description": "Given two binary trees, determine if they are leaf-similar. Two binary trees are considered leaf-similar if their leaf value sequences are the same. A leaf is a node with no children. Compare the two trees to see if they produce the same sequence of leaf values when traversed from left to right.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "DFS"
+    ],
+    "input_format": "Two binary trees represented by their root nodes root1 and root2.",
+    "output_format": "A boolean value indicating whether the two trees are leaf-similar.",
+    "constraints": [
+      "The number of nodes in each tree is in the range [1, 200].",
+      "Node values are in the range [0, 200]."
+    ],
+    "examples": [
+      {
+        "input": "root1 = [3,5,1,6,2,9,8], root2 = [3,5,1,6,7,4,8]",
+        "output": "false",
+        "explanation": "The leaf sequence for tree 1 is [6, 2, 9, 8], while for tree 2 it's [6, 7, 4, 8]. Hence, they are not leaf-similar."
+      },
+      {
+        "input": "root1 = [1,2,3], root2 = [1,3,2]",
+        "output": "true",
+        "explanation": "Both trees have a leaf sequence of [2, 3], which makes them leaf-similar."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use depth-first search (DFS) to collect leaf nodes.",
+      "Compare the two leaf sequences obtained from both trees."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Removable Characters",
+    "description": "Given a string 's' and a string 'p', you can remove up to 'k' characters from 's'. Your task is to determine the maximum number of characters you can remove from 's' such that 'p' is still a subsequence of the remaining characters in 's'. A subsequence is defined as a sequence derived by deleting some or no elements of a string without changing the order of the remaining elements.",
+    "topic": "String",
+    "subtopic": "Subsequence",
+    "tags": [
+      "String",
+      "Subsequence",
+      "Two Pointers",
+      "Greedy"
+    ],
+    "input_format": "A string 's', a string 'p', and an integer 'k'.",
+    "output_format": "An integer representing the maximum number of characters that can be removed from 's'.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= p.length <= 1000",
+      "0 <= k <= s.length"
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcde', p = 'ace', k = 1",
+        "output": "1",
+        "explanation": "You can remove 'b' or 'd' from 's' to keep 'p' as a subsequence."
+      },
+      {
+        "input": "s = 'abc', p = 'd', k = 2",
+        "output": "2",
+        "explanation": "You can remove all characters from 's' to keep 'p' as an empty subsequence."
+      },
+      {
+        "input": "s = 'xyyz', p = 'yz', k = 1",
+        "output": "1",
+        "explanation": "You can remove one 'x' or one 'y' to keep 'p' as a subsequence."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how many characters in 's' must remain to form 'p'.",
+      "Use a two-pointer technique to check subsequence conditions."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Cherry Pickup",
+    "description": "In a 2D grid representing a cherry orchard, you are given a grid where each cell contains either a cherry (1) or an empty space (0). Starting from the top-left corner, you want to collect as many cherries as possible by moving to the right or downward, and another player starts from the bottom-right corner, also moving upwards or to the left. You both collect cherries until you reach each other's starting position. The goal is to find the maximum number of cherries you can collect together without colliding into each other.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "DFS",
+      "Backtracking"
+    ],
+    "input_format": "A 2D list `grid` of size m x n (1 <= m, n <= 50), where each cell contains either 0 (empty) or 1 (cherry).",
+    "output_format": "An integer representing the maximum number of cherries that can be collected.",
+    "constraints": [
+      "1 <= m, n <= 50",
+      "grid[i][j] is either 0 or 1"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0,1,0],[1,1,1],[0,1,0]]",
+        "output": "5",
+        "explanation": "Both players can collect 5 cherries in total by optimal movements."
+      },
+      {
+        "input": "grid = [[1,0,0],[0,1,1],[0,0,1]]",
+        "output": "3",
+        "explanation": "Both players can collect 3 cherries in total."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about dynamic programming to fill the grid with maximum cherries collectible.",
+      "Consider the paths the two players can take and how they can maximize their collection."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Evaluate Division",
+    "description": "You are given a list of equations representing relationships between variables, and a list of queries, each asking for the result of a division operation on a pair of variables. Your task is to evaluate each query and return the results in the same order. If a division cannot be evaluated, return -1. The equations are given as a list of strings, where each string is in the form 'a/b = k', meaning that the value of 'a' divided by the value of 'b' equals 'k'.",
+    "topic": "Graph",
+    "subtopic": "Graph Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Union-Find"
+    ],
+    "input_format": "A list of equations represented as strings and a list of queries represented as string pairs.",
+    "output_format": "A list of float values representing the results of each query.",
+    "constraints": [
+      "1 <= equations.length <= 20",
+      "equations[i].length == 5",
+      "a, b are lowercase English letters.",
+      "1 <= queries.length <= 20",
+      "Queries are guaranteed to be valid."
+    ],
+    "examples": [
+      {
+        "input": {
+          "equations": [
+            "a/b = 2.0",
+            "b/c = 3.0"
+          ],
+          "queries": [
+            [
+              "a",
+              "c"
+            ],
+            [
+              "b",
+              "a"
+            ],
+            [
+              "a",
+              "e"
+            ],
+            [
+              "a",
+              "a"
+            ],
+            [
+              "x",
+              "x"
+            ]
+          ]
+        },
+        "output": [
+          6.0,
+          0.5,
+          -1.0,
+          1.0,
+          -1.0
+        ],
+        "explanation": "Query 'a/c' can be evaluated as 2.0 * 3.0 = 6.0. Query 'b/a' is the inverse of the first equation, yielding 0.5. Other queries either involve unknown variables or self-divisions."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use graph representation for the equations.",
+      "Consider using depth-first search (DFS) to find paths between variables."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Range Sum Query 2D - Immutable",
+    "description": "Given a 2D matrix of integers, find the sum of the elements inside the rectangle defined by its upper left corner (row1, col1) and its lower right corner (row2, col2). You must implement a method to initialize the matrix and another method to calculate the sum of numbers in the specified rectangle. The matrix should remain immutable after initialization.",
+    "topic": "Matrix",
+    "subtopic": "2D Range Queries",
+    "tags": [
+      "Matrix",
+      "2D Array",
+      "Range Sum"
+    ],
+    "input_format": "A 2D matrix of integers and queries in the form of [row1, col1, row2, col2].",
+    "output_format": "An integer representing the sum of elements in the specified rectangle.",
+    "constraints": [
+      "1 <= matrix.length, matrix[i].length <= 200",
+      "-10^5 <= matrix[i][j] <= 10^5",
+      "The number of calls to sumRegion() does not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[3, 0, 1, 4, 2], [5, 6, 3, 2, 1], [1, 2, 0, 1, 5], [4, 1, 0, 1, 7], [1, 0, 3, 0, 5]], query = [2, 1, 4, 3]",
+        "output": "8",
+        "explanation": "The sum of the elements in the rectangle defined by (2, 1) and (4, 3) is 8."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a prefix sum array for efficient range queries.",
+      "Each sumRegion query can be processed in constant time if the prefix sum is computed correctly."
+    ],
+    "company": "Snowflake"
+  },
+  {
+    "question_id": "",
+    "title": "Making A Large Island",
+    "description": "You are given a 2D grid of 0s and 1s, where 0 represents water and 1 represents land. Your task is to find the area of the largest island (connected component of 1s). An island is considered to be large if it consists of more than one cell. You may assume all four adjacent cells (horizontally or vertically) are connected. If there are no islands, return 0.",
+    "topic": "Graph",
+    "subtopic": "DFS/BFS",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid represented as a list of lists of integers, where each integer can either be 0 or 1.",
+    "output_format": "An integer representing the area of the largest island.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 50",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0, 0, 1, 0], [0, 1, 1, 0], [0, 0, 0, 0], [1, 0, 1, 1]]",
+        "output": "4",
+        "explanation": "The largest island is formed at the coordinates (1, 1) and (1, 2), (0, 2) and (2, 3), giving an area of 4."
+      },
+      {
+        "input": "grid = [[1, 1], [1, 1]]",
+        "output": "4",
+        "explanation": "The entire grid is an island and thus has an area of 4."
+      },
+      {
+        "input": "grid = [[0, 0], [0, 0]]",
+        "output": "0",
+        "explanation": "There are no islands in the grid."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using Depth-First Search (DFS) to explore the grid.",
+      "Make sure to mark visited cells to avoid counting them multiple times.",
+      "Think about how to count the area by tracking connected components."
+    ],
+    "company": "Snowflake"
+  }
+]

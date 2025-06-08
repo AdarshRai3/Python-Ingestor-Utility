@@ -1,0 +1,90 @@
+[
+  {
+    "question_id": "",
+    "title": "Find Median from Data Stream",
+    "description": "Design a data structure that supports the following two operations: addNum and findMedian.\n\n1. addNum(int num) - Adds the integer num from the data stream to the data structure.\n2. findMedian() - Returns the median of all elements so far. The median is the value that separates the higher half from the lower half of the data collection.\n\nIf the collection of numbers is even, there is no middle value and the median is defined as the average of the two middle values.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Heap",
+      "Design",
+      "Data Stream"
+    ],
+    "input_format": "You can assume that each call to addNum is valid and will be followed by a call to findMedian.",
+    "output_format": "The median of the numbers added so far, returned as a float.",
+    "constraints": [
+      "1 <= num <= 10^5",
+      "call to findMedian is always valid when called."
+    ],
+    "examples": [
+      {
+        "input": [
+          "addNum(1)",
+          "addNum(2)",
+          "findMedian()"
+        ],
+        "output": "1.5",
+        "explanation": "The numbers added are [1, 2]. The median is (1 + 2) / 2 = 1.5."
+      },
+      {
+        "input": [
+          "addNum(3)",
+          "findMedian()"
+        ],
+        "output": "2",
+        "explanation": "The numbers added are [1, 2, 3]. The median is 2."
+      },
+      {
+        "input": [
+          "addNum(4)",
+          "findMedian()"
+        ],
+        "output": "2.5",
+        "explanation": "The numbers added are [1, 2, 3, 4]. The median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use two heaps to maintain the median.",
+      "A max-heap for the lower half and a min-heap for the upper half."
+    ],
+    "company": "Tinder"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Largest Element in a Stream",
+    "description": "Design a class that maintains the k largest elements in a stream of numbers. The class should support the following operations:\n\n- `add(val: int)`: Adds a new integer `val` to the stream.\n- `getKthLargest() -> int`: Returns the k-th largest element in the stream. If there are fewer than k elements, return -1.",
+    "topic": "Heap",
+    "subtopic": "Min-Heap",
+    "tags": [
+      "Heap",
+      "Stream",
+      "Design"
+    ],
+    "input_format": "The constructor takes two parameters: an integer k and an integer array initial. The add function takes one integer parameter val.",
+    "output_format": "The output from getKthLargest() should be the k-th largest element in the current stream.",
+    "constraints": [
+      "1 <= k <= 1000",
+      "0 <= val <= 10^6",
+      "The number of calls to add() will be at most 10^5."
+    ],
+    "examples": [
+      {
+        "input": "KthLargest kthLargest = new KthLargest(3, new int[]{4, 5, 8, 2});\nkthLargest.add(3);\nkthLargest.add(5);\nkthLargest.add(10);\nkthLargest.add(9);\nkthLargest.add(4);",
+        "output": "8",
+        "explanation": "After adding the numbers, the stream contains [4, 5, 8, 2, 3, 5, 10, 9, 4]. The 3rd largest element is 8."
+      },
+      {
+        "input": "KthLargest kthLargest = new KthLargest(1, new int[]{});\nkthLargest.add(-1);",
+        "output": "-1",
+        "explanation": "There is no element to return since k=1 but the stream is empty."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a min-heap to maintain the k largest elements.",
+      "If the size of the heap exceeds k, remove the smallest element."
+    ],
+    "company": "Tinder"
+  }
+]

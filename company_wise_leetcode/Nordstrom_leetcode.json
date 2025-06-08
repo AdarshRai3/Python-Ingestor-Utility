@@ -1,0 +1,390 @@
+[
+  {
+    "question_id": "",
+    "title": "Palindrome Permutation",
+    "description": "Given a string s, return true if any permutation of s could form a palindrome. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward (ignoring spaces, punctuation, and capitalization). For example, \"racecar\" is a palindrome, while \"hello\" is not. In this problem, we only consider the characters in the given string and ignore the frequency of the characters outside their ability to form a palindrome.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Permutation"
+    ],
+    "input_format": "A string s, consisting of lowercase and uppercase letters.",
+    "output_format": "A boolean value: true if any permutation of s can form a palindrome, otherwise false.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of English letters (both lowercase and uppercase)."
+    ],
+    "examples": [
+      {
+        "input": "s = \"civic\"",
+        "output": "true",
+        "explanation": "\"civic\" can be rearranged to form a palindrome."
+      },
+      {
+        "input": "s = \"ivicc\"",
+        "output": "true",
+        "explanation": "\"ivicc\" can be rearranged to form a palindrome."
+      },
+      {
+        "input": "s = \"hello\"",
+        "output": "false",
+        "explanation": "There is no way to rearrange \"hello\" to form a palindrome."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Count the frequency of each character.",
+      "A string can form a palindrome if at most one character has an odd count."
+    ],
+    "company": "Nordstrom"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to English Words",
+    "description": "Convert a non-negative integer to its English words representation. Given a number in the range [0, 2^31 - 1], return its corresponding English words. For example, the number 123 should be returned as 'One Hundred Twenty Three'.",
+    "topic": "Mathematics",
+    "subtopic": "Number Conversion",
+    "tags": [
+      "Integer",
+      "String Manipulation",
+      "Mathematics"
+    ],
+    "input_format": "A non-negative integer num in the range [0, 2^31 - 1].",
+    "output_format": "A string representing the English words corresponding to the given integer.",
+    "constraints": [
+      "0 <= num <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "num = 123",
+        "output": "One Hundred Twenty Three",
+        "explanation": "The number 123 is represented as 'One Hundred Twenty Three' in English."
+      },
+      {
+        "input": "num = 1000",
+        "output": "One Thousand",
+        "explanation": "The number 1000 is represented as 'One Thousand' in English."
+      },
+      {
+        "input": "num = 0",
+        "output": "Zero",
+        "explanation": "The number 0 is represented as 'Zero' in English."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Break down the number into thousands, hundreds, tens, and units.",
+      "Use an array or a map to store the word representations of numbers."
+    ],
+    "company": "Nordstrom"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected, and it will automatically contact the police if two adjacent houses were broken into on the same night. Given an integer array 'nums' representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.",
+    "topic": "Dynamic Programming",
+    "subtopic": "1D DP",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers nums representing the amount of money at each house.",
+    "output_format": "An integer representing the maximum amount of money that can be robbed without alerting the police.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 400"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 9, 3, 1]",
+        "output": "12",
+        "explanation": "Robbing houses 1 (2) and 3 (9) gives the maximum amount: 2 + 9 + 1 = 12."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Robbing houses 1 (1) and 3 (3) gives the maximum amount: 1 + 3 = 4."
+      },
+      {
+        "input": "nums = [10, 2, 5, 10, 1]",
+        "output": "20",
+        "explanation": "Robbing houses 0 (10) and 3 (10) gives the maximum amount: 10 + 10 = 20."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to keep track of the maximum money that can be robbed up to each house.",
+      "Think about the relationship between the current house and the previous houses."
+    ],
+    "company": "Nordstrom"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber II",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. However, adjacent houses have security systems connected, and if two adjacent houses are broken into, the alarm will go off. Given an integer array representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police. This time the houses are arranged in a circle, which means the first house is adjacent to the last one.",
+    "topic": "Dynamic Programming",
+    "subtopic": "House Robber",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Circular Array"
+    ],
+    "input_format": "An integer array nums representing the amount of money at each house.",
+    "output_format": "An integer representing the maximum amount of money that can be robbed.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 2]",
+        "output": "3",
+        "explanation": "Robbing the second house will yield maximum money without alerting the police."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Robbing the first and third houses will yield maximum money."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "0",
+        "explanation": "No money to rob."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider separate scenarios for robbing with and without the first house.",
+      "Utilize dynamic programming to optimize the subproblems."
+    ],
+    "company": "Nordstrom"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order. The spiral order starts from the top-left corner, moves right until the end of the row, then moves down the last column, then moves left across the bottom row, and moves up the first column, continuously repeating this process until all elements are traversed.",
+    "topic": "Matrix",
+    "subtopic": "Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Spiral"
+    ],
+    "input_format": "An m x n integer matrix.",
+    "output_format": "A list of integers representing the elements of the matrix in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "m * n <= 10^4",
+      "-10^5 <= matrix[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The elements are traversed in spiral order starting from 1 and moving towards 5."
+      },
+      {
+        "input": "matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]",
+        "output": "[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]",
+        "explanation": "The spiral order starts from 1, proceeding right, then downwards, and continues spiraling inwards."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the boundaries of the matrix while traversing.",
+      "Use four pointers to track the boundaries."
+    ],
+    "company": "Nordstrom"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given an integer numCourses representing the total number of courses you have to take, labeled from 0 to numCourses - 1. You are also given an array prerequisites where prerequisites[i] = [a, b] indicates that you must take course b first if you want to take course a. Return true if you can finish all courses. Otherwise, return false.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sorting",
+      "DFS"
+    ],
+    "input_format": "An integer numCourses, followed by an array of prerequisites.",
+    "output_format": "A boolean value indicating whether it's possible to finish all courses.",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2",
+      "0 <= prerequisites[i][0], prerequisites[i][1] < numCourses"
+    ],
+    "examples": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0]]",
+        "output": "true",
+        "explanation": "You can take course 0 first then take course 1."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "false",
+        "explanation": "There is a cycle in the prerequisites, so you cannot complete all courses."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using topological sorting.",
+      "Check for cycles in the graph."
+    ],
+    "company": "Nordstrom"
+  },
+  {
+    "question_id": "",
+    "title": "Word Break",
+    "description": "Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Segmentation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Backtracking"
+    ],
+    "input_format": "A string s and a list of strings wordDict.",
+    "output_format": "A boolean value: true if s can be segmented; otherwise, false.",
+    "constraints": [
+      "1 <= s.length <= 300",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 20",
+      "s and wordDict[i] consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'leetcode', wordDict = ['leet', 'code']",
+        "output": "true",
+        "explanation": "'leetcode' can be segmented as 'leet code'."
+      },
+      {
+        "input": "s = 'applepenapple', wordDict = ['apple', 'pen']",
+        "output": "true",
+        "explanation": "'applepenapple' can be segmented as 'apple pen apple'."
+      },
+      {
+        "input": "s = 'catsandog', wordDict = ['cats', 'dog', 'sand', 'and', 'cat']",
+        "output": "false",
+        "explanation": "'catsandog' cannot be segmented into the dictionary words."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to build a solution.",
+      "Use a boolean array to track the segments of the string."
+    ],
+    "company": "Nordstrom"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) cache. It should support the following operations: get and put. The get operation retrieves the value of the key if the key exists in the cache, otherwise returns -1. The put operation will insert or update the value of the key. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structures",
+    "subtopic": "Cache",
+    "tags": [
+      "Cache",
+      "Data Structure",
+      "LRU"
+    ],
+    "input_format": "The constructor will receive an integer capacity representing the maximum number of items that can be stored in the cache.",
+    "output_format": "For the get operation, return the value associated with the key. For the put operation, there is no return value.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^4",
+      "At most 10^4 calls will be made to get and put."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache cache = new LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1,-1,3,4]",
+        "explanation": "Cache is {1=1, 2=2} -> return 1; Cache is {3=3, 1=1} (2 was least recently used and evicted) -> return -1; Cache is {3=3, 4=4} (1 was least recently used and evicted) -> return 3; Cache is {4=4, 3=3} -> return 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a combination of a HashMap and a doubly linked list.",
+      "The doubly linked list can be used to maintain the order of elements."
+    ],
+    "company": "Nordstrom"
+  },
+  {
+    "question_id": "",
+    "title": "Meeting Rooms II",
+    "description": "Given an array of intervals representing the start and end times of meetings, return the minimum number of conference rooms required to hold all meetings without overlapping. Each interval is defined as an array of two integers, where the first integer is the start time and the second integer is the end time of a meeting.",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Intervals",
+      "Sorting"
+    ],
+    "input_format": "An array of intervals, where each interval is represented as an array of two integers [start, end].",
+    "output_format": "An integer representing the minimum number of conference rooms required.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "0 <= intervals[i][0] < intervals[i][1] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[0, 30], [5, 10], [15, 20]]",
+        "output": "2",
+        "explanation": "Two rooms are needed; the first room can hold the meeting from [0, 30], and the second room can hold the meeting from [5, 10] overlapping with [0, 30]."
+      },
+      {
+        "input": "intervals = [[7, 10], [2, 4]]",
+        "output": "1",
+        "explanation": "Only one room is needed as the meetings [7, 10] and [2, 4] do not overlap."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using a priority queue to manage the end times of meetings.",
+      "Sort the meetings by their start times and use a min-heap to track end times."
+    ],
+    "company": "Nordstrom"
+  },
+  {
+    "question_id": "",
+    "title": "Display Table of Food Orders in a Restaurant",
+    "description": "A restaurant wants to display a table summarizing the total orders for every food item. You are given a list of orders, where each order contains the customer's name, table number, and food item name. Your task is to create a table that shows each unique food item and the corresponding count of orders, sorted by food item name in alphabetical order. The table should also include the table number alongside the food items.",
+    "topic": "Database",
+    "subtopic": "Aggregation and Grouping",
+    "tags": [
+      "Database",
+      "SQL",
+      "Aggregation"
+    ],
+    "input_format": "A list of orders, where each order is represented as an array: ['customerName', 'tableNumber', 'foodItem']",
+    "output_format": "A list of lists, where each inner list consists of ['foodItem', 'tableNumber', 'orderCount']",
+    "constraints": [
+      "1 <= orders.length <= 1000",
+      "0 < customerName.length <= 100",
+      "1 <= tableNumber <= 500",
+      "1 <= foodItem.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "[['John', '1', 'Pizza'], ['Jane', '2', 'Pasta'], ['John', '1', 'Pizza'], ['Alice', '2', 'Pizza']]",
+        "output": "[['Pasta', '2', '1'], ['Pizza', '1', '3']]",
+        "explanation": "There is 1 order for Pasta from table 2 and 3 orders for Pizza from table 1."
+      },
+      {
+        "input": "[['Mary', '3', 'Burger'], ['Sam', '1', 'Burger'], ['Anna', '2', 'Salad'], ['Sam', '1', 'Salad']]",
+        "output": "[['Burger', '1', '2'], ['Salad', '1', '2']]",
+        "explanation": "Both Burger and Salad were ordered twice, one from each respective table."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a data structure to maintain counts of each food item keyed by table numbers.",
+      "Consider using a sorting algorithm on the final list for proper output formatting."
+    ],
+    "company": "Nordstrom"
+  }
+]

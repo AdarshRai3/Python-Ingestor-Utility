@@ -1,0 +1,156 @@
+[
+  {
+    "question_id": "",
+    "title": "Satisfiability of Equality Equations",
+    "description": "Given an array of strings equations representing relationships between variables, return true if it is possible to assign integers to the variables so that all equality equations are satisfied, and false otherwise. Each string in equations is of length 4 and takes the form 'a==b' or 'a!=b', where 'a' and 'b' are lowercase letters.",
+    "topic": "Graph",
+    "subtopic": "Union-Find",
+    "tags": [
+      "Graph",
+      "Union-Find",
+      "Disjoint Set"
+    ],
+    "input_format": "An array of strings equations, where each string is in the form '[a]==[b]' or '[a]!=[b]'.",
+    "output_format": "A boolean value indicating whether the equations can be satisfied.",
+    "constraints": [
+      "1 <= equations.length <= 10^4",
+      "equations[i].length == 4",
+      "equations[i][0], equations[i][3] are lowercase letters",
+      "equations[i][1] is either '=' or '!'",
+      "equations[i][2] is '='"
+    ],
+    "examples": [
+      {
+        "input": "equations = [\"a==b\",\"b==c\",\"a==c\"]",
+        "output": "true",
+        "explanation": "All variables can be assigned the same value, satisfying all equations."
+      },
+      {
+        "input": "equations = [\"a==b\",\"b!=c\",\"c==a\"]",
+        "output": "false",
+        "explanation": "Assigning values to satisfy 'a==b', 'c==a' leads to conflict with 'b!=c'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a union-find data structure to keep track of relationships.",
+      "Check for contradictions after processing the equality equations."
+    ],
+    "company": "Sumo Logic"
+  },
+  {
+    "question_id": "",
+    "title": "First Missing Positive",
+    "description": "Given an unsorted integer array nums, find the smallest missing positive integer. Follow up: could you implement an algorithm that runs in O(n) time and uses constant space?",
+    "topic": "Array",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Array",
+      "Searching",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the first missing positive integer.",
+    "constraints": [
+      "1 <= nums.length <= 30000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, -1, 1]",
+        "output": "2",
+        "explanation": "The numbers in nums are [1, 3, 4] after ignoring negatives. The smallest positive missing is 2."
+      },
+      {
+        "input": "nums = [1, 2, 0]",
+        "output": "3",
+        "explanation": "The numbers in nums are [0, 1, 2], which means 3 is the first missing positive integer."
+      },
+      {
+        "input": "nums = [7, 8, 9, 11, 12]",
+        "output": "1",
+        "explanation": "There are no positive numbers less than or equal to 7 in nums, so 1 is the first missing positive."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how you can place the numbers in their correct indices.",
+      "Negative numbers and zeros can be ignored.",
+      "The array can be modified for finding the missing number."
+    ],
+    "company": "Sumo Logic"
+  },
+  {
+    "question_id": "",
+    "title": "Flood Fill",
+    "description": "You are given a 2D screen represented as a grid of pixels, where each pixel is colored with a color represented by an integer. You need to implement a 'flood fill' algorithm that colors the pixels connected to a given pixel with a new color. The algorithm should fill all connected pixels that have the same original color as the starting pixel. You need to return the modified grid after the flood fill is completed.",
+    "topic": "Depth-First Search",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "DFS",
+      "Graph",
+      "Recursion"
+    ],
+    "input_format": "A 2D grid of integers representing the screen colors, two integers sr (starting row) and sc (starting column), and an integer newColor representing the color to be filled.",
+    "output_format": "A 2D grid of integers representing the screen after the flood fill.",
+    "constraints": [
+      "1 <= image.length, image[i].length <= 50",
+      "0 <= image[i][j], newColor <= 65535"
+    ],
+    "examples": [
+      {
+        "input": "image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, newColor = 2",
+        "output": "[[2,2,2],[2,2,0],[2,0,1]]",
+        "explanation": "Starting at (1, 1), the original color is 1. All connected pixels with color 1 are filled with color 2."
+      },
+      {
+        "input": "image = [[0,0,0],[0,0,0]], sr = 0, sc = 0, newColor = 2",
+        "output": "[[2,2,2],[2,2,2]]",
+        "explanation": "Every pixel has the same original color 0 and will be filled with color 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You can use depth-first search (DFS) to explore the connected pixels.",
+      "Make sure to keep track of the original color to avoid recoloring already modified pixels."
+    ],
+    "company": "Sumo Logic"
+  },
+  {
+    "question_id": "",
+    "title": "Decode String",
+    "description": "Given an encoded string, return its decoded string. The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. You may assume that the input string is always valid. The integer k will be a positive integer and the encoded_string will not be empty. You need to implement a function to decode the string according to this rule.",
+    "topic": "String",
+    "subtopic": "Decoding",
+    "tags": [
+      "String",
+      "Decoding",
+      "Stack"
+    ],
+    "input_format": "A single string s representing the encoded string.",
+    "output_format": "A string representing the decoded version of the input.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of digits, lowercase English letters, and square brackets '[]'.",
+      "The input string is guaranteed to be in the correct format."
+    ],
+    "examples": [
+      {
+        "input": "s = \"2[abc]3[cd]\"",
+        "output": "abcabccdcdcd",
+        "explanation": "The decoded string is obtained by expanding the patterns: 'abc' twice, followed by 'cd' three times."
+      },
+      {
+        "input": "s = \"3[a2[c]]\"",
+        "output": "accaccacc",
+        "explanation": "The encoded string expands as: 'c' twice gives 'cc', then 'a' followed by 'cc' gives 'acc', and finally 'acc' repeated three times is 'accaccacc'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to manage the nested structure.",
+      "Keep track of the current number and current string."
+    ],
+    "company": "Sumo Logic"
+  }
+]

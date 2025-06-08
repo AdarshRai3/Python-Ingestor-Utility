@@ -1,0 +1,150 @@
+[
+  {
+    "question_id": "",
+    "title": "Find Servers That Handled Most Number of Requests",
+    "description": "You are given a list of server request logs where each log is represented by a pair of integers. Each pair consists of the server ID and the number of requests it handled. Your task is to identify which server(s) handled the most number of requests and return their IDs in ascending order. If multiple servers handled the same maximum number of requests, return all their IDs.",
+    "topic": "Hash Table",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "HashTable",
+      "Counting",
+      "Array"
+    ],
+    "input_format": "A list of pairs, where each pair contains a server ID (integer) and the number of requests (integer).",
+    "output_format": "A list of server IDs that handled the most number of requests, sorted in ascending order.",
+    "constraints": [
+      "1 <= logs.length <= 10^5",
+      "1 <= server_id <= 10^6",
+      "1 <= requests <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "logs = [[1, 3], [2, 5], [1, 2], [3, 5], [2, 1]]",
+        "output": "[1, 2]",
+        "explanation": "Server 1 handled 3 + 2 = 5 requests, and server 2 handled 5 + 1 = 6 requests. The maximum is 6 from server 2 and 5 from server 1, so the output is [1, 2]."
+      },
+      {
+        "input": "logs = [[1, 4], [1, 3], [2, 5], [2, 5], [3, 7], [3, 7]]",
+        "output": "[3]",
+        "explanation": "Server 1 handled 7 requests, server 2 handled 10 requests, and server 3 handled 14 requests. The maximum is 14 from server 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a hash table to count requests per server.",
+      "Keep track of the maximum number of requests as you iterate.",
+      "Sort the result before returning."
+    ],
+    "company": "Wish"
+  },
+  {
+    "question_id": "",
+    "title": "Rabbits in Forest",
+    "description": "In a forest, there are rabbits that can report how many other rabbits they see. You know that a rabbit can only see another rabbit if they are not the same color. Given an integer array representing the colors of the rabbits as integers, write a function that calculates the minimum number of rabbits that could be present in the forest based on the rabbits' reports.",
+    "topic": "Array",
+    "subtopic": "Counting",
+    "tags": [
+      "Array",
+      "Counting",
+      "Mathematics"
+    ],
+    "input_format": "An integer array `colors` where each element represents the color of a rabbit.",
+    "output_format": "An integer representing the minimum number of rabbits that could be present in the forest.",
+    "constraints": [
+      "1 <= colors.length <= 1000",
+      "0 <= colors[i] < 1000"
+    ],
+    "examples": [
+      {
+        "input": "[1, 1, 2]",
+        "output": "3",
+        "explanation": "One rabbit reports seeing one other rabbit of a different color (Rabbit 0 sees Rabbit 1), meaning that there must be at least three rabbits: Rabbit 0, Rabbit 1, and one more Rabbit of color 2."
+      },
+      {
+        "input": "[1, 1, 1]",
+        "output": "2",
+        "explanation": "All rabbits are of the same color and they don\u2019t see each other. Thus, the minimum number of rabbits is 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how many rabbits report the same color.",
+      "Use grouping based on the colors of the rabbits."
+    ],
+    "company": "Wish"
+  },
+  {
+    "question_id": "",
+    "title": "Monthly Transactions I",
+    "description": "You are given an array of monthly transactions, where each element represents the amount spent in that month. Your task is to calculate the total amount spent and the number of months where spending exceeded a specific threshold. Additionally, return a boolean indicating whether the total spending is over a budget limit.",
+    "topic": "Array",
+    "subtopic": "Summation and Threshold Checking",
+    "tags": [
+      "Array",
+      "Summation",
+      "Budgeting"
+    ],
+    "input_format": "An array of integers transactions, and an integer budget.",
+    "output_format": "An array containing the total amount spent, the number of months over the threshold, and a boolean indicating if spending exceeded the budget.",
+    "constraints": [
+      "1 <= transactions.length <= 12",
+      "0 <= transactions[i] <= 10^4",
+      "0 <= budget <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "transactions = [200, 450, 300, 600], budget = 1500",
+        "output": "[1550, 2, true]",
+        "explanation": "Total spending is 200 + 450 + 300 + 600 = 1550. Months exceeding 300 are 450, 600, which is 2 months. Total exceeds budget of 1500."
+      },
+      {
+        "input": "transactions = [100, 200, 150], budget = 500",
+        "output": "[450, 0, false]",
+        "explanation": "Total spending is 100 + 200 + 150 = 450. No months exceed the threshold of 300. Total does not exceed budget of 500."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a loop to traverse through the transactions array.",
+      "Accumulate the total spending and count the months exceeding the threshold.",
+      "Compare the total spending with the budget."
+    ],
+    "company": "Wish"
+  },
+  {
+    "question_id": "",
+    "title": "Monthly Transactions II",
+    "description": "You are given a list of strings representing transactions, where each transaction is in the format 'date amount category'. A date is represented in the format 'YYYY-MM-DD', amount is a signed integer, and category is a string. Your task is to return the total amount spent on each category for the current month and the previous month. Assume that transactions can be from multiple months, but you only care about the current month and the last month. The total amount for each category should be returned in descending order based on the total amount spent.",
+    "topic": "String",
+    "subtopic": "Parsing and Aggregation",
+    "tags": [
+      "String",
+      "Parsing",
+      "Aggregation"
+    ],
+    "input_format": "A list of strings, each representing a transaction.",
+    "output_format": "A list of strings in the format 'category: total_amount' sorted by total_amount in descending order.",
+    "constraints": [
+      "1 <= transactions.length <= 10^5",
+      "The total amount for any category will fit in a signed 32-bit integer."
+    ],
+    "examples": [
+      {
+        "input": "transactions = ['2023-10-05 -50 food', '2023-10-14 -75 entertainment', '2023-09-28 -100 food', '2023-09-15 -40 entertainment']",
+        "output": "['food: -50', 'entertainment: -75']",
+        "explanation": "In October, the total amount spent on food is -50, and on entertainment is -75. September transactions are not considered."
+      },
+      {
+        "input": "transactions = ['2023-09-01 -30 travel', '2023-09-28 -20 travel', '2023-10-01 -10 travel']",
+        "output": "['travel: -60']",
+        "explanation": "In September, the total amount spent on travel is -50 and in October is -10. The total for travel over the two months is -60."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use date manipulation to extract the current month and previous month.",
+      "Utilize a hashmap to aggregate the amounts for each category."
+    ],
+    "company": "Wish"
+  }
+]

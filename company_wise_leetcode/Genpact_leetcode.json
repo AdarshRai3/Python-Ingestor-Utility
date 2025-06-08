@@ -1,0 +1,111 @@
+[
+  {
+    "question_id": "",
+    "title": "Design Authentication Manager",
+    "description": "You are tasked with designing an authentication manager for a web application. The manager will keep track of user sessions through tokens. Each token can have an expiration time, and the manager should be able to issue new tokens, renew existing tokens, and check if a token is valid based on whether it has expired or not. You need to implement the authentication manager that supports the following operations:\n\n1. **generate(tokenId: String, timeToLive: Integer)**: Generate a new token with the given `tokenId` and a time to live (`timeToLive`) in seconds. The token is valid for `timeToLive` seconds from the current time.\n2. **renew(tokenId: String)**: Renew the token with the given `tokenId`. If the token exists and is valid, it should extend its validity by the original `timeToLive`. If the token does not exist or has expired, you should not renew it.\n3. **countUnexpiredTokens(currentTime: Integer)**: Return the number of currently unexpired tokens at the given `currentTime`.\n\nTokens are identified by their `tokenId`, and you can assume that `generate` and `renew` will only be called with valid `tokenId`s, indicating that the token would have already been generated.",
+    "topic": "Design",
+    "subtopic": "System Design",
+    "tags": [
+      "Design",
+      "System Design",
+      "Tokens"
+    ],
+    "input_format": "N/A (This is a class with defined methods to be implemented)",
+    "output_format": "For each method you need to implement, the return type is specified in the description.",
+    "constraints": [
+      "1 <= timeToLive <= 10^5",
+      "0 <= currentTime <= 10^9",
+      "tokenId will be unique and consist of lowercase letters and digits only."
+    ],
+    "examples": [
+      {
+        "input": "manager = new AuthenticationManager();\nmanager.generate(\"token1\", 5);\nmanager.renew(\"token1\");\nmanager.countUnexpiredTokens(6);",
+        "output": "1",
+        "explanation": "After generation, 'token1' is valid until time 10. After renewal, it is valid until time 15. At currentTime 6, it is still valid."
+      },
+      {
+        "input": "manager = new AuthenticationManager();\nmanager.generate(\"token2\", 1);\nmanager.countUnexpiredTokens(2);",
+        "output": "0",
+        "explanation": "'token2' is expired by the time check is done at currentTime 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a data structure to store the tokens along with their expiration times.",
+      "You might want to use a map or a dictionary for quick lookups of tokens.",
+      "Keep track of the current time when generating and renewing tokens."
+    ],
+    "company": "Genpact"
+  },
+  {
+    "question_id": "",
+    "title": "Second Highest Salary",
+    "description": "Given a table `Employee` with columns `EmployeeId` and `Salary`, write a SQL query to retrieve the second highest salary from the `Employee` table. If there is no second highest salary, the query should return null.",
+    "topic": "Database",
+    "subtopic": "SQL",
+    "tags": [
+      "SQL",
+      "Database",
+      "Query"
+    ],
+    "input_format": "A table named Employee with columns: EmployeeId (int), Salary (int).",
+    "output_format": "An integer representing the second highest salary, or null if it does not exist.",
+    "constraints": [
+      "The Employee table will have at least one employee.",
+      "Salary values are unique."
+    ],
+    "examples": [
+      {
+        "input": "SELECT Salary FROM Employee",
+        "output": "2000",
+        "explanation": "The salaries are [1000, 2000, 3000]. The second highest is 2000."
+      },
+      {
+        "input": "SELECT Salary FROM Employee",
+        "output": "NULL",
+        "explanation": "The only salary is 1000. There is no second highest salary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the DISTINCT keyword to find unique salaries.",
+      "Consider using a LIMIT clause to get the second highest salary."
+    ],
+    "company": "Genpact"
+  },
+  {
+    "question_id": "",
+    "title": "Missing Number",
+    "description": "You are given an array containing n distinct numbers taken from 0, 1, 2, ..., n. This means one number from this range is missing in the array. Your task is to find and return the missing number.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Search",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums representing the numbers from 0 to n with one missing.",
+    "output_format": "An integer representing the missing number.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= n"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 0, 1]",
+        "output": "2",
+        "explanation": "The numbers from 0 to 3 are 0, 1, 2, 3. The number 2 is missing."
+      },
+      {
+        "input": "nums = [0, 1]",
+        "output": "2",
+        "explanation": "The numbers from 0 to 2 are 0, 1, 2. The number 2 is missing."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using the sum of the first n natural numbers."
+    ],
+    "company": "Genpact"
+  }
+]

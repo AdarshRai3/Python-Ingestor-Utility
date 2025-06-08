@@ -1,0 +1,186 @@
+[
+  {
+    "question_id": "",
+    "title": "Find the Length of the Longest Common Prefix",
+    "description": "Write a function that takes an array of strings and returns the length of the longest common prefix among the strings. If there is no common prefix, return 0.",
+    "topic": "Strings",
+    "subtopic": "Prefix",
+    "tags": [
+      "Strings",
+      "Prefix",
+      "Traversal"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "An integer representing the length of the longest common prefix.",
+    "constraints": [
+      "0 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "All strings consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\", \"flow\", \"flight\"]",
+        "output": "2",
+        "explanation": "The longest common prefix is \"fl\"."
+      },
+      {
+        "input": "strs = [\"dog\", \"racecar\", \"car\"]",
+        "output": "0",
+        "explanation": "There is no common prefix among the strings."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "1",
+        "explanation": "The only string available has length 1."
+      },
+      {
+        "input": "strs = []",
+        "output": "0",
+        "explanation": "An empty array returns 0 as there are no strings."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Check for the common prefix among the first two strings.",
+      "Iterate over the characters of the prefix and compare with other strings."
+    ],
+    "company": "ZipRecruiter"
+  },
+  {
+    "question_id": "",
+    "title": "Rotting Oranges",
+    "description": "You are given a grid represented as a 2D array of integers where each cell can have one of the following three values: 0 (empty cell), 1 (fresh orange), and 2 (rotten orange). Every minute, any fresh orange that is adjacent (4-directionally) to a rotten orange becomes rotten. Return the minimum number of minutes that must elapse until no fresh orange can become rotten. If there are fresh oranges that cannot be rotten, return -1.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Simulation"
+    ],
+    "input_format": "A 2D grid `grid` of size m x n representing the orange status.",
+    "output_format": "An integer representing the minimum number of minutes until no fresh oranges are left or -1 if impossible.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 10^4",
+      "grid[i][j] is 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[2,1,1],[1,1,0],[0,1,1]]",
+        "output": "4",
+        "explanation": "All oranges will be rotten after 4 minutes."
+      },
+      {
+        "input": "grid = [[2,1,1],[0,1,1],[1,0,0]]",
+        "output": "-1",
+        "explanation": "Fresh oranges at position (1, 1) and (2, 0) cannot rot."
+      },
+      {
+        "input": "grid = [[0,2]]",
+        "output": "0",
+        "explanation": "No fresh oranges present; thus, time is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use BFS to simulate the rotting process.",
+      "Consider each rotten orange as a starting point.",
+      "Count the minutes required until no fresh oranges remain."
+    ],
+    "company": "ZipRecruiter"
+  },
+  {
+    "question_id": "",
+    "title": "Split Message Based on Limit",
+    "description": "You are given a message represented as a string and a limit of characters for each split. Your task is to split the message into the smallest number of parts, where each part does not exceed the given limit. Any part that exceeds this limit should be broken down further into smaller parts, ensuring that words are not split in the middle. Return the split message as an array of strings.",
+    "topic": "String Manipulation",
+    "subtopic": "String Splitting",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Splitting"
+    ],
+    "input_format": "A string message and an integer limit.",
+    "output_format": "An array of strings representing the split message.",
+    "constraints": [
+      "1 <= message.length <= 10^5",
+      "1 <= limit <= 10^5",
+      "The message contains words separated by spaces."
+    ],
+    "examples": [
+      {
+        "input": {
+          "message": "This is a sample message that needs to be split based on a character limit.",
+          "limit": 15
+        },
+        "output": [
+          "This is a sample",
+          "message that needs",
+          "to be split based",
+          "on a character",
+          "limit."
+        ],
+        "explanation": "Each part does not exceed 15 characters and words are not split."
+      },
+      {
+        "input": {
+          "message": "Hello World",
+          "limit": 5
+        },
+        "output": [
+          "Hello",
+          "World"
+        ],
+        "explanation": "Each word is separated and fits within the limit."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a loop to iterate through the message.",
+      "Use space as a delimiter for splitting words."
+    ],
+    "company": "ZipRecruiter"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Operations to Write the Letter Y on a Grid",
+    "description": "You are given a 2D grid of size m x n filled with lowercase letters. Your goal is to determine the minimum number of operations required to write the letter 'Y' on the grid. An operation consists of transforming any lowercase letter into another lowercase letter. You can perform any number of operations. If it is not possible to form the letter 'Y', return -1.",
+    "topic": "Grid",
+    "subtopic": "Character Transformation",
+    "tags": [
+      "Grid",
+      "String",
+      "Transformation"
+    ],
+    "input_format": "A 2D grid represented as a list of lists, where each element is a lowercase letter.",
+    "output_format": "An integer representing the minimum number of operations needed to write 'Y', or -1 if impossible.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "Each letter in the grid is a lowercase English letter."
+    ],
+    "examples": [
+      {
+        "input": "[['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'y']]",
+        "output": "0",
+        "explanation": "The letter 'Y' is already present at grid[2][2]. No operations needed."
+      },
+      {
+        "input": "[['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]",
+        "output": "1",
+        "explanation": "Transforming one character, e.g., change 'i' to 'y' will require 1 operation."
+      },
+      {
+        "input": "[['a', 'b'], ['c', 'd']]",
+        "output": "-1",
+        "explanation": "It is impossible to write 'Y' as the grid does not have enough letters."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider every position in the grid to see if it can be transformed into 'Y'.",
+      "Keep track of the minimum operations needed."
+    ],
+    "company": "ZipRecruiter"
+  }
+]

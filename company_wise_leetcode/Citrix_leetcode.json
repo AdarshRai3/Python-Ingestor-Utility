@@ -1,0 +1,227 @@
+[
+  {
+    "question_id": "",
+    "title": "Find All Groups of Farmland",
+    "description": "You are given a 2D grid representing a map of farmland, where 1 represents land and 0 represents water. A group of farmland is defined as a connected area of 1s (land) that is adjacent either horizontally or vertically. Your task is to identify all distinct groups of farmland in the grid and return the coordinates of the top-left and bottom-right corners of each group in the order they appear in the grid.",
+    "topic": "Graph",
+    "subtopic": "Depth First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Grid"
+    ],
+    "input_format": "A 2D binary grid of size m x n, where m is the number of rows and n is the number of columns.",
+    "output_format": "A list of lists, where each sublist contains four integers representing the top-left and bottom-right corners of groups of farmland.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "grid[i][j] is either 0 or 1",
+      "The grid is guaranteed to be non-empty."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,0,0],[0,1,1],[0,0,0]]",
+        "output": "[[0,0,0,0],[1,1,1,2]]",
+        "explanation": "There are two groups of farmland: One at (0,0) and another at (1,1)."
+      },
+      {
+        "input": "grid = [[1,1,0],[0,1,0],[1,0,1]]",
+        "output": "[[0,0,1,1],[2,0,2,0],[1,2,1,2]]",
+        "explanation": "There are three groups of farmland: the first group covers (0,0) to (1,1), the second group covers only (2,0), and the third group covers only (1,2)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using depth-first search (DFS) to explore the grid.",
+      "Keep track of visited cells to avoid recounting farmland.",
+      "Remember to check for bounds when exploring neighbors."
+    ],
+    "company": "Citrix"
+  },
+  {
+    "question_id": "",
+    "title": "Check if Strings Can be Made Equal With Operations II",
+    "description": "You are given two strings 's' and 't'. You can perform the following operations on both strings: you can remove any character from either string. Your task is to determine if it is possible to make the two strings equal by performing any number of such operations. Return true if it is possible, otherwise return false.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Equality"
+    ],
+    "input_format": "Two strings s and t, where 1 <= s.length, t.length <= 100.",
+    "output_format": "A boolean value - true if the two strings can be made equal, false otherwise.",
+    "constraints": [
+      "1 <= s.length, t.length <= 100",
+      "s and t consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abc', t = 'ab'",
+        "output": "true",
+        "explanation": "You can remove the character 'c' from 'abc' to make it equal to 'ab'."
+      },
+      {
+        "input": "s = 'abc', t = 'def'",
+        "output": "false",
+        "explanation": "No operations can make 'abc' equal to 'def'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the characters that are present in both strings.",
+      "Use frequency counts of characters to determine potential equality."
+    ],
+    "company": "Citrix"
+  },
+  {
+    "question_id": "",
+    "title": "Check if Strings Can be Made Equal With Operations I",
+    "description": "You are given two strings, s1 and s2, and you want to determine if you can make them equal by applying the following operation any number of times: Choose two indices i and j, and swap the characters at these indices in either string. Return true if it is possible to make the two strings equal, and false otherwise.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Swapping"
+    ],
+    "input_format": "Two strings s1 and s2, both of length n.",
+    "output_format": "A boolean indicating if the two strings can be made equal.",
+    "constraints": [
+      "1 <= s1.length, s2.length <= 1000",
+      "s1 and s2 consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s1 = \"abc\", s2 = \"cab\"",
+        "output": "true",
+        "explanation": "You can swap the characters in s1 to get 'cab', which matches s2."
+      },
+      {
+        "input": "s1 = \"abc\", s2 = \"def\"",
+        "output": "false",
+        "explanation": "It's impossible to make 'abc' equal to 'def' through any swaps."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Count the frequency of characters in both strings.",
+      "If the counts match for all characters, they can be made equal."
+    ],
+    "company": "Citrix"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Performance of a Team",
+    "description": "You are given two integer arrays, performance and speed, where performance[i] represents the performance of the ith engineer and speed[i] represents the speed of the ith engineer. You want to form a team of engineers that maximizes the total performance of the team. The total performance of a team of engineers is defined as the sum of the performance of all engineers in the team, multiplied by the minimum speed among them. You can choose at most 'k' engineers to form the team. Return the maximum performance of the team under modulo 10^9 + 7.",
+    "topic": "Greedy",
+    "subtopic": "Sorting",
+    "tags": [
+      "Greedy",
+      "Sorting",
+      "Array"
+    ],
+    "input_format": "Two integer arrays performance and speed of size n, where 1 <= n <= 10^5.",
+    "output_format": "An integer representing the maximum performance of the team modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= performance[i], speed[i] <= 10^5",
+      "1 <= k <= n"
+    ],
+    "examples": [
+      {
+        "input": "performance = [2, 5, 3, 9], speed = [4, 3, 6, 5], k = 2",
+        "output": "60",
+        "explanation": "Select engineers with performance 5 and 9. Minimum speed is 5, total performance is 5 + 9 = 14. So, performance = 14 * 5 = 70."
+      },
+      {
+        "input": "performance = [1, 2], speed = [1, 1], k = 1",
+        "output": "2",
+        "explanation": "Select the engineer with the highest performance (2). Therefore, maximum performance is 2 * 1 = 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to efficiently select k engineers based on their performance and speed.",
+      "Using heaps may help in managing the minimum speed efficiently."
+    ],
+    "company": "Citrix"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Nth Node From End of List",
+    "description": "Given the head of a linked list, remove the N-th node from the end of the list and return its head. Do not modify the values of the nodes in the list; instead, change the next pointers of the nodes to remove the desired node.",
+    "topic": "Linked List",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Linked List",
+      "Two Pointers",
+      "Removal"
+    ],
+    "input_format": "The head of the linked list as a ListNode object and an integer n.",
+    "output_format": "The head of the modified linked list as a ListNode object.",
+    "constraints": [
+      "The number of nodes in the list is n.",
+      "1 <= n <= 30",
+      "1 <= number of nodes <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], n = 2",
+        "output": "[1, 2, 3, 5]",
+        "explanation": "The second node from the end is node 4. Removing it gives us the linked list [1, 2, 3, 5]."
+      },
+      {
+        "input": "head = [1], n = 1",
+        "output": "[]",
+        "explanation": "The only node is removed, resulting in an empty list."
+      },
+      {
+        "input": "head = [1, 2], n = 1",
+        "output": "[1]",
+        "explanation": "The last node (2) is removed, leaving us with [1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use two pointers to find the N-th node from the end.",
+      "If the length of the list is L, the node to be removed is at position L - n."
+    ],
+    "company": "Citrix"
+  },
+  {
+    "question_id": "",
+    "title": "Pairs of Songs With Total Durations Divisible by 60",
+    "description": "You are given a list of integers representing the durations of songs in seconds. Your task is to determine how many pairs of songs can be selected such that the total duration of each pair is divisible by 60. A pair consists of two different songs, and you cannot select the same song twice. Return the number of such pairs.",
+    "topic": "Array",
+    "subtopic": "Counting Pairs",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Counting"
+    ],
+    "input_format": "An array of integers representing song durations in seconds.",
+    "output_format": "An integer representing the number of pairs whose total duration is divisible by 60.",
+    "constraints": [
+      "1 <= songs.length <= 10^4",
+      "1 <= songs[i] <= 500"
+    ],
+    "examples": [
+      {
+        "input": "songs = [30, 20, 150, 100, 40]",
+        "output": "3",
+        "explanation": "The pairs are (30, 150), (20, 100), and (30, 30). Total durations = 180, 120, and 60 respectively."
+      },
+      {
+        "input": "songs = [60, 60, 60]",
+        "output": "3",
+        "explanation": "The possible pairs are (60, 60) formed 3 times as there are 3 songs of 60 seconds each."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how remainders work when divided by 60.",
+      "Use a hash map to count occurrences of each remainder.",
+      "Consider how to form pairs from the counted remainders."
+    ],
+    "company": "Citrix"
+  }
+]

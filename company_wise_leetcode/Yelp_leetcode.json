@@ -1,0 +1,1197 @@
+[
+  {
+    "question_id": "",
+    "title": "Destination City",
+    "description": "You are given a list of paths. Each path is represented as a pair of cities, where the first city is the starting point and the second city is the destination. Your task is to find the destination city that can be reached from the starting city, which has no outgoing paths. In other words, find the city that is not a starting point in any of the paths.",
+    "topic": "Graph",
+    "subtopic": "Path Finding",
+    "tags": [
+      "Graph",
+      "Path",
+      "Strings"
+    ],
+    "input_format": "A list of pairs of strings paths, where each pair represents a direct path from the first string city to the second string city.",
+    "output_format": "A string representing the destination city.",
+    "constraints": [
+      "1 <= paths.length <= 100",
+      "Each city name consists of lowercase English letters and has at most length 100.",
+      "No city name will be empty."
+    ],
+    "examples": [
+      {
+        "input": "paths = [['A', 'B'], ['B', 'C'], ['C', 'D']]",
+        "output": "D",
+        "explanation": "D is the city that has no outgoing paths."
+      },
+      {
+        "input": "paths = [['A', 'Z']]",
+        "output": "Z",
+        "explanation": "Z is a destination city with no outgoing paths."
+      },
+      {
+        "input": "paths = [['A', 'B'], ['A', 'C'], ['B', 'D']]",
+        "output": "D",
+        "explanation": "D is reachable from A through B but has no outgoing paths."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You may need to track cities that are starting points.",
+      "Consider using a set to efficiently check for outgoing paths."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given a total of n courses you have to take, labeled from 0 to n-1. Some courses may have prerequisites, forming a directed graph. A course is only available to take if all of its prerequisites are completed. Your task is to determine if it is possible for you to finish all courses. Return true if you can finish all courses, otherwise return false.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Topological Sort"
+    ],
+    "input_format": "An integer n representing the number of courses, and an array of prerequisite pairs, where each pair [a, b] indicates that to take course a, you must first take course b.",
+    "output_format": "A boolean value indicating whether it is possible to finish all courses.",
+    "constraints": [
+      "1 <= n <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2",
+      "0 <= prerequisites[i][0], prerequisites[i][1] < n"
+    ],
+    "examples": [
+      {
+        "input": "n = 2, prerequisites = [[1, 0]]",
+        "output": "true",
+        "explanation": "You can take course 0 before course 1, so it's possible to finish all courses."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1, 0], [0, 1]]",
+        "output": "false",
+        "explanation": "There is a cycle between course 0 and course 1, thus it's not possible to finish all courses."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use topological sorting methods to detect cycles in the graph.",
+      "Consider using DFS or Kahn's algorithm for topological sorting."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Map",
+    "tags": [
+      "Array",
+      "Hash Map",
+      "Two Pointer"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "A list of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9",
+      "Only one valid answer exists."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 3 + 3 = 6."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the numbers and their indices.",
+      "Check if the complement of the current number exists in the map."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within a string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A single string s consisting of English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'abc', which has a length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is 'b', which has a length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'wke', which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window approach to maintain the current substring.",
+      "Use a HashMap to track the last positions of the characters."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Letter Case Permutation",
+    "description": "Given a string s that can contain letters and digits, return all possible strings you can create by changing the letters' case. The digits should remain the same. The output should be in any order.",
+    "topic": "Backtracking",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Case Permutation"
+    ],
+    "input_format": "A string s of length n.",
+    "output_format": "A list of strings representing all possible case permutations of the input string.",
+    "constraints": [
+      "0 <= s.length <= 20",
+      "s consists of lowercase and uppercase English letters and digits."
+    ],
+    "examples": [
+      {
+        "input": "s = \"a1b2\"",
+        "output": "[\"a1b2\", \"a1B2\", \"A1b2\", \"A1B2\"]",
+        "explanation": "The permutations of the letters 'a' and 'b' are generated with digits remaining unchanged."
+      },
+      {
+        "input": "s = \"3z4\"",
+        "output": "[\"3z4\", \"3Z4\"]",
+        "explanation": "The permutations are generated from the letter 'z' with '3' and '4' staying the same."
+      },
+      {
+        "input": "s = \"12345\"",
+        "output": "[\"12345\"]",
+        "explanation": "Since there are no letters, the output is just the input string."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use backtracking to explore each case possibility.",
+      "Consider how you can switch cases of letters while preserving digits."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Words",
+    "description": "Given an array of strings words and an integer k, return the k most frequent strings. Return the answer in any order. If two words have the same frequency, the word with the smaller lexicographical order comes first.",
+    "topic": "Hash Table",
+    "subtopic": "Sorting",
+    "tags": [
+      "Hash Table",
+      "Sorting",
+      "Heap"
+    ],
+    "input_format": "An array of strings words followed by an integer k.",
+    "output_format": "A list of k most frequent strings.",
+    "constraints": [
+      "1 <= words.length <= 1000",
+      "1 <= k <= A distinct number of words in the list",
+      "1 <= words[i].length <= 100",
+      "words[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"i\", \"love\", \"leetcode\", \"i\", \"love\", \"coding\"], k = 2",
+        "output": "[\"i\", \"love\"]",
+        "explanation": "The word 'i' appears 2 times and 'love' appears 2 times. Both are the most frequent, and in lexicographical order 'i' comes before 'love'."
+      },
+      {
+        "input": "words = [\"the\", \"day\", \"is\", \"sunny\", \"the\", \"the\", \"sunny\", \"is\", \"is\"], k = 4",
+        "output": "[\"the\", \"is\", \"sunny\", \"day\"]",
+        "explanation": "'the' appears 3 times, 'is' appears 3 times, 'sunny' appears 2 times and 'day' appears 1 time."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash table to count the frequency of each word.",
+      "Use a min-heap to keep track of the top k frequent words."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Index Sum of Two Lists",
+    "description": "You are given two arrays of strings list1 and list2. Each string represents a restaurant's name. You need to find the restaurant(s) that appear in both lists and have the least index sum. A restaurant's index sum is the sum of its index in list1 and its index in list2. If there are multiple restaurants with the same minimum index sum, return them in alphabetical order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "String"
+    ],
+    "input_format": "Two arrays of strings list1 and list2, each representing restaurant names.",
+    "output_format": "A list of strings representing restaurant names with the minimum index sum.",
+    "constraints": [
+      "1 <= list1.length, list2.length <= 1000",
+      "1 <= list1[i].length, list2[i].length <= 100",
+      "All restaurant names in both lists are unique."
+    ],
+    "examples": [
+      {
+        "input": "list1 = [\"Shogun\",\"Tapioca Express\",\"Burger King\",\"KFC\"], list2 = [\"Piatti\",\"The Grill at Torrey Pines\",\"Shogun\",\"Burger King\"]",
+        "output": "[\"Shogun\"]",
+        "explanation": "The index sum for 'Shogun' is 0 (from list1) + 2 (from list2) = 2, which is the minimum. Hence, the output is ['Shogun']."
+      },
+      {
+        "input": "list1 = [\"Shogun\",\"Burger King\",\"Tapioca Express\"], list2 = [\"KFC\",\"Shogun\",\"Burger King\"]",
+        "output": "[\"Shogun\"]",
+        "explanation": "'Shogun' has the minimum index sum of 1 (from list1) + 0 (from list2) = 1."
+      },
+      {
+        "input": "list1 = [\"A\",\"B\",\"C\"], list2 = [\"X\",\"Y\",\"Z\"]",
+        "output": "[]",
+        "explanation": "No common restaurants between the two lists."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a HashMap to store the indices of the first list.",
+      "Check for common elements and calculate their index sums."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Closest Palindrome",
+    "description": "Given a string n representing a positive integer, you need to find the closest palindrome integer to n, which is strictly greater than n. The closest palindrome is defined as the nearest palindrome number to n, where the distance between the two numbers is the absolute difference. If there are multiple closest palindromes, return the smallest one. A palindrome number is a number that remains the same when its digits are reversed.",
+    "topic": "String",
+    "subtopic": "Palindrome",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Math"
+    ],
+    "input_format": "A string n, representing a positive integer.",
+    "output_format": "A string representing the closest palindrome integer greater than n.",
+    "constraints": [
+      "1 <= n.length <= 18",
+      "n contains only digits and does not have leading zeros."
+    ],
+    "examples": [
+      {
+        "input": "n = \"123\"",
+        "output": "131",
+        "explanation": "The closest palindrome greater than 123 is 131."
+      },
+      {
+        "input": "n = \"999\"",
+        "output": "1001",
+        "explanation": "The closest palindrome greater than 999 is 1001."
+      },
+      {
+        "input": "n = \"1\"",
+        "output": "2",
+        "explanation": "The closest palindrome greater than 1 is 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the properties of palindromes and how they change with digits.",
+      "You may want to generate candidates that are close to n."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Check If a Word Occurs As a Prefix of Any Word in a Sentence",
+    "description": "Given a sentence consisting of words separated by spaces, and a target word, determine if the target word occurs as a prefix in any of the words in the sentence. A prefix of a word is any leading contiguous subset of characters of that word.",
+    "topic": "String",
+    "subtopic": "Prefix Matching",
+    "tags": [
+      "String",
+      "Prefix",
+      "Word Matching"
+    ],
+    "input_format": "The input consists of a sentence as a string and a target word as a string.",
+    "output_format": "Return boolean value: true if the target word is a prefix of any word in the sentence, otherwise false.",
+    "constraints": [
+      "1 <= sentence.length <= 1000",
+      "1 <= target_word.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "sentence = 'apple banana apricot', target_word = 'ap'",
+        "output": "true",
+        "explanation": "The word 'apricot' starts with the prefix 'ap'."
+      },
+      {
+        "input": "sentence = 'hello world', target_word = 'cat'",
+        "output": "false",
+        "explanation": "No word in the sentence starts with 'cat'."
+      },
+      {
+        "input": "sentence = 'prefix preview', target_word = 'pre'",
+        "output": "true",
+        "explanation": "Both 'prefix' and 'preview' start with the prefix 'pre'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Split the sentence into words and compare each word with the target word.",
+      "Use string slicing to check if the word starts with the target word."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "String Compression",
+    "description": "Implement a method to perform basic string compression using the counts of repeated characters. For example, the string 'aabcccccaaa' would become 'a2b1c5a3'. If the compressed string is not smaller than the original string, your method should return the original string. You can assume the input string has only uppercase and lowercase letters (a-z, A-Z).",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Compression",
+      "Manipulation"
+    ],
+    "input_format": "A single string s, which consists of uppercase and lowercase letters.",
+    "output_format": "A string that represents the compressed version of the input string or the original string if the compressed version is not shorter.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists only of letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'aabcccccaaa'",
+        "output": "a2b1c5a3",
+        "explanation": "In the compressed string, 'a' appears 2 times, 'b' appears 1 time, 'c' appears 5 times, and 'a' appears 3 times."
+      },
+      {
+        "input": "s = 'abc'",
+        "output": "abc",
+        "explanation": "The compressed version 'a1b1c1' is not shorter than the original 'abc'."
+      },
+      {
+        "input": "s = 'aaAaaaaaa'",
+        "output": "a2A1a6",
+        "explanation": "The character 'a' appears 2 times, 'A' appears 1 time, and 'a' appears 6 times in the compressed string."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a counter to keep track of consecutive characters.",
+      "Don't forget to handle the last character counts when building the result."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Filter Restaurants by Vegan-Friendly, Price and Distance",
+    "description": "You are given a list of restaurants, each represented by a dictionary that contains its name, whether it is vegan-friendly, its price rating, and its distance from a specific location. Your task is to filter this list based on three criteria: whether the restaurant is vegan-friendly, maximum price rating, and maximum distance. Return a list of names of the restaurants that match all the criteria in ascending order of distance.",
+    "topic": "Array",
+    "subtopic": "Filtering",
+    "tags": [
+      "Array",
+      "Filter",
+      "Vegan",
+      "Restaurants"
+    ],
+    "input_format": "A list of dictionaries representing restaurants: [{ 'name': str, 'is_vegan_friendly': bool, 'price_rating': int, 'distance': float }, ...], a boolean is_vegan, an integer max_price, and a float max_distance.",
+    "output_format": "A list of strings representing the names of the filtered restaurants sorted by distance.",
+    "constraints": [
+      "1 <= restaurants.length <= 10^4",
+      "0 <= price_rating <= 4",
+      "0 <= distance <= 1000",
+      "The names of the restaurants are unique."
+    ],
+    "examples": [
+      {
+        "input": "restaurants = [{'name': 'A', 'is_vegan_friendly': true, 'price_rating': 2, 'distance': 1.5}, {'name': 'B', 'is_vegan_friendly': false, 'price_rating': 3, 'distance': 2.0}, {'name': 'C', 'is_vegan_friendly': true, 'price_rating': 1, 'distance': 0.5}], is_vegan = true, max_price = 2, max_distance = 2.0",
+        "output": "['C', 'A']",
+        "explanation": "Restaurant C is vegan-friendly, has a price rating of 1 (<= 2), and is at a distance of 0.5 (<= 2.0). Restaurant A is also vegan-friendly, has a price rating of 2, and a distance of 1.5. Thus, both meet the requirements."
+      },
+      {
+        "input": "restaurants = [{'name': 'P', 'is_vegan_friendly': true, 'price_rating': 3, 'distance': 3.0}, {'name': 'Q', 'is_vegan_friendly': true, 'price_rating': 2, 'distance': 6.0}], is_vegan = true, max_price = 1, max_distance = 5.0",
+        "output": "[]",
+        "explanation": "Neither of the restaurants is below the maximum price and distance constraints."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use list comprehensions for filtering.",
+      "Sort the results based on the distance before returning."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Decode String",
+    "description": "Given an encoded string, your task is to return its decoded string. The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. You may assume that the input string is always valid, no extra white spaces, and contains no digits or letters outside the specifications provided.",
+    "topic": "String",
+    "subtopic": "Decoding",
+    "tags": [
+      "String",
+      "Decoding",
+      "Stack"
+    ],
+    "input_format": "A string s consisting of digits, lowercase letters, and square brackets.",
+    "output_format": "The decoded string after applying all encoding rules.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s will always be a valid encoding."
+    ],
+    "examples": [
+      {
+        "input": "s = \"3[a2[c]]\"",
+        "output": "accaccacc",
+        "explanation": "The decoded string is formed as follows: 3 times 'a2[c]' which translates to 'acc' repeated 3 times."
+      },
+      {
+        "input": "s = \"2[abc]3[cd]ef\"",
+        "output": "abcabccdcdcdef",
+        "explanation": "The decoded string consists of 'abc' repeated 2 times, 'cd' repeated 3 times, followed by 'ef'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to keep track of the numbers and the current string."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1) - Duplicates allowed",
+    "description": "Design a data structure that supports the following operations:\n\n1. insert(val): Inserts an item val into the collection, allowing duplicates.\n2. remove(val): Removes an item val from the collection if present.\n3. getRandom: Returns a random element from the collection. Each element must have the same probability of being returned.\n\nAll operations should be done in average O(1) time complexity.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "HashMap",
+      "ArrayList",
+      "Random"
+    ],
+    "input_format": "A sequence of operations on the data structure: 'insert(val)', 'remove(val)', or 'getRandom()'.",
+    "output_format": "Returns the output of 'getRandom()' calls.",
+    "constraints": [
+      "1 <= insert, remove <= 10^4",
+      "1 <= val <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "insert(1), insert(1), insert(2), getRandom()",
+        "output": "1 or 2",
+        "explanation": "Both 1 and 2 are in the collection. getRandom can therefore return either 1 (with higher probability due to duplication) or 2."
+      },
+      {
+        "input": "insert(1), remove(1), getRandom()",
+        "output": "Error - cannot return random from an empty collection",
+        "explanation": "After removing 1, the collection is empty, leading to an error."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a hash map to store the indices of each value.",
+      "An array list can help maintain the order and allow O(1) access."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports all following operations in average O(1) time. Implement the RandomizedSet class: \n1. bool insert(int val) - Inserts an item val into the set. Returns true if the item was not already present.\n2. bool remove(int val) - Removes an item val from the set. Returns true if the item was present.\n3. int getRandom() - Returns a random element from the current set of elements (it's guaranteed that at least one element exists when this method is called). Each element must have the same probability of being returned.\n\nYou must implement this functionality without using additional data structures that could increase the time complexity beyond O(1) on average.",
+    "topic": "Design",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Design",
+      "Hash Table",
+      "Random"
+    ],
+    "input_format": "You can assume that the insert, remove, and getRandom operations are called separately in the input.",
+    "output_format": "The output should be the respective results of the insert and remove operations (boolean), and for the getRandom operation, an integer representing the randomly returned element.",
+    "constraints": [
+      "The number of calls to insert, remove, and getRandom will be at most 2 * 10^4.",
+      "Each call to insert and remove has a distinct val.",
+      "A valid value of val is in the range of [-2^31, 2^31 - 1]."
+    ],
+    "examples": [
+      {
+        "input": "RandomizedSet obj = new RandomizedSet();\nobj.insert(1);\nobj.remove(2);\nobj.insert(2);\nint param_3 = obj.getRandom();",
+        "output": "1 or 2",
+        "explanation": "Both 1 and 2 are valid outputs since getRandom returns a random element from the set."
+      },
+      {
+        "input": "obj.remove(1);\nobj.insert(2);\nint param_3 = obj.getRandom();",
+        "output": "2",
+        "explanation": "Since only the element 2 is left, getRandom must return 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to keep track of the indices of elements.",
+      "Use a list to store the elements to enable O(1) access."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Elements",
+    "description": "Given a non-empty integer array, return the k most frequent elements. You may return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hashmap",
+      "Sorting"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An array of the k most frequent elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^4",
+      "k is in the range [1, the number of unique elements in the array]"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,1,1,2,2,3], k = 2",
+        "output": "[1, 2]",
+        "explanation": "The element 1 appears 3 times and the element 2 appears 2 times. Thus, the k most frequent elements are 1 and 2."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "There is only one element in the array, so the most frequent element is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to count the frequency of each element.",
+      "Consider using a min-heap to keep track of the top k elements."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, determine if they are anagrams of each other. An anagram is formed by rearranging the letters of a different word or phrase, using all the original letters exactly once. Your task is to implement a function that checks if two strings are anagrams.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Sorting"
+    ],
+    "input_format": "Two strings s and t, each consisting of lowercase English letters.",
+    "output_format": "A boolean value indicating whether the two strings are anagrams.",
+    "constraints": [
+      "1 <= s.length, t.length <= 5 * 10^4",
+      "s and t consist of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "s = 'anagram', t = 'nagaram'",
+        "output": "true",
+        "explanation": "'anagram' and 'nagaram' contain the same letters."
+      },
+      {
+        "input": "s = 'rat', t = 'car'",
+        "output": "false",
+        "explanation": "'rat' and 'car' do not contain the same letters."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider counting the frequency of each character in both strings.",
+      "Sorting both strings may also help in comparing them."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "The Skyline Problem",
+    "description": "Given a list of buildings, represented by their starting and ending coordinates along with their heights, you need to determine the skyline formed by these buildings. The skyline is represented as a list of 'key points' where the height of the skyline changes. Each key point is reported as a tuple of [x, height], where x is the x-coordinate, and height is the height at that x-coordinate. The skyline should be output in non-decreasing order of x.",
+    "topic": "Geometry",
+    "subtopic": "Line Segment Intersection",
+    "tags": [
+      "Geometry",
+      "Heap",
+      "Sort"
+    ],
+    "input_format": "A list of buildings, where each building is represented as a list of three integers [left, right, height].",
+    "output_format": "A list of key points, where each key point is represented as a list of two integers [x, height].",
+    "constraints": [
+      "1 <= buildings.length <= 10^4",
+      "0 <= left < right <= 10^9",
+      "1 <= height <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "[[2,9,10],[3,7,15],[5,12,12],[15,20,10],[19,24,8]]",
+        "output": "[[2,10],[3,15],[7,12],[12,0],[15,10],[20,8],[24,0]]",
+        "explanation": "The buildings create multiple skyline points as the heights change at given x-coordinates."
+      },
+      {
+        "input": "[[0,2,3],[2,5,3]]",
+        "output": "[[0,3],[5,0]]",
+        "explanation": "Two overlapping buildings of equal height create one peak and return to zero."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to process both the 'start' and 'end' points of each building.",
+      "A max-heap can help keep track of the current highest building as you traverse the x-coordinates.",
+      "Incrementally build the skyline by recording changes in height at critical points."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Linked List",
+    "description": "Given the head of a singly linked list, reverse the list, and return the reversed list.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Two Pointers"
+    ],
+    "input_format": "A ListNode representing the head of the linked list.",
+    "output_format": "A ListNode representing the head of the reversed linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000].",
+      "-5000 <= Node.val <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5]",
+        "output": "[5, 4, 3, 2, 1]",
+        "explanation": "The linked list 1 -> 2 -> 3 -> 4 -> 5 is reversed to 5 -> 4 -> 3 -> 2 -> 1."
+      },
+      {
+        "input": "head = []",
+        "output": "[]",
+        "explanation": "An empty list remains empty when reversed."
+      },
+      {
+        "input": "head = [1]",
+        "output": "[1]",
+        "explanation": "A single node list remains the same when reversed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using three pointers: previous, current, and next.",
+      "Iterate through the list and change the next pointers as you go."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Active Businesses",
+    "description": "You are given a list of businesses, each represented by a unique ID and a status indicating whether they are currently active or inactive. Your task is to return a list of all active businesses sorted by their IDs in ascending order. A business is considered active if its status is 'active'.",
+    "topic": "Array",
+    "subtopic": "Filtering and Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Filtering"
+    ],
+    "input_format": "A list of tuples, where each tuple consists of a business ID (integer) and status (string) in the format [(id1, 'status1'), (id2, 'status2'), ...].",
+    "output_format": "A list of active business IDs sorted in ascending order.",
+    "constraints": [
+      "1 <= input.length <= 10^5",
+      "1 <= id <= 10^6",
+      "status is either 'active' or 'inactive'"
+    ],
+    "examples": [
+      {
+        "input": "businesses = [(1, 'active'), (2, 'inactive'), (3, 'active')]",
+        "output": "[1, 3]",
+        "explanation": "Only businesses with IDs 1 and 3 are active, and they are returned in sorted order."
+      },
+      {
+        "input": "businesses = [(10, 'inactive'), (20, 'active'), (30, 'active'), (5, 'inactive')]",
+        "output": "[20, 30]",
+        "explanation": "The active businesses are 20 and 30, returned in ascending order."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Iterate through the list and collect IDs of active businesses.",
+      "Use a sorting method to order the IDs before returning."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Words in a String",
+    "description": "Given an input string, reverse the order of the words. A word is defined as a sequence of non-space characters. The words in the output must be separated by a single space. Leading and trailing spaces in the input string should be ignored. If there are multiple spaces between words, reduce them to a single space in the output.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Reverse"
+    ],
+    "input_format": "A single string s, which represents the input string.",
+    "output_format": "A single string representing the words in reverse order.",
+    "constraints": [
+      "0 <= s.length <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "s = '  Hello World  '",
+        "output": "'World Hello'",
+        "explanation": "The words 'Hello' and 'World' are reversed, and leading/trailing spaces are removed."
+      },
+      {
+        "input": "s = '  the sky is blue '",
+        "output": "'blue is sky the'",
+        "explanation": "After reversing the words and removing extra spaces, we get 'blue is sky the'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using string manipulation functions to trim and split the input.",
+      "Think about how to reverse the order of an array of words."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Word Ladder",
+    "description": "Given two words, beginWord and endWord, and a dictionary's word list, return the number of words in the shortest transformation sequence from beginWord to endWord, such that only one letter can be changed at a time. Each transformed word must exist in the word list. If there is no such transformation sequence, return 0. Note that beginWord is not a part of the word list.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "String"
+    ],
+    "input_format": "Two strings beginWord, endWord, and a list of strings wordList.",
+    "output_format": "An integer representing the length of the shortest transformation sequence.",
+    "constraints": [
+      "1 <= beginWord.length <= 10",
+      "1 <= endWord.length <= 10",
+      "1 <= wordList.length <= 5000",
+      "beginWord and endWord consist of lowercase alphabetic characters.",
+      "All the strings in wordList are unique."
+    ],
+    "examples": [
+      {
+        "input": {
+          "beginWord": "hit",
+          "endWord": "cog",
+          "wordList": [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log",
+            "cog"
+          ]
+        },
+        "output": "5",
+        "explanation": "The shortest transformation sequence is 'hit' -> 'hot' -> 'dot' -> 'dog' -> 'cog'."
+      },
+      {
+        "input": {
+          "beginWord": "hit",
+          "endWord": "cog",
+          "wordList": [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log"
+          ]
+        },
+        "output": "0",
+        "explanation": "The endWord 'cog' is not in the wordList."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a breadth-first search (BFS) approach to explore the word transformations.",
+      "Keep track of the number of steps taken to reach each word."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Word Ladder II",
+    "description": "Given two words, beginWord and endWord, and a dictionary's word list, find all the shortest transformation sequences from beginWord to endWord, such that only one letter can be changed at a time. Each transformed word must exist in the word list. Return all such transformation sequences. Note that you may return the answer in any order.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "BFS",
+      "Backtracking",
+      "Graph",
+      "String"
+    ],
+    "input_format": "A string beginWord, a string endWord, and a list of strings wordList.",
+    "output_format": "A list of lists of strings, where each inner list is a sequence from beginWord to endWord.",
+    "constraints": [
+      "1 <= beginWord.length <= 10",
+      "1 <= endWord.length <= 10",
+      "1 <= wordList.length <= 5000",
+      "beginWord and endWord are of the same length.",
+      "All words contain only lowercase alphabetic characters.",
+      "endWord must be in the wordList."
+    ],
+    "examples": [
+      {
+        "input": {
+          "beginWord": "hit",
+          "endWord": "cog",
+          "wordList": [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log",
+            "cog"
+          ]
+        },
+        "output": [
+          [
+            "hit",
+            "hot",
+            "dot",
+            "dog",
+            "cog"
+          ],
+          [
+            "hit",
+            "hot",
+            "lot",
+            "log",
+            "cog"
+          ]
+        ],
+        "explanation": "The shortest transformation sequences from 'hit' to 'cog' are through 'hot', 'dot', and 'dog', or through 'lot' and 'log'."
+      },
+      {
+        "input": {
+          "beginWord": "hit",
+          "endWord": "cog",
+          "wordList": [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log"
+          ]
+        },
+        "output": [],
+        "explanation": "There is no transformation sequence from 'hit' to 'cog' since 'cog' is not in the word list."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use BFS to find the shortest path.",
+      "Store the paths leading to the current word.",
+      "Backtrack to construct the result."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. An interval is represented as a pair of integers [start, end], where start is the starting point and end is the endpoint of the interval. If two intervals overlap, you need to merge them into a single interval that spans from the minimum start to the maximum end.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A 2D list of integers intervals, where each interval is represented as [start, end].",
+    "output_format": "A 2D list of merged intervals.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "Intervals [1,3] and [2,6] overlap, so they are merged into [1,6]. The other intervals do not overlap."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] overlap at the endpoint, so they are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on their starting points.",
+      "Use a stack or an array to keep track of merged intervals."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Group",
+      "Anagrams"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of lists of strings, where each sublist contains anagrams grouped together.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The output groups the anagrams. 'bat' is independent, while 'nat' and 'tan' are anagrams, as are 'ate', 'eat', and 'tea'."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "Single empty string is its own anagram."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "Single character string is its own anagram."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to group the strings by sorted character order.",
+      "You can sort each string and use it as a key.",
+      "Pay attention to the time complexity of your solution."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Common Prefix",
+    "description": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\". A common prefix is defined as a substring that appears at the start of each string in the array.",
+    "topic": "String",
+    "subtopic": "Prefix",
+    "tags": [
+      "String",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A string representing the longest common prefix. If there is none, return \"\".",
+    "constraints": [
+      "0 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "strs[i] consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\", \"flow\", \"flight\"]",
+        "output": "\"fl\"",
+        "explanation": "The longest common prefix is \"fl\"."
+      },
+      {
+        "input": "strs = [\"dog\", \"racecar\", \"car\"]",
+        "output": "\"\"",
+        "explanation": "There is no common prefix among the strings."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "\"a\"",
+        "explanation": "The longest common prefix is the string itself since there is only one string."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how to iterate through the characters of the strings.",
+      "Use the first string as a reference for the prefix."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Colored Pieces if Both Neighbors are the Same Color",
+    "description": "You are given a string 'colors' representing the colors of some pieces. Each piece can either be 'R' (red) or 'G' (green). Your task is to remove pieces from 'colors' such that whenever you find a piece with the same color as both of its neighbors, you remove that piece. Repeat this process until no further pieces can be removed. Return the final string after all possible removals.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Greedy",
+      "Simulation"
+    ],
+    "input_format": "A string 'colors' consisting of characters 'R' and 'G'.",
+    "output_format": "A string representing the final state of 'colors' after removal of neighboring pieces.",
+    "constraints": [
+      "1 <= colors.length <= 10^5",
+      "colors[i] is either 'R' or 'G'."
+    ],
+    "examples": [
+      {
+        "input": "colors = 'RRGGBB'",
+        "output": "RG",
+        "explanation": "The sequence RRGGBB removes the R's and G's in pairs until reaching RG."
+      },
+      {
+        "input": "colors = 'RGRGR'",
+        "output": "RGRGR",
+        "explanation": "No pieces can be removed since there are no neighbors with identical colors."
+      },
+      {
+        "input": "colors = 'RRRGG'",
+        "output": "G",
+        "explanation": "The R's get removed in pairs until only a single G remains."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to keep track of the colors.",
+      "Check the top of the stack for similar neighbors before adding a color."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Random Pick with Weight",
+    "description": "You are given an array of positive integers w where w[i] describes the weight of index i (0-indexed). You need to implement a function that can pick an index from the array with a probability proportional to its weight. For example, if w = [1, 3], the chance of picking index 0 is 1/4, and the chance of picking index 1 is 3/4. Your task is to implement the RandomPickWeight class with the following method: random() which returns a random index according to the weights.",
+    "topic": "Random",
+    "subtopic": "Weighted Random Selection",
+    "tags": [
+      "Random",
+      "Probability",
+      "Selection"
+    ],
+    "input_format": "An array of positive integers w.",
+    "output_format": "An integer representing the randomly picked index according to the weights.",
+    "constraints": [
+      "1 <= w.length <= 10^4",
+      "1 <= w[i] <= 10^6",
+      "The sum of weights will not exceed 10^9."
+    ],
+    "examples": [
+      {
+        "input": "w = [1, 3]",
+        "output": "0 or 1",
+        "explanation": "Index 0 has weight 1 and index 1 has weight 3. Probability for index 0 is 1/4 and index 1 is 3/4."
+      },
+      {
+        "input": "w = [1, 1, 1, 1]",
+        "output": "0, 1, 2, or 3",
+        "explanation": "All indices have equal weight. Therefore, each index has a probability of 1/4 to be chosen."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to create a cumulative distribution of weights.",
+      "Consider using a prefix sum array for efficient weight calculations."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum String Length After Removing Substrings",
+    "description": "You are given a string s and a list of substrings to remove from s. Your task is to determine the minimum length of the string after you have removed all occurrences of the substrings in any order. If after removing all substrings the string is empty, return 0.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Substring Removal"
+    ],
+    "input_format": "A string s followed by a list of strings substrings, where each string in substrings is a substring to be removed from s.",
+    "output_format": "An integer representing the minimum length of the string after removing the specified substrings.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= substrings.length <= 100",
+      "1 <= substrings[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcdef', substrings = ['ab', 'c']",
+        "output": "3",
+        "explanation": "Removing 'ab' leaves us with 'cdef', and removing 'c' results in 'def' which has a length of 3."
+      },
+      {
+        "input": "s = 'xyzxyz', substrings = ['xy', 'z']",
+        "output": "0",
+        "explanation": "Removing 'xy' and 'z' from 'xyzxyz' results in an empty string."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using iterative removal of substrings.",
+      "Check for all occurrences of each substring."
+    ],
+    "company": "Yelp"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest and Lexicographically Smallest Beautiful String",
+    "description": "A beautiful string is defined as a string where no two consecutive characters are the same and each character in the string appears at most once. Given an integer n, your task is to generate the shortest beautiful string of length n that is lexicographically smallest. If no such string exists, return an empty string.",
+    "topic": "String",
+    "subtopic": "Generation and Validation",
+    "tags": [
+      "String",
+      "Combination",
+      "Lexicographic"
+    ],
+    "input_format": "A single integer n (1 <= n <= 26).",
+    "output_format": "A string representing the shortest and lexicographically smallest beautiful string, or an empty string if no such string exists.",
+    "constraints": [
+      "1 <= n <= 26"
+    ],
+    "examples": [
+      {
+        "input": "3",
+        "output": "abc",
+        "explanation": "The shortest beautiful string of length 3 is 'abc'."
+      },
+      {
+        "input": "1",
+        "output": "a",
+        "explanation": "The shortest beautiful string of length 1 is 'a'."
+      },
+      {
+        "input": "27",
+        "output": "",
+        "explanation": "A beautiful string of length 27 cannot be formed since there are only 26 letters in the English alphabet."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the English alphabet characters.",
+      "Focus on ensuring no two consecutive characters are the same.",
+      "Use a greedy approach to build the string."
+    ],
+    "company": "Yelp"
+  }
+]

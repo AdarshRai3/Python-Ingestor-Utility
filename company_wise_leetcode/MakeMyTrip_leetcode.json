@@ -1,0 +1,1306 @@
+[
+  {
+    "question_id": "",
+    "title": "Reachable Nodes With Restrictions",
+    "description": "You are given a directed graph represented as an adjacency list where nodes are numbered from 0 to n-1. Each node has a maximum number of edges it can have, determined by a list of edge restrictions. Your task is to find the total number of nodes that are reachable from the starting node, considering the restrictions on the edges. A node is considered reachable if there exists a path from the starting node to that node which does not violate the restrictions.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Pathfinding",
+      "Counting"
+    ],
+    "input_format": "An integer n representing the number of nodes, an integer start representing the starting node, a list of lists restrictions where each sublist contains two integers representing a directed edge restriction.",
+    "output_format": "An integer representing the number of reachable nodes from the starting node under the given restrictions.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "0 <= start < n",
+      "0 <= restrictions.length <= 10^4",
+      "0 <= restrictions[i][0], restrictions[i][1] < n"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, start = 0, restrictions = [[0, 1], [1, 2], [2, 3]]",
+        "output": "2",
+        "explanation": "Nodes 0 and 1 are reachable from node 0. Node 2 is not reachable due to the restriction."
+      },
+      {
+        "input": "n = 6, start = 2, restrictions = [[2, 4], [4, 5]]",
+        "output": "3",
+        "explanation": "Nodes 2, 3, and 4 are reachable from node 2. Node 5 is not reachable due to the restriction."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a depth-first search to explore reachable nodes.",
+      "Keep track of visited nodes to avoid cycles.",
+      "Check restrictions before traversing edges."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Ideal Subsequence",
+    "description": "Given an array of integers, find the length of the longest subsequence such that the absolute difference between any two elements is less than or equal to a given integer k. A subsequence can be derived from an array by deleting some or no elements without changing the order of the remaining elements.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Longest Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "Subsequence",
+      "Array"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the length of the longest ideal subsequence.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "1 <= nums[i] <= 10^9",
+      "0 <= k <= 20"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 5, 4, 2], k = 2",
+        "output": "4",
+        "explanation": "The longest ideal subsequence is [1, 3, 2] or [1, 2, 4], both of length 4."
+      },
+      {
+        "input": "nums = [4, 5, 6, 7], k = 1",
+        "output": "1",
+        "explanation": "The longest ideal subsequence is any single element as all absolute differences are greater than 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider dynamic programming approaches to build the solution incrementally.",
+      "Use a mapping structure to track elements that can form the ideal subsequence."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Length of Longest Subarray With at Most K Frequency",
+    "description": "Given an array of integers nums and an integer k, return the length of the longest subarray that contains at most k distinct integers. The subarray can be non-contiguous.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the length of the longest subarray with at most k distinct integers.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= k <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 1, 2, 3], k = 2",
+        "output": "4",
+        "explanation": "The longest subarray with at most 2 distinct integers is either [1, 2, 1, 2] or [2, 1, 2, 1] with length 4."
+      },
+      {
+        "input": "nums = [1, 2, 1, 2, 3], k = 1",
+        "output": "2",
+        "explanation": "The longest subarray with at most 1 distinct integer is either [1, 1] or [2, 2] with length 2."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1, 2, 3, 4], k = 3",
+        "output": "5",
+        "explanation": "The longest subarray with at most 3 distinct integers is [1, 2, 3, 1, 2] with length 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window approach to manage the count of distinct integers.",
+      "You may need a HashMap or similar data structure to track the counts of integers."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "First Missing Positive",
+    "description": "Given an unsorted integer array nums, find the smallest missing positive integer. You must implement an algorithm that runs in O(n) time and uses constant extra space.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the first missing positive integer.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, -1, 1]",
+        "output": "2",
+        "explanation": "The smallest missing positive integer is 2."
+      },
+      {
+        "input": "nums = [1, 2, 0]",
+        "output": "3",
+        "explanation": "The smallest missing positive integer is 3."
+      },
+      {
+        "input": "nums = [7, 8, 9, 11, 12]",
+        "output": "1",
+        "explanation": "The smallest missing positive integer is 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using index mapping to track the presence of positive integers.",
+      "Ignoring negative numbers and zero can simplify your approach.",
+      "Think about how to arrange the numbers in the array."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Cheapest Flights Within K Stops",
+    "description": "You are given a list of airline tickets represented as pairs of cities, each ticket costing certain price. You need to find the cheapest price to travel from a starting city to a destination city with at most K stops in between. If it is not possible to reach the destination city, return -1.",
+    "topic": "Graph",
+    "subtopic": "Shortest Path",
+    "tags": [
+      "Graph",
+      "Dijkstra",
+      "Shortest Path",
+      "Priority Queue"
+    ],
+    "input_format": "An integer n representing the total number of flights, followed by a list of flights represented as [src, dest, price] and two integers src and dst indicating the starting and destination city, and an integer k indicating the maximum number of stops.",
+    "output_format": "An integer representing the cheapest price to travel from src to dst within k stops, or -1 if it is impossible.",
+    "constraints": [
+      "1 <= n <= 10000",
+      "0 <= price <= 10000",
+      "The source and destination are different."
+    ],
+    "examples": [
+      {
+        "input": {
+          "n": 5,
+          "flights": [
+            [
+              0,
+              1,
+              100
+            ],
+            [
+              1,
+              2,
+              100
+            ],
+            [
+              2,
+              0,
+              100
+            ],
+            [
+              1,
+              3,
+              600
+            ],
+            [
+              2,
+              3,
+              200
+            ]
+          ],
+          "src": 0,
+          "dst": 3,
+          "k": 1
+        },
+        "output": "700",
+        "explanation": "The cheapest flight path is 0 -> 1 -> 3 with costs 100 + 600 = 700."
+      },
+      {
+        "input": {
+          "n": 5,
+          "flights": [
+            [
+              0,
+              1,
+              100
+            ],
+            [
+              1,
+              2,
+              100
+            ],
+            [
+              2,
+              0,
+              100
+            ],
+            [
+              1,
+              3,
+              600
+            ],
+            [
+              2,
+              3,
+              200
+            ]
+          ],
+          "src": 0,
+          "dst": 3,
+          "k": 0
+        },
+        "output": "-1",
+        "explanation": "It is not possible to reach the destination city with 0 stops."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a priority queue to track the minimum cost at each step.",
+      "Keep track of the number of stops to ensure you do not exceed K."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the height of bars in a histogram, compute how much water it can trap after raining. The width of each bar is 1.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers heights, where heights[i] represents the height of the i-th bar.",
+    "output_format": "An integer representing the total units of trapped rainwater.",
+    "constraints": [
+      "0 <= heights.length <= 2 * 10^4",
+      "0 <= heights[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water trapped between the bars amounts to 6 units."
+      },
+      {
+        "input": "heights = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water trapped here is 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use two pointers to find the left and right boundaries.",
+      "Keep track of the left maximum and right maximum for each position."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Your goal is to determine if you can reach the last index starting from the first index. You can assume you can always jump from a position if the maximum jump length at that position is greater than zero. If you can reach the last index, return true; otherwise, return false.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming",
+      "Simulation"
+    ],
+    "input_format": "An array of non-negative integers nums representing the maximum jump lengths.",
+    "output_format": "A boolean value indicating whether you can reach the last index (true or false).",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "true",
+        "explanation": "You can jump to index 1 (3) and then jump to index 4 (4) which is the last index."
+      },
+      {
+        "input": "nums = [3, 2, 1, 0, 4]",
+        "output": "false",
+        "explanation": "You can reach index 3 (0), but you cannot jump to index 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider simulating jumps and keeping track of the furthest index you can reach.",
+      "If at any point you can reach or exceed the last index, you are successful.",
+      "Use a greedy approach to maximize the number of steps taken."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Window Substring",
+    "description": "Given two strings s and t, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string \"\". The output should be the smallest length substring, such that it contains all characters of string t.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Table"
+    ],
+    "input_format": "Two strings s and t, where 1 <= s.length <= 10^5 and 1 <= t.length <= 10^5.",
+    "output_format": "A string representing the minimum window substring or an empty string if no such substring exists.",
+    "constraints": [
+      "s and t consist of English letters, digits, symbols and spaces.",
+      "s is guaranteed to be the source string."
+    ],
+    "examples": [
+      {
+        "input": "s = \"ADOBECODEBANC\", t = \"ABC\"",
+        "output": "\"BANC\"",
+        "explanation": "The minimum window substring is \"BANC\" which contains all characters of t."
+      },
+      {
+        "input": "s = \"a\", t = \"a\"",
+        "output": "\"a\"",
+        "explanation": "The minimum window substring is the same as s since it contains t."
+      },
+      {
+        "input": "s = \"a\", t = \"aa\"",
+        "output": "\"\"",
+        "explanation": "The string t cannot be found in s since it lacks an additional 'a'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use two pointers for the sliding window.",
+      "Use a hash table to count characters in t."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. An interval is defined as a pair of integers representing a start and end time. You need to return an array of the merged intervals, which must be sorted by their start times.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A 2D array of integers intervals where intervals[i] = [start_i, end_i].",
+    "output_format": "A 2D array of merged intervals sorted by the start time.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= start_i <= end_i <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they are merged into [1,6]. The rest are non-overlapping."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] touch at point 4, so they are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals by their starting points.",
+      "Traverse the sorted intervals and merge them as necessary."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Min Stack",
+    "description": "Design a stack that supports push, pop, top, and retrieving the minimum element in constant time. Implement the MinStack class with the following methods:\n\n- `void push(int val)`: Pushes the element val onto the stack.\n- `void pop()`: Removes the element on the top of the stack.\n- `int top()`: Gets the top element of the stack.\n- `int getMin()`: Retrieves the minimum element in the stack.\n\nYou must implement this with constant time complexity for each function.",
+    "topic": "Data Structure",
+    "subtopic": "Stack",
+    "tags": [
+      "Stack",
+      "Data Structure",
+      "Design"
+    ],
+    "input_format": "You will be given a series of operations to perform on the stack (push, pop, top, getMin). Each operation will be given in a list format.",
+    "output_format": "Return the result of the top and getMin methods as a list.",
+    "constraints": [
+      "The number of operations will be between 1 and 10^4.",
+      "Each push operation will receive an integer between -10^6 and 10^6."
+    ],
+    "examples": [
+      {
+        "input": "operations = ['MinStack', 'push', 'push', 'getMin', 'pop', 'top', 'getMin'], values = [[], [5], [3], [], [], [], []]",
+        "output": "[null, null, null, 3, null, 5, 5]",
+        "explanation": "In this sequence, we create a new MinStack, push 5, push 3. The minimum is 3. After popping 3, the top becomes 5, and the minimum remains 5."
+      },
+      {
+        "input": "operations = ['MinStack', 'push', 'getMin', 'push', 'getMin'], values = [[], [2], [], [1], []]",
+        "output": "[null, null, 2, null, 1]",
+        "explanation": "Here, we push 2, then getMin which returns 2. Then we push 1, and getMin returns 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using an auxiliary stack to keep track of the minimum values.",
+      "Think about how you can maintain the minimum when popping values."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search",
+    "description": "Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where 'adjacent' cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.",
+    "topic": "Backtracking",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Backtracking",
+      "Matrix",
+      "Depth-First Search"
+    ],
+    "input_format": "A 2D array of characters board and a string word.",
+    "output_format": "A boolean value indicating whether the word exists in the grid.",
+    "constraints": [
+      "1 <= board.length, board[i].length <= 6",
+      "1 <= word.length <= 15",
+      "board[i][j] is a lowercase English letter."
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCCED"
+        },
+        "output": "true",
+        "explanation": "The word 'ABCCED' can be found tracing through the board from top left to bottom right."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "SEE"
+        },
+        "output": "true",
+        "explanation": "The word 'SEE' can be found starting from the position (2, 1) and moving accordingly."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCB"
+        },
+        "output": "false",
+        "explanation": "The word 'ABCB' cannot be formed as the letter 'B' cannot be reused."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use depth-first search to explore the grid.",
+      "Keep track of visited cells to avoid reusing them."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Regular Expression Matching",
+    "description": "Implement a function that checks whether a given input string matches a specified pattern using regular expressions. The pattern may include the characters '.' which matches any single character, and '*' which matches zero or more of the preceding element. The matching should cover the entire input string (not partial).",
+    "topic": "String",
+    "subtopic": "Pattern Matching",
+    "tags": [
+      "String",
+      "Pattern Matching",
+      "Regular Expressions"
+    ],
+    "input_format": "A string `s` representing the input text and a string `p` representing the pattern.",
+    "output_format": "Return true if the input string matches the pattern, otherwise return false.",
+    "constraints": [
+      "1 <= s.length <= 20",
+      "1 <= p.length <= 20"
+    ],
+    "examples": [
+      {
+        "input": "s = 'aab', p = 'c*a*b'",
+        "output": "true",
+        "explanation": "The pattern matches the string because 'c*' can be ignored, 'a*' matches 'aa', and 'b' matches 'b'."
+      },
+      {
+        "input": "s = 'mississippi', p = 'mis*is*p*.",
+        "output": "false",
+        "explanation": "The pattern does not match the string, as there is no way to match 's' with the trailing wildcard."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Try using dynamic programming to build a solution.",
+      "Think about how to handle the '*' character in the pattern."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Valid Parentheses",
+    "description": "Given a string containing just the characters '(' and ')', return the length of the longest valid (well-formed) parentheses substring.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Stack"
+    ],
+    "input_format": "A string s consisting of '(' and ')'.",
+    "output_format": "An integer representing the length of the longest valid parentheses substring.",
+    "constraints": [
+      "0 <= s.length <= 3 * 10^4",
+      "s[i] is either '(' or ')'."
+    ],
+    "examples": [
+      {
+        "input": "s = '(()'",
+        "output": "2",
+        "explanation": "The longest valid parentheses substring is '()', with length 2."
+      },
+      {
+        "input": "s = ')()())'",
+        "output": "4",
+        "explanation": "The longest valid parentheses substring is '()()', with length 4."
+      },
+      {
+        "input": "s = '']()()()'']",
+        "output": "6",
+        "explanation": "The longest valid parentheses substring is '(()())', with length 6."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to track indices of parentheses.",
+      "Look for pairs of valid parentheses to simplify the problem.",
+      "Use a dynamic programming table to store the lengths of valid substrings."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A string is considered a palindrome if it reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Dynamic Programming"
+    ],
+    "input_format": "A single string s where 1 <= s.length <= 1000.",
+    "output_format": "A string representing the longest palindromic substring found in s.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only digits and English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'babad'",
+        "output": "'bab'",
+        "explanation": "Both 'bab' and 'aba' are valid longest palindromic substrings, but 'bab' is returned as it appears first."
+      },
+      {
+        "input": "s = 'cbbd'",
+        "output": "'bb'",
+        "explanation": "'bb' is the only palindrome present in the string and is the longest one."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around potential centers of the palindrome.",
+      "A palindrome mirrors around its center."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Search a 2D Matrix II",
+    "description": "Write an efficient algorithm to search for a target value in an m x n integer matrix. This matrix has the following properties: Integers in each row are sorted in ascending from left to right. Integers in each column are sorted in ascending from top to bottom.",
+    "topic": "Binary Search",
+    "subtopic": "Search in Matrix",
+    "tags": [
+      "Binary Search",
+      "Matrix",
+      "Searching"
+    ],
+    "input_format": "A 2D integer matrix matrix and an integer target.",
+    "output_format": "A boolean indicating whether the target value exists in the matrix.",
+    "constraints": [
+      "m == matrix.length",
+      "n == matrix[i].length",
+      "1 <= m, n <= 100",
+      "-10^4 <= matrix[i][j], target <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 4, 7, 11], [2, 5, 8, 12], [3, 6, 9, 16], [10, 13, 14, 17]], target = 5",
+        "output": "true",
+        "explanation": "5 is in the matrix."
+      },
+      {
+        "input": "matrix = [[1, 4, 7, 11], [2, 5, 8, 12], [3, 6, 9, 16], [10, 13, 14, 17]], target = 20",
+        "output": "false",
+        "explanation": "20 is not in the matrix."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Start searching from the top-right corner of the matrix.",
+      "If the current value is greater than the target, move left.",
+      "If the current value is less than the target, move down."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Edit Distance",
+    "description": "Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2. You can perform the following operations: insert a character, remove a character, or replace a character.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Edit Distance"
+    ],
+    "input_format": "Two strings word1 and word2 with lengths at most 100.",
+    "output_format": "An integer representing the minimum edit distance between the two strings.",
+    "constraints": [
+      "0 <= word1.length, word2.length <= 100",
+      "word1 and word2 consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "word1 = 'horse', word2 = 'ros'",
+        "output": "3",
+        "explanation": "horse -> rorse (replace 'h' with 'r') -> rorse -> rose (remove 'r') -> rose -> ros (remove 'e'). Total of 3 operations."
+      },
+      {
+        "input": "word1 = 'intention', word2 = 'execution'",
+        "output": "5",
+        "explanation": "intention -> inention (remove 't') -> inetion (replace 'n' with 'e') -> eention (replace 'i' with 'e') -> exention (replace 'n' with 'x') -> execution (add 'u'). Total of 5 operations."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a 2D array to store results of subproblems.",
+      "Initialize the first row and column based on the lengths of the strings.",
+      "Consider cases of inserting, deleting, and replacing characters."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an array of integers and a window size k, return the maximum value for each sliding window of size k. The window moves from the start of the array to the end, one element at a time.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Deque"
+    ],
+    "input_format": "An array of integers nums of length n, and an integer k (1 <= k <= n).",
+    "output_format": "An array of integers representing the maximum value in each sliding window of size k.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, -1, -3, 5, 3, 6, 7], k = 3",
+        "output": "[3, 3, 5, 5, 6, 7]",
+        "explanation": "The maximum of sliding windows are: [1, 3, -1] -> 3, [3, -1, -3] -> 3, [-1, -3, 5] -> 5, [-3, 5, 3] -> 5, [5, 3, 6] -> 6, [3, 6, 7] -> 7."
+      },
+      {
+        "input": "nums = [1, -1], k = 1",
+        "output": "[1, -1]",
+        "explanation": "Each element is its own window maximum since the window size is 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a deque to keep track of the maximum indices.",
+      "If the maximum element is out of the current window, remove it from the deque.",
+      "Maintain the order of elements in the deque."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Trie (Prefix Tree)",
+    "description": "A Trie (pronounced as 'try') is a special type of tree used to store associative data structures. A common application of a Trie is storing a predictive text or autocomplete system. Implement a Trie with the following methods: insert (word), search (word), and startsWith (prefix). You should implement the Trie class that has the following methods:\n\n- `insert(String word)`: Inserts the string `word` into the Trie.\n- `search(String word)`: Returns true if the string `word` exists in the Trie, otherwise returns false.\n- `startsWith(String prefix)`: Returns true if there is a string in the Trie that starts with the given `prefix`.\n\nYour implementation should be efficient in terms of both time and space.",
+    "topic": "Data Structure",
+    "subtopic": "Trie",
+    "tags": [
+      "Trie",
+      "Data Structure",
+      "String"
+    ],
+    "input_format": "The input consists of multiple calls to the methods of the Trie class.",
+    "output_format": "The output consists of boolean results for search and startsWith methods.",
+    "constraints": [
+      "1 <= word.length <= 200",
+      "1 <= prefix.length <= 200",
+      "All strings consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "trie = new Trie();\ntrie.insert(\"apple\");\ntrie.search(\"apple\");",
+        "output": "true",
+        "explanation": "The word 'apple' was inserted into the trie, so searching for 'apple' returns true."
+      },
+      {
+        "input": "trie.search(\"app\");",
+        "output": "false",
+        "explanation": "The word 'app' has not been inserted, so searching for 'app' returns false."
+      },
+      {
+        "input": "trie.startsWith(\"app\");",
+        "output": "true",
+        "explanation": "The trie contains the word 'apple', which starts with 'app', so it returns true."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to represent each node in the Trie.",
+      "Consider using a HashMap or an array to store child nodes."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Evaluate Division",
+    "description": "You are given an array of equations and an array of values where each equation is represented as a string of the form \"A/B\" which means A is divided by B. The equations also have corresponding values representing the results of these divisions. You need to evaluate a list of queries where each query is in the form of \"C/D\" asking for the result of C divided by D. If the division cannot be performed, return -1.0. You can assume all variables are non-zero.",
+    "topic": "Graph",
+    "subtopic": "Union-Find",
+    "tags": [
+      "Graph",
+      "Union-Find",
+      "Division"
+    ],
+    "input_format": "An array of strings equations, an array of float values values, and an array of strings queries.",
+    "output_format": "An array of float representing the results of each query.",
+    "constraints": [
+      "1 <= equations.length <= 20",
+      "equations[i].length == 3",
+      "values.length == equations.length",
+      "1 <= queries.length <= 20",
+      "equations[i][0], equations[i][2] are lowercase English letters",
+      "values[i] is a positive float.",
+      "All variables are non-zero."
+    ],
+    "examples": [
+      {
+        "input": {
+          "equations": [
+            "a/b",
+            "b/c"
+          ],
+          "values": [
+            2.0,
+            3.0
+          ],
+          "queries": [
+            "a/c",
+            "b/a",
+            "a/d",
+            "x/y"
+          ]
+        },
+        "output": [
+          6.0,
+          0.5,
+          -1.0,
+          -1.0
+        ],
+        "explanation": "For the query a/c, 2.0 * 3.0 = 6.0; for b/a, 1/2.0 = 0.5; for a/d and x/y, they cannot be evaluated."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a graph representation for the equations.",
+      "Depth-first search (DFS) might help in finding paths for evaluation.",
+      "Keep track of visited nodes to avoid cycles and revisits."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.",
+    "topic": "Backtracking",
+    "subtopic": "Generating Combinations",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "String"
+    ],
+    "input_format": "An integer n representing the number of pairs of parentheses.",
+    "output_format": "A list of strings representing all combinations of well-formed parentheses.",
+    "constraints": [
+      "1 <= n <= 8"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\"]",
+        "explanation": "There are five combinations of well-formed parentheses when n = 3."
+      },
+      {
+        "input": "n = 1",
+        "output": "[\"()\"]",
+        "explanation": "The only combination of well-formed parentheses when n = 1 is a single pair: ()"
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how many open and close parentheses you can have at any point.",
+      "Use backtracking to add parentheses incrementally."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Two Pointers"
+    ],
+    "input_format": "A string s, where 0 <= s.length <= 10^5.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of English letters, digits, symbols and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'abc', which has a length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is 'b', with a length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'wke', with a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to track the last indices of each character.",
+      "Maintain a variable to store the start index of the current substring.",
+      "Update the start index if a character repeats."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Product of Array Except Self",
+    "description": "Given an integer array nums, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i]. The division operation is not allowed. You must do this in O(n) time complexity and without using the division operator.",
+    "topic": "Array",
+    "subtopic": "Product Calculation",
+    "tags": [
+      "Array",
+      "Product",
+      "Prefix Sum"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing the product of all elements in nums except the element at the current index.",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-30 <= nums[i] <= 30"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "[24, 12, 8, 6]",
+        "explanation": "For index 0, output[0] = 2*3*4 = 24, for index 1, output[1] = 1*3*4 = 12, for index 2, output[2] = 1*2*4 = 8, and for index 3, output[3] = 1*2*3 = 6."
+      },
+      {
+        "input": "nums = [-1, 1, 0, -3, 3]",
+        "output": "[0, 0, 9, 0, 0]",
+        "explanation": "The output array represents the products of all other elements except for the index elements."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two passes through the array.",
+      "Use an output array to keep track of intermediate results."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given a linked list, reverse the nodes of the list k at a time and return the modified list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is. You may not alter the values in the nodes, only nodes themselves may be changed.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Two Pointers"
+    ],
+    "input_format": "A linked list where nodes are defined by their values and a number k, representing the size of the group.",
+    "output_format": "A linked list with nodes reversed in groups of size k.",
+    "constraints": [
+      "The number of nodes in the linked list is in the range [0, 5000].",
+      "1 <= k <= 5000."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[2, 1, 4, 3, 5]",
+        "explanation": "The first two nodes are reversed to become [2, 1] and the next two nodes are reversed to become [4, 3]. The last node [5] remains unchanged."
+      },
+      {
+        "input": "head = [1, 2, 3], k = 5",
+        "output": "[1, 2, 3]",
+        "explanation": "Since k is greater than the number of nodes in the linked list, the entire list remains unchanged."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a dummy node to simplify edge cases.",
+      "You will need to reverse the pointers of the nodes in each k-group."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Increasing Triplet Subsequence",
+    "description": "Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exist, return false.",
+    "topic": "Array",
+    "subtopic": "Subsequence",
+    "tags": [
+      "Array",
+      "Subsequence",
+      "Greedy"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A boolean value - true if such a triplet exists, false otherwise.",
+    "constraints": [
+      "1 <= nums.length <= 5 * 10^5",
+      "-2^31 <= nums[i] <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5]",
+        "output": "true",
+        "explanation": "The triplet (1, 2, 3) satisfies the condition."
+      },
+      {
+        "input": "nums = [5, 4, 3, 2, 1]",
+        "output": "false",
+        "explanation": "There are no triplets that satisfy the condition."
+      },
+      {
+        "input": "nums = [2, 1, 5, 0, 4, 6]",
+        "output": "true",
+        "explanation": "The triplet (1, 5, 6) satisfies the condition."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to keep track of the smallest and second smallest numbers while iterating."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Majority Element",
+    "description": "Given an array of size n, find the majority element. The majority element is the element that appears more than n/2 times in the array. You may assume that the majority element always exists in the array.",
+    "topic": "Array",
+    "subtopic": "Counting",
+    "tags": [
+      "Array",
+      "Counting",
+      "Hash Map"
+    ],
+    "input_format": "An integer array nums of size n.",
+    "output_format": "An integer representing the majority element.",
+    "constraints": [
+      "1 <= n <= 5 * 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 2, 1, 1, 1, 2, 2]",
+        "output": "2",
+        "explanation": "The majority element is 2, which appears 4 times."
+      },
+      {
+        "input": "nums = [3, 2, 3]",
+        "output": "3",
+        "explanation": "The majority element is 3, which appears 2 times."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You can use a hash map to count occurrences.",
+      "Consider using Boyer-Moore Voting Algorithm for optimal space usage."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. The LRU cache should support the following operations: get and put.\n\nThe get(key) method retrieves the value of the key if the key exists in the cache. Otherwise, it returns -1.\n\nThe put(key, value) method updates the value of the key if the key exists. Otherwise, it will add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, it should invalidate the least recently used key.\n\nImplement the LRUCache class:\n\nLRUCache(int capacity) initializes the LRU cache with positive size capacity.\nint get(int key) gets the value of the key if the key exists in the cache, otherwise returns -1.\nvoid put(int key, int value) updates the value of the key if the key exists. Otherwise, it will add the key-value pair. If the number of keys exceeds the capacity, it should invalidate the least recently used key.",
+    "topic": "Data Structure",
+    "subtopic": "Cache",
+    "tags": [
+      "Cache",
+      "LinkedList",
+      "Design"
+    ],
+    "input_format": "The capacity of the cache is provided during instantiation. Operations are performed by calling the methods of the LRUCache class.",
+    "output_format": "The output is the result of the get method calls. For put operations, there is no return value.",
+    "constraints": [
+      "The capacity of the cache will be a positive integer.",
+      "1 <= key <= 10^4",
+      "1 <= value <= 10^4",
+      "The number of operations will not exceed 2 * 10^4."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache cache = new LRUCache(2);\ncache.put(1, 1);\ncache.put(2, 2);\ncache.get(1);  // returns 1\ncache.put(3, 3); // evicts key 2\ncache.get(2);  // returns -1 (not found)",
+        "output": "[1, -1]",
+        "explanation": "After putting (1, 1) and (2, 2), the cache contains 1 and 2. Getting key 1 succeeds. Adding (3, 3) evicts the least recently used key 2."
+      },
+      {
+        "input": "LRUCache cache = new LRUCache(1);\ncache.put(2, 1);\ncache.get(2);  // returns 1\ncache.put(3, 2); // evicts key 2\ncache.get(2);  // returns -1 (not found)",
+        "output": "[1, -1]",
+        "explanation": "The cache can only hold one key. Initially, we add (2, 1). Getting key 2 returns 1. Adding (3, 2) evicts key 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map for quick lookups.",
+      "Consider using a doubly linked list to keep track of usage order."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order. You need to traverse the matrix starting from the top-left corner, moving right until the end of the row, then moving down the last column, then moving left along the bottom row, and finally moving up the first column. Repeat this process as necessary until all elements have been traversed.",
+    "topic": "Matrix",
+    "subtopic": "Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Spiral"
+    ],
+    "input_format": "A 2D list of integers matrix where 1 <= m, n <= 20.",
+    "output_format": "A list of integers representing the elements in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 20",
+      "-100 <= matrix[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "Starting from 1, we go right till 3, then down to 6, then left to 4, and up to 5, completing the spiral order."
+      },
+      {
+        "input": "matrix = [[1, 2], [3, 4]]",
+        "output": "[1, 2, 4, 3]",
+        "explanation": "We start with 1, move to 2, then down to 4, and finally left to 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use four pointers to keep track of the boundary of rows and columns.",
+      "Use a while loop to continue adding elements until the bounds converge."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game II",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Your goal is to reach the last index starting from the first index. Write a function to determine the minimum number of jumps required to reach the last index. If it is not possible to reach the last index, return -1.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "An integer representing the minimum number of jumps to reach the last index, or -1 if not possible.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2,3,1,1,4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then jump 1 step from index 1 to 4."
+      },
+      {
+        "input": "nums = [2,3,0,1,4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then jump 2 steps from index 1 to 4."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "0",
+        "explanation": "Already at the last index, no jumps needed."
+      },
+      {
+        "input": "nums = [1,0,0,0]",
+        "output": "-1",
+        "explanation": "Cannot jump to the last index as the second position is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how far you can jump from each position.",
+      "You may want to track the farthest position reachable at each step."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "description": "Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value. If the target is not found in the array, return [-1, -1]. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Searching"
+    ],
+    "input_format": "An array of integers nums followed by an integer target.",
+    "output_format": "An array of two integers representing the first and last position of the target.",
+    "constraints": [
+      "0 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "nums is sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 8",
+        "output": "[3, 4]",
+        "explanation": "The target 8 appears first at index 3 and last at index 4."
+      },
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 6",
+        "output": "[-1, -1]",
+        "explanation": "The target 6 is not found in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to find the leftmost index of the target.",
+      "Once you find the leftmost index, use binary search again to find the rightmost index."
+    ],
+    "company": "MakeMyTrip"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Implement a data structure that supports the following operations in average O(1) time complexity: insert(val), remove(val), and getRandom(). The insert method will add an item to the data structure, remove will delete it if it exists, and getRandom will return a random element from the current set of elements. Each element must be unique.",
+    "topic": "Data Structures",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Data Structure",
+      "Hash Table",
+      "Random"
+    ],
+    "input_format": "Operations will be provided as an array of strings, where each operation is either 'insert(val)', 'remove(val)', or 'getRandom()'.",
+    "output_format": "For 'getRandom()', return a random integer from the data structure.",
+    "constraints": [
+      "1 <= operations.length <= 10^4",
+      "-10^6 <= val <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "operations = ['insert(1)', 'insert(2)', 'getRandom()', 'remove(1)', 'getRandom()']",
+        "output": "2",
+        "explanation": "After inserting 1 and 2, getRandom may return 1 or 2. After removing 1, getRandom should only return 2."
+      },
+      {
+        "input": "operations = ['insert(1)', 'remove(1)', 'getRandom()']",
+        "output": "Error",
+        "explanation": "Attempting to call getRandom on an empty data structure should raise an error."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a list to store elements and a hash map to store indices for O(1) removals.",
+      "Ensure to handle the random retrieval in a way that it does not affect the time complexity."
+    ],
+    "company": "MakeMyTrip"
+  }
+]

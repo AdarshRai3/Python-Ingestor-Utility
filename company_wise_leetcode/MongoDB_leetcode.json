@@ -1,0 +1,528 @@
+[
+  {
+    "question_id": "",
+    "title": "Word Break",
+    "description": "Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Backtracking"
+    ],
+    "input_format": "A string s and a list of strings wordDict.",
+    "output_format": "Return true if s can be segmented using words from wordDict; otherwise, return false.",
+    "constraints": [
+      "1 <= s.length <= 300",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 20",
+      "All the strings of wordDict are unique."
+    ],
+    "examples": [
+      {
+        "input": "s = 'leetcode', wordDict = ['leet', 'code']",
+        "output": "true",
+        "explanation": "'leetcode' can be segmented into 'leet' and 'code'."
+      },
+      {
+        "input": "s = 'applepenapple', wordDict = ['apple', 'pen']",
+        "output": "true",
+        "explanation": "'applepenapple' can be segmented into 'apple', 'pen', and 'apple'."
+      },
+      {
+        "input": "s = 'catsandog', wordDict = ['cats', 'dog', 'sand', 'and', 'cat']",
+        "output": "false",
+        "explanation": "'catsandog' cannot be segmented into words from the dictionary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to solve the problem efficiently.",
+      "Use an array to track whether each prefix of the string can be formed by the words in the dictionary."
+    ],
+    "company": "MongoDB"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Interval",
+    "description": "Given a collection of non-overlapping intervals, insert a new interval into the intervals (merge if necessary). The intervals are represented as a list of pairs, where each pair consists of a start and end time. After inserting the new interval, return the list of intervals merged if they overlap.",
+    "topic": "Array",
+    "subtopic": "Interval Manipulation",
+    "tags": [
+      "Array",
+      "Intervals",
+      "Sorting"
+    ],
+    "input_format": "A list of intervals, each represented as a pair of integers [start, end], and a new interval to insert, represented as [new_start, new_end].",
+    "output_format": "A list of merged intervals after inserting the new interval.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "intervals are sorted by start in ascending order",
+      "new_interval.length == 2",
+      "-10^5 <= intervals[i][0] <= intervals[i][1] <= 10^5",
+      "-10^5 <= new_interval[0] <= new_interval[1] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[6,9]], new_interval = [2,5]",
+        "output": "[[1,5],[6,9]]",
+        "explanation": "The intervals [1,3] and [6,9] are non-overlapping with the new interval [2,5]. After merging, we get [1,5] and [6,9]."
+      },
+      {
+        "input": "intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], new_interval = [4,8]",
+        "output": "[[1,2],[3,10],[12,16]]",
+        "explanation": "The new interval [4,8] overlaps with intervals [3,5] and [6,7], so they are merged into [3,10]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to merge overlapping intervals.",
+      "You can use a two-pointer technique."
+    ],
+    "company": "MongoDB"
+  },
+  {
+    "question_id": "",
+    "title": "Web Crawler Multithreaded",
+    "description": "Design a multithreaded web crawler that can fetch URLs from a given list concurrently. Each thread should perform the fetching operation for a specified number of URLs, and handle duplicates. After fetching, each URL should be processed to extract links to other web pages. Additionally, ensure that the crawler stops fetching a URL after a set limit to prevent infinite crawling.",
+    "topic": "Concurrency",
+    "subtopic": "Threads",
+    "tags": [
+      "Concurrency",
+      "Multithreading",
+      "Web Crawler"
+    ],
+    "input_format": "A list of URLs to crawl, an integer indicating the maximum depth for crawling, and the number of concurrent threads to run.",
+    "output_format": "A list of fetched URLs and a dictionary mapping each URL to the links extracted from it.",
+    "constraints": [
+      "1 <= urls.length <= 1000",
+      "1 <= max_depth <= 10",
+      "1 <= threads <= 20"
+    ],
+    "examples": [
+      {
+        "input": {
+          "urls": [
+            "http://example.com",
+            "http://example.org"
+          ],
+          "max_depth": 2,
+          "threads": 5
+        },
+        "output": {
+          "fetched_urls": [
+            "http://example.com",
+            "http://example.org"
+          ],
+          "links": {
+            "http://example.com": [
+              "http://example.com/about",
+              "http://example.com/contact"
+            ],
+            "http://example.org": [
+              "http://example.org/home",
+              "http://example.org/help"
+            ]
+          }
+        },
+        "explanation": "The crawler started with two URLs and fetched them with the specified depth, extracting relevant links."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a thread pool to manage concurrent tasks.",
+      "Be mindful of thread safety when sharing resources.",
+      "Use a set to handle duplicates efficiently."
+    ],
+    "company": "MongoDB"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Binary Trees",
+    "description": "Given the roots of two binary trees, merge them into a new binary tree. The merge operation involves adding the values of nodes that overlap and keeping the original nodes in the resulting tree for those that do not overlap. If two nodes overlap, the value of the merged node should be the sum of the values of the overlapping nodes. If a node exists in only one of the trees, it should be included in the merged tree as is.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Merge"
+    ],
+    "input_format": "The input consists of two binary trees represented as root nodes.",
+    "output_format": "Return the root node of the merged binary tree.",
+    "constraints": [
+      "The input trees will have at most 100 nodes.",
+      "Each node's value will be in the range of -10^4 to 10^4."
+    ],
+    "examples": [
+      {
+        "input": "tree1: [1, 3, 2, 5], tree2: [2, 1, 3, null, 4, null, 7]",
+        "output": "[3, 4, 5, 5, 4, null, 7]",
+        "explanation": "Merging the two trees results in the tree: 1+2=3, 3+1=4, 2+3=5, 5+4=5, and 7 remains as it is."
+      },
+      {
+        "input": "tree1: [1], tree2: [1, 2]",
+        "output": "[2, 2]",
+        "explanation": "Merging the two trees results in 1+1=2, and the second tree has an additional node with value 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use recursion to traverse both trees.",
+      "Consider what to do when one of the trees is null."
+    ],
+    "company": "MongoDB"
+  },
+  {
+    "question_id": "",
+    "title": "Stock Price Fluctuation",
+    "description": "You are given a list of stock prices, where each element represents the stock price on a particular day. Your task is to identify the maximum fluctuation in stock price over a given period. The fluctuation is defined as the difference between the highest and lowest stock price during that period. Return the maximum fluctuation for the given list of prices.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the stock prices on consecutive days.",
+    "output_format": "An integer representing the maximum fluctuation in stock price.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "The maximum fluctuation is from 1 to 6, which is 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "There is no fluctuation since the prices are non-increasing."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the range of prices to find fluctuations.",
+      "Use a maximum and minimum tracking method during the iteration."
+    ],
+    "company": "MongoDB"
+  },
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a length L, format the text such that each line has exactly L characters and is fully justified. You should pad extra spaces between words so that each line has exactly L characters. The last line should be left-justified and no extra space is inserted between words. Distribute extra spaces as evenly as possible; if the number of spaces is not divisible by the number of gaps between words, the extra spaces should be distributed from left to right.",
+    "topic": "String",
+    "subtopic": "Text Formatting",
+    "tags": [
+      "String",
+      "Text Justification",
+      "Formatting"
+    ],
+    "input_format": "An array of strings words and an integer L.",
+    "output_format": "An array of strings representing the justified text.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 100",
+      "1 <= L <= 100"
+    ],
+    "examples": [
+      {
+        "input": "words = [\"This\", \"is\", \"an\", \"example\", \"of\", \"text\", \"justification.\"], L = 16",
+        "output": "[\"This    is    an\", \"example  of text\", \"justification.  \"]",
+        "explanation": "The words are justified such that each line is 16 characters long."
+      },
+      {
+        "input": "words = [\"What\", \"must\", \"be\", \"acknowledgment\", \"shall\", \"be\"], L = 16",
+        "output": "[\"What   must   be\", \"acknowledgment  \", \"shall be        \"]",
+        "explanation": "The text should be justified according to the specified line length."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to distribute spaces evenly between words.",
+      "Handle the last line separately since it should not be justified."
+    ],
+    "company": "MongoDB"
+  },
+  {
+    "question_id": "",
+    "title": "Intersection of Two Arrays",
+    "description": "Given two integer arrays, write a function to compute their intersection. Each element in the result should be unique and you may return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Set Operations",
+    "tags": [
+      "Array",
+      "HashSet",
+      "Intersection"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2.",
+    "output_format": "An array of integers representing the unique intersection of the two arrays.",
+    "constraints": [
+      "1 <= nums1.length, nums2.length <= 10^4",
+      "-10^9 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 2, 1], nums2 = [2, 2]",
+        "output": "[2]",
+        "explanation": "The number 2 appears in both arrays."
+      },
+      {
+        "input": "nums1 = [4, 9, 5], nums2 = [9, 4, 9, 8, 4]",
+        "output": "[9, 4]",
+        "explanation": "The numbers 4 and 9 appear in both arrays."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a set to store unique elements from the first array.",
+      "Check if each element of the second array is in the set."
+    ],
+    "company": "MongoDB"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) cache. It should support the following operations: get and put. The get operation retrieves a value from the cache, while the put operation adds a value to the cache. If the cache exceeds its capacity, it should invalidate the least recently used item before adding a new item. Your implementation should maintain an efficient time complexity.",
+    "topic": "Design",
+    "subtopic": "Cache Algorithm",
+    "tags": [
+      "Design",
+      "Cache",
+      "LRU"
+    ],
+    "input_format": "The operations are defined as follows: get(key) retrieves the value associated with the key if it exists in the cache, otherwise returns -1. put(key, value) adds or updates the key-value pair in the cache. The cache is initialized with a positive capacity.",
+    "output_format": "Return the value of the key if it exists in the cache, otherwise return -1.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "-10^4 <= value <= 10^4",
+      "The function get and put will be called at most 2 * 10^5 times."
+    ],
+    "examples": [
+      {
+        "input": "operations = [\"LRUCache\", \"put\", \"put\", \"get\", \"put\", \"get\", \"get\", \"put\", \"get\"]\n capacity = 2\n params = [[], [1, 1], [2, 2], [1], [3, 3], [2], [1], [4, 4], [1]]",
+        "output": "[null,null,null,1,null,-1,null,null,-1]",
+        "explanation": "Initially, the cache is empty. After putting (1, 1) and (2, 2), 'get(1)' returns 1. After putting (3, 3), the cache evicts (2, 2). 'get(2)' returns -1 as it's not found. Finally, after putting (4, 4), 'get(1)' returns -1 as it has been evicted."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hash map and a doubly linked list.",
+      "Maintain the order of elements to quickly identify the least recently used."
+    ],
+    "company": "MongoDB"
+  },
+  {
+    "question_id": "",
+    "title": "Merge k Sorted Lists",
+    "description": "You are given an array of k linked lists, each linked list is sorted in ascending order. Merge all the linked lists into one sorted linked list and return it. The resulting linked list should also be sorted.",
+    "topic": "Linked List",
+    "subtopic": "Merging Lists",
+    "tags": [
+      "Linked List",
+      "Sorting",
+      "Merge"
+    ],
+    "input_format": "An array of k head nodes of linked lists.",
+    "output_format": "The head node of the merged sorted linked list.",
+    "constraints": [
+      "0 <= k <= 10^4",
+      "0 <= list[i].length <= 500",
+      "-10^4 <= list[i][j] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "lists = [[1,4,5],[1,3,4],[2,6]]",
+        "output": "[1,1,2,3,4,4,5,6]",
+        "explanation": "The merged list is [1,1,2,3,4,4,5,6]."
+      },
+      {
+        "input": "lists = []",
+        "output": "[]",
+        "explanation": "Since the input list is empty, the merged list is also empty."
+      },
+      {
+        "input": "lists = [[-1,5,11],[2,6],[3,4]]",
+        "output": "[-1,2,3,4,5,6,11]",
+        "explanation": "The merged list is [-1,2,3,4,5,6,11]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a min-heap to keep track of the smallest head node among the lists.",
+      "Iterate through the lists and continue until all nodes are merged."
+    ],
+    "company": "MongoDB"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules: Each row must contain the digits 1 to 9 without repetition, each column must contain the digits 1 to 9 without repetition, and each of the nine 3x3 sub-boxes of the grid must also contain the digits 1 to 9 without repetition. The board may contain empty cells represented by the character '.'",
+    "topic": "Matrix",
+    "subtopic": "Grid Validation",
+    "tags": [
+      "Matrix",
+      "Validation",
+      "Grid"
+    ],
+    "input_format": "A 2D character array board with size 9x9 representing the Sudoku board.",
+    "output_format": "Return true if the board is valid, otherwise return false.",
+    "constraints": [
+      "board.length == 9",
+      "board[i].length == 9",
+      "board[i][j] is '.' or a digit from '1' to '9'"
+    ],
+    "examples": [
+      {
+        "input": "[['5', '3', '.', '.', '7', '.', '.', '.', '.'], ['6', '.', '.', '1', '9', '5', '.', '.', '.'], ['.', '9', '8', '.', '.', '.', '.', '6', '.'], ['8', '.', '.', '.', '6', '.', '.', '.', '3'], ['4', '.', '.', '8', '.', '3', '.', '.', '1'], ['7', '.', '.', '.', '2', '.', '.', '.', '6'], ['.', '6', '.', '.', '.', '.', '2', '8', '.'], ['.', '.', '.', '4', '1', '9', '.', '.', '5'], ['.', '.', '.', '.', '8', '.', '.', '7', '9']]",
+        "output": "true",
+        "explanation": "The provided Sudoku board is valid according to the Sudoku rules."
+      },
+      {
+        "input": "[['8', '3', '.', '.', '7', '.', '.', '.', '.'], ['6', '.', '.', '1', '9', '5', '.', '.', '.'], ['.', '9', '8', '.', '.', '.', '.', '6', '.'], ['8', '.', '.', '.', '6', '.', '.', '.', '3'], ['4', '.', '.', '8', '.', '3', '.', '.', '1'], ['7', '.', '.', '.', '2', '.', '.', '.', '6'], ['.', '6', '.', '.', '.', '.', '2', '8', '.'], ['.', '.', '.', '4', '1', '9', '.', '.', '5'], ['.', '.', '.', '.', '8', '.', '.', '7', '9']]",
+        "output": "false",
+        "explanation": "The provided Sudoku board is invalid because the number '8' appears twice in the first column."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash set to track seen numbers in rows, columns, and boxes.",
+      "Consider how to map a 2D grid coordinate to a 3x3 box.",
+      "Empty cells represented by '.' can be ignored in validation."
+    ],
+    "company": "MongoDB"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "Given a rotated sorted array of unique elements, write a function to search for a target value in the array. If the target exists, return its index; otherwise, return -1. You must write a solution with O(log n) time complexity.",
+    "topic": "Binary Search",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An integer array 'nums' which is rotated at some unknown pivot, followed by an integer 'target' to search for.",
+    "output_format": "An integer representing the index of 'target' in 'nums', or -1 if 'target' is not present.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "nums contains unique elements.",
+      "-10^4 <= nums[i] <= 10^4",
+      "All elements of nums are distinct."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "The target 0 is found at index 4 in the rotated array."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "The target 3 is not present in the array."
+      },
+      {
+        "input": "nums = [1], target = 0",
+        "output": "-1",
+        "explanation": "The target 0 is not present in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how a rotated array behaves compared to a regular sorted array.",
+      "Use binary search by checking the mid-point and the rotation point."
+    ],
+    "company": "MongoDB"
+  },
+  {
+    "question_id": "",
+    "title": "Design Hit Counter",
+    "description": "Design a hit counter that counts the number of hits received in the past 5 minutes. Each function call will receive a timestamp (in seconds granularity) representing when a hit occurred. The counter should support the following methods: `hit(int timestamp)` which records a hit at the given timestamp, and `getHits(int timestamp)` which returns the number of hits in the past 5 minutes from the given timestamp. Note that hits are counted within the 5 minute window [timestamp - 300, timestamp].",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Queue"
+    ],
+    "input_format": "The hit function accepts a single integer timestamp. The getHits function accepts a single integer timestamp.",
+    "output_format": "The getHits function returns an integer representing the number of hits in the past 5 minutes.",
+    "constraints": [
+      "0 <= timestamp <= 2 * 10^9",
+      "Each call of hit will have a timestamp greater than or equal to the last called hit timestamp."
+    ],
+    "examples": [
+      {
+        "input": "counter.hit(1); counter.hit(2); counter.hit(3); counter.getHits(4);",
+        "output": "3",
+        "explanation": "All hits are within the 5 minute window: at timestamps 1, 2, and 3."
+      },
+      {
+        "input": "counter.hit(300); counter.hit(300); counter.hit(300); counter.getHits(300);",
+        "output": "3",
+        "explanation": "All hits are at timestamp 300, within the 5 minute window."
+      },
+      {
+        "input": "counter.getHits(300); counter.hit(301); counter.getHits(300);",
+        "output": "0",
+        "explanation": "No hits were recorded when queried at timestamp 300. After hitting at 301, the count remains 0 for timestamp 300."
+      },
+      {
+        "input": "counter.hit(1); counter.hit(2); counter.hit(3); counter.getHits(300);",
+        "output": "0",
+        "explanation": "Queries for hits at timestamp 300, which is outside the 5 minute window for the earlier hits."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a queue to track the timestamps and remove outdated hits.",
+      "Consider edge cases where hits are exactly 5 minutes apart."
+    ],
+    "company": "MongoDB"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an array of integers nums and an integer k, return the maximum sliding window for each contiguous subarray of size k. That is, for each window of size k, return the maximum value in that window. The sliding window moves from the left to the right, one position at a time.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Deque"
+    ],
+    "input_format": "An array of integers nums and an integer k, where 1 <= k <= nums.length.",
+    "output_format": "An array of integers representing the maximum values of each sliding window.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, -1, -3, 5, 3, 6, 7], k = 3",
+        "output": "[3, 3, 5, 5, 6, 7]",
+        "explanation": "For each sliding window of size 3, the maximums are 3, 3, 5, 5, 6, and 7."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "The only window contains a single element, which is 1."
+      },
+      {
+        "input": "nums = [1, -1], k = 1",
+        "output": "[1, -1]",
+        "explanation": "The maximums for each window of size 1 are 1 for the first element and -1 for the second."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a deque to store indices of useful elements."
+    ],
+    "company": "MongoDB"
+  }
+]

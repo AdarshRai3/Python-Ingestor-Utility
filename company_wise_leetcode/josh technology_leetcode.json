@@ -1,0 +1,860 @@
+[
+  {
+    "question_id": "",
+    "title": "Move Zeroes",
+    "description": "Given an array of integers nums, write a function that moves all 0's to the end of it while maintaining the relative order of the non-zero elements. You must do this in-place without making a copy of the array.",
+    "topic": "Array",
+    "subtopic": "In-place Operations",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "The modified array with all 0's moved to the end.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 1, 0, 3, 12]",
+        "output": "[1, 3, 12, 0, 0]",
+        "explanation": "After moving all 0's to the end, the array becomes [1, 3, 12, 0, 0]."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[0]",
+        "explanation": "No changes are necessary as there's only one element which is 0."
+      },
+      {
+        "input": "nums = [1, 2, 0, 4, 0, 5]",
+        "output": "[1, 2, 4, 5, 0, 0]",
+        "explanation": "0's are moved to the end, resulting in [1, 2, 4, 5, 0, 0]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to track the position of non-zero elements.",
+      "Iterate through the array and swap with the next available non-zero position."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Add Two Numbers",
+    "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return it as a linked list. The input lists do not contain any leading zeros, except for the number 0 itself.",
+    "topic": "Linked List",
+    "subtopic": "Addition",
+    "tags": [
+      "Linked List",
+      "Math",
+      "Simulation"
+    ],
+    "input_format": "Two non-empty linked lists, l1 and l2, where each node represents a single digit.",
+    "output_format": "A linked list representing the sum of the two numbers.",
+    "constraints": [
+      "The number of nodes in each linked list is in the range [1, 100].",
+      "0 <= node.val <= 9",
+      "It is guaranteed that the input lists represent valid integers."
+    ],
+    "examples": [
+      {
+        "input": "l1 = [2, 4, 3], l2 = [5, 6, 4]",
+        "output": "[7, 0, 8]",
+        "explanation": "The numbers represented are 342 (from l1) and 465 (from l2). Their sum is 807, which is represented in reverse order as [7, 0, 8]."
+      },
+      {
+        "input": "l1 = [0], l2 = [0]",
+        "output": "[0]",
+        "explanation": "Both numbers are 0, and their sum is also 0, which is represented as [0]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to handle carrying over when the sum exceeds 9.",
+      "Use a dummy node to simplify the result linked list creation.",
+      "Iterate through both linked lists until both are exhausted."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Number",
+    "description": "Given a list of non-negative integers, arrange them such that they form the largest possible number. The result should be returned as a string. Note that the integers can be zero, and the final result should not contain leading zeros unless the result is '0'.",
+    "topic": "Sorting",
+    "subtopic": "Custom Sort",
+    "tags": [
+      "Sorting",
+      "Greedy",
+      "String Manipulation"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "A string representing the largest concatenated number.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 2]",
+        "output": "210",
+        "explanation": "Arrange '10' and '2' to form '210'."
+      },
+      {
+        "input": "nums = [3, 30, 34, 5, 9]",
+        "output": "9534330",
+        "explanation": "The largest arrangement is '9534330'."
+      },
+      {
+        "input": "nums = [0, 0]",
+        "output": "0",
+        "explanation": "Both numbers are zero, the result should be '0' without leading zeros."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to compare numbers as strings.",
+      "Consider using a custom comparator for sorting.",
+      "Handle edge cases such as leading zeros."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Zero Sum Consecutive Nodes from Linked List",
+    "description": "Given the head of a linked list, remove the nodes of the list that sum to zero when considering consecutive nodes. You should return the modified list's head. If the resulting list is empty, return null.",
+    "topic": "Linked List",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Linked List",
+      "Hash Table",
+      "Prefix Sum"
+    ],
+    "input_format": "A singly linked list represented by the head node.",
+    "output_format": "The head node of the modified linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 10^4].",
+      "-10^5 <= Node.val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, -3, 3, 1]",
+        "output": "[3, 1]",
+        "explanation": "The nodes 1, 2, and -3 sum to zero and are removed, leaving 3 and 1."
+      },
+      {
+        "input": "head = [1, 2, 3, -3, -2]",
+        "output": "[1]",
+        "explanation": "The nodes 2, 3, -3, and -2 sum to zero, leaving only the node with value 1."
+      },
+      {
+        "input": "head = [1, -1, 1, -1]",
+        "output": "[]",
+        "explanation": "All nodes sum to zero and are removed, resulting in an empty list."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to store the cumulative sums.",
+      "When you find a cumulative sum that you've seen before, nodes in between sum to zero."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Odd Levels of Binary Tree",
+    "description": "Given a binary tree, reverse the nodes of the odd levels of the tree and return the modified tree. The level of the root is considered level 0, where the nodes at level 0 are not reversed. You need to reverse the nodes at level 1, level 3, and so on, while keeping the structure of the tree intact.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Depth-First Search"
+    ],
+    "input_format": "The root of the binary tree.",
+    "output_format": "The root of the modified binary tree.",
+    "constraints": [
+      "The tree has at most 100 nodes.",
+      "The value of each node is a unique integer between 1 and 100."
+    ],
+    "examples": [
+      {
+        "input": "root = [2, 3, 5, 8, 13, 21, 34]",
+        "output": "[2, 5, 3, 34, 21, 13, 8]",
+        "explanation": "After reversing the nodes at odd levels, the tree structure changes but maintains the even level nodes intact."
+      },
+      {
+        "input": "root = [1]",
+        "output": "[1]",
+        "explanation": "There are no odd levels to reverse, so the tree remains the same."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a level order traversal to access nodes by level.",
+      "Collect nodes at odd levels and then reverse them before reinserting."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Twin Sum of a Linked List",
+    "description": "Given a singly linked list where the nodes are numbered from 1 to n, your task is to find the maximum twin sum of the list. A twin sum is defined as the sum of a node's value and the value of its corresponding node from the other half of the list. For instance, if the linked list is represented as [1, 2, 3, 4], the twin sums would be (1+4) and (2+3). The answer would be the maximum of these sums.",
+    "topic": "Linked List",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Linked List",
+      "Two Pointers",
+      "Max Sum"
+    ],
+    "input_format": "A linked list represented by its head node.",
+    "output_format": "An integer representing the maximum twin sum of the linked list.",
+    "constraints": [
+      "The length of the linked list is even and in the range [2, 10^5].",
+      "Node values are in the range [-10^5, 10^5]."
+    ],
+    "examples": [
+      {
+        "input": "head = [5, 4, 2, 1]",
+        "output": "6",
+        "explanation": "Twin sums are (5+1) and (4+2), so max twin sum = 6."
+      },
+      {
+        "input": "head = [4, 2, 2, 3]",
+        "output": "7",
+        "explanation": "Twin sums are (4+3) and (2+2), so max twin sum = 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a two-pointer technique to traverse the list.",
+      "You may need to reverse the second half of the list for easier summation."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Find Bottom Left Tree Value",
+    "description": "Given a binary tree, return the value of the last node you would visit in a level-order traversal of the tree. This value corresponds to the leftmost value in the last row of the tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Level Order Traversal"
+    ],
+    "input_format": "The input is the root node of a binary tree.",
+    "output_format": "An integer representing the value of the bottom left node of the tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 10^4].",
+      "-2^31 <= Node.val <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "root = [2, 1, 3]",
+        "output": "1",
+        "explanation": "The last level of the tree is [1, 3]. The leftmost node is 1."
+      },
+      {
+        "input": "root = [1, 2, 3, 4, null, 5, 6, 7]",
+        "output": "7",
+        "explanation": "The last level of the tree is [7]. Hence, the leftmost value is 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use level-order traversal to explore the tree.",
+      "Track the leftmost value as you traverse each level of the tree."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Count Pairs Whose Sum is Less than Target",
+    "description": "Given an array of integers and a target number, count how many unique pairs of indices (i, j) exist such that nums[i] + nums[j] < target, with i < j.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Count Pairs"
+    ],
+    "input_format": "An array of integers nums followed by an integer target.",
+    "output_format": "An integer representing the number of unique pairs whose sum is less than the target.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5",
+      "0 <= target <= 2 * 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4] and target = 5",
+        "output": "4",
+        "explanation": "The valid pairs are (1,2), (1,3), (1,4), and (2,3). Their sums are 3, 4, 5, and 5 respectively, hence 4 pairs."
+      },
+      {
+        "input": "nums = [2, 5, 3, 7] and target = 10",
+        "output": "3",
+        "explanation": "The valid pairs are (2,5), (2,3), and (3,5). Their sums are 7, 5, and 8 respectively."
+      },
+      {
+        "input": "nums = [1, 1, 1] and target = 3",
+        "output": "3",
+        "explanation": "The valid pairs are (1,1) from the first and second indexes, (1,1) from the first and third indexes, and (1,1) from the second and third indexes."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider sorting the array first.",
+      "Use a two-pointer technique to optimize counting pairs."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Nodes in Between Zeros",
+    "description": "You are given the head of a linked list, where each node contains an integer value. The linked list is structured such that it contains segments of nodes delimited by nodes with the value 0. Your task is to merge these segments by summing up the values of the nodes between each pair of consecutive zero nodes, and return the head of a new linked list that contains these sums. If there are no nodes between two zeros, do not include that segment in the resulting list.",
+    "topic": "Linked List",
+    "subtopic": "Merging Lists",
+    "tags": [
+      "LinkedList",
+      "Two Pointers",
+      "Prefix Sum"
+    ],
+    "input_format": "A ListNode representing the head of a linked list.",
+    "output_format": "A ListNode representing the head of the new merged linked list.",
+    "constraints": [
+      "The linked list has at most 10^4 nodes.",
+      "0 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "[0, 1, 2, 0, 3, 4, 5, 0]",
+        "output": "[3, 12]",
+        "explanation": "The first segment between the first two zeros sums to 1 + 2 = 3. The second segment sums to 3 + 4 + 5 = 12."
+      },
+      {
+        "input": "[0, 0, 0]",
+        "output": "[]",
+        "explanation": "There are no segments between zeros, so the output is an empty list."
+      },
+      {
+        "input": "[1, 2, 0, 3, 4, 5, 0, 6, 0]",
+        "output": "[3, 12]",
+        "explanation": "The first segment sums to 1 + 2 = 3, the second segment sums to 3 + 4 + 5 = 12, the last zero is standalone, so it is ignored."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a two-pointer approach to track segments between zeros.",
+      "Utilize a dummy node to simplify list creation."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the stock prices where prices[i] is the price of the stock on the ith day.",
+    "output_format": "An integer representing the maximum profit possible.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Maximum profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price you have seen so far.",
+      "Calculate the profit for each day and update the maximum profit."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Good Leaf Nodes Pairs",
+    "description": "Given a binary tree, a pair of leaf nodes is considered 'good' if the distance between them is less than or equal to a given integer d. Your task is to return the total number of 'good' leaf node pairs in the tree.",
+    "topic": "Tree",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Counting"
+    ],
+    "input_format": "The root of a binary tree and an integer d.",
+    "output_format": "An integer representing the number of good leaf node pairs.",
+    "constraints": [
+      "1 <= number of nodes <= 100",
+      "0 <= d <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4, 5, null, null], d = 2",
+        "output": "1",
+        "explanation": "The good leaf node pairs are (4, 5) with distance 2."
+      },
+      {
+        "input": "root = [1, 2, 3, 4, null, null, 5], d = 1",
+        "output": "0",
+        "explanation": "No pairs have a distance less than or equal to 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using DFS to calculate distances between leaf nodes.",
+      "Keep track of all leaf nodes during traversal."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Minimum and Maximum Number of Nodes Between Critical Points",
+    "description": "Given a linked list, your task is to find the minimum and maximum number of nodes between the critical points of the list. A node is considered a critical point if it is either a local maximum or a local minimum. A local maximum is defined as a node that has a value greater than both its previous and next nodes, while a local minimum is defined as a node that has a value smaller than both its previous and next nodes. Return the minimum and maximum distances between consecutive critical points. If there are fewer than two critical points, return [-1, -1].",
+    "topic": "Linked List",
+    "subtopic": "Critical Points",
+    "tags": [
+      "Linked List",
+      "Two Pointers",
+      "Traversal"
+    ],
+    "input_format": "A singly linked list represented by the head node of the list.",
+    "output_format": "An array of two integers: [minimum distance, maximum distance].",
+    "constraints": [
+      "The linked list has at least 2 nodes.",
+      "1 <= node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 3, 2, 4, 5, 2, 6]",
+        "output": "[1, 3]",
+        "explanation": "The critical points are at indices 1 (3) and 6 (6). The minimum distance is 1 (between 3 and 2), and the maximum distance is 3 (from 3 to 6)."
+      },
+      {
+        "input": "head = [2, 1, 3, 1, 2]",
+        "output": "[1, 1]",
+        "explanation": "The critical points are at indices 0 (2) and 3 (1). The minimum and maximum distances between them is 1."
+      },
+      {
+        "input": "head = [1, 2, 3, 4]",
+        "output": "[-1, -1]",
+        "explanation": "There are no critical points, so we return [-1, -1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use two pointers to traverse and identify critical points.",
+      "Store the indices of critical points in a list for distance calculation."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Substring With Maximum Cost",
+    "description": "Given a string s, where each character has a cost specified by a mapping from characters to their respective costs, determine the maximum cost of any substring of s. The cost of a substring is defined as the sum of the costs of its constituent characters.",
+    "topic": "String",
+    "subtopic": "Substring",
+    "tags": [
+      "String",
+      "Substring",
+      "Cost"
+    ],
+    "input_format": "A string s and a mapping from characters to their costs as a dictionary.",
+    "output_format": "An integer representing the maximum cost of any substring in s.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "-10^4 <= cost[char] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "s = 'abca', cost = {'a': 1, 'b': 2, 'c': 3}",
+        "output": "6",
+        "explanation": "The substring 'abc' has a total cost of 1 + 2 + 3 = 6."
+      },
+      {
+        "input": "s = 'xyz', cost = {'x': 5, 'y': -1, 'z': 3}",
+        "output": "5",
+        "explanation": "The substring 'x' has the highest cost of 5, while 'y' contributes negatively."
+      },
+      {
+        "input": "s = 'hello', cost = {'h': 5, 'e': 1, 'l': 1, 'o': 2}",
+        "output": "10",
+        "explanation": "The substring 'hello' has a cost of 5 + 1 + 1 + 1 + 2 = 10."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window technique to explore substrings.",
+      "Keep track of the current cost while iterating through the string."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Construct Smallest Number From DI String",
+    "description": "Given a string 's' consisting of the characters 'I' (increase) and 'D' (decrease), return the smallest number that can be constructed such that it follows the given sequence. The output number should be in the form of a string.",
+    "topic": "String",
+    "subtopic": "Sorting and Permutation",
+    "tags": [
+      "String",
+      "Sorting",
+      "Greedy"
+    ],
+    "input_format": "A string s of length n where 1 <= n <= 10^5, containing only the characters 'I' and 'D'.",
+    "output_format": "A string representing the smallest number that can be formed based on the DI string rules.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s is only composed of the characters 'I' and 'D'."
+    ],
+    "examples": [
+      {
+        "input": "s = 'I'",
+        "output": "1",
+        "explanation": "The smallest number that can be formed with one 'I' is '1'."
+      },
+      {
+        "input": "s = 'DI'",
+        "output": "210",
+        "explanation": "The sequence 'DI' requires decreasing first to '2' and then increasing leads to '1', hence '210' is the smallest."
+      },
+      {
+        "input": "s = 'IDID'",
+        "output": "13254",
+        "explanation": "Following the pattern of 'I' and 'D', the smallest valid number is '13254'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to manipulate the order of digits based on the 'I' and 'D' pattern.",
+      "Utilize a stack to help manage the increasing and decreasing sequences."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Swaps to Group All 1's Together II",
+    "description": "You are given a binary array containing only 0's and 1's. Your task is to determine the minimum number of swaps needed to group all the 1's together in the array. A swap is defined as switching the position of two elements in the array. If there is a gap (i.e., 0's) between the 1's, it counts as additional swaps. The aim is to find the most efficient way to cluster all the 1's together.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Greedy"
+    ],
+    "input_format": "An integer array nums consisting of 0's and 1's.",
+    "output_format": "An integer representing the minimum number of swaps required.",
+    "constraints": [
+      "1 <= nums.length <= 100000",
+      "nums[i] is either 0 or 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 0, 1, 0, 1]",
+        "output": "1",
+        "explanation": "We can swap the first 1 with the second 0 to group all 1's together at the front."
+      },
+      {
+        "input": "nums = [0, 0, 1, 0, 0, 1, 1]",
+        "output": "1",
+        "explanation": "We need to swap one of the 0's with the second 1 to group all 1's together"
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider calculating how many 1's are there in total.",
+      "Use a sliding window approach to track 1's."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within the string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A single string s.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of English letters, digits, symbols and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is \"abc\", which has a length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is \"b\", with a length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is \"wke\", which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window to keep track of characters and their indices.",
+      "Consider using a HashMap to store characters and their most recent positions."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given a linked list, reverse the nodes of the list k at a time and return the modified list. If the number of nodes is not a multiple of k, then the remaining nodes at the end should remain as they are. You may not alter the values in the list's nodes, only nodes themselves may be changed.",
+    "topic": "Linked List",
+    "subtopic": "Reversing",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Group Processing"
+    ],
+    "input_format": "A linked list head node and an integer k.",
+    "output_format": "The head node of the modified linked list.",
+    "constraints": [
+      "The number of nodes in the linked list is in the range [0, 5000].",
+      "1 <= k <= 5000."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[2, 1, 4, 3, 5]",
+        "explanation": "The first two nodes (1 -> 2) are reversed to (2 -> 1), followed by (4 -> 3) for the next pair. The last node 5 remains unchanged."
+      },
+      {
+        "input": "head = [1, 2, 3], k = 3",
+        "output": "[3, 2, 1]",
+        "explanation": "All three nodes can be reversed as they are exactly 'k' in number."
+      },
+      {
+        "input": "head = [1], k = 1",
+        "output": "[1]",
+        "explanation": "With k = 1, the list remains unchanged."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to reverse a linked list segment.",
+      "Use a dummy node to facilitate node manipulation."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Count Good Nodes in Binary Tree",
+    "description": "Given a binary tree, a node is considered 'good' if it is the highest node visited so far in the path from the root node to that node. Return the total number of good nodes in the tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Recursion"
+    ],
+    "input_format": "The input is the root of a binary tree where each node has integer values.",
+    "output_format": "An integer representing the total count of good nodes in the binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 10^5].",
+      "-10^4 <= Node.val <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[3, 1, 4, 3, null, 1, 5]",
+        "output": "4",
+        "explanation": "The good nodes are: 3 (root), 4 (greater than all previous), 3 (not greater than root), and 5 (greater than all previously visited)."
+      },
+      {
+        "input": "[3, 3, null, 4, 2]",
+        "output": "3",
+        "explanation": "The good nodes are: 3 (root), 3 (not greater than root), and 4 (greater than all previously visited)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use Depth First Search (DFS) to traverse the tree.",
+      "Keep track of the maximum value on the current path.",
+      "Increment the count each time a good node is found."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Trim a Binary Search Tree",
+    "description": "Given the root of a binary search tree (BST) and two integers L and R, trim the tree so that all its elements lie in [L, R]. You might need to change the root of the tree as well. Finally, return the trimmed binary search tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "Binary Search Tree",
+      "Recursion"
+    ],
+    "input_format": "The root of the binary search tree as a node and two integers L and R.",
+    "output_format": "The root of the trimmed binary search tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 10^4].",
+      "0 <= Node.val <= 10^4",
+      "L <= R"
+    ],
+    "examples": [
+      {
+        "input": "root = [1,0,2], L = 1, R = 2",
+        "output": "[1, null, 2]",
+        "explanation": "The trimmed tree will just contain the node with value 1 and 2, resulting in [1, null, 2]."
+      },
+      {
+        "input": "root = [3,0,4], L = 1, R = 3",
+        "output": "[3, 2]",
+        "explanation": "The node with value 0 is removed as it's less than L (1)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of a binary search tree.",
+      "Recursively traverse the tree."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Remove K Digits",
+    "description": "Given a string containing only digits, remove k digits from the number so that the new number is the smallest possible. The result should not contain leading zeros. If the result is an empty string, return '0'.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Greedy",
+      "Stack"
+    ],
+    "input_format": "A string num representing the digits of the number followed by an integer k, where 0 <= k <= num.length.",
+    "output_format": "A string representing the smallest number after removing k digits.",
+    "constraints": [
+      "1 <= num.length <= 100",
+      "0 <= k <= num.length"
+    ],
+    "examples": [
+      {
+        "input": "num = '1432219', k = 3",
+        "output": "1219",
+        "explanation": "Remove '4', '3', and '2' to get the smallest number."
+      },
+      {
+        "input": "num = '10200', k = 1",
+        "output": "200",
+        "explanation": "Remove '1' to get the number without leading zeros."
+      },
+      {
+        "input": "num = '10', k = 2",
+        "output": "0",
+        "explanation": "Remove both digits to yield an empty string, which should return '0'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using a stack to build the resulting number.",
+      "Ensure to handle leading zeros in the result."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Daily Temperatures",
+    "description": "Given an array of integers representing daily temperatures, return an array such that, for each day in the input, tells you how many days you have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead.",
+    "topic": "Array",
+    "subtopic": "Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Monotonic Stack"
+    ],
+    "input_format": "An array of integers temperatures where 1 <= temperatures.length <= 30000 and 30 <= temperatures[i] <= 100.",
+    "output_format": "An array of integers representing the number of days until a warmer temperature.",
+    "constraints": [
+      "1 <= temperatures.length <= 30000",
+      "30 <= temperatures[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "temperatures = [73, 74, 75, 71, 69, 72, 76, 73]",
+        "output": "[1, 1, 4, 2, 1, 1, 0, 0]",
+        "explanation": "On day 0, the next warmer temperature is on day 1. On day 1, it's day 2, and so on. Days without warmer temperatures are represented by 0."
+      },
+      {
+        "input": "temperatures = [30, 40, 50, 60]",
+        "output": "[1, 1, 1, 0]",
+        "explanation": "Each day's temperature is warmer than the previous day's, except the last day."
+      },
+      {
+        "input": "temperatures = [80, 70, 60, 50]",
+        "output": "[0, 0, 0, 0]",
+        "explanation": "There are no warmer days for any of the input days."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the indices of unresolved temperatures.",
+      "Iterate through the input list while managing the stack and determining the wait days."
+    ],
+    "company": "josh technology"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Difference Between Node and Ancestor",
+    "description": "Given a binary tree, return the maximum difference between the value of any ancestor node and the value of any descendant node. A node's ancestor is any node on the path from the root node to that node, excluding the node itself. If there are no nodes in the tree, return 0.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Depth-First Search"
+    ],
+    "input_format": "The input consists of the root of a binary tree, where each node contains an integer value.",
+    "output_format": "An integer representing the maximum difference between the values of an ancestor and a descendant node.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 2 * 10^4].",
+      "-10^5 <= Node.val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "root = [8,3,10,1,6,null,14,null,null,4,7,null,13]",
+        "output": "7",
+        "explanation": "The maximum difference is between the ancestor node with value 8 and the descendant node with value 1: |8 - 1| = 7."
+      },
+      {
+        "input": "root = [1]",
+        "output": "0",
+        "explanation": "There are no descendant nodes in the tree, hence the maximum difference is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use depth-first search (DFS) to explore the tree.",
+      "Keep track of the maximum and minimum values encountered on the path from the root to the current node."
+    ],
+    "company": "josh technology"
+  }
+]

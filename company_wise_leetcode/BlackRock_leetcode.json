@@ -1,0 +1,677 @@
+[
+  {
+    "question_id": "",
+    "title": "Happy Number",
+    "description": "A happy number is defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle that does not include 1. Those numbers for which this process ends in 1 are happy numbers, while those that do not end in 1 are unhappy numbers. Write a function that takes a positive integer and returns true if it is a happy number, or false if it is not.",
+    "topic": "Math",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Math",
+      "Number Theory",
+      "Simulation"
+    ],
+    "input_format": "An integer n (1 <= n <= 2^31 - 1).",
+    "output_format": "A boolean value indicating whether n is a happy number (true) or not (false).",
+    "constraints": [
+      "1 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 19",
+        "output": "true",
+        "explanation": "1^2 + 9^2 = 82, 8^2 + 2^2 = 68, 6^2 + 8^2 = 100, 1^2 + 0^2 + 0^2 = 1."
+      },
+      {
+        "input": "n = 2",
+        "output": "false",
+        "explanation": "2 leads to 4, 4 leads to 16, 1 + 6 = 7, 7 leads to 49, 4 + 9 = 13, 1 + 3 = 10, 1 + 0 = 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a set to detect cycles.",
+      "Keep track of the sum of squares of digits."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string s consisting of just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s containing only parentheses characters: '(', ')', '{', '}', '[' and '>'.",
+    "output_format": "A boolean value, true if the string s is valid, false otherwise.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses characters only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The string has one opening and one closing bracket of the same type."
+      },
+      {
+        "input": "s = '(]')",
+        "output": "false",
+        "explanation": "The opening bracket '(' does not match with the closing bracket ']'"
+      },
+      {
+        "input": "s = '{[()]}')",
+        "output": "true",
+        "explanation": "The brackets are properly nested and closed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening parentheses.",
+      "Check if the closing parentheses match the top of the stack."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Evaluate Division",
+    "description": "You are given a list of equations and their corresponding values. Each equation is in the form 'A / B = k', where A and B are variable names and k is a real number. You need to evaluate the division queries in the form 'A / B' and return the results as a list of answers. If a variable is not found or the division cannot be computed, return -1.0 for that query.",
+    "topic": "Graph",
+    "subtopic": "Union Find",
+    "tags": [
+      "Graph",
+      "Union Find",
+      "Division"
+    ],
+    "input_format": "Two lists: equations, where each element is a list of two strings, and values, where each element is a float, followed by a list of queries each represented as a pair of strings.",
+    "output_format": "A list of floats representing the results of evaluating the division queries.",
+    "constraints": [
+      "1 <= equations.length <= 20",
+      "equations[i].length == 2",
+      "0 < values[i] <= 20",
+      "1 <= queries.length <= 20",
+      "All variable names consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": {
+          "equations": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "b",
+              "c"
+            ]
+          ],
+          "values": [
+            2.0,
+            3.0
+          ],
+          "queries": [
+            [
+              "a",
+              "c"
+            ],
+            [
+              "b",
+              "a"
+            ],
+            [
+              "a",
+              "a"
+            ],
+            [
+              "x",
+              "y"
+            ]
+          ]
+        },
+        "output": [
+          6.0,
+          0.5,
+          1.0,
+          -1.0
+        ],
+        "explanation": "The calculated results are a/c = 2.0 * 3.0 = 6.0, b/a = 1/2.0 = 0.5, a/a = 1.0, and x/y is undefined."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a graph representation to store relationships.",
+      "You can use Depth First Search (DFS) or Union Find to solve the problem."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Maximum Sum of Node Values",
+    "description": "Given a binary tree, find the maximum sum of values from any path in the tree. A path is defined as a sequence of nodes where each node is connected either horizontally or vertically, starting at any node and ending at any node. The sum is calculated by adding the values of the nodes along that path.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "DFS"
+    ],
+    "input_format": "The input consists of the root node of a binary tree.",
+    "output_format": "An integer representing the maximum sum of values from any path in the tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 10^4].",
+      "-10^4 <= node.val <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3]",
+        "output": "6",
+        "explanation": "The path with maximum sum is 2 -> 1 -> 3, with the sum 2 + 1 + 3 = 6."
+      },
+      {
+        "input": "root = [-10, 9, 20, null, null, 15, 7]",
+        "output": "42",
+        "explanation": "The path 15 -> 20 -> 7 yields the maximum sum of 15 + 20 + 7 = 42."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using depth-first search (DFS) to explore all possible paths.",
+      "Use recursion to calculate the maximum sum for the left and right subtrees."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Pairs of Songs With Total Durations Divisible by 60",
+    "description": "You are given a list of songs, where each song has a duration in seconds. Your task is to find the number of pairs of songs such that the sum of their durations is divisible by 60. A pair is defined as two distinct songs that can be played together. Implement a function to return the count of these pairs.",
+    "topic": "Array",
+    "subtopic": "Counting Pairs",
+    "tags": [
+      "Array",
+      "Counting",
+      "Divisibility"
+    ],
+    "input_format": "An array of integers representing the durations of the songs in seconds.",
+    "output_format": "An integer representing the number of pairs of songs whose total durations are divisible by 60.",
+    "constraints": [
+      "1 <= songs.length <= 200",
+      "1 <= songs[i] <= 600"
+    ],
+    "examples": [
+      {
+        "input": "songs = [30, 20, 150, 100, 40]",
+        "output": "3",
+        "explanation": "The pairs are (30, 150), (20, 100), and (30, 30)."
+      },
+      {
+        "input": "songs = [60, 60, 60]",
+        "output": "3",
+        "explanation": "The pairs are (60, 60), (60, 60), and (60, 60), resulting in 3 pairs of the same song."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to count remainders when divided by 60.",
+      "Consider pairs where both songs have the same remainder."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subtree of the Same Color",
+    "description": "Given a binary tree where each node has a color value (either '0' or '1'), find the size of the largest subtree in which all nodes have the same color. A subtree is defined as any tree that consists of a node and all of its descendants.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "DFS"
+    ],
+    "input_format": "The root of the binary tree, where each node contains a color field in addition to left and right child nodes.",
+    "output_format": "An integer representing the size of the largest subtree of uniform color.",
+    "constraints": [
+      "1 <= Number of nodes <= 10^5",
+      "Each node's color is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "root = [1,0,0,0,1,0,null,null,1]",
+        "output": "4",
+        "explanation": "The largest subtree with the same color is the subtree rooted at the left child of the root. It includes three '0's and one '1', making the size of the subtree 4."
+      },
+      {
+        "input": "root = [1,1,1,0,0,0,1]",
+        "output": "3",
+        "explanation": "The largest subtree with all nodes having the color '1' has a size of 3, centered on the root node."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS to traverse the tree.",
+      "Count nodes in each subtree and check if they share the same color."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is defined as two strings having the same character counts.",
+    "topic": "Hash Table",
+    "subtopic": "Grouping",
+    "tags": [
+      "Hash Table",
+      "String",
+      "Anagrams"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of groups of anagrams where each group is itself a list of strings.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]",
+        "explanation": "The input strings can be grouped into anagrams. For example, 'eat', 'tea', and 'ate' are anagrams."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "The only string is empty, so it forms a group by itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "The input has a single character, thus forms its own group."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how you can represent the characters in a string in a unique way.",
+      "Use a hash map to group strings with the same character counts."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where 0 <= prices.length <= 10^4.",
+    "output_format": "An integer representing the maximum profit. Return 0 if no profit can be made.",
+    "constraints": [
+      "0 <= prices.length <= 10^4",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "No transactions are done and the max profit is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Track the minimum price encountered so far.",
+      "Calculate potential profit at each price point."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Path with Maximum Probability",
+    "description": "You are given a list of edges of a directed graph, where each edge is represented by a triplet (u, v, p) indicating that there is a directed edge from node u to node v with a probability p of successfully traversing that edge. Your task is to find the maximum probability of reaching from a starting node to a target node. If there is no way to reach the target node, return 0. The graph is guaranteed to be connected and contain no cycles.",
+    "topic": "Graph",
+    "subtopic": "Probability and BFS",
+    "tags": [
+      "Graph",
+      "Probability",
+      "BFS",
+      "Dijkstra"
+    ],
+    "input_format": "An integer n representing the number of nodes, and a list of edges where each edge is an array [u, v, p].",
+    "output_format": "A float representing the maximum probability of reaching the target node from the starting node.",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= edges.length <= 10^4",
+      "0 <= u, v < n",
+      "0.0 <= p <= 1.0"
+    ],
+    "examples": [
+      {
+        "input": "n = 3, edges = [[0, 1, 0.5], [1, 2, 0.5]], start = 0, end = 2",
+        "output": "0.25",
+        "explanation": "The path is from 0 to 1 to 2. The probability is 0.5 * 0.5 = 0.25."
+      },
+      {
+        "input": "n = 3, edges = [[0, 1, 0.2], [1, 2, 0.8], [0, 2, 0.6]], start = 0, end = 2",
+        "output": "0.6",
+        "explanation": "The direct path from 0 to 2 has a probability of 0.6, which is greater than the path 0 to 1 to 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Dijkstra's algorithm but modify it to maximize probabilities.",
+      "Use a priority queue to always expand the path with the current maximum probability."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Profit From Trading Stocks",
+    "description": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices, where 0 <= prices.length <= 10^5.",
+    "output_format": "An integer representing the maximum profit.",
+    "constraints": [
+      "0 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "There is no opportunity to make a profit. In this case, it is better to not engage in any transaction."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the minimum price so far.",
+      "Update the maximum profit whenever a higher price is encountered."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "DFS/BFS",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Union Find"
+    ],
+    "input_format": "A 2D grid represented as a list of lists, where each cell contains either '1' or '0'.",
+    "output_format": "An integer representing the number of islands in the grid.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 300",
+      "'grid[i][j]' is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [['1', '1', '0', '0', '0'], ['1', '1', '0', '0', '0'], ['0', '0', '1', '0', '0'], ['0', '0', '0', '1', '1']]",
+        "output": "3",
+        "explanation": "There are three islands in the given grid."
+      },
+      {
+        "input": "grid = [['1', '0', '1', '0', '1'], ['0', '0', '0', '0', '0'], ['1', '0', '1', '0', '1']]",
+        "output": "5",
+        "explanation": "Each '1' is a separate island, resulting in five islands."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use depth-first search (DFS) to explore the grid.",
+      "Keep track of visited cells to avoid counting the same island multiple times."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, return true if t is an anagram of s and false otherwise. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Anagram",
+      "HashMap"
+    ],
+    "input_format": "Two strings, s and t, where 1 <= s.length, t.length <= 5 * 10^4.",
+    "output_format": "A boolean value indicating whether t is an anagram of s.",
+    "constraints": [
+      "s and t consist of lowercase English letters.",
+      "The lengths of s and t are the same."
+    ],
+    "examples": [
+      {
+        "input": "s = 'anagram', t = 'nagaram'",
+        "output": "true",
+        "explanation": "'nagaram' is an anagram of 'anagram'."
+      },
+      {
+        "input": "s = 'rat', t = 'car'",
+        "output": "false",
+        "explanation": "'car' is not an anagram of 'rat'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Count the frequency of each character in both strings and compare."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Coin Change",
+    "description": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. You want to compute the minimum number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1. You may assume that you have an infinite number of each kind of coin.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Coin Change",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array coins and an integer amount.",
+    "output_format": "An integer representing the minimum number of coins to make the amount, or -1 if it is not possible.",
+    "constraints": [
+      "1 <= coins.length <= 12",
+      "1 <= coins[i] <= 2^31 - 1",
+      "0 <= amount <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "coins = [1, 2, 5], amount = 11",
+        "output": "3",
+        "explanation": "11 can be made up by using two 5's and one 1, so the minimum number of coins is 3."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "-1",
+        "explanation": "It is not possible to make amount 3 with coin of denomination 2."
+      },
+      {
+        "input": "coins = [1], amount = 0",
+        "output": "0",
+        "explanation": "The amount is 0, so no coins are needed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to build up the solution.",
+      "Think of the problem in terms of decisions: include a coin or don't include it.",
+      "Use a table to store results of subproblems."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.",
+    "topic": "Backtracking",
+    "subtopic": "Generating Combinations",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "String"
+    ],
+    "input_format": "An integer n representing the number of pairs of parentheses.",
+    "output_format": "A list of strings representing all combinations of well-formed parentheses.",
+    "constraints": [
+      "1 <= n <= 8"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\" ]",
+        "explanation": "For n = 3, all the valid combinations of parentheses are generated as shown in the output."
+      },
+      {
+        "input": "n = 1",
+        "output": "[\"()\"]",
+        "explanation": "For n = 1, the only valid combination is a single pair of parentheses."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use recursion to build combinations of parentheses.",
+      "Track the number of open and close parentheses used."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Maximize Greatness of an Array",
+    "description": "You are given an array of integers 'nums'. Your goal is to maximize the 'greatness' of the array. The 'greatness' is defined as the number of pairs (i, j) such that i < j and nums[i] < nums[j]. You need to return the maximum possible 'greatness' of the array after performing any number of operations, where an operation consists of increasing the value of any element in the array by 1. Note that you can modify the array in any manner to reach the maximum greatness.",
+    "topic": "Array",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum possible greatness of the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "3",
+        "explanation": "The pairs are (1, 2), (1, 3), and (2, 3). All are valid pairs satisfying the greatness condition."
+      },
+      {
+        "input": "nums = [3, 2, 1]",
+        "output": "0",
+        "explanation": "No pairs (i, j) can be formed such that nums[i] < nums[j]. Thus, greatness is 0."
+      },
+      {
+        "input": "nums = [1, 1, 1, 1]",
+        "output": "6",
+        "explanation": "By performing operations to increment numbers, you can create pairs (1, 2), (1, 3), ..., all combinations leading to maximum greatness."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how many pairs you can form with distinct values.",
+      "Think about the frequency of numbers in the array."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Boundary of Binary Tree",
+    "description": "Given a binary tree, return the values of its boundary in anti-clockwise order, starting from the root. The boundary is composed of the root, the left boundary (excluding the leaf nodes), the leaf nodes (from left to right), and the right boundary (excluding the leaf nodes and in reverse order).",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Traversal"
+    ],
+    "input_format": "The input consists of the root of the binary tree as a TreeNode.",
+    "output_format": "An array of integers representing the boundary of the binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 100].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [1,2,3,4,5,null,6]",
+        "output": "[1,2,4,5,6,3]",
+        "explanation": "The boundary traverses: root = 1, left boundary = 2 -> 4 -> 5 (leaves) -> right boundary reverse = 6 -> 3."
+      },
+      {
+        "input": "root = [1]",
+        "output": "[1]",
+        "explanation": "The tree has only one node, so the boundary is just [1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to traverse the left and right boundaries.",
+      "You may need a separate traversal for the leaf nodes.",
+      "Use depth-first search to keep track of nodes."
+    ],
+    "company": "BlackRock"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A palindrome is a string that reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s with a length between 1 and 1000.",
+    "output_format": "A string representing the longest palindromic substring in s.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only digits and English letters."
+    ],
+    "examples": [
+      {
+        "input": "babad",
+        "output": "bab",
+        "explanation": "The longest palindromic substring is 'bab'. 'aba' is also a valid answer."
+      },
+      {
+        "input": "cbbd",
+        "output": "bb",
+        "explanation": "The longest palindromic substring is 'bb'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around potential centers of the palindrome.",
+      "Can you think of using dynamic programming for this problem?"
+    ],
+    "company": "BlackRock"
+  }
+]

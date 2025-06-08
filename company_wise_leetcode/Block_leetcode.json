@@ -1,0 +1,633 @@
+[
+  {
+    "question_id": "",
+    "title": "Rotating the Box",
+    "description": "You are given a box (represented as a 2D grid) filled with stones (denoted by 'A') and empty spaces (denoted by '.'). The box can be rotated 90 degrees clockwise and you need to simulate this rotation while keeping the stones in the lowest possible positions. After rotation, all stones should fall down to the bottom of the new grid. Implement a function that takes the original box as input and returns the box after performing the rotation and settling the stones.",
+    "topic": "Matrix",
+    "subtopic": "Grid Manipulation",
+    "tags": [
+      "Matrix",
+      "Grid",
+      "Simulation"
+    ],
+    "input_format": "A 2D list of characters representing the box, where 'A' denotes a stone and '.' denotes an empty space.",
+    "output_format": "A 2D list of characters representing the box after rotation and settling the stones.",
+    "constraints": [
+      "1 <= box.length <= 100",
+      "1 <= box[i].length <= 100",
+      "box[i][j] is either 'A' or '.'."
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "A",
+            ".",
+            "A"
+          ],
+          [
+            "A",
+            "A",
+            "."
+          ],
+          [
+            ".",
+            "A",
+            "A"
+          ]
+        ],
+        "output": [
+          [
+            ".",
+            "A",
+            "A"
+          ],
+          [
+            "A",
+            "A",
+            "A"
+          ],
+          [
+            ".",
+            ".",
+            "."
+          ]
+        ],
+        "explanation": "After rotating the box 90 degrees clockwise, the configuration changes to [['A', 'A', '.'], ['A', 'A', '.'], ['.', 'A', '.']]. Then, the stones settle down to the lowest available positions."
+      },
+      {
+        "input": [
+          [
+            "A",
+            "A",
+            "A",
+            "A"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "."
+          ]
+        ],
+        "output": [
+          [
+            ".",
+            ".",
+            ".",
+            "A"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "A"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "A"
+          ]
+        ],
+        "explanation": "After rotating, the stones move down to the bottom of the new configuration."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Start by rotating the box to form a new structure.",
+      "Use a temporary list to hold the stones as you simulate their falling."
+    ],
+    "company": "Block"
+  },
+  {
+    "question_id": "",
+    "title": "Available Captures for Rook",
+    "description": "On a chessboard, a rook can move any number of squares along a row or column. Given a chessboard represented as an 8x8 grid where 'r' represents the rook's position, 'p' represents pawns, and '.' represents empty squares, write a function to determine the number of pawns that the rook can capture. The rook can only capture pawns that are in the same row or column, and it cannot jump over other pieces.",
+    "topic": "Array",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Array",
+      "Grid",
+      "Chess"
+    ],
+    "input_format": "An array of strings representing the chessboard grid.",
+    "output_format": "An integer representing the number of pawns the rook can capture.",
+    "constraints": [
+      "The chessboard is always an 8x8 grid.",
+      "The input will have exactly one 'r' and zero or more 'p' on the board."
+    ],
+    "examples": [
+      {
+        "input": "[\"........\", \"........\", \"..p.....\", \"..p.r...\", \"........\", \"........\", \"........\", \".....p..\"];",
+        "output": "3",
+        "explanation": "The rook can capture pawns located at (2, 2), (3, 2), and (7, 5)."
+      },
+      {
+        "input": "[\"........\", \"..p....p\", \"........\", \"....r..p\", \"........\", \"........\", \"........\", \"........\"];",
+        "output": "2",
+        "explanation": "The rook can capture pawns located at (1, 2) and (3, 7)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Iterate through the rows and columns from the rook's position to count pawns.",
+      "Stop counting when hitting another piece."
+    ],
+    "company": "Block"
+  },
+  {
+    "question_id": "",
+    "title": "Squirrel Simulation",
+    "description": "You are tasked with simulating the behavior of a group of squirrels in a park. Each squirrel starts at a tree positioned on a 2D grid, and there are several trees at different coordinates. The squirrels can either move to an adjacent tree (up, down, left, right) or gather nuts at their current location. Your goal is to determine the maximum number of nuts that can be collected by the squirrels given their starting positions and the positions of the trees with nuts.",
+    "topic": "Simulation",
+    "subtopic": "Grid Navigation",
+    "tags": [
+      "Grid",
+      "Simulation",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "A 2D grid representing the park where squirrels are located. Each cell contains either 0 (empty), 1 (tree with nuts), or -1 (obstacle). An array of starting positions for the squirrels is also provided.",
+    "output_format": "An integer representing the maximum number of nuts that can be collected by the squirrels.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "0 <= trees with nuts <= 10^4",
+      "The number of squirrels will not exceed 50."
+    ],
+    "examples": [
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              1,
+              0,
+              -1
+            ],
+            [
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              -1
+            ],
+            [
+              -1,
+              0,
+              1,
+              1
+            ]
+          ],
+          "squirrels": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "output": "4",
+        "explanation": "The two squirrels can collect all 4 nuts from the trees at positions (0, 1), (1, 0), (1, 1), and (3, 2)."
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "squirrels": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "output": "3",
+        "explanation": "The squirrel can collect 3 nuts from positions (0, 0), (2, 0), and (2, 1)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how squirrels can move and the constraints of the grid.",
+      "Use either DFS or BFS to simulate the squirrels' movements."
+    ],
+    "company": "Block"
+  },
+  {
+    "question_id": "",
+    "title": "Walking Robot Simulation II",
+    "description": "A robot is walking on a grid starting at the origin (0, 0). The robot can receive a sequence of commands consisting of 'U', 'D', 'L', 'R' (representing Up, Down, Left, and Right, respectively). After executing all commands, return the final position of the robot on the grid. The robot can also receive a number of 'F' commands that means move forward the given number of steps in the current direction without turning. The robot initially moves in the Up direction.",
+    "topic": "Simulation",
+    "subtopic": "Robot Movement",
+    "tags": [
+      "Simulation",
+      "Grid",
+      "Robot"
+    ],
+    "input_format": "A string commands representing the movement commands for the robot followed by an integer forward_steps which indicates the number of forward steps.",
+    "output_format": "Return a list of two integers representing the final x and y coordinates of the robot.",
+    "constraints": [
+      "1 <= commands.length <= 100",
+      "0 <= forward_steps <= 1000",
+      "commands[i] is one of 'U', 'D', 'L', 'R', or 'F'."
+    ],
+    "examples": [
+      {
+        "input": "commands = 'UUDLFF', forward_steps = 2",
+        "output": "[0, 4]",
+        "explanation": "After executing 'UUDL', the robot moves to (0, 2). Then, moving Forward 2 steps in the Up direction brings it to (0, 4)."
+      },
+      {
+        "input": "commands = 'DDRUFF', forward_steps = 3",
+        "output": "[3, -1]",
+        "explanation": "Moving down twice and right once takes the robot to (1, -2). Moving Forward 3 steps in the Right direction takes it to (3, -1)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the current direction of the robot.",
+      "Use a coordinate system to update the position based on the commands and forward steps."
+    ],
+    "company": "Block"
+  },
+  {
+    "question_id": "",
+    "title": "Word Break",
+    "description": "Given a string s and a dictionary of strings wordDict, determine if s can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Backtracking"
+    ],
+    "input_format": "A string s followed by a list of strings wordDict.",
+    "output_format": "A boolean value indicating if the string can be segmented into words from the dictionary.",
+    "constraints": [
+      "1 <= s.length <= 300",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 20",
+      "s and the words in wordDict consists of lowercase English letters.",
+      "All the strings in wordDict are unique."
+    ],
+    "examples": [
+      {
+        "input": "s = 'leetcode', wordDict = ['leet', 'code']",
+        "output": "true",
+        "explanation": "The string 'leetcode' can be segmented as 'leet' + 'code'."
+      },
+      {
+        "input": "s = 'applepenapple', wordDict = ['apple', 'pen']",
+        "output": "true",
+        "explanation": "The string can be segmented as 'apple' + 'pen' + 'apple'."
+      },
+      {
+        "input": "s = 'catsandog', wordDict = ['cats', 'dog', 'sand', 'and', 'cat']",
+        "output": "false",
+        "explanation": "It cannot be segmented into words from the dictionary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to solve this problem.",
+      "Check if the substring s[0:i] can be segmented for each i.",
+      "Use a boolean array to keep track of valid segmentations up to each index."
+    ],
+    "company": "Block"
+  },
+  {
+    "question_id": "",
+    "title": "Falling Squares",
+    "description": "You are given a list of positions where squares will fall on a number line. Each square has a fixed size of 1 unit. When a square falls, it covers the space between its left and right bounds. Your task is to calculate the maximum height reached by the falling squares at any point after all squares have fallen. Additionally, return an array representing the height of the squares at each falling position.",
+    "topic": "Geometry",
+    "subtopic": "Line Segments",
+    "tags": [
+      "Geometry",
+      "Line Segments",
+      "Simulation"
+    ],
+    "input_format": "A list of integers positions where each integer represents the starting position of a falling square.",
+    "output_format": "An integer representing the maximum height of squares after all have fallen, and an array of integers representing the heights of the squares at each position.",
+    "constraints": [
+      "1 <= positions.length <= 10^5",
+      "1 <= positions[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "[1, 2, 3, 2]",
+        "output": "[1, 2, 3, 3]",
+        "explanation": "The first square falls at position 1, raising height to 1. The second square at position 2 raises height to 2. The third square at position 3 raises height to 3. The last square falls at position 2, but it doesn't increase the height beyond 3."
+      },
+      {
+        "input": "[5, 6, 7, 8]",
+        "output": "[1, 1, 1, 1]",
+        "explanation": "Each square falls without overlapping any previously fallen squares, keeping the height consistent at 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider a data structure to track the height at each position.",
+      "Simulate the falling process and track the height dynamically."
+    ],
+    "company": "Block"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Black Blocks",
+    "description": "You are given a 2D grid consisting of several black and white blocks. Each black block is represented by a '1' and each white block by a '0'. Your task is to count the number of connected components of black blocks on the grid. Two blocks are considered connected if they are adjacent either vertically or horizontally. Return the total count of connected components.",
+    "topic": "Graph",
+    "subtopic": "DFS/BFS",
+    "tags": [
+      "Graph",
+      "Depth-First Search",
+      "Breadth-First Search",
+      "Matrix"
+    ],
+    "input_format": "A 2D binary array grid, where grid[i][j] is 0 or 1.",
+    "output_format": "An integer representing the number of connected components of black blocks.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 300",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,1,0],[0,0,1],[1,1,1]]",
+        "output": "2",
+        "explanation": "There are two connected components of black blocks: one in the top left and another in the bottom right."
+      },
+      {
+        "input": "grid = [[1,0,0],[0,1,0],[0,0,1]]",
+        "output": "3",
+        "explanation": "Each black block is isolated, resulting in three connected components."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Depth-First Search (DFS) to explore connected blocks.",
+      "Mark visited blocks to avoid counting them multiple times."
+    ],
+    "company": "Block"
+  },
+  {
+    "question_id": "",
+    "title": "Count Nice Pairs in an Array",
+    "description": "Given an array of integers, a pair of indices (i, j) is called a 'nice pair' if nums[i] + nums[j] = i + j. Your task is to count the number of nice pairs in the array. The pairs (i, j) and (j, i) are considered the same, meaning you should only count each pair once.",
+    "topic": "Array",
+    "subtopic": "Pair Counting",
+    "tags": [
+      "Array",
+      "Pair Counting",
+      "Math"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the count of nice pairs in the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 0, 1, 1]",
+        "output": "4",
+        "explanation": "The nice pairs are (0, 1), (0, 2), (1, 1), (2, 3)."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5]",
+        "output": "0",
+        "explanation": "There are no pairs (i, j) such that nums[i] + nums[j] = i + j."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to express the condition in terms of indices.",
+      "Look for patterns in the values of the pairs."
+    ],
+    "company": "Block"
+  },
+  {
+    "question_id": "",
+    "title": "Pancake Sorting",
+    "description": "You are given an array of integers representing the pancake sizes. Your goal is to sort the pancakes in ascending order using a series of flips. A flip consists of choosing a number k and reversing the order of the first k pancakes. For example, if k = 3 and the stack is [3, 2, 1, 4, 5], it becomes [1, 2, 3, 4, 5]. Return the sequence of flips required to sort the pancakes. If there are multiple solutions, return any of them.",
+    "topic": "Sorting",
+    "subtopic": "Pancake Sorting",
+    "tags": [
+      "Sorting",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers pancakes representing the sizes of the pancakes.",
+    "output_format": "An array of integers representing the sequence of flips made to sort the pancakes.",
+    "constraints": [
+      "1 <= pancakes.length <= 100",
+      "-10^5 <= pancakes[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "pancakes = [3, 2, 4, 1]",
+        "output": "[4, 3, 2, 4, 3]",
+        "explanation": "Flipping 4 sorts pancakes to [1, 4, 2, 3], then flipping 3 sorts the first three which becomes [2, 4, 1]. Finally, flipping 4 and 3 sorts it to [1, 2, 3, 4]."
+      },
+      {
+        "input": "pancakes = [1, 2, 3, 4]",
+        "output": "[]",
+        "explanation": "The pancakes are already sorted, so no flips are needed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how flipping affects the order of elements.",
+      "You might need a greedy approach to decide the best k to flip."
+    ],
+    "company": "Block"
+  },
+  {
+    "question_id": "",
+    "title": "Design a Text Editor",
+    "description": "Implement a text editor with functionalities for adding text, deleting text, and undoing the last action. The text editor should support commands to insert a string, delete the last n characters, and revert to the previous state. You should provide methods to perform the following operations:\n1. `insert(text: str)`: Insert the given text at the current cursor position.\n2. `delete(n: int)`: Delete the last n characters from the text.\n3. `undo()`: Revert the text to the previous state.\n\nYour implementation should be efficient in terms of time complexity, with actions performed in O(1) time where possible.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "String",
+      "Design",
+      "Data Structures"
+    ],
+    "input_format": "A sequence of commands to perform on the text editor, each command represented as a string.",
+    "output_format": "The final state of the text document after executing all commands.",
+    "constraints": [
+      "1 <= number of commands <= 1000",
+      "1 <= length of text to insert <= 100",
+      "1 <= n <= 100"
+    ],
+    "examples": [
+      {
+        "input": "commands = ['insert(Hello)', 'insert( World)', 'delete(5)', 'undo()']",
+        "output": "Hello ",
+        "explanation": "The text is first 'Hello', then 'Hello World', then after deleting 'World', it becomes 'Hello ' and finally, undoing that operation returns to 'Hello '."
+      },
+      {
+        "input": "commands = ['insert(Leet)', 'insert(Code)', 'delete(4)', 'insert( Editor)', 'undo()']",
+        "output": "Leet Editor",
+        "explanation": "The final text after all commands is 'Leet Editor' after undoing the last delete."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to keep track of the history of commands for the undo functionality.",
+      "Use a pointer to manage the current position in the text for efficient insert and delete operations."
+    ],
+    "company": "Block"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Trie (Prefix Tree)",
+    "description": "A Trie (pronounced as 'try') is a special type of tree used to store associative data structures. A common application of a Trie is storing a predictive text or autocomplete dictionary. Implement a Trie with the following methods:\n\n1. `insert(word: str)`: Adds a word into the Trie.\n2. `search(word: str)`: Returns if the word is in the Trie.\n3. `startsWith(prefix: str)`: Returns if there is any word in the Trie that starts with the given prefix.\n\nFor example, if you insert 'apple', 'app', then search for 'app' should return true and check for 'ap' should return true as well.",
+    "topic": "Tree",
+    "subtopic": "Trie",
+    "tags": [
+      "Trie",
+      "Data Structure",
+      "Prefix Tree"
+    ],
+    "input_format": "The function will be called with strings for insertions and searches.",
+    "output_format": "The function should return a boolean value for search and startsWith methods.",
+    "constraints": [
+      "1 <= word.length <= 200",
+      "The input consists of lowercase English letters.",
+      "All inputs are guaranteed to be valid."
+    ],
+    "examples": [
+      {
+        "input": "insert('apple')",
+        "output": "null",
+        "explanation": "The word 'apple' is added to the Trie."
+      },
+      {
+        "input": "search('apple')",
+        "output": "true",
+        "explanation": "'apple' is in the Trie."
+      },
+      {
+        "input": "search('app')",
+        "output": "false",
+        "explanation": "'app' has not been inserted, hence returns false."
+      },
+      {
+        "input": "startsWith('app')",
+        "output": "true",
+        "explanation": "There is a word 'apple' that starts with 'app'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about a tree structure where each node represents a character of the word.",
+      "Use an array or a dictionary to store children nodes of each Trie node.",
+      "Keep track of whether a node marks the end of a word."
+    ],
+    "company": "Block"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to English Words",
+    "description": "Convert a non-negative integer to its English words representation. The function should support numbers from 0 to 2^31 - 1. For example, the input '123' should return 'One Hundred Twenty Three'. The output should not include the word 'and' in its representation. Leading zeros are not permitted.",
+    "topic": "Math",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Conversion",
+      "Math"
+    ],
+    "input_format": "A single integer num (0 <= num <= 2^31 - 1).",
+    "output_format": "A string representing the English words for the input integer.",
+    "constraints": [
+      "0 <= num <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "num = 123",
+        "output": "One Hundred Twenty Three",
+        "explanation": "The number 123 can be broken down into 'One Hundred', 'Twenty', and 'Three'."
+      },
+      {
+        "input": "num = 100001",
+        "output": "One Hundred Thousand One",
+        "explanation": "The number 100001 can be expressed as 'One Hundred Thousand' and 'One'."
+      },
+      {
+        "input": "num = 0",
+        "output": "Zero",
+        "explanation": "The number 0 is simply represented as 'Zero'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Break down the number using hundreds, thousands, and millions.",
+      "Use an array to map numbers to their corresponding English words."
+    ],
+    "company": "Block"
+  },
+  {
+    "question_id": "",
+    "title": "The Maze",
+    "description": "You are given a maze represented as a 2D array containing 0s and 1s. A 0 represents an open cell and a 1 represents a wall. Your task is to determine if there is a path from the top-left corner (0, 0) to the bottom-right corner (n-1, m-1) of the maze. You can move up, down, left, or right in the maze. The path can only traverse through cells with the value 0. Return true if there is a path, otherwise return false.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Pathfinding"
+    ],
+    "input_format": "A 2D array of integers maze of size n x m where each element is either 0 or 1.",
+    "output_format": "A boolean value indicating whether a path exists from top-left to bottom-right.",
+    "constraints": [
+      "1 <= n, m <= 100",
+      "maze[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "maze = [[0, 0, 1], [1, 0, 0], [0, 1, 0]]",
+        "output": "true",
+        "explanation": "A valid path is 0 -> 0 -> 0 (from (0, 0) to (1, 1) to (2, 1)) leading to the bottom-right cell."
+      },
+      {
+        "input": "maze = [[0, 1], [1, 0]]",
+        "output": "false",
+        "explanation": "There is no available path from top-left to bottom-right due to the wall at (1, 0)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using depth-first search or breadth-first search.",
+      "Track visited cells to avoid cycles.",
+      "Identify base cases where the position is out of bounds or blocked."
+    ],
+    "company": "Block"
+  }
+]

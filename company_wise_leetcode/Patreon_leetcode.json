@@ -1,0 +1,138 @@
+[
+  {
+    "question_id": "",
+    "title": "Simplify Path",
+    "description": "Given a string representing an absolute path for a file (Unix-style), you need to simplify it. The path may contain 'normal' directories, '.', which means 'current directory', '..', which means 'parent directory', and multiple consecutive slashes which should be treated as a single slash. Return the simplest path.",
+    "topic": "String",
+    "subtopic": "Path Manipulation",
+    "tags": [
+      "String",
+      "Path",
+      "Manipulation"
+    ],
+    "input_format": "A string representing the absolute path.",
+    "output_format": "A simplified string representing the simplest possible path.",
+    "constraints": [
+      "1 <= path.length <= 3000",
+      "path consists of English letters, digits, '.', '..', and '/'"
+    ],
+    "examples": [
+      {
+        "input": "/a/./b/../../c/",
+        "output": "/c",
+        "explanation": "Although the path contains '.' and '..', it ultimately simplifies to /c."
+      },
+      {
+        "input": "/../",
+        "output": "/",
+        "explanation": "The parent directory refers to the root, thus the simplest path is just /."
+      },
+      {
+        "input": "/home//foo/",
+        "output": "/home/foo",
+        "explanation": "Multiple slashes between directories should be treated as a single slash."
+      },
+      {
+        "input": "/a/b/c/../../../d/",
+        "output": "/d",
+        "explanation": "Moving up three directories from /a/b/c leads to /d."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the directories.",
+      "Ignore any parts of the path that represent the current directory.",
+      "Make sure to handle edge cases for leading and trailing slashes."
+    ],
+    "company": "Patreon"
+  },
+  {
+    "question_id": "",
+    "title": "Logger Rate Limiter",
+    "description": "Design a logger system that receives a stream of messages and ensures that these messages are printed at most once every 10 seconds. Each message should be associated with a timestamp (in seconds). If a message is received again within the 10-second window, it should not be printed again. Implement a method 'shouldPrintMessage(timestamp: int, message: str) -> bool' that returns true if the message should be printed at the timestamp, otherwise false.",
+    "topic": "Design",
+    "subtopic": "Rate Limiting",
+    "tags": [
+      "Design",
+      "Rate Limiting",
+      "Hash Table"
+    ],
+    "input_format": "An integer timestamp and a string message.",
+    "output_format": "A boolean value indicating whether the message should be printed.",
+    "constraints": [
+      "0 <= timestamp <= 2 * 10^9",
+      "1 <= message.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "shouldPrintMessage(1, 'foo')",
+        "output": "true",
+        "explanation": "At timestamp 1, 'foo' is printed."
+      },
+      {
+        "input": "shouldPrintMessage(2, 'bar')",
+        "output": "true",
+        "explanation": "At timestamp 2, 'bar' is printed."
+      },
+      {
+        "input": "shouldPrintMessage(3, 'foo')",
+        "output": "false",
+        "explanation": "'foo' was already printed at timestamp 1 and is in the 10 second window."
+      },
+      {
+        "input": "shouldPrintMessage(11, 'foo')",
+        "output": "true",
+        "explanation": "'foo' can be printed again as it's now outside the 10 second window."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hashmap to store the last printed timestamp for each message.",
+      "Consider the difference between the current timestamp and the last printed timestamp for the message."
+    ],
+    "company": "Patreon"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Maximum Path Sum",
+    "description": "Given a non-empty binary tree, return the maximum path sum. A path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root. The maximum path sum is the largest sum of values along a path in the tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "DFS",
+      "Dynamic Programming"
+    ],
+    "input_format": "A binary tree represented by its root node.",
+    "output_format": "An integer representing the maximum path sum.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 3 * 10^4].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [-10,9,20,null,null,15,7]",
+        "output": "42",
+        "explanation": "The maximum path sum is 15 + 20 + 7 = 42."
+      },
+      {
+        "input": "root = [1,2,3]",
+        "output": "6",
+        "explanation": "The maximum path sum is 1 + 2 + 3 = 6."
+      },
+      {
+        "input": "root = [-3]",
+        "output": "-3",
+        "explanation": "The maximum path sum is the single node -3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a recursive approach to explore all paths.",
+      "Keep track of the maximum path sum as you backtrack in the recursion.",
+      "A path does not need to start from the root."
+    ],
+    "company": "Patreon"
+  }
+]

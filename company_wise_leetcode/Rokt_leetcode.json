@@ -1,0 +1,163 @@
+[
+  {
+    "question_id": "",
+    "title": "Valid Word Abbreviation",
+    "description": "Given a string word and a string abbreviation, determine if the abbreviation is valid for the given word. An abbreviation is valid if it can be generated from the word by replacing a substring with its length. For example, ABI12 stands for 'Abbreviation' because 'Abbreviation' can be represented as 'A' + 'b' + 'brevi' + '12', where '12' indicates the number of letters in that substring. If the abbreviation is invalid, return false.",
+    "topic": "String",
+    "subtopic": "Abbreviation",
+    "tags": [
+      "String",
+      "Abbreviation",
+      "Validation"
+    ],
+    "input_format": "A string 'word' and a string 'abbr'.",
+    "output_format": "A boolean indicating whether the abbreviation is valid.",
+    "constraints": [
+      "1 <= word.length <= 100",
+      "1 <= abbr.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "word = 'international', abbr = 'i12l'",
+        "output": "true",
+        "explanation": "The abbreviation 'i12l' represents 'international', where '12' is the length of the substring 'nternationa'."
+      },
+      {
+        "input": "word = 'apple', abbr = 'a2e'",
+        "output": "true",
+        "explanation": "The abbreviation 'a2e' represents 'apple', where '2' is the length of the substring 'ppl'."
+      },
+      {
+        "input": "word = 'word', abbr = 'w5'",
+        "output": "false",
+        "explanation": "The abbreviation 'w5' is not valid because there are not 5 characters in 'word' after 'w'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider keeping track of your position in both the word and the abbreviation.",
+      "Watch out for leading zeros in the abbreviation."
+    ],
+    "company": "Rokt"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator II",
+    "description": "Implement a basic calculator to evaluate a simple expression string containing non-negative integers, '+', '-', '*', and '/' operators. The expression might be a complex string of numbers and operators that could have spaces in between. You need to implement the calculator without using any in-built expression evaluation functions.",
+    "topic": "Math",
+    "subtopic": "String Evaluation",
+    "tags": [
+      "Math",
+      "String",
+      "Calculator"
+    ],
+    "input_format": "A string expression containing non-negative integers and operators.",
+    "output_format": "An integer representing the result of the evaluated expression.",
+    "constraints": [
+      "The input expression is guaranteed to be valid and will not cause any division by zero.",
+      "1 <= expression.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "expression = '3 + 5 / 2'",
+        "output": "5",
+        "explanation": "Evaluating from left to right, we first compute '5 / 2 = 2' (since it is integer division), then '3 + 2 = 5'."
+      },
+      {
+        "input": "expression = ' 3+4/2 '",
+        "output": "5",
+        "explanation": "The expression evaluates to '3 + (4 / 2) = 3 + 2 = 5', considering the correct order of operations."
+      },
+      {
+        "input": "expression = '8 - 4 * 2'",
+        "output": "0",
+        "explanation": "First compute '4 * 2 = 8', then '8 - 8 = 0'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to manage the order of operations.",
+      "Handle spaces in the input string carefully.",
+      "Digital characters can be accumulated to form multi-digit numbers."
+    ],
+    "company": "Rokt"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator",
+    "description": "Implement a basic calculator to evaluate a simple mathematical expression string that contains non-negative integers, '+', '-', '(', and ')'. The expression string follows the rules of arithmetic precedence and may include multiple levels of parentheses. Your task is to return the result after evaluating the expression.",
+    "topic": "Math",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "Math",
+      "Stack",
+      "Recursion"
+    ],
+    "input_format": "A string expression containing non-negative integers and operators.",
+    "output_format": "An integer representing the evaluated result of the expression.",
+    "constraints": [
+      "The input expression is guaranteed to be valid.",
+      "There are no division or multiplication operations.",
+      "1 <= expression.length <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "expression = \"1 + 1\"",
+        "output": "2",
+        "explanation": "The expression evaluates to 2."
+      },
+      {
+        "input": "expression = \" 2-1 + 2 \"",
+        "output": "3",
+        "explanation": "The expression evaluates to 3."
+      },
+      {
+        "input": "expression = \"(1+(4+5+2)-3)+(6+8)\"",
+        "output": "23",
+        "explanation": "Evaluating the expression inside the parentheses leads to the result of 23."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to keep track of numbers and operators.",
+      "Handle each character of the string to build up your solution."
+    ],
+    "company": "Rokt"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, write a function to determine if t is an anagram of s. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "Strings",
+    "subtopic": "Character Counting",
+    "tags": [
+      "Strings",
+      "Anagram",
+      "Character Count"
+    ],
+    "input_format": "Two strings s and t, where 0 <= s.length, t.length <= 5 * 10^4.",
+    "output_format": "A boolean value indicating whether t is an anagram of s.",
+    "constraints": [
+      "Both strings consist of lowercase English letters.",
+      "The strings can be empty."
+    ],
+    "examples": [
+      {
+        "input": "s = 'anagram', t = 'nagaram'",
+        "output": "true",
+        "explanation": "'nagaram' is an anagram of 'anagram' because all characters match in count."
+      },
+      {
+        "input": "s = 'rat', t = 'car'",
+        "output": "false",
+        "explanation": "'car' is not an anagram of 'rat' since the counts of characters do not match."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how you can count the frequency of characters in both strings.",
+      "You can use a hash map to count characters efficiently."
+    ],
+    "company": "Rokt"
+  }
+]

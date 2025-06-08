@@ -1,0 +1,148 @@
+[
+  {
+    "question_id": "",
+    "title": "Maximal Score After Applying K Operations",
+    "description": "You are given an integer array nums and an integer k. You can perform exactly k operations on the array. In each operation, you can choose any element in the array and increase or decrease it by 1. Your goal is to maximize the score of the array after performing all k operations. The score is defined as the sum of all elements in the array. Return the maximal possible score after performing the k operations.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy",
+      "Optimization"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the maximal possible score.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "0 <= k <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3], k = 3",
+        "output": "9",
+        "explanation": "You can increase each element by 1 for a total score of 3 + 1 + 1 + 1 + 1 + 1 + 1 = 9."
+      },
+      {
+        "input": "nums = [1, 5, 0], k = 3",
+        "output": "9",
+        "explanation": "You can increase the first two elements by 1 to get [3, 5, 0], resulting in a score of 3 + 5 + 0 + 1 + 1 + 1 = 9."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the balance between increasing and decreasing elements.",
+      "A greedy strategy may be beneficial in selecting which elements to modify."
+    ],
+    "company": "McKinsey"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Bridge",
+    "description": "You are given a binary matrix where 0 represents water and 1 represents land. Your goal is to find the shortest bridge that connects two islands (i.e., the minimum number of 0s you must flip to connect two 1s). The bridge can be built in any direction (up, down, left, right).",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D binary matrix grid of size n x m (1 <= n, m <= 100).",
+    "output_format": "An integer representing the length of the shortest bridge.",
+    "constraints": [
+      "grid[i][j] is either 0 or 1.",
+      "It's guaranteed that there are at least two islands in the grid."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0, 1],[0, 0],[0, 1]]",
+        "output": "1",
+        "explanation": "The shortest bridge length is 1, flipping one 0 connects the two islands."
+      },
+      {
+        "input": "grid = [[0, 1, 0, 0, 0], [0, 0, 0, 1, 1], [0, 0, 0, 0, 0], [1, 1, 0, 0, 0]]",
+        "output": "2",
+        "explanation": "The shortest bridge length is 2, flipping two 0s connects the two islands."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use BFS to find the shortest path from one island to another.",
+      "Start from one island and expand outward to find the nearest water."
+    ],
+    "company": "McKinsey"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Operations to Make Network Connected",
+    "description": "You have n computers that are connected by some cables. The cables are not necessarily connected in a way that all computers are reachable from one another. You can connect two disconnected computers with a new cable, which counts as one operation. Your task is to find the minimum number of operations required to make all computers connected.",
+    "topic": "Graph",
+    "subtopic": "Union Find",
+    "tags": [
+      "Graph",
+      "Union Find",
+      "Connectivity"
+    ],
+    "input_format": "An integer n representing the number of computers, and a list of pairs connections where each pair represents a connection between two computers.",
+    "output_format": "An integer representing the minimum number of operations required to connect all computers.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "0 <= connections.length <= 10^5",
+      "connections[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, connections = [[0, 1], [0, 2]]",
+        "output": "1",
+        "explanation": "There are 4 computers (0, 1, 2, 3) in total. Computers 0, 1, and 2 are connected, but 3 is not connected to any computer. Thus, we need one operation to connect computer 3 to any of the connected computers."
+      },
+      {
+        "input": "n = 5, connections = [[0, 1], [0, 2], [1, 2]]",
+        "output": "2",
+        "explanation": "There are 5 computers, and currently only computers 0, 1, and 2 are connected. Computers 3 and 4 are disconnected. It will take two operations to connect them to the network."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the Union-Find data structure to track connected components.",
+      "Count the number of unique components and calculate the number of operations required."
+    ],
+    "company": "McKinsey"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum One Bit Operations to Make Integers Zero",
+    "description": "You are given an integer n. You can perform the following operation on n: flip any bit (from 0 to 1 or from 1 to 0) in the binary representation of n. Your task is to find the minimum number of flip operations required to make the integer n equal to zero.",
+    "topic": "Bit Manipulation",
+    "subtopic": "Binary Representation",
+    "tags": [
+      "Bit Manipulation",
+      "Binary",
+      "Operations"
+    ],
+    "input_format": "A single integer n (0 <= n <= 10^9).",
+    "output_format": "An integer representing the minimum number of bit flip operations to turn n into 0.",
+    "constraints": [
+      "0 <= n <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "2",
+        "explanation": "The binary representation of 3 is '11'. We can flip both bits to make it '00'."
+      },
+      {
+        "input": "n = 6",
+        "output": "2",
+        "explanation": "The binary representation of 6 is '110'. We can flip the two bits to make it '00'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how many bits are set to 1 in the binary representation.",
+      "The number of flips needed corresponds to the number of 1s in binary form."
+    ],
+    "company": "McKinsey"
+  }
+]

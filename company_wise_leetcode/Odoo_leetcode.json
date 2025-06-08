@@ -1,0 +1,198 @@
+[
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of parentheses.",
+    "output_format": "A boolean indicating whether the string is valid or not.",
+    "constraints": [
+      "0 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are correctly matched."
+      },
+      {
+        "input": "s = '(]",
+        "output": "false",
+        "explanation": "The opening parenthesis does not have a corresponding closing parenthesis."
+      },
+      {
+        "input": "s = '({[]})'",
+        "output": "true",
+        "explanation": "All brackets are correctly matched and closed."
+      },
+      {
+        "input": "s = '((()))'",
+        "output": "true",
+        "explanation": "All parentheses are correctly matched."
+      },
+      {
+        "input": "s = '(()('",
+        "output": "false",
+        "explanation": "The opening parentheses do not form a valid closure."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Check if the top of the stack matches the closing bracket."
+    ],
+    "company": "Odoo"
+  },
+  {
+    "question_id": "",
+    "title": "Min Stack",
+    "description": "Design a stack that supports the following operations: push, pop, top, and retrieving the minimum element in constant time. Implement a MinStack class that provides these operations efficiently.",
+    "topic": "Stack",
+    "subtopic": "Data Structure Design",
+    "tags": [
+      "Stack",
+      "Design",
+      "Min"
+    ],
+    "input_format": "You will implement the functions of the MinStack class with no inputs at the time of creation. The operations will be provided as method calls.",
+    "output_format": "Each operation should return the expected value or perform the action described.",
+    "constraints": [
+      "The number of operations performed on the stack will not exceed 1000.",
+      "All operations will be valid."
+    ],
+    "examples": [
+      {
+        "input": "MinStack minStack = new MinStack(); minStack.push(-2); minStack.push(0); minStack.push(-3); minStack.getMin(); minStack.pop(); minStack.top(); minStack.getMin();",
+        "output": "[-3, 0, -2]",
+        "explanation": "After pushing -2, 0, and -3 to the stack, -3 is the minimum. Then, after popping the top element (-3), the top becomes 0 and the minimum remains -2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two stacks to keep track of the minimum values.",
+      "Ensure all operations are optimized for constant time complexity."
+    ],
+    "company": "Odoo"
+  },
+  {
+    "question_id": "",
+    "title": "Evaluate Reverse Polish Notation",
+    "description": "You are given an array of strings tokens that represent an expression in Reverse Polish Notation (RPN). Evaluate the expression and return an integer result. The valid operators are '+', '-', '*', and '/'. Each operator is applied to the two most recent numbers on the stack. Implement the evaluation according to the following rules: 1. If the token is a number, push it onto the stack. 2. If the token is an operator, pop the top two numbers from the stack, apply the operator, and push the result back onto the stack. 3. The result will be the only number remaining on the stack at the end.",
+    "topic": "Stack",
+    "subtopic": "Evaluation",
+    "tags": [
+      "Stack",
+      "Mathematics",
+      "Array"
+    ],
+    "input_format": "An array of strings tokens representing the RPN expression.",
+    "output_format": "An integer representing the result of evaluating the RPN expression.",
+    "constraints": [
+      "1 <= tokens.length <= 10^4",
+      "tokens[i] is either an operator ('+', '-', '*', or '/') or a number in the range [-10^9, 10^9].",
+      "The division operation truncates toward zero."
+    ],
+    "examples": [
+      {
+        "input": "tokens = [\"2\", \"1\", \"+\", \"3\", \"*\"]",
+        "output": "9",
+        "explanation": "The expression is (2 + 1) * 3 = 9."
+      },
+      {
+        "input": "tokens = [\"4\", \"13\", \"5\", \"/\", \"+\"]",
+        "output": "6",
+        "explanation": "The expression is 4 + (13 / 5) = 4 + 2 = 6."
+      },
+      {
+        "input": "tokens = [\"10\", \"6\", \"9\", \"3\", \"/\", \"-11\", \"*\", \"+\", \"*\", \"17\", \"+\", \"5\", \"/\"]",
+        "output": "22",
+        "explanation": "The expression evaluated step by step leads to a final result of 22."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of numbers.",
+      "Process each token and apply the corresponding operation."
+    ],
+    "company": "Odoo"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse String",
+    "description": "Write a function that reverses a string. The input string is given as an array of characters, and you must modify the input array in-place with O(1) extra memory.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "In-place",
+      "Reverse"
+    ],
+    "input_format": "An array of characters, where each character is a single ASCII character.",
+    "output_format": "You should not return anything; modify the input array in place.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s[i] is a printable ASCII character."
+    ],
+    "examples": [
+      {
+        "input": "s = ['h', 'e', 'l', 'l', 'o']",
+        "output": "['o', 'l', 'l', 'e', 'h']",
+        "explanation": "The reverse of 'hello' is 'olleh'."
+      },
+      {
+        "input": "s = ['H', 'a', 'n', 'n', 'a', 'h']",
+        "output": "['h', 'a', 'n', 'n', 'a', 'H']",
+        "explanation": "The reverse of 'Hannah' is 'hannaH'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two-pointer technique.",
+      "Swapping characters can help in reversing the string."
+    ],
+    "company": "Odoo"
+  },
+  {
+    "question_id": "",
+    "title": "Fair Candy Swap",
+    "description": "Alice and Bob have a different number of candies. They want to make their counts equal by swapping candies. Determine the number of candies that they need to swap. If it is impossible to make their counts equal, return an empty list.",
+    "topic": "Array",
+    "subtopic": "Hash Map",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Hash Map"
+    ],
+    "input_format": "Two integer arrays, A and B, representing the number of candies that Alice and Bob have, respectively.",
+    "output_format": "A list of two integers where the first integer is the number of candies Alice must give to Bob and the second integer is the number of candies Bob must give to Alice. If no valid swaps exist, return an empty list.",
+    "constraints": [
+      "0 <= A.length, B.length <= 10000",
+      "0 <= A[i], B[i] <= 100000"
+    ],
+    "examples": [
+      {
+        "input": "A = [1, 1], B = [2, 2]",
+        "output": "[1, 2]",
+        "explanation": "Alice can swap one of her candies (1) with one from Bob (2), making their counts equal."
+      },
+      {
+        "input": "A = [1, 2], B = [2, 3]",
+        "output": "[]",
+        "explanation": "There are no candies that can be swapped to equalize their counts."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Calculate the total candies for both Alice and Bob.",
+      "Determine the difference and what candies can satisfy that difference."
+    ],
+    "company": "Odoo"
+  }
+]

@@ -1,0 +1,232 @@
+[
+  {
+    "question_id": "",
+    "title": "Brick Wall",
+    "description": "You are given a 2D grid representing a wall of bricks. Each cell in the grid represents a brick, and the width of each brick is given by the value in that cell. The wall has several rows of bricks, and your task is to determine the minimum number of vertical lines that intersect all rows of bricks. A vertical line intersects a row if it crosses any of the bricks in that row. You can assume that the height of the wall is unlimited, and the wall will only consist of bricks. Your goal is to find out how many lines you need to draw to create the least number of intersections.",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "2D Array",
+      "Greedy"
+    ],
+    "input_format": "A 2D array of integers representing the wall, where wall[i][j] is the width of the j-th brick in the i-th row.",
+    "output_format": "An integer representing the minimum number of vertical lines that intersect all rows of bricks.",
+    "constraints": [
+      "1 <= wall.length <= 1000",
+      "1 <= wall[i].length <= 1000",
+      "1 <= wall[i][j] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "wall = [[1,2,2,1],[3,1,2],[2,4],[2,1,2,1]]",
+        "output": "1",
+        "explanation": "Drawing one vertical line at position 2 will intersect all rows without hitting any bricks."
+      },
+      {
+        "input": "wall = [[1],[1],[1]]",
+        "output": "3",
+        "explanation": "Each row has a single brick, so we need to draw 3 vertical lines to intersect all rows."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to count the width positions at which bricks end.",
+      "Calculate how many bricks are crossed based on the counts in your hashmap."
+    ],
+    "company": "Trexquant"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order. The spiral order begins from the top-left corner of the matrix, moves to the right, continues to the bottom, then to the left, and finally to the upper side, continuing this process inwards until all elements have been visited.",
+    "topic": "Matrix",
+    "subtopic": "Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Spiral Order"
+    ],
+    "input_format": "A two-dimensional list of integers matrix, where matrix[i][j] represents the element in the i-th row and j-th column.",
+    "output_format": "A one-dimensional list of integers representing the elements of the matrix in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "m * n <= 10^4",
+      "-100 <= matrix[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The elements in spiral order are: 1 -> 2 -> 3 -> 6 -> 9 -> 8 -> 7 -> 4 -> 5."
+      },
+      {
+        "input": "matrix = [[1, 2], [3, 4]]",
+        "output": "[1, 2, 4, 3]",
+        "explanation": "The elements in spiral order are: 1 -> 2 -> 4 -> 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use four pointers to track the boundaries of the spiral order.",
+      "Consider how the indices change as you traverse each boundary."
+    ],
+    "company": "Trexquant"
+  },
+  {
+    "question_id": "",
+    "title": "Max Difference You Can Get From Changing an Integer",
+    "description": "You are given an integer n. You can change one digit of this integer to any digit from 0 to 9 (keeping in mind that the first digit cannot be changed to 0). Your task is to find the maximum difference you can achieve between the new integer formed after changing one digit and the original integer n.",
+    "topic": "Greedy",
+    "subtopic": "Digit Manipulation",
+    "tags": [
+      "Greedy",
+      "Integer",
+      "Digit Manipulation"
+    ],
+    "input_format": "An integer n (0 <= n <= 10^9).",
+    "output_format": "An integer representing the maximum difference obtainable.",
+    "constraints": [
+      "0 <= n <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "n = 123",
+        "output": "876",
+        "explanation": "Changing the first digit to 9 forms the number 923, and the difference is 923 - 123 = 800. Changing the second digit to 9 forms the number 193, and the difference is 193 - 123 = 70. Changing the last digit to 9 forms the number 129, and the difference is 129 - 123 = 6. The maximum difference is 800."
+      },
+      {
+        "input": "n = 909",
+        "output": "900",
+        "explanation": "Changing the first digit to 0 is not allowed. Changing the second digit to 0 forms the number 900, and the difference is 909 - 900 = 9. Changing the last digit to 9 forms no difference in this case. The maximum difference is 9."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider changing each digit one by one.",
+      "Evaluate the impact of changing the first digit separately."
+    ],
+    "company": "Trexquant"
+  },
+  {
+    "question_id": "",
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. A mapping of digit to letters is given below. Note that 1 does not map to any letters. You may assume the input is always valid. Input is not an empty string.",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Generation",
+    "tags": [
+      "Backtracking",
+      "Combination",
+      "String"
+    ],
+    "input_format": "A string digits where 0 <= digits.length <= 4.",
+    "output_format": "A list of strings representing all possible letter combinations.",
+    "constraints": [
+      "0 <= digits.length <= 4",
+      "digits[i] is a digit in the range ['2', '9']"
+    ],
+    "examples": [
+      {
+        "input": "digits = \"23\"",
+        "output": "[\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]",
+        "explanation": "The digit '2' corresponds to 'abc' and '3' corresponds to 'def', leading to combinations like 'ad', 'ae', 'af', etc."
+      },
+      {
+        "input": "digits = \"\"",
+        "output": "[]",
+        "explanation": "An empty input string returns an empty list."
+      },
+      {
+        "input": "digits = \"2\"",
+        "output": "[\"a\",\"b\",\"c\"]",
+        "explanation": "The digit '2' alone corresponds to 'abc'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to explore all combinations.",
+      "Use a mapping of digits to letters as a reference."
+    ],
+    "company": "Trexquant"
+  },
+  {
+    "question_id": "",
+    "title": "Koko Eating Bananas",
+    "description": "Koko loves to eat bananas, and she decides to eat them at a fixed rate. Given a pile of bananas and a speed k, she can eat k bananas in one hour. However, she wants to minimize the number of hours she spends eating. If k is too low, she might end up taking too many hours. You need to determine the minimum integer speed k such that Koko can eat all the bananas within h hours. Function should return the minimum k.",
+    "topic": "Binary Search",
+    "subtopic": "Searching",
+    "tags": [
+      "Binary Search",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array piles representing the number of bananas in each pile, and an integer h representing the number of hours Koko has to eat.",
+    "output_format": "An integer representing the minimum eating speed k.",
+    "constraints": [
+      "1 <= piles.length <= 10^4",
+      "1 <= piles[i] <= 10^9",
+      "1 <= h <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "piles = [3, 6, 7, 11], h = 8",
+        "output": "4",
+        "explanation": "If Koko eats at speed 4, she can finish within 8 hours: 4 + 4 + 3 + 3 = 14; she needs about 8 hours to finish."
+      },
+      {
+        "input": "piles = [30, 11, 23, 4, 20], h = 5",
+        "output": "30",
+        "explanation": "The minimum speed k is 30, where she can eat 30 in 1 hour and finish within the limit."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to optimize the solution.",
+      "The minimum speed k must be at least 1.",
+      "Check if a given speed can complete the task within h hours."
+    ],
+    "company": "Trexquant"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting",
+      "Triplet"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of unique triplets that sum up to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1,0,1,2,-1,-4]",
+        "output": "[[-1,-1,2],[-1,0,1]]",
+        "explanation": "The triplets that sum up to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "There are no triplets in an empty array."
+      },
+      {
+        "input": "nums = [0,1,1]",
+        "output": "[]",
+        "explanation": "No triplet can sum up to zero in this case."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array first to simplify the process.",
+      "Use the two-pointer technique to find pairs that sum to a specific value."
+    ],
+    "company": "Trexquant"
+  }
+]

@@ -1,0 +1,892 @@
+[
+  {
+    "question_id": "",
+    "title": "Delete and Earn",
+    "description": "You are given an array of integers nums. You want to maximize your score by performing the following operation: Choose an integer x and delete all instances of x, and also delete all instances of x-1 and x+1 from the array. Each time you delete an integer x, you earn x points. You need to determine the maximum points you can earn by performing this operation optimally.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Memoization",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers nums, which represents the amounts of points.",
+    "output_format": "An integer representing the maximum points you can earn.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "0 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, 2]",
+        "output": "6",
+        "explanation": "Delete 3 and earn 3 points, then delete 4 which earns 4 points. Total: 3 + 4 = 7. Alternatively, delete 4 and you will get 4 points and can't get any points for 3, giving a total of 4."
+      },
+      {
+        "input": "nums = [2, 2, 3, 3, 3, 4]",
+        "output": "9",
+        "explanation": "Delete 3 and earn 9 points (3 * 3 + 2 * 0), or delete 4 and 2 for 8 points. Best score is 9."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a frequency array to count occurrences.",
+      "Think about how this problem relates to a maximum path in a decision tree.",
+      "Look for a recurrence relation between the points earned."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Initial Energy to Finish Tasks",
+    "description": "You are given an array of tasks, where each task has a required energy cost to complete. You start with an initial amount of energy and you can finish a task only if you have enough energy to meet its cost. If you finish a task, you gain some energy back. Your goal is to determine the minimum energy you need to start with in order to complete all tasks in the array. If it is not possible to finish all tasks, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of tuples where each tuple contains two integers, cost and gain, for each task.",
+    "output_format": "An integer representing the minimum initial energy required to finish all tasks, or -1 if impossible.",
+    "constraints": [
+      "1 <= tasks.length <= 10^5",
+      "1 <= cost <= 10^4",
+      "0 <= gain <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "tasks = [(5, 3), (2, 4), (6, 1)]",
+        "output": "8",
+        "explanation": "You need at least 8 energy to complete all tasks successfully."
+      },
+      {
+        "input": "tasks = [(3, 2), (4, 3), (5, 2)]",
+        "output": "-1",
+        "explanation": "It's impossible to complete all tasks since each task requires more energy than you can gain."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the net energy change after each task.",
+      "Prioritize tasks based on cost and gain."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Dice Roll Simulation",
+    "description": "You have a fair six-sided dice, and you need to simulate rolling the dice a given number of times. Your task is to return the frequency of each number (from 1 to 6) that appears after rolling the dice. The output should be a list of integers representing the frequency of each number in the order from 1 to 6.",
+    "topic": "Simulation",
+    "subtopic": "Randomness",
+    "tags": [
+      "Simulation",
+      "Randomness",
+      "Counting"
+    ],
+    "input_format": "An integer n representing the number of times the dice is rolled.",
+    "output_format": "A list of six integers, where the ith integer represents the number of times the face i appeared after rolling the dice.",
+    "constraints": [
+      "1 <= n <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "n = 10",
+        "output": "[2, 1, 3, 2, 1, 1]",
+        "explanation": "In this case, rolling the dice 10 times resulted in the following outcomes: 1, 2, 3, 4, 5, 6. The frequencies may vary due to randomness, but this output shows one possible valid count."
+      },
+      {
+        "input": "n = 100",
+        "output": "[20, 15, 18, 22, 14, 11]",
+        "explanation": "After rolling the dice 100 times, the frequencies count represents how many times each side appeared."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a random number generator to simulate each dice roll.",
+      "Keep track of the counts in an array of size 6."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Operations to Make Network Connected",
+    "description": "In a network of n computers, there are m connections between them. The connections can be viewed as edges in a graph. You need to determine the minimum number of operations required to connect all computers in the network. An operation consists of connecting any two disconnected computers with a direct cable. If the network is already fully connected, no operations are needed.",
+    "topic": "Graph",
+    "subtopic": "Union-Find",
+    "tags": [
+      "Graph",
+      "Union-Find",
+      "Connectivity"
+    ],
+    "input_format": "Two integers n and m, followed by a list of pairs, where each pair (a, b) represents a connection between computer a and computer b.",
+    "output_format": "An integer representing the minimum number of operations required to connect all computers.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "0 <= m <= 10^5",
+      "0 <= a, b < n"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, m = 2, connections = [[0, 1], [0, 2]]",
+        "output": "1",
+        "explanation": "We can connect either computer 3 to computer 0, 1, or 2 to make the network fully connected."
+      },
+      {
+        "input": "n = 6, m = 5, connections = [[0, 1], [0, 2], [0, 3], [1, 4], [2, 5]]",
+        "output": "1",
+        "explanation": "We just need to connect any of the remaining two computers, 3 or 5, to make the network connected."
+      },
+      {
+        "input": "n = 5, m = 3, connections = [[0, 1], [0, 2], [1, 3]]",
+        "output": "2",
+        "explanation": "To connect all computers, we need two additional connections, for example, connect 2 to 4 and 3 to 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think in terms of components and how many are disconnected.",
+      "Use union-find to effectively manage and count connections."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Map Sum Pairs",
+    "description": "Implement a key-value map that allows you to add a new key-value pair and return the sum of all values of keys that start with a given prefix efficiently. You need to implement the following methods: \n\n- `insert(String key, int val)`: Adds the key-value pair to the map. If the key already exists, the original value will be overridden. \n- `sum(String prefix)`: Returns the sum of all values of keys that start with the given prefix. \n\nFor example, if you insert the key-value pair ('apple', 3) and ('app', 2), calling `sum('ap')` should return 5 (3 from 'apple' + 2 from 'app').",
+    "topic": "Design",
+    "subtopic": "Trie",
+    "tags": [
+      "Design",
+      "Trie",
+      "HashMap"
+    ],
+    "input_format": "A series of commands: insert followed by key-value pairs or sum followed by a prefix string.",
+    "output_format": "An integer representing the sum of values for all keys starting with the given prefix.",
+    "constraints": [
+      "The number of calls to insert and sum will not exceed 10000.",
+      "The length of key and prefix will be at most 100.",
+      "All keys are lowercase letters."
+    ],
+    "examples": [
+      {
+        "input": [
+          "insert('apple', 3)",
+          "insert('app', 2)",
+          "sum('ap')"
+        ],
+        "output": "5",
+        "explanation": "The keys 'apple' and 'app' both start with the prefix 'ap', so their values 3 and 2 are summed to give 5."
+      },
+      {
+        "input": [
+          "insert('hello', 1)",
+          "insert('hell', 2)",
+          "sum('he')"
+        ],
+        "output": "3",
+        "explanation": "The keys 'hello' and 'hell' start with 'he', yielding a sum of 1 + 2 = 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a Trie or HashMap to efficiently store and retrieve values.",
+      "Keep track of individual contributions to prefixes when inserting."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Increasing Decreasing String",
+    "description": "Given a string, rearrange its characters such that it first forms an increasing sequence followed by a decreasing sequence. If it's not possible to rearrange the string in this way, return an empty string. The increasing sequence should consist of characters sorted in ascending order and the decreasing sequence should consist of characters sorted in descending order.",
+    "topic": "String",
+    "subtopic": "Sorting",
+    "tags": [
+      "String",
+      "Sorting",
+      "Greedy"
+    ],
+    "input_format": "A string s consisting of lowercase English letters.",
+    "output_format": "A string representing the rearranged characters in the increasing and then decreasing order, or an empty string if not possible.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists only of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "aaaabbbb",
+        "output": "ab",
+        "explanation": "The characters can be rearranged as 'ab' followed by ''. The increasing part is 'ab', and there are no characters left for the decreasing part."
+      },
+      {
+        "input": "cba",
+        "output": "abcba",
+        "explanation": "The characters can be rearranged to form 'abc' followed by 'cba'."
+      },
+      {
+        "input": "aaa",
+        "output": "",
+        "explanation": "It is not possible to form an increasing and then decreasing sequence with only one unique character."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Count the frequency of each character.",
+      "Use a greedy approach to pick characters for increasing and decreasing parts."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Cherry Pickup",
+    "description": "In a 2D grid representing a field of cherries, you and your friend start at the top-left corner and can only move to the right or down. Your goal is to collect the maximum number of cherries you can by reaching the bottom-right corner. The grid cells can contain either cherries (represented by 1) or empty cells (represented by 0). If you encounter a cell with an obstacle (represented by -1), you cannot pass through that cell. You must find a way to collect the maximum number of cherries while following the movement constraints.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Backtracking"
+    ],
+    "input_format": "A 2D array `grid` where grid[i][j] represents the cell type: 1 for cherries, 0 for empty, and -1 for obstacles.",
+    "output_format": "An integer representing the maximum number of cherries that can be collected.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 50",
+      "grid[i][j] is either 1, 0, or -1",
+      "The starting cell and the ending cell will not be -1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0, 1, -1], [1, 0, 0], [-1, 1, 1]]",
+        "output": "5",
+        "explanation": "The maximum number of cherries that can be collected is 5 by following the path: (0,0) -> (0,1) -> (1,1) -> (2,1) -> (2,2)."
+      },
+      {
+        "input": "grid = [[1, 1, 1], [0, -1, 1], [1, 1, 1]]",
+        "output": "5",
+        "explanation": "The maximum path collects all cherries except the one at (1,1) where there is an obstacle."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about how to use dynamic programming to store results of subproblems.",
+      "Consider the paths that you and your friend can take simultaneously.",
+      "Avoid paths that lead to obstacles."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Network Delay Time",
+    "description": "You are given a directed network represented as a list of edges, where each edge is a triplet (u, v, w) indicating that there is a directed edge from node u to node v with a weight w. You are also given a starting node. Your task is to determine the time it takes for all nodes to receive a signal sent from the starting node. If it is impossible for all nodes to receive the signal, return -1.",
+    "topic": "Graph",
+    "subtopic": "Dijkstra's Algorithm",
+    "tags": [
+      "Graph",
+      "Shortest Path",
+      "Dijkstra"
+    ],
+    "input_format": "A list of edges, and a starting node.",
+    "output_format": "An integer representing the time it takes for all nodes to receive the signal, or -1 if not all nodes can be reached.",
+    "constraints": [
+      "1 <= edges.length <= 20000",
+      "0 <= u, v < n (where n is the number of nodes)",
+      "1 <= w <= 100"
+    ],
+    "examples": [
+      {
+        "input": "edges = [[2, 1, 1], [2, 0, 1], [1, 0, 1]], start = 2",
+        "output": "2",
+        "explanation": "Starting from node 2, after 1 time unit, we can reach node 1 and node 0. Both nodes receive the signal in 2 time units."
+      },
+      {
+        "input": "edges = [[1, 0, 2], [0, 1, 5]], start = 0",
+        "output": "5",
+        "explanation": "We can reach node 1 in 2 time units, and it takes 5 time units to reach node 0, but we cannot reach all nodes, thus returning -1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a priority queue to track the shortest times to each node.",
+      "Make sure to handle cases where nodes are unreachable."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Create Sorted Array through Instructions",
+    "description": "You are given a list of instructions, where each instruction is either a positive integer or a negative integer. A positive integer signifies that you should add that number to a new array, and a negative integer means you need to remove the last added number from the new array. Your task is to create a sorted array after processing all the instructions. If at any point an instruction tries to remove a number from an empty array, ignore that instruction. Return the final sorted array.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Instructions"
+    ],
+    "input_format": "A list of integers instructions.",
+    "output_format": "A sorted array of integers after processing all instructions.",
+    "constraints": [
+      "1 <= instructions.length <= 10^5",
+      "-10^6 <= instructions[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "[1, 2, 3, -1, -1]",
+        "output": "[3]",
+        "explanation": "Instructions add 1, 2, 3 to the array, and then remove two last added items (2 and 1). Left with 3, the final sorted array is [3]."
+      },
+      {
+        "input": "[5, -1, -2, 3]",
+        "output": "[3]",
+        "explanation": "5 is added, then -1 removes 5. Next, -2 cannot remove anything as the array is empty. Finally, 3 is added. Sorted array is [3]."
+      },
+      {
+        "input": "[-1, 5, -2, -2]",
+        "output": "[]",
+        "explanation": "Starts empty, -1 does nothing, adds 5, -2 removes 5, then another -2 does nothing. Final array is empty."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a stack or list to maintain the numbers.",
+      "Sort the array at the end before returning it."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Can Make Palindrome from Substring",
+    "description": "Given a string s and an integer k, determine if it is possible to form a palindrome by removing at most k characters from s. You may remove characters from the beginning or the end of the string but not from the middle. A palindrome reads the same forwards and backwards.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "A string s followed by an integer k.",
+    "output_format": "A boolean value: true if it's possible to form a palindrome by removing at most k characters, false otherwise.",
+    "constraints": [
+      "1 <= s.length <= 10000",
+      "0 <= k <= s.length"
+    ],
+    "examples": [
+      {
+        "input": "s = 'abca', k = 1",
+        "output": "true",
+        "explanation": "By removing 'b' or 'c', the resulting string 'aca' is a palindrome."
+      },
+      {
+        "input": "s = 'racecar', k = 0",
+        "output": "true",
+        "explanation": "'racecar' is already a palindrome, so no characters need to be removed."
+      },
+      {
+        "input": "s = 'abcdefg', k = 1",
+        "output": "false",
+        "explanation": "Removing one character from 'abcdefg' will not make it a palindrome."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a two-pointer approach.",
+      "Check the characters from both ends of the string.",
+      "Count how many characters you need to remove to make a palindrome."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Constrained Subsequence Sum",
+    "description": "Given an integer array nums and an integer k, return the maximum sum of a subsequence of nums such that the sum is less than or equal to k. A subsequence can be derived from the array by deleting some or no elements without changing the order of the remaining elements. If no valid subsequence exists, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "Subsequence",
+      "Array"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the maximum sum of the valid subsequence.",
+    "constraints": [
+      "1 <= nums.length <= 2000",
+      "-10^4 <= nums[i] <= 10^4",
+      "0 <= k <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 5, -1, 8, 2], k = 10",
+        "output": "10",
+        "explanation": "The subsequence [3, 5, 2] has a sum of 10 which is less than or equal to k."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5], k = 5",
+        "output": "5",
+        "explanation": "The subsequence [5] has a sum of 5 which matches k."
+      },
+      {
+        "input": "nums = [-1, -2, -3], k = 0",
+        "output": "0",
+        "explanation": "No valid subsequence can be formed that meets the constraints."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a dynamic programming approach to keep track of sums.",
+      "You can maintain a priority list of sums while iterating through the array."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Reduce Array Size to The Half",
+    "description": "Given an integer array nums, you need to remove some elements from the array such that the size of the array becomes at most half of its original size. You must minimize the number of removed elements. The array may contain duplicates. Return the minimum number of elements that need to be removed to reach this condition.",
+    "topic": "Array",
+    "subtopic": "Frequency Counting",
+    "tags": [
+      "Array",
+      "Counting",
+      "Greedy"
+    ],
+    "input_format": "An integer array nums.",
+    "output_format": "An integer representing the minimum number of elements that need to be removed.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 3, 2, 2, 3, 1, 1, 1]",
+        "output": "3",
+        "explanation": "To reduce the size to at most half (4), we can remove two '3's and one '2'."
+      },
+      {
+        "input": "nums = [1, 1, 2, 2, 3, 3]",
+        "output": "2",
+        "explanation": "Removing two '1's or two '2's or two '3's will reduce the array to half size."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5]",
+        "output": "2",
+        "explanation": "We can remove any two elements, as there are no duplicates."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count the frequency of each element in the array.",
+      "Sort the frequencies in descending order.",
+      "Keep removing the most frequent elements until the array size condition is met."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Taps to Open to Water a Garden",
+    "description": "You have a garden represented as a number line from 0 to n. There are n + 1 taps located at positions 0 through n, where the i-th tap can water the area from position i - range[i] to position i + range[i] (inclusive). Given an integer n and an integer array range of length n + 1, representing the range of each tap, your task is to find the minimum number of taps needed to water the entire garden. If it is not possible to water the entire garden, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Interval"
+    ],
+    "input_format": "An integer n followed by an array range of length n + 1.",
+    "output_format": "An integer representing the minimum number of taps needed or -1 if it's impossible.",
+    "constraints": [
+      "1 <= n <= 10^4",
+      "0 <= range[i] <= n"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, range = [3,4,1,1,0,0]",
+        "output": "1",
+        "explanation": "Only the tap at position 1 can water the entire garden."
+      },
+      {
+        "input": "n = 5, range = [0,0,0,0,0,0]",
+        "output": "-1",
+        "explanation": "No taps can water the garden."
+      },
+      {
+        "input": "n = 7, range = [1,2,1,0,2,1,0,1]",
+        "output": "3",
+        "explanation": "The taps at positions 0, 1, and 4 are required to cover the whole range."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a greedy algorithm to find the minimum number of taps.",
+      "Consider converting the range of each tap into intervals."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Different Subsequences GCDs",
+    "description": "Given an array of integers, calculate the number of different values of GCDs that can be formed by any non-empty subsequence of the array. A GCD is the greatest common divisor of a set of numbers. The subsequences can have any length as long as they are non-empty.",
+    "topic": "Mathematics",
+    "subtopic": "GCD",
+    "tags": [
+      "GCD",
+      "Mathematics",
+      "Subsequences"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the number of different GCD values from all possible subsequences.",
+    "constraints": [
+      "1 <= nums.length <= 2000",
+      "1 <= nums[i] <= 10000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [6, 12, 18]",
+        "output": "3",
+        "explanation": "The different GCD values from subsequences are {6, 12, 18} -> GCDs are 6, 12 and 18."
+      },
+      {
+        "input": "nums = [4, 6, 8]",
+        "output": "3",
+        "explanation": "Subsequences give GCDs of {2, 4, 6, 8}. The different GCD values are 2, 4 and 6."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a set to track unique GCDs.",
+      "You may need to efficiently calculate GCD using properties of divisors."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Count and Say",
+    "description": "The 'Count and Say' sequence is a sequence of digit strings defined by the recursive formula: countAndSay(1) = '1'. To generate the n-th term of the sequence, you need to read the previous term and count the number of digits in groups of the same digit. For example, the term '1211' is read as 'one 1, one 2, and two 1s', which yields '111221'. Given an integer n, return the n-th term of the 'Count and Say' sequence.",
+    "topic": "String",
+    "subtopic": "Sequence Generation",
+    "tags": [
+      "String",
+      "Recursion",
+      "Sequence"
+    ],
+    "input_format": "An integer n (1 <= n <= 30).",
+    "output_format": "A string representing the n-th term in the 'Count and Say' sequence.",
+    "constraints": [
+      "1 <= n <= 30"
+    ],
+    "examples": [
+      {
+        "input": "n = 1",
+        "output": "1",
+        "explanation": "The first term of the sequence is simply '1'."
+      },
+      {
+        "input": "n = 4",
+        "output": "1211",
+        "explanation": "The sequence up to n=4 is '1' -> '11' -> '21' -> '1211'."
+      },
+      {
+        "input": "n = 5",
+        "output": "111221",
+        "explanation": "The sequence up to n=5 is '1' -> '11' -> '21' -> '1211' -> '111221'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to group the digits from the previous term.",
+      "Use a loop to iterate through the string and count consecutive digits."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Processing Time",
+    "description": "You are given a list of tasks where each task takes a specific amount of time to process. The tasks are represented as an array of integers, where each integer represents the processing time of a task in seconds. Your goal is to determine the minimum total processing time required to complete all tasks, given that the tasks can be processed in parallel, and the total processing time is dictated by the longest task among the simultaneously processed tasks. Implement a function that calculates the minimum total processing time needed to complete all tasks.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Optimization"
+    ],
+    "input_format": "An array of integers representing the processing times of tasks.",
+    "output_format": "An integer representing the minimum total processing time to complete all tasks.",
+    "constraints": [
+      "1 <= tasks.length <= 1000",
+      "1 <= tasks[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "tasks = [3, 5, 2, 6]",
+        "output": "6",
+        "explanation": "The fastest way to complete all tasks is to run tasks with times 3 and 5 in parallel and 2 and 6 in parallel. Thus, the total time is max(5, 6) = 6 seconds."
+      },
+      {
+        "input": "tasks = [2, 2, 2, 2]",
+        "output": "2",
+        "explanation": "All tasks can be processed in parallel, the time taken will be the maximum time of any single task, which is 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how you can divide tasks into groups for parallel processing.",
+      "Use a greedy approach to minimize the maximum task time."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are covered by water.",
+    "topic": "Graph",
+    "subtopic": "DFS/BFS",
+    "tags": [
+      "Graph",
+      "Depth-First Search",
+      "Breadth-First Search",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid represented as a list of lists, where each inner list contains '0's and '1's.",
+    "output_format": "An integer representing the number of islands in the grid.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "[['1', '1', '0', '0', '0'], ['1', '1', '0', '0', '0'], ['0', '0', '1', '0', '0'], ['0', '0', '0', '1', '1']]",
+        "output": "3",
+        "explanation": "There are three islands in the grid."
+      },
+      {
+        "input": "[['1', '1', '1', '1', '0'], ['1', '1', '0', '1', '0'], ['1', '1', '0', '0', '0'], ['0', '0', '0', '0', '0']]",
+        "output": "1",
+        "explanation": "There is one island in the entire grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Depth-First Search (DFS) or Breadth-First Search (BFS).",
+      "You can mark visited land while traversing to ensure each island is counted only once."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Star Sum of a Graph",
+    "description": "You are given a graph represented by vertices and edges, where each vertex has a star value associated with it. You need to find the maximum sum of star values you can obtain by choosing a limited number of vertices. You can choose a vertex if it has connected edges to other vertices and their values combined do not exceed a specified limit. Your task is to return the maximum star sum that can be obtained.",
+    "topic": "Graph",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Dynamic Programming"
+    ],
+    "input_format": "The first line contains two integers, n (the number of vertices) and k (the limit on the sum of connected vertex values). The next line contains n integers representing the star values of each vertex. Then k lines follow, each containing two integers representing an edge between vertices.",
+    "output_format": "An integer representing the maximum star sum obtained.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "1 <= k <= 10000",
+      "-10^5 <= star_value <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "5 3\n1 2 3 4 5\n1 2\n1 3\n2 4\n3 5\n",
+        "output": "9",
+        "explanation": "The maximum star sum can be obtained by choosing vertex 1 (value 1) and vertex 2 (value 2) along with vertex 3 (value 3) for a total of 1 + 2 + 3 = 6, which is less than the limit 3."
+      },
+      {
+        "input": "4 4\n4 3 2 1\n1 2\n2 3\n3 4\n",
+        "output": "10",
+        "explanation": "Choosing all vertices gives a star sum of 4 + 3 + 2 + 1 = 10, which fits within the limit."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using depth-first or breadth-first search to explore vertices connected by edges.",
+      "Keep track of the sum of star values while ensuring you do not exceed the specified limit."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Distance to a Cycle in Undirected Graph",
+    "description": "Given an undirected graph represented as an adjacency list, determine the shortest distances from each node to the nearest cycle in the graph. If a node belongs to a cycle, its distance to the cycle is 0. The graph will not contain multiple edges between two nodes and will not contain self-loops.",
+    "topic": "Graph",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Cycle Detection"
+    ],
+    "input_format": "The input consists of an integer n (the number of nodes) and an array of edges where each edge is represented as a pair of integers [u, v] indicating an undirected edge between nodes u and v.",
+    "output_format": "An array of integers where the i-th integer represents the distance from node i to the nearest cycle.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "0 <= edges.length <= 2 * 10^5",
+      "edges[i] contains two distinct integers u and v between 0 and n-1"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, edges = [[0, 1], [1, 2], [2, 0], [1, 3], [3, 4]]",
+        "output": "[0, 0, 0, 1, 2]",
+        "explanation": "Nodes 0, 1, and 2 are part of the cycle. Node 3 is 1 step away, and Node 4 is 2 steps away from the nearest cycle."
+      },
+      {
+        "input": "n = 4, edges = [[0, 1], [1, 2], [2, 3]]",
+        "output": "[3, 2, 1, 0]",
+        "explanation": "There is no cycle in this graph. The distance increases as we move away from the last node, which has the maximum distance to the nearest cycle."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use graph traversal methods to detect cycles.",
+      "Consider initiating distance calculations during cycle detection."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Flood Fill",
+    "description": "Given a 2D image represented by an array of colors, you need to implement the 'flood fill' algorithm which colors all adjacent cells that share the same color as the starting cell. You need to change the color of the starting cell to a new color and return the modified image.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "DFS",
+      "Recursion",
+      "Graph"
+    ],
+    "input_format": "A 2D array of integers image representing the colors, two integers sr and sc as the starting row and column, and an integer newColor representing the new color.",
+    "output_format": "A 2D array representing the modified image after the flood fill.",
+    "constraints": [
+      "1 <= image.length, image[i].length <= 50",
+      "0 <= image[i][j], newColor < 2^24",
+      "0 <= sr < image.length",
+      "0 <= sc < image[0].length"
+    ],
+    "examples": [
+      {
+        "input": "image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, newColor = 2",
+        "output": "[[2,2,2],[2,2,0],[2,0,1]]",
+        "explanation": "After filling, the image becomes [[2,2,2],[2,2,0],[2,0,1]]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use depth-first search (DFS) to explore adjacent cells.",
+      "Make sure to check the boundaries of the image."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Array by Increasing Frequency",
+    "description": "Given an array of integers, sort the elements in the array by the frequency of their occurrences. If two elements have the same frequency, sort them in ascending order. Return the sorted array.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Frequency"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers sorted by increasing frequency.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2, 2, 2, 3]",
+        "output": "[3, 1, 1, 2, 2, 2]",
+        "explanation": "The number 3 appears once, 1 appears twice, and 2 appears three times. The sorted order by frequency is [3, 1, 1, 2, 2, 2]."
+      },
+      {
+        "input": "nums = [4, 4, 1, 1, 2, 2, 3]",
+        "output": "[3, 1, 1, 2, 2, 4, 4]",
+        "explanation": "The number 3 appears once, 1 appears twice, 2 appears twice, and 4 appears twice. Sorted by frequency gives [3, 1, 1, 2, 2, 4, 4]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a frequency map to count occurrences.",
+      "Sort the elements based on frequency and value."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Profit in Job Scheduling",
+    "description": "You are given an array of jobs, where each job has a start time, an end time, and a profit associated with it. Your goal is to schedule the jobs in such a way that the total profit is maximized without overlapping jobs. A job can only be scheduled if it starts after or when the last scheduled job ends. Implement a function to calculate the maximum profit that can be earned.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Job Scheduling",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Interval Scheduling"
+    ],
+    "input_format": "An array of jobs, each represented as a tuple (start, end, profit).",
+    "output_format": "An integer representing the maximum profit achievable.",
+    "constraints": [
+      "1 <= jobs.length <= 10^4",
+      "0 <= start < end <= 10^9",
+      "0 <= profit <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "jobs = [(1, 2, 50), (3, 5, 20), (6, 19, 100), (2, 100, 200)]",
+        "output": "250",
+        "explanation": "The optimal schedule is to take jobs (1, 2, 50) and (3, 5, 20) and (6, 19, 100), for a total profit of 50 + 20 + 100 = 170."
+      },
+      {
+        "input": "jobs = [(1, 3, 10), (2, 5, 20), (6, 19, 100), (2, 3, 70)]",
+        "output": "100",
+        "explanation": "The optimal schedule is to take job (6, 19, 100) only for a maximum profit of 100."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to store the maximum profit at each step.",
+      "Sort jobs by end time to easily determine which jobs can be scheduled next.",
+      "Use binary search to optimize the selection of previous non-conflicting jobs."
+    ],
+    "company": "Akuna Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Critical Connections in a Network",
+    "description": "You are given a network of nodes represented as an undirected graph. A critical connection is an edge that, if removed, increases the number of connected components in the graph. Your task is to find all critical connections in the network.",
+    "topic": "Graph",
+    "subtopic": "DFS and Tarjan's Algorithm",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Tarjan's Algorithm"
+    ],
+    "input_format": "An integer n representing the number of nodes, and a list of edges where each edge is represented by a pair of integers [u, v] (0-indexed) connecting nodes u and v.",
+    "output_format": "A list of edges that are critical connections, where each edge is represented as a pair of integers [u, v].",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "0 <= edges.length <= 2 * 10^5",
+      "edges[i].length == 2",
+      "There are no self-loops or parallel edges in the input."
+    ],
+    "examples": [
+      {
+        "input": "n = 4, edges = [[0, 1], [1, 2], [2, 0], [1, 3]]",
+        "output": "[[1, 3]]",
+        "explanation": "The edge [1, 3] is critical because removing it separates node 3 from the rest of the network."
+      },
+      {
+        "input": "n = 5, edges = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 0], [1, 4]]",
+        "output": "[]",
+        "explanation": "There are no critical connections because every edge supports the full connectivity of the graph."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use DFS to explore the graph and keep track of discovery and low times.",
+      "Identify critical connections by comparing the discovery time and low value."
+    ],
+    "company": "Akuna Capital"
+  }
+]

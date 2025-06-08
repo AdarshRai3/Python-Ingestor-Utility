@@ -1,0 +1,190 @@
+[
+  {
+    "question_id": "",
+    "title": "Find Mirror Score of a String",
+    "description": "Given a string consisting of lowercase English letters, find the mirror score of the string. The mirror score is calculated as follows: For every character in the string, if it is a vowel (a, e, i, o, u), add 1 to the score; if it is a consonant, subtract 1 from the score. The final score is the sum of these values across the entire string. Your task is to implement a function that calculates the mirror score of the provided string.",
+    "topic": "String",
+    "subtopic": "Character Manipulation",
+    "tags": [
+      "String",
+      "Score Calculation",
+      "Character Analysis"
+    ],
+    "input_format": "A single string s consisting of lowercase English letters.",
+    "output_format": "An integer representing the mirror score of the string.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "hello",
+        "output": "0",
+        "explanation": "In 'hello', 'e' contributes +1, 'h', 'l', and 'l' contribute -1 each, giving us a score of 1 - 3 = -2."
+      },
+      {
+        "input": "aeiou",
+        "output": "5",
+        "explanation": "All characters are vowels, hence each contributes +1. Total score = 1 + 1 + 1 + 1 + 1 = 5."
+      },
+      {
+        "input": "xyz",
+        "output": "-3",
+        "explanation": "All characters are consonants, hence each contributes -1. Total score = -1 - 1 - 1 = -3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Identify vowels and consonants distinctly.",
+      "Use a set to store vowels for quick lookup.",
+      "Iterate through the string and calculate the score based on character type."
+    ],
+    "company": "carwale"
+  },
+  {
+    "question_id": "",
+    "title": "Zigzag Conversion",
+    "description": "The Zigzag Conversion problem requires you to transform a given string by arranging it in a zigzag pattern on a given number of rows and then reading it row by row. The zigzag pattern is created by placing characters diagonally from top to bottom and then back up the rows, continuing until all characters in the input string have been placed in the zigzag formation. Your task is to implement a function that will take a string and a number of rows, then output the resulting converted string.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Zigzag"
+    ],
+    "input_format": "The input consists of a string s and an integer numRows.",
+    "output_format": "A single string which is the characters read line by line from the zigzag pattern.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= numRows <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "s = 'PAYPALISHIRING', numRows = 3",
+        "output": "PAHNAPLSIIGYIR",
+        "explanation": "The zigzag pattern for numRows = 3 is: P   A   H   N\nA P L S I I G\nY   I\nThus, reading line by line gives 'PAHNAPLSIIGYIR'."
+      },
+      {
+        "input": "s = 'A', numRows = 1",
+        "output": "A",
+        "explanation": "Only one character and one row, so the output is the same as input."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using an array to represent each row.",
+      "Think about the direction in which you're adding characters."
+    ],
+    "company": "carwale"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of integers representing the height of bars in a histogram, calculate the amount of water that can be trapped between the bars after raining.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers representing the height of each bar.",
+    "output_format": "An integer representing the total units of rainwater trapped.",
+    "constraints": [
+      "0 <= height.length <= 2 * 104",
+      "0 <= height[i] <= 105"
+    ],
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The trapped water is 6 units, calculated by summing up the water above each bar."
+      },
+      {
+        "input": "height = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "Water can be trapped between the heights at positions leading to a total of 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how water would be trapped based on the heights to the left and right.",
+      "Use two pointers to traverse the height array and calculate trapped water at each step."
+    ],
+    "company": "carwale"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Stock",
+      "Profit"
+    ],
+    "input_format": "An array of integers where each element represents the stock price on a given day.",
+    "output_format": "An integer representing the maximum profit achievable, or 0 if no profit can be made.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 at price 1 and sell on day 5 at price 6. Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "No transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far while iterating.",
+      "Calculate profit by subtracting the minimum price from the current price."
+    ],
+    "company": "carwale"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Time Difference",
+    "description": "Given a list of time points in 'HH:MM' format, calculate the minimum time difference between any two time points. The time points can be from the same day or across midnight.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Time"
+    ],
+    "input_format": "A list of strings representing time points in 'HH:MM' format.",
+    "output_format": "An integer representing the minimum time difference in minutes.",
+    "constraints": [
+      "1 <= timePoints.length <= 2 * 10^4",
+      "timePoints[i] is a valid time format 'HH:MM'."
+    ],
+    "examples": [
+      {
+        "input": "timePoints = [\"23:59\", \"00:00\"]",
+        "output": "1",
+        "explanation": "The time points are 23:59 and 00:00, the minimum difference is 1 minute."
+      },
+      {
+        "input": "timePoints = [\"00:00\", \"23:59\", \"12:34\"]",
+        "output": "25",
+        "explanation": "The time points are 00:00, 23:59, and 12:34, with the minimum difference being between 12:34 and 00:00, which is 25 minutes."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Convert each time into minutes since 00:00.",
+      "Sort the time points to simplify finding the minimum difference.",
+      "Consider the circular nature of the time."
+    ],
+    "company": "carwale"
+  }
+]

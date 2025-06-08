@@ -1,0 +1,358 @@
+[
+  {
+    "question_id": "",
+    "title": "Escape a Large Maze",
+    "description": "You are given a large maze represented as a 2D grid of `0`s and `1`s. `0` represents an open cell where you can walk, and `1` represents a wall. Your task is to determine if there exists a path from the top-left corner of the maze (cell `(0, 0)`) to the bottom-right corner of the maze (cell `(n-1, m-1)`). You can move up, down, left, or right from a given cell. Return `true` if such a path exists, otherwise return `false`.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "Search",
+      "BFS"
+    ],
+    "input_format": "A 2D grid maze where maze[i][j] is either 0 (open) or 1 (wall).",
+    "output_format": "A boolean value indicating if a path exists from the top-left to the bottom-right corner.",
+    "constraints": [
+      "1 <= n, m <= 100",
+      "maze[i][j] is either 0 or 1.",
+      "maze[0][0] and maze[n-1][m-1] will be 0."
+    ],
+    "examples": [
+      {
+        "input": "maze = [[0, 0, 1], [0, 1, 0], [1, 0, 0]]",
+        "output": "true",
+        "explanation": "There is a valid path: (0,0) -> (1,0) -> (2,0) -> (2,1) -> (2,2)."
+      },
+      {
+        "input": "maze = [[0, 1], [1, 0]]",
+        "output": "false",
+        "explanation": "There is no valid path to reach (1,1) from (0,0) due to walls."
+      },
+      {
+        "input": "maze = [[0, 0, 0], [1, 1, 0], [1, 1, 0]]",
+        "output": "true",
+        "explanation": "A path exists: (0,0) -> (0,1) -> (0,2) -> (1,2) -> (2,2)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use breadth-first search (BFS) to explore possible paths.",
+      "Keep track of visited cells to avoid cycles."
+    ],
+    "company": "UiPath"
+  },
+  {
+    "question_id": "",
+    "title": "Sorting Three Groups",
+    "description": "You are given an array of integers that contains only three distinct values. Your task is to sort the array in-place such that all occurrences of the first value come first, followed by all occurrences of the second value, and then all occurrences of the third value. You must solve the problem with a single pass and use constant space.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums containing only three distinct values.",
+    "output_format": "The same array sorted in-place.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "-10^5 <= nums[i] <= 10^5",
+      "The array contains only three distinct values."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 0, 2, 1, 1, 0]",
+        "output": "[0, 0, 1, 1, 2, 2]",
+        "explanation": "The array can be sorted in-place to [0, 0, 1, 1, 2, 2] where all 0s come first, followed by 1s, and then 2s."
+      },
+      {
+        "input": "nums = [1, 2, 0, 1, 0, 2]",
+        "output": "[0, 0, 1, 1, 2, 2]",
+        "explanation": "The sorted version places all 0s first, followed by 1s, and then 2s."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the Dutch National Flag algorithm.",
+      "Use three pointers to partition the array."
+    ],
+    "company": "UiPath"
+  },
+  {
+    "question_id": "",
+    "title": "As Far from Land as Possible",
+    "description": "You are tasked with determining the maximum distance from a land cell in a given grid. The grid is represented as a 2D array where '0' represents water and '1' represents land. Your goal is to return the maximum distance from any water cell to the nearest land cell. If it is impossible to reach land from any water cells, return -1.",
+    "topic": "Grid",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Grid",
+      "BFS",
+      "Shortest Path"
+    ],
+    "input_format": "A 2D grid of size m x n consisting of 0s (water) and 1s (land).",
+    "output_format": "An integer representing the maximum distance from a water cell to the nearest land cell, or -1 if there are no water cells or land cells.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 100",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,0,0],[0,0,0],[0,0,1]]",
+        "output": "2",
+        "explanation": "The maximum distance from a water cell to the nearest land cell is 2 (from (0, 1) to (0, 0))."
+      },
+      {
+        "input": "grid = [[1,0,0],[0,1,0],[0,0,1]]",
+        "output": "1",
+        "explanation": "The maximum distance from any water cell to the nearest land cell is 1."
+      },
+      {
+        "input": "grid = [[1]]",
+        "output": "-1",
+        "explanation": "There are no water cells, so the output is -1."
+      },
+      {
+        "input": "grid = [[0]]",
+        "output": "-1",
+        "explanation": "There are no land cells, so the output is -1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using BFS to explore the grid.",
+      "Initialize the queue with all land cells.",
+      "Track distances using a separate array or grid."
+    ],
+    "company": "UiPath"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are covered by water.",
+    "topic": "Graph",
+    "subtopic": "Depth-first Search",
+    "tags": [
+      "DFS",
+      "Graph",
+      "Union Find"
+    ],
+    "input_format": "A 2D grid of characters where '1's represent land and '0's represent water.",
+    "output_format": "An integer representing the number of islands.",
+    "constraints": [
+      "1 <= grid.length <= 300",
+      "1 <= grid[0].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "[['1','1','1','1','0'], ['1','1','0','1','0'], ['1','1','0','0','0'], ['0','0','0','0','0']]",
+        "output": "1",
+        "explanation": "The entire land forms a single island."
+      },
+      {
+        "input": "[['1','1','0','0','0'], ['1','1','0','0','0'], ['0','0','1','0','0'], ['0','0','0','1','1']]",
+        "output": "3",
+        "explanation": "There are three distinct islands in the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using depth-first search (DFS) to explore the islands."
+    ],
+    "company": "UiPath"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A palindromic string is one that reads the same forward and backward.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s, where 1 <= s.length <= 1000.",
+    "output_format": "A string representing the longest palindromic substring.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consist of only digits and English letters."
+    ],
+    "examples": [
+      {
+        "input": "babad",
+        "output": "bab",
+        "explanation": "Both 'bab' and 'aba' are valid longest palindromic substrings."
+      },
+      {
+        "input": "cbbd",
+        "output": "bb",
+        "explanation": "The longest palindromic substring is 'bb'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding from the center of the palindrome.",
+      "Keep track of the start and end indices of the longest palindrome found."
+    ],
+    "company": "UiPath"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to Roman",
+    "description": "Given an integer, convert it to a Roman numeral. Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. For example, two is written as II in Roman numeral, just two one\u2019s added together. Twelve is written as XII, which is simply X + II. The number twenty-seven is written as XXVII, which is X + X + V + II. Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used: I can be placed before V (5) and X (10) to make 4 and 9. X can be placed before L (50) and C (100) to make 40 and 90. C can be placed before D (500) and M (1000) to make 400 and 900. Given the integer num between 1 and 3999, return its Roman numeral representation.",
+    "topic": "Math",
+    "subtopic": "Numerical Representation",
+    "tags": [
+      "Math",
+      "String",
+      "Conversion"
+    ],
+    "input_format": "An integer num (1 <= num <= 3999).",
+    "output_format": "A string representing the Roman numeral of the given integer.",
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "examples": [
+      {
+        "input": "num = 3",
+        "output": "III",
+        "explanation": "The integer 3 is represented as III in Roman numerals."
+      },
+      {
+        "input": "num = 58",
+        "output": "LVIII",
+        "explanation": "The integer 58 is represented as LVIII, which is L (50) + V (5) + III (3)."
+      },
+      {
+        "input": "num = 1994",
+        "output": "MCMXCIV",
+        "explanation": "The integer 1994 is represented as MCMXCIV, which is M (1000) + CM (900) + XC (90) + IV (4)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a mapping of integers to Roman numerals.",
+      "Build the Roman numeral string by continually subtracting the largest possible value."
+    ],
+    "company": "UiPath"
+  },
+  {
+    "question_id": "",
+    "title": "Making A Large Island",
+    "description": "You are given a 2D grid of 0s and 1s, where 0s represent water and 1s represent land. You can flip any water cell (0) to land (1). Your goal is to make the largest possible island by flipping exactly one water cell to land. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. Return the size of the largest island that can be formed by flipping one water cell.",
+    "topic": "Grid",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Grid",
+      "DFS",
+      "BFS",
+      "Union Find"
+    ],
+    "input_format": "A 2D grid of integers representing the land (1) and water (0).",
+    "output_format": "An integer representing the maximum size of an island after flipping one water cell.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 50",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1, 0], [0, 1]]",
+        "output": "3",
+        "explanation": "By flipping either (0,1) or (1,0), we can connect previously separated lands."
+      },
+      {
+        "input": "grid = [[1, 1], [1, 0]]",
+        "output": "4",
+        "explanation": "Flipping (1,1) will connect all lands, creating an island of size 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using DFS or BFS to explore the size of islands.",
+      "Keep track of visited cells to avoid recounting islands."
+    ],
+    "company": "UiPath"
+  },
+  {
+    "question_id": "",
+    "title": "Boats to Save People",
+    "description": "You are given an array of integers people where people[i] is the weight of the i-th person. There are boats that can carry at most limit weight. Each boat can carry at most two people at the same time, provided the sum of their weights is less than or equal to limit. Return the minimum number of boats required to save everyone in the water. You may assume that each person can swim.",
+    "topic": "Greedy",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Greedy",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "An integer array people and an integer limit.",
+    "output_format": "An integer representing the minimum number of boats required.",
+    "constraints": [
+      "1 <= people.length <= 5 * 10^4",
+      "1 <= people[i] <= limit <= 3 * 10^4"
+    ],
+    "examples": [
+      {
+        "input": "people = [1, 2], limit = 3",
+        "output": "1",
+        "explanation": "Both people can fit in one boat."
+      },
+      {
+        "input": "people = [3, 2, 2, 1], limit = 3",
+        "output": "3",
+        "explanation": "The boats needed are (1, 2), (2), (3)."
+      },
+      {
+        "input": "people = [3, 5, 3, 4], limit = 5",
+        "output": "4",
+        "explanation": "Each person must go on a separate boat since no two can fit."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the people array to use a two-pointer technique.",
+      "Try to pair the heaviest and lightest person within the limit."
+    ],
+    "company": "UiPath"
+  },
+  {
+    "question_id": "",
+    "title": "Satisfiability of Equality Equations",
+    "description": "You are given an array of strings equations representing relationships between variables. Each string in the array is of the form 'a==b' or 'a!=b'. Your task is to determine whether the equations can be satisfied simultaneously. Note that '==' means 'equal to' and '!=' means 'not equal to'. The variables are the lowercase letters from 'a' to 'z'.",
+    "topic": "Graph",
+    "subtopic": "Union-Find",
+    "tags": [
+      "Graph",
+      "Union-Find",
+      "String"
+    ],
+    "input_format": "An array of strings equations.",
+    "output_format": "A boolean value, either true if all equations can be satisfied, or false otherwise.",
+    "constraints": [
+      "1 <= equations.length <= 10^4",
+      "equations[i].length == 4",
+      "equations[i][0], equations[i][3] are lowercase letters",
+      "equations[i][1] is either '=' or '!'"
+    ],
+    "examples": [
+      {
+        "input": "[\"a==b\",\"b==c\",\"a==c\"]",
+        "output": "true",
+        "explanation": "All equations can be satisfied as a is equal to b and c."
+      },
+      {
+        "input": "[\"a==b\",\"b!=c\",\"a==c\"]",
+        "output": "false",
+        "explanation": "The equations cannot be satisfied simultaneously. a cannot be both equal and not equal to c."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a union-find data structure to keep track of connected components.",
+      "Process equalities first before checking for inequalities."
+    ],
+    "company": "UiPath"
+  }
+]

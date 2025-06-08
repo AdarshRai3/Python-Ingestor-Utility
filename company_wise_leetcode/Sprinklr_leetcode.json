@@ -1,0 +1,1533 @@
+[
+  {
+    "question_id": "",
+    "title": "Minimum Edge Weight Equilibrium Queries in a Tree",
+    "description": "You are given a tree with n nodes, where each edge has a non-negative weight associated with it. Your task is to process multiple queries on the tree to determine the minimum edge weight such that removing this edge will create two subtrees, each containing an equal sum of weights. The tree is defined with n-1 edges, and each query asks about the possible equilibrium edge weights in various parts of the tree. If no such edge exists for a given query, return -1.",
+    "topic": "Graph",
+    "subtopic": "Tree",
+    "tags": [
+      "Graph",
+      "Tree",
+      "Queries",
+      "Weight"
+    ],
+    "input_format": "First line contains two integers n (number of nodes) and q (number of queries). The next n-1 lines contain three integers u, v, w (the edges of the tree). Each of the next q lines contain two integers x and y (the nodes for the query).",
+    "output_format": "For each query, return the minimum edge weight that maintains equilibrium, or -1 if not found.",
+    "constraints": [
+      "1 <= n <= 2 * 10^5",
+      "0 <= w <= 10^9",
+      "1 <= q <= 10^5",
+      "1 <= u, v <= n"
+    ],
+    "examples": [
+      {
+        "input": "5 2\n1 2 3\n1 3 5\n2 4 6\n2 5 2\n1 2\n3 5",
+        "output": "2\n5",
+        "explanation": "For the first query (1, 2), removing the edge (1 \u2192 2) results in two subtrees with weights equal to 3 and 5. Therefore, the minimum edge weight for equilibrium is 2. For the second query (3, 5), the minimum edge weight that achieves an equal sum is 5."
+      },
+      {
+        "input": "4 1\n1 2 1\n1 3 1\n3 4 1\n1 4",
+        "output": "-1",
+        "explanation": "In this query, no edge can be removed to create two subtrees with equal weight."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using DFS to calculate the weights of each subtree.",
+      "Build a hashmap to store the edge weights efficiently.",
+      "Look for a way to efficiently check if two subtree weights can be equal."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Apply Operations on Array to Maximize Sum of Squares",
+    "description": "Given an integer array nums, you can perform operations to change the values of the elements. For each operation, you can choose any two indices i and j, and replace nums[i] with nums[i] - 1 and nums[j] with nums[j] + 1. Your goal is to maximize the sum of the squares of the elements after performing at most k operations. Calculate and return the maximum possible sum of squares of the array after the operations.",
+    "topic": "Array",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums and an integer k, where nums represents the initial values and k represents the number of operations allowed.",
+    "output_format": "An integer representing the maximum possible sum of squares after performing the operations.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^4",
+      "0 <= k <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3], k = 3",
+        "output": "18",
+        "explanation": "After performing the operations, we can get the array [3, 3, 0] which gives a sum of squares = 3*3 + 3*3 + 0*0 = 18."
+      },
+      {
+        "input": "nums = [4, 3, 2], k = 2",
+        "output": "47",
+        "explanation": "By performing operations, we can maximize the sum of squares to obtain [5, 4, 1] leading to a maximum sum of squares = 5*5 + 4*4 + 1*1 = 47."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider redistributing the numbers to maximize the larger values.",
+      "The operations should focus on increasing larger values while decreasing smaller ones.",
+      "Keep track of the sum of squares as you perform the operations."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Maximize Score After N Operations",
+    "description": "You are given an array of integers nums, and you need to perform exactly N operations. In one operation, you can select two distinct indices i and j from nums, remove the elements at those indices, and earn a score equal to the sum of their values. Your goal is to maximize your total score after performing N operations. If there are not enough elements to perform N operations, return -1.",
+    "topic": "Greedy Algorithm",
+    "subtopic": "Maximizing Score",
+    "tags": [
+      "Greedy",
+      "Maximization",
+      "Array"
+    ],
+    "input_format": "An integer N followed by an array of integers nums.",
+    "output_format": "An integer representing the maximum possible score after N operations, or -1 if not enough operations can be performed.",
+    "constraints": [
+      "1 <= N <= 10^5",
+      "2 * N <= nums.length <= 2 * 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "N = 2, nums = [1, 4, 3, 2]",
+        "output": "7",
+        "explanation": "Select indices 1 and 2, score = 4 + 3 = 7."
+      },
+      {
+        "input": "N = 1, nums = [5, 1, 2, 7]",
+        "output": "12",
+        "explanation": "Select indices 0 and 3, score = 5 + 7 = 12."
+      },
+      {
+        "input": "N = 2, nums = [1]",
+        "output": "-1",
+        "explanation": "Not enough elements to perform 2 operations."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a max-heap to efficiently retrieve the largest elements.",
+      "Greedily select the two largest remaining elements for each operation."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Next Greater Numerically Balanced Number",
+    "description": "Given a positive integer n, find the smallest integer that is greater than n and has the same number of digits as n, where all the digits are numerically balanced. A numerically balanced number is defined as a number where the absolute difference between any two adjacent digits is at most 1. If no such number exists, return -1.",
+    "topic": "Mathematics",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Math",
+      "Number Theory",
+      "Greedy"
+    ],
+    "input_format": "A single integer n (1 <= n <= 10^9).",
+    "output_format": "An integer representing the next greater numerically balanced number or -1 if it does not exist.",
+    "constraints": [
+      "1 <= n <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "n = 123",
+        "output": "131",
+        "explanation": "The next numerically balanced number greater than 123 is 131."
+      },
+      {
+        "input": "n = 321",
+        "output": "-1",
+        "explanation": "There is no numerically balanced number greater than 321 with the same number of digits."
+      },
+      {
+        "input": "n = 122",
+        "output": "131",
+        "explanation": "The next numerically balanced number greater than 122 is 131."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how the digits can be modified to find the next number.",
+      "Iterate through the digits in n to build the next balanced number.",
+      "Use backtracking or greedy approaches to generate candidates."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Create Components With Same Value",
+    "description": "You are given a binary tree where each node contains a positive integer value. Your task is to determine if it is possible to partition the tree into one or more components such that each component contains nodes with the same value. A component is defined as a connected subtree, and two components are considered connected if they share an edge. Return a boolean indicating whether such a partitioning is possible.",
+    "topic": "Tree",
+    "subtopic": "Tree Traversal",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Union-Find"
+    ],
+    "input_format": "The root of the binary tree.",
+    "output_format": "A boolean value indicating whether the partitioning is possible.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 1000].",
+      "1 <= node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 1, 1, null, null, 1, 1]",
+        "output": "true",
+        "explanation": "The entire tree can be treated as one component since all nodes have the same value."
+      },
+      {
+        "input": "root = [1, 2, 3, null, null, null, null]",
+        "output": "false",
+        "explanation": "The tree has different values in its nodes, making it impossible to partition into components with the same value."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how you would traverse the tree and keep track of the values.",
+      "Using a depth-first search (DFS) can help traverse each component."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Choose Edges to Maximize Score in a Tree",
+    "description": "You are given a tree consisting of n nodes numbered from 1 to n, with each edge having an associated score. Your goal is to choose a subset of edges in such a way that the total score of the selected edges is maximized, under the condition that no two selected edges can form an odd cycle. You need to return the maximum possible score achievable by selecting these edges.",
+    "topic": "Graph",
+    "subtopic": "Tree",
+    "tags": [
+      "Graph",
+      "Tree",
+      "Dynamic Programming"
+    ],
+    "input_format": "The first line contains an integer n, the number of nodes in the tree. The next n-1 lines each contain three integers u, v, and w, indicating an edge between nodes u and v with score w.",
+    "output_format": "An integer representing the maximum score achievable by selecting the edges.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "1 <= u, v <= n",
+      "1 <= w <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "5\n1 2 3\n1 3 2\n3 4 4\n3 5 1",
+        "output": "7",
+        "explanation": "Select edges (1, 2) and (3, 4) to get the maximum score of 3 + 4 = 7."
+      },
+      {
+        "input": "4\n1 2 6\n1 3 4\n2 4 5",
+        "output": "10",
+        "explanation": "Select edges (1, 2) and (1, 3) to get the maximum score of 6 + 4 = 10."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a Depth First Search to explore the tree structure effectively.",
+      "Consider dynamic programming to store results for subproblems."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray Sum After One Operation",
+    "description": "You are given an integer array nums. You can perform at most one operation to maximize the sum of any subarray. The operation consists of selecting a subarray, adding a fixed integer k to each element of that subarray, and then computing the sum of the modified subarray. Your task is to return the maximum sum you can achieve with this operation. If no operation can increase the sum, return the maximum sum of the original subarray.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subarray Problems",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Subarray"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the maximum subarray sum after at most one operation.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "-10^4 <= k <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, -2, 0, 3], k = 2",
+        "output": "5",
+        "explanation": "Choose the subarray [1, -2, 0] and add 2 to each element, resulting in [3, 0, 2]. The sum is 3 + 0 + 2 = 5."
+      },
+      {
+        "input": "nums = [-1, -2, -3], k = -1",
+        "output": "-1",
+        "explanation": "No operation can increase the sum, so the maximum subarray sum is the original array's maximum element, which is -1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the maximum subarray sum without any operations first.",
+      "Use Kadane's algorithm to find maximum subarray sums efficiently.",
+      "Think about how adding k to a subarray will affect the overall maximum sum."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Closest Subsequence Sum",
+    "description": "Given an array of integers nums and an integer goal, return the closest sum of any non-empty subsequence of nums to goal. A subsequence of an array is obtained by deleting some elements without changing the order of the remaining elements. If there are multiple closest sums, return the smallest one.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum",
+    "tags": [
+      "Dynamic Programming",
+      "Subset Sum",
+      "Array"
+    ],
+    "input_format": "An array of integers nums and an integer goal.",
+    "output_format": "An integer representing the closest sum of a non-empty subsequence to goal.",
+    "constraints": [
+      "1 <= nums.length <= 20",
+      "-10^5 <= nums[i] <= 10^5",
+      "-10^9 <= goal <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], goal = 10",
+        "output": "10",
+        "explanation": "The sum of the entire array equals to 15, which is greater than goal. The closest sum less than or equal to 10 is 10 itself."
+      },
+      {
+        "input": "nums = [-1, 2, 1, -4], goal = 1",
+        "output": "1",
+        "explanation": "The subsequence [-1, 2] gives a sum of 1, which is exactly equal to the goal."
+      },
+      {
+        "input": "nums = [1, -1, 2, -2, 3], goal = 0",
+        "output": "0",
+        "explanation": "Either the subsequences [1, -1] or [-2, 2] yield a sum of 0, which is exactly what we're looking for."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a bitmask to generate all possible subsequences.",
+      "Keep track of the closest sum as you iterate through possible sums."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Time to Revert Word to Initial State I",
+    "description": "You are given a string 'word' and a list of operations. Each operation consists of two parts: a character to swap and a position where that character should be placed. Your goal is to determine the minimum time required to revert the word back to its initial state after applying all the operations. Each swap operation takes 1 second. You can assume that no two operations will involve the same character at the same time, and the initial state is defined as the state of the string before any operations are performed.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Operations",
+      "Counting"
+    ],
+    "input_format": "A string 'word' followed by a list of operations where each operation is represented as (char, position).",
+    "output_format": "An integer representing the minimum time required to revert the word to its initial state.",
+    "constraints": [
+      "1 <= word.length <= 10^5",
+      "The operations list will have at most 10^4 operations."
+    ],
+    "examples": [
+      {
+        "input": "word = 'abc', operations = [('b', 0), ('a', 1), ('c', 2)]",
+        "output": "3",
+        "explanation": "To revert 'c' to index 2, 'a' to index 1, and 'b' to index 0, it takes 3 seconds."
+      },
+      {
+        "input": "word = 'xyz', operations = [('x', 2), ('y', 1), ('z', 0)]",
+        "output": "3",
+        "explanation": "All characters need to move back to their initial positions, taking 3 seconds."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the number of operations needed for each character to return to its original position.",
+      "You can track the final positions of characters using a mapping."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Same-End Substrings",
+    "description": "Given a string 's', return the number of substrings that have the same character on both ends. A substring is defined as a contiguous sequence of characters within the string. For instance, 'abc' has no same-end substrings, while 'a' and 'aa' do.",
+    "topic": "String",
+    "subtopic": "Substring Counting",
+    "tags": [
+      "String",
+      "Counting",
+      "Substrings"
+    ],
+    "input_format": "A single string 's' of lowercase English letters.",
+    "output_format": "An integer representing the number of same-end substrings.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'aaa'",
+        "output": "6",
+        "explanation": "The same-end substrings are: 'a', 'a', 'a', 'aa', 'aa', 'aaa'."
+      },
+      {
+        "input": "s = 'abc'",
+        "output": "3",
+        "explanation": "The same-end substrings are: 'a', 'b', 'c'."
+      },
+      {
+        "input": "s = 'abca'",
+        "output": "4",
+        "explanation": "The same-end substrings are: 'a', 'a', 'b', 'c'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how many substrings can start and end with the same character.",
+      "Think about grouping similar characters for efficiency."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Count the Number of Powerful Integers",
+    "description": "A powerful integer is an integer that can be expressed as x^i + y^j where x >= 2, y >= 2, and i, j >= 0. Given two integers x and y along with an integer bound, return the number of distinct powerful integers that do not exceed the bound.",
+    "topic": "Math",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Math",
+      "Number Theory",
+      "Set"
+    ],
+    "input_format": "Two integers x, y and a bound integer bound.",
+    "output_format": "An integer representing the count of distinct powerful integers that do not exceed the bound.",
+    "constraints": [
+      "1 <= x, y <= 100",
+      "0 <= bound <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "x = 2, y = 3, bound = 10",
+        "output": "5",
+        "explanation": "The powerful integers are 2^0 + 3^0 = 2, 2^0 + 3^1 = 4, 2^1 + 3^0 = 3, 2^1 + 3^1 = 5, and 2^3 + 3^0 = 10."
+      },
+      {
+        "input": "x = 1, y = 2, bound = 10",
+        "output": "1",
+        "explanation": "The only powerful integer is 1^0 + 2^0 = 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about the powers of x and y and how they can combine.",
+      "Use a set to avoid counting duplicates.",
+      "Consider edge cases where x or y equals 1."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Score of Non-overlapping Intervals",
+    "description": "You are given an array of intervals where intervals[i] = [start_i, end_i] represents the start and end times of the i-th interval. Each interval has a score associated with it, given as an integer. Your task is to find the maximum sum of scores for non-overlapping intervals. Two intervals are said to be non-overlapping if they do not share any time points.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Intervals"
+    ],
+    "input_format": "An array of intervals and an array of scores representing end-to-end score for each interval.",
+    "output_format": "An integer representing the maximum score for non-overlapping intervals.",
+    "constraints": [
+      "1 <= intervals.length <= 10^5",
+      "intervals[i][0] < intervals[i][1]",
+      "0 <= scores[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": {
+          "intervals": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              6,
+              9
+            ]
+          ],
+          "scores": [
+            3,
+            6,
+            7
+          ]
+        },
+        "output": "10",
+        "explanation": "Choosing intervals [1, 3] with score 3 and [6, 9] with score 7 gives a total score of 10."
+      },
+      {
+        "input": {
+          "intervals": [
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "scores": [
+            5,
+            2,
+            3,
+            4
+          ]
+        },
+        "output": "9",
+        "explanation": "Selecting intervals [1, 4] with score 5 and [6, 7] with score 3 gives a total score of 8. Alternatively, selecting [7, 8] can give an overall maximum of 9."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider sorting intervals based on their end times.",
+      "Use dynamic programming to keep track of maximum scores."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Great Partitions",
+    "description": "You are given an array of integers where each integer represents the weight of a stone. You need to split the stones into two groups, such that the difference in the total weights of the groups is a minimal. Each group should contain at least one stone. Your task is to return the number of ways to split the stones into two great partitions fulfilling the above conditions.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum",
+    "tags": [
+      "Dynamic Programming",
+      "Subset Sum",
+      "Combinatorial"
+    ],
+    "input_format": "An array of integers stones representing the weights of the stones.",
+    "output_format": "An integer representing the number of ways to split the stones into two great partitions.",
+    "constraints": [
+      "1 <= stones.length <= 100",
+      "1 <= stones[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "stones = [1, 2, 3]",
+        "output": "1",
+        "explanation": "There is only one valid way to partition: {1, 2} and {3}. The difference in weights is 0."
+      },
+      {
+        "input": "stones = [5, 5, 5]",
+        "output": "3",
+        "explanation": "You can have partitions as: {5, 5} and {5} or any permutations of that, thus resulting in 3 ways."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using DP to track possible subset sums.",
+      "Think about the properties of combinations and how to count them."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Apply Bitwise Operations to Make Strings Equal",
+    "description": "Given two strings, s1 and s2, of the same length, you can perform bitwise operations on the characters of the strings. Your task is to determine if it is possible to transform s1 into s2 using a series of bitwise XOR operations on the ASCII values of the characters. You can choose to apply the operation to any substring of s1. Return true if it is possible to make the two strings equal; otherwise, return false.",
+    "topic": "String",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "String",
+      "Bit Manipulation",
+      "XOR"
+    ],
+    "input_format": "Two strings s1 and s2 of the same length.",
+    "output_format": "A boolean value representing whether s1 can be transformed into s2.",
+    "constraints": [
+      "1 <= s1.length, s2.length <= 10^4",
+      "s1 and s2 consist of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s1 = 'abc', s2 = 'def'",
+        "output": "false",
+        "explanation": "You cannot transform 'abc' into 'def' using bitwise operations."
+      },
+      {
+        "input": "s1 = 'abc', s2 = 'bcd'",
+        "output": "true",
+        "explanation": "Applying XOR on characters from 'a' to 'b' and 'b' to 'c' can transform 'abc' to 'bcd'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the ASCII values of characters and how the XOR operation affects them.",
+      "If two strings differ at multiple positions, analyze the pattern of their differences.",
+      "Think about how XOR can help in flipping bits between characters."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Asteroid Collision",
+    "description": "You are given an array of integers representing asteroids in a row. For each asteroid, the absolute value represents its size, and the sign represents its direction. Positive values represent asteroids moving to the right, and negative values represent asteroids moving to the left. When two asteroids collide, the smaller one will be destroyed. If both asteroids are of the same size, both will be destroyed. Return an array representing the remaining asteroids after all collisions.",
+    "topic": "Array",
+    "subtopic": "Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Simulation"
+    ],
+    "input_format": "An array of integers called asteroids.",
+    "output_format": "An array of integers representing the remaining asteroids after all collisions.",
+    "constraints": [
+      "1 <= asteroids.length <= 10^4",
+      "-10^3 <= asteroids[i] <= 10^3"
+    ],
+    "examples": [
+      {
+        "input": "asteroids = [5, 10, -5]",
+        "output": "[5, 10]",
+        "explanation": "The -5 asteroid collides with the 10 and is destroyed. The result is [5, 10]."
+      },
+      {
+        "input": "asteroids = [8, -8]",
+        "output": "[]",
+        "explanation": "Both asteroids collide and are destroyed. The result is []."
+      },
+      {
+        "input": "asteroids = [10, 2, -5]",
+        "output": "[10]",
+        "explanation": "The 2 and -5 collide and the 2 is destroyed. The result is [10]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to track the surviving asteroids.",
+      "Handle collisions based on the directions of the asteroids."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Robot Collisions",
+    "description": "In a 1D grid, a robot can move left or right. Each robot has an initial position and a direction (either left or right). If two robots collide, they will both stop moving. You are given a list of integers where positive integers represent robots moving to the right and negative integers represent robots moving to the left. Calculate the final positions of the robots after all collisions have occurred.",
+    "topic": "Simulation",
+    "subtopic": "Stack",
+    "tags": [
+      "Simulation",
+      "Stack",
+      "Collision"
+    ],
+    "input_format": "A list of integers representing the robots' initial positions and directions.",
+    "output_format": "A list of integers representing the final positions of the robots after all collisions.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[5, 10, -5]",
+        "output": "[5, 10]",
+        "explanation": "The robot at position 5 moves right, the robot at position 10 moves right, and the robot at position -5 moves left. The robot at position 5 and -5 collide and stop, leaving the robots at positions 5 and 10."
+      },
+      {
+        "input": "[1, 2, -1, -2]",
+        "output": "[2]",
+        "explanation": "The robots at positions 1 and 2 move right, while -1 and -2 move left. The robots collide at positions 1 and -1, but the one at position 2 survives since it is the last robot coming from the right."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a stack to track the positions of robots.",
+      "Think about how to manage collisions when a robot moving left meets a robot moving right."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. The insert and delete operations should be O(1) and getRandom should return a random element from the current set of elements. Each element must be unique. Implement the data structure with the required methods.",
+    "topic": "Data Structure",
+    "subtopic": "Design",
+    "tags": [
+      "Data Structure",
+      "Random",
+      "Design"
+    ],
+    "input_format": "The input consists of strings representing the commands for the operations (insert, delete, and getRandom) and associated values when necessary.",
+    "output_format": "The output for getRandom operation is a randomly selected value present in the data structure.",
+    "constraints": [
+      "1 <= commands.length <= 10^4",
+      "All values for insert and delete will be integers within the range of [-10^6, 10^6]."
+    ],
+    "examples": [
+      {
+        "input": "commands = [\"insert\", \"insert\", \"getRandom\", \"delete\", \"getRandom\"], values = [[1], [2], [], [1], []]",
+        "output": "2",
+        "explanation": "After inserting 1 and 2, getRandom can return either 1 or 2; if 1 is deleted, only 2 remains."
+      },
+      {
+        "input": "commands = [\"insert\", \"getRandom\"], values = [[10], []]",
+        "output": "10",
+        "explanation": "10 is inserted and, being the only element, getRandom returns 10."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash set to store the unique elements.",
+      "Use an array/list to store the elements for random access.",
+      "The array/list should be kept in sync with the hash set."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Food Buckets to Feed the Hamsters",
+    "description": "You have a number of hamsters, each with a specific amount of food they need to survive for a given number of days. You need to determine the minimum number of food buckets required to feed all the hamsters without exceeding their food limits. Each bucket contains 'X' units of food. The goal is to minimize the number of buckets while ensuring all hamsters are fed sufficiently.",
+    "topic": "Greedy Algorithm",
+    "subtopic": "Optimization",
+    "tags": [
+      "Greedy",
+      "Optimization",
+      "Arrays"
+    ],
+    "input_format": "An integer array 'food' where food[i] is the amount of food needed by the i-th hamster. An integer 'X' representing the units of food in each bucket.",
+    "output_format": "An integer representing the minimum number of food buckets needed.",
+    "constraints": [
+      "1 <= food.length <= 10^5",
+      "1 <= food[i] <= 10^3",
+      "1 <= X <= 10^3"
+    ],
+    "examples": [
+      {
+        "input": "food = [6, 2, 3], X = 5",
+        "output": "3",
+        "explanation": "Each hamster needs 6, 2, and 3 units of food respectively. We need 2 buckets for the first hamster (6/5 = 2), 1 bucket for the second (2/5 = 1), and 1 for the last (3/5 = 1), totaling 3 buckets."
+      },
+      {
+        "input": "food = [1, 1, 1, 1], X = 2",
+        "output": "2",
+        "explanation": "Each hamster requires 1 unit of food. We need 2 buckets since each bucket contains 2 units, which means one bucket can feed two hamsters."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how much food each hamster requires relative to the bucket size.",
+      "Try breaking the problem down based on the total food required."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Provinces",
+    "description": "In a country, provinces are represented by a matrix where a value of '1' indicates that the provinces are directly connected, and a value of '0' indicates no connection. Your task is to determine the number of provinces in the country. A province is defined as a collection of directly or indirectly connected provinces. Write a function that takes a matrix and returns the number of provinces.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D matrix of integers where matrix[i][j] is either 0 or 1.",
+    "output_format": "An integer representing the number of provinces.",
+    "constraints": [
+      "1 <= matrix.length <= 200",
+      "matrix.length == matrix[i].length",
+      "matrix[i][j] is 0 or 1",
+      "matrix[i][i] == 1"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1,1,0],[1,1,0],[0,0,1]]",
+        "output": "2",
+        "explanation": "There are two provinces: one consisting of the first two connected provinces and another consisting of the third province."
+      },
+      {
+        "input": "matrix = [[1,0,0],[0,1,0],[0,0,1]]",
+        "output": "3",
+        "explanation": "Each province is isolated and there are three provinces."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using depth-first search (DFS) to explore connected provinces.",
+      "Keep track of visited provinces to avoid counting them multiple times."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Minimize the Difference Between Target and Chosen Elements",
+    "description": "You are given an integer array `nums` and an integer target `t`. Your task is to find the subset of elements from `nums` such that the absolute difference between the sum of the chosen subset and the target `t` is minimized. You need to return this minimum difference. If no elements are chosen, the difference will be equal to the target.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum",
+    "tags": [
+      "Dynamic Programming",
+      "Subset Sum",
+      "Greedy"
+    ],
+    "input_format": "An array of integers `nums` and an integer `t` representing the target.",
+    "output_format": "An integer representing the minimum difference between the sum of chosen subset and the target.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "-10^5 <= nums[i] <= 10^5",
+      "0 <= t <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], t = 11",
+        "output": "0",
+        "explanation": "The subset [1, 2, 3, 5] can be chosen which sums to 11, thus minimizing the difference to 0."
+      },
+      {
+        "input": "nums = [3, 9, 7, 3], t = 14",
+        "output": "1",
+        "explanation": "The subset [9, 3, 3] can be chosen which sums to 15, thus the minimum difference is |15 - 14| = 1."
+      },
+      {
+        "input": "nums = [1, 2, 3], t = 7",
+        "output": "1",
+        "explanation": "The best option is to sum 3 + 2 + 1 = 6, hence minimum difference |6 - 7| = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dynamic programming approach to form possible subsets.",
+      "Remember that the subset sum problem is related to knapsack problems.",
+      "Try to build a solution iteratively based on previously computed results."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Serialize and Deserialize Binary Tree",
+    "description": "Implement a binary tree codec that can serialize a binary tree into a string and deserialize a string back to the original binary tree structure. The serialization format must be a string representation of the tree, and the deserialization should reconstruct the tree accurately.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Serialization",
+      "Deserialization",
+      "Binary Tree"
+    ],
+    "input_format": "The input is a binary tree root node to be serialized or a string to be deserialized.",
+    "output_format": "The output is a serialized string for the tree or a reconstructed tree root node.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "Each node's value is an integer in the range [-10^4, 10^4]."
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, null, null, 4, 5]",
+        "output": "\"[1,2,3,null,null,4,5]\"",
+        "explanation": "The serialized representation of the binary tree is '[1, 2, 3, null, null, 4, 5]'."
+      },
+      {
+        "input": "data = \"[1,null,2,3]\"",
+        "output": "root = [1,null,2,3]",
+        "explanation": "The deserialized tree from the string '[1,null,2,3]' has a structure with root value 1, a right child 2, and a left child 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a pre-order traversal for serialization.",
+      "For deserialization, think about how to reconstruct the tree using the serialized string."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Partition Labels",
+    "description": "You are given a string s. We want to partition s into as many parts as possible so that each letter appears in at most one part. Return a list of integers representing the size of these parts.",
+    "topic": "String",
+    "subtopic": "Partitioning",
+    "tags": [
+      "String",
+      "Greedy",
+      "Partition"
+    ],
+    "input_format": "A string s consisting of lowercase English letters.",
+    "output_format": "A list of integers representing the sizes of the partitions.",
+    "constraints": [
+      "1 <= s.length <= 500",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"ababcbacadef\"",
+        "output": "[9, 7, 8]",
+        "explanation": "The partitions are: \"ababcbaca\" which has a size of 9, \"def\" which has a size of 3."
+      },
+      {
+        "input": "s = \"eccbbbbdec\"",
+        "output": "[10]",
+        "explanation": "The whole string is one partition because all the characters can be included."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Track the last occurrence of each character.",
+      "Use a greedy approach to determine when to start a new partition."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Set Matrix Zeroes",
+    "description": "Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in place. Follow up: Could you do it without using extra space?",
+    "topic": "Matrix",
+    "subtopic": "In-place Operations",
+    "tags": [
+      "Matrix",
+      "In-place",
+      "Array"
+    ],
+    "input_format": "A 2D array of integers representing the matrix.",
+    "output_format": "Nothing is returned, the input matrix should be modified in place.",
+    "constraints": [
+      "m == matrix.length",
+      "n == matrix[0].length",
+      "1 <= m, n <= 200",
+      "-10^9 <= matrix[i][j] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]",
+        "output": "matrix = [[1, 0, 1], [0, 0, 0], [1, 0, 1]]",
+        "explanation": "The element at (1,1) is 0, so the entire row and column become 0."
+      },
+      {
+        "input": "matrix = [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]]",
+        "output": "matrix = [[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]]",
+        "explanation": "The element at (0,0) is 0 already, so first row and column become 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the first row and first column to track zeroes.",
+      "You can use variables to keep track of whether the first row and first column need to be zeroed."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the heights of bars, compute how much water it can trap after raining. The width of each bar is 1.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers representing the heights of the bars.",
+    "output_format": "An integer representing the total amount of trapped rainwater.",
+    "constraints": [
+      "n == height.length",
+      "1 <= n <= 2 * 10^4",
+      "0 <= height[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water trapped by the bars is 6 units."
+      },
+      {
+        "input": "height = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water trapped by the bars is 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the left and right bounds for each bar.",
+      "Use a two-pointer approach to calculate the trapped water."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Validate IP Address",
+    "description": "Given a string ip, validate whether it is a valid IPv4 or IPv6 address. An IPv4 address consists of four decimal numbers, each ranging from 0 to 255, separated by dots. Each number must not have leading zeros. An IPv6 address is made up of eight groups of four hexadecimal digits separated by colons. The groups can be zero-padded, and there should be no leading zeros except for a solitary zero.",
+    "topic": "String",
+    "subtopic": "Validation",
+    "tags": [
+      "String",
+      "Validation",
+      "IP Address"
+    ],
+    "input_format": "A single string ip that represents the IP address to be validated.",
+    "output_format": "A string 'IPv4' if the ip is a valid IPv4 address, 'IPv6' if it's a valid IPv6 address, and 'Neither' if it is neither.",
+    "constraints": [
+      "1 <= ip.length <= 40"
+    ],
+    "examples": [
+      {
+        "input": "ip = \"192.168.1.1\"",
+        "output": "IPv4",
+        "explanation": "192.168.1.1 is a valid IPv4 address."
+      },
+      {
+        "input": "ip = \"2001:0db8:85a3:0000:0000:8a2e:0370:7334\"",
+        "output": "IPv6",
+        "explanation": "2001:0db8:85a3:0000:0000:8a2e:0370:7334 is a valid IPv6 address."
+      },
+      {
+        "input": "ip = \"256.256.256.256\"",
+        "output": "Neither",
+        "explanation": "256.256.256.256 is not valid as each part must be less than 256."
+      },
+      {
+        "input": "ip = \"1.1.1\"",
+        "output": "Neither",
+        "explanation": "The IP address must have four parts in an IPv4 address."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Check the format of IPv4 and IPv6 addresses carefully.",
+      "Use string splitting based on delimiters ('.' for IPv4 and ':' for IPv6)."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Max Points on a Line",
+    "description": "Given an array of points where points[i] = [x, y] represents a point on a 2D plane, return the maximum number of points that lie on the same straight line.",
+    "topic": "Geometry",
+    "subtopic": "Line and Points",
+    "tags": [
+      "Geometry",
+      "Mathematics",
+      "Points"
+    ],
+    "input_format": "An array of points represented by a 2D integer array points where 0 <= points.length <= 300 and -10^4 <= points[i][0], points[i][1] <= 10^4.",
+    "output_format": "An integer representing the maximum number of points that lie on the same line.",
+    "constraints": [
+      "0 <= points.length <= 300",
+      "-10^4 <= points[i][0], points[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "points = [[1,1],[2,2],[3,3]]",
+        "output": "3",
+        "explanation": "The points (1,1), (2,2), and (3,3) all lie on the same line."
+      },
+      {
+        "input": "points = [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]",
+        "output": "4",
+        "explanation": "The points (1,1), (2,3), (3,2), and (4,1) form the maximum line."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a hashmap to count slopes between points.",
+      "Two points determine a line, calculate the slope.",
+      "Handle vertical lines as a special case."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Rectangle in Histogram",
+    "description": "Given an array of integers representing the height of bars in a histogram, find the area of the largest rectangle that can be formed by contiguous bars. The widths of all bars are 1 unit.",
+    "topic": "Stack",
+    "subtopic": "Monotonic Stack",
+    "tags": [
+      "Stack",
+      "Array",
+      "Dynamic Programming",
+      "Monotonic Stack"
+    ],
+    "input_format": "An array of integers heights representing the heights of the bars in the histogram.",
+    "output_format": "An integer representing the area of the largest rectangle that can be formed.",
+    "constraints": [
+      "1 <= heights.length <= 10^5",
+      "0 <= heights[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "heights = [2, 1, 5, 6, 2, 3]",
+        "output": "10",
+        "explanation": "The largest rectangle can be formed between indices 2 to 3 with height 5 and width 2, area = 5 * 2 = 10."
+      },
+      {
+        "input": "heights = [2, 4]",
+        "output": "4",
+        "explanation": "The largest rectangle can be formed at index 1 with height 4, area = 4 * 1 = 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to keep track of the indices of the bars.",
+      "When processing each bar, think about the rectangle that can be formed using the last bar as the shortest one."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "First Missing Positive",
+    "description": "Given an unsorted integer array nums, return the smallest missing positive integer. You must implement an algorithm that runs in O(n) time and uses constant extra space.",
+    "topic": "Array",
+    "subtopic": "Finding Missing Numbers",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the smallest missing positive integer.",
+    "constraints": [
+      "0 <= nums.length <= 300",
+      "-2^31 <= nums[i] <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, -1, 1]",
+        "output": "2",
+        "explanation": "The smallest missing positive integer is 2."
+      },
+      {
+        "input": "nums = [1, 2, 0]",
+        "output": "3",
+        "explanation": "The smallest missing positive integer is 3."
+      },
+      {
+        "input": "nums = [7, 8, 9, 11, 12]",
+        "output": "1",
+        "explanation": "The smallest missing positive integer is 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Try to use the input array for marking the presence of numbers.",
+      "The answer will be in the range of 1 to n + 1."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets [nums[a], nums[b], nums[c]] such that a, b, and c are distinct indices, and nums[a] + nums[b] + nums[c] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of lists, where each inner list contains three integers that sum up to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplet [-1, -1, 2] sums to 0, as well as the triplet [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "There are no triplets that can be formed from an empty array."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "There are no triplets that sum to zero in this case."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array first to facilitate two-pointer technique.",
+      "Avoid duplicates by skipping over repeated values."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Colors",
+    "description": "Given an array nums representing the color of each element. The colors are represented by integers: 0, 1, and 2. You need to sort the array so that all 0's come first, followed by all 1's, and then all 2's. You must do this in a single pass and without using any extra space.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An integer array nums with elements in {0, 1, 2}.",
+    "output_format": "The same array nums sorted in-place.",
+    "constraints": [
+      "The length of nums is between 1 and 300.",
+      "nums[i] is either 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 0, 2, 1, 1, 0]",
+        "output": "[0, 0, 1, 1, 2, 2]",
+        "explanation": "After sorting, all 0's come first, followed by 1's and 2's."
+      },
+      {
+        "input": "nums = [2, 0, 1]",
+        "output": "[0, 1, 2]",
+        "explanation": "Sorting the colors results in the order: 0, 1, 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use two pointers to categorize the colors.",
+      "Keep track of the positions for 0's, 1's, and 2's.",
+      "Consider edge cases where the array is already sorted or has a single color."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Single Element in a Sorted Array",
+    "description": "Given a sorted array of integers where every element appears exactly twice except for one element that appears exactly once, write a function to find and return the single element. You must implement a solution with a linear runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Unique Elements"
+    ],
+    "input_format": "An array of integers nums, sorted in ascending order.",
+    "output_format": "An integer representing the single element that appears once.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "The array is sorted and contains exactly one unique element."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2, 2, 3, 4, 4, 5, 5]",
+        "output": "3",
+        "explanation": "Every number except 3 appears exactly twice, so the unique element is 3."
+      },
+      {
+        "input": "nums = [2, 2, 3, 3, 7, 8, 8]",
+        "output": "7",
+        "explanation": "Every number except 7 appears exactly twice, so the unique element is 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search for more efficient lookup.",
+      "Pay attention to the properties of indices in the sorted array."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Maximum Profit"
+    ],
+    "input_format": "An array of integers prices representing the stock prices.",
+    "output_format": "An integer representing the maximum profit.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate profit for each day's price and update maximum profit."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Profit in Job Scheduling",
+    "description": "You are given a list of jobs where each job has a start time, an end time, and a profit associated with it. You need to write a function to determine the maximum profit you can make by scheduling non-overlapping jobs. Each job can be scheduled only if it does not overlap with previously scheduled jobs. Your task is to return the maximum profit achievable by scheduling the jobs optimally.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Job Scheduling"
+    ],
+    "input_format": "A list of jobs, where each job is represented as a tuple (start, end, profit).",
+    "output_format": "An integer representing the maximum profit that can be earned by scheduling the jobs.",
+    "constraints": [
+      "1 <= jobs.length <= 1000",
+      "0 <= start < end <= 10^4",
+      "0 <= profit <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "jobs = [(1, 3, 50), (2, 5, 20), (3, 10, 100), (6, 19, 70), (19, 20, 60)]",
+        "output": "150",
+        "explanation": "The optimal scheduling is to take jobs (1, 3, 50) and (3, 10, 100), leading to a profit of 150."
+      },
+      {
+        "input": "jobs = [(1, 2, 100), (2, 3, 200), (3, 4, 300), (1, 3, 50)]",
+        "output": "500",
+        "explanation": "The optimal jobs scheduled are (1, 2, 100), (2, 3, 200), and (3, 4, 300), leading to a total profit of 500."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Sort the jobs by their end times.",
+      "Use dynamic programming to store the maximum profit up to each job.",
+      "To find which jobs can be scheduled without overlap, you may need binary search."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Russian Doll Envelopes",
+    "description": "You are given a array of envelopes where each envelope is represented by a pair of integers (width, height). One envelope can fit into another if and only if both the width and height are strictly greater than the other envelope's dimensions. Your task is to find the maximum number of envelopes you can put one inside the other.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Longest Increasing Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Sorting"
+    ],
+    "input_format": "A list of pairs, where each pair represents the dimensions of an envelope.",
+    "output_format": "An integer representing the maximum number of envelopes that can be nested.",
+    "constraints": [
+      "1 <= envelopes.length <= 10^5",
+      "envelopes[i].length == 2",
+      "1 <= envelopes[i][0], envelopes[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "envelopes = [[5,4],[6,7],[2,3],[1,1]]",
+        "output": "3",
+        "explanation": "You can nest envelopes [1,1] into [2,3], [2,3] into [5,4], and [5,4] into [6,7], resulting in a maximum of 3 envelopes."
+      },
+      {
+        "input": "envelopes = [[1,1],[1,2],[1,3]]",
+        "output": "1",
+        "explanation": "None of the envelopes can fit into another, so the maximum is 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Sort the envelopes based on the first dimension and then the second dimension.",
+      "Use a dynamic programming approach to find the longest increasing subsequence on the second dimension."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Sum of Matrix After Queries",
+    "description": "You are given a 2D matrix of size m x n initialized with zeros. You will receive a list of queries, where each query is of the form (row, col, val). For each query, you need to add val to the element at matrix[row][col]. After processing all the queries, return the sum of all the elements in the matrix.",
+    "topic": "Matrix",
+    "subtopic": "Updating Matrix",
+    "tags": [
+      "Matrix",
+      "Array",
+      "Sum"
+    ],
+    "input_format": "An integer m (number of rows), an integer n (number of columns), and a list of queries. Each query is a list of three integers [row, col, val].",
+    "output_format": "An integer representing the sum of all elements in the matrix after processing all queries.",
+    "constraints": [
+      "1 <= m, n <= 1000",
+      "1 <= queries.length <= 10^4",
+      "0 <= row < m",
+      "0 <= col < n",
+      "-10^4 <= val <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "m = 2, n = 3, queries = [[0, 0, 1], [1, 1, 2], [0, 1, 3]]",
+        "output": "6",
+        "explanation": "After processing the queries, the matrix will be: [[1, 3, 0], [0, 2, 0]]. The sum is 1 + 3 + 0 + 0 + 2 + 0 = 6."
+      },
+      {
+        "input": "m = 1, n = 1, queries = [[0, 0, 5]]",
+        "output": "5",
+        "explanation": "The matrix will be [[5]]. The sum is 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider initializing the matrix with zeros.",
+      "You can use a nested loop to iterate through the matrix if needed.",
+      "Focus on the updates caused by each query."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Count Valid Paths in a Tree",
+    "description": "You are given a binary tree and a target sum. A path is valid if it starts from the root and ends at any leaf node, where the sum of the node values along the path equals the target sum. Your task is to count the number of valid paths in the tree that meet this criterion.",
+    "topic": "Tree",
+    "subtopic": "Path Sum",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Recursion"
+    ],
+    "input_format": "The input consists of a binary tree represented as a root node and an integer target sum.",
+    "output_format": "An integer representing the number of valid paths that sum to the target value.",
+    "constraints": [
+      "1 <= Number of nodes <= 10^4",
+      "-10^5 <= node.val <= 10^5",
+      "0 <= target <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "root = [5,4,8,11,null,13,4,7,2,null,null,5,1], target = 22",
+        "output": "3",
+        "explanation": "The valid paths are: 5 -> 4 -> 11 -> 2, 5 -> 8 -> 4 -> 5, and 5 -> 8 -> 13."
+      },
+      {
+        "input": "root = [1,2,3], target = 5",
+        "output": "0",
+        "explanation": "There are no valid paths that sum to 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a depth-first search approach.",
+      "Keep track of the current sum as you traverse the tree.",
+      "A leaf node is a valid endpoint for a path."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Container With Most Water",
+    "description": "You are given an integer array height where height[i] represents the height of a vertical line drawn at the index i. Find two lines which together with the x-axis form a container that can hold the most water. Return the maximum amount of water a container can store. Note that you may not slant the container.",
+    "topic": "Two Pointers",
+    "subtopic": "Array",
+    "tags": [
+      "Two Pointers",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An integer array height of length n (1 <= n <= 10^5).",
+    "output_format": "An integer representing the maximum area of water that can be held.",
+    "constraints": [
+      "2 <= height.length <= 10^5",
+      "0 <= height[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "height = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The lines at indexes 1 and 8 (height 8) form a container which can hold 49 units of water. The area is (8-1) * min(8,7) = 49."
+      },
+      {
+        "input": "height = [1,1]",
+        "output": "1",
+        "explanation": "The only two lines can form a container of area 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the width and height when calculating area.",
+      "Utilize two pointers to find the maximal container area efficiently."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Implement a data structure that implements a Least Recently Used (LRU) Cache. The cache should support the following operations: `get(key)` and `put(key, value)`. When a key is accessed via `get(key)`, it should return its value if it exists in the cache, otherwise return -1. When a key is added via `put(key, value)`, if the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item. The operations should be performed in O(1) time complexity.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Cache",
+      "Design",
+      "Linked List",
+      "Hash Table"
+    ],
+    "input_format": "You can assume the cache is initialized with a positive capacity.",
+    "output_format": "The output of `get(key)` should be the value associated with the key or -1 if key does not exist.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key, value <= 10000"
+    ],
+    "examples": [
+      {
+        "input": "LRUCache cache = new LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1,-1,3,4]",
+        "explanation": "After `put(4, 4)`, the cache contains keys 3 and 4. `get(2)` returns -1 since it was the least recently used and removed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map for fast lookups.",
+      "Maintain the order of usage with a doubly linked list."
+    ],
+    "company": "Sprinklr"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Univalue Path",
+    "description": "Given the root of a binary tree, return the length of the longest path where each node in the path has the same value. The path may be either direction and does not need to start or end at the root.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Binary Tree"
+    ],
+    "input_format": "The input consists of the root of a binary tree, represented as a reference to the tree structure.",
+    "output_format": "An integer representing the length of the longest univalue path.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [5, 4, 5, 1, 1, null, 5]",
+        "output": "2",
+        "explanation": "The longest univalue path is 5 -> 5, which has a length of 2."
+      },
+      {
+        "input": "root = [1, 1, 1, 1, 1, null, 1]",
+        "output": "4",
+        "explanation": "The longest univalue path is 1 -> 1 -> 1 -> 1, which has a length of 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use Depth First Search (DFS) to traverse the tree.",
+      "Keep track of the length of univalue paths in both directions.",
+      "Use a helper function to calculate the current univalue path lengths."
+    ],
+    "company": "Sprinklr"
+  }
+]

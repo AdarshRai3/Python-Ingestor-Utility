@@ -1,0 +1,128 @@
+[
+  {
+    "question_id": "",
+    "title": "Degree of an Array",
+    "description": "Given an integer array nums, return the degree of the array. The degree of an array is defined as the maximum frequency of any element in the array. If multiple elements have the same degree, the length of the smallest subarray containing all instances of that degree element is used to determine the answer. If no elements exist, return 0.",
+    "topic": "Array",
+    "subtopic": "Frequency and Subarray",
+    "tags": [
+      "Array",
+      "Frequency",
+      "Subarray"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the smallest subarray.",
+    "constraints": [
+      "1 <= nums.length <= 50000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3, 1]",
+        "output": "2",
+        "explanation": "The degree of the array is 2 (frequency of 2s). The smallest subarray with the same degree is [2, 2]."
+      },
+      {
+        "input": "nums = [1, 2, 2, 3, 1, 4, 2]",
+        "output": "6",
+        "explanation": "The degree of the array is 3 (frequency of 2s). The smallest subarray containing all instances of 2 is [2, 2, 3, 1, 4, 2]."
+      },
+      {
+        "input": "nums = [1, 1, 2, 3, 2, 1]",
+        "output": "3",
+        "explanation": "The degree of the array is 3 (frequency of 1s). The smallest subarray containing all instances of 1 is [1, 2, 3]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to track the frequency of each element.",
+      "Record the first and last positions of elements to determine subarray lengths."
+    ],
+    "company": "GE Digital"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Cost to Set Cooking Time",
+    "description": "You are given an array of integers where each element represents a cooking time in minutes. You can adjust the cooking time of each dish either by adding or subtracting minutes. However, each adjustment has a cost associated with it that is equal to the absolute value of the change made. Your goal is to set all cooking times to a specific target time with the minimum total cost. Write a function to determine the minimum cost required to achieve this.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Optimization",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Cost Minimization"
+    ],
+    "input_format": "An integer array `cookingTimes` representing the current cooking times and an integer `targetTime` representing the target cooking time.",
+    "output_format": "An integer representing the minimum cost to set all cooking times to the target time.",
+    "constraints": [
+      "1 <= cookingTimes.length <= 10^5",
+      "1 <= cookingTimes[i], targetTime <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "cookingTimes = [10, 20, 30], targetTime = 25",
+        "output": "25",
+        "explanation": "The costs of adjustments are |10 - 25| + |20 - 25| + |30 - 25| = 15 + 5 + 5 = 25."
+      },
+      {
+        "input": "cookingTimes = [5, 10, 15], targetTime = 10",
+        "output": "10",
+        "explanation": "The costs of adjustments are |5 - 10| + |10 - 10| + |15 - 10| = 5 + 0 + 5 = 10."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the absolute differences when calculating costs.",
+      "Iterate through each cooking time and compute the adjustment cost to the target.",
+      "Look for patterns in costs to optimize the approach."
+    ],
+    "company": "GE Digital"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Remove to Make Valid Parentheses",
+    "description": "Given a string s consisting of parentheses, letters, and digits, your task is to remove the minimum number of parentheses to make the string valid. A string is valid if every open parenthesis has a corresponding close parenthesis in the correct order. Return the resulting string after removing the minimum number of invalid parentheses.",
+    "topic": "String",
+    "subtopic": "Parentheses Validation",
+    "tags": [
+      "String",
+      "Parentheses",
+      "Validation",
+      "Greedy"
+    ],
+    "input_format": "A single string s containing parentheses, letters, and digits.",
+    "output_format": "A valid string with the minimum number of parentheses removed.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of lowercase English letters, digits, and parentheses '(', ')'."
+    ],
+    "examples": [
+      {
+        "input": "s = \"lee(t(c)o)de)\"",
+        "output": "lee(t(c)o)de",
+        "explanation": "Remove the last parentheses to make it valid."
+      },
+      {
+        "input": "s = \"a)b(c)d\"",
+        "output": "ab(c)d",
+        "explanation": "Remove the first parentheses to make it valid."
+      },
+      {
+        "input": "s = \"))(\"",
+        "output": "",
+        "explanation": "All parentheses are invalid, so return an empty string."
+      },
+      {
+        "input": "s = \"(a(b(c)d)\"",
+        "output": "(ab(c)d)",
+        "explanation": "Remove the last open parenthesis to make it valid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to track the indices of unmatched parentheses.",
+      "Count the unmatched closing parentheses and the opening parentheses.",
+      "Reconstruct the string based on the indices of valid parentheses."
+    ],
+    "company": "GE Digital"
+  }
+]

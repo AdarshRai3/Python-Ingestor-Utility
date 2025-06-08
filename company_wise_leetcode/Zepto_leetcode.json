@@ -1,0 +1,1297 @@
+[
+  {
+    "question_id": "",
+    "title": "Longest Univalue Path",
+    "description": "Given the root of a binary tree, return the length of the longest path, where each node in the path has the same value. This path may be oriented in any direction, and does not have to start or end at the root. Note that the length of a path is the number of edges between the nodes in the path.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "Depth-First Search",
+      "Binary Tree"
+    ],
+    "input_format": "The input is the root of a binary tree represented as a TreeNode object.",
+    "output_format": "An integer representing the length of the longest univalue path.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "-1000 <= Node.val <= 1000."
+    ],
+    "examples": [
+      {
+        "input": "root = [5,4,5,1,1,5]",
+        "output": "2",
+        "explanation": "The longest univalue path is of length 2 with value 5."
+      },
+      {
+        "input": "root = [1,1,1,1,1,null,1]",
+        "output": "4",
+        "explanation": "The longest univalue path is of length 4 with value 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS to explore the tree.",
+      "Maintain a counter for the length of the current univalue path."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, if you have intervals [1,3], [2,6], [8,10], and [15,18], the output should be [1,6], [8,10], and [15,18]. Intervals are defined as a pair of integers representing the start and end points. You need to produce the merged intervals in a sorted order.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intersections"
+    ],
+    "input_format": "A list of intervals where each interval is represented as a list of two integers [start, end].",
+    "output_format": "A list of merged intervals, each represented as a list of two integers [start, end].",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they are merged into [1,6]. The other intervals do not overlap."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] touch at 4 and hence are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the starting times.",
+      "Use a loop to merge intervals if they overlap."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Path Sum III",
+    "description": "Given a binary tree, return the number of paths that sum to a given value. The path does not need to start or end at the root or a leaf, but it must go downwards (meaning only child nodes may be used). A path can be defined as a sequence of nodes from any node to any node in the tree, where the sum of the node values equals the target sum.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Recursion"
+    ],
+    "input_format": "The input consists of the root of a binary tree and an integer sum, which represents the target sum.",
+    "output_format": "An integer representing the number of paths that sum to the given value.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 1000].",
+      "-10^9 <= Node.val <= 10^9",
+      "-10^9 <= sum <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "root = [10,5,-3,3,2,null,11], sum = 8",
+        "output": "3",
+        "explanation": "There are three paths that sum to 8: 5->3, 2->5->1, and 10->-3->11."
+      },
+      {
+        "input": "root = [1,1,1], sum = 2",
+        "output": "2",
+        "explanation": "There are two paths: one 1->1 and another 1->1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using DFS to explore all possible paths.",
+      "Use a hashmap to store the cumulative sums."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Car Pooling",
+    "description": "You are given a list of trips where each trip is represented by three integers: `numPassengers`, `startLocation`, and `endLocation`. Your goal is to determine if it is possible to carry all the passengers for all trips within a single car. The car has a maximum capacity of `capacity`. You need to ensure that at no point in time the number of passengers in the car exceeds the capacity while picking up and dropping off passengers at the specified locations. You can assume all locations are indexed from 0 to 1000.",
+    "topic": "Greedy",
+    "subtopic": "Interval Management",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Simulation"
+    ],
+    "input_format": "An integer `capacity`, followed by a list of trips, where each trip is represented as [numPassengers, startLocation, endLocation].",
+    "output_format": "A boolean value indicating whether it is possible to carry all passengers without exceeding capacity.",
+    "constraints": [
+      "1 <= trips.length <= 1000",
+      "1 <= numPassengers <= 100",
+      "0 <= startLocation < endLocation <= 1000",
+      "1 <= capacity <= 100"
+    ],
+    "examples": [
+      {
+        "input": "capacity = 4, trips = [[2, 1, 5], [3, 3, 7]]",
+        "output": "false",
+        "explanation": "At location 3, there will be 2 passengers already in the car from trip 1. Adding 3 passengers from trip 2 makes it 5, which exceeds the capacity."
+      },
+      {
+        "input": "capacity = 5, trips = [[2, 1, 5], [1, 2, 3], [2, 4, 6]]",
+        "output": "true",
+        "explanation": "At every trip, the car does not exceed its capacity of 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a difference array to track passenger changes at each location.",
+      "Simulate the process of picking up and dropping off passengers."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Rectangle in Histogram",
+    "description": "Given an array of integers representing the heights of bars in a histogram, return the area of the largest rectangle that can be formed within the histogram. The width of each bar is 1.",
+    "topic": "Stack",
+    "subtopic": "Monotonic Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers heights representing the heights of the histogram bars.",
+    "output_format": "An integer representing the area of the largest rectangle in the histogram.",
+    "constraints": [
+      "1 <= heights.length <= 10^5",
+      "0 <= heights[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "heights = [2, 1, 5, 6, 2, 3]",
+        "output": "10",
+        "explanation": "The largest rectangle has the height 5 and width 2, yielding an area of 10."
+      },
+      {
+        "input": "heights = [2, 4]",
+        "output": "4",
+        "explanation": "The largest rectangle has the height 4 and width 1, yielding an area of 4."
+      },
+      {
+        "input": "heights = [0, 9]",
+        "output": "9",
+        "explanation": "The largest rectangle has the height 9 and width 1, yielding an area of 9."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to keep track of the indices of the bars.",
+      "Calculate the area when encountering a bar that is lower than the bar at the top of the stack."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Cost For Tickets",
+    "description": "In a country, there are three types of ticket options for traveling. You can buy tickets for: 1 day (cost of 'days'), 7 days (cost of 'week'), or 30 days (cost of 'month'). Given a list of days you plan to travel, determine the minimum cost of tickets you need to buy to cover all your travel days. You may assume that the days are in ascending order, and you can only travel on the days provided in the input array.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Minimum Cost",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Cost-Optimization"
+    ],
+    "input_format": "An array of integers travDays representing the days of travel. Three integers, 'days', 'week', 'month', representing the costs of the 1-day, 7-day, and 30-day tickets respectively.",
+    "output_format": "An integer representing the minimum cost of the tickets required to cover all travel days.",
+    "constraints": [
+      "1 <= travDays.length <= 365",
+      "1 <= days, week, month <= 1000",
+      "1 <= travDays[i] <= 365"
+    ],
+    "examples": [
+      {
+        "input": "travDays = [1, 2, 3, 4, 5], days = 2, week = 7, month = 20",
+        "output": "7",
+        "explanation": "Buying a 7-day ticket is cheaper than buying several 1-day tickets."
+      },
+      {
+        "input": "travDays = [1, 4, 6, 7, 8, 20], days = 2, week = 7, month = 15",
+        "output": "11",
+        "explanation": "Buying 1-day tickets for days 1, and a 7-day ticket covers days 4-8. Total cost = 2 + 7 = 9."
+      },
+      {
+        "input": "travDays = [1, 2, 3], days = 3, week = 9, month = 14",
+        "output": "3",
+        "explanation": "Buying a 1-day ticket for each day costs 3, which is the cheapest option."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try breaking the problem into smaller subproblems.",
+      "Consider the cases where you buy each type of ticket and take the minimum."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Find Peak Element",
+    "description": "A peak element in an array is an element that is greater than or equal to its neighbors. Given an integer array nums, find a peak element and return its index. You may assume that the array always has at least one peak and that the peak could be the first or last element of the array.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Peak Element"
+    ],
+    "input_format": "An array of integers nums representing the input.",
+    "output_format": "An integer representing the index of any peak element.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "\u221210^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "2",
+        "explanation": "The peak element is 3 at index 2."
+      },
+      {
+        "input": "nums = [1, 2, 1, 3, 5, 6, 4]",
+        "output": "1 or 5",
+        "explanation": "There are multiple peaks. One peak element is 2 at index 1, and another is 6 at index 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of peaks when looking for them.",
+      "You can use a binary search technique to optimize your search."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Koko Eating Bananas",
+    "description": "Koko loves bananas. There are N piles of bananas, and Koko can eat from one pile per hour. The function will determine the minimum number of hours Koko needs to eat all the bananas given her eating speeds. Koko can eat at a speed of 'h' bananas per hour, and she can increase her speed after every hour. The goal is to minimize the maximum speed at which she eats bananas. Given the number of piles and their sizes, find the minimum possible speed Koko can eat bananas, such that she eats all the bananas in at most H hours.",
+    "topic": "Binary Search",
+    "subtopic": "Search and Optimization",
+    "tags": [
+      "Binary Search",
+      "Optimization",
+      "Greedy"
+    ],
+    "input_format": "A list of integers representing banana piles, and an integer representing the number of hours Koko has.",
+    "output_format": "An integer representing the minimum eating speed Koko needs to consume all bananas.",
+    "constraints": [
+      "1 <= piles.length <= 10^4",
+      "1 <= piles[i] <= 10^9",
+      "1 <= H <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "[3, 6, 7, 11], 8",
+        "output": "4",
+        "explanation": "Koko can eat 4 bananas per hour. In 8 hours, she can eat all bananas as follows: 4+4+4+4+3+3+2+2 = 30 (total from all piles)."
+      },
+      {
+        "input": "[30, 11, 23, 4, 20], 5",
+        "output": "30",
+        "explanation": "Koko must eat at a speed of 30 to finish in 5 hours, as 30 can allow her to finish the largest pile (30) on the first hour."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to find the minimum speed.",
+      "Calculate how many hours it takes to eat all bananas at a given speed."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Consecutive Sequence",
+    "description": "Given an unsorted array of integers, find the length of the longest consecutive elements sequence. Your algorithm should run in O(n) complexity.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Sorting"
+    ],
+    "input_format": "An unsorted array of integers nums.",
+    "output_format": "An integer representing the length of the longest consecutive elements sequence.",
+    "constraints": [
+      "0 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [100, 4, 200, 1, 3, 2]",
+        "output": "4",
+        "explanation": "The longest consecutive sequence is [1, 2, 3, 4] which has a length of 4."
+      },
+      {
+        "input": "nums = [0, -1]",
+        "output": "2",
+        "explanation": "The longest consecutive sequence is [-1, 0] which has a length of 2."
+      },
+      {
+        "input": "nums = []",
+        "output": "0",
+        "explanation": "The array is empty, so the length of the longest consecutive sequence is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a set to store numbers for O(1) look-up time.",
+      "For each number, check if it's the start of a sequence."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Paths II",
+    "description": "A robot is located at the top-left corner of a m x n grid and wants to reach the bottom-right corner. The robot can only move either down or right at any point in time. Now some obstacles are added to the grid. The robot cannot move through obstacles. Given a grid represented by a 2D array, where 0 represents a free cell and 1 represents an obstacle, return the number of unique paths from the top-left to the bottom-right corner.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Pathfinding"
+    ],
+    "input_format": "A 2D integer array grid of size m x n.",
+    "output_format": "An integer representing the number of unique paths to the bottom-right corner.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 100",
+      "grid[i][j] is 0 or 1.",
+      "The starting cell grid[0][0] and the ending cell grid[m-1][n-1] are guaranteed to be 0."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0,0,0],[0,1,0],[0,0,0]]",
+        "output": "2",
+        "explanation": "There are two unique paths: (0,0) -> (0,1) -> (0,2) -> (1,2) -> (2,2) and (0,0) -> (1,0) -> (2,0) -> (2,1) -> (2,2)."
+      },
+      {
+        "input": "grid = [[0,1],[0,0]]",
+        "output": "1",
+        "explanation": "There is only one path: (0,0) -> (1,0) -> (1,1)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how paths can be built from previous states.",
+      "Use a dynamic programming table to store the number of ways to reach each cell.",
+      "Remember that if a cell is an obstacle, there are no paths through that cell."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Rotting Oranges",
+    "description": "You are given an m x n grid where each cell can have one of three values: 0 representing an empty cell, 1 representing a fresh orange, and 2 representing a rotten orange. Every minute, any fresh orange that is adjacent (up, down, left, or right) to a rotten orange becomes rotten. Return the minimum number of minutes that must elapse until no fresh oranges remain. If this is impossible, return -1.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D integer grid of size m x n.",
+    "output_format": "An integer representing the minimum number of minutes until no fresh oranges remain, or -1 if impossible.",
+    "constraints": [
+      "1 <= m, n <= 300",
+      "grid[i][j] is 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[2,1,1],[1,1,0],[0,1,1]]",
+        "output": "4",
+        "explanation": "Rotten oranges at (0,0) can make oranges at (0,1), (1,0) rotten in 1 minute. Continuing this way, all fresh oranges can be rotted in 4 minutes."
+      },
+      {
+        "input": "grid = [[2,1,1],[0,1,1],[1,0,2]]",
+        "output": "-1",
+        "explanation": "The orange at (2,0) cannot be rotten since there are no adjacent rotten oranges."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a queue to keep track of rotten oranges.",
+      "Count fresh oranges initially to determine when to stop."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Divide Two Integers",
+    "description": "Implement a function that divides two integers without using the division, multiplication, or modulo operators. The function should return the quotient after dividing 'dividend' by 'divisor'. The result should be truncated toward zero, meaning that it should not round off the decimal part. Handle cases where the division by zero occurs.",
+    "topic": "Math",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Math",
+      "Bit Manipulation",
+      "Division"
+    ],
+    "input_format": "Two integers, dividend and divisor.",
+    "output_format": "An integer representing the quotient of the division.",
+    "constraints": [
+      "-2^31 <= dividend, divisor <= 2^31 - 1",
+      "divisor != 0"
+    ],
+    "examples": [
+      {
+        "input": "dividend = 10, divisor = 3",
+        "output": "3",
+        "explanation": "10 divided by 3 equals 3.3333, which is truncated to 3."
+      },
+      {
+        "input": "dividend = 7, divisor = -3",
+        "output": "-2",
+        "explanation": "7 divided by -3 equals -2.3333, which is truncated to -2."
+      },
+      {
+        "input": "dividend = 0, divisor = 1",
+        "output": "0",
+        "explanation": "0 divided by any non-zero number is 0."
+      },
+      {
+        "input": "dividend = 1, divisor = 0",
+        "output": "Infinity",
+        "explanation": "Division by zero is undefined, return a specific error or indication."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use bit manipulation to perform the division.",
+      "Think about how you can represent the dividend and divisor in terms of powers of two."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Width Ramp",
+    "description": "Given an array of integers representing heights, find the maximum width ramp. A ramp is defined as a subarray nums[i]...nums[j] such that i < j and nums[i] <= nums[j]. The width of the ramp is defined as j - i. Your task is to return the maximum width of all possible ramps within the given array.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Max Width"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum width ramp.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [6, 0, 8, 2, 1, 5]",
+        "output": "4",
+        "explanation": "The maximum width ramp is between the first element (index 0) and the last element (index 4), hence width = 4."
+      },
+      {
+        "input": "nums = [9, 0, 1, 3, 5, 2, 4, 8]",
+        "output": "7",
+        "explanation": "The maximum width ramp can be found between index 1 (value 0) and index 7 (value 8), thus width = 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to keep track of indices.",
+      "Try to optimize the solution to linear time complexity."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "Depth-First Search",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D binary grid represented as a list of lists.",
+    "output_format": "An integer representing the number of islands.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,1,0,0,0],[1,1,0,0,0],[0,0,1,0,0],[0,0,0,1,1]]",
+        "output": "3",
+        "explanation": "There are three islands in the grid."
+      },
+      {
+        "input": "grid = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]",
+        "output": "0",
+        "explanation": "There are no islands in the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Depth-First Search (DFS) or Breadth-First Search (BFS) to explore each island.",
+      "You can modify the grid while traversing to mark visited land."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Next Permutation",
+    "description": "Implement the function `next_permutation(nums: List[int]) -> None` that transforms the list of integers `nums` into the next lexicographical permutation of its integer numbers. The replacement must be in place and use only constant extra memory. If such arrangement is not possible, it must rearrange it as the lowest possible order (i.e., sorted in ascending order).",
+    "topic": "Array",
+    "subtopic": "Permutation",
+    "tags": [
+      "Array",
+      "Permutation",
+      "In-place"
+    ],
+    "input_format": "A list of integers nums.",
+    "output_format": "The same list with the next permutation of integers.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[1, 3, 2]",
+        "explanation": "The next permutation of [1, 2, 3] is [1, 3, 2]."
+      },
+      {
+        "input": "nums = [3, 2, 1]",
+        "output": "[1, 2, 3]",
+        "explanation": "The next permutation of [3, 2, 1] is [1, 2, 3] since it is the largest possible permutation."
+      },
+      {
+        "input": "nums = [1, 1, 5]",
+        "output": "[1, 5, 1]",
+        "explanation": "The next permutation of [1, 1, 5] is [1, 5, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the longest non-increasing suffix.",
+      "Find the pivot element just before the suffix.",
+      "Swap the pivot with the smallest element in the suffix that is larger than the pivot."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Repeating Character Replacement",
+    "description": "Given a string s consisting of uppercase English letters, you can replace any character with any other character. The goal is to find the length of the longest substring that can be obtained by replacing at most k characters. Return the length of the longest substring you can get after performing the replacements.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Replacement"
+    ],
+    "input_format": "A string s and an integer k.",
+    "output_format": "An integer representing the length of the longest substring that can be obtained after replacements.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "0 <= k <= s.length"
+    ],
+    "examples": [
+      {
+        "input": "s = 'AABABBA', k = 1",
+        "output": "4",
+        "explanation": "You can replace one 'B' with 'A' to make the substring 'AAAA', of length 4."
+      },
+      {
+        "input": "s = 'AA', k = 1",
+        "output": "2",
+        "explanation": "You don't need to replace any characters, the longest substring is already 'AA'."
+      },
+      {
+        "input": "s = 'ABAB', k = 2",
+        "output": "4",
+        "explanation": "You can replace both 'A's with 'B's (or vice versa), resulting in 'BBBB' or 'AAAA'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the sliding window technique to maintain a valid substring.",
+      "Count the frequency of characters in the current window.",
+      "Try to maximize the length of the window while keeping track of replacements."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an integer array nums and an integer k, return the maximum sliding window of size k for each sliding window. You must solve it in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Deque"
+    ],
+    "input_format": "An array of integers nums and an integer k (1 <= k <= nums.length).",
+    "output_format": "An array of integers representing the maximum value of each sliding window.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, -1, -3, 5, 3, 6, 7], k = 3",
+        "output": "[3, 3, 5, 5, 6, 7]",
+        "explanation": "The maximums for each sliding window of size 3 are [3, 3, 5, 5, 6, 7]."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Only one element, so the maximum is 1."
+      },
+      {
+        "input": "nums = [1, -1], k = 1",
+        "output": "[1, -1]",
+        "explanation": "Maximum for the first window is 1, and for the second window, it is -1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a deque to maintain the indices of the array elements."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A substring is defined as a contiguous sequence of characters within the string. A palindrome is a string that reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s, with length n.",
+    "output_format": "A string representing the longest palindromic substring.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only digits and English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"babad\"",
+        "output": "\"bab\"",
+        "explanation": "Both \"bab\" and \"aba\" are valid longest palindromic substrings."
+      },
+      {
+        "input": "s = \"cbbd\"",
+        "output": "\"bb\"",
+        "explanation": "The longest palindromic substring is \"bb\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider checking for palindromes centered around each character.",
+      "Expand around the center might be an efficient approach."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "Given a rotated sorted array 'nums' containing distinct integers and an integer 'target', return the index of 'target' in 'nums'. If 'target' is not in 'nums', return -1. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Searching"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An integer representing the index of target in nums, or -1 if not found.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "0 <= nums[i] <= 10^4",
+      "All integers in nums are distinct."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "The target 0 is at index 4 in the rotated array."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "The target 3 is not present in the array."
+      },
+      {
+        "input": "nums = [1], target = 0",
+        "output": "-1",
+        "explanation": "The target 0 is not present in the single-element array."
+      },
+      {
+        "input": "nums = [1, 3], target = 3",
+        "output": "1",
+        "explanation": "The target 3 is at index 1 in the rotated array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of a rotated sorted array.",
+      "Use binary search to efficiently find the target."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Gas Station",
+    "description": "There are n gas stations along a circular route, where the amount of gas at the ith station is gas[i]. You have a car that runs on gas only, and it consumes 1 unit of gas per mile. You can start at any gas station, but you need to travel around the circuit once to complete the journey. Determine the starting gas station's index that allows you to travel around the circuit once without running out of gas. If there is no such starting point, return -1.",
+    "topic": "Greedy",
+    "subtopic": "Circular Array",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Circular Route"
+    ],
+    "input_format": "Two arrays, gas and cost, where gas[i] is the gas available at the i-th station, and cost[i] is the gas cost to travel to the next station.",
+    "output_format": "An integer representing the starting gas station's index, or -1 if it's impossible to complete the circuit.",
+    "constraints": [
+      "n == gas.length == cost.length",
+      "1 <= n <= 10^5",
+      "0 <= gas[i], cost[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "gas = [1, 2, 3, 4, 5], cost = [3, 4, 5, 1, 2]",
+        "output": "3",
+        "explanation": "Starting at index 3 (gas[3] = 4) allows the car to reach index 4 (gas[4] = 5), and then it can return to index 0, completing the circuit."
+      },
+      {
+        "input": "gas = [2, 3, 4], cost = [3, 4, 3]",
+        "output": "-1",
+        "explanation": "It's impossible to complete the circuit as there is not enough gas to travel from any station."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about the total gas and total cost to determine feasibility.",
+      "Use a greedy approach to identify the starting index.",
+      "If you run out of gas, move to the next station."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search",
+    "description": "Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.",
+    "topic": "Backtracking",
+    "subtopic": "Path Finding",
+    "tags": [
+      "Backtracking",
+      "DFS",
+      "Grid"
+    ],
+    "input_format": "A 2D board represented as a list of list of characters and a string word.",
+    "output_format": "A boolean value indicating whether the word exists in the grid.",
+    "constraints": [
+      "m == board.length",
+      "n == board[i].length",
+      "1 <= m, n <= 6",
+      "1 <= word.length <= 15",
+      "board[i][j] is a lowercase English letter."
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCCED"
+        },
+        "output": true,
+        "explanation": "The word 'ABCCED' can be found in the grid."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "SEE"
+        },
+        "output": true,
+        "explanation": "The word 'SEE' can be found in the grid."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCB"
+        },
+        "output": false,
+        "explanation": "The word 'ABCB' cannot be constructed from the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use backtracking to explore all possible paths.",
+      "Keep track of used cells to avoid reusing them."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Rabbits in Forest",
+    "description": "In a forest, there are rabbits of different colors. Each rabbit can either show up or hide. You are given an array where each element represents the number of rabbits of a particular color that are currently visible. Your task is to determine the minimum number of rabbits that must exist in the forest, assuming that rabbits of the same color appear in groups. A group of rabbits is defined as a set of rabbits of the same color that can be either entirely visible or entirely hidden. You need to return the minimum number of rabbits that must be present based on the given visibility counts.",
+    "topic": "Greedy",
+    "subtopic": "Counting",
+    "tags": [
+      "Greedy",
+      "Counting",
+      "Hash Table"
+    ],
+    "input_format": "An array of integers representing the number of visible rabbits of each color.",
+    "output_format": "An integer representing the minimum number of rabbits that must exist.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "0 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2]",
+        "output": "5",
+        "explanation": "The first two rabbits can be from two separate groups (1 each), meaning there are 2 rabbits plus an additional 3 for the rabbits of color 2 that appears in a group (2 + 3 = 5)."
+      },
+      {
+        "input": "nums = [10, 10, 10]",
+        "output": "11",
+        "explanation": "There are three groups of 10 visible rabbits, implying there is at least one unseen rabbit from each group. Hence the minimum count is 10 + 1 = 11."
+      },
+      {
+        "input": "nums = [0, 1, 2, 2]",
+        "output": "3",
+        "explanation": "There is one rabbit of the second color visible and 2 rabbits of the third color which must be from the same group. Thus, we need at least 3 rabbits."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how groups of animals would affect the total count.",
+      "Use a frequency map to group similar colors and calculate their minimum presence.",
+      "Think about how many times you see the number of rabbits and what that can tell you about total rabbits."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Count Sub Islands",
+    "description": "You are given a 2D grid representing a map where '1' represents land and '0' represents water. An island is formed by connecting adjacent lands horizontally or vertically. A sub-island is an island that is fully contained within another island, meaning the parts of the sub-island are also marked as land by another '1'. Your task is to count the number of sub-islands in the given grid.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Grid"
+    ],
+    "input_format": "A 2D binary grid of size m x n where grid[i][j] is either 0 or 1.",
+    "output_format": "An integer representing the number of sub-islands in the grid.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,1,0,0],[0,1,1,0],[0,0,1,0],[0,0,0,0]]",
+        "output": "1",
+        "explanation": "There is one sub-island consisting of the second row, first and second columns."
+      },
+      {
+        "input": "grid = [[1,0,0],[0,1,0],[1,0,1]]",
+        "output": "0",
+        "explanation": "There are no sub-islands as each island is not fully contained within another."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Depth-First Search (DFS) to explore the islands.",
+      "Check if an island is a sub-island by ensuring all its parts are connected to land."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Make Array Empty",
+    "description": "You are given an integer array nums. Your task is to make the array empty by performing the following operation: at each step, you can remove any element from the array. However, you want to minimize the number of operations required to make the array empty. Return the minimum number of operations needed to make the array empty.",
+    "topic": "Array",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Array",
+      "Manipulation",
+      "Operations"
+    ],
+    "input_format": "An integer array nums where 1 <= nums.length <= 10^5 and -10^6 <= nums[i] <= 10^6.",
+    "output_format": "An integer representing the minimum number of operations to make the array empty.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3, 3, 3]",
+        "output": "3",
+        "explanation": "You can remove all occurrences of 1, 2, and 3 in 3 operations, making the array empty."
+      },
+      {
+        "input": "nums = [5, 5, 5, 5, 5]",
+        "output": "1",
+        "explanation": "You can remove all occurrences of 5 in just 1 operation."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a frequency counter for the elements."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Distance Value Between Two Arrays",
+    "description": "Given two integer arrays arr1 and arr2, the distance value is defined as the number of elements arr1[i] such that for each element arr1[i], there is no element arr2[j] such that |arr1[i] - arr2[j]| <= d. Write a function to compute the distance value between these two arrays.",
+    "topic": "Array",
+    "subtopic": "Distance Calculation",
+    "tags": [
+      "Array",
+      "Distance",
+      "Math"
+    ],
+    "input_format": "Two arrays of integers arr1 and arr2, followed by an integer d.",
+    "output_format": "An integer representing the distance value between the two arrays.",
+    "constraints": [
+      "1 <= arr1.length, arr2.length <= 200",
+      "-100 <= arr1[i], arr2[j] <= 100",
+      "0 <= d <= 100"
+    ],
+    "examples": [
+      {
+        "input": "arr1 = [4, 5, 8], arr2 = [10, 9, 1, 8], d = 2",
+        "output": "2",
+        "explanation": "Elements 4 and 5 in arr1 have no corresponding elements in arr2 that satisfy |arr1[i] - arr2[j]| <= d."
+      },
+      {
+        "input": "arr1 = [1, 2, 3], arr2 = [4, 5, 6], d = 1",
+        "output": "3",
+        "explanation": "All elements in arr1 have no corresponding elements in arr2 that meet the distance condition."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider sorting one of the arrays for efficient comparisons.",
+      "Use binary search to quickly find valid candidates."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for Least Recently Used (LRU) Cache. It should support the following operations: get and put, each in O(1) average time complexity. The get operation retrieves the value of the key if the key exists in the cache. If the key does not exist, it should return -1. The put operation will add the key-value pair to the cache. If the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Cache",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "The constructor of the LRUCache class will be given an integer capacity. The get and put methods accept an integer key and an integer value respectively.",
+    "output_format": "The output for get method is the value of the key or -1 if the key does not exist. The put method does not return anything.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^4",
+      "At most 3 * 10^4 calls will be made to get and put"
+    ],
+    "examples": [
+      {
+        "input": "LRUCache lRUCache = new LRUCache(2); lRUCache.put(1, 1); lRUCache.put(2, 2); lRUCache.get(1); lRUCache.put(3, 3); lRUCache.get(2); lRUCache.put(4, 4); lRUCache.get(1); lRUCache.get(3); lRUCache.get(4);",
+        "output": "[1,-1,3,4]",
+        "explanation": "Cache capacity is 2. After the operations, the cache stores values {3=3, 4=4} and returns the results as described."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map and a doubly linked list.",
+      "To maintain the order of usage, move accessed items to the front of the list.",
+      "When adding a new item, remove the tail of the list if the cache is full."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Open the Lock",
+    "description": "You are given a lock that opens with a sequence of 4 digits, and you can press buttons to increase or decrease the digit by 1. The lock allows you to rotate between '0' and '9'. The initial combination of the lock is '0000', and you need to find the minimum number of turns required to reach a target combination. You may also have a list of deadends that should not be used during the combination attempts. Return the minimum number of turns to reach the target combination, or -1 if it is not possible.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Graph",
+      "Breadth-First Search",
+      "String"
+    ],
+    "input_format": "A string representing the target combination, and an array of strings representing the deadends.",
+    "output_format": "An integer representing the minimum number of turns to open the lock, or -1 if it's not possible.",
+    "constraints": [
+      "The target combination is a valid four-digit string.",
+      "The deadends are unique and contain valid four-digit strings.",
+      "The length of deadends array is between 0 and 20."
+    ],
+    "examples": [
+      {
+        "input": {
+          "target": "0202",
+          "deadends": [
+            "0201",
+            "0101",
+            "0102",
+            "1212",
+            "2002"
+          ]
+        },
+        "output": "6",
+        "explanation": "From '0000', we can go to '0001' (1 turn), then to '0002' (2 turns), then to '0102' (it is a deadend), so we try '0100' (3 turns) followed by '0200' (4 turns), and finally reach '0202' in 6 turns."
+      },
+      {
+        "input": {
+          "target": "8888",
+          "deadends": [
+            "0000"
+          ]
+        },
+        "output": "-1",
+        "explanation": "Since '0000' is a deadend, we cannot make any moves to reach '8888'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using breadth-first search to explore all possible combinations.",
+      "Keep track of visited combinations to prevent cycles."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Sum BST in Binary Tree",
+    "description": "Given a binary tree, find the maximum sum of all values of any sub-tree that is a Binary Search Tree (BST). A subtree is defined as any node of the tree and all of its descendants. The sum of a subtree is the sum of all its node values. Return 0 if there is no subtree that is a BST.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Search Tree",
+      "Dynamic Programming",
+      "Depth-First Search"
+    ],
+    "input_format": "A binary tree represented by its root node.",
+    "output_format": "An integer representing the maximum sum of any subtree that is a BST.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 2 * 10^4].",
+      "-10^4 <= Node.val <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "root = [10, 5, 1, 5, 15, null, 7, 6, null, null, null]",
+        "output": "18",
+        "explanation": "The subtree rooted at node 5 is a BST with sum 18 (5 + 1 + 5 + 7) which is the maximum."
+      },
+      {
+        "input": "root = [1, 4, 3, 2, 4, null, 5]",
+        "output": "0",
+        "explanation": "There are no subtrees that are BSTs."
+      },
+      {
+        "input": "root = [4, 2, 5, 1, 3]",
+        "output": "7",
+        "explanation": "The subtree rooted at node 2 is a BST with sum 6 (2 + 1 + 3), and the whole tree is also a BST with sum 15, but the maximum BST subtree sum is from node 1 + 2 + 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using DFS to explore all subtrees.",
+      "A BST ensures that all left descendants are less than the node and all right descendants are greater."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game II",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Your goal is to reach the last index in the minimum number of jumps. Write a function to determine the minimum number of jumps needed to reach the last index from the first index. If it's not possible to reach the last index, return -1.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "An integer representing the minimum number of jumps required to reach the last index, or -1 if it is not possible.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then jump 3 steps to the last index."
+      },
+      {
+        "input": "nums = [2, 3, 0, 1, 4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then jump 3 steps to the last index."
+      },
+      {
+        "input": "nums = [0, 1]",
+        "output": "-1",
+        "explanation": "You cannot jump anywhere from the first index, so it's impossible to reach the last index."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a greedy approach to track the maximum reachable index.",
+      "Keep a count of how many jumps you are making.",
+      "You may need to traverse through the array while updating your reachable index."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the height of elevation at each index, compute how much water can be trapped after raining.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming",
+      "Water Trapping"
+    ],
+    "input_format": "An array of integers height representing the elevation map.",
+    "output_format": "An integer representing the total amount of trapped rain water.",
+    "constraints": [
+      "0 <= height.length <= 2 * 10^4",
+      "0 <= height[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water trapped between the bars forms a total of 6 units."
+      },
+      {
+        "input": "height = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water trapped in this elevation map is 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two pointers to traverse the array from both ends.",
+      "Calculate the trapped water using the minimum of the maximum heights from both sides."
+    ],
+    "company": "Zepto"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Good Subarray Sum",
+    "description": "You are given an array of integers where each integer represents either a 'good' number (1) or a 'bad' number (0). Your task is to find the maximum sum of any continuous subarray that contains only 'good' numbers. A subarray is defined as a contiguous part of the array. If there are no 'good' numbers, return 0.",
+    "topic": "Array",
+    "subtopic": "Subarray",
+    "tags": [
+      "Array",
+      "Subarray",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An integer array nums consisting of 0s and 1s.",
+    "output_format": "An integer representing the maximum sum of a continuous subarray containing only 'good' numbers.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "nums[i] is either 0 or 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 0, 1, 1, 1, 0, 1]",
+        "output": "4",
+        "explanation": "The maximum subarray comprising only 'good' numbers is [1, 1, 1, 1], which has a sum of 4."
+      },
+      {
+        "input": "nums = [0, 0, 0]",
+        "output": "0",
+        "explanation": "There are no 'good' numbers in the array, so the maximum sum is 0."
+      },
+      {
+        "input": "nums = [1, 0, 1, 1, 0, 1]",
+        "output": "2",
+        "explanation": "The maximum subarray is [1, 1], which has a sum of 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window or a variant of Kadane's algorithm to track the maximum sum.",
+      "Consider cases with contiguous blocks of 'good' numbers separated by 'bad' numbers."
+    ],
+    "company": "Zepto"
+  }
+]

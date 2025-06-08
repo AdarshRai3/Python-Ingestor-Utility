@@ -1,0 +1,1572 @@
+[
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an array of integers nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting",
+      "Backtracking"
+    ],
+    "input_format": "An array of integers nums, where 0 <= nums.length <= 3000.",
+    "output_format": "A list of unique triplets, where each triplet is represented as a list of three integers.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The unique triplets that sum up to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "No triplets can be formed from an empty array."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "No triplets can sum up to zero with the given input."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array to facilitate finding triplets more easily.",
+      "Use a loop to fix one number and then apply a two-pointer approach for the other two.",
+      "Avoid duplicates by skipping the same number after processing."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Child Who Has the Ball After K Seconds",
+    "description": "There are n children standing in a circle, numbered from 0 to n - 1. Each child has a ball, and they pass it to the next child after a certain number of seconds. Given the integer n, the number of seconds k, and the initial holder of the ball, determine which child will have the ball after k seconds.",
+    "topic": "Math",
+    "subtopic": "Modular Arithmetic",
+    "tags": [
+      "Math",
+      "Simulation",
+      "Circle"
+    ],
+    "input_format": "Three integers n (number of children), k (number of seconds), and s (the initial child holding the ball).",
+    "output_format": "An integer representing the index of the child who has the ball after k seconds.",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= k <= 10^9",
+      "0 <= s < n"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, k = 2, s = 0",
+        "output": "2",
+        "explanation": "Starting at child 0, after 1 second, the ball goes to child 1, and after 2 seconds, it goes to child 2."
+      },
+      {
+        "input": "n = 3, k = 5, s = 1",
+        "output": "0",
+        "explanation": "Starting at child 1, the sequence of ball passes will be: 1 -> 2 -> 0 -> 1 -> 2 -> 0. After 5 seconds, the ball is with child 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use modular arithmetic to calculate the final position.",
+      "The child index can be found using (s + k) % n."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the stock prices on different days.",
+    "output_format": "An integer representing the maximum profit from the stock transactions.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate profit as prices[i] - min_price."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Capacity To Ship Packages Within D Days",
+    "description": "You have a loading dock and a certain number of packages to ship within D days. Each package has a weight and you must determine the minimum weight capacity of the loading dock required to ship all packages within the given number of days. Packages must be shipped in full, and the maximum weight capacity per day cannot be exceeded. Your task is to return the minimum weight capacity required to ship all packages within D days.",
+    "topic": "Binary Search",
+    "subtopic": "Capacity Planning",
+    "tags": [
+      "Binary Search",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array weights representing the weights of each package, and an integer D representing the number of days.",
+    "output_format": "An integer representing the minimum weight capacity required.",
+    "constraints": [
+      "1 <= weights.length <= 5 * 10^4",
+      "1 <= weights[i] <= 10^6",
+      "1 <= D <= 50000"
+    ],
+    "examples": [
+      {
+        "input": "weights = [1, 2, 3, 4, 5], D = 3",
+        "output": "6",
+        "explanation": "With a capacity of 6, you can ship packages [1, 2, 3] on day 1, and [4, 5] on day 2. This allows all packages to be shipped within 3 days."
+      },
+      {
+        "input": "weights = [3, 2, 2, 4, 1, 4], D = 3",
+        "output": "6",
+        "explanation": "A capacity of 6 allows you to ship [3, 2, 1] on day 1, [2, 4] on day 2, and any remaining on day 3."
+      },
+      {
+        "input": "weights = [1, 2, 3, 1, 1], D = 4",
+        "output": "3",
+        "explanation": "You can ship [1], [2], [3], and [1] on separate days, with a capacity of 3 being sufficient."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to identify the minimum capacity.",
+      "Try to calculate how many days it takes for a certain capacity."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within a string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Substring"
+    ],
+    "input_format": "A string s with length n (1 <= n <= 10^5).",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The answer is 'abc', with the length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The answer is 'b', with the length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The answer is 'wke', with the length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window technique.",
+      "Use a hash map to track characters and their indices.",
+      "Adjust the window size dynamically based on duplicate characters."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Absolute Difference",
+    "description": "Given a list of integers, find the minimum absolute difference between any two elements in the list. The absolute difference between two integers a and b is defined as |a - b|. If the list contains fewer than two elements, return -1.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Math"
+    ],
+    "input_format": "A list of integers nums.",
+    "output_format": "An integer representing the minimum absolute difference, or -1 if there are fewer than two elements.",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 8, 15, 2]",
+        "output": "1",
+        "explanation": "The closest pair of numbers are 2 and 3. Their absolute difference is |2 - 3| = 1."
+      },
+      {
+        "input": "nums = [10, 20, 30]",
+        "output": "10",
+        "explanation": "The closest pair of numbers are 20 and 30. Their absolute difference is |20 - 30| = 10."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "-1",
+        "explanation": "The list contains fewer than two elements."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Sort the array first.",
+      "Check differences between adjacent elements."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Daily Temperatures",
+    "description": "Given an array of daily temperatures, return an array such that, for each day in the input, tells you how many days you have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead.",
+    "topic": "Array",
+    "subtopic": "Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Monotonic Stack"
+    ],
+    "input_format": "An array of integers temperatures where 1 <= temperatures.length <= 30000 and 30 <= temperatures[i] <= 100.",
+    "output_format": "An array of integers representing the number of days until a warmer temperature for each day.",
+    "constraints": [
+      "1 <= temperatures.length <= 30000",
+      "30 <= temperatures[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "temperatures = [73, 74, 75, 71, 69, 72, 76, 73]",
+        "output": "[1, 1, 4, 2, 1, 1, 0, 0]",
+        "explanation": "For each day, we calculate the number of days until a warmer temperature."
+      },
+      {
+        "input": "temperatures = [30, 40, 50, 60]",
+        "output": "[1, 1, 1, 0]",
+        "explanation": "Each day has a warmer day in the next position except the last day."
+      },
+      {
+        "input": "temperatures = [100, 100, 100]",
+        "output": "[0, 0, 0]",
+        "explanation": "No days have a warmer temperature."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to keep track of indices of the temperatures."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Paths II",
+    "description": "A robot is located at the top-left corner of a m x n grid and needs to reach the bottom-right corner. The robot can only move down or right at any point in time, but some grid cells are obstacles that the robot cannot cross. Given an m x n grid with obstacles, return the number of unique paths from the top-left to the bottom-right corner. A cell is considered an obstacle if its value is 1 and free if its value is 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Paths",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Paths"
+    ],
+    "input_format": "A 2D array of integers grid of size m x n, where each element is either 0 (empty space) or 1 (obstacle).",
+    "output_format": "An integer representing the number of unique paths from the top-left to the bottom-right corner.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0,0,0],[0,1,0],[0,0,0]]",
+        "output": "2",
+        "explanation": "There are two unique paths to the bottom-right corner: (0,0) -> (0,1) -> (0,2) -> (1,2) -> (2,2) and (0,0) -> (1,0) -> (2,0) -> (2,1) -> (2,2)."
+      },
+      {
+        "input": "grid = [[0,1],[0,0]]",
+        "output": "1",
+        "explanation": "There is only one path to the bottom-right corner: (0,0) -> (1,0) -> (1,1)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider a dynamic programming approach to keep track of paths.",
+      "Use a 2D array to record the number of ways to each cell."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected. If two adjacent houses were robbed on the same night, the security system will automatically contact the police. Given an integer array `nums` representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.",
+    "topic": "Dynamic Programming",
+    "subtopic": "1D DP",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array nums where 1 <= nums.length <= 100 and 0 <= nums[i] <= 400.",
+    "output_format": "An integer representing the maximum amount of money that can be robbed.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 400"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 9, 3, 1]",
+        "output": "12",
+        "explanation": "Robbing house 1 (2) and house 3 (9) and house 5 (1) gives 2 + 9 + 1 = 12."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Robbing house 1 (1) and house 3 (3) gives 1 + 3 = 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the maximum amount of money that can be robbed at each house.",
+      "Use dynamic programming to store the result of subproblems.",
+      "Think about decisions: rob this house or skip it."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Triangle",
+    "description": "Given an array of integers representing the lengths of sticks, determine if it is possible to form a triangle with three of the lengths. To form a triangle, the sum of the lengths of any two sides must be greater than the length of the third side.",
+    "topic": "Geometry",
+    "subtopic": "Triangle Inequality",
+    "tags": [
+      "Geometry",
+      "Triangle",
+      "Inequality"
+    ],
+    "input_format": "An array of integers sticks, where each integer represents the length of a stick.",
+    "output_format": "Return true if a triangle can be formed, otherwise return false.",
+    "constraints": [
+      "3 <= sticks.length <= 10^4",
+      "1 <= sticks[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "sticks = [3, 4, 5]",
+        "output": "true",
+        "explanation": "The sides 3, 4, and 5 form a triangle since 3 + 4 > 5, 3 + 5 > 4, and 4 + 5 > 3."
+      },
+      {
+        "input": "sticks = [1, 2, 3]",
+        "output": "false",
+        "explanation": "The sides 1, 2, and 3 do not form a triangle since 1 + 2 is not greater than 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Check all combinations of three sticks to see if they satisfy the triangle inequality."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Brick Wall",
+    "description": "You are given a 2D array representing a wall of bricks, where each element represents the width of a brick. Each row of the wall is represented by an array of integers that represents the width of each brick in that row. The goal is to find the minimum number of vertical lines that intersect all rows. A vertical line is defined as the position (in between the bricks) where the line is drawn. It can only be drawn in the gaps between the bricks, not on bricks themselves. Your task is to find out this minimum number of lines required.",
+    "topic": "Array",
+    "subtopic": "2D Array Analysis",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Line Intersections"
+    ],
+    "input_format": "A 2D array of integers representing the wall of bricks.",
+    "output_format": "An integer representing the minimum number of vertical lines needed to intersect all rows.",
+    "constraints": [
+      "1 <= wall.length <= 2000",
+      "1 <= wall[i].length <= 1000",
+      "0 < wall[i][j] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "wall = [[2,1,2,1],[3,1,2],[2,2],[2,1,2,1]]",
+        "output": "2",
+        "explanation": "The optimal positions to place the vertical lines are at positions 2 and 3, intersecting all rows."
+      },
+      {
+        "input": "wall = [[1],[1],[1],[1]]",
+        "output": "4",
+        "explanation": "Each row is just one brick, so vertical lines would need to be placed at each position, totaling 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to store the widths of the gaps.",
+      "Think about how to eliminate possibilities based on your findings in the hashmap."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to Roman",
+    "description": "Given an integer, convert it to a Roman numeral. The input is guaranteed to be between 1 and 3999. Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. For example, 1 is represented as 'I', 2 is 'II', and 3 is 'III'. 4 is 'IV', because the one is before the five, and 6 is 'VI'. The number 9 is 'IX'. There are 12 symbols that combine to create others: 'IV' is 4, 'IX' is 9, 'XL' is 40, 'XC' is 90, 'CD' is 400, and 'CM' is 900. For example, 58 is 'LVIII', which is composed of 'L' (50), 'V' (5), and 'III' (3). 1994 is 'MCMXCIV', which is composed of 'M' (1000), 'CM' (900), 'XC' (90), and 'IV' (4).",
+    "topic": "Math",
+    "subtopic": "Conversion",
+    "tags": [
+      "Math",
+      "Strings",
+      "Conversion"
+    ],
+    "input_format": "An integer num representing the number to be converted to a Roman numeral.",
+    "output_format": "A string representing the Roman numeral equivalent of the input integer.",
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "examples": [
+      {
+        "input": "num = 3",
+        "output": "III",
+        "explanation": "3 is represented as 'III' in Roman numerals."
+      },
+      {
+        "input": "num = 58",
+        "output": "LVIII",
+        "explanation": "58 is represented as 'LVIII': L=50, V=5, III=3."
+      },
+      {
+        "input": "num = 1994",
+        "output": "MCMXCIV",
+        "explanation": "1994 is represented as 'MCMXCIV': M=1000, CM=900, XC=90, IV=4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider constructing the Roman numeral using the largest values first.",
+      "You can create a mapping of integers to their Roman numeral counterparts."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Coin Change",
+    "description": "You are given an array of integers coins representing coins of different denominations and an integer amount representing a total amount of money. You need to determine the fewest number of coins that you need to make up that amount. If that amount cannot be made up by any combination of the coins, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Coin Change Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Backtracking"
+    ],
+    "input_format": "An integer array coins[] and an integer amount.",
+    "output_format": "An integer representing the fewest number of coins to make the amount, or -1 if it is impossible.",
+    "constraints": [
+      "1 <= coins.length <= 12",
+      "1 <= coins[i] <= 2^31 - 1",
+      "0 <= amount <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "coins = [1, 2, 5], amount = 11",
+        "output": "3",
+        "explanation": "The minimum coins to make 11 is 3 (5 + 5 + 1)."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "-1",
+        "explanation": "It's not possible to make amount 3 with only coin of denomination 2."
+      },
+      {
+        "input": "coins = [1], amount = 0",
+        "output": "0",
+        "explanation": "No coins are needed to make amount 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to use a dynamic programming approach.",
+      "Think about how to store intermediate results to avoid recomputation."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Backspace String Compare",
+    "description": "Given two strings s and t, return true if they are equal when both are typed into empty text editors. '#', which represents a backspace, removes the character before it. Note that the input strings will not contain any leading or trailing '#' characters.",
+    "topic": "Strings",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Backspace",
+      "Compare"
+    ],
+    "input_format": "Two strings s and t.",
+    "output_format": "A boolean value indicating whether the processed strings are equal.",
+    "constraints": [
+      "1 <= s.length, t.length <= 200",
+      "s and t only contain lowercase letters and '#' characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'ab#c', t = 'ad#c'",
+        "output": "true",
+        "explanation": "After processing, both strings result in 'ac'."
+      },
+      {
+        "input": "s = 'ab##', t = 'c#d#'",
+        "output": "true",
+        "explanation": "After processing, both strings are empty."
+      },
+      {
+        "input": "s = 'a#c', t = 'b'",
+        "output": "false",
+        "explanation": "After processing, s becomes 'c' and t is 'b'. They are not equal."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a stack to simulate the typing process.",
+      "You can also use two pointers to compare processed strings."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Window Substring",
+    "description": "Given two strings s and t, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string \"\". The answer is guaranteed to be unique.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Table"
+    ],
+    "input_format": "Two strings s and t where 1 <= s.length, t.length <= 1000.",
+    "output_format": "A string representing the minimum window substring.",
+    "constraints": [
+      "1 <= s.length, t.length <= 1000",
+      "s and t consist of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"ADOBECODEBANC\", t = \"ABC\"",
+        "output": "\"BANC\"",
+        "explanation": "The minimum window substring of s that contains all characters of t is \"BANC\"."
+      },
+      {
+        "input": "s = \"a\", t = \"a\"",
+        "output": "\"a\"",
+        "explanation": "The minimum window substring of s that contains all characters of t is \"a\"."
+      },
+      {
+        "input": "s = \"a\", t = \"aa\"",
+        "output": "\"\"",
+        "explanation": "Since 'a' does not contain 'aa', the output is an empty string."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two pointers to represent the window.",
+      "Keep track of the characters' frequency using a hash table."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations in average O(1) time complexity: insert(val), remove(val), and getRandom(). Implement the RandomizedSet class to achieve this. Your class should support the following methods:\n\n- `bool insert(int val)`: Inserts an item val to the set if not already present. Returns true if the item is newly inserted, false otherwise.\n- `bool remove(int val)`: Removes an item val from the set if present. Returns true if the item was removed, false otherwise.\n- `int getRandom()`: Returns a random element from the current set of elements (it's guaranteed that at least one element exists when this method is called). Each element must have the same probability of being returned.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Hash Table",
+      "Randomized",
+      "Design"
+    ],
+    "input_format": "N/A",
+    "output_format": "N/A",
+    "constraints": [
+      "All operations are guaranteed to be valid and inputs will follow the constraints.",
+      "The inserted values will be unique.",
+      "Operations should be efficient with average O(1) time complexity."
+    ],
+    "examples": [
+      {
+        "input": "RandomizedSet obj = new RandomizedSet(); bool param_1 = obj.insert(1); bool param_2 = obj.remove(2); int param_3 = obj.insert(2); int param_4 = obj.getRandom(); bool param_5 = obj.remove(1); bool param_6 = obj.insert(2); int param_7 = obj.getRandom();",
+        "output": "[true,false,true,1,true,false,2]",
+        "explanation": "After inserting 1, the set contains [1]. Removing 2 returns false since it's not in the set. Inserting 2 adds it, so the set is now [1, 2]. getRandom() returns either 1 or 2. Removing 1 leaves us with [2], and inserting 2 again doesn't change it."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map for fast access.",
+      "Consider using an array to store the elements for random access.",
+      "A random function can help in picking a random index."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Next Greater Element I",
+    "description": "You are given two arrays of integers, nums1 and nums2, where nums1 is a subset of nums2. For each element x in nums1, you need to find the next greater element in nums2 that is to the right of x. If there is no such element, return -1 for that x. The result should be returned as an array of the same length as nums1.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Stack",
+      "Monotonic Stack"
+    ],
+    "input_format": "Two arrays of integers, nums1 and nums2 where nums1 is a subset of nums2.",
+    "output_format": "An array of integers representing the next greater element for each element in nums1.",
+    "constraints": [
+      "1 <= nums1.length <= 1000",
+      "1 <= nums2.length <= 1000",
+      "All integers in nums1 and nums2 are in the range [-10^4, 10^4]",
+      "All elements of nums1 are unique."
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [4, 1, 2], nums2 = [1, 3, 4, 2]",
+        "output": "-1, 3, -1",
+        "explanation": "For element 4 in nums1, there is no greater element in nums2, so the result is -1. For element 1, the next greater element is 3. For 2, there is no greater element, so the result is -1."
+      },
+      {
+        "input": "nums1 = [2, 4], nums2 = [1, 2, 3, 4]",
+        "output": "3, -1",
+        "explanation": "For element 2, the next greater element is 3. For element 4, there is no greater element, so the result is -1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a stack to keep track of elements for which you need to find the next greater element.",
+      "Process the nums2 array from right to left for easier management."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Smallest Divisor Given a Threshold",
+    "description": "Given an array of positive integers nums and an integer threshold, you need to find the smallest positive integer divisor such that the sum of the division of each element in the array by this divisor is less than or equal to the threshold. The division is performed using integer division. If no such divisor exists, return -1.",
+    "topic": "Binary Search",
+    "subtopic": "Searching",
+    "tags": [
+      "Binary Search",
+      "Math",
+      "Greedy"
+    ],
+    "input_format": "An array of positive integers nums and an integer threshold.",
+    "output_format": "An integer representing the smallest positive divisor.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^6",
+      "1 <= threshold <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 5, 9], threshold = 6",
+        "output": "5",
+        "explanation": "The divisor 5 gives us (1/5) + (2/5) + (5/5) + (9/5) = 0 + 0 + 1 + 1 = 2, which is less than the threshold."
+      },
+      {
+        "input": "nums = [44, 22, 33, 11], threshold = 5",
+        "output": "6",
+        "explanation": "The divisor 6 gives us (44/6) + (22/6) + (33/6) + (11/6) = 7 + 3 + 5 + 1 = 16, which is greater than the threshold. The smallest divisor is 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using binary search to efficiently find the divisor.",
+      "Remember to handle the integer division correctly.",
+      "Check divisors starting from 1 upwards."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock II",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the i-th day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you may make as many transactions as you like (i.e., buy one and sell multiple times). Note that you cannot engage in multiple transactions simultaneously (you must sell the stock before you buy again).",
+    "topic": "Greedy",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Stock",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers prices where 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 3 * 10^4",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5 - 1 = 4. Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6 - 3 = 3. Total profit = 4 + 3 = 7."
+      },
+      {
+        "input": "prices = [1, 2, 3, 4, 5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5 - 1 = 4."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "No transactions are done since the prices are in decreasing order."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Calculate profit only when the next day's price is higher than today's.",
+      "You can keep buying and selling if there's a profit to be made."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Squares of a Sorted Array",
+    "description": "Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing the squares of nums sorted in non-decreasing order.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-4, -1, 0, 3, 10]",
+        "output": "[0, 1, 9, 16, 100]",
+        "explanation": "The squares are [16, 1, 0, 9, 100]. Sorting gives us [0, 1, 9, 16, 100]."
+      },
+      {
+        "input": "nums = [-7, -3, 2, 3, 11]",
+        "output": "[4, 9, 9, 49, 121]",
+        "explanation": "The squares are [49, 9, 4, 9, 121]. Sorting gives us [4, 9, 9, 49, 121]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a two-pointer approach to optimize your solution.",
+      "Remember that squaring negative numbers will give positive results."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Subarray Product Less Than K",
+    "description": "Given an array of positive integers nums and a positive integer k, return the number of contiguous subarrays where the product of all the elements in the subarray is strictly less than k.",
+    "topic": "Array",
+    "subtopic": "Subarrays",
+    "tags": [
+      "Array",
+      "Subarray",
+      "Two Pointers"
+    ],
+    "input_format": "An array of positive integers nums and a positive integer k.",
+    "output_format": "An integer representing the number of contiguous subarrays with product less than k.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "1 <= nums[i] <= 1000",
+      "1 <= k <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 5, 2, 6], k = 100",
+        "output": "8",
+        "explanation": "The subarrays with products less than 100 are: [10], [5], [2], [6], [10, 5], [5, 2], [2, 6], [10, 5, 2]."
+      },
+      {
+        "input": "nums = [1, 2, 3], k = 0",
+        "output": "0",
+        "explanation": "No subarray product can be less than 0 since all elements are positive."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window approach with two pointers.",
+      "Keep track of the product and adjust the left pointer when the product exceeds k."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Permutation in String",
+    "description": "Given two strings s1 and s2, write a function to determine if s2 contains a permutation of s1. In other words, you need to check if one of the permutations of s1 is present in s2. The order of the characters matters, but the order of the strings does not.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Permutation",
+      "Sliding Window"
+    ],
+    "input_format": "Two strings s1 and s2, where 1 <= s1.length <= 1000 and 1 <= s2.length <= 10^4.",
+    "output_format": "A boolean value indicating whether a permutation of s1 exists in s2.",
+    "constraints": [
+      "s1 and s2 consist of lowercase English letters.",
+      "s1.length <= s2.length."
+    ],
+    "examples": [
+      {
+        "input": "s1 = 'ab', s2 = 'eidbaooo'",
+        "output": "true",
+        "explanation": "'ba' is a permutation of 'ab' and is present in 'eidbaooo'."
+      },
+      {
+        "input": "s1 = 'ab', s2 = 'eidboaoo'",
+        "output": "false",
+        "explanation": "No permutation of 'ab' is present in 'eidboaoo'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a frequency count for characters.",
+      "You may use a sliding window to compare substrings."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n representing the number of elements in nums1 and nums2 respectively. Merge nums2 into nums1 as one sorted array. The function should modify nums1 in-place to hold the result.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Sorting",
+      "In-place"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2, and two integers m and n.",
+    "output_format": "The modified nums1 array that is sorted.",
+    "constraints": [
+      "1 <= m, n <= 200",
+      "0 <= nums1.length <= m + n",
+      "0 <= nums1[i], nums2[j] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [2, 5, 6], n = 3",
+        "output": "[1, 2, 2, 3, 5, 6]",
+        "explanation": "After merging, the sorted array is [1, 2, 2, 3, 5, 6]."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "There are no elements in nums2 to merge, so nums1 remains unchanged."
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "explanation": "After merging, the sorted array is [1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a reverse traversal for merging.",
+      "Keep track of the last position in nums1."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers 'nums' and an integer 'target', return the indices of the two numbers such that they add up to 'target'. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9",
+      "Assume that there is exactly one solution and you may not use the same element twice."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] == 2 + 7 == 9, so we return [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] == 2 + 4 == 6, so we return [1, 2]."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] == 3 + 3 == 6, so we return [0, 1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the difference between target and each number.",
+      "Check if the current number is present in the hash map."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. An interval is represented as an array of two integers [start, end], where 'start' is less than or equal to 'end'. The merged intervals should not overlap, meaning that if an interval starts before another interval ends, those intervals should be merged into a single interval.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Merging"
+    ],
+    "input_format": "A list of intervals where each interval is represented as a list of two integers [start, end].",
+    "output_format": "A list of merged intervals, where each interval is represented as a list of two integers [start, end].",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they are merged into [1,6]. The other intervals are not overlapping."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] overlap at 4, so they are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the start time.",
+      "Use a list to store merged intervals and compare the current interval with the last added interval."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Lexicographically Smallest String After Substring Operation",
+    "description": "Given a string s, you can perform the following operation any number of times: choose a substring and replace it with another string t. Your goal is to determine the lexicographically smallest string that can be obtained after performing these operations. Return this smallest string.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Greedy"
+    ],
+    "input_format": "A string s of lowercase English letters and a string t of lowercase English letters.",
+    "output_format": "A string representing the lexicographically smallest string after performing substring operations.",
+    "constraints": [
+      "1 <= s.length, t.length <= 1000",
+      "s and t consist of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "s = \"bcd\", t = \"a\"",
+        "output": "acd",
+        "explanation": "Replacing 'b' with 'a' gives us 'acd', which is lexicographically smaller than 'bcd'."
+      },
+      {
+        "input": "s = \"aaa\", t = \"z\"",
+        "output": "aaa",
+        "explanation": "Any operation will result in 'aaa' being the smallest as replacing 'a' with 'z' does not yield a smaller string."
+      },
+      {
+        "input": "s = \"xyz\", t = \"ab\"",
+        "output": "abz",
+        "explanation": "Replacing 'x' with 'ab' gives 'abz', which is lexicographically smaller than 'xyz'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the effect of replacing different substrings and how it affects the overall string order.",
+      "Think about greedy approaches when forming the smallest string."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A palindrome is a string that reads the same forwards and backwards. If there are multiple longest palindromic substrings, return any of them.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s, where 1 <= s.length <= 1000.",
+    "output_format": "A string representing the longest palindromic substring.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only digits and English letters."
+    ],
+    "examples": [
+      {
+        "input": "babad",
+        "output": "bab",
+        "explanation": "Both 'bab' and 'aba' are valid longest palindromic substrings."
+      },
+      {
+        "input": "cbbd",
+        "output": "bb",
+        "explanation": "'bb' is the only longest palindromic substring."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around the center of each character.",
+      "You can treat the case of even-length palindromes as well.",
+      "Use dynamic programming to store the results of subproblems."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Decode String",
+    "description": "Given an encoded string, return its decoded string. The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. You may assume that the input string is always valid, no extra white spaces, and k is a positive integer. Further, you can assume that the input will not exceed 10^4 characters.",
+    "topic": "String",
+    "subtopic": "Decoding",
+    "tags": [
+      "String",
+      "Decoding",
+      "Stack"
+    ],
+    "input_format": "A single string s representing the encoded string.",
+    "output_format": "A string representing the decoded result.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of digits, lowercase English letters, and square brackets."
+    ],
+    "examples": [
+      {
+        "input": "s = '3[a2[c]]'",
+        "output": "accaccacc",
+        "explanation": "The decoded string is created as follows: '2[c]' decodes to 'cc', and then '3[a2[c]]' decodes to 'accaccacc'."
+      },
+      {
+        "input": "s = '2[abc]3[cd]ef'",
+        "output": "abcabccdcdcdef",
+        "explanation": "The decoded string is created as follows: '2[abc]' decodes to 'abcabc', '3[cd]' decodes to 'cdcdcd', and putting it all together gives 'abcabccdcdcdef'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to help with bracket matching.",
+      "Keep track of the count of digits while building the string.",
+      "Handle nested structures carefully."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Substrings Between Each Pair of Parentheses",
+    "description": "Given a string s that consists of lowercase English letters and parentheses, reverse the substrings that are between each pair of parentheses, starting from the innermost pair. You need to return the resulting string after all reversals. If there are no parentheses, the string should remain unchanged.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Parentheses"
+    ],
+    "input_format": "A single string s consisting of lowercase English letters and parentheses.",
+    "output_format": "A string after reversing all substrings between each pair of parentheses.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of only lowercase English letters and parentheses."
+    ],
+    "examples": [
+      {
+        "input": "a(bcdefghijkl(mno)p)q",
+        "output": "apmnolkjihgfedcbq",
+        "explanation": "The innermost parentheses are (mno), which becomes (onm). Then (bcdefghijkl(onm)) becomes (lkjihgfedcb). Finally, the entire string becomes: apmnolkjihgfedcbq."
+      },
+      {
+        "input": "x(y(z))w",
+        "output": "xyzw",
+        "explanation": "Innermost (z) becomes z, then (y(z)) becomes (zy), and finally the whole string becomes: xyzw."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the current substring and parentheses.",
+      "Reverse the substrings when closing parentheses are encountered."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game II",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Your goal is to find the minimum number of jumps needed to reach the last index. If it is not possible to reach the last index, return -1.",
+    "topic": "Greedy",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Greedy",
+      "Dynamic Programming",
+      "Array"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "An integer representing the minimum number of jumps to reach the last index, or -1 if unreachable.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then 2 steps to reach the last index."
+      },
+      {
+        "input": "nums = [2, 1]",
+        "output": "1",
+        "explanation": "Jump from index 0 to 1 to reach the last index."
+      },
+      {
+        "input": "nums = [0, 1]",
+        "output": "-1",
+        "explanation": "It's not possible to jump to the last index as the first position has a jump length of 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a greedy approach to minimize jumps.",
+      "Try to keep track of the farthest position you can reach."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Move Zeroes",
+    "description": "Given an array of integers `nums`, move all 0's to the end of it while maintaining the relative order of the non-zero elements. Note that you must do this in-place without making a copy of the array.",
+    "topic": "Array",
+    "subtopic": "In-place Manipulation",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "The modified array with all zeros moved to the end.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0,1,0,3,12]",
+        "output": "[1,3,12,0,0]",
+        "explanation": "The non-zero elements maintain their relative order while all 0's are moved to the end."
+      },
+      {
+        "input": "nums = [0,0,1]",
+        "output": "[1,0,0]",
+        "explanation": "Here, 1 comes before the two zeros maintaining the order."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to separate zeros and non-zero elements.",
+      "Iterate through the array and track the position to place non-zero elements."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Array by Increasing Frequency",
+    "description": "Given an array of integers, sort the array in ascending order based on the frequency of the elements. If two elements have the same frequency, sort them in ascending order numerically. Return the sorted array.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Frequency"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A sorted array of integers.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2, 2, 2, 3]",
+        "output": "[3, 1, 1, 2, 2, 2]",
+        "explanation": "Number 3 occurs once, number 1 occurs twice, and number 2 occurs three times. Hence, 3 comes first followed by 1s and 2s."
+      },
+      {
+        "input": "nums = [1, 2, 3, 3, 2, 1, 4]",
+        "output": "[4, 1, 1, 2, 2, 3, 3]",
+        "explanation": "Number 4 occurs once, number 1 occurs twice, number 2 occurs twice, and number 3 occurs twice. Since 4 occurs the least, it comes first, followed by 1s, 2s, and 3s."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hashmap to count the frequency of each number.",
+      "Sort the array using a custom comparator based on frequency and value."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Can Place Flowers",
+    "description": "You have a flowerbed represented as a binary array, where 0 represents an empty plot of land and 1 represents a flower. In order to plant a new flower in the flowerbed, you must ensure that no two flowers are adjacent to each other. Given the flowerbed and the number of new flowers you want to plant, determine if you can plant all the new flowers without violating the no-adjacent-flowers rule.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Simulation"
+    ],
+    "input_format": "An array of integers flowerbed, followed by an integer n representing the number of new flowers to plant.",
+    "output_format": "A boolean value indicating whether you can plant all n flowers in the flowerbed.",
+    "constraints": [
+      "0 <= flowerbed.length <= 20000",
+      "flowerbed[i] is 0 or 1",
+      "0 <= n <= flowerbed.length"
+    ],
+    "examples": [
+      {
+        "input": "[1, 0, 0, 0, 1], 1",
+        "output": "true",
+        "explanation": "You can plant a flower in the middle of the flowerbed (at index 1) since there are no adjacent flowers."
+      },
+      {
+        "input": "[1, 0, 0, 0, 1], 2",
+        "output": "false",
+        "explanation": "You cannot plant two flowers because they would be adjacent."
+      },
+      {
+        "input": "[0, 0, 1, 0, 0], 2",
+        "output": "true",
+        "explanation": "You can plant flowers at index 0 and index 4."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the cases where you can plant flowers at the beginning and end of the flowerbed.",
+      "Iterate through the flowerbed while checking conditions for planting."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Find Median from Data Stream",
+    "description": "Design a data structure that supports the following two operations: addNum and findMedian. Implement the addNum method to add a new number from the data stream to the data structure. The findMedian method should return the median of all elements in the data structure. The median is defined as follows: If the list contains an odd number of elements, the median is the middle element. If the list contains an even number of elements, the median is the average of the two middle elements.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Heap",
+      "Design",
+      "Median"
+    ],
+    "input_format": "The input should consist of a sequence of numbers added to the data structure and a request to find the median.",
+    "output_format": "The output should be the median of all numbers added so far.",
+    "constraints": [
+      "1 <= numbers <= 10^5",
+      "Each number will be between -10^5 and 10^5"
+    ],
+    "examples": [
+      {
+        "input": [
+          "addNum(1)",
+          "addNum(2)",
+          "findMedian()"
+        ],
+        "output": "1.5",
+        "explanation": "Adding 1 and 2 gives a list of [1, 2]. The median is (1 + 2) / 2 = 1.5."
+      },
+      {
+        "input": [
+          "addNum(3)",
+          "findMedian()"
+        ],
+        "output": "2",
+        "explanation": "Adding 3 gives a list of [1, 2, 3]. The median is 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two heaps to keep track of the lower and upper halves of the numbers.",
+      "The maximum of the lower half and the minimum of the upper half are crucial in calculating the median."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Smallest Element in a BST",
+    "description": "Given a binary search tree (BST), write a function to find the kth smallest element in it. You may assume that there are at least k elements in the BST.",
+    "topic": "Binary Search Tree",
+    "subtopic": "In-order Traversal",
+    "tags": [
+      "BST",
+      "Traversal",
+      "Binary Tree"
+    ],
+    "input_format": "The input consists of the root of a binary search tree and an integer k.",
+    "output_format": "An integer representing the kth smallest element in the BST.",
+    "constraints": [
+      "The number of nodes in the BST is n (1 <= n <= 10^4).",
+      "1 <= k <= n."
+    ],
+    "examples": [
+      {
+        "input": "root = [3,1,4,null,2], k = 1",
+        "output": "1",
+        "explanation": "In the BST, the smallest element is 1."
+      },
+      {
+        "input": "root = [5,3,6,2,4,null,null,1], k = 3",
+        "output": "3",
+        "explanation": "In the in-order traversal, the elements are [1, 2, 3, 4, 5, 6]. The 3rd smallest is 3."
+      },
+      {
+        "input": "root = [2,1,3], k = 2",
+        "output": "2",
+        "explanation": "In the in-order traversal, the elements are [1, 2, 3]. The 2nd smallest is 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use an in-order traversal to retrieve the elements in sorted order.",
+      "Keep a count of how many elements you've seen so far."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "There are 'n' courses you have to take, labeled from 0 to n-1. Some courses may have prerequisites, which means you must take certain courses before you can take others. Given the number of courses and a list of prerequisite pairs, determine if it is possible for you to finish all courses. A prerequisite pair 'a, b' indicates that you must take course 'b' before course 'a'.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS"
+    ],
+    "input_format": "An integer n representing the number of courses, and a list of prerequisite pairs.",
+    "output_format": "A boolean value indicating whether it's possible to finish all courses.",
+    "constraints": [
+      "1 <= n <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "n = 2, prerequisites = [[1, 0]]",
+        "output": "true",
+        "explanation": "You can take course 0 first and then take course 1."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1, 0], [0, 1]]",
+        "output": "false",
+        "explanation": "You cannot take both courses due to circular dependency."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a graph representation.",
+      "You may want to track the number of incoming edges for each course."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Plus One",
+    "description": "You are given a non-empty array of digits representing a non-negative integer. The digits are stored such that the most significant digit is at the head of the list, and each element in the array is a digit. The integer does not contain any leading zeros, except for the number 0 itself. You need to add one to the integer represented by the array and return the resulting array of digits.",
+    "topic": "Array",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Array",
+      "Math",
+      "Simulate"
+    ],
+    "input_format": "An array of integers `digits` where 0 <= digits[i] <= 9.",
+    "output_format": "An array of integers representing the digits of the resulting integer after adding one.",
+    "constraints": [
+      "1 <= digits.length <= 100",
+      "0 <= digits[i] <= 9",
+      "digits[0] != 0"
+    ],
+    "examples": [
+      {
+        "input": "digits = [1, 2, 3]",
+        "output": "[1, 2, 4]",
+        "explanation": "Adding one to 123 results in 124."
+      },
+      {
+        "input": "digits = [9, 9, 9]",
+        "output": "[1, 0, 0, 0]",
+        "explanation": "Adding one to 999 results in 1000."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how to manage carries when adding one.",
+      "You may need to expand the array if there is a carry from the most significant digit."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Anagrams"
+    ],
+    "input_format": "An array of strings 'strs'.",
+    "output_format": "A list of lists, where each sublist contains grouped anagrams.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The anagrams are grouped together. 'bat' is alone, 'nat' and 'tan' are anagrams, and 'ate', 'eat', and 'tea' form another group."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "The input has an empty string which is an anagram of itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "Single character strings are anagrams of themselves."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to store groups of anagrams.",
+      "Sorting the string can help to identify anagrams."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string consisting of just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string containing only the characters '(', ')', '{', '}', '[' and ']'",
+    "output_format": "A boolean value indicating whether the input string is valid.",
+    "constraints": [
+      "1 <= s.length <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The brackets are correctly matched and closed."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "All pairs of brackets are correctly matched and closed."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The parentheses are not correctly matched."
+      },
+      {
+        "input": "s = '({[()]})'",
+        "output": "true",
+        "explanation": "All types of brackets are correctly matched and closed."
+      },
+      {
+        "input": "s = '([)]'",
+        "output": "false",
+        "explanation": "The brackets are not closed in the correct order."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Check for matching pairs between the top of the stack and closing brackets."
+    ],
+    "company": "Agoda"
+  },
+  {
+    "question_id": "",
+    "title": "Find Pivot Index",
+    "description": "Given an array of integers, you need to find the pivot index of this array. The pivot index is defined as the index where the sum of all the numbers to the left is equal to the sum of all the numbers to the right. If no such index exists, return -1. If there are multiple pivot indices, return the leftmost one.",
+    "topic": "Array",
+    "subtopic": "Prefix Sums",
+    "tags": [
+      "Array",
+      "Prefix Sum",
+      "Searching"
+    ],
+    "input_format": "An array of integers, nums.",
+    "output_format": "An integer representing the pivot index, or -1 if no such index exists.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 7, 3, 6, 5, 6]",
+        "output": "3",
+        "explanation": "The sum of the elements to the left of index 3 (1 + 7 + 3) is 11, and the sum of the elements to the right (5 + 6) is also 11."
+      },
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "-1",
+        "explanation": "There is no index in the array where the left side sum equals the right side sum."
+      },
+      {
+        "input": "nums = [2, 1, -1]",
+        "output": "0",
+        "explanation": "The sum of elements to the left of index 0 is 0, and the sum of elements to the right (1 + -1) is also 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Calculate the total sum of the array.",
+      "Use a running sum to compare left and right sums.",
+      "Update the running sum as you iterate through the array."
+    ],
+    "company": "Agoda"
+  }
+]

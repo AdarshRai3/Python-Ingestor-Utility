@@ -1,0 +1,288 @@
+[
+  {
+    "question_id": "",
+    "title": "Isomorphic Strings",
+    "description": "Two strings are called isomorphic if the characters in one string can be replaced to get the second string. All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself. Write a function to determine if two given strings are isomorphic.",
+    "topic": "String",
+    "subtopic": "Mapping Characters",
+    "tags": [
+      "String",
+      "Isomorphic",
+      "Mapping"
+    ],
+    "input_format": "Two strings s and t, both of length n.",
+    "output_format": "A boolean value indicating whether the two strings are isomorphic.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "s and t consist of any printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"egg\", t = \"add\"",
+        "output": "true",
+        "explanation": "The character 'e' maps to 'a' and 'g' maps to 'd'."
+      },
+      {
+        "input": "s = \"foo\", t = \"add\"",
+        "output": "false",
+        "explanation": "The character 'f' cannot map to both 'a' and 'd'."
+      },
+      {
+        "input": "s = \"paper\", t = \"title\"",
+        "output": "true",
+        "explanation": "The character 'p' maps to 't', 'a' maps to 'i', 'e' maps to 'l', and 'r' maps to 'e'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hashmap to track character mappings.",
+      "Remember to check both forward and backward mappings."
+    ],
+    "company": "Remitly"
+  },
+  {
+    "question_id": "",
+    "title": "Task Scheduler II",
+    "description": "You are given a list of tasks and a non-negative integer n representing the cooldown period between two same tasks. Your goal is to determine the minimum time required to finish all tasks, where each unit of time can either execute a task or wait for the cooldown. The function should return the minimum time required to schedule all tasks while respecting the cooldown time constraint.",
+    "topic": "Greedy",
+    "subtopic": "Task Scheduling",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Task Scheduling"
+    ],
+    "input_format": "An array of characters tasks representing the tasks to be scheduled and an integer n for the cooldown duration.",
+    "output_format": "An integer representing the minimum time required to finish all tasks.",
+    "constraints": [
+      "1 <= tasks.length <= 10^4",
+      "0 <= n <= 26",
+      "tasks[i] is an uppercase English letter."
+    ],
+    "examples": [
+      {
+        "input": "tasks = ['A', 'A', 'A', 'B', 'B', 'B'], n = 2",
+        "output": "8",
+        "explanation": "We can execute tasks in this order: A -> B -> idle -> A -> B -> idle -> A -> B, so it takes a total of 8 units of time."
+      },
+      {
+        "input": "tasks = ['A', 'A', 'A', 'B', 'B', 'B'], n = 0",
+        "output": "6",
+        "explanation": "With no cooldown required, we can execute all tasks in succession, taking 6 units of time."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count the frequency of each task and find the most common one.",
+      "Consider the cooldown effect on task scheduling."
+    ],
+    "company": "Remitly"
+  },
+  {
+    "question_id": "",
+    "title": "Design Search Autocomplete System",
+    "description": "Implement a search autocomplete system that can predict and suggest possible auto-completions for a given input string. The system should store a list of sentences and provide suggestions based on the prefix of the input string. If there are no suggestions available for a given prefix, return an empty list. The suggestions should be ordered by their frequency of use and, in case of ties, by lexicographic order.",
+    "topic": "String",
+    "subtopic": "Trie",
+    "tags": [
+      "Trie",
+      "Design",
+      "String Manipulation"
+    ],
+    "input_format": "A list of sentences and a string input representing the prefix.",
+    "output_format": "A list of up to three suggested sentences that match the prefix.",
+    "constraints": [
+      "1 <= sentences.length <= 1000",
+      "1 <= sentences[i].length <= 100",
+      "1 <= input.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "sentences": [
+            "i love you",
+            "island",
+            "ironman",
+            "i love leetcode"
+          ],
+          "input": "i"
+        },
+        "output": [
+          "i love you",
+          "i love leetcode",
+          "island"
+        ],
+        "explanation": "The prefix 'i' matches with 'i love you', 'i love leetcode', and 'island'. They are sorted by frequency and then lexicographically."
+      },
+      {
+        "input": {
+          "sentences": [
+            "we the best",
+            "we are family",
+            "we play games"
+          ],
+          "input": "we"
+        },
+        "output": [
+          "we are family",
+          "we play games",
+          "we the best"
+        ],
+        "explanation": "The prefix 'we' matches with the sentences, sorted by frequency and then lexicographically."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a Trie data structure to store sentences and facilitate prefix searching.",
+      "Keep track of the frequency of each sentence to manage the ordering of suggestions.",
+      "Use a priority queue or sorting mechanism to extract the top three suggestions."
+    ],
+    "company": "Remitly"
+  },
+  {
+    "question_id": "",
+    "title": "Task Scheduler",
+    "description": "Given a list of tasks represented by uppercase letters, you need to schedule them such that the same tasks do not appear consecutively unless they are separated by a cooldown period. You must also return the minimum time required to execute all tasks. Each task takes one unit of time to complete, and the cooldown period is represented by a non-negative integer 'n'.",
+    "topic": "Greedy",
+    "subtopic": "Task Scheduling",
+    "tags": [
+      "Greedy",
+      "Scheduling",
+      "Priority Queue"
+    ],
+    "input_format": "An array of characters tasks representing the tasks and an integer n representing the cooldown period.",
+    "output_format": "An integer representing the minimum time required to schedule all tasks adhering to the cooldown period.",
+    "constraints": [
+      "1 <= tasks.length <= 10^4",
+      "0 <= n <= tasks.length",
+      "tasks[i] is an uppercase letter."
+    ],
+    "examples": [
+      {
+        "input": "tasks = ['A', 'A', 'A', 'B', 'B', 'B'], n = 2",
+        "output": "8",
+        "explanation": "One possible way to schedule is A -> B -> idle -> A -> B -> idle -> A -> B. This takes a total of 8 time units."
+      },
+      {
+        "input": "tasks = ['A', 'A', 'A', 'B', 'B', 'B'], n = 0",
+        "output": "6",
+        "explanation": "Since there is no cooldown period, tasks can be executed back to back, resulting in a total of 6 time units."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a frequency count to determine how often each task appears.",
+      "Consider how to reorganize tasks to minimize idle time."
+    ],
+    "company": "Remitly"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array `prices` where `prices[i]` is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where 0 <= prices.length <= 10^5.",
+    "output_format": "An integer representing the maximum profit.",
+    "constraints": [
+      "0 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate profit at each step and update the maximum profit if it's greater."
+    ],
+    "company": "Remitly"
+  },
+  {
+    "question_id": "",
+    "title": "Random Pick with Weight",
+    "description": "You are given an integer array 'w' where 'w[i]' is the weight of the ith element. You need to implement a function that picks an index randomly from the array 'w', where the probability of picking an index 'i' is proportional to 'w[i]'. This function should support picking an index multiple times. Your goal is to create a class that can generate a weighted random index efficiently.",
+    "topic": "Design",
+    "subtopic": "Randomized Algorithms",
+    "tags": [
+      "Array",
+      "Random",
+      "Probability"
+    ],
+    "input_format": "An integer array 'w' where 1 <= w.length <= 10^4 and 1 <= w[i] <= 10^6.",
+    "output_format": "An integer which is the index of the chosen element in the array 'w'.",
+    "constraints": [
+      "Length of w should not exceed 10^4.",
+      "The sum of all weights will not exceed 2^31 - 1."
+    ],
+    "examples": [
+      {
+        "input": "w = [1, 3]",
+        "output": "You could return 0 with probability 0.25, and return 1 with probability 0.75.",
+        "explanation": "Here, the weight of the first index is 1 and the second index is 3, giving more likelihood to choose the second index."
+      },
+      {
+        "input": "w = [2, 5, 3]",
+        "output": "You could return 1 with a higher probability than the other indices.",
+        "explanation": "In this case, the index 1 has the highest weight (5) compared to the other indices (2 and 3), hence it has the highest chance of being returned."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using prefix sums for efficient querying.",
+      "A binary search can help in finding the correct index based on cumulative weights."
+    ],
+    "company": "Remitly"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule II",
+    "description": "There are a total of 'n' courses you have to take, labeled from 0 to n-1. Some courses may have prerequisites, which are represented as pairs [a, b] meaning you must take course 'b' before course 'a'. Given the total number of courses 'n' and a list of prerequisite pairs, return the order of courses you should take to finish all courses. If it is not possible to finish all courses, return an empty array.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS"
+    ],
+    "input_format": "An integer n and a list of prerequisite pairs.",
+    "output_format": "A list of integers representing the order of courses.",
+    "constraints": [
+      "1 <= n <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, prerequisites = [[1,0],[2,1],[3,2]]",
+        "output": "[0,1,2,3]",
+        "explanation": "Taking course 0 first, followed by 1, then 2, and finally 3."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "[]",
+        "explanation": "There is a cycle: course 0 requires course 1, and course 1 requires course 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use Depth First Search to detect cycles.",
+      "Track the visited state of each course.",
+      "Use a stack to maintain the order of courses."
+    ],
+    "company": "Remitly"
+  }
+]

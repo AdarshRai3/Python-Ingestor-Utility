@@ -1,0 +1,175 @@
+[
+  {
+    "question_id": "",
+    "title": "Determine if Two Strings Are Close",
+    "description": "Given two strings, you need to determine if they are 'close'. Two strings are considered 'close' if you can obtain one string from the other by rearranging letters and possibly replacing some letters with others. More formally, two strings are close if they satisfy the following conditions:\n1. Both strings have the same length.\n2. Both strings contain the same set of unique characters.\n3. The frequency of each unique character in both strings can be rearranged to match each other.\n\nYou should implement a function that takes in two strings and returns a boolean indicating whether the strings are close.",
+    "topic": "String",
+    "subtopic": "Character Frequency",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Frequency Count"
+    ],
+    "input_format": "Two strings, str1 and str2, where 1 <= str1.length, str2.length <= 10^5.",
+    "output_format": "A boolean value: true if the two strings are close, false otherwise.",
+    "constraints": [
+      "1 <= str1.length, str2.length <= 10^5",
+      "Both strings contain lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "str1 = 'abc', str2 = 'bca'",
+        "output": "true",
+        "explanation": "Both strings have the same characters a, b, c and the same frequencies."
+      },
+      {
+        "input": "str1 = 'aabbcc', str2 = 'abcabc'",
+        "output": "true",
+        "explanation": "Both strings have the characters a, b, c and their frequencies can be rearranged."
+      },
+      {
+        "input": "str1 = 'abc', str2 = 'abcd'",
+        "output": "false",
+        "explanation": "The lengths are different, so they cannot be close."
+      },
+      {
+        "input": "str1 = 'aabb', str2 = 'abcc'",
+        "output": "false",
+        "explanation": "Even though both strings contain the same characters, their frequencies do not match."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Check if the lengths of the strings are the same.",
+      "Use frequency counts to compare characters."
+    ],
+    "company": "Postmates"
+  },
+  {
+    "question_id": "",
+    "title": "Most Beautiful Item for Each Query",
+    "description": "You are given an array of items, each represented by an integer value indicating its beauty. For each query, which is a range defined by two indices (left, right), you need to find the most beautiful item in that range. If there are multiple items with the same maximum beauty, return the one with the highest index. If the left index is greater than the right index, return -1 for that query.",
+    "topic": "Array",
+    "subtopic": "Range Queries",
+    "tags": [
+      "Array",
+      "Queries",
+      "Max"
+    ],
+    "input_format": "An array of integers representing items' beauty, followed by an array of queries, where each query is represented as a pair of integers [left, right].",
+    "output_format": "An array of integers representing the most beautiful item for each query.",
+    "constraints": [
+      "1 <= items.length <= 10^5",
+      "1 <= queries.length <= 10^4",
+      "0 <= left <= right < items.length",
+      "0 <= items[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": {
+          "items": [
+            5,
+            1,
+            4,
+            7,
+            3
+          ],
+          "queries": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              0,
+              4
+            ]
+          ]
+        },
+        "output": [
+          5,
+          4,
+          7
+        ],
+        "explanation": "For the first query [0, 2], the most beautiful item is 5. For [1, 4], the maximum is 4, and for [0, 4], the maximum is 7."
+      },
+      {
+        "input": {
+          "items": [
+            1,
+            2,
+            3,
+            4,
+            2
+          ],
+          "queries": [
+            [
+              0,
+              1
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              2,
+              1
+            ]
+          ]
+        },
+        "output": [
+          2,
+          2,
+          -1
+        ],
+        "explanation": "For the first query, max beauty is 2. Query [4,4] has max 2, and [2,1] is invalid hence -1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a data structure to maintain the maximum value in a range efficiently.",
+      "Use a brute-force method for smaller inputs to understand the problem before optimizing."
+    ],
+    "company": "Postmates"
+  },
+  {
+    "question_id": "",
+    "title": "Find the K-Beauty of a Number",
+    "description": "The K-Beauty of a number is defined as the count of its divisors that are also k-digits long. Write a function to calculate the K-Beauty of a given integer n. A divisor is a number that evenly divides another number. A k-digit number is defined as a number that has exactly k digits.",
+    "topic": "Math",
+    "subtopic": "Divisors",
+    "tags": [
+      "Math",
+      "Divisors",
+      "Counting"
+    ],
+    "input_format": "Two integers n and k, where n is the number for which K-Beauty needs to be calculated and k is the desired number of digits.",
+    "output_format": "An integer representing the K-Beauty of the number n.",
+    "constraints": [
+      "1 <= n <= 10^9",
+      "1 <= k <= 10"
+    ],
+    "examples": [
+      {
+        "input": "n = 12, k = 1",
+        "output": "2",
+        "explanation": "The divisors of 12 are 1, 2, 3, 4, 6, and 12. The 1-digit divisors are 1, 2, 3, and 4. There are 4 such divisors."
+      },
+      {
+        "input": "n = 100, k = 2",
+        "output": "3",
+        "explanation": "The divisors of 100 are 1, 2, 4, 5, 10, 20, 25, 50, and 100. The 2-digit divisors are 10 and 20. There are 2 such divisors."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how to identify the divisors of n.",
+      "Count the number of digits in each divisor.",
+      "Use a loop to check each number up to \u221an."
+    ],
+    "company": "Postmates"
+  }
+]

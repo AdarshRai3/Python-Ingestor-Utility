@@ -1,0 +1,1423 @@
+[
+  {
+    "question_id": "",
+    "title": "Restore IP Addresses",
+    "description": "Given a string containing only digits, return all possible valid IP address combinations that can be formed by inserting dots into the string. An IP address consists of four octets, and each octet is a number between 0 and 255, inclusive. Leading zeros are not allowed in an octet, except for the number 0 itself.",
+    "topic": "String",
+    "subtopic": "Backtracking",
+    "tags": [
+      "String",
+      "Backtracking",
+      "IP Address"
+    ],
+    "input_format": "A string s of length n (1 <= n <= 20) that contains only digits.",
+    "output_format": "A list of valid IP address combinations that can be formed from the input string.",
+    "constraints": [
+      "1 <= s.length <= 20",
+      "s consists of digits only."
+    ],
+    "examples": [
+      {
+        "input": "s = '25525511135'",
+        "output": "['255.255.11.135', '255.255.111.35']",
+        "explanation": "The valid IP addresses formed are '255.255.11.135' and '255.255.111.35'."
+      },
+      {
+        "input": "s = '0000'",
+        "output": "['0.0.0.0']",
+        "explanation": "The only valid IP address is '0.0.0.0' since all octets are 0."
+      },
+      {
+        "input": "s = '1111'",
+        "output": "['1.1.1.1']",
+        "explanation": "The valid IP address formed is '1.1.1.1'."
+      },
+      {
+        "input": "s = '010010'",
+        "output": "['0.10.0.10', '0.100.1.0']",
+        "explanation": "The valid IP addresses are '0.10.0.10' and '0.100.1.0'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to partition the string into four parts.",
+      "Check each part to ensure it's a valid octet."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Construct String With Repeat Limit",
+    "description": "You are given a string `s` and an integer `k`. Your goal is to construct a new string by repeating each character of `s`, but each character can only appear in the resulting string at most `k` times consecutively. If any character would exceed its limit, it should be added only `k` times. Return the resulting string after applying this rule.",
+    "topic": "String",
+    "subtopic": "Character Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Character Limit"
+    ],
+    "input_format": "A string `s` (1 <= |s| <= 1000) and an integer `k` (1 <= k <= 100).",
+    "output_format": "A string representing the constructed result.",
+    "constraints": [
+      "1 <= |s| <= 1000",
+      "1 <= k <= 100",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"aaabbbccc\", k = 2",
+        "output": "aabbcc",
+        "explanation": "The character 'a' appears 3 times, but we can only add it 2 times, the same applies to 'b' and 'c'."
+      },
+      {
+        "input": "s = \"aabbcc\", k = 3",
+        "output": "aabbcc",
+        "explanation": "Since all characters in 'aabbcc' already appear less than or equal to 3 times consecutively, the result remains the same."
+      },
+      {
+        "input": "s = \"abcd\", k = 1",
+        "output": "abcd",
+        "explanation": "Each character appears only once, so no characters exceed the limit."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a loop to traverse the string and keep track of the current character's count.",
+      "Use a result variable to build your final output string."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Town Judge",
+    "description": "In a town, there are N people labeled from 1 to N. Every person has a unique identifier and may know some other people. A town judge is defined as a person who is trusted by everyone else in the town and who trusts nobody. Given an array of trust relationships where trust[i] = [a, b] indicates that person a trusts person b, you need to determine if there is a town judge. If there is, return the label of the town judge. If there is no town judge, return -1.",
+    "topic": "Graph",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "Traversal",
+      "In-degree"
+    ],
+    "input_format": "An integer N representing the number of people, and an array of trust relationships trust.",
+    "output_format": "An integer representing the label of the town judge or -1 if there is no town judge.",
+    "constraints": [
+      "1 <= N <= 1000",
+      "0 <= trust.length <= 10^4",
+      "trust[i][0] != trust[i][1]",
+      "All trust relationships are unique."
+    ],
+    "examples": [
+      {
+        "input": "N = 3, trust = [[1, 2], [2, 3]]",
+        "output": "3",
+        "explanation": "Person 3 is trusted by persons 1 and 2, and trusts nobody."
+      },
+      {
+        "input": "N = 3, trust = [[1, 2], [2, 3], [1, 3]]",
+        "output": "-1",
+        "explanation": "There is no person who is trusted by everyone and trusts nobody."
+      },
+      {
+        "input": "N = 2, trust = [[1, 2]]",
+        "output": "2",
+        "explanation": "Person 2 is trusted by person 1 and trusts nobody."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Count the number of people who trust a specific person.",
+      "A judge must be trusted by N - 1 people.",
+      "Keep track of trust counts using an array."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given a linked list, reverse the nodes of the list k at a time and return the modified list. If the number of nodes is not a multiple of k, then the remaining nodes should remain as they are. You may not alter the values in the nodes, only nodes themselves may be changed.",
+    "topic": "Linked List",
+    "subtopic": "Reversing Linked List",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "K-group"
+    ],
+    "input_format": "A linked list where each node contains an integer value. An integer k denoting the group size.",
+    "output_format": "The head of the modified linked list after reversing nodes in k-group.",
+    "constraints": [
+      "The number of nodes in the linked list is in the range [0, 5000].",
+      "0 <= Node.val <= 1000",
+      "1 <= k <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[2, 1, 4, 3, 5]",
+        "explanation": "The first two nodes are reversed, followed by the next two nodes, and the last node remains as is."
+      },
+      {
+        "input": "head = [1, 2, 3], k = 5",
+        "output": "[1, 2, 3]",
+        "explanation": "Since k is greater than the number of nodes, the list remains unchanged."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to temporarily hold the nodes.",
+      "You may need to handle the connections carefully after reversing.",
+      "Think about edge cases where the list length is less than k."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Linked List II",
+    "description": "Given the head of a linked list and two integers left and right where left <= right, reverse the nodes of the linked list from position left to position right, and return the head of the modified linked list.",
+    "topic": "Linked List",
+    "subtopic": "Reversing Linked List",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Two Pointers"
+    ],
+    "input_format": "The first input is the head of a singly linked list. The second and third inputs are integers `left` and `right`.",
+    "output_format": "Return the head of the modified linked list after reversing the specified portion.",
+    "constraints": [
+      "1 <= left <= right <= n",
+      "n is the number of nodes in the linked list",
+      "1 <= n <= 500"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], left = 2, right = 4",
+        "output": "[1, 4, 3, 2, 5]",
+        "explanation": "The nodes between positions 2 and 4 are reversed, resulting in [1, 4, 3, 2, 5]."
+      },
+      {
+        "input": "head = [1, 2, 3, 4, 5], left = 1, right = 1",
+        "output": "[1, 2, 3, 4, 5]",
+        "explanation": "Reversing a single node does not change the list."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a dummy node to facilitate the reversing process.",
+      "Keep track of the previous node to the left position.",
+      "Store the nodes to be reversed in a temporary structure."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Reorder List",
+    "description": "You are given the head of a singly linked list. The task is to reorder the list in such a way that the nodes are arranged in a specific pattern: the first node should be followed by the last node, then the second node followed by the second last node, and so on. This process should continue until all nodes have been reordered. Your solution should be done in-place.",
+    "topic": "Linked List",
+    "subtopic": "Reordering",
+    "tags": [
+      "Linked List",
+      "In-place",
+      "Reordering"
+    ],
+    "input_format": "A singly linked list represented by the head node.",
+    "output_format": "The head of the reordered singly linked list.",
+    "constraints": [
+      "The number of nodes in the list is between 1 and 10^4.",
+      "The values of the nodes are between -10^6 and 10^6."
+    ],
+    "examples": [
+      {
+        "input": "[1 -> 2 -> 3 -> 4 -> 5]",
+        "output": "[1 -> 5 -> 2 -> 4 -> 3]",
+        "explanation": "The nodes are rearranged as follows: first node (1), last node (5), second node (2), second last node (4), third node (3)."
+      },
+      {
+        "input": "[1 -> 2 -> 3 -> 4]",
+        "output": "[1 -> 4 -> 2 -> 3]",
+        "explanation": "Reordering gives us: 1 (first), 4 (last), 2 (second), and 3 (third)."
+      },
+      {
+        "input": "[1]",
+        "output": "[1]",
+        "explanation": "Single node remains as it is."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a two-pointer approach to find the last node.",
+      "You might want to use a stack or a list to hold the nodes temporarily.",
+      "Think about how to link the nodes back together after reordering."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Inorder Successor in BST II",
+    "description": "Given a binary search tree (BST) Node, find the inorder successor of that node in the BST. The inorder successor is the node that follows the given node in the inorder traversal of the BST. If the node has no inorder successor, return null. You may assume that each node in the BST has a unique value.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "BST",
+      "Successor"
+    ],
+    "input_format": "A Node representing a BST. Each node contains a value, a left child, and a right child.",
+    "output_format": "The Node representing the inorder successor, or null if it does not exist.",
+    "constraints": [
+      "The number of nodes in the BST is in the range [1, 10^4].",
+      "Node values are unique and within the range [-10^5, 10^5]."
+    ],
+    "examples": [
+      {
+        "input": "Node node = [5, 3, 6, 2, 4, null, null]; Node target = 3;",
+        "output": "4",
+        "explanation": "In the given BST, the inorder traversal is [2, 3, 4, 5, 6]. The successor of 3 is 4."
+      },
+      {
+        "input": "Node node = [5, 3, 6, 2, 4, null, null]; Node target = 5;",
+        "output": "6",
+        "explanation": "The inorder successor of 5 in this BST is 6."
+      },
+      {
+        "input": "Node node = [5, 3, 6, 2, 4, null, null]; Node target = 6;",
+        "output": "null",
+        "explanation": "The node 6 is the rightmost node in the BST, and therefore has no successor."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the case where the node has a right child.",
+      "If the node has no right child, climb up the tree to find the first ancestor that is a left child."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Contains Duplicate II",
+    "description": "Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hash Map",
+      "Sliding Window"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "A boolean value indicating whether the condition is met.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "0 <= k <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1], k = 3",
+        "output": "true",
+        "explanation": "The number '1' appears at indices 0 and 3, and abs(0 - 3) <= 3."
+      },
+      {
+        "input": "nums = [1, 0, 1, 1], k = 1",
+        "output": "true",
+        "explanation": "The number '1' appears at indices 2 and 3, and abs(2 - 3) <= 1."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1, 2, 3], k = 2",
+        "output": "false",
+        "explanation": "There are no indices i and j such that nums[i] == nums[j] and abs(i - j) <= 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hash map to keep track of seen numbers and their indices.",
+      "Utilize the sliding window technique to keep the size of the search space limited."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Rotated Digits",
+    "description": "A rotated digit is a digit that changes when rotated 180 degrees. The digits 0, 1, and 8 remain unchanged, while 6 becomes 9, and 9 becomes 6. The digits 2, 3, 4, 5, and 7 do not form valid rotated digits. Given an integer N, return the total number of valid rotated digits in the range from 1 to N inclusive.",
+    "topic": "Mathematics",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Mathematics",
+      "Number Theory",
+      "Digits"
+    ],
+    "input_format": "An integer N.",
+    "output_format": "An integer representing the count of valid rotated digits between 1 and N.",
+    "constraints": [
+      "1 <= N <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "N = 10",
+        "output": "4",
+        "explanation": "The valid rotated digits are 1, 2, 5, and 6. 2, 5 are not valid, and 1, 6 are valid."
+      },
+      {
+        "input": "N = 100",
+        "output": "40",
+        "explanation": "All numbers from 1 to 100 are considered, and out of them, 40 are valid rotated digits."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Check each digit to determine if it can produce a valid rotated digit.",
+      "Consider using string conversion for easier manipulation of digits."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) cache. It should support the following operations: get and put.\n\n- get(key): Get the value of the key if the key exists in the cache, otherwise return -1.\n- put(key, value): Set or insert the value if the key is not already present. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structure",
+    "subtopic": "Cache",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Cache",
+      "LRU"
+    ],
+    "input_format": "Operations are given as a list of tuples. Each tuple will be in the form of (operation, key, value), where value will be None for 'get' operations.",
+    "output_format": "A list of results from 'get' operations. Each result corresponds to the input operations in the order they were executed.",
+    "constraints": [
+      "The number of operations will be at most 1000.",
+      "The capacity of the cache will be between 1 and 1000.",
+      "The keys used in the put and get operations are guaranteed to be non-negative."
+    ],
+    "examples": [
+      {
+        "input": "operations = [('put', 1, 1), ('put', 2, 2), ('get', 1, None), ('put', 3, 3), ('get', 2, None), ('put', 4, 4), ('get', 1, None), ('get', 3, None), ('get', 4, None)]",
+        "output": "[1, -1, 4]",
+        "explanation": "Initially, we put keys 1 and 2 into the cache. Then we retrieve key 1, which returns 1. Next, we add key 3, evicting key 2. Retrieve key 2, which returns -1 as it was evicted. We then add key 4, evicting key 1. Retrieve keys 1, 3, and 4 yields -1, 3, and 4 respectively."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hash map and a doubly linked list.",
+      "Keep track of the order of usage of cache entries."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Inorder Successor in BST",
+    "description": "Given a binary search tree (BST) and a node in it, find the inorder successor of that node in the BST. The inorder successor of a node is the node with the smallest key greater than the key of the given node. If the given node has no inorder successor, return null.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "Binary Search Tree",
+      "Successor"
+    ],
+    "input_format": "A reference to a node in a binary search tree (BST) and the root of the BST.",
+    "output_format": "A reference to the inorder successor node in the BST or null if there is no successor.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "All node values are unique.",
+      "The given node is a valid node in the BST."
+    ],
+    "examples": [
+      {
+        "input": "root = [2, 1, 3], node = 1",
+        "output": "2",
+        "explanation": "The inorder traversal of the BST is [1, 2, 3]. The successor of 1 is 2."
+      },
+      {
+        "input": "root = [5, 3, 6, 2, 4, null, null, 1], node = 6",
+        "output": "null",
+        "explanation": "The inorder traversal of the BST is [1, 2, 3, 4, 5, 6]. Since 6 is the largest node, it has no successor."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "If the node has a right child, the successor is the leftmost node in the right subtree.",
+      "If the node has no right child, travel up the tree until you find a node that is a left child of its parent."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Depth of Binary Tree",
+    "description": "Given a binary tree, return its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node. A leaf is a node with no children.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Depth",
+      "Binary Tree"
+    ],
+    "input_format": "The input is the root node of a binary tree.",
+    "output_format": "An integer representing the maximum depth of the binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4]",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [3,9,20,null,null,15,7]",
+        "output": "3",
+        "explanation": "The maximum depth is 3, representing the path 3 -> 20 -> 15 or 3 -> 20 -> 7."
+      },
+      {
+        "input": "root = [1,null,2]",
+        "output": "2",
+        "explanation": "The maximum depth is 2, representing the path 1 -> 2."
+      },
+      {
+        "input": "root = []",
+        "output": "0",
+        "explanation": "An empty tree has a maximum depth of 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use recursion to traverse the tree.",
+      "The depth of an empty tree is 0.",
+      "The depth of a tree is 1 plus the maximum depth of its subtrees."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule II",
+    "description": "There are a total of n courses you have to take, labeled from 0 to n - 1. Some courses may have prerequisites, represented as a pair of courses. You want to determine if you can finish all courses, and if so, return the order in which you can complete the courses. If it is impossible to finish all courses, return an empty array.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sorting",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "Two integers n (number of courses) and prerequisites (a list of prerequisite pairs).",
+    "output_format": "A list of integers representing the order of courses, or an empty list if it's impossible.",
+    "constraints": [
+      "1 <= n <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, prerequisites = [[1,0],[2,1],[3,2]]",
+        "output": "[0,1,2,3]",
+        "explanation": "You can complete the courses in the order 0 -> 1 -> 2 -> 3."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "[]",
+        "explanation": "It's impossible to finish the courses due to a cycle."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Kahn's algorithm for topological sorting.",
+      "Keep track of the in-degrees of each node."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Units on a Truck",
+    "description": "You are tasked with transporting boxes using a truck. Each box has a weight and a number of units it carries. You have a truck that can carry a maximum weight, and you need to maximize the number of units you can load onto it. Given an array of boxes, where each box is represented by an array of two integers [number_of_boxes, units_per_box], and an integer truck_size (the maximum number of boxes the truck can carry), return the maximum units that can be transported.",
+    "topic": "Greedy",
+    "subtopic": "Sorting",
+    "tags": [
+      "Greedy",
+      "Sorting",
+      "Array"
+    ],
+    "input_format": "An array of boxes where each box is an array of two integers, and an integer truck_size.",
+    "output_format": "An integer representing the maximum units that can be transported.",
+    "constraints": [
+      "1 <= boxes.length <= 100",
+      "1 <= number_of_boxes, units_per_box <= 1000",
+      "1 <= truck_size <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "boxes = [[1, 3], [2, 2], [3, 1]], truck_size = 4",
+        "output": "8",
+        "explanation": "You can take 1 box of the first type (3 units) and 2 boxes of the second type (2 * 2 = 4 units), making a total of 3 + 4 = 7 units. Taking all boxes would exceed the truck size."
+      },
+      {
+        "input": "boxes = [[5, 10], [2, 5], [4, 8]], truck_size = 5",
+        "output": "50",
+        "explanation": "You can take all 5 boxes from the first type (5 * 10 = 50 units)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Sort the boxes by units per box in descending order.",
+      "Use a greedy approach to maximize the units."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "You are given a rotated sorted array `nums` that might contain duplicate elements, and an integer `target`. Your task is to write a function that searches for `target` in `nums`. If `target` exists, return its index, otherwise return -1. Note that you must achieve a logarithmic time complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An integer array `nums` and an integer `target`.",
+    "output_format": "An integer representing the index of `target` in `nums` or -1 if `target` is not present.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^4 <= nums[i], target <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "The target 0 is found at index 4."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "The target 3 is not present in the array."
+      },
+      {
+        "input": "nums = [1,3], target = 3",
+        "output": "1",
+        "explanation": "The target 3 is found at index 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how the array is rotated and how to modify the binary search algorithm.",
+      "Look for the point where the rotation occurs to determine the search boundaries."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Linked List Elements",
+    "description": "Given the head of a linked list and an integer val, remove all nodes of the linked list that have Node.val == val, and return the new head.",
+    "topic": "Linked List",
+    "subtopic": "Modification",
+    "tags": [
+      "Linked List",
+      "Removal",
+      "Two Pointers"
+    ],
+    "input_format": "The input consists of a linked list represented by the head node and an integer val.",
+    "output_format": "The output should be the head of the modified linked list.",
+    "constraints": [
+      "The number of nodes in the linked list is in the range [0, 10^4].",
+      "-100 <= Node.val <= 100",
+      "val is also in the range [-100, 100]."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 6, 3, 4, 5, 6], val = 6",
+        "output": "[1, 2, 3, 4, 5]",
+        "explanation": "The nodes with value 6 are removed, leaving the linked list with values 1, 2, 3, 4, and 5."
+      },
+      {
+        "input": "head = [], val = 1",
+        "output": "[]",
+        "explanation": "The linked list is empty, so the output is also an empty linked list."
+      },
+      {
+        "input": "head = [7, 7, 7, 7], val = 7",
+        "output": "[]",
+        "explanation": "All nodes have value 7, and they are all removed, resulting in an empty linked list."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a dummy node to handle edge cases more easily.",
+      "You may need to track the previous node when removing the current node."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Sorted Lists",
+    "description": "Given the heads of two sorted linked lists, merge them into a single sorted linked list. The merged list should be made by splicing together the nodes of the first two lists.",
+    "topic": "Linked List",
+    "subtopic": "Merging",
+    "tags": [
+      "Linked List",
+      "Merging",
+      "Sorting"
+    ],
+    "input_format": "The input contains two linked list nodes, list1 and list2, representing the heads of the two sorted linked lists.",
+    "output_format": "Return the head of the merged linked list.",
+    "constraints": [
+      "The number of nodes in both linked lists is in the range [0, 50].",
+      "Node values are in the range [-100, 100]."
+    ],
+    "examples": [
+      {
+        "input": "list1 = [1, 2, 4], list2 = [1, 3, 4]",
+        "output": "[1, 1, 2, 3, 4, 4]",
+        "explanation": "The merged list is 1 -> 1 -> 2 -> 3 -> 4 -> 4."
+      },
+      {
+        "input": "list1 = [], list2 = []",
+        "output": "[]",
+        "explanation": "Both lists are empty, so the merged list is also empty."
+      },
+      {
+        "input": "list1 = [], list2 = [0]",
+        "output": "[0]",
+        "explanation": "The first list is empty, so the merged list is just the second list."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a dummy node to simplify the merge process.",
+      "Iterate through both lists, comparing the current nodes to determine the next node in the merged list."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Merge In Between Linked Lists",
+    "description": "You are given two linked lists: list1 and list2, where list1 is a linked list of nodes from a certain starting point and list2 is a linked list that you want to insert into list1 after a certain node. The aim is to merge list2 into list1 by inserting it after a specific node in list1. You need to return the head of the modified list1 after the insertion.",
+    "topic": "Linked List",
+    "subtopic": "Merging Linked Lists",
+    "tags": [
+      "LinkedList",
+      "Merge",
+      "Insertion"
+    ],
+    "input_format": "The linked list list1 and an integer position to insert list2.",
+    "output_format": "The head of the merged linked list after inserting list2 into list1.",
+    "constraints": [
+      "0 <= position <= length of list1",
+      "1 <= length of list1 <= 10^4",
+      "1 <= length of list2 <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "list1 = [1, 2, 3, 4], list2 = [5, 6], position = 2",
+        "output": "[1, 2, 5, 6, 3, 4]",
+        "explanation": "Inserting list2 [5, 6] after the 2nd index of list1 results in [1, 2, 5, 6, 3, 4]."
+      },
+      {
+        "input": "list1 = [1, 2, 3], list2 = [4, 5, 6], position = 0",
+        "output": "[4, 5, 6, 1, 2, 3]",
+        "explanation": "Inserting list2 [4, 5, 6] at the start of list1 results in [4, 5, 6, 1, 2, 3]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dummy node to simplify edge cases.",
+      "You will need to traverse to the specified position in list1.",
+      "Make sure to properly set the next pointers after the merge."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Moving Average from Data Stream",
+    "description": "Design a class that calculates the moving average of a stream of integers. The class should have a method `next(int val)` that receives an integer from the stream and returns the moving average of the last 'size' values (including the current value). If there are less than 'size' values, it should return the average of all the values received so far.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Queue"
+    ],
+    "input_format": "A constructor `MovingAverage(int size)` that initializes the moving average with the specified size. A method `next(int val)` that adds a new value into the stream and returns the moving average.",
+    "output_format": "A double representing the moving average of the last 'size' values.",
+    "constraints": [
+      "1 <= size <= 1000",
+      "-10^5 <= val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "MovingAverage ma = new MovingAverage(3); ma.next(1); ma.next(10); ma.next(3); ma.next(5);",
+        "output": "[1.0, 5.5, 6.0]",
+        "explanation": "The first call returns 1.0 (average of [1]), second call returns 5.5 (average of [1, 10, 3]), and the third call returns 6.0 (average of [10, 3, 5])."
+      },
+      {
+        "input": "MovingAverage ma = new MovingAverage(1); ma.next(5); ma.next(10);",
+        "output": "[5.0, 10.0]",
+        "explanation": "With size 1, each call returns the current value, hence both return 5.0 and 10.0 respectively."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a queue to maintain the last 'size' values.",
+      "Keep track of the sum of the values to efficiently calculate the average."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Missing Element in Sorted Array",
+    "description": "Given a sorted array of integers where each element appears exactly twice, except for one element that appears only once. Find that single element which appears only once.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Unique Element"
+    ],
+    "input_format": "A sorted array of integers nums.",
+    "output_format": "An integer representing the single element that appears only once.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^6",
+      "The array is sorted and contains duplicates except for one element."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6]",
+        "output": "6",
+        "explanation": "Every element appears twice except for 6, which appears once."
+      },
+      {
+        "input": "nums = [0, 0, 1, 1, 2, 2, 3]",
+        "output": "3",
+        "explanation": "Every element appears twice except for 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the properties of binary search.",
+      "Try to find the index of the single element."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Maximum Path Sum",
+    "description": "Given a non-empty binary tree, find the maximum path sum. A path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root. The output should be the maximum path sum of any path in the binary tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Dynamic Programming"
+    ],
+    "input_format": "A binary tree represented by its root node.",
+    "output_format": "An integer representing the maximum path sum.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 3000].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3]",
+        "output": "6",
+        "explanation": "The path 2 -> 1 -> 3 has the maximum sum = 6."
+      },
+      {
+        "input": "root = [-10, 9, 20, null, null, 15, 7]",
+        "output": "42",
+        "explanation": "The path 15 -> 20 -> 7 has the maximum sum = 15 + 20 + 7 = 42."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using depth-first search to explore all possible paths.",
+      "Keep track of the maximum path sum found during the traversal."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Missing Number",
+    "description": "Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one number that is missing from the array.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums of length n, where nums contains n distinct numbers in the range [0, n].",
+    "output_format": "An integer representing the missing number.",
+    "constraints": [
+      "n == nums.length",
+      "1 <= n <= 10^4",
+      "0 <= nums[i] <= n",
+      "All the integers in nums are unique."
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 0, 1]",
+        "output": "2",
+        "explanation": "The numbers in the range [0, 3] are 0, 1, 2, 3. The missing number is 2."
+      },
+      {
+        "input": "nums = [0, 1]",
+        "output": "2",
+        "explanation": "The numbers in the range [0, 2] are 0, 1, 2. The missing number is 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Calculate the expected sum of the first n numbers and subtract the actual sum of the array."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Missing Positive Number",
+    "description": "Given an array of positive integers arr sorted in increasing order and an integer k, return the k-th positive integer that is missing from this array. For example, if arr = [2, 3, 4, 7, 11] and k = 5, the first missing positive integers are 1, 5, 6, 8, and 9. The k-th missing positive integer is 9.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Binary Search"
+    ],
+    "input_format": "An array of integers arr and an integer k.",
+    "output_format": "An integer representing the k-th missing positive number.",
+    "constraints": [
+      "1 <= arr.length <= 100",
+      "1 <= arr[i] <= 1000",
+      "arr is sorted in increasing order.",
+      "1 <= k <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "arr = [2, 3, 4, 7, 11], k = 5",
+        "output": "9",
+        "explanation": "The missing positive integers are 1, 5, 6, 8, and 9. The 5th missing positive integer is 9."
+      },
+      {
+        "input": "arr = [1, 2, 3, 4], k = 2",
+        "output": "6",
+        "explanation": "The missing positive integers are 5 and 6. The 2nd missing positive integer is 6."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a pointer to traverse the array and find missing numbers.",
+      "Remember that missing numbers are positive integers greater than 0."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Search a 2D Matrix",
+    "description": "Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties: 1. Integers in each row are sorted in ascending from left to right. 2. Integers in each column are sorted in ascending from top to bottom. Given the matrix and a target value, return true if the target exists in the matrix, otherwise return false.",
+    "topic": "Matrix",
+    "subtopic": "Searching",
+    "tags": [
+      "Matrix",
+      "Binary Search",
+      "Two Pointers"
+    ],
+    "input_format": "An m x n matrix of integers and an integer target to search for.",
+    "output_format": "A boolean indicating whether the target exists in the matrix.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "-10^4 <= matrix[i][j], target <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 3, 5], [7, 9, 11], [12, 14, 16]], target = 9",
+        "output": "true",
+        "explanation": "The target 9 exists in the matrix."
+      },
+      {
+        "input": "matrix = [[1, 3, 5], [7, 9, 11], [12, 14, 16]], target = 2",
+        "output": "false",
+        "explanation": "The target 2 does not exist in the matrix."
+      },
+      {
+        "input": "matrix = [[]], target = 1",
+        "output": "false",
+        "explanation": "The matrix is empty; hence, the target 1 does not exist."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to optimize the search process.",
+      "Start from the top-right corner of the matrix."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Path Sum II",
+    "description": "Given a binary tree, return all root-to-leaf paths where each path's sum equals a given target. A leaf is a node with no children. You need to find all such paths and return them in any order.",
+    "topic": "Tree",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Backtracking"
+    ],
+    "input_format": "The root of the binary tree and an integer target representing the desired sum.",
+    "output_format": "A list of lists representing all root-to-leaf paths where the sum equals the target.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 1000].",
+      "-1000 <= Node.val <= 1000",
+      "-1000 <= target <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [5,4,8,11,null,13,4,7,2,null,null,null,1], target = 22",
+        "output": "[[5,4,11,2],[5,8,4,5]]",
+        "explanation": "The paths [5,4,11,2] and [5,8,4,5] both sum to 22."
+      },
+      {
+        "input": "root = [1,2,3], target = 5",
+        "output": "[]",
+        "explanation": "There are no paths that sum up to 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS to traverse the tree.",
+      "Keep track of the current path and its sum.",
+      "When reaching a leaf, check if the current sum equals the target."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to Roman",
+    "description": "Given an integer, convert it to a Roman numeral. The conversion should be done following the rules of Roman numeral notation, where certain values have specific symbols. The integer will be within the range from 1 to 3999.",
+    "topic": "Math",
+    "subtopic": "Conversion",
+    "tags": [
+      "Math",
+      "String",
+      "Conversion"
+    ],
+    "input_format": "An integer num ranging from 1 to 3999.",
+    "output_format": "A string representing the Roman numeral equivalent of the input integer.",
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "examples": [
+      {
+        "input": "num = 3",
+        "output": "III",
+        "explanation": "The integer 3 is represented as 'III' in Roman numerals."
+      },
+      {
+        "input": "num = 58",
+        "output": "LVIII",
+        "explanation": "The integer 58 is represented as 'LVIII' in Roman numerals, where L = 50, V = 5, and III = 3."
+      },
+      {
+        "input": "num = 1994",
+        "output": "MCMXCIV",
+        "explanation": "The integer 1994 is represented as 'MCMXCIV' in Roman numerals, where M = 1000, CM = 900, XC = 90, and IV = 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a mapping of integers to their corresponding Roman numeral symbols.",
+      "Start from the largest symbol and work your way down.",
+      "Consider special cases like 4, 9, 40, etc."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Elements",
+    "description": "Given a non-empty integer array nums, return the k most frequent elements. You may return the answer in any order. The frequency of an element is the number of times it appears in the array.",
+    "topic": "Hash Table",
+    "subtopic": "Frequency Counting",
+    "tags": [
+      "Hash Table",
+      "Sorting",
+      "Priority Queue"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An array of the k most frequent elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "k is valid, such that 1 <= k <= the number of unique elements in the array."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,1,1,2,2,3], k = 2",
+        "output": "[1, 2]",
+        "explanation": "1 is the most frequent element and 2 is the second most frequent."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Only one element 1 is present."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to count the frequency of each element.",
+      "Consider using a heap to find the top k elements efficiently."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Common Subsequence",
+    "description": "Given two strings text1 and text2, return the length of their longest common subsequence. A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., 'abc' is a subsequence of 'aebdc' while 'ca' is not). If there is no common subsequence, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "LCS"
+    ],
+    "input_format": "Two strings text1 and text2 (0 <= text1.length, text2.length <= 1000).",
+    "output_format": "An integer representing the length of the longest common subsequence.",
+    "constraints": [
+      "1 <= text1.length, text2.length <= 1000",
+      "text1 and text2 consist of English letters."
+    ],
+    "examples": [
+      {
+        "input": "text1 = 'abcde', text2 = 'ace'",
+        "output": "3",
+        "explanation": "The longest common subsequence is 'ace' which has length 3."
+      },
+      {
+        "input": "text1 = 'abc', text2 = 'abc'",
+        "output": "3",
+        "explanation": "The longest common subsequence is 'abc' itself which has length 3."
+      },
+      {
+        "input": "text1 = 'abc', text2 = 'def'",
+        "output": "0",
+        "explanation": "There is no common subsequence between 'abc' and 'def'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a 2D DP array to store results of subproblems.",
+      "Think about breaking down the problem using recursion."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Remove All Occurrences of a Substring",
+    "description": "Given a string `s` and a substring `part`, remove all occurrences of `part` from `s`. Return the resulting string after all such occurrences have been removed. If no occurrences exist, return the original string.",
+    "topic": "String Manipulation",
+    "subtopic": "Substring Removal",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Substring"
+    ],
+    "input_format": "Two strings, `s` (the main string) and `part` (the substring to be removed).",
+    "output_format": "A string representing the result after all occurrences of `part` have been removed from `s`.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= part.length <= 1000",
+      "s and part consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'daabcbaabcbc', part = 'abc'",
+        "output": "'dab'",
+        "explanation": "The substring 'abc' appears twice in the original string. After removing both, we get 'dab'."
+      },
+      {
+        "input": "s = 'axxxxyyyyb', part = 'xy'",
+        "output": "'axxxxyyyyb'",
+        "explanation": "The substring 'xy' does not exist in the original string, so the output is the same as the input."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a loop to remove occurrences repeatedly until none are left.",
+      "Check if the substring exists before removal to optimize."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where each element represents the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the stock prices.",
+    "output_format": "An integer representing the maximum profit.",
+    "constraints": [
+      "0 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Track the minimum price so far and calculate the potential profit for each day."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Contains Duplicate",
+    "description": "Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Searching"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A boolean value: true if any value appears at least twice, otherwise false.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "true",
+        "explanation": "The number 1 appears twice in the array."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "false",
+        "explanation": "All numbers are distinct."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1, 2, 3]",
+        "output": "true",
+        "explanation": "The numbers 1 and 2 both appear more than once."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash set to track seen numbers.",
+      "If a number is already in the set, return true.",
+      "If you go through the entire array without finding duplicates, return false."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Validate Binary Search Tree",
+    "description": "Given the root of a binary tree, determine if it is a valid binary search tree (BST). A valid BST is defined as follows: \n- The left subtree of a node contains only nodes with keys less than the node's key.\n- The right subtree of a node contains only nodes with keys greater than the node's key.\n- Both the left and right subtrees must also be binary search trees.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "Binary Search Tree",
+      "Recursion"
+    ],
+    "input_format": "The root node of a binary tree.",
+    "output_format": "A boolean value indicating whether the binary tree is a valid binary search tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 104].",
+      "-231 <= Node.val <= 231 - 1"
+    ],
+    "examples": [
+      {
+        "input": "root = [2, 1, 3]",
+        "output": "true",
+        "explanation": "This tree is a valid BST as the left child (1) is less than the root (2), and the right child (3) is greater than the root."
+      },
+      {
+        "input": "root = [5, 1, 4, null, null, 3, 6]",
+        "output": "false",
+        "explanation": "This tree is not a valid BST because the node with value 4 is greater than the root (5) but appears in the left subtree."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a helper function for recursion with parameters to track valid range.",
+      "Consider using an in-order traversal to verify sorted order of nodes."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Palindromic Substrings",
+    "description": "Given a string, return the number of substrings that are palindromes. A substring is a contiguous sequence of characters within a string. For simplicity, a string is considered a palindrome if it reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Dynamic Programming"
+    ],
+    "input_format": "A single string s (1 <= s.length <= 1000).",
+    "output_format": "An integer representing the number of palindromic substrings in the string.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abc\"",
+        "output": "3",
+        "explanation": "The palindromic substrings are 'a', 'b', and 'c'."
+      },
+      {
+        "input": "s = \"aaa\"",
+        "output": "6",
+        "explanation": "The palindromic substrings are 'a', 'a', 'a', 'aa', 'aa', and 'aaa'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around the center for palindromes.",
+      "A palindrome can be extended if its borders are the same."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Winner of the Circular Game",
+    "description": "In a circular game, players are arranged in a circle and numbered from 1 to n. Starting with player 1, you count around the circle, moving clockwise. On each turn, you remove the player at position k and the count starts again from the next player. This process continues until only one player remains. Your task is to determine the position of the last player remaining after all others have been eliminated.",
+    "topic": "Simulation",
+    "subtopic": "Circular Game",
+    "tags": [
+      "Simulation",
+      "Circular",
+      "Game",
+      "Mathematics"
+    ],
+    "input_format": "Two integers n (number of players) and k (the step count).",
+    "output_format": "An integer representing the position of the last player remaining (1-indexed).",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "1 <= k <= n"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, k = 2",
+        "output": "3",
+        "explanation": "The order of elimination is 2, 4, 1, 5, leaving player 3 as the last remaining."
+      },
+      {
+        "input": "n = 7, k = 3",
+        "output": "4",
+        "explanation": "The order of elimination is 3, 6, 2, 7, 5, leaving player 4 as the last remaining."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using a circular data structure.",
+      "Try simulating the elimination process."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Largest Element in a Stream",
+    "description": "Design a class that will take a stream of integers and allow you to retrieve the Kth largest element from the current stream. Implement the `KthLargest` class with the following methods: `__init__(int k, int[] nums)` initializes the object with the integer k and the stream of integers nums. The `add(int val)` method adds the integer val to the stream and returns the Kth largest element in the stream.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Heap",
+      "Stream"
+    ],
+    "input_format": "The constructor receives an integer k and a list of integers nums, followed by multiple calls to the add method with an integer value.",
+    "output_format": "Returns an integer representing the Kth largest element after each add call.",
+    "constraints": [
+      "1 <= k <= 10^4",
+      "0 <= nums.length <= 10^4",
+      "-10^4 <= nums[i] <= 10^4",
+      "0 <= val <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "KthLargest kthLargest = new KthLargest(3, [4, 5, 8, 2]); kthLargest.add(3); kthLargest.add(5); kthLargest.add(10); kthLargest.add(9); kthLargest.add(4);",
+        "output": "4",
+        "explanation": "After adding 3, the stream is [4, 5, 8, 2, 3], the Kth largest (3rd) is 4. After adding 5, the stream becomes [4, 5, 8, 2, 3, 5], and the Kth largest remains 4. The same reasoning applies for subsequent adds."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a min-heap to keep track of the K largest elements."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Trie (Prefix Tree)",
+    "description": "Implement a trie (prefix tree) with insert, search, and startsWith methods. A trie is a tree-like data structure that stores a dynamic set of strings, where each node represents a single character of a string. The trie is used for efficient retrieval of keys in a dataset of strings.",
+    "topic": "Data Structures",
+    "subtopic": "Trees",
+    "tags": [
+      "Trie",
+      "Data Structures",
+      "Search"
+    ],
+    "input_format": "You will need to implement the Trie class which has the following methods:\n- void insert(String word): Inserts the string word into the trie.\n- boolean search(String word): Returns true if the string word is in the trie (i.e., was inserted before), and false otherwise.\n- boolean startsWith(String prefix): Returns true if there is a previously inserted string word that starts with the prefix.",
+    "output_format": "Return boolean responses for the search and startsWith operations.",
+    "constraints": [
+      "1 <= word.length <= 200",
+      "The total number of calls to insert, search, and startsWith functions is at most 10^4."
+    ],
+    "examples": [
+      {
+        "input": "Trie trie = new Trie();\ntrie.insert(\"apple\");\ntrie.search(\"apple\");\ntrie.search(\"app\");\ntrie.startsWith(\"app\");\ntrie.insert(\"app\");\ntrie.search(\"app\");",
+        "output": "[true, false, true, true]",
+        "explanation": "The word 'apple' is inserted. Hence, search for 'apple' returns true. 'app' is not inserted yet, so it returns false. However, 'app' is a prefix of 'apple', so startsWith returns true. After inserting 'app', search for 'app' returns true."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider creating a node structure to represent each character in the Trie.",
+      "Use a hashmap or array to map characters to child nodes."
+    ],
+    "company": "Arista Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Flatten a Multilevel Doubly Linked List",
+    "description": "You are given a doubly linked list, where in addition to the next and previous pointers, each node has a child pointer, which may or may not point to a separate doubly linked list. These child lists may have one or more children of their own, and so on, to produce a multilevel data structure. You need to flatten the list so that all the nodes appear in a single-level, doubly linked list. The flattened list should be in the same order as the original list, and you need to modify the pointers accordingly.",
+    "topic": "Linked List",
+    "subtopic": "Flattening List",
+    "tags": [
+      "Linked List",
+      "Doubly Linked List",
+      "Flattening"
+    ],
+    "input_format": "The head of the multilevel doubly linked list.",
+    "output_format": "The head of the flattened doubly linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 2000].",
+      "Each node's value is in the range [-10^5, 10^5]."
+    ],
+    "examples": [
+      {
+        "input": "head = [[1,2,3],[4,5],[6]]",
+        "output": "[1,2,3,4,5,6]",
+        "explanation": "The original list contains separate lists which need to be merged into a single linked list in the same order."
+      },
+      {
+        "input": "head = [[1],[2],[3],[4],[5],[6],[7]]",
+        "output": "[1,2,3,4,5,6,7]",
+        "explanation": "All nodes are in separate lists, but should be flattened sequentially."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the nodes.",
+      "Remember to handle the child pointers correctly while flattening."
+    ],
+    "company": "Arista Networks"
+  }
+]

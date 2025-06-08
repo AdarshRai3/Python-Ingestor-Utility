@@ -1,0 +1,195 @@
+[
+  {
+    "question_id": "",
+    "title": "Distribute Candies",
+    "description": "Alice has n candies, and she wants to distribute them to her k friends. Each friend should get at least one candy, and the distribution should be as fair as possible. Your task is to return the maximum number of candies any friend can get in the most equitable distribution.",
+    "topic": "Greedy",
+    "subtopic": "Distribution",
+    "tags": [
+      "Greedy",
+      "Distribution",
+      "Math"
+    ],
+    "input_format": "Two integers n (total candies) and k (number of friends).",
+    "output_format": "An integer representing the maximum number of candies any friend can get.",
+    "constraints": [
+      "1 <= n <= 10^9",
+      "1 <= k <= 10^9",
+      "n >= k"
+    ],
+    "examples": [
+      {
+        "input": "n = 7, k = 3",
+        "output": "3",
+        "explanation": "Distributing 7 candies to 3 friends can be done as follows: One friend gets 3 candies, the other two get 2 each. The maximum is 3."
+      },
+      {
+        "input": "n = 10, k = 4",
+        "output": "3",
+        "explanation": "Distributing 10 candies to 4 friends can be done as follows: One friend gets 3 candies, two friends get 2 each, and one friend gets 1. The maximum is 3."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think about how you can evenly divide candies.",
+      "Consider using integer division and remainders."
+    ],
+    "company": "LiveRamp"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Unsorted Continuous Subarray",
+    "description": "Given an integer array nums, you need to find the length of the shortest unsorted subarray, such that sorting this subarray would make the whole array sorted. If the array is already sorted, return 0.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the shortest unsorted continuous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 6, 4, 8, 10, 9, 15]",
+        "output": "5",
+        "explanation": "The shortest unsorted subarray is [6, 4, 8, 10, 9]. Sorting this subarray will make the entire array sorted."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "0",
+        "explanation": "The array is already sorted, so the output is 0."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "0",
+        "explanation": "A single-element array is always sorted."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider finding the first and last out-of-order elements.",
+      "Utilize sorting logic for identifying the unsorted section."
+    ],
+    "company": "LiveRamp"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Time for Given Digits",
+    "description": "Given an array of 4 digits, you need to form the largest 24-hour time possible. The time should be in the format 'HH:MM', where 'HH' is the hour and 'MM' is the minute. If no valid time can be created, return an empty string.",
+    "topic": "Greedy",
+    "subtopic": "Backtracking",
+    "tags": [
+      "Greedy",
+      "Backtracking",
+      "String"
+    ],
+    "input_format": "An array of 4 integers representing the digits.",
+    "output_format": "A string representing the largest valid time in 'HH:MM' format, or an empty string if not possible.",
+    "constraints": [
+      "0 <= digits[i] <= 9",
+      "The length of digits array is exactly 4."
+    ],
+    "examples": [
+      {
+        "input": "[1, 2, 3, 4]",
+        "output": "23:41",
+        "explanation": "The largest time that can be formed is 23:41."
+      },
+      {
+        "input": "[5, 5, 5, 5]",
+        "output": "",
+        "explanation": "It is impossible to create a valid time with these digits."
+      },
+      {
+        "input": "[1, 0, 2, 3]",
+        "output": "23:10",
+        "explanation": "The largest time that can be formed is 23:10."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the hour range from 00 to 23.",
+      "Track used digits to avoid repetition.",
+      "Start from the largest possible hour value."
+    ],
+    "company": "LiveRamp"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A substring is a contiguous sequence of characters within a string. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward (ignoring spaces, punctuation, and capitalization).",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s, where 1 <= s.length <= 1000.",
+    "output_format": "A string representing the longest palindromic substring in s.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only digits and English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'babad'",
+        "output": "'bab'",
+        "explanation": "The longest palindromic substring is 'bab'. Note that 'aba' is also a valid answer."
+      },
+      {
+        "input": "s = 'cbbd'",
+        "output": "'bb'",
+        "explanation": "The longest palindromic substring is 'bb'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around potential centers of a palindrome.",
+      "Check both odd-length and even-length palindromes."
+    ],
+    "company": "LiveRamp"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given an integer numCourses representing the total number of courses numbered from 0 to numCourses - 1. You are also given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai. Return true if you can finish all courses. If it is impossible to finish all courses, return false.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS"
+    ],
+    "input_format": "An integer numCourses followed by an array of pairs representing the prerequisites.",
+    "output_format": "A boolean value indicating whether all courses can be finished.",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0]]",
+        "output": "true",
+        "explanation": "You can take course 0 first and then take course 1."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "false",
+        "explanation": "There is a cycle between courses 0 and 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS to detect cycles in the graph.",
+      "Consider an adjacency list representation for the graph."
+    ],
+    "company": "LiveRamp"
+  }
+]

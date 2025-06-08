@@ -1,0 +1,1159 @@
+[
+  {
+    "question_id": "",
+    "title": "Count Subarrays With Fixed Bounds",
+    "description": "Given an integer array nums and two integers minK and maxK, return the number of subarrays in nums such that \n1. The minimum element in the subarray is at least minK.\n2. The maximum element in the subarray is at most maxK.\nA subarray is defined as a contiguous non-empty sequence of elements within an array.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Subarrays"
+    ],
+    "input_format": "An array of integers nums, and two integers minK and maxK.",
+    "output_format": "An integer representing the count of valid subarrays.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= minK <= maxK <= 10^9",
+      "1 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 5, 2, 8], minK = 2, maxK = 5",
+        "output": "7",
+        "explanation": "The valid subarrays that meet the criteria are [2], [3, 5], [2, 8], [1, 3, 5, 2], [3, 5, 2], [5], [2, 8]."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4], minK = 2, maxK = 4",
+        "output": "10",
+        "explanation": "The valid subarrays are [2], [3], [4], [2, 3], [2, 4], [3, 4], [2, 3, 4], [2, 3, 4], and the full array."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a sliding window approach to maintain valid subarray bounds.",
+      "Track the last positions of minK and maxK to facilitate counting.",
+      "Be mindful of elements outside the range [minK, maxK]."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Alloys",
+    "description": "You are given two types of metals, A and B. Each unit of metal A can create x units of alloy and each unit of metal B can create y units of alloy. Given the total number of units of metal A (nA) and metal B (nB), find the maximum number of units of alloy that can be created. The formula for the total alloy output is given by: total_alloy = (nA * x) + (nB * y).",
+    "topic": "Math",
+    "subtopic": "Optimization",
+    "tags": [
+      "Math",
+      "Optimization",
+      "Greedy"
+    ],
+    "input_format": "Three integers, nA (number of units of metal A), nB (number of units of metal B), and y (units of alloy created from one unit of metal B). Additionally, you will be given x (units of alloy created from one unit of metal A).",
+    "output_format": "An integer representing the maximum number of units of alloy that can be produced.",
+    "constraints": [
+      "1 <= nA, nB <= 10^6",
+      "1 <= x, y <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nA = 5, nB = 3, x = 2, y = 4",
+        "output": "26",
+        "explanation": "The maximum alloy produced is (5 * 2) + (3 * 4) = 10 + 12 = 26."
+      },
+      {
+        "input": "nA = 10, nB = 5, x = 1, y = 2",
+        "output": "20",
+        "explanation": "The maximum alloy produced is (10 * 1) + (5 * 2) = 10 + 10 = 20."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how each metal contributes to the total alloy.",
+      "Break down the problem into calculating contributions from each type of metal."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Sell Diminishing-Valued Colored Balls",
+    "description": "You are given an array of integers representing colored balls, where each integer represents the value of the ball. Each colored ball has a diminishing value; that is, after each sale, the value of all remaining balls of the same color decreases by one. Your task is to create a function that returns the maximum total revenue you can obtain by selling all these balls, given that you can choose to sell one ball at a time.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "A list of integers representing the values of colored balls.",
+    "output_format": "An integer representing the maximum revenue from selling all balls.",
+    "constraints": [
+      "1 <= balls.length <= 100",
+      "1 <= balls[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "[3, 5, 2, 8]",
+        "output": "29",
+        "explanation": "Sell in this order: Sell the 8 (revenue = 8), sell the 5 (revenue = 5 + 7 = 12), sell the 3 (revenue = 3 + 6 = 9), and finally sell the 2 (revenue = 2 + 5 = 7). Total = 8 + 12 + 9 + 7 = 29."
+      },
+      {
+        "input": "[5, 5, 5]",
+        "output": "15",
+        "explanation": "Sell the first 5 (revenue = 5), then the second 5 (revenue = 5 + 1 = 6), finally the last 5 (revenue = 5 + 2 = 7). Total = 5 + 6 + 7 = 18."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a max heap to manage the ball values efficiently.",
+      "Keep track of the remaining balls and their values after each sale."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Reshape the Matrix",
+    "description": "Given a 2D matrix and an integer r and c, reshape the matrix to a new one with r rows and c columns. The reshaped matrix should be filled with all the elements of the original matrix in the same row-wise order as they were. If the reshape operation is not possible and should not be done, return the original matrix.",
+    "topic": "Matrix",
+    "subtopic": "Reshaping Matrix",
+    "tags": [
+      "Matrix",
+      "Reshape",
+      "2D Array"
+    ],
+    "input_format": "A 2D list of integers mat, followed by two integers r and c.",
+    "output_format": "A 2D list of integers representing the reshaped matrix, or the original matrix if reshaping is not possible.",
+    "constraints": [
+      "1 <= mat.length <= 100",
+      "1 <= mat[i].length <= 100",
+      "0 <= mat[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "mat = [[1,2],[3,4]], r = 1, c = 4",
+        "output": "[[1,2,3,4]]",
+        "explanation": "The original matrix has 4 elements. We can reshape it into a matrix with 1 row and 4 columns."
+      },
+      {
+        "input": "mat = [[1,2],[3,4]], r = 2, c = 4",
+        "output": "[[1,2],[3,4]]",
+        "explanation": "The reshaping is not possible since the total number of elements does not match the required shape."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check if the total number of elements remains the same after reshaping.",
+      "Use a list to collect elements before reshaping into the new dimensions."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Total Cost to Hire K Workers",
+    "description": "You are given an array of costs where the ith element represents the cost of hiring the ith worker. You need to hire exactly K workers at the minimum total cost. The hiring cost consists of the individual costs of hiring the selected workers. However, for every worker hired, there is an additional cost equal to the minimum cost among the K hired workers that must also be paid. Your task is to return the total cost to hire the K workers optimally.",
+    "topic": "Greedy",
+    "subtopic": "Sorting",
+    "tags": [
+      "Greedy",
+      "Sorting",
+      "Cost Minimization"
+    ],
+    "input_format": "An array of integers costs and an integer K.",
+    "output_format": "An integer representing the minimum total cost to hire K workers.",
+    "constraints": [
+      "1 <= costs.length <= 2000",
+      "1 <= costs[i] <= 10^5",
+      "1 <= K <= costs.length"
+    ],
+    "examples": [
+      {
+        "input": "costs = [10, 20, 5, 30, 15], K = 3",
+        "output": "45",
+        "explanation": "Hire workers with costs 5, 10, and 20. Total cost is 5 + 10 + 20 + 5 = 40."
+      },
+      {
+        "input": "costs = [1, 2, 3], K = 2",
+        "output": "6",
+        "explanation": "Hire the two cheapest workers with costs 1 and 2. Total cost is 1 + 2 + 1 = 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider a way to efficiently select the K lowest costs.",
+      "Pay attention to the additional minimum cost for K workers."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Earliest Second to Mark Indices II",
+    "description": "You are given a list of indices and a time period represented in seconds. Your goal is to find the earliest second during which all specified indices in a given list are marked. An index is marked if it is included in the input list. You need to return the earliest second when all these indices are marked; if it's impossible, return -1.",
+    "topic": "Array",
+    "subtopic": "Index Marking",
+    "tags": [
+      "Array",
+      "Indexing",
+      "Time Complexity"
+    ],
+    "input_format": "An integer list 'indices' where each value is a unique index to mark, followed by an integer 'seconds' representing the total number of seconds under consideration.",
+    "output_format": "An integer representing the earliest second when all indices are marked, or -1 if it is impossible.",
+    "constraints": [
+      "0 <= len(indices) <= 10^5",
+      "1 <= indices[i] <= seconds",
+      "1 <= seconds <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "indices = [1, 2, 3], seconds = 5",
+        "output": "3",
+        "explanation": "The indices can be marked at 1, 2, and 3 seconds. Thus, the earliest second when all are marked is 3."
+      },
+      {
+        "input": "indices = [3, 5, 7], seconds = 6",
+        "output": "-1",
+        "explanation": "There is no second where all indices can be marked because index 7 is outside the range of seconds."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about using a set to track which indices are marked.",
+      "Consider iterating over each second and updating your marked indices.",
+      "A sliding window approach might help in optimizing your solution."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Shopping Offers",
+    "description": "You are given a list of items, each with its own price, and a list of special offers. Each offer specifies a subset of items and the price for buying those items together. You need to calculate the minimum cost to purchase all items given the standard prices and the special offers. Implement a function that returns this minimum cost.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Optimization",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Backtracking"
+    ],
+    "input_format": "A list of integers 'prices' representing the price of each item, and a list of special offers where each offer is represented by a list containing the item indices and the offer price.",
+    "output_format": "An integer representing the minimum cost to purchase all items.",
+    "constraints": [
+      "1 <= prices.length <= 15",
+      "1 <= prices[i] <= 100",
+      "1 <= offers.length <= 30",
+      "0 <= offers[i][j] < prices.length"
+    ],
+    "examples": [
+      {
+        "input": {
+          "prices": [
+            2,
+            5
+          ],
+          "offers": [
+            [
+              [
+                0
+              ],
+              3
+            ],
+            [
+              [
+                1
+              ],
+              4
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              7
+            ]
+          ]
+        },
+        "output": "5",
+        "explanation": "Buying item 0 at standard price (2) and item 1 at standard price (5) gives a total of 7. However, using the offer for both items (7) is not cheaper than the individual price for item 1 (5). Thus, the minimum cost is 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a recursive approach to explore combinations of offers.",
+      "Memoization might help optimize redundant calculations.",
+      "Think about how to represent the state of items being purchased."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Palindromes After Operations",
+    "description": "You are given a string `s` consisting of lowercase letters. Your task is to perform a series of operations to maximize the number of distinct palindromic substrings in the string. An operation consists of selecting a character in the string and changing it to any other lowercase letter. You can perform at most `k` operations. Return the maximum number of distinct palindromic substrings that can be achieved after performing the operations.",
+    "topic": "String Manipulation",
+    "subtopic": "Palindrome",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Dynamic Programming"
+    ],
+    "input_format": "A string `s` (1 <= s.length <= 1000) and an integer `k` (0 <= k <= 100).",
+    "output_format": "An integer representing the maximum number of distinct palindromic substrings.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "0 <= k <= 100"
+    ],
+    "examples": [
+      {
+        "input": "s = 'ababa', k = 1",
+        "output": "6",
+        "explanation": "You can change one 'b' to 'a', forming new palindromes: 'a', 'b', 'aba', 'aba', 'bab', and 'ababa'."
+      },
+      {
+        "input": "s = 'abc', k = 2",
+        "output": "4",
+        "explanation": "You can change both 'b' and 'c' to 'a', forming palindromes: 'a', 'b', 'c', and 'aaa'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how many unique characters you have.",
+      "A single character is always a palindrome.",
+      "Focus on how changing characters can create new palindromic substrings."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Keyboard Row",
+    "description": "Given an array of strings words, return the words that can be typed using letters of the alphabet from the same row of a standard keyboard. The keyboard layout is as follows:\n\n    QWERTYUIOP\n    ASDFGHJKL\n    ZXCVBNM\n\nYou may assume the input is only upper-case letters and you may ignore non-alphabet characters.",
+    "topic": "String",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "String",
+      "Array",
+      "Keyboard"
+    ],
+    "input_format": "An array of strings words.",
+    "output_format": "An array of strings representing the words that can be typed using letters of the same keyboard row.",
+    "constraints": [
+      "1 <= words.length <= 100",
+      "1 <= words[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "words = [\"Hello\", \"Alaska\", \"Dad\", \"Peace\"]",
+        "output": "[\"Alaska\", \"Dad\"]",
+        "explanation": "Both 'Alaska' and 'Dad' can be typed using letters from the same row."
+      },
+      {
+        "input": "words = [\"ay\", \"an\", \"at\", \"on\"]",
+        "output": "[\"ay\", \"an\", \"at\"]",
+        "explanation": "The words 'ay', 'an', and 'at' can all be typed using the top row letters."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using sets to represent the keyboard rows.",
+      "Check if each letter in a word belongs to the same row."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Cost Tree From Leaf Values",
+    "description": "Given an array of integers representing leaf values, build a minimum cost tree from the values and return the minimum cost of the tree. The cost of a tree is defined as the sum of costs for all internal nodes, where the cost of a node is defined as the product of its children. You must use all leaf values, and each internal node must be the product of its two children.",
+    "topic": "Tree",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Tree",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers leafValues.",
+    "output_format": "An integer representing the minimum cost of the tree.",
+    "constraints": [
+      "1 <= leafValues.length <= 40",
+      "1 <= leafValues[i] <= 15"
+    ],
+    "examples": [
+      {
+        "input": "leafValues = [6, 2, 4]",
+        "output": "32",
+        "explanation": "The minimum cost tree is constructed as follows: combine 2 and 4 to form a node of value 8, then combine 6 and 8 to form a root node of value 48. Thus, the total cost is 8 (2*4) + 48 (6*8) = 32."
+      },
+      {
+        "input": "leafValues = [1, 3, 5, 2, 4]",
+        "output": "44",
+        "explanation": "Combine 1 and 2 to make 2, then combine with 3 to make 9, followed by combining with 4 to make 36, leading to a total cost of 2 (1*2) + 9 (3*2) + 36 (4*9) = 44."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider utilizing a stack to maintain the leaf values for efficient processing.",
+      "Greedily combine the smallest values to minimize the overall cost."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Last Substring in Lexicographical Order",
+    "description": "Given a string s, return the last substring of s in lexicographical order. A substring is a contiguous sequence of characters within a string. For example, if s = 'abab', the last substring in lexicographical order is 'bab'.",
+    "topic": "String",
+    "subtopic": "Substring",
+    "tags": [
+      "String",
+      "Substring",
+      "Lexicographical Order"
+    ],
+    "input_format": "A single string s (1 <= s.length <= 10^5) consisting of lowercase English letters.",
+    "output_format": "A string representing the last substring in lexicographical order.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abab'",
+        "output": "bab",
+        "explanation": "The substrings of 'abab' in lexicographical order are 'a', 'ab', 'aba', 'abab', 'b', 'ba', 'bab', 'bb'. The last one is 'bab'."
+      },
+      {
+        "input": "s = 'leetcode'",
+        "output": "tcode",
+        "explanation": "The last substring in lexicographical order is 'tcode'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "Keep track of maximum characters found so far."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Cameras",
+    "description": "You are given a binary tree where each node has a single camera. The goal is to place cameras at nodes such that every node in the tree is monitored by at least one camera. The camera at a node can monitor its parent, itself, and its immediate children. Your task is to return the minimum number of cameras needed to monitor all nodes of the binary tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Greedy"
+    ],
+    "input_format": "The root of a binary tree, where each node contains an integer value.",
+    "output_format": "An integer representing the minimum number of cameras required to monitor all nodes.",
+    "constraints": [
+      "1 <= number of nodes <= 1000",
+      "0 <= node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "[0,0,null,0,0]",
+        "output": "1",
+        "explanation": "A single camera placed at the root node can monitor all nodes."
+      },
+      {
+        "input": "[0,0,0,null,null,0,0]",
+        "output": "2",
+        "explanation": "Two cameras are needed; one camera can monitor a node and its children, but one is needed for the left child."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about the structure of the tree and the coverage each camera can provide.",
+      "Consider a post-order traversal to decide where to place cameras."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Colored Pieces if Both Neighbors are the Same Color",
+    "description": "You are given a string of colored pieces represented by characters. Your task is to repeatedly remove pieces from the string as long as there are at least three consecutive pieces of the same color. When you remove pieces, you should also remove any pieces that are adjacent to them that share the same color. The process stops when no more pieces can be removed. Return the final string after all possible removals.",
+    "topic": "String Manipulation",
+    "subtopic": "Removing Adjacent Characters",
+    "tags": [
+      "Strings",
+      "Greedy",
+      "Simulation"
+    ],
+    "input_format": "A string 'pieces' consisting of lowercase letters representing different colors of pieces.",
+    "output_format": "A string representing the final state after all possible removals.",
+    "constraints": [
+      "1 <= pieces.length <= 1000",
+      "pieces consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "pieces = 'aaabaaa'",
+        "output": "aaaa",
+        "explanation": "Removing three 'a's in the start results in 'baaa'. Then, you can remove the last three 'a's to get 'a'."
+      },
+      {
+        "input": "pieces = 'aaaabbb'",
+        "output": "ab",
+        "explanation": "Removing four 'a's gives 'bbb', and removing three 'b's gives 'a'."
+      },
+      {
+        "input": "pieces = 'abcde'",
+        "output": "abcde",
+        "explanation": "There are no three consecutive pieces of the same color, so no removal is possible."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the characters.",
+      "Check for groups of three adjacent pieces as you process the string."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Count Anagrams",
+    "description": "Given a list of words, count the number of distinct anagrams that can be formed from those words. An anagram is formed by rearranging the letters of a word to create a new word. For instance, the words 'bat' and 'tab' are anagrams. Your task is to return the total count of distinct anagrams formed from the provided list of words.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Anagram"
+    ],
+    "input_format": "A list of strings representing the words.",
+    "output_format": "An integer representing the number of distinct anagrams.",
+    "constraints": [
+      "1 <= words.length <= 10^5",
+      "1 <= words[i].length <= 10"
+    ],
+    "examples": [
+      {
+        "input": "words = ['bat', 'tab', 'tap', 'pat', 'bat']",
+        "output": "4",
+        "explanation": "The distinct anagrams are 'bat', 'tab', 'tap', and 'pat'."
+      },
+      {
+        "input": "words = ['eat', 'tea', 'tan', 'ate', 'nat', 'bat']",
+        "output": "5",
+        "explanation": "The distinct anagrams are 'eat', 'tea', 'tan', 'ate', and 'nat'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a hash map to group words by their sorted character sequences.",
+      "Use the concept of permutations to count distinct arrangements."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Earliest Second to Mark Indices I",
+    "description": "You are given an array of timestamps in seconds, where each timestamp represents a specific time in the format of integer seconds since midnight (00:00:00). Your task is to identify the earliest second that marks the position of indices in that array. If the second occurs more than once, return the earliest index where it occurs. If no such second exists, return -1.",
+    "topic": "Array",
+    "subtopic": "Index Finding",
+    "tags": [
+      "Array",
+      "Indexing",
+      "Searching"
+    ],
+    "input_format": "An array of integers timestamps representing the seconds since midnight.",
+    "output_format": "An integer representing the index of the earliest second that marks a position, or -1 if no such second exists.",
+    "constraints": [
+      "1 <= timestamps.length <= 10^5",
+      "0 <= timestamps[i] < 86400"
+    ],
+    "examples": [
+      {
+        "input": "timestamps = [3600, 1800, 3600, 7200, 1800]",
+        "output": "1",
+        "explanation": "The earliest second within the array is 1800, which occurs at index 1."
+      },
+      {
+        "input": "timestamps = [0, 0, 1, 1, 2, 2]",
+        "output": "0",
+        "explanation": "The earliest second is 0, which occurs first at index 0."
+      },
+      {
+        "input": "timestamps = [3600, 7200, 10800]",
+        "output": "-1",
+        "explanation": "There are no repeated seconds in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to keep track of the indices of timestamps.",
+      "Sort the unique timestamps to find the earliest one quickly.",
+      "If a timestamp appears more than once, return the minimum index."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Pass the Pillow",
+    "description": "In a circle of 'n' friends, labeled from 1 to 'n', a 'pillow' is passed around starting from friend 1. The pillow is passed to the next friend in line until it reaches friend 'k'. The goal is to determine which friend ends up with the pillow after 'm' passes. If 'm' is greater than the number of friends, it should wrap around the circle.",
+    "topic": "Mathematics",
+    "subtopic": "Modular Arithmetic",
+    "tags": [
+      "Mathematics",
+      "Circle",
+      "Simulation"
+    ],
+    "input_format": "Three integers n, k, m (1 <= n <= 1000, 1 <= k <= n, 0 <= m <= 10000)",
+    "output_format": "An integer representing the friend who ends up with the pillow after 'm' passes.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "1 <= k <= n",
+      "0 <= m <= 10000"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, k = 2, m = 3",
+        "output": "1",
+        "explanation": "The pillow starts with friend 1. After 1 pass, it goes to friend 2, then friend 3, and finally, friend 1 who ends up with it after 3 passes."
+      },
+      {
+        "input": "n = 4, k = 1, m = 10",
+        "output": "2",
+        "explanation": "The pillow starts with friend 1 and wraps around. After 10 passes, effectively it's the same as passing it 10 % 4 = 2 times, so friend 2 ends up with it."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using modular arithmetic for the circular passing."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "String Transformation",
+    "description": "Given a string, transform it based on the following rules: For every vowel in the string, replace it with its next vowel in the sequence (a -> e, e -> i, i -> o, o -> u, u -> a). All consonants and non-alphabetic characters should remain unchanged. Return the transformed string.",
+    "topic": "String Manipulation",
+    "subtopic": "Character Replacement",
+    "tags": [
+      "String",
+      "Transformation",
+      "Vowels"
+    ],
+    "input_format": "A single string s (1 <= |s| <= 1000).",
+    "output_format": "A single string representing the transformed version of s.",
+    "constraints": [
+      "1 <= |s| <= 1000",
+      "s consists of printable ASCII characters"
+    ],
+    "examples": [
+      {
+        "input": "hello world",
+        "output": "hillu wirld",
+        "explanation": "The vowels 'e' and 'o' are transformed to 'i' and 'u' respectively."
+      },
+      {
+        "input": "aeiou",
+        "output": "eioua",
+        "explanation": "The vowels 'a', 'e', 'i', 'o', 'u' are transformed following the vowel sequence."
+      },
+      {
+        "input": "this is a test!",
+        "output": "thes es e tist!",
+        "explanation": "Only 'i' and 'a' are transformed to 'e' and 'e' respectively."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider creating a mapping for vowel transformations.",
+      "Iterate through the string and apply transformations only to vowels."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Edge Reversals So Every Node Is Reachable",
+    "description": "Given a directed graph represented by an adjacency list, your task is to find the minimum number of edge reversals required to ensure that every node is reachable from a given starting node. An edge reversal means changing the direction of a directed edge. You need to compute the minimum number of such reversals needed within the constraints given.",
+    "topic": "Graph",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Shortest Path"
+    ],
+    "input_format": "The input consists of an integer n (the number of nodes) followed by a list of edges. Each edge is represented by a pair of integers [from, to], indicating a directed edge from 'from' to 'to'.",
+    "output_format": "An integer representing the minimum number of edge reversals needed to make all nodes reachable.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "0 <= edges.length <= 2 * 10^5",
+      "0 <= from, to < n"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, edges = [[0, 1], [1, 2], [3, 1], [4, 0], [2, 3]]",
+        "output": "2",
+        "explanation": "Reversing edges (4, 0) to (0, 4) and (3, 1) to (1, 3) results in all nodes being reachable from node 0."
+      },
+      {
+        "input": "n = 3, edges = [[0, 1], [1, 2], [2, 0]]",
+        "output": "0",
+        "explanation": "All nodes are already reachable from node 0, so no reversals are needed."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a BFS or Dijkstra-like approach to explore the graph while counting necessary edge reversals.",
+      "Think about how you can maintain a priority queue to always extend the path that requires the least reversals."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Divisible Triplet Sums",
+    "description": "Given an array of integers, find the number of triplets (i, j, k) such that i < j < k and the sum of nums[i], nums[j], and nums[k] is divisible by a given integer d. Return the total count of such triplets.",
+    "topic": "Array",
+    "subtopic": "Combination",
+    "tags": [
+      "Array",
+      "Combination",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums and an integer d.",
+    "output_format": "An integer representing the count of triplets whose sum is divisible by d.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "-10^3 <= nums[i] <= 10^3",
+      "1 <= d <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], d = 3",
+        "output": "1",
+        "explanation": "The triplet (1, 2, 4) has the sum 7, which is not divisible by 3. The triplet (1, 2, 3) has the sum 6 which is divisible by 3."
+      },
+      {
+        "input": "nums = [2, 4, 6, 8], d = 4",
+        "output": "4",
+        "explanation": "The triplets (2, 4, 6), (2, 4, 8), (4, 6, 8), (2, 6, 8) all have sums divisible by 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a nested loop to generate triplets.",
+      "Utilize the property of modular arithmetic."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Split Array Largest Sum",
+    "description": "Given an array of integers `nums` and an integer `k`, you need to split `nums` into `k` non-empty continuous subarrays. The goal is to minimize the largest sum among these `k` subarrays. Return the minimum largest sum you can achieve.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer array `nums` and an integer `k`.",
+    "output_format": "An integer representing the minimum largest sum among the `k` subarrays.",
+    "constraints": [
+      "1 <= k <= nums.length",
+      "1 <= nums.length <= 10^5",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [7, 2, 5, 10, 8], k = 2",
+        "output": "18",
+        "explanation": "One optimal way to split the array is [7, 2, 5] and [10, 8], where the sums are 14 and 18, respectively. The largest sum is 18."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5], k = 2",
+        "output": "9",
+        "explanation": "The optimal split is [1, 2, 3] and [4, 5] for sums 6 and 9, respectively; the largest sum is 9."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using binary search on the answer.",
+      "The possible largest sum will be in the range of the maximum element to the sum of all elements."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Sum of Distances in Tree",
+    "description": "You are given a tree with N nodes, where each node is indexed from 0 to N-1. The tree can be represented by a list of edges where each edge is a pair of nodes. Your task is to compute the sum of distances from each node to all other nodes in the tree. The distance between two nodes is defined as the number of edges in the shortest path connecting them. Write a function that takes the number of nodes and the list of edges as input and returns a list where the i-th element is the sum of distances from node i to all other nodes.",
+    "topic": "Graph",
+    "subtopic": "Tree Traversal",
+    "tags": [
+      "Graph",
+      "Tree",
+      "Depth-First Search",
+      "Breadth-First Search"
+    ],
+    "input_format": "An integer n, representing the number of nodes, followed by a list of edges, where each edge is a list of two integers [u, v].",
+    "output_format": "A list of integers where each integer at index i represents the sum of distances from node i to all other nodes.",
+    "constraints": [
+      "1 <= n <= 10^4",
+      "0 <= edges.length <= n - 1",
+      "edges[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "n = 6, edges = [[0,1],[0,2],[1,3],[1,4],[2,5]]",
+        "output": "[8, 12, 10, 16, 16, 10]",
+        "explanation": "The distances from each node are as follows: From node 0: [0, 1, 1, 2, 2, 2] = 8; From node 1: [1, 0, 2, 0, 0, 2] = 12; and so on."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using Depth-First Search (DFS) to calculate the distances efficiently.",
+      "You can use dynamic programming to store results of subproblems.",
+      "Re-rooting technique can help in recalculating sums when moving from one node to another."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Longest String Chain",
+    "description": "Given a list of words, you need to determine the length of the longest possible string chain that can be formed. A string chain is formed by linking strings such that each successive string can be formed by removing exactly one letter from the previous string. For example, \"a\" -> \"ba\" -> \"bca\" is a valid string chain.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Longest Chain"
+    ],
+    "input_format": "A list of unique strings words, where each string consists of lowercase English letters.",
+    "output_format": "An integer representing the length of the longest string chain.",
+    "constraints": [
+      "1 <= words.length <= 1000",
+      "1 <= words[i].length <= 16",
+      "All strings in the input are unique."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"a\", \"b\", \"ba\", \"bca\", \"b\", \"bc\"]",
+        "output": "5",
+        "explanation": "The longest chain is \"a\" -> \"b\" -> \"ba\" -> \"bca\", which has length 4."
+      },
+      {
+        "input": "words = [\"xbc\", \"abc\", \"ab\", \"a\"]",
+        "output": "3",
+        "explanation": "The longest chain is \"a\" -> \"ab\" -> \"abc\", which has length 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dynamic programming approach.",
+      "Sort the words by length before processing.",
+      "Maintain a hash map to store the lengths of the longest chains."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Repeating Character Replacement",
+    "description": "Given a string s that consists of only uppercase English letters, you can replace any letter in s with any lowercase English letter. Your goal is to maximize the length of a substring containing the same letter after performing up to k replacements. Return the length of the longest substring that can be obtained with at most k replacements.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Two Pointers"
+    ],
+    "input_format": "A string s representing the characters and an integer k representing the maximum number of replacements.",
+    "output_format": "An integer representing the length of the longest substring containing the same letter.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of uppercase English letters only.",
+      "0 <= k <= s.length"
+    ],
+    "examples": [
+      {
+        "input": "s = \"AABABBA\", k = 1",
+        "output": "4",
+        "explanation": "You can replace one 'B' to get the substring \"AAAA\" which has length 4."
+      },
+      {
+        "input": "s = \"AAAA\", k = 2",
+        "output": "4",
+        "explanation": "The entire string is already 'A', so no replacements are needed."
+      },
+      {
+        "input": "s = \"ABAB\", k = 2",
+        "output": "4",
+        "explanation": "You can replace both 'A's to get the substring \"BBBB\" which has length 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the sliding window technique to maintain the count of characters."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Distinct Subsequences",
+    "description": "Given two strings s and t, return the number of distinct subsequences of s which equals t. A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without changing the order of the remaining characters. (i.e., 'ACE' is a subsequence of 'ABCDE' while 'AEC' is not).",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Subsequence"
+    ],
+    "input_format": "Two strings s and t, where 0 <= s.length, t.length <= 1000.",
+    "output_format": "An integer representing the number of distinct subsequences of s that equals t.",
+    "constraints": [
+      "The input strings consist of lowercase English letters.",
+      "0 <= s.length, t.length <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "s = 'rabbbit', t = 'rabbit'",
+        "output": "3",
+        "explanation": "There are three ways to form 'rabbit' from 'rabbbit': remove the first 'b', the second 'b', or both."
+      },
+      {
+        "input": "s = 'axxxxyyyyb', t = 'xyy'",
+        "output": "4",
+        "explanation": "The four distinct subsequences are: 'xxy', 'xyy', 'xxy', 'xyy' (considering the different positions of 'x' and 'y')."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a 2D DP array to keep track of substrings.",
+      "Think about how to update your DP states based on matching characters."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Beautiful Arrangement",
+    "description": "Given an integer n, you need to count how many beautiful arrangements can be made with the numbers from 1 to n. A beautiful arrangement is an array of size n where the following conditions are satisfied: For the ith position (1-indexed), the number at the ith position can either be divisible by i or i can be divisible by the number at that position.",
+    "topic": "Backtracking",
+    "subtopic": "Permutation",
+    "tags": [
+      "Backtracking",
+      "Permutation",
+      "Math"
+    ],
+    "input_format": "An integer n (1 <= n <= 15).",
+    "output_format": "An integer representing the count of beautiful arrangements.",
+    "constraints": [
+      "1 <= n <= 15"
+    ],
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "The two arrangements are [1, 2] and [2, 1]."
+      },
+      {
+        "input": "n = 1",
+        "output": "1",
+        "explanation": "Only one arrangement: [1]."
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "explanation": "The valid arrangements are [1, 2, 3], [1, 3, 2], and [2, 1, 3]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to explore all arrangements.",
+      "Ensure to check the divisibility conditions for each position."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Convert Binary Number in a Linked List to Integer",
+    "description": "Given a non-empty linked list representing a binary number, convert it to an integer. The binary number is stored in reverse order, where each node contains a single digit (0 or 1). The head of the linked list represents the least significant bit (LSB).",
+    "topic": "Linked List",
+    "subtopic": "Conversion",
+    "tags": [
+      "Linked List",
+      "Binary",
+      "Conversion"
+    ],
+    "input_format": "The head of a singly linked list, where each node has a value of 0 or 1.",
+    "output_format": "An integer representing the decimal value of the binary number.",
+    "constraints": [
+      "The linked list has at least one node.",
+      "The number of nodes in the linked list will not exceed 30."
+    ],
+    "examples": [
+      {
+        "input": "head = [1,0,1]",
+        "output": "5",
+        "explanation": "The binary number represented by the linked list is 101, which is equal to 5 in decimal."
+      },
+      {
+        "input": "head = [0]",
+        "output": "0",
+        "explanation": "The binary number is 0, which is equal to 0 in decimal."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You can use bitwise operations to convert the binary number to decimal.",
+      "Iterate through the linked list while calculating the decimal value."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Difference Between Increasing Elements",
+    "description": "Given an array of integers, find the maximum difference between any two elements where the larger element appears after the smaller element in the array. If no such pair exists, return -1.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Difference"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum difference between increasing elements, or -1 if no such pair exists.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [7, 1, 5, 4]",
+        "output": "4",
+        "explanation": "The maximum difference is between 1 and 5, which is 4."
+      },
+      {
+        "input": "nums = [9, 5, 3]",
+        "output": "-1",
+        "explanation": "There are no pairs of elements where the larger one appears after the smaller one."
+      },
+      {
+        "input": "nums = [3, 2, 1, 5, 4, 8]",
+        "output": "7",
+        "explanation": "The maximum difference is between 1 and 8, which is 7."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum element seen so far.",
+      "Calculate the difference with the current element."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given a linked list, reverse the nodes of the list k at a time and return the modified list. If the number of nodes is not a multiple of k, then left-out nodes in the end should remain as they are. You may not alter the values in the nodes, only nodes themselves may be changed.",
+    "topic": "Linked List",
+    "subtopic": "Reversal of Linked List",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Two Pointers"
+    ],
+    "input_format": "A singly linked list where each node contains an integer value.",
+    "output_format": "The head of the modified linked list after reversing nodes in k-groups.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000].",
+      "1 <= k <= 5000.",
+      "Node values range from -10^6 to 10^6."
+    ],
+    "examples": [
+      {
+        "input": "head = [1,2,3,4,5], k = 2",
+        "output": "[2,1,4,3,5]",
+        "explanation": "The first k=2 nodes are reversed to become [2,1]. Then the next k=2 nodes [3,4] are reversed to become [4,3]. The remaining node [5] is kept as is."
+      },
+      {
+        "input": "head = [1,2,3], k = 5",
+        "output": "[1,2,3]",
+        "explanation": "Since the size of the list is less than k, no nodes are reversed."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Try to manage the pointers carefully to handle nodes before and after k-groups.",
+      "Consider using a dummy node to simplify edge cases."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Break a Palindrome",
+    "description": "Given a string that represents a palindrome, you are allowed to change exactly one character to any lowercase English letter. The goal is to change the palindrome into the lexicographically smallest string possible. If it is not possible to change the palindrome (i.e. if it is already 'a' or if it's a single-character palindrome), return an empty string. If you successfully make a change, return the resulting string.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Palindrome",
+      "String Manipulation",
+      "Greedy"
+    ],
+    "input_format": "A single string s, which is guaranteed to be a palindrome.",
+    "output_format": "A string representing the lexicographically smallest string possible after changing one character or an empty string if not possible.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "abccba",
+        "output": "aaccba",
+        "explanation": "Changing the first 'b' to 'a' gives the lexicographically smallest palindrome."
+      },
+      {
+        "input": "aa",
+        "output": "a",
+        "explanation": "Changing one of the 'a's to 'a' results in no change, but we can't have a string equal to 'aa', so we return an empty string."
+      },
+      {
+        "input": "a",
+        "output": "",
+        "explanation": "A single character palindrome can only be changed to 'a', resulting in no valid changes. Therefore, we return an empty string."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of palindromes.",
+      "Try to find the first character that can be changed.",
+      "Think about what 'lexicographically smallest' means."
+    ],
+    "company": "MathWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "Array",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Array",
+      "String",
+      "Hash Table"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of lists, where each sublist contains strings that are anagrams of each other.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]",
+        "explanation": "The anagrams are grouped together. One valid grouping is [[\"bat\"], [\"nat\", \"tan\"], [\"ate\", \"eat\", \"tea\"]]."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "There is only one string, which itself is an anagram."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "Again, only one string, so it forms its own group."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to group together the anagrams.",
+      "Sorting the characters in each string can help identify anagrams."
+    ],
+    "company": "MathWorks"
+  }
+]

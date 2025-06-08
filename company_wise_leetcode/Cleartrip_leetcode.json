@@ -1,0 +1,198 @@
+[
+  {
+    "question_id": "",
+    "title": "Word Break",
+    "description": "Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain the same word twice. Note that the same word may be reused multiple times in the segmentation.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Backtracking"
+    ],
+    "input_format": "A string s and an array of strings wordDict.",
+    "output_format": "A boolean value indicating whether the string can be segmented or not.",
+    "constraints": [
+      "1 <= s.length <= 300",
+      "0 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 20",
+      "s and the strings in wordDict consist of only lowercase English letters.",
+      "All the strings of wordDict are unique."
+    ],
+    "examples": [
+      {
+        "input": "s = \"leetcode\", wordDict = [\"leet\", \"code\"]",
+        "output": "true",
+        "explanation": "The string 'leetcode' can be segmented into 'leet' and 'code'."
+      },
+      {
+        "input": "s = \"applepenapple\", wordDict = [\"apple\", \"pen\"]",
+        "output": "true",
+        "explanation": "The string 'applepenapple' can be segmented into 'apple', 'pen', 'apple'."
+      },
+      {
+        "input": "s = \"catsandog\", wordDict = [\"cats\", \"dog\", \"sand\", \"and\", \"cat\"]",
+        "output": "false",
+        "explanation": "The string 'catsandog' cannot be segmented into words from the given dictionary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to store results of overlapping subproblems.",
+      "Check substring lengths against wordDict for potential breaks."
+    ],
+    "company": "Cleartrip"
+  },
+  {
+    "question_id": "",
+    "title": "Destination City",
+    "description": "You are given a list of paths where each path is a pair of strings [from, to] representing a road from 'from' city to 'to' city. You can assume the graph formed by the paths is a directed acyclic graph (DAG). Your task is to find out the destination city, the city where no other city has a road going to it.",
+    "topic": "Graph",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "Traversal",
+      "Pathfinding"
+    ],
+    "input_format": "A list of paths represented as a list of pairs of strings.",
+    "output_format": "A string representing the destination city.",
+    "constraints": [
+      "1 <= paths.length <= 100",
+      "1 <= paths[i][0].length, paths[i][1].length <= 100",
+      "All strings in paths are unique."
+    ],
+    "examples": [
+      {
+        "input": "[[\"A\", \"B\"], [\"B\", \"C\"], [\"C\", \"D\"]]",
+        "output": "D",
+        "explanation": "City D is the destination city since there are no paths leading to D."
+      },
+      {
+        "input": "[[\"London\", \"New York\"], [\"New York\", \"Paris\"], [\"Paris\", \"Berlin\"]]",
+        "output": "Berlin",
+        "explanation": "City Berlin is the destination city as no paths lead to it."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a set to track all starting cities.",
+      "The destination city will not be in the set of starting cities."
+    ],
+    "company": "Cleartrip"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected. If two adjacent houses are broken into, the security system will automatically contact the police. Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob without alerting the police.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Optimizing Decisions",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of non-negative integers nums, where nums[i] represents the amount of money stashed in the i-th house.",
+    "output_format": "An integer representing the maximum amount of money that can be robbed.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 400"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 9, 3, 1]",
+        "output": "12",
+        "explanation": "Robbing houses 1, 3, and 5 gives a maximum of 2 + 9 + 1 = 12."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Robbing houses 2 and 4 gives a maximum of 2 + 1 = 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using a dynamic programming approach.",
+      "You can decide to either rob the current house or skip it."
+    ],
+    "company": "Cleartrip"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Cost to Make at Least One Valid Path in a Grid",
+    "description": "You are given a 2D grid of integers where each cell represents the cost of entering that cell. You can start from any cell in the first row and must find a valid path to exit from any cell in the last row at the minimum cost. A valid path can move up, down, left, or right to an adjacent cell. Return the minimum cost to make at least one valid path from the first row to the last row.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Grid",
+      "Dynamic Programming",
+      "Minimum Cost"
+    ],
+    "input_format": "A 2D array of integers where each integer represents the cost of the cell.",
+    "output_format": "An integer representing the minimum cost to make at least one valid path.",
+    "constraints": [
+      "1 <= grid.length <= 100",
+      "1 <= grid[i].length <= 100",
+      "0 <= grid[i][j] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0,1,2],[1,0,1],[2,1,0]]",
+        "output": "1",
+        "explanation": "The minimum cost path is from cell (0,1) to (1,1) which has a cost of 1."
+      },
+      {
+        "input": "grid = [[1,3,1],[1,5,1],[4,2,1]]",
+        "output": "7",
+        "explanation": "The minimum cost path is 1 -> 3 -> 1 -> 1, with a total cost of 7."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using Dijkstra's algorithm or dynamic programming.",
+      "Keep track of the minimum cost to reach each cell."
+    ],
+    "company": "Cleartrip"
+  },
+  {
+    "question_id": "",
+    "title": "Rabbits in Forest",
+    "description": "In a forest, there are some rabbits that each can be classified by their color. You are given a list of integers where each integer represents the number of rabbits of a particular color in a group. One rabbit's color can be represented by either its value or a unique color that is represented as a positive integer. Each rabbit informs you about how many rabbits of their color there are, but some rabbits might lie. The lying rabbits always tell you that there are 'x' rabbits but actually, there might be 'y' or even 'z' rabbits of that color. Your task is to determine the minimum number of rabbits that could be in the forest based on the given reports, assuming that the reports that may be lies are valid.",
+    "topic": "Greedy",
+    "subtopic": "Counting",
+    "tags": [
+      "Greedy",
+      "Counting",
+      "Data Representation"
+    ],
+    "input_format": "An array of integers, representing the number of rabbits that each rabbit claims of their color.",
+    "output_format": "An integer representing the minimum possible number of rabbits in the forest.",
+    "constraints": [
+      "1 <= reports.length <= 1000",
+      "0 <= reports[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "[10, 10, 10]",
+        "output": "11",
+        "explanation": "All three rabbits claim there are 10 rabbits of their color. The minimum possible number of rabbits is 11 because one rabbit can lie."
+      },
+      {
+        "input": "[1, 1, 2]",
+        "output": "3",
+        "explanation": "There are two rabbits claiming there is 1 rabbit of their color and one rabbit claiming 2. The minimum possible number of rabbits is 3."
+      },
+      {
+        "input": "[0, 0, 0]",
+        "output": "1",
+        "explanation": "All rabbits claim there are 0 rabbits of their color. The minimum possible is 1 rabbit actually in the forest."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how many rabbits can actually be inferred from the reports.",
+      "Group the same numbers together to simplify counting.",
+      "Use the maximum claims to determine the number of unique groups."
+    ],
+    "company": "Cleartrip"
+  }
+]

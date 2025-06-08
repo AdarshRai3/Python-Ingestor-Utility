@@ -1,0 +1,121 @@
+[
+  {
+    "question_id": "",
+    "title": "Count Square Sum Triples",
+    "description": "Given a positive integer n, return the number of distinct triples (a, b, c) such that a^2 + b^2 = c^2 and 1 <= a, b, c <= n. In this problem, a, b, and c can be any positive integers but must satisfy the Pythagorean theorem. Note that the order of elements in the triples does not matter, meaning (a, b, c) is considered the same as (b, a, c).",
+    "topic": "Mathematics",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Math",
+      "Pythagorean Theorem",
+      "Counting"
+    ],
+    "input_format": "An integer n representing the maximum value for a, b, and c.",
+    "output_format": "An integer representing the number of distinct triples (a, b, c).",
+    "constraints": [
+      "1 <= n <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "n = 5",
+        "output": "2",
+        "explanation": "The valid triples are (3, 4, 5) and (4, 3, 5)."
+      },
+      {
+        "input": "n = 10",
+        "output": "4",
+        "explanation": "The valid triples are (6, 8, 10), (8, 6, 10), (5, 12, 13), and (12, 5, 13)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider iterating through possible values of a and b, and calculate c using the relationship a^2 + b^2 = c^2.",
+      "Make sure to handle the case where a and b could be the same."
+    ],
+    "company": "Qualtrics"
+  },
+  {
+    "question_id": "",
+    "title": "Asteroid Collision",
+    "description": "You are given an array of integers 'asteroids' representing asteroids in a row. For each asteroid, its absolute value represents its size, and its sign represents its direction (positive for right, negative for left). Asteroids move at the same speed, and when two asteroids collide (i.e., one is moving right and the other is moving left), the smaller one will explode. If both asteroids are of the same size, both will explode. Return the state of the asteroids after all collisions have taken place.",
+    "topic": "Stack",
+    "subtopic": "Collision Handling",
+    "tags": [
+      "Stack",
+      "Simulation",
+      "Collision"
+    ],
+    "input_format": "An array of integers 'asteroids' where |asteroids[i]| represents the size of the ith asteroid.",
+    "output_format": "An array of integers representing the remaining asteroids after all collisions.",
+    "constraints": [
+      "1 <= asteroids.length <= 10^4",
+      "-1000 <= asteroids[i] <= 1000",
+      "The asteroids' absolute values are distinct."
+    ],
+    "examples": [
+      {
+        "input": "asteroids = [5, 10, -5]",
+        "output": "[5, 10]",
+        "explanation": "The asteroid '10' survives as it is larger than '5'. The asteroid '-5' collides with '5' and both survive."
+      },
+      {
+        "input": "asteroids = [8, -8]",
+        "output": "[]",
+        "explanation": "Both asteroids are of the same size but in opposite directions, so they will destroy each other."
+      },
+      {
+        "input": "asteroids = [10, 2, -5]",
+        "output": "[10]",
+        "explanation": "The '2' crashes with '-5' and survives. The '10' remains unscathed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of surviving asteroids.",
+      "Handle the collision using conditions based on the size and direction of the asteroids."
+    ],
+    "company": "Qualtrics"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "HashMap",
+      "Sorting"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of lists, where each sublist contains strings that are anagrams of each other.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The anagrams are grouped together: 'bat' is alone, 'nat' and 'tan' are anagrams, and 'eat', 'tea', 'ate' are also anagrams."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "There is only one string which is an empty string."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "There is only one string which is 'a'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash table to group words by their sorted character sequences.",
+      "Sorting each string can help in identifying anagrams."
+    ],
+    "company": "Qualtrics"
+  }
+]

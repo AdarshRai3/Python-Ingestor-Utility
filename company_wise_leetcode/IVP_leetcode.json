@@ -1,0 +1,99 @@
+[
+  {
+    "question_id": "",
+    "title": "Minimum Time to Break Locks I",
+    "description": "In a security system, you have a series of locks that can be either in a locked or unlocked state. Each lock can be broken by providing a certain amount of time. You need to find the minimum time required to break all locks given their current states and the time it takes to break each individual lock. Your task is to return the minimum total time required to break all the locks. If a lock is already unlocked, the time to break it is considered to be 0.",
+    "topic": "Greedy",
+    "subtopic": "Optimization",
+    "tags": [
+      "Greedy",
+      "Optimization",
+      "Time Management"
+    ],
+    "input_format": "An array of integers `time` where `time[i]` represents the time required to break the i-th lock. An array of booleans `state` where `state[i]` indicates whether the i-th lock is currently locked (true) or unlocked (false).",
+    "output_format": "An integer representing the minimum total time required to break all locks.",
+    "constraints": [
+      "1 <= time.length <= 10^4",
+      "0 <= time[i] <= 10^6",
+      "state.length == time.length"
+    ],
+    "examples": [
+      {
+        "input": {
+          "time": [
+            5,
+            3,
+            1,
+            2
+          ],
+          "state": [
+            true,
+            true,
+            false,
+            true
+          ]
+        },
+        "output": 10,
+        "explanation": "The unlocked lock contributes 0 time. The locked locks require 5, 3, and 2 units of time. Total = 5 + 3 + 0 + 2 = 10."
+      },
+      {
+        "input": {
+          "time": [
+            4,
+            6,
+            2
+          ],
+          "state": [
+            false,
+            false,
+            false
+          ]
+        },
+        "output": 0,
+        "explanation": "All locks are already unlocked, so no time is required."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the contribution of each locked lock's time to the total.",
+      "You can loop through the locks and accumulate only the time of locked ones."
+    ],
+    "company": "IVP"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Time to Break Locks II",
+    "description": "You are given a series of locks that can be broken with different amounts of time, represented by an array of integers. Each element in the array represents the time taken to break a specific lock in the order of their appearance. Your task is to find the minimum total time required to break all the locks. Furthermore, you have the ability to break two locks simultaneously, which can save some time. Calculate the minimum time required to break all locks considering that you can break two locks at once when possible.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Optimization",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Optimization"
+    ],
+    "input_format": "An array of integers where each integer represents the time taken to break a lock.",
+    "output_format": "An integer representing the minimum time required to break all locks.",
+    "constraints": [
+      "1 <= locks.length <= 1000",
+      "1 <= locks[i] <= 10000"
+    ],
+    "examples": [
+      {
+        "input": "locks = [4, 2, 3, 6]",
+        "output": "6",
+        "explanation": "By breaking locks 2 and 4 simultaneously, we spend 4 units of time on the remaining locks 3 and 6, hence total time is 4 + 2 = 6."
+      },
+      {
+        "input": "locks = [1, 2, 3]",
+        "output": "3",
+        "explanation": "Breaking locks 1 and 2 simultaneously takes 2 units of time, then we take another 1 unit for lock 3, totaling 3 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider breaking the two locks with the longest time first.",
+      "Try to use a greedy approach to minimize the total time."
+    ],
+    "company": "IVP"
+  }
+]

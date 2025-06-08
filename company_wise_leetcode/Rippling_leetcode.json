@@ -1,0 +1,736 @@
+[
+  {
+    "question_id": "",
+    "title": "Design Excel Sum Formula",
+    "description": "In this problem, you need to implement a simplified version of the Excel SUM formula. Given a 2D grid representing a spreadsheet (with cells represented as strings), you will need to parse the input to calculate the sum of the numerical values specified in the cells. The cells can contain numbers, ranges, or cell references. You need to consider edge cases, such as invalid references, empty cells, and ranges that may extend beyond the grid bounds.",
+    "topic": "Excel Manipulation",
+    "subtopic": "Formulas",
+    "tags": [
+      "Excel",
+      "Parsing",
+      "Sum",
+      "2D Grid"
+    ],
+    "input_format": "A 2D list of strings representing the spreadsheet cells.",
+    "output_format": "An integer representing the calculated sum.",
+    "constraints": [
+      "1 <= grid.length <= 100",
+      "1 <= grid[i].length <= 100",
+      "Each cell will contain either a number as string, a range in the format 'A1:B2', or a reference to another cell."
+    ],
+    "examples": [
+      {
+        "input": "grid = [['1', '2'], ['3', 'SUM(A1:A2)']]",
+        "output": "6",
+        "explanation": "The SUM formula refers to the values in cells A1 and A2 which are 1 and 2 respectively, yielding a total of 1 + 2 + 3 = 6."
+      },
+      {
+        "input": "grid = [['A1', '1'], ['2', '3']]",
+        "output": "6",
+        "explanation": "The cell A1 contains a reference to itself, which is invalid, but 1 + 2 + 3 equals 6."
+      },
+      {
+        "input": "grid = [['5', '6'], ['7', 'SUM(A1:B2)']]",
+        "output": "18",
+        "explanation": "The SUM formula refers to all values in the range A1 to B2 (5, 6, 7), giving a total of 5 + 6 + 7 = 18."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to parse the range and references.",
+      "Make sure to handle invalid references gracefully."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)). The median is defined as follows: - If the combined length of the two arrays is odd, the median is the middle element. - If the combined length is even, the median is the average of the two middle elements.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Median"
+    ],
+    "input_format": "Two sorted arrays nums1 and nums2.",
+    "output_format": "A float representing the median of the two sorted arrays.",
+    "constraints": [
+      "0 <= nums1.length <= 1000",
+      "0 <= nums2.length <= 1000",
+      "1 <= nums1[i], nums2[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 3], nums2 = [2]",
+        "output": "2.0",
+        "explanation": "The combined sorted array is [1, 2, 3]. The median is 2."
+      },
+      {
+        "input": "nums1 = [1, 2], nums2 = [3, 4]",
+        "output": "2.5",
+        "explanation": "The combined sorted array is [1, 2, 3, 4]. The median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a binary search to partition the arrays.",
+      "You can maintain the sorted order by selecting appropriate indices."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Design Spreadsheet",
+    "description": "You are tasked with designing a spreadsheet system that supports basic operations such as updating a cell, summing values in a range, and getting the value of a specific cell. Each cell in the spreadsheet can hold a numeric value or a formula. Formulas can reference other cells. The system should allow for frequent updates and queries efficiently.",
+    "topic": "Data Structure",
+    "subtopic": "Design",
+    "tags": [
+      "Data Structure",
+      "Design",
+      "Spreadsheet"
+    ],
+    "input_format": "The input consists of a sequence of operations including 'set', 'get', and 'sum'. Each operation will have the appropriate parameters based on its type.",
+    "output_format": "For 'get' operations, return the value of the specified cell. For 'sum' operations, return the sum of the specified range of cells.",
+    "constraints": [
+      "1 <= number of operations <= 1000",
+      "Cell names are represented as strings, e.g., 'A1', 'B2'.",
+      "A formula can only contain addition of numbers and cell references."
+    ],
+    "examples": [
+      {
+        "input": "[ 'set A1 10', 'set A2 20', 'sum A1 A2', 'get A1' ]",
+        "output": "[30, 10]",
+        "explanation": "First, we set A1 to 10 and A2 to 20. Then we sum A1 and A2 which gives us 30. Finally, we retrieve the value from A1 which is 10."
+      },
+      {
+        "input": "[ 'set A1 5', 'set A2 10', 'set B1 A1+A2', 'get B1' ]",
+        "output": "[15]",
+        "explanation": "A1 is set to 5 and A2 to 10. B1 is calculated as A1+A2 which results in 15."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using a map to store cell values.",
+      "You may need to parse formulas to compute cell values."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Evaluate Division",
+    "description": "You are given an array of equations, where each equation is represented as a pair of strings, and a corresponding array of values, where values[i] is the value of the result of the ith equation. You need to evaluate a set of queries, where each query is a pair of strings representing an equation. Return the results of the queries, considering that if an equation cannot be evaluated, return -1.0.",
+    "topic": "Graph",
+    "subtopic": "Union-Find",
+    "tags": [
+      "Graph",
+      "Union-Find",
+      "DFS"
+    ],
+    "input_format": "Two arrays, equations, and values, where equations[i] = [A, B] represents A / B = values[i]. A list of queries in the form of pairs of strings is provided as well.",
+    "output_format": "A list of floating-point numbers representing the results of the queries.",
+    "constraints": [
+      "1 <= equations.length <= 20",
+      "equations[i].length == 2",
+      "values.length == equations.length",
+      "1 <= values[i] <= 20",
+      "All strings consist of lowercase English letters.",
+      "Queries will only contain variables present in equations."
+    ],
+    "examples": [
+      {
+        "input": {
+          "equations": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "b",
+              "c"
+            ]
+          ],
+          "values": [
+            2.0,
+            3.0
+          ],
+          "queries": [
+            [
+              "a",
+              "c"
+            ],
+            [
+              "b",
+              "a"
+            ],
+            [
+              "a",
+              "e"
+            ],
+            [
+              "a",
+              "a"
+            ],
+            [
+              "x",
+              "y"
+            ]
+          ]
+        },
+        "output": [
+          6.0,
+          0.5,
+          -1.0,
+          1.0,
+          -1.0
+        ],
+        "explanation": "For the queries, we evaluate: a / c = 2 * 3 = 6, b / a = 1/2 = 0.5, a / e (not defined) = -1, a / a = 1, x / y (not defined) = -1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a graph representation to model the equations.",
+      "Implement Depth-First Search (DFS) or Union-Find for evaluation.",
+      "Keep track of visited nodes to avoid cycles."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Optimal Account Balancing",
+    "description": "You are given a list of transactions where each transaction is represented by a positive or negative integer. Positive integers represent money deposited to an account, while negative integers represent money withdrawn from an account. Your task is to determine the optimal way to balance the accounts so that the total net amount for each account is minimized. You can transfer money between accounts without creating additional transactions. Calculate the minimum number of transactions required to settle all accounts.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Transactions"
+    ],
+    "input_format": "An array of integers representing the transactions.",
+    "output_format": "An integer representing the minimum number of transactions needed to settle all accounts.",
+    "constraints": [
+      "1 <= transactions.length <= 10^5",
+      "-10^4 <= transactions[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[10, -10, 5, -5]",
+        "output": "0",
+        "explanation": "All transactions can offset each other, so no additional transactions are needed."
+      },
+      {
+        "input": "[20, -30, 10, 0, 5, -5]",
+        "output": "3",
+        "explanation": "To settle the accounts, transfer 10 from 20 to -30, then 5 from 0 to -5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how net balances can be optimized with fewer transfers.",
+      "Use greedy algorithms to decide the optimal transactions."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum sum of the contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The contiguous subarray [4,-1,2,1] has the largest sum = 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The only element [1] is the maximum subarray."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The contiguous subarray [5,4,-1,7,8] has the largest sum = 23."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to keep track of the current sum and the maximum sum found so far.",
+      "Use a greedy approach to decide whether to add the current element to the existing subarray or start a new subarray."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Employee Importance",
+    "description": "You are given a list of employees where each employee has a unique id, a importance value, and a list of direct report ids. Your task is to calculate the total importance value of a given employee including their direct reports and indirect reports. The importance value of an employee is the sum of their own importance value and the importance values of all the employees that report to them directly or indirectly.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Recursion"
+    ],
+    "input_format": "A list of employees and an integer id representing the employee whose total importance value is to be calculated.",
+    "output_format": "An integer representing the total importance value of the given employee including their direct and indirect reports.",
+    "constraints": [
+      "1 <= employees.length <= 2000",
+      "1 <= id <= 1000",
+      "The importance value for each employee is in the range of [1, 100]",
+      "Each employee has a unique id."
+    ],
+    "examples": [
+      {
+        "input": "employees = [[1, 5, [2, 3]], [2, 3, []], [3, 3, []]], id = 1",
+        "output": "11",
+        "explanation": "Employee 1 has an importance of 5, and has direct reports 2 and 3. Employee 2 has an importance of 3 and no reports, Employee 3 has an importance of 3 and no reports. Total Importance = 5 + 3 + 3 = 11."
+      },
+      {
+        "input": "employees = [[1, 10, [2]], [2, 20, []]], id = 1",
+        "output": "30",
+        "explanation": "Employee 1 has an importance of 10 and one direct report 2 which has an importance of 20. Total Importance = 10 + 20 = 30."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashing data structure to map employee ids to their corresponding importance.",
+      "Implement a recursive function to calculate the importance of employees."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Synonymous Sentences",
+    "description": "You are given two sentences in the same language, where you need to check if they are synonymous. Two sentences are said to be synonymous if they can be transformed into each other by substituting some words with synonyms. You are provided with a list of synonym pairs, each represented as a pair of words. Return true if the two sentences are synonymous, and false otherwise.",
+    "topic": "Graph",
+    "subtopic": "Union-Find",
+    "tags": [
+      "Graph",
+      "Union-Find",
+      "String"
+    ],
+    "input_format": "The input consists of two strings, sentence1 and sentence2, and a list of synonym pairs, synonyms.",
+    "output_format": "Return a boolean value indicating whether the sentences are synonymous.",
+    "constraints": [
+      "1 <= sentence1.length, sentence2.length <= 1000",
+      "1 <= synonyms.length <= 10^4",
+      "Each word in the sentences and synonym pairs consists of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": {
+          "sentence1": "I like to eat apples",
+          "sentence2": "I love to consume fruit",
+          "synonyms": [
+            [
+              "like",
+              "love"
+            ],
+            [
+              "eat",
+              "consume"
+            ],
+            [
+              "apples",
+              "fruit"
+            ]
+          ]
+        },
+        "output": "true",
+        "explanation": "The words 'like' and 'love', 'eat' and 'consume', and 'apples' and 'fruit' are synonyms, making the sentences synonymous."
+      },
+      {
+        "input": {
+          "sentence1": "The cat is on the mat",
+          "sentence2": "The dog is in the house",
+          "synonyms": [
+            [
+              "cat",
+              "dog"
+            ],
+            [
+              "mat",
+              "house"
+            ]
+          ]
+        },
+        "output": "false",
+        "explanation": "The sentences are not synonymous because 'cat' and 'dog' do not share synonyms for 'on' and 'in'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using union-find data structure to group synonyms.",
+      "Make sure to split the sentences into words for comparison."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Duplicate Substring",
+    "description": "Given a string s, find the length of the longest substring that occurs twice in s without overlapping. If there are no duplicates, return 0. A substring is defined as a contiguous sequence of characters within the string.",
+    "topic": "String",
+    "subtopic": "Substring Search",
+    "tags": [
+      "String",
+      "Substring",
+      "Binary Search",
+      "Rabin-Karp"
+    ],
+    "input_format": "A string s consisting of lowercase English letters.",
+    "output_format": "An integer representing the length of the longest duplicate substring.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'banana'",
+        "output": "3",
+        "explanation": "The longest duplicate substring is 'ana', which occurs twice."
+      },
+      {
+        "input": "s = 'abcde'",
+        "output": "0",
+        "explanation": "There are no duplicate substrings in 'abcde'."
+      },
+      {
+        "input": "s = 'aabcaabdaa'",
+        "output": "3",
+        "explanation": "The longest duplicate substring is 'aab', which occurs twice."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using binary search combined with hashing.",
+      "Check for potential duplicate substrings of a given length."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Last Stone Weight",
+    "description": "You are given an array of integers stones where stones[i] is the weight of the ith stone. We are to simulate the process of smashing stones together. If the two stones have the same weight, both stones are destroyed, and if they have different weights, the stone with the higher weight is destroyed and the lower weight is reduced to the difference of their weights. This process continues until no stones are left or only one stone is left. Return the weight of the last remaining stone. If there are no stones left, return 0.",
+    "topic": "Heap",
+    "subtopic": "Priority Queue",
+    "tags": [
+      "Heap",
+      "Simulation",
+      "Priority Queue"
+    ],
+    "input_format": "An array of integers stones.",
+    "output_format": "An integer representing the weight of the last remaining stone or 0 if no stones are left.",
+    "constraints": [
+      "1 <= stones.length <= 30",
+      "1 <= stones[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "[2,7,4,1,8,1]",
+        "output": "1",
+        "explanation": "We smash 7 and 8 to get 1, then smash 2 and 4 to get 2, and finally smash 2 and 1 to get 1."
+      },
+      {
+        "input": "[1,3,2,2]",
+        "output": "0",
+        "explanation": "We smash 3 and 2 to get 1, and then smash 2 and 1 to get 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a max heap to efficiently get the two heaviest stones.",
+      "Consider edge cases when fewer than two stones remain."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Visible People in a Queue",
+    "description": "In a queue of people standing in a straight line, a person can be seen by others if they are taller than everyone in front of them. Given an array of integers where each integer represents the height of a person in the queue, return the number of people who can be seen from the front of the queue.",
+    "topic": "Array",
+    "subtopic": "Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Greedy"
+    ],
+    "input_format": "An array of integers heights representing the heights of people in the queue.",
+    "output_format": "An integer representing the number of visible people in the queue.",
+    "constraints": [
+      "1 <= heights.length <= 10^5",
+      "1 <= heights[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "heights = [5, 3, 4, 1, 6, 2]",
+        "output": "3",
+        "explanation": "The people with heights 5, 6, and 4 are visible from the front."
+      },
+      {
+        "input": "heights = [1, 2, 3, 4, 5]",
+        "output": "5",
+        "explanation": "All people are visible as each is taller than the one in front."
+      },
+      {
+        "input": "heights = [5, 5, 5, 5, 5]",
+        "output": "1",
+        "explanation": "Only the first person is visible as others are of the same height."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Track the max height seen so far while iterating from the front of the queue.",
+      "Use a stack to optimize the visibility checking."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Accounts Merge",
+    "description": "You are given a list of accounts where each account is represented as a list of strings. The first string is the name of the account owner, followed by the emails associated with that account. Two accounts are considered the same if they have the same name and share at least one email address. Your task is to merge the accounts with the same owner and return the result as a list of accounts, with each account represented in sorted order of emails. The first entry of each list should be the owner's name.",
+    "topic": "Graph",
+    "subtopic": "Union Find",
+    "tags": [
+      "Graph",
+      "Union Find",
+      "DFS"
+    ],
+    "input_format": "A list of accounts, where each account is represented as a list of strings.",
+    "output_format": "A list of merged accounts, where each account is a sorted list of emails including the owner's name.",
+    "constraints": [
+      "1 <= accounts.length <= 1000",
+      "1 <= accounts[i].length <= 100",
+      "All email addresses are guaranteed to be unique and formatted correctly."
+    ],
+    "examples": [
+      {
+        "input": "[['John','johnsmith@mail.com','john00@mail.com'], ['John','johnnybravo@mail.com'], ['John','johnsmith@mail.com','john_newyork@mail.com']]",
+        "output": "[['John','john00@mail.com','john_newyork@mail.com','johnsmith@mail.com'], ['John','johnnybravo@mail.com']]",
+        "explanation": "The first two accounts share 'johnsmith@mail.com', thus they are merged into one account with sorted emails."
+      },
+      {
+        "input": "[['John', 'john@mail.com'], ['John', 'john@mail.com'], ['John', 'john@mail.com']]",
+        "output": "[['John', 'john@mail.com']]",
+        "explanation": "All entries are the same, hence return a single account."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a union-find data structure to group emails.",
+      "Sort the final email lists before returning."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. All operations should be done in average O(1) time complexity. Implement the RandomizedSet class: \n- RandomizedSet() Initializes the RandomizedSet object. \n- boolean insert(int val) Inserts an item val into the set if not already present. Returns true if the item was not present and was inserted successfully, false otherwise. \n- boolean remove(int val) Removes an item val from the set if present. Returns true if the item was present and was removed successfully, false otherwise. \n- int getRandom() Returns a random element from the current set of elements (it's guaranteed that at least one element exists when this method is called). Each element must have the same probability of being returned.",
+    "topic": "Data Structure",
+    "subtopic": "Randomized Collection",
+    "tags": [
+      "Hash Table",
+      "Randomization",
+      "Data Structure"
+    ],
+    "input_format": "The input consists of operations as strings, either 'insert(val)', 'remove(val)', or 'getRandom()'.",
+    "output_format": "The output should be a boolean for insert and remove operations, and an integer for getRandom operations.",
+    "constraints": [
+      "-2^31 <= val <= 2^31 - 1",
+      "The number of calls to insert and remove cannot exceed 1000.",
+      "The getRandom method will always be called on a non-empty set."
+    ],
+    "examples": [
+      {
+        "input": "insert(1), insert(2), remove(1), getRandom()",
+        "output": "2",
+        "explanation": "After insertions and deletion, the remaining element is 2."
+      },
+      {
+        "input": "insert(1), remove(2), insert(2), getRandom()",
+        "output": "1 or 2",
+        "explanation": "Both 1 and 2 exist in the set. GetRandom can return either."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a list and a hash map to solve this efficiently.",
+      "Ensure that deletion maintains the random accessability of elements.",
+      "Consider how to handle duplicates with your insertion logic."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "LFU Cache",
+    "description": "Design and implement a data structure for a Least Frequently Used (LFU) cache. The LFU cache should support the following operations: get and put. The get operation retrieves the value of the key if the key exists in the cache. If the key does not exist, return -1. The put operation updates or inserts the value when the cache has not reached its capacity. When the cache reaches its capacity, it should invalidate the least frequently used key before inserting a new key. The frequency of a key is defined as the number of times that key has been accessed. Note that when there is a tie, the least recently used key is evicted.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Cache",
+      "Linked List",
+      "Heap"
+    ],
+    "input_format": "The LFUCache class will be initialized with a positive capacity. Methods 'get(key)' and 'put(key, value)' will be called on the LFUCache instance.",
+    "output_format": "For the get method, return the value of the key or -1 if the key does not exist. For the put method, return nothing.",
+    "constraints": [
+      "1 <= capacity <= 10^4",
+      "0 <= key <= 10^10",
+      "0 <= value <= 10^10"
+    ],
+    "examples": [
+      {
+        "input": "LFUCache cache = new LFUCache(2);\ncache.put(1, 1);\ncache.put(2, 2);\ncache.get(1);",
+        "output": "1",
+        "explanation": "Returns 1, the value associated with key 1."
+      },
+      {
+        "input": "cache.put(3, 3);\ncache.get(2);",
+        "output": "-1",
+        "explanation": "Returns -1 because the key 2 was evicted due to LFU policy."
+      },
+      {
+        "input": "cache.put(4, 4);\ncache.get(1);",
+        "output": "1",
+        "explanation": "Returns 1, the key 1 is still accessible."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a hashmap to store keys and their frequencies.",
+      "Maintain a doubly linked list for keys with the same frequency."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Sorted Lists",
+    "description": "You are given the heads of two sorted linked lists, list1 and list2. Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists. Return the head of the newly merged list.",
+    "topic": "Linked List",
+    "subtopic": "Merging Lists",
+    "tags": [
+      "Linked List",
+      "Sorting",
+      "Merging"
+    ],
+    "input_format": "The input consists of two linked list heads, list1 and list2.",
+    "output_format": "Return the head of the merged linked list.",
+    "constraints": [
+      "The number of nodes in both lists is in the range [0, 50].",
+      "-100 <= Node.val <= 100",
+      "Both list1 and list2 are already sorted in non-decreasing order."
+    ],
+    "examples": [
+      {
+        "input": "list1 = [1, 2, 4], list2 = [1, 3, 4]",
+        "output": "[1, 1, 2, 3, 4, 4]",
+        "explanation": "The merged list is [1, 1, 2, 3, 4, 4]."
+      },
+      {
+        "input": "list1 = [], list2 = [0]",
+        "output": "[0]",
+        "explanation": "Since list1 is empty, the merged list is just list2 which is [0]."
+      },
+      {
+        "input": "list1 = [], list2 = []",
+        "output": "[]",
+        "explanation": "Both lists are empty, so the merged list is also empty."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try using a dummy node to simplify merging logic.",
+      "Keep track of the pointers for both lists to merge them efficiently."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Maximize Amount After Two Days of Conversions",
+    "description": "You are given an array of integers where each integer represents the amount you can obtain from a currency conversion on a specific day. You can convert your amount on the first day and the second day but cannot convert on the same day twice. Your goal is to maximize the amount you can have after two conversions. Determine the maximum amount you can attain after exactly two conversions.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Maximizing Profit",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers representing the conversion amounts for each day.",
+    "output_format": "An integer representing the maximum amount achievable after two conversions.",
+    "constraints": [
+      "2 <= amounts.length <= 10^5",
+      "1 <= amounts[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "amounts = [100, 200, 300, 400]",
+        "output": "700",
+        "explanation": "The best two days for conversion are day 2 (200) and day 4 (400), giving a total of 200 + 400 = 700."
+      },
+      {
+        "input": "amounts = [5, 10, 3, 8, 6]",
+        "output": "18",
+        "explanation": "Choosing day 2 (10) and day 5 (8) gives the maximum total of 10 + 8 = 18."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sorted approach to find the two highest values.",
+      "Keep track of the largest and second largest values as you iterate."
+    ],
+    "company": "Rippling"
+  },
+  {
+    "question_id": "",
+    "title": "Alien Dictionary",
+    "description": "Given a list of words sorted lexicographically according to the rules of an alien language, return the order of characters in that language. The input consists of words that are sorted in a specific order. Your task is to figure out a valid order of characters based on the relative position of characters in the sorted word list, which may contain multiple words. The characters may not all be present, and there could be multiple valid orders or no valid order at all.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sorting",
+      "DFS"
+    ],
+    "input_format": "An array of strings words, where each string represents a word in the alien language.",
+    "output_format": "A string representing the order of characters in the alien language, or an empty string if no valid order exists.",
+    "constraints": [
+      "1 <= words.length <= 100",
+      "1 <= words[i].length <= 100",
+      "All characters in words are lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"wrt\", \"wrf\", \"er\", \"ett\", \"rftt\"]",
+        "output": "wertf",
+        "explanation": "The order can be resolved from the characters based on the given sorted words."
+      },
+      {
+        "input": "words = [\"z\", \"x\"]",
+        "output": "zx",
+        "explanation": "The characters directly indicate z comes before x."
+      },
+      {
+        "input": "words = [\"z\", \"x\", \"z\"]",
+        "output": "",
+        "explanation": "The last word indicates a contradiction with the first. No valid order exists."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a graph to represent the constraints between characters.",
+      "Each character can be seen as a node, and a directed edge can represent the order between two characters."
+    ],
+    "company": "Rippling"
+  }
+]

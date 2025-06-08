@@ -1,0 +1,228 @@
+[
+  {
+    "question_id": "",
+    "title": "Minimum Moves to Spread Stones Over Grid",
+    "description": "You are given a grid of size m x n, where each cell can hold one stone. You have a total of k stones, and you need to place them in the grid such that the stones are uniformly distributed. A uniform distribution means that no cell can hold more than one stone, and you want to minimize the number of moves required to spread all stones evenly if there are already stones in the grid. A move consists of taking one stone from a cell and placing it into an adjacent cell (up, down, left, right). In case of an imbalance where some cells have stones while others do not, return the minimum number of moves required to achieve a uniform distribution of stones across the grid.",
+    "topic": "Greedy",
+    "subtopic": "Grid Manipulation",
+    "tags": [
+      "Greedy",
+      "Grid",
+      "Search"
+    ],
+    "input_format": "Two integers m and n denoting the dimensions of the grid, and an integer k denoting the number of stones. Followed by an m x n grid filled with integers (0 or 1), where 1 represents a stone.",
+    "output_format": "An integer representing the minimum number of moves required to achieve a uniform distribution of stones.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "0 <= k <= m * n",
+      "Grid contains only 0 or 1"
+    ],
+    "examples": [
+      {
+        "input": "m = 2, n = 2, k = 2, grid = [[1, 0], [0, 1]]",
+        "output": "0",
+        "explanation": "The stones are already uniformly distributed with one stone in each cell."
+      },
+      {
+        "input": "m = 3, n = 3, k = 5, grid = [[1, 1, 0], [0, 0, 0], [0, 0, 0]]",
+        "output": "2",
+        "explanation": "We can move stones to adjacent cells to achieve a uniform distribution requiring two moves."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to balance the distribution of stones.",
+      "Consider using breadth-first search for uniform movement.",
+      "Calculate the target stones per cell based on total stones."
+    ],
+    "company": "Guidewire"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Operations to Sort a Binary Tree by Level",
+    "description": "You are given a binary tree where each node contains a distinct integer. The goal is to sort the values of the nodes level by level. You can perform the following operation: Choose any two nodes at the same level and swap their values. Your task is to determine the minimum number of operations required to sort the binary tree by level such that, for each level of the binary tree, the values appear in non-decreasing order from left to right.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Sorting"
+    ],
+    "input_format": "The input consists of a binary tree represented by its root node, where each node contains a distinct integer.",
+    "output_format": "An integer representing the minimum number of operations required.",
+    "constraints": [
+      "1 <= number of nodes <= 10^5",
+      "Node values are distinct integers in the range [-10^5, 10^5]"
+    ],
+    "examples": [
+      {
+        "input": "root = [3,1,2]",
+        "output": "1",
+        "explanation": "At level 0, we have 3, and at level 1, we have [1, 2]. By swapping 1 and 2, the tree will be sorted by level."
+      },
+      {
+        "input": "root = [1, 3, 2, 7, 6, 5, 4]",
+        "output": "4",
+        "explanation": "For level 2, we can perform necessary swaps to organize the numbers into non-decreasing order."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how a level-order traversal would help in visualizing the nodes at each level.",
+      "You may want to create a mapping of levels to their respective values."
+    ],
+    "company": "Guidewire"
+  },
+  {
+    "question_id": "",
+    "title": "Construct the Longest New String",
+    "description": "Given two strings, `s1` and `s2`, you need to construct a new string consisting of characters from both strings such that each character can only be used once. The goal is to maximize the length of the new string while ensuring that it does not contain any duplicate characters. Return the length of the longest possible new string that can be constructed.",
+    "topic": "String",
+    "subtopic": "Unique Characters",
+    "tags": [
+      "String",
+      "Set",
+      "HashMap"
+    ],
+    "input_format": "Two strings, s1 and s2, where both strings consist of lowercase English letters.",
+    "output_format": "An integer representing the length of the longest new string that can be constructed.",
+    "constraints": [
+      "1 <= s1.length, s2.length <= 100",
+      "s1 and s2 consist only of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s1 = 'abc', s2 = 'def'",
+        "output": "6",
+        "explanation": "All characters are unique; thus, the longest string is 'abcdef' with a length of 6."
+      },
+      {
+        "input": "s1 = 'aabc', s2 = 'bca'",
+        "output": "3",
+        "explanation": "Characters 'a', 'b', and 'c' are used to form 'abc', which is the longest unique string."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a set to track unique characters.",
+      "Combine characters from both strings and remove duplicates."
+    ],
+    "company": "Guidewire"
+  },
+  {
+    "question_id": "",
+    "title": "Get Watched Videos by Your Friends",
+    "description": "You are given a list of friends and a dictionary containing the videos they have watched. Each video is represented by its title, and each friend can watch multiple videos. Your task is to determine which videos have been watched by the maximum number of friends. You should return a list of videos that have been watched by the maximum number of friends, sorted by their titles in alphabetical order.",
+    "topic": "Hash Table",
+    "subtopic": "Counting",
+    "tags": [
+      "Hash Table",
+      "Counting",
+      "Sorting"
+    ],
+    "input_format": "A list of strings representing friends' names and a dictionary mapping each friend to a list of strings representing the videos they have watched.",
+    "output_format": "A list of video titles that have been watched by the maximum number of friends, sorted in alphabetical order.",
+    "constraints": [
+      "1 <= friends.length <= 100",
+      "1 <= videos[i].length <= 100",
+      "Each video title is unique."
+    ],
+    "examples": [
+      {
+        "input": {
+          "friends": [
+            "Alice",
+            "Bob",
+            "Charlie"
+          ],
+          "watched": {
+            "Alice": [
+              "A",
+              "B",
+              "C"
+            ],
+            "Bob": [
+              "A",
+              "C"
+            ],
+            "Charlie": [
+              "B",
+              "C"
+            ]
+          }
+        },
+        "output": [
+          "A",
+          "C"
+        ],
+        "explanation": "Videos A and C are watched by Alice and Bob, while video B is watched by Alice and Charlie."
+      },
+      {
+        "input": {
+          "friends": [
+            "David",
+            "Eve"
+          ],
+          "watched": {
+            "David": [
+              "X",
+              "Y"
+            ],
+            "Eve": [
+              "Z"
+            ]
+          }
+        },
+        "output": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "explanation": "All videos are watched by one friend each; hence, they all have the same maximum count."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash table to count the number of friends watching each video.",
+      "Sort the final list of videos before returning."
+    ],
+    "company": "Guidewire"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Largest Element in an Array",
+    "description": "Given an integer array nums and an integer k, return the kth largest element in the array. Note that it is the kth largest element in the sorted order, not the kth distinct element.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Heap"
+    ],
+    "input_format": "An integer array nums, followed by an integer k.",
+    "output_format": "An integer representing the kth largest element in the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 1, 5, 6, 4], k = 2",
+        "output": "5",
+        "explanation": "The second largest element in the array is 5."
+      },
+      {
+        "input": "nums = [3, 2, 3, 1, 2, 4, 5, 5, 6], k = 4",
+        "output": "4",
+        "explanation": "The fourth largest element in the array is 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a heap to track the largest elements.",
+      "You can sort the array and then access the kth largest element."
+    ],
+    "company": "Guidewire"
+  }
+]

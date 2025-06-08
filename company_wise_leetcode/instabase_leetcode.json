@@ -1,0 +1,85 @@
+[
+  {
+    "question_id": "",
+    "title": "Subarray With Elements Greater Than Varying Threshold",
+    "description": "You are given an integer array `nums` and an array of thresholds `thresholds`. Your task is to find the maximum length of a contiguous subarray where every element in this subarray is greater than the corresponding elements from `thresholds` when taken in a circular manner. For example, if the length of `nums` is `n` and the length of `thresholds` is `m`, then for the i-th element of `nums`, you will compare it with `thresholds[i % m]`. Return the maximum length of such qualifying subarrays.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Subarray"
+    ],
+    "input_format": "Two arrays of integers nums and thresholds, where nums is the main array and thresholds contains the comparison values.",
+    "output_format": "An integer representing the maximum length of the qualifying subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= thresholds.length <= 10^5",
+      "-10^5 <= nums[i], thresholds[j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 4, 3, 7, 8, 2], thresholds = [3, 5]",
+        "output": "3",
+        "explanation": "The longest subarray that qualifies is [4, 3, 7], which corresponds to thresholds [3, 5]. Elements 4 > 3, 3 > 5 (fails), but then 7 > 3 (passes), so the maximum length is 3."
+      },
+      {
+        "input": "nums = [5, 6, 7, 8], thresholds = [1, 2, 3]",
+        "output": "4",
+        "explanation": "All elements in nums are greater than the corresponding thresholds, giving a maximum length of 4."
+      },
+      {
+        "input": "nums = [1, 2, 3], thresholds = [2]",
+        "output": "1",
+        "explanation": "Only element 3 is greater than its corresponding threshold of 2, giving a maximum length of 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a sliding window approach to efficiently find the maximum subarray length.",
+      "Pay attention to the circular nature of the thresholds."
+    ],
+    "company": "instabase"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Trie (Prefix Tree)",
+    "description": "Design a data structure that implements a trie (prefix tree). A trie is a tree-like data structure that stores a dynamic set of strings, where the keys are usually strings. It supports two main operations: insert a word and search for a word. Additionally, it should support searching for a prefix of a word. The insert operation adds a word to the trie and the search operation checks whether a word or prefix exists in the trie.",
+    "topic": "Data Structure",
+    "subtopic": "Trie",
+    "tags": [
+      "Trie",
+      "Data Structure",
+      "String Manipulation"
+    ],
+    "input_format": "The class will have the following methods: 1. insert(word: str): None, which inserts the word into the trie. 2. search(word: str): bool, which returns true if the word is in the trie. 3. startsWith(prefix: str): bool, which returns true if there is a previously inserted word that starts with the given prefix.",
+    "output_format": "The methods return None for insert, and True or False for search and startsWith.",
+    "constraints": [
+      "1 <= word.length <= 200",
+      "All characters in the input words consist of lowercase letters a-z."
+    ],
+    "examples": [
+      {
+        "input": "trie.insert('apple'); trie.search('apple')",
+        "output": "true",
+        "explanation": "The word 'apple' is inserted and then searched; it exists in the trie."
+      },
+      {
+        "input": "trie.insert('apple'); trie.search('app')",
+        "output": "false",
+        "explanation": "The word 'app' is searched; it has not been inserted, so it does not exist."
+      },
+      {
+        "input": "trie.insert('apple'); trie.startsWith('app')",
+        "output": "true",
+        "explanation": "The prefix 'app' exists because 'apple' starts with 'app'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a nested dictionary for the trie structure.",
+      "Each character can be a node in the trie."
+    ],
+    "company": "instabase"
+  }
+]

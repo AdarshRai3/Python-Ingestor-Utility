@@ -1,0 +1,160 @@
+[
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Anagrams"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of lists, where each sublist contains grouped anagrams.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"ate\",\"eat\",\"tea\"],[\"nat\",\"tan\"],[\"bat\"]]",
+        "explanation": "The anagrams are grouped together: ['eat', 'tea', 'ate'] are anagrams, as well as ['tan', 'nat'] and ['bat']."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "There is only one string which is an anagram of itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "There is only one string which is an anagram of itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to group words based on sorted characters.",
+      "Consider using a tuple of character counts as a key."
+    ],
+    "company": "BP"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Common Subsequence",
+    "description": "Given two strings text1 and text2, return the length of their longest common subsequence. A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., 'ace' is a subsequence of 'abcde' while 'aec' is not). If there is no common subsequence, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Strings",
+    "tags": [
+      "Dynamic Programming",
+      "Strings",
+      "Subsequence"
+    ],
+    "input_format": "Two strings text1 and text2.",
+    "output_format": "An integer representing the length of the longest common subsequence.",
+    "constraints": [
+      "1 <= text1.length, text2.length <= 1000",
+      "text1 and text2 consist of only lowercase English characters."
+    ],
+    "examples": [
+      {
+        "input": "text1 = 'abcde', text2 = 'ace'",
+        "output": "3",
+        "explanation": "The longest common subsequence is 'ace' and its length is 3."
+      },
+      {
+        "input": "text1 = 'abc', text2 = 'abc'",
+        "output": "3",
+        "explanation": "The longest common subsequence is 'abc' and its length is 3."
+      },
+      {
+        "input": "text1 = 'abc', text2 = 'def'",
+        "output": "0",
+        "explanation": "There is no common subsequence, so the length is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a 2D array to store lengths of longest common subsequences.",
+      "If characters match, increment the length. If not, consider the maximum of previous lengths."
+    ],
+    "company": "BP"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) cache. It should support the following operations: get and put.\n\n- get(key): Retrieve the value of the key if the key exists in the cache, otherwise return -1.\n- put(key, value): Update the value of the key if the key exists. If the key does not exist, add the key-value pair to the cache. If the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Cache",
+      "Design",
+      "Linked List",
+      "Hash Map"
+    ],
+    "input_format": "Initialize the LRUCache with a positive capacity.\nPerform get and put operations with key-value pairs.",
+    "output_format": "Return the value for get operations and nothing for put operations.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^4",
+      "The operations get and put are called at most 2 * 10^5 times."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache lruCache = new LRUCache(2);\nlruCache.put(1, 1);\nlruCache.put(2, 2);\nlruCache.get(1);  // returns 1\nlruCache.put(3, 3); // evicts key 2\nlruCache.get(2);  // returns -1 (not found)",
+        "output": "1",
+        "explanation": "After putting (1, 1) and (2, 2), when we call get(1), it returns 1. Then we put (3, 3) which evicts key 2."
+      },
+      {
+        "input": "lruCache.get(2);  // returns -1 (not found)\nlruCache.put(4, 4); // evicts key 1\nlruCache.get(1);  // returns -1 (not found)\nlruCache.get(3);  // returns 3\nlruCache.get(4);  // returns 4",
+        "output": "3",
+        "explanation": "Key 2 was evicted earlier. After adding (4, 4) and evicting key 1, we access key 3, which exists and returns 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a double-ended queue for maintaining the order of items.",
+      "Use a hash map to store key-value pairs for quick access."
+    ],
+    "company": "BP"
+  },
+  {
+    "question_id": "",
+    "title": "Diagonal Traverse II",
+    "description": "Given a 2D matrix of integers, return the elements of the matrix in a diagonal order starting from the bottom-left corner to the top-right corner. The output should be a list of integers representing the elements traversed in diagonal order.",
+    "topic": "Array",
+    "subtopic": "Matrix Traversal",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Traversal"
+    ],
+    "input_format": "A 2D list of integers, nums, with dimensions m x n.",
+    "output_format": "A list of integers representing the elements traversed in diagonal order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "-10^5 <= nums[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[7, 4, 1, 2, 5, 8, 3, 6, 9]",
+        "explanation": "Starting from the bottom-left (7), we traverse diagonally upwards to the top-right, visiting elements in the order: 7, 4, 1, 2, 5, 8, 3, 6, 9."
+      },
+      {
+        "input": "nums = [[1]]",
+        "output": "[1]",
+        "explanation": "There is only one element, which is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a map to store elements based on their diagonal indices.",
+      "Iterate through the matrix and populate the map."
+    ],
+    "company": "BP"
+  }
+]

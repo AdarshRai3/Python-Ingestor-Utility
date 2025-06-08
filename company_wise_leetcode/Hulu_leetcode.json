@@ -1,0 +1,191 @@
+[
+  {
+    "question_id": "",
+    "title": "Number of Valid Subarrays",
+    "description": "Given an array of integers, your task is to count the number of valid subarrays. A subarray is considered valid if the sum of its elements is even. Implement a function that returns the total number of valid subarrays in the given array.",
+    "topic": "Array",
+    "subtopic": "Subarray Counting",
+    "tags": [
+      "Array",
+      "Subarray",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the number of valid subarrays.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "5",
+        "explanation": "The valid subarrays are: [2], [4], [1,2,3], [2,3,4], [1,2,3,4]."
+      },
+      {
+        "input": "nums = [1, 3, 5, 7]",
+        "output": "0",
+        "explanation": "All subarrays have odd sums, thus there are no valid subarrays."
+      },
+      {
+        "input": "nums = [2, 4, 6, 8]",
+        "output": "10",
+        "explanation": "All subarrays sum to even. The total number of valid subarrays is 10."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use prefix sums to keep track of even and odd sums.",
+      "Count how many valid prefix sums you have encountered so far."
+    ],
+    "company": "Hulu"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator III",
+    "description": "Implement a basic calculator to evaluate a string expression containing non-negative integers, '+', '-', '*', and '/' operators, and parentheses. The expression follows the rules of arithmetic operations with integer division rounded towards zero. You should also handle white spaces that may appear in the input string.",
+    "topic": "Mathematics",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "Math",
+      "Stack",
+      "String"
+    ],
+    "input_format": "A string s representing the mathematical expression.",
+    "output_format": "An integer result of evaluating the expression.",
+    "constraints": [
+      "1 <= s.length <= 3 * 10^5",
+      "s consists of digits, '+', '-', '*', '/', '(', ')', and white spaces.",
+      "All integer values in the expression are non-negative."
+    ],
+    "examples": [
+      {
+        "input": "s = \"1 + 1\"",
+        "output": "2",
+        "explanation": "The expression evaluates to 1 + 1 = 2."
+      },
+      {
+        "input": "s = \" 2-1 + 2 \"",
+        "output": "3",
+        "explanation": "The expression evaluates to 2 - 1 + 2 = 3."
+      },
+      {
+        "input": "s = \"(1+(4+5+2)-3)+(6+8)\"",
+        "output": "23",
+        "explanation": "The expression evaluates to (1 + (4 + 5 + 2) - 3) + (6 + 8) = 23."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a stack to handle parentheses and operators.",
+      "Consider the order of operations: multiplication and division have higher precedence than addition and subtraction."
+    ],
+    "company": "Hulu"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Pruning",
+    "description": "Given the root of a binary tree, prune the tree so that every subtree of the tree not containing a 1 is removed. Return the root of the pruned binary tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "DFS"
+    ],
+    "input_format": "The root of a binary tree, represented as a TreeNode.",
+    "output_format": "The root of the pruned binary tree, represented as a TreeNode.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 200]",
+      "Node.val is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "root = [1,null,0,0,1]",
+        "output": "[1,null,0,null,1]",
+        "explanation": "The given tree is: \n    1\n     \\\n      0\n     / \\\n    0   1\nThe subtree that has a root node containing 0 and has no child containing 1 will be removed."
+      },
+      {
+        "input": "root = [1,1,0,1,1,0,1,0]",
+        "output": "[1,1,null,1,1,null,1]",
+        "explanation": "All subtrees containing at least one 1 remain."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS to traverse the tree.",
+      "Check if the left or right subtree contains a 1."
+    ],
+    "company": "Hulu"
+  },
+  {
+    "question_id": "",
+    "title": "Sum of Two Integers",
+    "description": "Implement a function that takes two integers, a and b, and returns their sum without using the '+' operator. You must use bitwise operations to achieve this. The solution should be efficient and handle negative integers as well.",
+    "topic": "Bit Manipulation",
+    "subtopic": "Bitwise Operations",
+    "tags": [
+      "Bit Manipulation",
+      "Bitwise",
+      "Mathematics"
+    ],
+    "input_format": "Two integers a and b, with |a|, |b| < 2^31.",
+    "output_format": "An integer representing the sum of a and b.",
+    "constraints": [
+      "\u22122^31 <= a, b <= 2^31 \u2212 1"
+    ],
+    "examples": [
+      {
+        "input": "a = 1, b = 2",
+        "output": "3",
+        "explanation": "Using bitwise operations, the sum of 1 and 2 can be computed as 3."
+      },
+      {
+        "input": "a = -1, b = 1",
+        "output": "0",
+        "explanation": "The sum of -1 and 1 is 0, computed using bitwise operations."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how you can carry bits and how to compute sums without using addition."
+    ],
+    "company": "Hulu"
+  },
+  {
+    "question_id": "",
+    "title": "K-th Smallest in Lexicographical Order",
+    "description": "Given two integers n and k, return the k-th smallest integer in lexicographical order among the integers 1 to n. For example, if n = 13, the integers in lexicographical order are 1, 10, 11, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9. Hence, the 3rd smallest number is 11.",
+    "topic": "Sorting",
+    "subtopic": "Lexicographical Order",
+    "tags": [
+      "Sorting",
+      "Lexicographical",
+      "Integers"
+    ],
+    "input_format": "Two integers n and k.",
+    "output_format": "An integer representing the k-th smallest number in lexicographical order.",
+    "constraints": [
+      "1 <= n <= 10^9",
+      "1 <= k <= n"
+    ],
+    "examples": [
+      {
+        "input": "n = 13, k = 2",
+        "output": "10",
+        "explanation": "The numbers in lexicographical order are 1, 10, 11, 12, 13, 2, 3, ... The 2nd element is 10."
+      },
+      {
+        "input": "n = 1, k = 1",
+        "output": "1",
+        "explanation": "There is only one number '1' from 1 to 1, hence the answer is 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider an efficient way to count the number of numbers that are smaller than a given prefix.",
+      "You can use a depth-first search (DFS) strategy to explore possible prefixes."
+    ],
+    "company": "Hulu"
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "question_id": "",
+    "title": "Number of Subarrays With LCM Equal to K",
+    "description": "Given an integer array nums and an integer k, return the number of contiguous subarrays where the least common multiple (LCM) of the elements is equal to k. A subarray is defined as a contiguous part of the array.",
+    "topic": "Array",
+    "subtopic": "Subarray",
+    "tags": [
+      "Array",
+      "Subarray",
+      "LCM"
+    ],
+    "input_format": "An integer array nums followed by an integer k.",
+    "output_format": "An integer representing the number of contiguous subarrays with LCM equal to k.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "1 <= nums[i] <= 1000",
+      "1 <= k <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4], k = 4",
+        "output": "3",
+        "explanation": "The subarrays [4], [2, 4], and [2, 3, 4] all have an LCM of 4."
+      },
+      {
+        "input": "nums = [3, 6, 9], k = 18",
+        "output": "2",
+        "explanation": "The subarrays [6, 9] and [3, 6, 9] both have an LCM of 18."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of LCM and how it combines elements.",
+      "A single element subarray can also be a valid candidate if it equals k."
+    ],
+    "company": "Unity"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. All operations should be done in average O(1) time complexity. Implement the class RandomizedSet with the following methods: \n\n- `bool insert(int val)`: Inserts an item val to the set. Returns true if the item was not already present. \n- `bool remove(int val)`: Removes an item val from the set. Returns true if the item was present. \n- `int getRandom()`: Returns a random element from the current set of elements (it is guaranteed that at least one element exists when this method is called). Each element must have the same probability of being returned.\n\nYou must implement the functions in an efficient way.",
+    "topic": "Design",
+    "subtopic": "Randomized Data Structures",
+    "tags": [
+      "Hash Table",
+      "Random",
+      "Design"
+    ],
+    "input_format": "The `insert`, `remove`, and `getRandom` methods will be called with integer arguments and should return boolean values or an integer as specified.",
+    "output_format": "The `insert` and `remove` methods return a boolean value, while `getRandom` returns an integer value that is one of the elements in the set.",
+    "constraints": [
+      "The value of val will be in the range of [-2^31, 2^31 - 1].",
+      "At most 2 * 10^5 calls will be made to insert, remove and getRandom."
+    ],
+    "examples": [
+      {
+        "input": "RandomizedSet randomSet = new RandomizedSet();\n\nrandomSet.insert(1);\nrandomSet.remove(2);\nrandomSet.insert(2);\nrandomSet.getRandom();",
+        "output": "1 or 2",
+        "explanation": "After operations, the set contains [1, 2]. getRandom() may return either 1 or 2 with equal probability."
+      },
+      {
+        "input": "randomSet.remove(1);\nrandomSet.insert(2);\nrandomSet.getRandom();",
+        "output": "2",
+        "explanation": "After the removal of 1, the set contains only [2]. Therefore, getRandom() must return 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to store the values and indices.",
+      "You may use an array to maintain the current set of values."
+    ],
+    "company": "Unity"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Colored Pieces if Both Neighbors are the Same Color",
+    "description": "You are given a string of colored pieces represented by characters, where each character is either 'A' or 'B'. You can remove a piece from the string if both its neighbors are the same color. Write a function that returns the final configuration of the pieces after all possible removals. If the result is an empty string, return 'Empty'.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Stack"
+    ],
+    "input_format": "A string pieces representing the colored pieces, consisting of only the characters 'A' and 'B'.",
+    "output_format": "A string representing the final configuration of the pieces, or 'Empty' if no pieces remain.",
+    "constraints": [
+      "1 <= pieces.length <= 100",
+      "pieces[i] is 'A' or 'B'."
+    ],
+    "examples": [
+      {
+        "input": "pieces = \"AAABBAA\"",
+        "output": "AB",
+        "explanation": "Removing the middle 'A's leads to 'AB'."
+      },
+      {
+        "input": "pieces = \"AABBAA\"",
+        "output": "Empty",
+        "explanation": "All pieces can be removed in pairs."
+      },
+      {
+        "input": "pieces = \"ABABAB\"",
+        "output": "ABABAB",
+        "explanation": "No pieces can be removed as no neighbors are the same."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to keep track of the pieces.",
+      "Iterate over the pieces and perform removals as needed."
+    ],
+    "company": "Unity"
+  },
+  {
+    "question_id": "",
+    "title": "Product of Array Except Self",
+    "description": "Given an integer array nums, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i]. Solve it without using division and in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Product Calculation",
+    "tags": [
+      "Array",
+      "Product",
+      "Prefix Suffix"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing the product of all elements except the one at each index.",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-30 <= nums[i] <= 30"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "[24, 12, 8, 6]",
+        "explanation": "The output array is obtained by calculating the product of all elements except the current index: [2*3*4, 1*3*4, 1*2*4, 1*2*3]."
+      },
+      {
+        "input": "nums = [-1, 1, 0, -3, 3]",
+        "output": "[0, 0, 9, 0, 0]",
+        "explanation": "All products are 0 except for the index with 0, which is obtained by multiplying the remaining elements."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using two arrays to store the prefix and suffix products.",
+      "Consider the space complexity of your solution."
+    ],
+    "company": "Unity"
+  }
+]

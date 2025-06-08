@@ -1,0 +1,197 @@
+[
+  {
+    "question_id": "",
+    "title": "Binary Tree Zigzag Level Order Traversal",
+    "description": "Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. (i.e., from left to right, then right to left for the next level and alternate between).",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "Traversal",
+      "Binary Tree"
+    ],
+    "input_format": "The root of the binary tree as a TreeNode object.",
+    "output_format": "A list of lists of integers representing the zigzag level order traversal.",
+    "constraints": [
+      "The number of nodes in the binary tree is in the range [0, 2000].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [3,9,20,null,null,15,7]",
+        "output": "[[3],[20,9],[15,7]]",
+        "explanation": "The first level is [3]. The second level is [20, 9] (right to left). The third level is [15, 7]."
+      },
+      {
+        "input": "root = [1]",
+        "output": "[[1]]",
+        "explanation": "The tree has only one node, thus the output is [[1]]."
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "explanation": "An empty tree should return an empty list."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a queue to perform level order traversal.",
+      "Keep track of the current level's direction to determine the order of the output.",
+      "Use a stack to reverse the order of node values if needed."
+    ],
+    "company": "Sigmoid"
+  },
+  {
+    "question_id": "",
+    "title": "Product of Array Except Self",
+    "description": "Given an integer array nums, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i]. You must solve it without using division and in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Prefix and Suffix Products",
+    "tags": [
+      "Array",
+      "Prefix Product",
+      "Suffix Product"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing the product of all elements except the current element.",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-30 <= nums[i] <= 30"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "[24, 12, 8, 6]",
+        "explanation": "For the input array [1, 2, 3, 4], the output should be [24 (2*3*4), 12 (1*3*4), 8 (1*2*4), 6 (1*2*3)]."
+      },
+      {
+        "input": "nums = [-1, 1, 0, -3, 3]",
+        "output": "[0, 0, 9, 0, 0]",
+        "explanation": "The product for each index is calculated as follows: [0, 0, 9, 0, 0]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using two arrays to store prefix and suffix products.",
+      "Consider using only one output array to optimize space."
+    ],
+    "company": "Sigmoid"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Anagram"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of lists of strings, where each sublist contains anagrams.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"eat\",\"tea\",\"ate\"],[\"tan\",\"nat\"],[\"bat\"]]",
+        "explanation": "The strings 'eat', 'tea', and 'ate' are anagrams of each other. Similarly, 'tan' and 'nat' are anagrams, and 'bat' stands alone."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "The single empty string is trivially an anagram of itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "The single character 'a' is an anagram of itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to group the anagrams.",
+      "Sort the characters of each string to identify anagrams."
+    ],
+    "company": "Sigmoid"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given a linked list, reverse the nodes of the list k at a time and return the modified list. If the number of nodes is not a multiple of k, then left nodes in the end should remain as they are. You may not alter the values in the nodes, only nodes themselves may be changed.",
+    "topic": "Linked List",
+    "subtopic": "Reversal of Linked List",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Pointer"
+    ],
+    "input_format": "The head of the linked list and an integer k.",
+    "output_format": "The head of the modified linked list after reversing nodes in groups of k.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000].",
+      "0 <= Node.val <= 1000",
+      "k is a positive integer."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[2, 1, 4, 3, 5]",
+        "explanation": "The nodes are reversed in pairs: (1, 2), (3, 4) and node 5 remains unchanged."
+      },
+      {
+        "input": "head = [1, 2, 3], k = 5",
+        "output": "[1, 2, 3]",
+        "explanation": "Since k is greater than the number of nodes, we return the list unchanged."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about how you can reverse a segment of the list.",
+      "Use pointers to manage the current segment boundaries.",
+      "You may want to use a dummy node to simplify edge cases."
+    ],
+    "company": "Sigmoid"
+  },
+  {
+    "question_id": "",
+    "title": "Max Consecutive Ones III",
+    "description": "Given a binary array nums and an integer k, you can flip at most k 0's to 1's. Return the maximum number of consecutive 1's in the array after performing at most k flips.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums (0s and 1s) and an integer k.",
+    "output_format": "An integer representing the maximum number of consecutive 1's possible.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "0 <= k <= nums.length",
+      "nums[i] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,1,0,0,1,1,1,0,1], k = 2",
+        "output": "6",
+        "explanation": "By flipping the two 0's between the 1's, we can get six consecutive 1's."
+      },
+      {
+        "input": "nums = [0,0,1,1,1,0,1,1,0,1], k = 1",
+        "output": "4",
+        "explanation": "Flipping one of the 0's in the sequence allows us to have four consecutive 1's."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window approach.",
+      "Keep track of zero flips within the window."
+    ],
+    "company": "Sigmoid"
+  }
+]

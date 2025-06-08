@@ -1,0 +1,1054 @@
+[
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. An interval is represented as a pair of integers, where the first integer denotes the start of the interval and the second integer denotes the end of the interval. If it overlaps with another interval, you should merge them into a new interval that covers both.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals",
+      "Merge"
+    ],
+    "input_format": "A 2D array of integers, where each sub-array has exactly two integers representing the start and end of an interval.",
+    "output_format": "A 2D array representing the merged intervals.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "[[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, hence they are merged into [1,6]. The remaining intervals do not overlap with any others."
+      },
+      {
+        "input": "[[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] touch at point 4, therefore they are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on their start times.",
+      "Use a list to keep track of the merged intervals gradually."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Remove All Adjacent Duplicates In String",
+    "description": "Given a string s, repeatedly remove adjacent duplicate characters from it until no more pairs exist. Return the final string after all such removals have been made. It can be proven that the answer will always be unique.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Two Pointers"
+    ],
+    "input_format": "A string s consisting of lowercase English letters.",
+    "output_format": "A string representing the final result after removing all adjacent duplicates.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abbaca\"",
+        "output": "ca",
+        "explanation": "Removing adjacent duplicates, we first get 'abaca' then 'aca', and finally 'ca'."
+      },
+      {
+        "input": "s = \"azxxzy\"",
+        "output": "ay",
+        "explanation": "Removing adjacent duplicates, we first get 'azyy', then 'ay'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think about using a stack to keep track of characters."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Remove All Adjacent Duplicates in String II",
+    "description": "Given a string s, you need to remove all adjacent duplicates in the string where adjacent characters are the same. However, if the same characters are adjacent after previous removals, they should be removed as well. Return the resulting string after all possible adjacent duplicates have been removed. It can be assumed that the input string has only lowercase English letters.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Manipulation"
+    ],
+    "input_format": "A single string s, consisting of lowercase English letters.",
+    "output_format": "A string representing the final result after removing all adjacent duplicates.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abbaca\"",
+        "output": "ca",
+        "explanation": "In the input string 'abbaca', we remove 'bb' and 'aa', resulting in 'ca'."
+      },
+      {
+        "input": "s = \"azxxzy\"",
+        "output": "ay",
+        "explanation": "In the input string 'azxxzy', we remove 'xx' and 'zz', resulting in 'ay'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the characters and their counts.",
+      "If the top of the stack is the same as the current character, pop the stack."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. All operations should be done in average O(1) time complexity.\n\n- insert(val): Inserts an item val to the data structure if not present.\n- remove(val): Removes an item val from the data structure if present.\n- getRandom: Returns a random element from the current set of elements (it can be assumed that at least one element exists when this method is called).\n\nYou must implement the required operations such that their overall time complexities are O(1) on average.",
+    "topic": "Data Structure",
+    "subtopic": "Implementing Data Structures",
+    "tags": [
+      "Hash Table",
+      "Array",
+      "Randomized"
+    ],
+    "input_format": "The operations will be a list of tuples like [insert(val), remove(val), getRandom()] where val is an integer.",
+    "output_format": "Output of the getRandom method is an integer representing a random element from the set.",
+    "constraints": [
+      "All values will be unique when inserting.",
+      "The number of calls to insert, remove, and getRandom will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "[insert(1), insert(2), getRandom(), remove(1), insert(2), getRandom()]",
+        "output": "[1 or 2, 2]",
+        "explanation": "First we insert 1 and 2. getRandom can return either 1 or 2. After removing 1, inserting 2 again has no effect, so getRandom will only return 2."
+      },
+      {
+        "input": "[insert(1), getRandom(), remove(1), getRandom()]",
+        "output": "[1, null]",
+        "explanation": "After inserting 1, getRandom returns 1. After removing 1, there are no elements, so getRandom cannot return anything (null)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to store the values and their indices.",
+      "Use an array to store the elements for random access.",
+      "The size of the array needs to be managed for removal operations."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses. A combination of parentheses is well-formed if each opening parenthesis is matched by a closing parenthesis in the correct order.",
+    "topic": "Backtracking",
+    "subtopic": "Combination Generation",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "Parentheses"
+    ],
+    "input_format": "An integer n representing the number of pairs of parentheses.",
+    "output_format": "A list of strings, where each string represents a combination of well-formed parentheses.",
+    "constraints": [
+      "1 <= n <= 8"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\"]",
+        "explanation": "There are five combinations of well-formed parentheses when n = 3."
+      },
+      {
+        "input": "n = 1",
+        "output": "[\"()\"]",
+        "explanation": "There is only one combination when n = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a recursive function to explore all combinations.",
+      "Keep track of the number of open and close parentheses used."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Vowel Spellchecker",
+    "description": "Given a list of words and a list of queries, you need to check if each query is a correct spelling of any word in the word list. The check should be case insensitive and should allow for one of the following transformations to be considered valid: 1. Swapping any vowels ('a', 'e', 'i', 'o', 'u' - both uppercase and lowercase) with another vowel. 2. Retaining the original spelling of the word. Return a list of the corrected words for each query, where 'corrected' words are the closest valid spellings or 'incorrect' if no valid spelling exists.",
+    "topic": "String",
+    "subtopic": "String Matching",
+    "tags": [
+      "String",
+      "Matching",
+      "Vowels"
+    ],
+    "input_format": "A list of words and a list of queries.",
+    "output_format": "A list of strings representing the corrected words for each query.",
+    "constraints": [
+      "1 <= words.length, queries.length <= 10^4",
+      "1 <= words[i].length, queries[j].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "hello",
+            "hallo",
+            "leetcode",
+            "leetcood"
+          ],
+          "queries": [
+            "hello",
+            "hallo",
+            "leetcode",
+            "leetcod",
+            "leetcude"
+          ]
+        },
+        "output": [
+          "hello",
+          "hallo",
+          "leetcode",
+          "incorrect",
+          "leetcood"
+        ],
+        "explanation": "The query 'hello' matches its exact word; 'hallo' also matches; 'leetcode' is correct; 'leetcod' has no match; 'leetcude' changes 'o' to 'u' which is valid for 'leetcood'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how vowels can be swapped.",
+      "Make sure to handle case insensitivity."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "You are given a rotated sorted array 'nums' and an integer 'target'. Your task is to search for 'target' in the rotated array. If found, return its index; otherwise, return -1. The array may contain duplicates. You must write a solution with O(log n) complexity.",
+    "topic": "Binary Search",
+    "subtopic": "Searching in Rotated Arrays",
+    "tags": [
+      "Binary Search",
+      "Array",
+      "Search"
+    ],
+    "input_format": "An integer array nums, and an integer target.",
+    "output_format": "An integer representing the index of target in nums or -1 if not found.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "-10^4 <= nums[i] <= 10^4",
+      "nums is guaranteed to be rotated at some pivot."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "The target '0' is located at index 4."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "The target '3' is not present in the array."
+      },
+      {
+        "input": "nums = [1], target = 0",
+        "output": "-1",
+        "explanation": "The target '0' is not present in the array."
+      },
+      {
+        "input": "nums = [1,3], target = 3",
+        "output": "1",
+        "explanation": "The target '3' is located at index 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how binary search can be modified to handle the rotated nature of the array.",
+      "You may need to decide which part of the array to search based on the pivot."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Repeated DNA Sequences",
+    "description": "A DNA sequence is represented as a string of characters 'A', 'C', 'G', and 'T'. A sequence is considered repeated if it occurs more than once in the given string. Your task is to find all the sequences of length 10 that occur more than once in the given DNA string.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Sliding Window"
+    ],
+    "input_format": "A string s representing the DNA sequence where the length of s is between 1 and 10^5.",
+    "output_format": "A list of strings representing the repeated DNA sequences of length 10.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of characters 'A', 'C', 'G', and 'T' only."
+    ],
+    "examples": [
+      {
+        "input": "s = 'AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT'",
+        "output": "['AAAAACCCCC', 'CCCCCAAAAA']",
+        "explanation": "The sequences 'AAAAACCCCC' and 'CCCCCAAAAA' appear more than once."
+      },
+      {
+        "input": "s = 'AAAAAAAAAAAAAAA'",
+        "output": "['AAAAAAAAAA']",
+        "explanation": "The sequence 'AAAAAAAAAA' appears multiple times in the string."
+      },
+      {
+        "input": "s = 'ACTGACTG'",
+        "output": "[]",
+        "explanation": "No sequences of length 10 appear more than once."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window approach to extract substrings.",
+      "Utilize a hashmap to count occurrences of each substring.",
+      "Consider edge cases where the string is shorter than the required length."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Perfect Number",
+    "description": "A perfect number is a positive integer that is equal to the sum of its proper positive divisors, excluding the number itself. For example, 6 is a perfect number because its divisors are 1, 2, and 3, and 1 + 2 + 3 = 6. Write a function to determine if a given number is a perfect number.",
+    "topic": "Math",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Math",
+      "Number Theory",
+      "Divisors"
+    ],
+    "input_format": "An integer num, where 1 <= num <= 10^8.",
+    "output_format": "A boolean value indicating whether the number is a perfect number.",
+    "constraints": [
+      "1 <= num <= 10^8"
+    ],
+    "examples": [
+      {
+        "input": "num = 6",
+        "output": "true",
+        "explanation": "The divisors of 6 are 1, 2, and 3. 1 + 2 + 3 = 6."
+      },
+      {
+        "input": "num = 28",
+        "output": "true",
+        "explanation": "The divisors of 28 are 1, 2, 4, 7, and 14. 1 + 2 + 4 + 7 + 14 = 28."
+      },
+      {
+        "input": "num = 12",
+        "output": "false",
+        "explanation": "The divisors of 12 are 1, 2, 3, 4, and 6. 1 + 2 + 3 + 4 + 6 = 16, which is not equal to 12."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider calculating the divisors of the number up to its square root.",
+      "Keep track of the sum of all divisors and compare it to the original number."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Climbing Stairs",
+    "description": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "topic": "Dynamic Programming",
+    "subtopic": "Fibonacci Sequence",
+    "tags": [
+      "Dynamic Programming",
+      "Recursion",
+      "Mathematics"
+    ],
+    "input_format": "An integer n representing the total number of steps.",
+    "output_format": "An integer representing the number of distinct ways to climb to the top.",
+    "constraints": [
+      "1 <= n <= 45"
+    ],
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "There are two ways to climb to the top: 1 step + 1 step or 2 steps."
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "explanation": "There are three ways to climb to the top: 1 step + 1 step + 1 step, 1 step + 2 steps, or 2 steps + 1 step."
+      },
+      {
+        "input": "n = 4",
+        "output": "5",
+        "explanation": "There are five ways to climb to the top: 1+1+1+1, 1+1+2, 1+2+1, 2+1+1, or 2+2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using dynamic programming to solve this problem efficiently.",
+      "Think about the relationship between the current step and the previous steps."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Sqrt(x)",
+    "description": "Given a non-negative integer x, compute and return the square root of x, rounded down to the nearest integer. The function should implement a method to find the square root without using built-in functions like sqrt or exponentiation.",
+    "topic": "Math",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Math",
+      "Binary Search",
+      "Square Root"
+    ],
+    "input_format": "A non-negative integer x (0 <= x <= 10^9).",
+    "output_format": "An integer representing the square root of x, rounded down.",
+    "constraints": [
+      "0 <= x <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "x = 4",
+        "output": "2",
+        "explanation": "The square root of 4 is 2."
+      },
+      {
+        "input": "x = 8",
+        "output": "2",
+        "explanation": "The square root of 8 is approximately 2.828, rounded down to 2."
+      },
+      {
+        "input": "x = 0",
+        "output": "0",
+        "explanation": "The square root of 0 is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using binary search to find the square root efficiently.",
+      "Start with a range from 0 to x."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), determine the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "Depth First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid of characters where each character is either '1' or '0'.",
+    "output_format": "An integer representing the number of islands in the grid.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,1,0,0,0],[1,1,0,0,0],[0,0,1,0,0],[0,0,0,1,1]]",
+        "output": "3",
+        "explanation": "The grid contains three islands."
+      },
+      {
+        "input": "grid = [[1,1,1,1,0],[1,1,0,1,0],[1,1,0,0,0],[0,0,0,0,0]]",
+        "output": "1",
+        "explanation": "The entire grid forms one large island."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Depth First Search (DFS) or Breadth First Search (BFS) to explore the islands.",
+      "You could mark the visited land cells to avoid counting them multiple times."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search",
+    "description": "Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where 'adjacent' cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.",
+    "topic": "Backtracking",
+    "subtopic": "Grid Search",
+    "tags": [
+      "Backtracking",
+      "DFS",
+      "Grid"
+    ],
+    "input_format": "A 2D array of characters board and a string word.",
+    "output_format": "A boolean value representing whether the word exists in the grid.",
+    "constraints": [
+      "1 <= board.length, board[i].length <= 6",
+      "1 <= word.length <= 15",
+      "board[i][j] is a lowercase English letter."
+    ],
+    "examples": [
+      {
+        "input": "board = [['A','B','C','E'], ['S','F','C','S'], ['A','D','E','E']], word = 'ABCCED'",
+        "output": "true",
+        "explanation": "The word 'ABCCED' can be constructed as follows: Start from (0,0) -> (0,1) -> (1,1) -> (1,2) -> (0,2) -> (0,3) -> (1,3) -> (2,3)."
+      },
+      {
+        "input": "board = [['A','B','C','E'], ['S','F','C','S'], ['A','D','E','E']], word = 'SEE'",
+        "output": "true",
+        "explanation": "The word 'SEE' can be constructed as follows: Start from (2,0) -> (2,1) -> (1,1)."
+      },
+      {
+        "input": "board = [['A','B','C','E'], ['S','F','C','S'], ['A','D','E','E']], word = 'ABCB'",
+        "output": "false",
+        "explanation": "The word 'ABCB' cannot be constructed due to the constraint of not reusing the same cell."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider a backtracking approach to explore possible paths.",
+      "Keep track of visited cells to avoid using them multiple times.",
+      "Use a recursive function to traverse the grid."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Backspace String Compare",
+    "description": "Given two strings s and t, return true if they are equal when both are typed into empty text editors. Backspaces '//' mean that a character was deleted. Note that after backspacing an empty text, the text will continue empty.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Backspace",
+      "Comparisons"
+    ],
+    "input_format": "Two strings s and t.",
+    "output_format": "A boolean value indicating whether the two strings are equal after applying backspaces.",
+    "constraints": [
+      "0 <= s.length, t.length <= 200",
+      "s and t consist of lowercase letters and '#' characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'ab#c', t = 'ad#c'",
+        "output": "true",
+        "explanation": "Both strings become 'ac' after backspacing."
+      },
+      {
+        "input": "s = 'ab##', t = 'c#d#'",
+        "output": "true",
+        "explanation": "Both strings become empty after applying backspaces."
+      },
+      {
+        "input": "s = 'a#c', t = 'b'",
+        "output": "false",
+        "explanation": "String s becomes 'c' and t is 'b'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider converting the strings to their final forms before comparison.",
+      "You may want to simulate the typing process using a stack."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Word Break II",
+    "description": "Given a string s and a list of strings wordDict, determine all possible sentence combinations that can be created by splitting the string s into words such that each word is in the wordDict. The word combinations should not have any extra spaces and all combinations should be returned in any order.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Backtracking",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Backtracking"
+    ],
+    "input_format": "A string s and a list of strings wordDict.",
+    "output_format": "A list of valid sentence combinations that can be formed from s using the words in wordDict.",
+    "constraints": [
+      "1 <= s.length <= 20",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 20",
+      "All characters in s and wordDict[i] are lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": {
+          "s": "catsanddog",
+          "wordDict": [
+            "cat",
+            "cats",
+            "and",
+            "sand",
+            "dog"
+          ]
+        },
+        "output": [
+          "cats and dog",
+          "cat sand dog"
+        ],
+        "explanation": "The valid combinations are 'cats and dog' and 'cat sand dog'."
+      },
+      {
+        "input": {
+          "s": "pineapplepenapple",
+          "wordDict": [
+            "apple",
+            "pen",
+            "applepen",
+            "pine",
+            "pineapple"
+          ]
+        },
+        "output": [
+          "pine apple pen apple",
+          "pineapple pen apple",
+          "pine applepen apple"
+        ],
+        "explanation": "All these are valid ways to split the input string."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using backtracking to explore all possible combinations.",
+      "Use memoization to optimize the process.",
+      "Check for each prefix of the string to see if it's in the wordDict."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Trie (Prefix Tree)",
+    "description": "Design a data structure that supports the following two operations: insert and search. Implement the Trie class with the following methods: \n\n- void insert(String word): Inserts the string word into the Trie. \n- boolean search(String word): Returns true if the string word is in the Trie (i.e., was inserted before), and false otherwise. \n- boolean startsWith(String prefix): Returns true if there is a previously inserted string word that starts with the prefix, and false otherwise.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Trie",
+      "Data Structure",
+      "Design"
+    ],
+    "input_format": "A string to insert into the Trie or to search for.",
+    "output_format": "A boolean value indicating the success of the search or prefix check.",
+    "constraints": [
+      "1 <= word.length <= 200",
+      "word consists of only lowercase English letters.",
+      "At most 10^4 calls will be made to insert and search."
+    ],
+    "examples": [
+      {
+        "input": "insert(\"apple\")\nsearch(\"apple\")",
+        "output": "true",
+        "explanation": "Inserting 'apple' and searching for 'apple' returns true."
+      },
+      {
+        "input": "search(\"app\")\nstartsWith(\"app\")",
+        "output": "false\ntrue",
+        "explanation": "'search' for 'app' returns false because 'app' was not inserted, but 'startsWith' for 'app' returns true since 'apple' starts with 'app'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a nested structure to represent the Trie.",
+      "Each node should represent a character and can have multiple children."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Word Break",
+    "description": "Given a string s and a dictionary of strings wordDict, determine if s can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicates, and you may not use any word from the dictionary more than once.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Backtracking"
+    ],
+    "input_format": "A string s and a list of strings wordDict.",
+    "output_format": "A boolean value indicating whether the string can be segmented.",
+    "constraints": [
+      "1 <= s.length <= 300",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 20",
+      "s and wordDict[i] consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'leetcode', wordDict = ['leet', 'code']",
+        "output": "true",
+        "explanation": "The string 'leetcode' can be segmented as 'leet code'."
+      },
+      {
+        "input": "s = 'applepenapple', wordDict = ['apple', 'pen']",
+        "output": "true",
+        "explanation": "The string 'applepenapple' can be segmented as 'apple pen apple'."
+      },
+      {
+        "input": "s = 'catsandog', wordDict = ['cats', 'dog', 'sand', 'and', 'cat']",
+        "output": "false",
+        "explanation": "The string 'catsandog' cannot be segmented into any combination of the given words."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to solve the problem.",
+      "Think about how to break down the problem into smaller subproblems."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Sum of Left Leaves",
+    "description": "Given a binary tree, find the sum of all left leaves in the tree. A leaf is a node with no children. A left leaf is a leaf that is the left child of its parent.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Depth-First Search",
+      "Recursion"
+    ],
+    "input_format": "The input consists of the root node of the binary tree.",
+    "output_format": "An integer representing the sum of all left leaves in the tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 100].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [3,9,20,null,null,15,7]",
+        "output": "24",
+        "explanation": "The left leaves are 9 and 15. Their sum is 9 + 15 = 24."
+      },
+      {
+        "input": "root = [1]",
+        "output": "0",
+        "explanation": "There are no left leaves in the tree."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think about a recursive approach to traverse the tree.",
+      "Keep track of whether the current node is a left child."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Special Binary String",
+    "description": "A binary string is special if it satisfies the following conditions: 1. It consists of only '0's and '1's. 2. The number of '1's and '0's in the string are equal. 3. Any prefix of the string contains at least as many '1's as '0's. Given a binary string s that is not special, return the lexicographically smallest special binary string after rearranging its characters.",
+    "topic": "String",
+    "subtopic": "Rearrangement",
+    "tags": [
+      "String",
+      "Rearrangement",
+      "Greedy"
+    ],
+    "input_format": "A binary string s, where s contains only '0's and '1's.",
+    "output_format": "A binary string that is the lexicographically smallest special binary string derived from s.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of only '0's and '1's."
+    ],
+    "examples": [
+      {
+        "input": "s = \"1100\"",
+        "output": "\"0011\"",
+        "explanation": "The rearranged string '0011' is special and is the lexicographically smallest."
+      },
+      {
+        "input": "s = \"110010\"",
+        "output": "\"001101\"",
+        "explanation": "The rearranged string '001101' is special and is the lexicographically smallest."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to balance the number of '0's and '1's.",
+      "Use recursion or backtracking to explore possible rearrangements."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Decode the Slanted Ciphertext",
+    "description": "In this problem, you need to decode a slanted ciphertext message. The message is encoded in a grid format, where each character appears at a specific slanted position. Your task is to reconstruct the original message by reading the characters in a zigzag pattern, moving diagonally downwards and then diagonally upwards. You will be given a string representing the encoded message and an integer representing the number of rows in the zigzag pattern. Return the decoded message.",
+    "topic": "String",
+    "subtopic": "Zigzag Conversion",
+    "tags": [
+      "String",
+      "Zigzag",
+      "Encoding"
+    ],
+    "input_format": "A string s representing the encoded message, and an integer numRows indicating the number of rows.",
+    "output_format": "A string representing the decoded message.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= numRows <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "s = \"PAYPALISHIRING\", numRows = 3",
+        "output": "PAHNAPLSIIGYIR",
+        "explanation": "The zigzag pattern for numRows = 3 is: P   A   H   N\n  Y A P L S I G\n    I   G. Reading the letters in rows gives 'PAHNAPLSIIGYIR'."
+      },
+      {
+        "input": "s = \"A\", numRows = 1",
+        "output": "A",
+        "explanation": "If there is only one character and one row, the output is the character itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how the characters are positioned in the zigzag way.",
+      "You might want to create a list to hold strings for each row.",
+      "Use direction control to switch between down and up in the zigzag."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Evaluate Reverse Polish Notation",
+    "description": "Given an array of strings tokens representing an arithmetic expression in Reverse Polish Notation, evaluate the expression and return the result. The valid operators are '+', '-', '*', and '/'. The division between two integers should truncate toward zero.",
+    "topic": "Stack",
+    "subtopic": "Evaluating Expressions",
+    "tags": [
+      "Stack",
+      "Math",
+      "Evaluation"
+    ],
+    "input_format": "An array of strings tokens where each token is either an operator or an operand.",
+    "output_format": "An integer which is the result of evaluating the expression.",
+    "constraints": [
+      "1 <= tokens.length <= 10^4",
+      "tokens[i] is either an operator: '+', '-', '*', '/' or a valid integer in the range [-10^4, 10^4]."
+    ],
+    "examples": [
+      {
+        "input": "tokens = ['2', '1', '+', '3', '*']",
+        "output": "9",
+        "explanation": "The expression evaluates as (2 + 1) * 3 = 3 * 3 = 9."
+      },
+      {
+        "input": "tokens = ['4', '13', '5', '/', '+']",
+        "output": "6",
+        "explanation": "The expression evaluates as 4 + (13 / 5) = 4 + 2 = 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to evaluate the expression.",
+      "Perform operations based on the operators encountered."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Set Mismatch",
+    "description": "You are given an integer array nums containing n distinct numbers taken from 1 to n. The array is supposed to contain exactly one number duplicated and one number missing. Your task is to find the duplicated number and the missing number.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Hash Table"
+    ],
+    "input_format": "An array of integers nums where 1 <= nums.length <= 10^4 and each element is in the range [1, n].",
+    "output_format": "An array of two integers, where the first integer is the duplicate number and the second integer is the missing number.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "1 <= nums[i] <= n",
+      "All numbers in nums are unique except for one duplicate."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 4]",
+        "output": "[2, 3]",
+        "explanation": "The duplicate number is 2 and the missing number is 3."
+      },
+      {
+        "input": "nums = [3, 4, 4, 5, 6]",
+        "output": "[4, 2]",
+        "explanation": "The duplicate number is 4 and the missing number is 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a set to track seen numbers.",
+      "Calculate the expected sum of all numbers from 1 to n."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Palindromes After Operations",
+    "description": "You are given a string 's' consisting of lowercase letters and an integer 'k'. You can perform up to 'k' operations where in each operation you can choose any character in the string and change it to any other lowercase letter. Your goal is to determine the maximum number of palindromic substrings that can be formed in the string after performing the operations. A palindrome is a string that reads the same backward as forward. Return the maximum number of unique palindromes that can be formed.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Dynamic Programming"
+    ],
+    "input_format": "A string 's' of length n (1 <= n <= 1000) and an integer 'k' (0 <= k <= n).",
+    "output_format": "An integer representing the maximum number of unique palindromic substrings that can be formed.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "0 <= k <= s.length"
+    ],
+    "examples": [
+      {
+        "input": "s = 'aabb', k = 1",
+        "output": "3",
+        "explanation": "We can change one 'b' to 'a' resulting in 'aaab', which can produce three unique palindromic substrings: 'a', 'aa', 'aaa'."
+      },
+      {
+        "input": "s = 'abc', k = 2",
+        "output": "4",
+        "explanation": "We can change two characters to make 'aaa', which yields the unique palindromic substrings: 'a', 'aa', 'aaa'."
+      },
+      {
+        "input": "s = 'a', k = 0",
+        "output": "1",
+        "explanation": "The string is already a palindrome. The only unique palindromic substring is 'a'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of palindromes.",
+      "Try to identify the unique palindromic substrings in the original string.",
+      "Changing characters can help create more unique palindromes."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Logger Rate Limiter",
+    "description": "Design a logger system that receives a message and its timestamp (in seconds). The logger should be able to ignore a message if it has been printed within the last 10 seconds. Implement a class Logger with the following method: boolean shouldPrintMessage(int timestamp, String message) that returns true if the message should be printed in the given timestamp, otherwise returns false.",
+    "topic": "Design",
+    "subtopic": "Rate Limiting",
+    "tags": [
+      "Design",
+      "Rate Limiting",
+      "Hash Map"
+    ],
+    "input_format": "An integer timestamp representing the time in seconds, and a string message.",
+    "output_format": "A boolean value indicating whether the message should be printed.",
+    "constraints": [
+      "0 <= timestamp <= 10^7",
+      "1 <= message.length <= 30"
+    ],
+    "examples": [
+      {
+        "input": "timestamp = 1, message = \"foo\"",
+        "output": "true",
+        "explanation": "This is the first occurrence of the message, thus it is printed."
+      },
+      {
+        "input": "timestamp = 2, message = \"bar\"",
+        "output": "true",
+        "explanation": "This is a new message, it is printed."
+      },
+      {
+        "input": "timestamp = 3, message = \"foo\"",
+        "output": "false",
+        "explanation": "The message 'foo' has been printed at timestamp 1, it cannot be printed again until timestamp 11."
+      },
+      {
+        "input": "timestamp = 8, message = \"bar\"",
+        "output": "false",
+        "explanation": "The message 'bar' was printed at timestamp 2 and cannot be printed again until timestamp 12."
+      },
+      {
+        "input": "timestamp = 11, message = \"foo\"",
+        "output": "true",
+        "explanation": "The message 'foo' can be printed again as it's been more than 10 seconds since it was last printed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a data structure to store the timestamp of messages.",
+      "Consider storing the message-timestamp pairs in a HashMap."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Clone Graph",
+    "description": "Given a reference to a node in a connected undirected graph, return a deep copy (clone) of the graph. Each node in the graph contains a value and a list of its neighbors. The graph is guaranteed to be connected and has no cycles. The cloning must be done using only a depth-first search (DFS) or breadth-first search (BFS) approach.",
+    "topic": "Graph",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Clone"
+    ],
+    "input_format": "A node that serves as the entry point for the graph to be cloned.",
+    "output_format": "Return the node that is the root of the cloned graph.",
+    "constraints": [
+      "The number of nodes in the graph is at most 100.",
+      "Each node's value is a unique integer in the range [1, 100].",
+      "The graph is guaranteed to have no cycles."
+    ],
+    "examples": [
+      {
+        "input": "adjacency list: [[2,4],[1,3],[2],[1]]",
+        "output": "Cloned graph with adjacency list: [[2,4],[1,3],[2],[1]]",
+        "explanation": "The clone of the input graph will have the same structure and node values."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to keep track of cloned nodes.",
+      "Recursively clone each neighbor of the current node."
+    ],
+    "company": "Grammarly"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the height of walls, compute how much water can be trapped after raining. The water cannot overflow the walls, and it can only be trapped between the walls.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers height representing the height of walls.",
+    "output_format": "An integer representing the total amount of trapped water.",
+    "constraints": [
+      "0 <= height.length <= 2 * 10^4",
+      "0 <= height[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water can be trapped above the walls at indices 2, 4, 5, 6, and 10, resulting in a total of 6 units of water."
+      },
+      {
+        "input": "height = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water can be trapped above the walls at indices 2, 3, and 4, resulting in a total of 9 units of water."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about the heights of the walls to the left and right of each position.",
+      "Consider using a two-pointer approach for an optimal solution.",
+      "Use the minimum of the tallest walls on either side to calculate trapped water."
+    ],
+    "company": "Grammarly"
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "question_id": "",
+    "title": "String Compression",
+    "description": "Given a string, compress it using the counts of consecutive characters. The string should be modified in-place to use this compression where possible. The resulting compressed string must be returned. If the original string is shorter than the compressed string, the original string should be returned. You may assume the input string only contains uppercase and lowercase letters and digits.",
+    "topic": "String",
+    "subtopic": "Compression",
+    "tags": [
+      "String",
+      "Compression",
+      "In-place"
+    ],
+    "input_format": "A single string s.",
+    "output_format": "A string representing the compressed version of the input string.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of uppercase and lowercase letters and digits."
+    ],
+    "examples": [
+      {
+        "input": "s = \"aabcccccaaa\"",
+        "output": "a2b1c5a3",
+        "explanation": "The compressed version counts consecutive letters: 'aa' -> 'a2', 'b' -> 'b1', 'ccccc' -> 'c5', 'aaa' -> 'a3'."
+      },
+      {
+        "input": "s = \"abc\"",
+        "output": "abc",
+        "explanation": "The original string is not compressed as it is shorter than the compressed version."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a pointer to track the current position.",
+      "You can count the consecutive characters as you iterate."
+    ],
+    "company": "GoDaddy"
+  },
+  {
+    "question_id": "",
+    "title": "Arranging Coins",
+    "description": "You have a total of `n` coins, and you want to form a staircase with these coins. You need to determine how many complete rows of the staircase you can build. In each row `i`, you will place exactly `i` coins. For example, if you have `n = 5`, you can build 2 complete rows: 1 coin in the first row and 2 coins in the second row, leaving you with 2 coins that cannot form a complete row.",
+    "topic": "Mathematics",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Math",
+      "Binary Search",
+      "Greedy"
+    ],
+    "input_format": "An integer n representing the total number of coins.",
+    "output_format": "An integer representing the number of complete rows that can be arranged.",
+    "constraints": [
+      "1 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 5",
+        "output": "2",
+        "explanation": "2 complete rows can be built: 1 coin in the first row and 2 coins in the second row."
+      },
+      {
+        "input": "n = 8",
+        "output": "3",
+        "explanation": "3 complete rows can be built: 1 coin in the first row, 2 coins in the second row, and 3 coins in the third row."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think about the sum of the first k natural numbers: 1 + 2 + ... + k = k * (k + 1) / 2.",
+      "Use binary search to find the maximum k such that k * (k + 1) / 2 <= n."
+    ],
+    "company": "GoDaddy"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given an array of intervals where intervals[i] = [start_i, end_i], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+    "topic": "Sorting",
+    "subtopic": "Intervals",
+    "tags": [
+      "Sorting",
+      "Array",
+      "Intervals"
+    ],
+    "input_format": "An array of intervals, where each interval is represented as an array of two integers [start, end].",
+    "output_format": "An array of merged intervals, where each merged interval is represented as an array of two integers [start, end].",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= start_i <= end_i <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "Intervals [1,3] and [2,6] overlap, so we merge them to get [1,6]. The other intervals do not overlap."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] overlap at point 4, so we merge them to get [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the start time.",
+      "Use a stack or a list to keep track of merged intervals."
+    ],
+    "company": "GoDaddy"
+  },
+  {
+    "question_id": "",
+    "title": "Permutations",
+    "description": "Given an array of distinct integers, return all the possible permutations. You can return the answer in any order. The order of the elements in the permutations does matter.",
+    "topic": "Backtracking",
+    "subtopic": "Permutations",
+    "tags": [
+      "Backtracking",
+      "Permutations",
+      "Array"
+    ],
+    "input_format": "An array of distinct integers nums.",
+    "output_format": "A list of all possible permutations of the array.",
+    "constraints": [
+      "1 <= nums.length <= 6",
+      "-10 <= nums[i] <= 10"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]",
+        "explanation": "There are 6 possible permutations of the array [1, 2, 3]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use backtracking to explore all possible arrangements.",
+      "Keep track of the visited elements to avoid duplicates in permutations."
+    ],
+    "company": "GoDaddy"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Degree of a Connected Trio in a Graph",
+    "description": "Given an undirected graph, find the minimum degree of any connected trio (three nodes that are all connected to each other) in the graph. A connected trio of nodes is defined as three distinct nodes (u, v, w) such that each node is connected to the other two. The degree of a node is the number of edges connected to it. If no connected trio exists, return -1.",
+    "topic": "Graph",
+    "subtopic": "Trio Connectivity",
+    "tags": [
+      "Graph",
+      "Trio",
+      "Minimum Degree"
+    ],
+    "input_format": "An integer n representing the number of nodes in the graph, followed by a list of edges where each edge is represented by a pair of integers [u, v] indicating a bidirectional edge between nodes u and v.",
+    "output_format": "An integer representing the minimum degree of any connected trio, or -1 if no trios exist.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "0 <= edges.length <= n * (n - 1) / 2",
+      "1 <= u, v <= n"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, edges = [[1,2],[2,3],[1,3],[3,4],[4,5]]",
+        "output": "2",
+        "explanation": "The connected trio (1, 2, 3) has a minimum degree of 2 (nodes 1 and 2 are connected to 3)."
+      },
+      {
+        "input": "n = 4, edges = [[1,2],[2,3]]",
+        "output": "-1",
+        "explanation": "There are no connected trios since there are only 3 nodes in the entire graph."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Check each trio of nodes to see if they are all connected.",
+      "Keep track of the degrees of each node to find the minimum."
+    ],
+    "company": "GoDaddy"
+  }
+]

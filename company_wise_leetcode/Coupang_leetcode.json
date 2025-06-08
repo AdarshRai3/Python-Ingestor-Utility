@@ -1,0 +1,1976 @@
+[
+  {
+    "question_id": "",
+    "title": "Subsets",
+    "description": "Given an integer array nums, return all possible subsets (the power set). The solution set must not contain duplicate subsets. You may return the answer in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Generation",
+    "tags": [
+      "Backtracking",
+      "Array",
+      "Subset"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of lists representing all possible subsets of the input array.",
+    "constraints": [
+      "0 <= nums.length <= 10",
+      "-10 <= nums[i] <= 10",
+      "The solution set must not contain duplicate subsets."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2]",
+        "output": "[[], [1], [1, 2], [1, 2, 2], [2], [2, 2]]",
+        "explanation": "The subsets are formed by considering all combinations, ensuring duplicates are not included."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[[], [0]]",
+        "explanation": "The only subsets are the empty set and the set containing the single element."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a backtracking approach to explore each subset.",
+      "Try using a set to handle duplicate subsets."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Word Break",
+    "description": "Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words. A dictionary word can be used multiple times. You may assume the dictionary does not contain duplicate words.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Backtracking"
+    ],
+    "input_format": "A string s and a list of strings wordDict representing the dictionary.",
+    "output_format": "A boolean value indicating whether the string can be segmented.",
+    "constraints": [
+      "1 <= s.length <= 300",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 20",
+      "The input string and words in the dictionary consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'leetcode', wordDict = ['leet', 'code']",
+        "output": "true",
+        "explanation": "'leetcode' can be segmented as 'leet' + 'code'."
+      },
+      {
+        "input": "s = 'applepenapple', wordDict = ['apple', 'pen']",
+        "output": "true",
+        "explanation": "'applepenapple' can be segmented as 'apple' + 'pen' + 'apple'."
+      },
+      {
+        "input": "s = 'catsandog', wordDict = ['cats', 'dog', 'sand', 'and', 'cat']",
+        "output": "false",
+        "explanation": "'catsandog' cannot be segmented into words from the dictionary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to determine if the prefix can be segmented.",
+      "Use a boolean array to keep track of the segmentation possibilities."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Decode String",
+    "description": "Given an encoded string, return its decoded string. The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. Note that k is guaranteed to be a positive integer. You must decode the entire string and concatenate the result.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Stack",
+      "Recursion"
+    ],
+    "input_format": "A single string s, representing the encoded string.",
+    "output_format": "A string representing the fully decoded output.",
+    "constraints": [
+      "1 <= s.length <= 30",
+      "s consists of digits, lowercase English letters, and square brackets '[]'.",
+      "The input string is guaranteed to be well-formed."
+    ],
+    "examples": [
+      {
+        "input": "s = \"3[abc]2[cd]\"",
+        "output": "abcabcabccd",
+        "explanation": "Decode as follows: 3 times 'abc' and 2 times 'cd' gives 'abcabcabccd'."
+      },
+      {
+        "input": "s = \"2[3[a]b]\"",
+        "output": "aaabaa",
+        "explanation": "Decoded: 3 times 'a' followed by 'b', 2 times gives 'aaabaa'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to manage the characters and numbers.",
+      "Handle the brackets carefully to track when to decode."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring with At Most K Distinct Characters",
+    "description": "Given a string s and an integer k, find the length of the longest substring that contains at most k distinct characters. A substring is defined as a contiguous sequence of characters within the string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A string s (1 \u2264 |s| \u2264 10^5) and an integer k (1 \u2264 k \u2264 50)",
+    "output_format": "An integer representing the length of the longest substring with at most k distinct characters.",
+    "constraints": [
+      "1 \u2264 s.length \u2264 10^5",
+      "1 \u2264 k \u2264 50"
+    ],
+    "examples": [
+      {
+        "input": "s = \"eceba\", k = 2",
+        "output": "3",
+        "explanation": "The longest substring with at most 2 distinct characters is \"ece\", which has a length of 3."
+      },
+      {
+        "input": "s = \"aa\", k = 1",
+        "output": "2",
+        "explanation": "The longest substring with at most 1 distinct character is \"aa\", with a length of 2."
+      },
+      {
+        "input": "s = \"abcba\", k = 2",
+        "output": "3",
+        "explanation": "The longest substring with at most 2 distinct characters is \"bcb\", which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window to keep track of the substring.",
+      "Use a HashMap to count the occurrences of characters within the window."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "LFU Cache",
+    "description": "Design and implement a data structure for a Least Frequently Used (LFU) cache. It should support the following operations: get and put. The get operation retrieves the value of the key if the key exists in the cache. The put operation will add the key-value pair to the cache. When the cache exceeds its capacity, it should invalidate the least frequently used item before inserting a new item.",
+    "topic": "Design",
+    "subtopic": "Cache",
+    "tags": [
+      "Design",
+      "Cache",
+      "LFU"
+    ],
+    "input_format": "The LFUCache constructor accepts a parameter capacity, which is the maximum number of items the cache can hold. The get method accepts a key, and the put method accepts a key and a value.",
+    "output_format": "The output for the get operation should be the value associated with the key, or -1 if the key does not exist. There is no output for the put operation.",
+    "constraints": [
+      "1 <= capacity <= 10^4",
+      "0 <= key, value <= 10^5",
+      "The functions get and put must be called at most 2 * 10^5 times."
+    ],
+    "examples": [
+      {
+        "input": "LFUCache lfu = new LFUCache(2); lfu.put(1, 1); lfu.put(2, 2); lfu.get(1); lfu.put(3, 3); lfu.get(2); lfu.get(3); lfu.put(4, 4); lfu.get(1); lfu.get(3); lfu.get(4);",
+        "output": "[1,-1,3,4]",
+        "explanation": "The steps demonstrate adding items to the cache, retrieving existing keys, and evaluating the eviction of the least frequently used item."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to maintain the frequency of accesses to each item.",
+      "Using a hash map can help maintain quick access to the items.",
+      "Think about how to efficiently find and evict the least frequently used item."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Range Module",
+    "description": "You are tasked with implementing a data structure that supports adding, querying, and removing ranges. Each range is defined by two integers, start and end, which represent the inclusive bounds of the range. You need to support the following operations: addRange(start, end), queryRange(start, end), and removeRange(start, end). The addRange should add the specified range to the data structure, merging overlapping ranges when necessary. The queryRange should return true if the specified range is fully covered by any of the added ranges, while removeRange should remove any ranges that intersect with the specified range.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Intervals"
+    ],
+    "input_format": "Methods can be called sequentially, with the format: rangeModule.addRange(start, end), rangeModule.queryRange(start, end), rangeModule.removeRange(start, end).",
+    "output_format": "The outputs of the queryRange method should return a boolean indicating if the range is covered.",
+    "constraints": [
+      "The number of queries will not exceed 1000.",
+      "The values of start and end are between 0 and 10^9.",
+      "The difference between start and end is positive."
+    ],
+    "examples": [
+      {
+        "input": "rangeModule.addRange(10, 20); rangeModule.queryRange(10, 14);",
+        "output": "true",
+        "explanation": "The range [10, 20] fully covers [10, 14]."
+      },
+      {
+        "input": "rangeModule.queryRange(14, 16);",
+        "output": "false",
+        "explanation": "The range [10, 20] does not cover [14, 16]."
+      },
+      {
+        "input": "rangeModule.addRange(20, 30); rangeModule.queryRange(14, 16);",
+        "output": "false",
+        "explanation": "The range [10, 20] and [20, 30] do not cover [14, 16]."
+      },
+      {
+        "input": "rangeModule.removeRange(10, 14); rangeModule.queryRange(10, 14);",
+        "output": "false",
+        "explanation": "After removing the range [10, 14], it is no longer covered."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a sorted list of intervals to manage the ranges efficiently.",
+      "To check for overlapping ranges, maintain a merge function.",
+      "Think about how you would handle edge cases where ranges touch but do not overlap."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Split BST",
+    "description": "Given a binary search tree (BST) root and a value V, split the BST into two subtrees: one with values less than or equal to V, and another with values strictly greater than V. You should return the root nodes of both subtrees as an array of two elements.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "BST",
+      "Recursion"
+    ],
+    "input_format": "A root node of a binary search tree and an integer V.",
+    "output_format": "An array containing the root nodes of the two resulting trees.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 1000].",
+      "-10^4 <= node.val <= 10^4",
+      "All values of the input tree are unique."
+    ],
+    "examples": [
+      {
+        "input": "root = [4, 2, 6, 1, 3], V = 2",
+        "output": "[[1], [4, 3, 6]]",
+        "explanation": "The resulting trees will have values <= 2 in the first tree and values > 2 in the second tree."
+      },
+      {
+        "input": "root = [5, 3, 8, 1, 4], V = 5",
+        "output": "[[1, 3, 4], [8]]",
+        "explanation": "The first tree has values <= 5 while the second tree has values > 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using recursion to traverse and split the tree.",
+      "The properties of a BST can help to determine which nodes belong where."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) Cache. The LRU Cache should support the following operations: 'get' and 'put'. 'get(key)' retrieves the value of the key if the key exists in the cache, otherwise returns -1. 'put(key, value)' updates the value of the key if the key exists. Otherwise, it will insert the key-value pair into the cache. If the number of keys exceeds the capacity from this operation, it should invalidate the least recently used key.",
+    "topic": "Data Structures",
+    "subtopic": "Cache",
+    "tags": [
+      "Cache",
+      "Linked List",
+      "Hash Map"
+    ],
+    "input_format": "You need to implement the LRUCache class. The class should have the following methods: LRUCache(int capacity), int get(int key), void put(int key, int value).",
+    "output_format": "The output will be the result of 'get' and 'put' operations as described.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^4",
+      "The operations 'get' and 'put' will be called at most 10^4 times."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1,-1,3,4]",
+        "explanation": "The sequence of operations results in the following: 'get(1)' returns 1, 'get(2)' returns -1 because the key 2 was evicted. 'get(3)' returns 3, and 'get(4)' returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hash map and a doubly linked list.",
+      "The linked list will help keep track of the order of usage."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Design In-Memory File System",
+    "description": "You are tasked with implementing a simple in-memory file system. The system should support creating, reading, and deleting files and directories. Each file or directory should have a unique path. The file system should be initialized as an empty directory. You will need to implement methods to create directories, create files with content, read files, and delete files or directories.",
+    "topic": "Design",
+    "subtopic": "File System",
+    "tags": [
+      "Design",
+      "File System",
+      "OOP"
+    ],
+    "input_format": "N/A - Methods will be called directly on the FileSystem object.",
+    "output_format": "The return type of each operation as specified in the problem statement.",
+    "constraints": [
+      "The maximum number of files and directories will not exceed 1000.",
+      "File names and directory names will contain only lowercase letters, and the paths will be separated by a forward slash '/'"
+    ],
+    "examples": [
+      {
+        "input": "fs = new FileSystem()\nfs.createFile('/a/b/c', 'content')\nfs.readFile('/a/b/c')",
+        "output": "'content'",
+        "explanation": "A file is created at path '/a/b/c' with the content 'content'. Reading it returns 'content'."
+      },
+      {
+        "input": "fs.createDir('/a/b')\nfs.delete('/a/b')\nfs.readFile('/a/b/c')",
+        "output": "Exception or error indicating that the file does not exist.",
+        "explanation": "After deleting directory '/a/b', any attempts to access files or directories under it will result in an error."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a trie-like structure for directory paths.",
+      "Keep track of parent directories to manage deletions correctly."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "There are a total of n courses you have to take, labeled from 0 to n-1. Some courses may have prerequisites. Given the total number of courses and a list of prerequisite pairs, determine if it is possible for you to finish all courses. A prerequisite pair [a, b] indicates that you must take course b before course a. You should return true if you can finish all courses; otherwise return false.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "An integer n representing the number of courses, and a list of prerequisite pairs.",
+    "output_format": "A boolean value indicating if it's possible to finish all courses.",
+    "constraints": [
+      "1 <= n <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "n = 2, prerequisites = [[1, 0]]",
+        "output": "true",
+        "explanation": "You can take course 0 first, then take course 1."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1, 0], [0, 1]]",
+        "output": "false",
+        "explanation": "Course 0 has to be taken before course 1 and vice versa, creating a cycle."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how you can represent the courses and their prerequisites.",
+      "Consider using topological sorting to solve the problem."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Design Twitter",
+    "description": "Design a simplified version of Twitter that allows users to post tweets, follow other users, and view the timeline of tweets from followed users. Implement the following functionalities: Users can post new tweets, follow other users, and get the timeline of their tweets. The timeline should consist of the most recent tweets from followed users, with the latest tweets appearing first.",
+    "topic": "System Design",
+    "subtopic": "Design and Architecture",
+    "tags": [
+      "System Design",
+      "Twitter",
+      "Feed",
+      "Follow"
+    ],
+    "input_format": "The input consists of a series of operations including posting a tweet, following a user, and retrieving the timeline.",
+    "output_format": "The output consists of the timeline of tweets for a given user, ordered from most recent to least recent.",
+    "constraints": [
+      "The number of users is at most 10^5.",
+      "Each user can follow at most 10^4 users.",
+      "Each user can post at most 10^4 tweets.",
+      "Tweets are strings and will contain up to 140 characters."
+    ],
+    "examples": [
+      {
+        "input": "User A posts a tweet 'Hello World'. User B follows User A. User B retrieves timeline.",
+        "output": "['Hello World']",
+        "explanation": "User B sees the tweet from User A on their timeline."
+      },
+      {
+        "input": "User A posts a tweet 'Tweet 1'. User A posts a tweet 'Tweet 2'. User B follows User A. User B retrieves timeline.",
+        "output": "['Tweet 2', 'Tweet 1']",
+        "explanation": "User B sees both tweets from User A, ordered by most recent."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to store user relationships.",
+      "Use a priority queue or a sorted list for managing tweets."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Paths II",
+    "description": "A robot is located at the top-left corner of a m x n grid. The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid. However, some cells in the grid are obstacles. You need to return the number of unique paths the robot can take to reach the bottom-right corner of the grid. The grid is represented by a 2D array where 0 represents an empty cell and 1 represents an obstacle.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Path Counting"
+    ],
+    "input_format": "A 2D grid represented as a list of lists with dimensions m x n.",
+    "output_format": "An integer representing the number of unique paths from the top-left to the bottom-right corner.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "grid[i][j] is 0 or 1",
+      "The starting cell grid[0][0] and the ending cell grid[m-1][n-1] will not be obstacles."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0,0,0],[0,1,0],[0,0,0]]",
+        "output": "2",
+        "explanation": "The two possible unique paths are: down -> down -> right -> right and right -> down -> down -> right."
+      },
+      {
+        "input": "grid = [[0,1],[0,0]]",
+        "output": "1",
+        "explanation": "The only unique path is down -> right."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to keep track of the number of ways to reach each cell.",
+      "You can initialize the starting point and update paths based on the obstacles."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Shopping Offers",
+    "description": "You are given a list of items, each with a price, and a series of offers. Each offer allows you to purchase a specific set of items for a discounted price. Your task is to determine the minimum possible cost to purchase all items given the offers. The offers can be stacked, meaning that you can apply more than one offer to the same purchase if applicable.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Optimization",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Shopping"
+    ],
+    "input_format": "A list of integers representing prices of items and a list of offers where each offer is represented as a list containing the indices of items covered by that offer and the price of the offer.",
+    "output_format": "An integer representing the minimum cost to purchase all items.",
+    "constraints": [
+      "1 <= prices.length <= 100",
+      "1 <= offers.length <= 100",
+      "0 <= prices[i] <= 1000",
+      "0 <= offers[j][i] <= prices.length for items, prices for the last index of offers."
+    ],
+    "examples": [
+      {
+        "input": {
+          "prices": [
+            20,
+            30,
+            40
+          ],
+          "offers": [
+            [
+              [
+                0,
+                1
+              ],
+              40
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              60
+            ]
+          ]
+        },
+        "output": "60",
+        "explanation": "Using the first offer, you can buy items 0 and 1 for 40, then buy item 2 for 40, leading to a total of 80. Alternatively, you can buy item 1 and 2 with the second offer for 60 plus item 0, totaling 60."
+      },
+      {
+        "input": {
+          "prices": [
+            10,
+            15,
+            30
+          ],
+          "offers": [
+            [
+              [
+                0
+              ],
+              10
+            ],
+            [
+              [
+                1,
+                2
+              ],
+              25
+            ]
+          ]
+        },
+        "output": "25",
+        "explanation": "Purchase item 0 with its offer for 10, and then take the second offer for items 1 and 2 for 25, totaling 25."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a bitmask to represent the state of purchased items.",
+      "Dynamic programming may help to minimize cost effectively."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Repeating Substring",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within a string. The substring must be at least one character long.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A single string s consisting of uppercase and lowercase English letters.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of English letters, digits, symbols and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The answer is \"abc\", with the length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The answer is \"b\", with the length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The answer is \"wke\", with the length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to track the characters and their indices.",
+      "Use two pointers to define the current window of characters."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Paths",
+    "description": "A robot is located at the top-left corner of a m x n grid and wants to move to the bottom-right corner. The robot can only move either down or right at any point in time. Given the dimensions of the grid (m and n), return the number of unique paths that the robot can take to reach the bottom-right corner.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorial Path Counting",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Combinatorics"
+    ],
+    "input_format": "Two integers m and n, representing the number of rows and columns in the grid.",
+    "output_format": "An integer representing the number of unique paths from the top-left to the bottom-right corner.",
+    "constraints": [
+      "1 <= m, n <= 100"
+    ],
+    "examples": [
+      {
+        "input": "m = 3, n = 7",
+        "output": "28",
+        "explanation": "There are 28 unique paths from the top-left to the bottom-right corner of a 3x7 grid, where the robot can only move right or down."
+      },
+      {
+        "input": "m = 3, n = 2",
+        "output": "3",
+        "explanation": "In a 3x2 grid, the 3 unique paths are: right-down-down, down-right-down, and down-down-right."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how many ways you can reach the last cell from the cells above or left.",
+      "Consider using dynamic programming to build up the solution."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Possible Bipartition",
+    "description": "You are given a graph represented as an integer array, where each element indicates an edge between two nodes. Your task is to determine if it is possible to bipartition the graph into two groups such that no two nodes within the same group are connected by an edge. Return `true` if the graph can be bipartitioned; otherwise, return `false`.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "Bipartition",
+      "DFS"
+    ],
+    "input_format": "An integer n representing the total number of nodes and a two-dimensional array edges representing the edges between nodes.",
+    "output_format": "A boolean value, true if the graph can be bipartitioned, otherwise false.",
+    "constraints": [
+      "1 <= n <= 2000",
+      "0 <= edges.length <= 10^4",
+      "edges[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, edges = [[1,2],[1,3],[2,4]]",
+        "output": "true",
+        "explanation": "We can group the nodes as {1, 4} and {2, 3}."
+      },
+      {
+        "input": "n = 5, edges = [[1,2],[1,3],[2,3]]",
+        "output": "false",
+        "explanation": "There is no way to group the nodes such that no two connected nodes are in the same group."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use BFS or DFS to color the graph and check for conflicts.",
+      "If two adjacent nodes have the same color, it's not bipartite."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Regular Expression Matching",
+    "description": "Implement a function that takes in two strings: `s` and `p`, where `s` represents a text string and `p` represents a pattern string containing the special characters `.` and `*`. The `.` character can match any single character while the `*` character can match zero or more of the preceding element. The function should return `true` if the entire string `s` matches the pattern `p`, and `false` otherwise.",
+    "topic": "String",
+    "subtopic": "Regular Expressions",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Recursion"
+    ],
+    "input_format": "Two strings `s` and `p` where 0 <= s.length, p.length <= 20.",
+    "output_format": "A boolean value indicating whether `s` matches `p`.",
+    "constraints": [
+      "The lengths of s and p will be in the range [0, 20].",
+      "The pattern will only contain printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"aa\", p = \"a\"",
+        "output": "false",
+        "explanation": "The pattern 'a' matches one 'a' but does not match two."
+      },
+      {
+        "input": "s = \"aa\", p = \"a*\"",
+        "output": "true",
+        "explanation": "The pattern 'a*' matches one or more 'a's."
+      },
+      {
+        "input": "s = \"ab\", p = \".*\"",
+        "output": "true",
+        "explanation": "The pattern '.*' matches any string including 'ab'."
+      },
+      {
+        "input": "s = \"mississippi\", p = \"mis*is*p*.\"",
+        "output": "false",
+        "explanation": "The pattern does not match the string completely due to 's' and 'p'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using recursion or dynamic programming for this problem.",
+      "Think about how to handle the '.' and '*' characters in the pattern."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is defined as a contiguous sequence of characters within the string. The challenge lies in efficiently tracking the characters and their counts while traversing the string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A single string s consisting of English letters, digits, symbols and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 5 * 10^4",
+      "s consists of English letters, digits, symbols and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The answer is \"abc\", with the length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The answer is \"b\", with the length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The answer is \"wke\", with the length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use two pointers to create a sliding window.",
+      "Utilize a set to keep track of characters in the current substring.",
+      "If you encounter a duplicate character, adjust the start pointer of the window."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Find K Closest Elements",
+    "description": "Given a sorted array of integers 'arr', two integers 'k' and 'x', return the 'k' closest integers to 'x' in the array. The result should be returned in sorted order. If there is a tie, the smaller elements should come first.",
+    "topic": "Binary Search",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Binary Search",
+      "Two Pointers",
+      "Array"
+    ],
+    "input_format": "A sorted array of integers arr, an integer k, and an integer x.",
+    "output_format": "A sorted array of k closest integers to x.",
+    "constraints": [
+      "1 <= arr.length <= 10^4",
+      "1 <= k <= arr.length",
+      "-10^4 <= arr[i] <= 10^4",
+      "arr is sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "arr = [1, 2, 3, 4, 5], k = 4, x = 3",
+        "output": "[1, 2, 3, 4]",
+        "explanation": "The four closest elements to 3 are 1, 2, 3, and 4."
+      },
+      {
+        "input": "arr = [1, 5, 10], k = 1, x = 3",
+        "output": "[5]",
+        "explanation": "The closest element to 3 is 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider binary search to find the closest position to x.",
+      "Use two pointers to find k closest elements."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Remove K Digits",
+    "description": "Given a string num representing a non-negative integer and an integer k, return the smallest possible integer after removing k digits from num. The resulting number should not contain any leading zeros, unless it is 0. If it is impossible to remove k digits, return '0'.",
+    "topic": "String",
+    "subtopic": "Greedy",
+    "tags": [
+      "String",
+      "Greedy",
+      "Stack"
+    ],
+    "input_format": "A string num representing a non-negative integer followed by an integer k.",
+    "output_format": "A string representing the smallest possible integer after removing k digits.",
+    "constraints": [
+      "1 <= k < num.length <= 10^5",
+      "num consists of digits only."
+    ],
+    "examples": [
+      {
+        "input": "num = '1432219', k = 3",
+        "output": "1219",
+        "explanation": "Remove the digits '4', '3', and '2' to get the smallest number, which is '1219'."
+      },
+      {
+        "input": "num = '10200', k = 1",
+        "output": "200",
+        "explanation": "Remove '1' to get '0200', which becomes '200' after removing leading zeros."
+      },
+      {
+        "input": "num = '10', k = 2",
+        "output": "0",
+        "explanation": "Removing both digits results in '0'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to build the result.",
+      "Removing larger digits in the prefix might yield a smaller number.",
+      "Be mindful of leading zeros after removals."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Duplicate Substring",
+    "description": "Given a string S, find the length of the longest substring T that occurs at least twice in the string. You may assume that T consists of lowercase letters and is a non-empty substring of S. If no such substring exists, return 0.",
+    "topic": "String",
+    "subtopic": "Substring Search",
+    "tags": [
+      "String",
+      "Substring",
+      "Hashing",
+      "Binary Search"
+    ],
+    "input_format": "A single string S, consisting of lowercase letters.",
+    "output_format": "An integer representing the length of the longest duplicate substring.",
+    "constraints": [
+      "1 <= S.length <= 10^7",
+      "S consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "banana",
+        "output": "3",
+        "explanation": "The longest duplicated substring is 'ana', which has a length of 3."
+      },
+      {
+        "input": "abcd",
+        "output": "0",
+        "explanation": "There are no duplicated substrings in 'abcd', so the output is 0."
+      },
+      {
+        "input": "aabcaabc",
+        "output": "3",
+        "explanation": "The longest duplicated substring is 'aab', which has a length of 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using binary search on the length of the substring.",
+      "Use a rolling hash technique to efficiently check for duplicates."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Single Element in a Sorted Array",
+    "description": "You are given a sorted array consisting of integers where every integer appears exactly twice, except for one integer which appears exactly once. Your task is to find that single integer. You must implement a solution that runs in O(log n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Unique Number"
+    ],
+    "input_format": "A sorted array of integers nums which contains exactly one integer that appears once and all other integers appear exactly twice.",
+    "output_format": "An integer representing the single element that appears only once.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "nums[i] is an integer.",
+      "The input array is sorted."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2, 2, 3, 3, 4, 4, 5]",
+        "output": "5",
+        "explanation": "All numbers appear twice except for 5, which appears once."
+      },
+      {
+        "input": "nums = [0, 1, 1, 2, 2, 3, 3]",
+        "output": "0",
+        "explanation": "All numbers appear twice except for 0, which appears once."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to leverage the sorted property of the array.",
+      "Check the indices to find a pattern regarding the pairs."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Depth-First Search",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D array grid where each element is either '1' or '0'.",
+    "output_format": "An integer representing the number of islands in the grid.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [['1','1','1','1','0'], ['1','1','0','1','0'], ['0','0','0','0','0'], ['0','1','1','0','1']]",
+        "output": "3",
+        "explanation": "There are three islands in the given grid."
+      },
+      {
+        "input": "grid = [['1','0','1','1','0'], ['0','0','0','1','0'], ['1','0','1','0','1']]",
+        "output": "5",
+        "explanation": "The grid contains five separate islands."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use Depth-First Search (DFS) to explore each island.",
+      "Consider marking visited land as water to avoid counting it multiple times."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Design Hit Counter",
+    "description": "Design a hit counter which counts the number of hits received in the past 5 minutes. Each call to the count method will receive a timestamp parameter (in seconds granularity), and it should return the number of hits in the past 5 minutes (300 seconds). The counter should be efficient enough to handle a large number of hits.",
+    "topic": "Design",
+    "subtopic": "System Design",
+    "tags": [
+      "Design",
+      "Counter",
+      "Data Structures"
+    ],
+    "input_format": "A timestamp `t` (integer) representing the current time in seconds.",
+    "output_format": "An integer representing the number of hits received in the past 5 minutes.",
+    "constraints": [
+      "0 <= t <= 10^9",
+      "The function will be called at most 1000 times."
+    ],
+    "examples": [
+      {
+        "input": "hit(1)",
+        "output": "1",
+        "explanation": "At timestamp 1, 1 hit is recorded."
+      },
+      {
+        "input": "hit(300)",
+        "output": "2",
+        "explanation": "At timestamp 300, there are hits at 1 and 300, so total is 2."
+      },
+      {
+        "input": "hit(301)",
+        "output": "3",
+        "explanation": "At timestamp 301, there are hits at 1, 300, and 301, so total is 3."
+      },
+      {
+        "input": "hit(600)",
+        "output": "2",
+        "explanation": "At timestamp 600, hits from timestamps 300 and 301 are within 5 minutes, total is 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a queue or list to store the timestamps of hits.",
+      "Keep track of the count for timestamps within the valid range (last 300 seconds)."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an integer array nums and an integer k, return the maximum sliding window for each sliding window of size k. You must implement an algorithm that can achieve O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Deque"
+    ],
+    "input_format": "An integer array nums and an integer k (1 <= k <= nums.length).",
+    "output_format": "An array of integers representing the maximum values of each sliding window.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,3,-1,-3,5,3,6,7], k = 3",
+        "output": "[3,3,5,5,6,7]",
+        "explanation": "Sliding windows are [1,3,-1], [3,-1,-3], [-1,3,5], [3,5,3], [5,3,6], [3,6,7]. Maximums are [3,3,5,5,6,7]."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Only one element in the array, hence the maximum is 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a deque to keep track of the maximum elements.",
+      "Only store indices of elements in the deque, and maintain the order."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Snapshot Array",
+    "description": "Design a SnapshotArray that supports the following operations: 'set', 'snap', and 'get'. A SnapshotArray is initialized with a non-empty array of integers. The 'set' operation sets the value at the given index to a new value. The 'snap' operation captures the state of the array at that moment, and returns the snap_id (a non-negative integer). The 'get' operation returns the value at the given index for the given snap_id. The Snap ID is unique and increases with every 'snap' operation.",
+    "topic": "Array",
+    "subtopic": "Design",
+    "tags": [
+      "Array",
+      "Design",
+      "HashMap"
+    ],
+    "input_format": "The SnapArray is initialized with an array of integers. Operations are performed using 'set(index, value)', 'snap()', and 'get(index, snap_id)'.",
+    "output_format": "The output of 'snap()' is an integer representing the snap ID, and the output of 'get()' is an integer representing the value at the specified index for the given snap ID.",
+    "constraints": [
+      "1 <= initial.length <= 100",
+      "0 <= initial[i] <= 10^9",
+      "0 <= index <= 99",
+      "0 <= snap_id < number of snaps made",
+      "All set operations are valid."
+    ],
+    "examples": [
+      {
+        "input": "SnapshotArray snapshotArray = new SnapshotArray([1, 2, 3]);\nsnapshotArray.set(0, 5);\nint snap_id = snapshotArray.snap();\nint value = snapshotArray.get(0, snap_id);",
+        "output": "5",
+        "explanation": "After setting index 0 to 5, a snap is made. The value at index 0 for the corresponding snap_id is 5."
+      },
+      {
+        "input": "snapshotArray.set(0, 6);\nint snap_id2 = snapshotArray.snap();\nint value2 = snapshotArray.get(0, snap_id2);",
+        "output": "6",
+        "explanation": "The value at index 0 has been set to 6, and a new snap is taken. The value for this snap_id reflects the latest set operation."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to store the historical values efficiently.",
+      "You may need a data structure that can track multiple versions."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator II",
+    "description": "Implement a basic calculator to evaluate a simple expression string containing non-negative integers, '+', '-', '*', and '/' operators. The expression should be evaluated following standard mathematical rules for operator precedence. Your implementation should not use any built-in functions for evaluating mathematical expressions and should consider the order of operations.",
+    "topic": "Math",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "Math",
+      "String",
+      "Stack"
+    ],
+    "input_format": "A string 's' representing the expression to evaluate.",
+    "output_format": "An integer representing the result of the evaluated expression.",
+    "constraints": [
+      "1 <= s.length <= 3 * 10^5",
+      "s consists of non-negative integers and the operators '+', '-', '*', and '/'.",
+      "The expression is guaranteed to return an integer.",
+      "You may assume that the input is always valid."
+    ],
+    "examples": [
+      {
+        "input": "s = '3+2*2'",
+        "output": "7",
+        "explanation": "Evaluate the expression step by step: 3 + (2 * 2) = 3 + 4 = 7."
+      },
+      {
+        "input": "s = ' 3/2 '",
+        "output": "1",
+        "explanation": "In this case, the result is the integer division of 3 by 2, which equals 1."
+      },
+      {
+        "input": "s = ' 3+5 / 2 '",
+        "output": "5",
+        "explanation": "The expression evaluates as follows: (5 / 2) = 2 (integer division), and finally, 3 + 2 = 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of numbers and operations.",
+      "Remember to handle operator precedence carefully.",
+      "Consider using a temporary variable to store intermediate results."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Search a 2D Matrix",
+    "description": "Write an efficient algorithm to determine if a target value is present in a 2D matrix. The matrix has the following properties: It is an m x n matrix (m rows, n columns) where each of the rows is sorted in ascending order from left to right, and the first integer of each row is greater than the last integer of the previous row.",
+    "topic": "Binary Search",
+    "subtopic": "Searching",
+    "tags": [
+      "Matrix",
+      "Binary Search",
+      "2D Array"
+    ],
+    "input_format": "A 2D matrix 'matrix' of integers and an integer 'target'.",
+    "output_format": "A boolean value indicating if 'target' is found in 'matrix'.",
+    "constraints": [
+      "m == matrix.length",
+      "n == matrix[i].length",
+      "1 <= m, n <= 100",
+      "-10^4 <= matrix[i][j], target <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 3, 5],[7, 9, 11],[15, 17, 19]], target = 9",
+        "output": "true",
+        "explanation": "9 is present in the second row."
+      },
+      {
+        "input": "matrix = [[1, 3, 5],[7, 9, 11],[15, 17, 19]], target = 6",
+        "output": "false",
+        "explanation": "6 is not present in the matrix."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how the properties of the matrix can help narrow down the search space.",
+      "Think about binary search in a one-dimensional array and how you can adapt that."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Wildcard Matching",
+    "description": "Implement a function that performs wildcard matching with support for ' ? ' and ' * ' characters. The '?' character matches any single character, and the '*' character matches zero or more characters. Given a string 's' and a string 'p', return true if 's' matches the pattern 'p', otherwise return false.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Matching",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Matching"
+    ],
+    "input_format": "Two strings s and p where s is the input string and p is the pattern string.",
+    "output_format": "A boolean value indicating whether the input string matches the pattern.",
+    "constraints": [
+      "0 <= s.length, p.length <= 20",
+      "s and p consist of only lowercase letters and the characters '?' and '*'."
+    ],
+    "examples": [
+      {
+        "input": "s = 'adceb', p = '*a*b'",
+        "output": "true",
+        "explanation": "'*' matches 'ad', 'a' matches 'a', and 'b' matches 'b'."
+      },
+      {
+        "input": "s = 'acdcb', p = 'a*c?b'",
+        "output": "false",
+        "explanation": "'?'' matches 'd', but 'b' does not match 'c'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Try using dynamic programming to solve the problem efficiently.",
+      "Consider how to fill a 2D table based on previous states."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once. Return a list of groups of anagrams, where each group is represented as a list of strings.",
+    "topic": "String",
+    "subtopic": "Hash Table",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Sorting"
+    ],
+    "input_format": "An array of strings, 'strs'.",
+    "output_format": "A list of lists of strings, where each list contains the anagrams grouped together.",
+    "constraints": [
+      "1 <= strs.length <= 1000",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"ate\",\"eat\",\"tea\"],[\"nat\",\"tan\"],[\"bat\"]]",
+        "explanation": "The strings 'eat', 'tea', and 'ate' are anagrams of each other. Similarly, 'nat' and 'tan' are also anagrams."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "There is only one string, so it forms a group of its own."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "There is only one string, so it forms a group of its own."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how you can sort the characters in a string to identify anagrams.",
+      "Using a hash table can help group the strings efficiently."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Cheapest Flights Within K Stops",
+    "description": "Given a list of flights represented by a 2D array where flights[i] = [from_i, to_i, price_i] indicates a flight from city from_i to city to_i with a given price price_i. You are also given a source city src and a destination city dst, along with an integer K. Your task is to find the cheapest price from src to dst with at most K stops. If there is no such route, return -1.",
+    "topic": "Graph",
+    "subtopic": "Dijkstra's Algorithm",
+    "tags": [
+      "Graph",
+      "Dynamic Programming",
+      "Shortest Path"
+    ],
+    "input_format": "A 2D array of flights, an integer src, an integer dst, and an integer K.",
+    "output_format": "An integer representing the cheapest price from src to dst with at most K stops, or -1 if no such route exists.",
+    "constraints": [
+      "1 <= flights.length <= 10000",
+      "flights[i].length == 3",
+      "0 <= from_i, to_i, src, dst < 100",
+      "1 <= price_i <= 10^4",
+      "0 <= K <= 100"
+    ],
+    "examples": [
+      {
+        "input": "flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, K = 1",
+        "output": "CO AI responsive",
+        "explanation": "The cheapest price from city 0 to city 2 with one stop is through city 1: 0 -> 1 -> 2 = 100 + 100 = 200."
+      },
+      {
+        "input": "flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, K = 0",
+        "output": "500",
+        "explanation": "The cheapest price from city 0 to city 2 without stopping is direct: 0 -> 2 = 500."
+      },
+      {
+        "input": "flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 3, K = 1",
+        "output": "-1",
+        "explanation": "There is no route from city 0 to city 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a priority queue to explore the cheapest flights first.",
+      "Use a hash map to keep track of the current best price to reach each city."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Distinct Islands",
+    "description": "You are given a 2D grid of '1's (land) and '0's (water). An island is formed by connecting adjacent lands horizontally or vertically. Two islands are considered distinct if they do not share the same shape and can be rotated or flipped. Your task is to determine the number of distinct islands in the 2D grid.",
+    "topic": "Graph",
+    "subtopic": "DFS/BFS",
+    "tags": [
+      "DFS",
+      "BFS",
+      "Graph",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid represented as a list of lists where each inner list contains '0' or '1'.",
+    "output_format": "An integer representing the number of distinct islands.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 50",
+      "grid[i][j] is either '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "[[1,1,0,0,0],[1,1,0,0,1],[0,0,0,1,1]]",
+        "output": "3",
+        "explanation": "There are three distinct islands in the grid."
+      },
+      {
+        "input": "[[1,0,1,0],[0,0,0,0],[1,0,1,1]]",
+        "output": "4",
+        "explanation": "There are four distinct islands in the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using depth-first search to explore islands.",
+      "Store the shape of the island in a canonical form to check for distinctness."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Largest Element in an Array",
+    "description": "Given an integer array 'nums' and an integer 'k', return the k-th largest element in the array. Note that it is the k-th largest element in the sorted order, not the k-th distinct element.",
+    "topic": "Array",
+    "subtopic": "Sorting and Selection",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Selection",
+      "Heap"
+    ],
+    "input_format": "An array of integers 'nums' and an integer 'k'.",
+    "output_format": "An integer representing the k-th largest element in the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 1, 5, 6, 4], k = 2",
+        "output": "5",
+        "explanation": "The second largest element in the array [3, 2, 1, 5, 6, 4] is 5."
+      },
+      {
+        "input": "nums = [3, 2, 3, 1, 2, 4, 5, 5, 6], k = 4",
+        "output": "4",
+        "explanation": "The fourth largest element in the array [3, 2, 3, 1, 2, 4, 5, 5, 6] is 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using a heap to keep track of the k largest elements.",
+      "Alternatively, you can sort the array and pick the k-th largest directly.",
+      "Consider edge cases where all elements might be the same."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Bus Routes",
+    "description": "You are given a list of bus routes where each route is represented by an array of bus stops. Each bus route is defined as a unique list of bus stations that the bus travels through. Your task is to determine the minimum number of bus transfers needed to travel from a starting bus stop to a destination bus stop. If it is not possible to reach the destination, return -1.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Routes",
+      "Transfers"
+    ],
+    "input_format": "An array of bus routes, each containing a list of integers representing bus stops. Two integers representing the starting and destination bus stops.",
+    "output_format": "An integer representing the minimum number of bus transfers needed to reach the destination.",
+    "constraints": [
+      "1 <= busRoutes.length <= 500",
+      "1 <= busRoutes[i].length <= 10^5",
+      "0 <= start, destination < 10^6"
+    ],
+    "examples": [
+      {
+        "input": {
+          "busRoutes": [
+            [
+              1,
+              2,
+              7
+            ],
+            [
+              3,
+              6,
+              7
+            ]
+          ],
+          "start": 1,
+          "destination": 6
+        },
+        "output": 1,
+        "explanation": "You can take the first bus from stop 1 to stop 7, and then take the second bus from stop 7 to stop 6, which requires 1 transfer."
+      },
+      {
+        "input": {
+          "busRoutes": [
+            [
+              1,
+              2,
+              7
+            ],
+            [
+              3,
+              6,
+              7
+            ]
+          ],
+          "start": 2,
+          "destination": 3
+        },
+        "output": -1,
+        "explanation": "It's not possible to travel from stop 2 to stop 3 as there are no common bus routes."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a BFS approach to explore bus routes.",
+      "Consider each route as a vertex in a graph.",
+      "Keep track of visited bus stops to avoid cycles."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Reorganize String",
+    "description": "Given a string s, rearrange the characters of s so that no two adjacent characters are the same. If it is not possible to rearrange the string, return an empty string.",
+    "topic": "String",
+    "subtopic": "Rearrangement",
+    "tags": [
+      "String",
+      "Rearrangement",
+      "Greedy"
+    ],
+    "input_format": "A single string s consisting of lowercase letters.",
+    "output_format": "A rearranged string where no two adjacent characters are the same, or an empty string if it's impossible.",
+    "constraints": [
+      "1 <= s.length <= 500",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'aab'",
+        "output": "aba",
+        "explanation": "The rearranged string 'aba' has no adjacent characters that are the same."
+      },
+      {
+        "input": "s = 'aaab'",
+        "output": "",
+        "explanation": "It is not possible to rearrange 'aaab' to meet the requirements."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count the frequency of each character.",
+      "Use a max heap to get the most frequent characters first.",
+      "If the most frequent character appears more than (n + 1) / 2 times, return empty string."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Bridge",
+    "description": "You are given a binary grid representing a map where 1's represent land and 0's represent water. You want to determine the shortest bridge (the minimum number of 0's you need to flip to connect two islands) that can be constructed between two islands. The islands are guaranteed to be disconnected and the grid contains at least two islands.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Island Count"
+    ],
+    "input_format": "A 2D binary grid of size m x n (1 <= m, n <= 100).",
+    "output_format": "An integer representing the shortest distance between two islands.",
+    "constraints": [
+      "The input grid is guaranteed to contain at least two islands.",
+      "The grid is represented by a rectangular array with m rows and n columns."
+    ],
+    "examples": [
+      {
+        "input": "[[0,1],[1,0]]",
+        "output": "1",
+        "explanation": "You need to flip one 0 to connect the two islands. The shortest bridge is 1."
+      },
+      {
+        "input": "[[0,0,0],[0,1,0],[0,0,1]]",
+        "output": "2",
+        "explanation": "You need to flip two 0's to connect the two islands. The shortest bridge is 2."
+      },
+      {
+        "input": "[[1,1,0,0,0],[1,1,0,0,0],[0,0,0,1,1],[0,0,0,1,1]]",
+        "output": "1",
+        "explanation": "Only one 0 needs to be flipped to connect the two islands."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use BFS to explore the waters and find the islands.",
+      "Keep track of the distance to the nearest island while exploring."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Buildings With an Ocean View",
+    "description": "You are given an array of integers heights where heights[i] represents the height of the i-th building. A building has an ocean view if it is taller than all the buildings to its right. Return an array of indices representing the buildings that have an ocean view. The indices should be in ascending order.",
+    "topic": "Array",
+    "subtopic": "Monotonic Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Monotonic Stack"
+    ],
+    "input_format": "An array of integers heights where 1 <= heights.length <= 10^4 and 1 <= heights[i] <= 10^9.",
+    "output_format": "An array of integers representing the indices of the buildings with an ocean view.",
+    "constraints": [
+      "1 <= heights.length <= 10^4",
+      "1 <= heights[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "heights = [4, 2, 3, 1]",
+        "output": "[0, 2]",
+        "explanation": "Only the buildings at indices 0 (height 4) and 2 (height 3) have an ocean view."
+      },
+      {
+        "input": "heights = [1, 3, 2, 4]",
+        "output": "[1, 3]",
+        "explanation": "The buildings at indices 1 (height 3) and 3 (height 4) have an ocean view."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to keep track of the indices.",
+      "You can traverse the list from right to left."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Tasks You Can Assign",
+    "description": "You are given a list of tasks, where each task requires a specific amount of time to complete. You also have a limited time available to complete as many tasks as possible. Your goal is to find the maximum number of tasks that you can assign within the given time constraints. Each task can only be assigned once, and since tasks may take different amounts of time, you must optimize the selection of tasks to maximize the count.",
+    "topic": "Greedy",
+    "subtopic": "Task Scheduling",
+    "tags": [
+      "Greedy",
+      "Sorting",
+      "Array"
+    ],
+    "input_format": "An integer array tasks where tasks[i] (1 <= tasks[i] <= 10^4) represents the time required to complete the i-th task and an integer timeLimit (1 <= timeLimit <= 10^5) representing the total available time.",
+    "output_format": "An integer representing the maximum number of tasks that can be assigned within the given time limit.",
+    "constraints": [
+      "1 <= tasks.length <= 10^5",
+      "1 <= tasks[i] <= 10^4",
+      "1 <= timeLimit <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "tasks = [2, 1, 3, 4], timeLimit = 5",
+        "output": "3",
+        "explanation": "You can complete tasks with times 1, 2, and 3, totaling to 6 which exceeds the time limit. However, tasks with times 1, 2, and 4 sum to exactly 5. Therefore, you can complete 3 tasks."
+      },
+      {
+        "input": "tasks = [4, 5, 6], timeLimit = 10",
+        "output": "1",
+        "explanation": "The only feasible task under the limit is the one with time 4, since the other two exceed the limit."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Sort the tasks based on their time requirements.",
+      "Iterate through the sorted tasks and keep a running total of time taken."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Find Median from Data Stream",
+    "description": "The median is the value separating the higher half from the lower half of a data sample. Implement a data structure that supports the following two operations: addNum(int num) - Add a integer number from the data stream to the data structure, and findMedian() - Return the median of all integers added so far. The median is defined as: If the count of numbers is odd, the median is the middle number; if even, it is the average of the two middle numbers.",
+    "topic": "Data Structure",
+    "subtopic": "Heap",
+    "tags": [
+      "Heap",
+      "Median",
+      "Data Stream"
+    ],
+    "input_format": "A series of integers to be added to the data structure.",
+    "output_format": "A float representing the median of the added numbers.",
+    "constraints": [
+      "-10^5 <= num <= 10^5",
+      "The total number of integers will not exceed 10^5."
+    ],
+    "examples": [
+      {
+        "input": "addNum(1); addNum(2); findMedian();",
+        "output": "1.5",
+        "explanation": "The added numbers are 1 and 2. The median is (1 + 2) / 2 = 1.5."
+      },
+      {
+        "input": "addNum(3); findMedian();",
+        "output": "2.0",
+        "explanation": "The added numbers are 1, 2, and 3. The median is 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two heaps (max-heap and min-heap) to keep track of the lower and upper halves.",
+      "Make sure to balance the heaps after every insertion."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Distinct Subsequences",
+    "description": "Given two strings S and T, return the number of distinct subsequences of S which equal T. A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., 'ACE' is a subsequence of 'ABCDE' while 'AEC' is not).",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Subsequence"
+    ],
+    "input_format": "Two strings S and T where 0 <= |S| <= 100 and 0 <= |T| <= 100.",
+    "output_format": "An integer representing the number of distinct subsequences of S which equal T.",
+    "constraints": [
+      "0 <= |S| <= 100",
+      "0 <= |T| <= 100"
+    ],
+    "examples": [
+      {
+        "input": "S = 'rabbbit', T = 'rabbit'",
+        "output": "3",
+        "explanation": "There are 3 ways to form 'rabbit' from 'rabbbit': 'rabb' + 'bit', 'rab' + 'b' + 'bit', 'r' + 'ab' + 'b' + 'bit'."
+      },
+      {
+        "input": "S = 'aabb', T = 'ab'",
+        "output": "2",
+        "explanation": "There are 2 ways to form 'ab' from 'aabb': 'a' + 'b' and 'a' + 'b' (using the second 'a')."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a 2D DP array to keep track of subsequences.",
+      "Think about how to build the string T using characters from S."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Split Strings by Separator",
+    "description": "Given a string `s` and a character `separator`, split the string into a list of substrings based on the given separator. If the separator is not present in the string, return the string as a single-element list. The output list should not include empty strings resulting from consecutive separators.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Split"
+    ],
+    "input_format": "A string s and a character separator.",
+    "output_format": "A list of substrings after splitting by the separator.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "separator.length == 1"
+    ],
+    "examples": [
+      {
+        "input": "s = 'apple|banana|cherry', separator = '|'",
+        "output": "['apple', 'banana', 'cherry']",
+        "explanation": "The string is split at each '|', resulting in the substrings 'apple', 'banana', and 'cherry'."
+      },
+      {
+        "input": "s = 'hello,,world', separator = ','",
+        "output": "['hello', 'world']",
+        "explanation": "The string contains consecutive commas, leading to an empty substring, which is not included in the output."
+      },
+      {
+        "input": "s = 'singleword', separator = ','",
+        "output": "['singleword']",
+        "explanation": "The separator is not present, so the whole string is returned as a single element list."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using the split method available in most programming languages.",
+      "Ensure to filter out empty strings before returning the result."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Atoms",
+    "description": "You are given a chemical formula as a string. Each element in the formula can be followed by an integer representing the number of atoms of that element. Write a function to count the total number of atoms in the formula. The formula will only contain uppercase letters representing elements, lowercase letters for extended element names, and digits indicating counts. Nested parentheses may also be present, and you need to handle those correctly.",
+    "topic": "String",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Parsing",
+      "Mathematics"
+    ],
+    "input_format": "A string representing the chemical formula.",
+    "output_format": "An integer representing the total number of atoms in the formula.",
+    "constraints": [
+      "1 <= formula.length <= 1000",
+      "The formula contains only valid characters."
+    ],
+    "examples": [
+      {
+        "input": "H2O",
+        "output": "3",
+        "explanation": "There are 2 hydrogen atoms and 1 oxygen atom, so the total is 2 + 1 = 3."
+      },
+      {
+        "input": "Mg(OH)2",
+        "output": "4",
+        "explanation": "There is 1 magnesium atom, 2 oxygen atoms, and 2 hydrogen atoms, making a total of 1 + 2 + 2 = 5."
+      },
+      {
+        "input": "K4(ON(SO3)2)2",
+        "output": "14",
+        "explanation": "There are 4 potassium atoms, 2 nitrogen atoms, 4 oxygen atoms from SO3 (total 8 from SO3 and the other 2), making a total of 4 + 2 + 8 = 14."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to manage the nested parentheses.",
+      "You may need to use a dictionary to count the occurrences of each element.",
+      "Iterate the string while tracking the current context (inside or outside parentheses)."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Open the Lock",
+    "description": "You have a lock that has four wheels, each with the digits 0-9. Initially, the lock is set to '0000'. You can change the digits by turning the wheels. For example, turning the first wheel from '0' to '1' changes the lock from '0000' to '1000'. Lock passwords may have leading zeros. The goal is to open the lock using the given deadends and the target combination. If it's possible to reach the target combination, return the minimum number of turns required. If it is not possible, return -1.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Search"
+    ],
+    "input_format": "An array of strings deadends representing the deadend combinations, and a string target representing the target combination.",
+    "output_format": "An integer representing the minimum number of turns required to reach the target combination or -1 if it is not possible.",
+    "constraints": [
+      "1 <= deadends.length <= 500",
+      "deadends[i] is a valid combination, and all combinations are unique.",
+      "target is a valid combination."
+    ],
+    "examples": [
+      {
+        "input": {
+          "deadends": [
+            "0201",
+            "0101",
+            "0102",
+            "1212",
+            "2002"
+          ],
+          "target": "0202"
+        },
+        "output": "6",
+        "explanation": "The sequence of combinations to reach the target '0202' can be '0000' -> '0001' -> '0002' -> '0012' -> '0022' -> '0122' -> '0202' with a total of 6 turns."
+      },
+      {
+        "input": {
+          "deadends": [
+            "8888"
+          ],
+          "target": "0009"
+        },
+        "output": "1",
+        "explanation": "You can directly go from '0000' to '0009' with only 1 move."
+      },
+      {
+        "input": {
+          "deadends": [
+            "0000"
+          ],
+          "target": "8888"
+        },
+        "output": "-1",
+        "explanation": "Since '0000' is a deadend, it's not possible to unlock."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using BFS to explore all possible combinations.",
+      "Avoid revisiting deadends and already visited combinations."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Pacific Atlantic Water Flow",
+    "description": "Given an m x n matrix of non-negative integers representing the height of each cell in a vivid topography, you are to determine the cells from which water can flow to both the Pacific Ocean and Atlantic Ocean. The Pacific Ocean touches the left and top edges of the matrix and the Atlantic Ocean touches the right and bottom edges. A cell can flow to another cell if the height of the current cell is less than or equal to the height of the neighboring cell. Return a list of grid coordinates (i, j) where water can flow to both oceans.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D array of integers representing the matrix heights.",
+    "output_format": "A list of coordinate pairs [(i1, j1), (i2, j2), ...] representing the cells that can flow to both oceans.",
+    "constraints": [
+      "1 <= m, n <= 200",
+      "0 <= height[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,5,4,2,2],[5,1,1,2,4]]",
+        "output": "[[0, 4], [1, 3], [1, 4], [2, 2], [3, 2], [4, 1], [4, 2]]",
+        "explanation": "The cells from which water can flow to both pacific and atlantic are [(0,4), (1,3), (1,4), (2,2), (3,2), (4,1), (4,2)]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using DFS or BFS to explore the flow possibilities.",
+      "You can represent the two oceans as boolean arrays."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator III",
+    "description": "Implement a basic calculator to evaluate a simple expression string containing non-negative integers, '+', '-', '*', and '/' operators. The calculator should follow the order of operations: multiplication and division should be performed before addition and subtraction. The expression will not contain any parentheses, and the input string is guaranteed to be valid with no extraneous spaces.",
+    "topic": "Mathematics",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "Stack",
+      "Mathematics",
+      "String"
+    ],
+    "input_format": "A string 's' representing the expression to evaluate.",
+    "output_format": "An integer representing the result of the evaluated expression.",
+    "constraints": [
+      "1 <= s.length <= 3 * 10^5",
+      "s consists of digits, '+', '-', '*', '/', and ' '.",
+      "The input expression is guaranteed to be valid."
+    ],
+    "examples": [
+      {
+        "input": "s = \"3 + 5 * 2\"",
+        "output": "13",
+        "explanation": "First, perform the multiplication 5 * 2 = 10, then add 3 + 10 = 13."
+      },
+      {
+        "input": "s = \" 12 / 4 - 1 + 3 * 2 \"",
+        "output": "8",
+        "explanation": "Calculate 12 / 4 = 3, then 3 - 1 = 2, and finally 2 + 3 * 2 = 8."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to keep track of numbers and operations.",
+      "Handle one operator at a time according to the precedence rules."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Increasing Triplet Subsequence",
+    "description": "Given an integer array 'nums', return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exist, return false. Your solution should run in O(n) time and O(1) space.",
+    "topic": "Array",
+    "subtopic": "Subsequences",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers, nums.",
+    "output_format": "A boolean value indicating whether such a triplet exists.",
+    "constraints": [
+      "1 <= nums.length <= 5 * 10^5",
+      "-2^31 <= nums[i] <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5]",
+        "output": "true",
+        "explanation": "The triplet (1, 2, 3) satisfies the condition."
+      },
+      {
+        "input": "nums = [5, 4, 3, 2, 1]",
+        "output": "false",
+        "explanation": "No triplet exists that satisfies the condition."
+      },
+      {
+        "input": "nums = [2, 1, 5, 0, 4, 6]",
+        "output": "true",
+        "explanation": "The triplet (1, 4, 6) satisfies the condition."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to keep track of the smallest and second smallest values found so far.",
+      "Think about how you can identify a 'peaked' structure in the array."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Search a 2D Matrix II",
+    "description": "Write a function that searches for a target value in an m x n integer matrix. This matrix has the following properties: Integers in each row are sorted in ascending order from left to right. Integers in each column are sorted in ascending order from top to bottom. Your function should return true if the target is found in the matrix, and false otherwise.",
+    "topic": "Binary Search",
+    "subtopic": "2D Matrix Search",
+    "tags": [
+      "Matrix",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "A 2D list of integers matrix and an integer target.",
+    "output_format": "A boolean indicating whether the target exists in the matrix.",
+    "constraints": [
+      "m == matrix.length",
+      "n == matrix[i].length",
+      "1 <= m, n <= 100",
+      "-10^4 <= matrix[i][j], target <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 3, 5], [7, 9, 11], [12, 15, 17]], target = 9",
+        "output": "true",
+        "explanation": "The target value 9 is present in the matrix."
+      },
+      {
+        "input": "matrix = [[1, 2, 8], [9, 10, 12], [15, 17, 20]], target = 6",
+        "output": "false",
+        "explanation": "The target value 6 is not present in the matrix."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how the properties of the matrix could help reduce the search space.",
+      "Start searching from the top-right corner of the matrix.",
+      "If the current element is greater than the target, move left; if it's less, move down."
+    ],
+    "company": "Coupang"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator",
+    "description": "Implement a basic calculator to evaluate a simple expression string containing non-negative integers, '+', '-', '*', and '/' operators. The expression must be evaluated according to the standard order of operations (PEMDAS). The input is guaranteed to be a valid expression and should not contain any parentheses. The calculator should also handle spaces correctly. The result should be the integer division of the result, truncating towards zero.",
+    "topic": "Mathematics",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "Math",
+      "Expression",
+      "Calculator"
+    ],
+    "input_format": "A string expression containing numbers and operators.",
+    "output_format": "An integer representing the evaluated result of the expression.",
+    "constraints": [
+      "The input expression is guaranteed to be a valid expression.",
+      "1 <= expression.length <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "expression = '3 + 5'",
+        "output": "8",
+        "explanation": "The evaluation of 3 + 5 yields 8."
+      },
+      {
+        "input": "expression = '10 + 2 * 6'",
+        "output": "22",
+        "explanation": "According to the order of operations, 2 * 6 is calculated before addition: 10 + 12 = 22."
+      },
+      {
+        "input": "expression = '100 * 2 + 12'",
+        "output": "212",
+        "explanation": "100 * 2 is calculated first, yielding 200, then 200 + 12 = 212."
+      },
+      {
+        "input": "expression = '100 * (2 + 12)'",
+        "output": "1400",
+        "explanation": "Calculate the parentheses first: 2 + 12 = 14, then 100 * 14 = 1400."
+      },
+      {
+        "input": "expression = '3 + 5 / 2'",
+        "output": "5",
+        "explanation": "According to order of operations, 5 / 2 yields 2, so 3 + 2 = 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using stacks to handle the operators and operands.",
+      "Pay attention to the order of operations when evaluating the expression.",
+      "Whitespace should be ignored in the calculation."
+    ],
+    "company": "Coupang"
+  }
+]

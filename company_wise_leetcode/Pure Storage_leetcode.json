@@ -1,0 +1,270 @@
+[
+  {
+    "question_id": "",
+    "title": "Valid Square",
+    "description": "Given four points in a 2D space, determine if they can form a valid square. The input consists of four points represented as a list of tuples, where each tuple contains the x and y coordinates of a point. The points must form the vertices of a square and must not overlap with each other.",
+    "topic": "Geometry",
+    "subtopic": "Coordinate Geometry",
+    "tags": [
+      "Geometry",
+      "Square",
+      "Math"
+    ],
+    "input_format": "A list of four tuples, where each tuple contains two integers (x, y) representing the coordinates of a point.",
+    "output_format": "A boolean value: 'true' if the points can form a valid square, 'false' otherwise.",
+    "constraints": [
+      "The number of points will always be 4.",
+      "-10^4 <= x, y <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "points = [(0, 0), (1, 1), (1, 0), (0, 1)]",
+        "output": "true",
+        "explanation": "The points form a square with vertices at (0, 0), (1, 0), (0, 1), and (1, 1)."
+      },
+      {
+        "input": "points = [(0, 0), (1, 1), (1, 2), (0, 1)]",
+        "output": "false",
+        "explanation": "The points do not form a square."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the distance formula to calculate distances between points.",
+      "Check if there are 4 equal sides and 2 equal diagonals."
+    ],
+    "company": "Pure Storage"
+  },
+  {
+    "question_id": "",
+    "title": "Palindromic Substrings",
+    "description": "Given a string, return the count of distinct palindromic substrings in it. A substring is palindromic if it reads the same backward as forward. The substring must not include the empty string.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s, which consists of lowercase English letters.",
+    "output_format": "An integer representing the count of distinct palindromic substrings.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists only of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abc\"",
+        "output": "3",
+        "explanation": "The palindromic substrings are \"a\", \"b\", and \"c\"."
+      },
+      {
+        "input": "s = \"aaa\"",
+        "output": "6",
+        "explanation": "The palindromic substrings are \"a\", \"aa\", \"aa\", \"a\", \"aaa\", \"a\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around each character and each pair of characters.",
+      "Use a set to store distinct palindromes."
+    ],
+    "company": "Pure Storage"
+  },
+  {
+    "question_id": "",
+    "title": "Design Skiplist",
+    "description": "Design a Skiplist, a data structure that allows fast search within an ordered sequence of elements. The Skiplist should be able to support the following operations: search, add, and erase. Each node in the Skiplist has one or several forward pointers, allowing for elements to be skipped over during search operations. This should lead to logarithmic time complexity for search, insert, and erase operations on average.",
+    "topic": "Data Structures",
+    "subtopic": "Skiplist",
+    "tags": [
+      "Skiplist",
+      "Design",
+      "Data Structures"
+    ],
+    "input_format": "N/A (operations will be defined in the class methods)",
+    "output_format": "Boolean values for search and erase operations; No return for add operation.",
+    "constraints": [
+      "The number of elements in the skiplist is at most 10^4.",
+      "The values to be inserted, searched for, and erased are integers in the range of [-10^6, 10^6]."
+    ],
+    "examples": [
+      {
+        "input": "skiplist.add(1); skiplist.add(2); skiplist.add(3); skiplist.search(0);",
+        "output": "false",
+        "explanation": "0 is not present in the list."
+      },
+      {
+        "input": "skiplist.search(1);",
+        "output": "true",
+        "explanation": "1 is in the list."
+      },
+      {
+        "input": "skiplist.erase(1); skiplist.search(1);",
+        "output": "false",
+        "explanation": "1 is removed, thus it is no longer present."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a probabilistic approach to build the levels of the skiplist.",
+      "Maintain a head node for easier management of elements."
+    ],
+    "company": "Pure Storage"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A palindrome is a string that reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A string s of length n where 1 <= n <= 1000.",
+    "output_format": "A string representing the longest palindromic substring in s.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only digits and English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'babad'",
+        "output": "bab",
+        "explanation": "The longest palindromic substring is 'bab'. 'aba' is also a valid answer."
+      },
+      {
+        "input": "s = 'cbbd'",
+        "output": "bb",
+        "explanation": "The longest palindromic substring is 'bb'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Check each character and expand outwards to find the longest palindrome.",
+      "Consider both odd-length and even-length palindromes."
+    ],
+    "company": "Pure Storage"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Increasing Subsequence",
+    "description": "Given an array of integers, return the length of the longest strictly increasing subsequence. A subsequence is a sequence derived from another sequence by deleting some elements without changing the order of the remaining elements.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Subsequence"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest increasing subsequence.",
+    "constraints": [
+      "1 <= nums.length <= 2500",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 9, 2, 5, 3, 7, 101, 18]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [2, 3, 7, 101]."
+      },
+      {
+        "input": "nums = [0, 1, 0, 3, 2, 3]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [0, 1, 2, 3]."
+      },
+      {
+        "input": "nums = [7, 7, 7, 7, 7, 7, 7]",
+        "output": "1",
+        "explanation": "The longest increasing subsequence can only include one of the repeated elements."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using dynamic programming to keep track of the lengths of increasing subsequences.",
+      "You might want to use an array to store the lengths and update it as you process each element."
+    ],
+    "company": "Pure Storage"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Repeating Substring",
+    "description": "Given a string s, return the length of the longest substring that contains only one character repeated. For example, in the string 'aaabbccddd', the longest substring is 'ddd' with a length of 3.",
+    "topic": "String",
+    "subtopic": "Substring",
+    "tags": [
+      "String",
+      "Substring",
+      "Frequency"
+    ],
+    "input_format": "A string s of lowercase letters.",
+    "output_format": "An integer representing the length of the longest repeating substring.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists only of lowercase letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'aaabbccddd'",
+        "output": "3",
+        "explanation": "The longest substring with repeated characters is 'ddd', which has a length of 3."
+      },
+      {
+        "input": "s = 'ababab'",
+        "output": "2",
+        "explanation": "Each character 'a' and 'b' appears alternatively. The longest repeating substring has a length of 2."
+      },
+      {
+        "input": "s = 'zzzzzzz'",
+        "output": "7",
+        "explanation": "All characters are 'z', so the entire string is the longest repeating substring with a length of 7."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a sliding window or two pointers to help manage character counts.",
+      "Keep track of the current character and its count."
+    ],
+    "company": "Pure Storage"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. All operations should be done in average O(1) time complexity.\n\nImplement the class RandomizedSet:\n\n- RandomizedSet() Initializes the RandomizedSet object.\n- bool insert(int val) Inserts an item val into the set if not present. Return true if the item was not already present, false otherwise.\n- bool erase(int val) Removes an item val from the set if present. Return true if the item was present, false otherwise.\n- int getRandom() Returns a random element from the current set of elements. It is guaranteed that at least one element exists when this method is called.",
+    "topic": "Data Structures",
+    "subtopic": "Hash Table",
+    "tags": [
+      "HashMap",
+      "Randomized",
+      "Data Structure"
+    ],
+    "input_format": "No input is required to create the RandomizedSet object. The input for the insert, erase, and getRandom functions will be provided as method calls.",
+    "output_format": "The boolean output for insert and erase functions and an integer output for getRandom function.",
+    "constraints": [
+      "The number of calls to insert and erase will not exceed 1000.",
+      "The values of the elements must be unique.",
+      "getRandom will only be called when the set is not empty."
+    ],
+    "examples": [
+      {
+        "input": "RandomizedSet randomizedSet = new RandomizedSet();\nrandomizedSet.insert(1);\nrandomizedSet.insert(2);\nrandomizedSet.erase(1);\nint randomValue = randomizedSet.getRandom();",
+        "output": "2",
+        "explanation": "After inserting 1 and 2, removing 1 leaves only 2 in the set. The getRandom method returns 2."
+      },
+      {
+        "input": "randomizedSet.insert(3);\nint randomValue = randomizedSet.getRandom();",
+        "output": "3",
+        "explanation": "When only 3 is present in the set, getRandom will return 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a combination of a list and a hashmap for efficient access.",
+      "To maintain O(1) time complexity for getRandom, ensure that the list size does not change during retrieval."
+    ],
+    "company": "Pure Storage"
+  }
+]

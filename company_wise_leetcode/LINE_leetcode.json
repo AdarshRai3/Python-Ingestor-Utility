@@ -1,0 +1,117 @@
+[
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an integer array nums and an integer k, return the maximum sliding window for each sliding window of size k. You must solve it in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Deque"
+    ],
+    "input_format": "An integer array nums of size n and an integer k (1 <= k <= n).",
+    "output_format": "An integer array representing the maximum value in each sliding window of size k.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,3,-1,-3,5,3,6,7], k = 3",
+        "output": "[3,3,5,5,6,7]",
+        "explanation": "The first sliding window is [1,3,-1] -> maximum is 3. The second is [3,-1,-3] -> max is 3. Continuing this gives the results: [3,3,5,5,6,7]."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Only one element, the maximum is itself."
+      },
+      {
+        "input": "nums = [1,-1], k = 1",
+        "output": "[1,-1]",
+        "explanation": "Each element is its own sliding window, thus the array itself is the result."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a deque to keep track of indices of elements in the current sliding window.",
+      "Maintain the deque such that it contains indices in decreasing order of their respective values.",
+      "Pop elements from the front of the deque if they are out of the current window."
+    ],
+    "company": "LINE"
+  },
+  {
+    "question_id": "",
+    "title": "Sudoku Solver",
+    "description": "Implement a function to solve a given Sudoku puzzle. The Sudoku board is a 9x9 grid filled with digits from 1 to 9, with some cells already filled in. Your task is to fill in the empty cells (denoted by '.') such that each row, each column, and each of the 3x3 subgrids contain all of the digits from 1 to 9 without repetition.",
+    "topic": "Backtracking",
+    "subtopic": "Sudoku",
+    "tags": [
+      "Backtracking",
+      "Matrix",
+      "Depth-First Search"
+    ],
+    "input_format": "A 9x9 board represented as a 2D array of strings, where each string is either a digit from '1' to '9' or '.' for empty cells.",
+    "output_format": "The board should be modified in-place to contain the solution. No return value is necessary.",
+    "constraints": [
+      "The board is guaranteed to be in a valid initial state.",
+      "The Sudoku solution will be unique."
+    ],
+    "examples": [
+      {
+        "input": "[['5', '3', '.', '.', '7', '.', '.', '.', '.'], ['6', '.', '.', '1', '9', '5', '.', '.', '.'], ['.', '9', '8', '.', '.', '.', '.', '6', '.'], ['8', '.', '.', '.', '6', '.', '.', '.', '3'], ['4', '.', '9', '8', '.', '3', '.', '.', '1'], ['7', '.', '.', '.', '2', '.', '.', '.', '6'], ['.', '6', '.', '.', '.', '.', '2', '8', '.'], ['.', '.', '.', '4', '1', '9', '.', '.', '5'], ['.', '.', '.', '.', '8', '.', '.', '7', '9']]",
+        "output": "[['5', '3', '4', '6', '7', '8', '9', '1', '2'], ['6', '7', '2', '1', '9', '5', '3', '4', '8'], ['1', '9', '8', '3', '4', '2', '5', '6', '7'], ['8', '5', '9', '7', '6', '1', '4', '2', '3'], ['4', '2', '6', '8', '5', '3', '7', '9', '1'], ['7', '1', '3', '9', '2', '4', '8', '5', '6'], ['9', '6', '1', '5', '3', '7', '2', '8', '4'], ['2', '8', '7', '4', '1', '9', '6', '3', '5'], ['3', '4', '5', '2', '8', '6', '1', '7', '9']]",
+        "explanation": "The empty cells are filled in such a way that all rows, columns, and 3x3 subgrids contain the digits from 1 to 9 exactly once."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using backtracking to explore all possibilities.",
+      "Check for validity before placing a number in a cell.",
+      "Use a helper function to validate the placement of digits."
+    ],
+    "company": "LINE"
+  },
+  {
+    "question_id": "",
+    "title": "Frog Jump",
+    "description": "A frog is located at position 0 on a number line and wants to jump to a position `x`. The frog can jump to the next position by jumping `k` units in each jump, where `k` increases by 1 after each jump. In the first jump, the frog can jump to position `k`, in the second jump it can reach position `2*k`, and so on. Given a target position `x`, determine if the frog can reach `x` by making the jumps as described. You need to return true if the frog can reach or exceed position `x` and false otherwise.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Math",
+    "tags": [
+      "Dynamic Programming",
+      "Math",
+      "Greedy"
+    ],
+    "input_format": "An integer x which represents the target position on the number line.",
+    "output_format": "A boolean value indicating whether the frog can reach or exceed the position x.",
+    "constraints": [
+      "1 <= x <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "x = 5",
+        "output": "true",
+        "explanation": "The frog can jump to 1, then to 3, and then to 5, reaching the target."
+      },
+      {
+        "input": "x = 2",
+        "output": "true",
+        "explanation": "The frog can jump to 1, and then to 2 directly."
+      },
+      {
+        "input": "x = 10",
+        "output": "false",
+        "explanation": "Through a sequence of jumps, the frog cannot reach position 10."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the maximum distance the frog can jump in `n` jumps.",
+      "Evaluate the relationship between the number of jumps and the sum of natural numbers."
+    ],
+    "company": "LINE"
+  }
+]

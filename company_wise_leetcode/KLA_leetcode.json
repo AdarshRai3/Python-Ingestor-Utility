@@ -1,0 +1,278 @@
+[
+  {
+    "question_id": "",
+    "title": "Reaching Points",
+    "description": "You are given two integers, sx and sy, representing the starting point (sx, sy). You can move from the current point (x, y) to either (x + y, y) or (x, x + y). Your goal is to determine if you can reach the point (tx, ty) from (sx, sy) using any number of valid moves. Return true if it is possible to reach (tx, ty), otherwise return false.",
+    "topic": "Mathematics",
+    "subtopic": "Geometry",
+    "tags": [
+      "DFS",
+      "BFS",
+      "Math"
+    ],
+    "input_format": "Two integers sx, sy, tx, ty representing the starting and target points.",
+    "output_format": "A boolean indicating whether (tx, ty) can be reached from (sx, sy).",
+    "constraints": [
+      "1 <= sx, sy, tx, ty <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "sx = 1, sy = 1, tx = 3, ty = 5",
+        "output": "true",
+        "explanation": "Starting from (1, 1), we can reach (1, 2), (1, 3), (2, 3) and finally (3, 5) via several moves."
+      },
+      {
+        "input": "sx = 1, sy = 1, tx = 2, ty = 2",
+        "output": "false",
+        "explanation": "No series of moves can reach (2, 2) from (1, 1)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the properties of the moves.",
+      "Think about how to reverse the moves."
+    ],
+    "company": "KLA"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. It should support the following operations: get and put. The get operation retrieves the value of the key if the key exists in the cache. Otherwise, it returns -1. The put operation will insert the value if the key is not already present. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structures",
+    "subtopic": "Cache",
+    "tags": [
+      "HashMap",
+      "Doubly Linked List",
+      "Design"
+    ],
+    "input_format": "The constructor of the LRUCache will receive an integer capacity. The operations will be represented as pairs of action and value.",
+    "output_format": "The output will be the result of the 'get' operation, or 'null' for 'put' as it doesn't return a value.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key, value <= 10^4",
+      "At most 10^4 calls will be made to get and put."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache(2); lruCache.put(1, 1); lruCache.put(2, 2); lruCache.get(1); lruCache.put(3, 3); lruCache.get(2); lruCache.put(4, 4); lruCache.get(1); lruCache.get(3); lruCache.get(4);",
+        "output": "1, null, -1, null, -1, 4",
+        "explanation": "Cache capacity is 2, adding (1,1) and (2,2); get(1) returns 1. Adding (3,3) evicts (2,2); get(2) returns -1. Adding (4,4) evicts (1,1); get(1) returns -1, get(3) returns 3, and get(4) returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a HashMap and Doubly Linked List to implement the cache efficiently.",
+      "Think about how to update the order of nodes when accessing items."
+    ],
+    "company": "KLA"
+  },
+  {
+    "question_id": "",
+    "title": "Roman to Integer",
+    "description": "Given a string representing a Roman numeral, convert it to an integer. The input string is guaranteed to be within the range from 1 to 3999.",
+    "topic": "String",
+    "subtopic": "Conversion",
+    "tags": [
+      "String",
+      "Conversion",
+      "Mathematics"
+    ],
+    "input_format": "A string representing a Roman numeral.",
+    "output_format": "An integer representing the equivalent value of the Roman numeral.",
+    "constraints": [
+      "1 <= s.length <= 15",
+      "s consists of the characters 'I', 'V', 'X', 'L', 'C', 'D', 'M'."
+    ],
+    "examples": [
+      {
+        "input": "s = 'III'",
+        "output": "3",
+        "explanation": "The Roman numeral 'III' represents 1 + 1 + 1 = 3."
+      },
+      {
+        "input": "s = 'IV'",
+        "output": "4",
+        "explanation": "The Roman numeral 'IV' represents 5 - 1 = 4."
+      },
+      {
+        "input": "s = 'IX'",
+        "output": "9",
+        "explanation": "The Roman numeral 'IX' represents 10 - 1 = 9."
+      },
+      {
+        "input": "s = 'LVIII'",
+        "output": "58",
+        "explanation": "The Roman numeral 'LVIII' represents 50 + 5 + 3 = 58."
+      },
+      {
+        "input": "s = 'MCMXCIV'",
+        "output": "1994",
+        "explanation": "The Roman numeral 'MCMXCIV' represents 1000 + (1000 - 100) + (100 - 10) + 5 = 1994."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Map each Roman numeral character to its integer value.",
+      "Consider cases where a smaller numeral precedes a larger numeral to signify subtraction."
+    ],
+    "company": "KLA"
+  },
+  {
+    "question_id": "",
+    "title": "LFU Cache",
+    "description": "Design and implement a data structure for a Least Frequently Used (LFU) cache. The LFU cache should support the following operations: get and put. The get operation should return the value of the key if the key exists in the cache, otherwise it should return -1. The put operation should insert or replace the value of the key. If the number of keys exceeds the capacity, the least frequently used key should be evicted. The cache should be initialized with a positive capacity.",
+    "topic": "Design",
+    "subtopic": "Cache",
+    "tags": [
+      "Design",
+      "Cache",
+      "LFU"
+    ],
+    "input_format": "The LFU cache is initialized with a positive integer capacity. Operations are performed in the following format: 'get(key)' or 'put(key, value)'.",
+    "output_format": "For the get operation, return the value of the key or -1 if not found. For the put operation, there is no return value.",
+    "constraints": [
+      "The capacity of the cache is a positive integer.",
+      "The total number of operations will not exceed 10^4.",
+      "The key and value ranges are both within [0, 10^4]."
+    ],
+    "examples": [
+      {
+        "input": "LFUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.get(3); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1, -1, 3, 4]",
+        "explanation": "After executing the operations, the state of the cache is 4 -> 4, 3 -> 3, 1 -> 1. Accessing key 2 returns -1 since it was evicted."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a hash map to store key-value pairs.",
+      "You may need to track the frequency of access for each key."
+    ],
+    "company": "KLA"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Swap",
+    "description": "Given a non-negative integer, you can swap two digits at most once to create the maximum valued number possible. Return the maximum valued number you can get after performing at most one swap. If no swap can lead to a higher number, return the number itself.",
+    "topic": "Greedy",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Number Manipulation"
+    ],
+    "input_format": "A non-negative integer num.",
+    "output_format": "An integer representing the maximum number after at most one swap.",
+    "constraints": [
+      "0 <= num <= 10^8"
+    ],
+    "examples": [
+      {
+        "input": "num = 2736",
+        "output": "7236",
+        "explanation": "Swapping 2 and 7 gives the maximum number 7236."
+      },
+      {
+        "input": "num = 9973",
+        "output": "9973",
+        "explanation": "No swap can create a higher number, so the output is 9973."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to identify digits that can be swapped to increase the number.",
+      "Consider using a greedy approach to find the best swap.",
+      "Focus on swapping larger digits from the left side."
+    ],
+    "company": "KLA"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers 'nums' and an integer 'target', return the indices of the two numbers such that they add up to 'target'. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "A list of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "Each input would have exactly one solution."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hash table to store values and their indices for fast lookup.",
+      "Think about how you can reduce the time complexity of your solution."
+    ],
+    "company": "KLA"
+  },
+  {
+    "question_id": "",
+    "title": "Find Median from Data Stream",
+    "description": "Design a data structure that supports the following two operations: addNum(num) - Add a integer number from the data stream to the data structure and findMedian() - Return the median of all elements so far. The median is the value separating the higher half from the lower half of a data set. If there is an even number of elements, the median is the average of the two middle values.",
+    "topic": "Data Structure",
+    "subtopic": "Heap",
+    "tags": [
+      "Heap",
+      "Data Structure",
+      "Median"
+    ],
+    "input_format": "You are given a stream of integers to add through the addNum function.",
+    "output_format": "A floating point number representing the median of all elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": [
+          "addNum(1)",
+          "addNum(2)",
+          "findMedian()"
+        ],
+        "output": "1.5",
+        "explanation": "The stream is [1, 2]. The median is (1 + 2) / 2 = 1.5."
+      },
+      {
+        "input": [
+          "addNum(3)",
+          "findMedian()"
+        ],
+        "output": "2",
+        "explanation": "The stream is [1, 2, 3]. The median is 2."
+      },
+      {
+        "input": [
+          "addNum(4)",
+          "addNum(5)",
+          "addNum(6)",
+          "findMedian()"
+        ],
+        "output": "4.5",
+        "explanation": "The stream is [1, 2, 3, 4, 5, 6]. The median is (4 + 5) / 2 = 4.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use two heaps to maintain the two halves of the data.",
+      "The max-heap stores the lower half, while the min-heap stores the upper half."
+    ],
+    "company": "KLA"
+  }
+]

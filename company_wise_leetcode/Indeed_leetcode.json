@@ -1,0 +1,261 @@
+[
+  {
+    "question_id": "",
+    "title": "Sum of Even Numbers After Queries",
+    "description": "You are given an integer array 'nums' and an array of queries. Each query modifies the original array by adding a given value to a specific index, and you need to return the sum of all even numbers after each query. After processing all queries, return the results as an array of sums corresponding to each query.",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "Queries",
+      "Sum"
+    ],
+    "input_format": "Two arrays, 'nums' of size n (1 <= n <= 10^4) and 'queries' of size m (1 <= m <= 10^4), where each query is a list of two integers [index, value].",
+    "output_format": "An array of integers representing the sum of all even numbers in 'nums' after each query.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5",
+      "1 <= queries.length <= 10^4",
+      "0 <= index < nums.length",
+      "-10^5 <= value <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4], queries = [[0, 3], [1, 2], [0, -1]]",
+        "output": "[8, 10, 8]",
+        "explanation": "After the first query, nums = [4, 2, 3, 4], sum of evens = 4 + 2 + 4 = 10. After the second query, nums = [4, 4, 3, 4], sum of evens = 4 + 4 + 4 = 12. After the last query, nums = [3, 4, 3, 4], sum of evens = 4 + 4 = 8."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the sum of even numbers and update it efficiently after each query."
+    ],
+    "company": "Indeed"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Tilt",
+    "description": "Given a binary tree, calculate the tilt of the tree. The tilt of a tree node is defined as the absolute difference between the sum of all left subtree node values and the sum of all right subtree node values. The tilt of the entire tree is the sum of all node tilts. You need to return the tilt of the whole tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Tilt",
+      "Recursion"
+    ],
+    "input_format": "The root node of a binary tree.",
+    "output_format": "An integer representing the total tilt of the tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4]",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3]",
+        "output": "1",
+        "explanation": "The tilt of the root is |2 - 3| = 1. Total tilt = 1."
+      },
+      {
+        "input": "root = [4, 2, 9, 3, 5, null, 7]",
+        "output": "15",
+        "explanation": "The tilt of nodes are: |3 - 0| + |5 - 0| + |2 - 8| + |4 - 16| = 3 + 5 + 6 + 1 = 15."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider calculating subtree sums during a depth-first traversal.",
+      "Use recursion to find the sum of left and right subtrees."
+    ],
+    "company": "Indeed"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Cost to Split an Array",
+    "description": "You are given an integer array arr and an integer k. Your task is to split the array into at most k non-empty contiguous subarrays, such that the total cost is minimized. The cost of a split is defined as the sum of the maximum elements of each subarray. Return the minimum cost required to split the array into at most k subarrays.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Partitioning",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Subarray"
+    ],
+    "input_format": "The first line contains two integers n and k, where n is the length of the array and k is the maximum number of subarrays. The second line contains n integers representing the elements of the array arr.",
+    "output_format": "An integer representing the minimum cost to split the array into at most k subarrays.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "1 <= k <= n",
+      "1 <= arr[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, k = 2, arr = [1, 3, 6, 2, 4]",
+        "output": "7",
+        "explanation": "The optimal split is [1, 3, 6] and [2, 4], where the maximum elements are 6 and 4 respectively. Thus, the total cost is 6 + 4 = 10."
+      },
+      {
+        "input": "n = 3, k = 1, arr = [5, 1, 2]",
+        "output": "5",
+        "explanation": "Since k = 1, the whole array is a single subarray, with the maximum element being 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider dynamic programming to optimize the splits.",
+      "Think about how to maintain the maximum element in subarrays efficiently.",
+      "Try to break down the problem into smaller subproblems."
+    ],
+    "company": "Indeed"
+  },
+  {
+    "question_id": "",
+    "title": "Find Players With Zero or One Losses",
+    "description": "In a sports league, each player can either win or lose a match. You are given a list of pairs where each pair consists of two players: the first player wins the match and the second player loses. Your task is to identify all players who have either zero losses or one loss. Return the list of such players sorted in alphabetical order.",
+    "topic": "Array",
+    "subtopic": "Counting",
+    "tags": [
+      "Array",
+      "Hashmap",
+      "Sorting"
+    ],
+    "input_format": "A list of pairs of strings, where each pair is formatted as [winner, loser].",
+    "output_format": "A list of strings representing the players with zero or one losses, sorted in alphabetical order.",
+    "constraints": [
+      "1 <= matches.length <= 10^4",
+      "Each player name is a string with 1 to 100 characters and contains only lowercase letters."
+    ],
+    "examples": [
+      {
+        "input": "[['alice', 'bob'], ['alice', 'charlie'], ['bob', 'charlie'], ['charlie', 'david']]",
+        "output": "['alice', 'bob']",
+        "explanation": "Alice has 0 losses, Bob has 1 loss (against Alice), Charlie has 2 losses (against Alice and Bob), and David has 1 loss (against Charlie)."
+      },
+      {
+        "input": "[['john', 'paul'], ['paul', 'ringo'], ['ringo', 'john']]",
+        "output": "['john', 'paul', 'ringo']",
+        "explanation": "All players have the same number of wins and losses (1 loss each), so they all qualify."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to count losses for each player.",
+      "Iterate through the hashmap to find players with 0 or 1 losses.",
+      "Sort the final list of players before returning."
+    ],
+    "company": "Indeed"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Moves to Equal Array Elements",
+    "description": "You are given an integer array nums of size n. In one move, you can increment n - 1 elements of the array by 1. Your task is to find the minimum number of moves required to make all elements in the array equal.",
+    "topic": "Array",
+    "subtopic": "Math",
+    "tags": [
+      "Array",
+      "Math",
+      "Greedy"
+    ],
+    "input_format": "An integer array nums (1 <= nums.length <= 10^4) where 1 <= nums[i] <= 10^7.",
+    "output_format": "An integer representing the minimum number of moves required.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "1 <= nums[i] <= 10^7"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "3",
+        "explanation": "The minimum moves are: increment both 1 and 2 to 3 (2 moves), and then increment 3 to 3 (1 move), total = 3 moves."
+      },
+      {
+        "input": "nums = [1, 100, 1000]",
+        "output": "999",
+        "explanation": "Increment 1 to 1000 using 999 moves, making 1, 100, and 1000 all equal to 1000."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the impact of incrementing n - 1 elements rather than just one.",
+      "The number of moves needed can be related to the difference between the maximum element and the others."
+    ],
+    "company": "Indeed"
+  },
+  {
+    "question_id": "",
+    "title": "Merge k Sorted Lists",
+    "description": "You are given an array of k linked-lists, each linked-list is sorted in ascending order. Your task is to merge all the linked-lists into one sorted linked-list and return it. The resulting linked-list should also be sorted and follow the order of elements as per their values.",
+    "topic": "Linked List",
+    "subtopic": "Merge",
+    "tags": [
+      "Linked List",
+      "Merge",
+      "Sorting"
+    ],
+    "input_format": "An array of k linked-lists represented as ListNode objects.",
+    "output_format": "A single linked-list represented as a ListNode object, sorted in ascending order.",
+    "constraints": [
+      "k == lists.length",
+      "0 <= k <= 10^4",
+      "0 <= lists[i].length <= 500",
+      "-10^4 <= lists[i][j] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[[1,4,5],[1,3,4],[2,6]]",
+        "output": "[1,1,2,3,4,4,5,6]",
+        "explanation": "Merging the three lists results in a single sorted list: 1 \u2192 1 \u2192 2 \u2192 3 \u2192 4 \u2192 4 \u2192 5 \u2192 6."
+      },
+      {
+        "input": "[[]]",
+        "output": "[]",
+        "explanation": "The input is an array with an empty list, so the output is also an empty list."
+      },
+      {
+        "input": "[[],[1]]",
+        "output": "[1]",
+        "explanation": "One list is empty and the other has only one element 1, so the output is [1]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a priority queue to help efficiently select the smallest element.",
+      "You may need to define a custom comparator if you're using a data structure that requires one."
+    ],
+    "company": "Indeed"
+  },
+  {
+    "question_id": "",
+    "title": "Check if Every Row and Column Contains All Numbers",
+    "description": "You are given an n x n matrix where each element is an integer from 1 to n. Write a function that checks if every row and every column contains all numbers from 1 to n. Return true if it does and false otherwise.",
+    "topic": "Matrix",
+    "subtopic": "Validation",
+    "tags": [
+      "Matrix",
+      "Validation",
+      "Array"
+    ],
+    "input_format": "An n x n matrix of integers.",
+    "output_format": "A boolean value: true if every row and column contains all numbers from 1 to n, otherwise false.",
+    "constraints": [
+      "1 <= n <= 100",
+      "1 <= matrix[i][j] <= n"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [3, 1, 2], [2, 3, 1]]",
+        "output": "true",
+        "explanation": "Each row and each column contains all numbers from 1 to 3."
+      },
+      {
+        "input": "matrix = [[1, 1, 2], [2, 3, 1], [3, 2, 1]]",
+        "output": "false",
+        "explanation": "The first row does not contain all numbers from 1 to 3."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You may use a set to track the numbers in each row and each column."
+    ],
+    "company": "Indeed"
+  }
+]

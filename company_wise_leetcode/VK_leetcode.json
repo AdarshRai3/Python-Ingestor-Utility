@@ -1,0 +1,284 @@
+[
+  {
+    "question_id": "",
+    "title": "Maximize Distance to Closest Person",
+    "description": "You are given a binary array 'seats' where 'seats[i]' is 1 if a person is sitting in the ith seat, and 0 if the seat is empty. You want to maximize the distance between the closest two people. Return the maximum distance you can achieve from the closest person.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Greedy"
+    ],
+    "input_format": "A binary array 'seats' of length n.",
+    "output_format": "An integer representing the maximum distance to the closest person.",
+    "constraints": [
+      "2 <= seats.length <= 2 * 10^4",
+      "seats[i] is 0 or 1.",
+      "At least one person is seated."
+    ],
+    "examples": [
+      {
+        "input": "seats = [1,0,0,0,1,0,1]",
+        "output": "2",
+        "explanation": "The maximum distance would be from the middle seat (index 3) to the closest person at index 1 or 4, resulting in a distance of 2."
+      },
+      {
+        "input": "seats = [1,0,0,0]",
+        "output": "3",
+        "explanation": "The only person is at index 0. The maximum distance to the closest person can be achieved by sitting at index 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how far you can go from the closest seated person.",
+      "Use binary search or two-pointer technique to explore distances."
+    ],
+    "company": "VK"
+  },
+  {
+    "question_id": "",
+    "title": "Move Zeroes",
+    "description": "Given an array of integers, move all the zeroes to the end of the array while maintaining the relative order of the non-zero elements. Modify the input array in-place, without using extra space.",
+    "topic": "Array",
+    "subtopic": "In-place Operations",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "The same array with all zeroes moved to the end.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 1, 0, 3, 12]",
+        "output": "[1, 3, 12, 0, 0]",
+        "explanation": "The non-zero elements 1, 3, and 12 maintain their order, and all zeroes are moved to the end."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[0]",
+        "explanation": "The input contains only one element which is zero."
+      },
+      {
+        "input": "nums = [1, 0, 2, 0, 3]",
+        "output": "[1, 2, 3, 0, 0]",
+        "explanation": "The non-zero elements 1, 2, and 3 are kept in order while the zeroes are moved to the end."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a two-pointer technique to traverse and rearrange the array.",
+      "Keep track of the position to place non-zero elements."
+    ],
+    "company": "VK"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of parentheses characters.",
+    "output_format": "Return true if the input string is valid, otherwise return false.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only '()', '{}', '[]'."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The string has one pair of parentheses that are correctly closed."
+      },
+      {
+        "input": "s = '([{}])'",
+        "output": "true",
+        "explanation": "All brackets are correctly nested and closed."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The closing bracket does not match the last opening bracket."
+      },
+      {
+        "input": "s = '((()))'",
+        "output": "true",
+        "explanation": "The string has multiple pairs of valid nested parentheses."
+      },
+      {
+        "input": "s = '({[()]})'",
+        "output": "true",
+        "explanation": "All types of brackets are correctly nested and closed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a stack to keep track of opening brackets.",
+      "Ensure that every closing bracket matches the most recent opening bracket."
+    ],
+    "company": "VK"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. The merge must be done in-place, resulting in a single sorted array. Note that nums1 has a size of m + n, where m is the number of elements initialized in nums1 and n is the number of elements in nums2.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Sorting",
+      "In-place"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2, where nums1 has enough space to hold additional elements from nums2.",
+    "output_format": "A single sorted integer array stored in nums1 after merging.",
+    "constraints": [
+      "0 <= m, n <= 200",
+      "1 <= m + n <= 200",
+      "-10^9 <= nums1[i], nums2[j] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [2, 5, 6], n = 3",
+        "output": "[1, 2, 2, 3, 5, 6]",
+        "explanation": "The sorted order after merging: 1, 2, 2, 3, 5, 6."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "No merging needed as nums2 is empty."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider starting from the end of both arrays.",
+      "Use two pointers to keep track of the current elements in nums1 and nums2."
+    ],
+    "company": "VK"
+  },
+  {
+    "question_id": "",
+    "title": "Summary Ranges",
+    "description": "Given a sorted integer array without duplicates, return the summary of its ranges. A summary range is represented as a string that consists of the starting and ending numbers of the range, separated by '->'. If the range consists of just one number, simply return that number as a string. For example, the range [1, 2, 3] can be represented as '1->3', while the number 2 would be represented as '2'.",
+    "topic": "Array",
+    "subtopic": "Range Summarization",
+    "tags": [
+      "Array",
+      "Range",
+      "Summary"
+    ],
+    "input_format": "An array of integers nums, which is sorted and may contain duplicates.",
+    "output_format": "A list of strings representing the summarized ranges.",
+    "constraints": [
+      "0 <= nums.length <= 20,000",
+      "-2^31 <= nums[i] <= 2^31 - 1",
+      "The input array must be sorted and should not contain duplicates."
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 1, 2, 4, 5, 7]",
+        "output": "[\"0->2\", \"4->5\", \"7\"]",
+        "explanation": "The ranges are: 0 to 2 represented as '0->2', 4 to 5 as '4->5', and 7 as just '7'."
+      },
+      {
+        "input": "nums = [0, 2, 3, 4, 6, 8, 9]",
+        "output": "[\"0\", \"2->4\", \"6\", \"8->9\"]",
+        "explanation": "Here, 0 is alone, the range 2 to 4 is represented as '2->4', 6 is alone, and the range 8 to 9 as '8->9'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers or indexes to track the start and end of ranges.",
+      "Iterate through the list and compare consecutive numbers to determine ranges."
+    ],
+    "company": "VK"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Sorted Lists",
+    "description": "You are given two linked lists that are both sorted in non-decreasing order. Merge these two lists into a single sorted linked list and return it. The merged list should be made by splicing together the nodes of the first two lists.",
+    "topic": "Linked List",
+    "subtopic": "Merging Linked Lists",
+    "tags": [
+      "Linked List",
+      "Merge",
+      "Sorting"
+    ],
+    "input_format": "The input consists of two linked list heads, l1 and l2, representing the heads of the two sorted linked lists.",
+    "output_format": "Return the head of the new merged linked list.",
+    "constraints": [
+      "The number of nodes in both lists is in the range [0, 50].",
+      "-100 <= Node.val <= 100",
+      "Both l1 and l2 are sorted in non-decreasing order."
+    ],
+    "examples": [
+      {
+        "input": "l1 = [1, 2, 4], l2 = [1, 3, 4]",
+        "output": "[1, 1, 2, 3, 4, 4]",
+        "explanation": "The merged list is 1 -> 1 -> 2 -> 3 -> 4 -> 4."
+      },
+      {
+        "input": "l1 = [], l2 = [0]",
+        "output": "[0]",
+        "explanation": "Since the first list is empty, the merged list is simply the second list."
+      },
+      {
+        "input": "l1 = [], l2 = []",
+        "output": "[]",
+        "explanation": "Both lists are empty, so the merged list is also empty."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a dummy node to simplify the merging process.",
+      "Iterate through both lists and compare their nodes."
+    ],
+    "company": "VK"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Palindrome",
+    "description": "Given a string s, determine if it is a palindrome, considering only alphanumeric characters and ignoring case sensitivity. A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "A single string s.",
+    "output_format": "A boolean value indicating whether s is a valid palindrome.",
+    "constraints": [
+      "1 <= s.length <= 2 * 10^5",
+      "s consists only of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "A man, a plan, a canal: Panama",
+        "output": "true",
+        "explanation": "The string is a palindrome when ignoring non-alphanumeric characters and case: 'amanaplanacanalpanama'."
+      },
+      {
+        "input": "race a car",
+        "output": "false",
+        "explanation": "The cleaned string 'raceacar' is not the same when reversed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to compare characters from both ends of the string.",
+      "Skip non-alphanumeric characters while comparing.",
+      "Convert characters to the same case (either upper or lower) for comparison."
+    ],
+    "company": "VK"
+  }
+]

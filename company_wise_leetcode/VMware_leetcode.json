@@ -1,0 +1,766 @@
+[
+  {
+    "question_id": "",
+    "title": "Find Palindrome With Fixed Length",
+    "description": "Given a string s, find and return all unique palindromic substrings of length k. A palindromic substring is a substring that reads the same backward as forward. The substrings should be returned in an array, sorted in lexicographical order.",
+    "topic": "String",
+    "subtopic": "Substring",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Substring"
+    ],
+    "input_format": "A string s and an integer k (1 <= k <= s.length).",
+    "output_format": "An array of unique palindromic substrings of length k, sorted in lexicographical order.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= k <= s.length"
+    ],
+    "examples": [
+      {
+        "input": "s = 'abbaacc', k = 2",
+        "output": "['aa', 'bb', 'cc']",
+        "explanation": "The palindromic substrings of length 2 in the string are 'aa', 'bb', and 'cc'."
+      },
+      {
+        "input": "s = 'racecar', k = 3",
+        "output": "['cec', 'ace']",
+        "explanation": "The palindromic substrings of length 3 in the string are 'cec' and 'ace'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a set to store unique palindromic substrings.",
+      "Check substrings by comparing characters at equal distances from the center."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Make Array Non-decreasing or Non-increasing",
+    "description": "You are given an integer array nums. You want to make the array non-decreasing or non-increasing. To do this, you need to perform at most one modification. A modification is defined as changing one element of the array to any value. Return true if you can make the array non-decreasing or non-increasing after performing at most one modification; otherwise, return false.",
+    "topic": "Array",
+    "subtopic": "Modification",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Two Pointers"
+    ],
+    "input_format": "An integer array nums, where 1 <= nums.length <= 10^4 and -10^5 <= nums[i] <= 10^5.",
+    "output_format": "A boolean value indicating whether it's possible to make the array non-decreasing or non-increasing.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, 2, 3]",
+        "output": "false",
+        "explanation": "It is not possible to make the array non-decreasing by modifying at most one element."
+      },
+      {
+        "input": "nums = [4, 2, 3]",
+        "output": "true",
+        "explanation": "We can modify the first element to 1, making the array [1, 2, 3], which is non-decreasing."
+      },
+      {
+        "input": "nums = [2, 3, 1, 4]",
+        "output": "true",
+        "explanation": "Making the second element 2 results in [2, 2, 1, 4], which can be made non-increasing."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how a single modification can impact the relationship between adjacent elements.",
+      "Keep track of the number of modifications made while iterating through the array."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Break a Palindrome",
+    "description": "A palindrome is a string that reads the same forwards and backwards. Given a string 's' which is a palindrome, your task is to replace exactly one character in 's' such that the resulting string is no longer a palindrome and is the lexicographically smallest string possible. If it's not possible to make the string non-palindromic, return an empty string. If multiple solutions exist, return the one that is lexicographically smallest.",
+    "topic": "String",
+    "subtopic": "Palindrome",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Lexicographical Order"
+    ],
+    "input_format": "A string 's' consisting of lowercase English letters, where 1 <= s.length <= 100.",
+    "output_format": "A string representing the lexicographically smallest string obtained by replacing one character in 's', or an empty string if it is not possible.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "aa",
+        "output": "ab",
+        "explanation": "Replacing the second 'a' with 'b' gives 'ab', which is not a palindrome and is the smallest possible non-palindromic string."
+      },
+      {
+        "input": "aba",
+        "output": "aaa",
+        "explanation": "Replacing the second 'b' with 'a' gives 'aaa', which is not a palindrome, but 'aab' would be lexicographically smaller."
+      },
+      {
+        "input": "aaaa",
+        "output": "aaab",
+        "explanation": "Replacing the last 'a' with 'b' gives 'aaab', which is the lexicographically smallest non-palindrome."
+      },
+      {
+        "input": "a",
+        "output": "",
+        "explanation": "A single character cannot be turned into a non-palindrome by changing one character."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how palindromes work and what character can be replaced.",
+      "The first character can often be changed to achieve a non-palindrome."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Median"
+    ],
+    "input_format": "Two arrays of integers nums1 and nums2, each sorted in non-decreasing order.",
+    "output_format": "A float representing the median of the two sorted arrays.",
+    "constraints": [
+      "0 <= m <= 1000",
+      "0 <= n <= 1000",
+      "1 <= m + n <= 2000",
+      "It is guaranteed that the overall median is valid."
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 3], nums2 = [2]",
+        "output": "2.0",
+        "explanation": "The combined sorted array is [1, 2, 3]. The median is 2."
+      },
+      {
+        "input": "nums1 = [1, 2], nums2 = [3, 4]",
+        "output": "2.5",
+        "explanation": "The combined sorted array is [1, 2, 3, 4]. The median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Binary search can help partition the two arrays.",
+      "Consider edge cases when the arrays have different sizes."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices, where prices[i] is the price of a given stock on the ith day.",
+    "output_format": "An integer representing the maximum profit.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "There is no way to make a profit, so the maximum profit is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate the profit at each step and update the maximum profit accordingly."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers 'nums' and an integer 'target', return the indices of the two numbers such that they add up to 'target'. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Map",
+    "tags": [
+      "Array",
+      "Hash Map",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers 'nums' and an integer 'target'.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "\u221210^9 <= target <= 10^9",
+      "Assume that each input would have exactly one solution."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to track the numbers and their indices.",
+      "Check if the complement (target - current number) exists in the map."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. It should support the following operations: `get(key)` and `put(key, value)`. The `get` method retrieves the value of the key if the key exists in the cache, otherwise it returns -1. The `put` method updates the value of the key if the key exists and if the cache is at capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Design",
+    "subtopic": "Cache",
+    "tags": [
+      "Design",
+      "Cache",
+      "Data Structures"
+    ],
+    "input_format": "Two methods to implement. `get(key: int) -> int` and `put(key: int, value: int) -> None`.",
+    "output_format": "Return the value of the key if it exists in the cache, otherwise return -1 for the `get` method. The `put` method does not return anything.",
+    "constraints": [
+      "The number of calls to `get` and `put` will not exceed 2 * 10^4.",
+      "The capacity of the cache is a positive integer between 1 and 1000."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache = LRUCache(2); LRUCache.put(1, 1); LRUCache.put(2, 2); LRUCache.get(1); LRUCache.put(3, 3); LRUCache.get(2); LRUCache.put(4, 4); LRUCache.get(1); LRUCache.get(3); LRUCache.get(4);",
+        "output": "[1, -1, 3, 4]",
+        "explanation": "The cache capacity is 2. When 1 is added, it's stored. When 2 is added, it's also stored. `get(1)` returns 1. When 3 is added, it replaces 2 in the cache. `get(2)` returns -1. When 4 is added, it replaces 1. `get(1)` returns -1, `get(3)` returns 3, and `get(4)` returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hash map and a doubly linked list.",
+      "Keep track of the order of usage for cache eviction."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given the total number of courses, numCourses, and a list of prerequisite pairs, prerequisites. Each pair [a, b] indicates that you must take course b before course a. Determine if it is possible for you to finish all courses given the prerequisites. Implement an algorithm that returns true if it is possible to finish all courses, and false otherwise.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sorting",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "An integer numCourses and a list of prerequisite pairs.",
+    "output_format": "A boolean value indicating whether all courses can be finished.",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2",
+      "0 <= prerequisites[i][0], prerequisites[i][1] < numCourses"
+    ],
+    "examples": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0]]",
+        "output": "true",
+        "explanation": "You can take course 0 first, followed by course 1."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "false",
+        "explanation": "There is a cycle: to take course 1, you must take course 0, and to take course 0, you must take course 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how you can represent courses and prerequisites as a graph.",
+      "Consider the concept of cycles in the graph."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design and implement a time-based key-value store that supports setting a value with a timestamp and retrieving a value at a given timestamp. The store should handle multiple values for the same key at different timestamps. When retrieving a value, if no value exists for that key at the exact given timestamp, the store should return the most recent value before that timestamp. If no such value exists, return an empty string.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "HashMap",
+      "Time Complexity"
+    ],
+    "input_format": "The input format consists of two types of operations: 'set' and 'get'. The 'set' operation takes a key (string), value (string), and timestamp (integer). The 'get' operation takes a key (string) and timestamp (integer).",
+    "output_format": "For each 'get' operation, return the value associated with the key at the given timestamp or an empty string if no such value exists.",
+    "constraints": [
+      "The number of operations will not exceed 1000.",
+      "1 <= key.length, value.length <= 100.",
+      "0 <= timestamp <= 10^9."
+    ],
+    "examples": [
+      {
+        "input": "store.set('foo', 'bar', 1); store.get('foo', 1); store.get('foo', 3); store.set('foo', 'baz', 2); store.get('foo', 2); store.get('foo', 4);",
+        "output": "'bar', 'bar', 'baz', 'baz'",
+        "explanation": "On timestamp 1, 'foo' is set to 'bar'. On timestamp 3, the most recent value is still 'bar'. At timestamp 2, 'foo' is updated to 'baz', and on timestamp 4, the value remains 'baz'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a map of timestamps for each key.",
+      "Maintain a sorted list of timestamps for efficient retrieval."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "Given an integer array 'nums' that is sorted in ascending order and then rotated at some pivot, you must search for a target value in this array. If the target exists, return its index. Otherwise, return -1. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Binary Search",
+    "subtopic": "Search in Rotated Array",
+    "tags": [
+      "Binary Search",
+      "Array",
+      "Search"
+    ],
+    "input_format": "An integer array nums and an integer target.",
+    "output_format": "An integer representing the index of target in nums, or -1 if target is not found.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "-10^4 <= nums[i] <= 10^4",
+      "nums is guaranteed to be rotated at some pivot."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "The target value 0 is found at index 4."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "The target value 3 is not present in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search as the array is sorted.",
+      "Identify the portion of the array that is sorted.",
+      "Check which side of the pivot your target may be located."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Next Permutation",
+    "description": "Implement the next permutation algorithm, which rearranges numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it to the lowest possible order (i.e., sorted in ascending order). The solution must be performed in-place, meaning no additional arrays or data structures can be used.",
+    "topic": "Array",
+    "subtopic": "Permutations",
+    "tags": [
+      "Array",
+      "Permutation",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "The modified array nums which represents the next permutation.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[1, 3, 2]",
+        "explanation": "The next permutation of [1, 2, 3] is [1, 3, 2]."
+      },
+      {
+        "input": "nums = [3, 2, 1]",
+        "output": "[1, 2, 3]",
+        "explanation": "Since [3, 2, 1] is the highest permutation, the next permutation is the lowest, which is [1, 2, 3]."
+      },
+      {
+        "input": "nums = [1, 1, 5]",
+        "output": "[1, 5, 1]",
+        "explanation": "The next permutation of [1, 1, 5] is [1, 5, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to identify the first decreasing element from the end.",
+      "Swap this element with the smallest element larger than it from the right."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given a linked list, reverse the nodes of the list k at a time and return the modified list. If the number of nodes is not a multiple of k, then left-out nodes in the end should remain as they are.",
+    "topic": "Linked List",
+    "subtopic": "Reversal of Linked List",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Two Pointers"
+    ],
+    "input_format": "A singly linked list head node and an integer k.",
+    "output_format": "Return the head of the new linked list after reversing in groups of k.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000].",
+      "0 <= Node.val <= 1000",
+      "1 <= k <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[2, 1, 4, 3, 5]",
+        "explanation": "The first two nodes (1 and 2) are reversed, followed by the next two (3 and 4). Node 5 remains as it is since there are not enough nodes to reverse."
+      },
+      {
+        "input": "head = [1, 2, 3], k = 5",
+        "output": "[1, 2, 3]",
+        "explanation": "Since the number of nodes is less than k, the list remains unchanged."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a dummy node to help with list manipulation.",
+      "Keep track of the previous tail while reversing.",
+      "You may need to connect the reversed groups together."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Common Prefix",
+    "description": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\". A common prefix is defined as a substring that is present at the beginning of all strings in the provided array.",
+    "topic": "String",
+    "subtopic": "Prefix",
+    "tags": [
+      "String",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings str array.",
+    "output_format": "A string representing the longest common prefix.",
+    "constraints": [
+      "0 <= str.length <= 200",
+      "0 <= str[i].length <= 200",
+      "All strings consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "str = [\"flower\", \"flow\", \"flight\"]",
+        "output": "\"fl\"",
+        "explanation": "The longest common prefix is \"fl\"."
+      },
+      {
+        "input": "str = [\"dog\", \"racecar\", \"car\"]",
+        "output": "\"\"",
+        "explanation": "There is no common prefix among the provided strings."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider character by character comparison from the beginning of the strings.",
+      "Use the first string as a reference to compare with the others."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to Roman",
+    "description": "Given an integer, convert it to a Roman numeral. Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. For example, 1 is 'I', 2 is 'II', 3 is 'III'. 4 is 'IV', 5 is 'V', and so on. The conversion should follow the rules of Roman numeral representation.",
+    "topic": "Math",
+    "subtopic": "Conversion",
+    "tags": [
+      "Math",
+      "Strings",
+      "Conversion"
+    ],
+    "input_format": "An integer num (1 <= num <= 3999).",
+    "output_format": "A string representing the Roman numeral equivalent of the given integer.",
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "examples": [
+      {
+        "input": "num = 3",
+        "output": "III",
+        "explanation": "The number 3 corresponds to 'III' in Roman numerals."
+      },
+      {
+        "input": "num = 4",
+        "output": "IV",
+        "explanation": "The number 4 corresponds to 'IV' in Roman numerals."
+      },
+      {
+        "input": "num = 9",
+        "output": "IX",
+        "explanation": "The number 9 corresponds to 'IX' in Roman numerals."
+      },
+      {
+        "input": "num = 58",
+        "output": "LVIII",
+        "explanation": "The number 58 corresponds to 'LVIII' in Roman numerals (L = 50, V = 5, III = 3)."
+      },
+      {
+        "input": "num = 1994",
+        "output": "MCMXCIV",
+        "explanation": "The number 1994 corresponds to 'MCMXCIV' in Roman numerals (M = 1000, CM = 900, XC = 90, IV = 4)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider breaking down the integer into its constituent values based on Roman numeral symbols.",
+      "Use a mapping of integer values to their corresponding Roman numeral symbols."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Koko Eating Bananas",
+    "description": "Koko loves to eat bananas. There are n piles of bananas, and the i-th pile has bananas[i] bananas. Koko can eat at most k bananas per hour. Koko wants to finish eating all the bananas in the shortest time possible. Given the integer array bananas and the integer k, return the minimum integer hours needed for Koko to eat all bananas.",
+    "topic": "Binary Search",
+    "subtopic": "Optimization",
+    "tags": [
+      "Binary Search",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers bananas and an integer k.",
+    "output_format": "An integer representing the minimum hours required to finish eating all bananas.",
+    "constraints": [
+      "1 <= bananas.length <= 10^4",
+      "1 <= bananas[i] <= 10^9",
+      "1 <= k <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "bananas = [3, 6, 7, 11], k = 8",
+        "output": "4",
+        "explanation": "In the first hour, Koko can eat from pile 1 and pile 2 (total 8). In the second hour, she eats from pile 3 (7 left). In the third hour, she eats 7. In the fourth hour, she finishes remaining bananas (3, 6, 0). Total = 4 hours."
+      },
+      {
+        "input": "bananas = [30, 11, 23, 4, 20], k = 5",
+        "output": "30",
+        "explanation": "Koko can only eat 5 bananas per hour, leading to a total of 30 hours needed to finish all piles."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to find the optimal eating speed.",
+      "Calculate the hours required at a given speed."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest substring of s that is a palindrome. A palindrome is a string that reads the same forward and backward. If there are multiple longest palindromic substrings, return any one of them.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A string s (1 <= s.length <= 1000).",
+    "output_format": "A string representing the longest palindromic substring in s.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consist only of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"babad\"",
+        "output": "\"bab\" or \"aba\"",
+        "explanation": "Both \"bab\" and \"aba\" are valid longest palindromic substrings."
+      },
+      {
+        "input": "s = \"cbbd\"",
+        "output": "\"bb\"",
+        "explanation": "\"bb\" is the longest palindromic substring."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider checking substrings of varying lengths.",
+      "Use two pointers to expand around potential palindromic centers."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule II",
+    "description": "There are a total of n courses you have to take, labeled from 0 to n-1. Some courses may have prerequisites, indicated by a pair of courses [a, b] meaning you must take course a before course b. You need to return the order of courses you should take to finish all courses. If it is impossible to finish all courses, return an empty array. The order of courses returned should be a valid topological sort of the courses.",
+    "topic": "Graph",
+    "subtopic": "Topological Sort",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "BFS",
+      "DFS"
+    ],
+    "input_format": "An integer n (the total number of courses) and an array of pairs prerequisites, where each pair [a, b] indicates that you must take course a before course b.",
+    "output_format": "An array of integers representing the valid order of courses, or an empty array if it is impossible to finish all courses.",
+    "constraints": [
+      "1 <= n <= 2000",
+      "0 <= prerequisites.length <= n * (n - 1) / 2",
+      "0 <= prerequisites[i][0], prerequisites[i][1] < n"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]]",
+        "output": "[0,1,2,3] or [0,2,1,3]",
+        "explanation": "There are 4 courses and the prerequisites mean you can take Course 0 first, then either Course 1 or 2, and finally Course 3."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "[]",
+        "explanation": "There is a cycle: Course 0 requires Course 1 to be taken first and Course 1 requires Course 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Kahn's algorithm or DFS for topological sorting.",
+      "Keep track of in-degrees of each course."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Copy List with Random Pointer",
+    "description": "A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null. You need to create a deep copy of the linked list. Each node in the new list should have an arbitrary random pointer that points to the corresponding node in the original list. The challenge is to achieve this in O(N) time complexity and without using extra space for a hash map.",
+    "topic": "Linked List",
+    "subtopic": "Deep Copy",
+    "tags": [
+      "Linked List",
+      "Deep Copy",
+      "Pointer"
+    ],
+    "input_format": "The head of a linked list where each node has a value, a next pointer and a random pointer.",
+    "output_format": "The head of the new linked list which is a deep copy of the input list.",
+    "constraints": [
+      "The number of nodes in the list is between 0 and 1000.",
+      "Each node's value is between 0 and 10^9.",
+      "The random pointer for a node may point to any node in the list or null."
+    ],
+    "examples": [
+      {
+        "input": "head = [[1,null],[2,1],[3,2]]",
+        "output": "[[1,null],[2,1],[3,2]]",
+        "explanation": "The original list contains nodes pointing to each other and null. The deep copy must replicate this structure."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a two-pass solution to create and link new nodes.",
+      "Consider using the original nodes to store created copies."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Rotting Oranges",
+    "description": "You are given an m x n grid where each cell can have one of three values: 0 representing an empty cell, 1 representing a fresh orange, or 2 representing a rotten orange. Every minute, any fresh orange that is adjacent (4-directionally) to a rotten orange becomes rotten. Return the minimum number of minutes that must elapse until no fresh oranges remain. If this is impossible, return -1.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Grid"
+    ],
+    "input_format": "A 2D grid represented as a list of lists of integers.",
+    "output_format": "An integer representing the minimum minutes until no fresh oranges remain or -1 if impossible.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 10^4",
+      "grid[i][j] is 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[2,1,1],[1,1,0],[0,1,1]]",
+        "output": "4",
+        "explanation": "Initially, rotten oranges are at (0,0). All fresh oranges will rot in 4 minutes."
+      },
+      {
+        "input": "grid = [[2,1,1],[0,1,1],[1,0,2]]",
+        "output": "-1",
+        "explanation": "The fresh orange at (1,1) cannot rot because it is not adjacent to any rotten orange."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a queue to implement BFS.",
+      "Track the number of fresh oranges and minutes elapsed."
+    ],
+    "company": "VMware"
+  },
+  {
+    "question_id": "",
+    "title": "Intersection of Two Linked Lists",
+    "description": "Given the heads of two singly linked lists, determine the node at which the two lists intersect. If the two lists do not intersect, return null. The intersection is defined by a node that is shared by both lists, meaning the node will be identical (not just equal in value).",
+    "topic": "Linked List",
+    "subtopic": "Intersection and Merging",
+    "tags": [
+      "Linked List",
+      "Intersection",
+      "Two Pointers"
+    ],
+    "input_format": "The input consists of the head nodes of two singly linked lists, headA and headB.",
+    "output_format": "Return the node where the two lists intersect. If they don't intersect, return null.",
+    "constraints": [
+      "The number of nodes in both lists will not exceed 10^4.",
+      "Node values are not relevant, only node identity matters.",
+      "No cycles will exist in the linked lists."
+    ],
+    "examples": [
+      {
+        "input": "headA = [4,1,8,4,5], headB = [5,0,1,8,4,5]",
+        "output": "8",
+        "explanation": "The two linked lists intersect at node with value 8."
+      },
+      {
+        "input": "headA = [1,9,1,2,4], headB = [3,2,4]",
+        "output": "2",
+        "explanation": "The two linked lists intersect at node with value 2."
+      },
+      {
+        "input": "headA = [2,6,4], headB = [1,5]",
+        "output": "null",
+        "explanation": "The two linked lists do not intersect."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers starting from each head. Move them one step at a time.",
+      "If one pointer reaches the end, redirect it to the other list's head."
+    ],
+    "company": "VMware"
+  }
+]

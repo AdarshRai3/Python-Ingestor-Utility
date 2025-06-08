@@ -1,0 +1,1094 @@
+[
+  {
+    "question_id": "",
+    "title": "Find Beautiful Indices in the Given Array I",
+    "description": "A beautiful index in an array is defined as an index 'i' such that the sum of the elements to the left of 'i' is equal to the sum of the elements to the right of 'i'. Given an array of integers, your task is to find all such beautiful indices and return them in a list. If no such indices exist, return an empty list.",
+    "topic": "Array",
+    "subtopic": "Index Calculation",
+    "tags": [
+      "Array",
+      "Index",
+      "Prefix Sum"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of integers representing the beautiful indices in the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 6]",
+        "output": "[3]",
+        "explanation": "At index 3, the left sum (1 + 2 + 3) is equal to the right sum (6)."
+      },
+      {
+        "input": "nums = [2, 3, -6, 1, 2, 3]",
+        "output": "[2]",
+        "explanation": "At index 2, the left sum (2 + 3) is equal to the right sum (1 + 2 + 3)."
+      },
+      {
+        "input": "nums = [1, 1, 1]",
+        "output": "[]",
+        "explanation": "There are no indices where the left and right sums are equal."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using prefix sums to efficiently calculate left and right sums.",
+      "You can maintain a running total to avoid recalculating sums for each index."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Find Beautiful Indices in the Given Array II",
+    "description": "In an array of integers, an index i is considered 'beautiful' if the sum of the elements before it is equal to the sum of the elements after it. Given an array of integers, your task is to find all the beautiful indices and return them in an array. If there are no beautiful indices, return an empty array.",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "Prefix Sum",
+      "Index"
+    ],
+    "input_format": "An array of integers 'nums'.",
+    "output_format": "An array of integers representing the indices of beautiful elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 0, 3, 2, 1]",
+        "output": "[3]",
+        "explanation": "At index 3, the sum of elements before it (1 + 2 + 3) equals the sum of elements after it (3 + 2 + 1)."
+      },
+      {
+        "input": "nums = [1, 1, 1, 1, 1]",
+        "output": "[2]",
+        "explanation": "At index 2, the sum before (1 + 1) equals the sum after (1 + 1)."
+      },
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[]",
+        "explanation": "There are no indices where the sum before equals the sum after."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a prefix sum approach to efficiently calculate sums.",
+      "Iterate through the array while maintaining the total sum."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Time Difference",
+    "description": "Given a list of time strings in 24-hour clock format, find the minimum time difference between any two times in the list. The time strings are formatted as 'HH:MM', where 'HH' is the hour (00-23) and 'MM' is the minutes (00-59). The list can contain at least two time strings and may contain duplicates.",
+    "topic": "String",
+    "subtopic": "Time Manipulation",
+    "tags": [
+      "String",
+      "Time",
+      "Sorting"
+    ],
+    "input_format": "A list of time strings in the format 'HH:MM'.",
+    "output_format": "An integer representing the minimum time difference in minutes.",
+    "constraints": [
+      "2 <= time.size <= 200",
+      "Each time string is formatted as 'HH:MM'.",
+      "Times are unique and in a valid 24-hour format."
+    ],
+    "examples": [
+      {
+        "input": "time = [\"23:59\", \"00:00\"]",
+        "output": "1",
+        "explanation": "The minimum difference is 1 minute between 23:59 and 00:00."
+      },
+      {
+        "input": "time = [\"00:00\", \"23:30\", \"12:15\"]",
+        "output": "135",
+        "explanation": "The minimum difference is between 12:15 and 23:30, which is 135 minutes."
+      },
+      {
+        "input": "time = [\"01:00\", \"02:00\", \"03:00\"]",
+        "output": "60",
+        "explanation": "The minimum difference is 60 minutes between any consecutive times."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Convert time to total minutes since midnight.",
+      "Sort the times to easily find the minimum differences.",
+      "Consider the circular nature of time when calculating differences."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) Cache. It should support the following operations: get and put.\n\n- get(key): Retrieve the value of the key if the key exists in the cache, otherwise return -1.\n- put(key, value): Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structures",
+    "subtopic": "Cache",
+    "tags": [
+      "HashMap",
+      "Linked List",
+      "Design"
+    ],
+    "input_format": "The constructor of the LRUCache class will take an integer capacity as input, followed by a series of 'get' and 'put' operations.",
+    "output_format": "Return the value for the 'get' operation, and there is no output for the 'put' operation.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^5",
+      "The operations 'get' and 'put' will be called at most 10^4 times."
+    ],
+    "examples": [
+      {
+        "input": "lRUCache = LRUCache(2); lRUCache.put(1, 1); lRUCache.put(2, 2); lRUCache.get(1); lRUCache.put(3, 3); lRUCache.get(2); lRUCache.put(4, 4); lRUCache.get(1); lRUCache.get(3); lRUCache.get(4);",
+        "output": "[1, -1, 3, 4]",
+        "explanation": "The cache has capacity 2. It stores (1, 1) and (2, 2). When (3, 3) is added, (2, 2) is evicted. Subsequently, the calls return: 1 (existing), -1 (not found for 2), 3 (found), and 4 (found)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how you can efficiently keep track of the order of use.",
+      "Consider a combination of a hash map and a doubly linked list."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to English Words",
+    "description": "Convert a non-negative integer to its English words representation. The input number is guaranteed to be less than 2^31 - 1 (2147483647). For example, 123 is represented as 'One Hundred Twenty Three'.",
+    "topic": "Math",
+    "subtopic": "Number Formatting",
+    "tags": [
+      "Math",
+      "String Manipulation",
+      "Conversion"
+    ],
+    "input_format": "A single non-negative integer num.",
+    "output_format": "A string representing the English words of the input integer.",
+    "constraints": [
+      "0 <= num < 2^31"
+    ],
+    "examples": [
+      {
+        "input": "num = 123",
+        "output": "One Hundred Twenty Three",
+        "explanation": "The number 123 can be broken down into 'One Hundred' and 'Twenty Three'."
+      },
+      {
+        "input": "num = 12345",
+        "output": "Twelve Thousand Three Hundred Forty Five",
+        "explanation": "The number 12345 translates to 'Twelve Thousand' and 'Three Hundred Forty Five'."
+      },
+      {
+        "input": "num = 1000000",
+        "output": "One Million",
+        "explanation": "The number 1000000 corresponds to 'One Million'."
+      },
+      {
+        "input": "num = 0",
+        "output": "Zero",
+        "explanation": "The number 0 is represented as 'Zero'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Break the number into chunks of thousands.",
+      "Use a helper function for numbers less than 1000.",
+      "Handle special cases like 'one thousand', 'ten', etc."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Range Sum Query - Immutable",
+    "description": "You are given an integer array nums and an array of queries where each query is an array of two integers [i, j]. For each query, return the sum of the elements in the inclusive range from index i to index j in nums. Please implement the NumArray class that supports the following methods: \n\n1. NumArray(int[] nums) - Constructor that initializes the object with the integer array nums. \n2. int sumRange(int i, int j) - Returns the sum of the elements from index i to index j (i \u2264 j).",
+    "topic": "Array",
+    "subtopic": "Range Queries",
+    "tags": [
+      "Array",
+      "Range Queries",
+      "Prefix Sum"
+    ],
+    "input_format": "An integer array nums followed by a list of queries where each query consists of two integers [i, j].",
+    "output_format": "An array of integers representing the results of each query.",
+    "constraints": [
+      "0 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5",
+      "0 <= i <= j < nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2, 0, 3, -5, 2, -1], queries = [[0, 2], [2, 5], [0, 5]]",
+        "output": "[1, -1, -3]",
+        "explanation": "For the first query [0, 2]: sum = -2 + 0 + 3 = 1. For the second query [2, 5]: sum = 3 + -5 + 2 + -1 = -1. For the third query [0, 5]: sum = -2 + 0 + 3 + -5 + 2 + -1 = -3."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a prefix sum array to optimize sum queries."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Contains Duplicate II",
+    "description": "Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Duplicates"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "A boolean value indicating whether the condition is met.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "0 <= k <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1], k = 3",
+        "output": "true",
+        "explanation": "The number 1 appears at indices 0 and 3, and abs(0 - 3) = 3 which is <= k."
+      },
+      {
+        "input": "nums = [1, 0, 1, 1], k = 1",
+        "output": "true",
+        "explanation": "The number 1 appears at indices 2 and 3, and abs(2 - 3) = 1 which is <= k."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1, 2, 3], k = 2",
+        "output": "false",
+        "explanation": "No duplicates with indices satisfying the condition."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to track the indices of occurrences.",
+      "Check the last occurrence of each number while iterating."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Selling Pieces of Wood",
+    "description": "You are given a list of integers representing the lengths of wood pieces and the prices they can be sold for. Your goal is to determine the maximum profit you can achieve by selling the wood pieces. You can choose to sell a piece of wood as a whole or split it into smaller pieces, which can be sold at given prices. If you choose to split, keep in mind that the sum of the prices of the smaller pieces must be maximized. Write a function that takes in the lengths of the wood pieces and their corresponding prices and returns the maximum profit possible.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Rod Cutting",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Optimization"
+    ],
+    "input_format": "Two arrays: an integer array `lengths` and an integer array `prices`, where lengths[i] is the length of the i-th piece of wood and prices[i] is the price for that length.",
+    "output_format": "An integer representing the maximum profit that can be achieved by selling the wood pieces.",
+    "constraints": [
+      "1 <= lengths.length <= 100",
+      "1 <= lengths[i] <= 1000",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": {
+          "lengths": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "prices": [
+            1,
+            5,
+            8,
+            9
+          ]
+        },
+        "output": 10,
+        "explanation": "You can sell piece of length 2 for 5 and piece of length 2 for 5. Total profit = 10."
+      },
+      {
+        "input": {
+          "lengths": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "prices": [
+            2,
+            5,
+            9,
+            10,
+            15
+          ]
+        },
+        "output": 15,
+        "explanation": "Selling one piece of length 5 gives the maximum price of 15."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to solve this problem efficiently.",
+      "Remember to keep track of maximum profits for each length."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Size Subarray Sum Equals k",
+    "description": "Given an array of integers and an integer k, return the maximum size of a contiguous subarray that sums up to k. If there is no subarray with the sum equal to k, return 0.",
+    "topic": "Array",
+    "subtopic": "Sliding Window / Hashmap",
+    "tags": [
+      "Array",
+      "Hashmap",
+      "Sliding Window"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the maximum size of a contiguous subarray that sums to k.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "-10^5 <= nums[i] <= 10^5",
+      "-10^4 <= k <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, -1, 5, -2, 3], k = 3",
+        "output": "4",
+        "explanation": "The subarray [1, -1, 5, -2] sums to 3, and its length is 4."
+      },
+      {
+        "input": "nums = [-2, -1, 2, 1], k = 1",
+        "output": "2",
+        "explanation": "The subarray [-1, 2] sums to 1, and its length is 2."
+      },
+      {
+        "input": "nums = [1, 2, 3], k = 6",
+        "output": "0",
+        "explanation": "There is no subarray that sums to 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to store the cumulative sum up to each index.",
+      "If the cumulative sum minus k exists in the hashmap, you can find a subarray that sums to k."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Single Number",
+    "description": "Given a non-empty array of integers, every element appears twice except for one. Find that single one. You must implement a solution with a linear runtime complexity and without using extra memory.",
+    "topic": "Array",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Array",
+      "Bit Manipulation",
+      "Single Number"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the single number that appears only once.",
+    "constraints": [
+      "1 <= nums.length <= 3 * 10^4",
+      "-2^31 <= nums[i] <= 2^31 - 1",
+      "Each integer in the array will appear twice except for one integer."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 2, 1]",
+        "output": "1",
+        "explanation": "The number 1 appears only once."
+      },
+      {
+        "input": "nums = [4, 1, 2, 1, 2]",
+        "output": "4",
+        "explanation": "The number 4 appears only once."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using XOR operation.",
+      "XORing a number with itself cancels it out."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Check If It Is a Straight Line",
+    "description": "You are given an array of points where points[i] = [x_i, y_i] represents a point on the cartesian plane. You need to determine if all the points lie on a straight line. A line is straight if the slope between any two points remains constant for all points in the array.",
+    "topic": "Geometry",
+    "subtopic": "Linear Algebra",
+    "tags": [
+      "Geometry",
+      "Line",
+      "Slope"
+    ],
+    "input_format": "An array of points, where each point is represented by an array of two integers [x, y].",
+    "output_format": "A boolean value: true if all the points lie on a straight line; otherwise, false.",
+    "constraints": [
+      "2 <= points.length <= 100",
+      "0 <= x_i, y_i <= 100"
+    ],
+    "examples": [
+      {
+        "input": "points = [[1,2],[2,3],[3,4],[4,5],[5,6]]",
+        "output": "true",
+        "explanation": "The points lie on the line y = x + 1."
+      },
+      {
+        "input": "points = [[1,1],[2,2],[3,4],[4,5],[5,6]]",
+        "output": "false",
+        "explanation": "The points do not lie on a straight line."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use the formula for slope to compare slopes of pairs of points.",
+      "You can avoid division by calculating differences."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Contains Duplicate",
+    "description": "Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.",
+    "topic": "Array",
+    "subtopic": "Finding Duplicates",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Searching"
+    ],
+    "input_format": "An integer array nums.",
+    "output_format": "A boolean value indicating if any value appears at least twice.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "true",
+        "explanation": "The number 1 appears twice in the array."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "false",
+        "explanation": "All elements are distinct."
+      },
+      {
+        "input": "nums = [1, 2, 3, 3, 4, 5]",
+        "output": "true",
+        "explanation": "The number 3 appears twice in the array."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a set to track seen elements.",
+      "Check for duplicates as you iterate through the array."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Contains Duplicate III",
+    "description": "Given an integer array nums and two integers k and t, return true if there are two distinct indices i and j in the array such that abs(nums[i] - nums[j]) <= t and abs(i - j) <= k.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Hash Map",
+      "Sliding Window"
+    ],
+    "input_format": "Three parameters - an integer array nums, and two integers k and t.",
+    "output_format": "A boolean value indicating whether the condition is satisfied.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "0 <= k <= 10^4",
+      "0 <= t <= 2^31 - 1",
+      "-2^31 <= nums[i] <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 5, 9, 1, 5, 9], k = 2, t = 3",
+        "output": "false",
+        "explanation": "There are no distinct indices i and j where abs(nums[i] - nums[j]) <= t and abs(i - j) <= k."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1], k = 3, t = 0",
+        "output": "true",
+        "explanation": "Indices 0 and 3 have the same value 1, which satisfies both conditions: abs(1 - 1) <= 0 and abs(0 - 3) <= 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a hash set to keep track of the window of k elements.",
+      "Check for duplicates within the range of t."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Merge k Sorted Lists",
+    "description": "You are given an array of k linked lists, each linked list is sorted in ascending order. Your task is to merge all the linked lists into a single sorted linked list and return it. The resulting linked list should be made by splicing together the nodes of the given linked lists.",
+    "topic": "Linked List",
+    "subtopic": "Merging Lists",
+    "tags": [
+      "Linked List",
+      "Sorting",
+      "Merge"
+    ],
+    "input_format": "An array of k linked lists, where each linked list is represented by its head node.",
+    "output_format": "The head node of the merged sorted linked list.",
+    "constraints": [
+      "0 <= k <= 10^4",
+      "0 <= n <= 500",
+      "All nodes in the linked lists are unique."
+    ],
+    "examples": [
+      {
+        "input": "lists = [[1,4,5],[1,3,4],[2,6]]",
+        "output": "[1,1,2,3,4,4,5,6]",
+        "explanation": "The merged linked list is 1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6."
+      },
+      {
+        "input": "lists = []",
+        "output": "[]",
+        "explanation": "The merged linked list is empty as there are no linked lists."
+      },
+      {
+        "input": "lists = [[1,2,3],[4,5]]",
+        "output": "[1,2,3,4,5]",
+        "explanation": "The merged linked list is 1 -> 2 -> 3 -> 4 -> 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a min-heap to keep track of the smallest current nodes.",
+      "Iteratively extract the smallest element and add it to the merged list."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Word Distance III",
+    "description": "Given an array of strings wordsDict and two strings word1 and word2, return the shortest distance between the indices of the given words in the array. If either word does not exist in wordsDict, return -1. The distance is defined as the absolute difference between the indices of the two words in the array.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "String"
+    ],
+    "input_format": "A list of strings wordsDict, and two strings word1 and word2.",
+    "output_format": "An integer representing the shortest distance between the two words.",
+    "constraints": [
+      "1 <= wordsDict.length <= 3 * 10^4",
+      "1 <= wordsDict[i].length <= 10",
+      "word1 and word2 are guaranteed to be different and exist in wordsDict."
+    ],
+    "examples": [
+      {
+        "input": {
+          "wordsDict": [
+            "practice",
+            "makes",
+            "perfect",
+            "coding",
+            "makes"
+          ],
+          "word1": "coding",
+          "word2": "practice"
+        },
+        "output": 3,
+        "explanation": "The distance between 'coding' at index 3 and 'practice' at index 0 is |3 - 0| = 3."
+      },
+      {
+        "input": {
+          "wordsDict": [
+            "a",
+            "b",
+            "c",
+            "a",
+            "b"
+          ],
+          "word1": "a",
+          "word2": "b"
+        },
+        "output": 1,
+        "explanation": "The closest 'a' is at index 0 and 'b' is at index 1, the distance is |0 - 1| = 1."
+      },
+      {
+        "input": {
+          "wordsDict": [
+            "the",
+            "quick",
+            "brown",
+            "fox"
+          ],
+          "word1": "quick",
+          "word2": "the"
+        },
+        "output": 1,
+        "explanation": "The distance between 'quick' at index 1 and 'the' at index 0 is |1 - 0| = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the indices of word1 and word2 as you iterate through the list.",
+      "Calculate the distance every time you find either word and update the minimum distance."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Construct Quad Tree",
+    "description": "Given a 2D grid of 0s and 1s, where 0 represents an empty area and 1 represents a populated area, you need to construct a binary quad tree. A quad tree is a tree data structure in which each internal node has four children. The root represents the entire grid and each level of the tree divides the area into four equal quadrants. If all the values in a given quadrant are the same, it can be represented as a single node with that value. Otherwise, it\u2019s further divided into four quadrants. Your task is to output the root of the constructed quad tree.",
+    "topic": "Tree",
+    "subtopic": "Quad Tree",
+    "tags": [
+      "Tree",
+      "Quad Tree",
+      "Binary Tree"
+    ],
+    "input_format": "A 2D binary grid (list of lists) where each element is either 0 or 1.",
+    "output_format": "A quad tree that represents the grid.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "[[1,1],[1,1]]",
+        "output": "Node(1, true)",
+        "explanation": "All elements are 1s, so it forms a single node."
+      },
+      {
+        "input": "[[1,1],[1,0]]",
+        "output": "Node(1, false)",
+        "explanation": "The elements are mixed; thus, it forms an internal node with quadrants."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a recursive approach to divide the grid.",
+      "Check if all values in a quadrant are the same."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "An array of intervals represented as pairs of integers, where each interval is of the form [start, end].",
+    "output_format": "An array of merged intervals, each represented as a pair of integers.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they are merged into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] touch each other; thus they are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the start times.",
+      "Use a list to store merged intervals.",
+      "Compare the current interval with the last merged interval."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Equal Sum of Two Arrays After Replacing Zeros",
+    "description": "You are given two arrays of equal length containing integers, where some elements may be zeros. You can replace each zero in both arrays with any integer value. Your goal is to find the minimum possible sum of the two arrays, under the condition that both arrays must be equal after replacements. Return this minimum sum.",
+    "topic": "Array",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Array",
+      "Manipulation",
+      "Greedy"
+    ],
+    "input_format": "Two arrays of integers, nums1 and nums2, of length n.",
+    "output_format": "An integer representing the minimum equal sum after replacing zeros.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "-10^5 <= nums1[i], nums2[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 0, 3], nums2 = [0, 2, 4]",
+        "output": "6",
+        "explanation": "Replace the first zero in nums1 with 2, and replace the zero in nums2 with 1. The arrays become [1, 2, 3] and [1, 2, 4], both summing to 6."
+      },
+      {
+        "input": "nums1 = [0, 0, 0], nums2 = [0, 0, 0]",
+        "output": "0",
+        "explanation": "Both arrays consist of zeros, so the minimum equal sum is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the effect of replacing each zero with the minimum values from the other array.",
+      "The replacement can be thought of as minimizing the sum by making both arrays equal."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Find Players With Zero or One Losses",
+    "description": "You are tasked with analyzing match results of players in a tournament. Given a list of matches where each match is represented as a pair of player IDs and a result indicating the winner, return the list of players who have either zero or one loss. The result of a match is represented as a pair 'winner ID' and 'loser ID'. A player is only considered if they have at least one match.",
+    "topic": "Hash Table",
+    "subtopic": "Counting",
+    "tags": [
+      "Hash Table",
+      "Counting",
+      "Player Statistics"
+    ],
+    "input_format": "A list of matches where each match is represented by a tuple [winner ID, loser ID].",
+    "output_format": "A list of player IDs who have either zero or one loss, sorted in ascending order.",
+    "constraints": [
+      "1 <= matches.length <= 10^4",
+      "-10^6 <= winner ID, loser ID <= 10^6",
+      "Winner and loser IDs will be different in each pair."
+    ],
+    "examples": [
+      {
+        "input": "[[1, 2], [2, 3], [4, 1], [1, 5]]",
+        "output": "[1, 4]",
+        "explanation": "Player 1 has 1 loss (to player 4) and 4 has no losses. Players 2 and 3 both have 2 losses."
+      },
+      {
+        "input": "[[5, 1], [5, 2], [1, 3], [4, 1]]",
+        "output": "[4, 5]",
+        "explanation": "Player 5 has 0 losses, player 4 also has 0 losses, while player 1 has 2 losses and player 2 has 1 loss."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to count losses for each player.",
+      "Filter players based on their loss count after populating the hash map."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Count the Number of Good Subsequences",
+    "description": "Given an array of integers, you need to count the number of subsequences that satisfy the following conditions: A subsequence is considered 'good' if it contains the maximum number element of the array at least once and is strictly increasing. Return the total number of good subsequences modulo 10^9 + 7.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Counting Subsequences",
+    "tags": [
+      "Dynamic Programming",
+      "Subsequences",
+      "Counting"
+    ],
+    "input_format": "An integer array nums of size n.",
+    "output_format": "An integer representing the number of good subsequences modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "1 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "7",
+        "explanation": "The good subsequences are: [3], [1, 2, 3], [1, 3], [2, 3], [1, 2], [1], [2]. Total = 7."
+      },
+      {
+        "input": "nums = [1, 1, 1]",
+        "output": "7",
+        "explanation": "The good subsequences are: [1], [1], [1], [1, 1], [1, 1], [1, 1], [1, 1, 1]. Total = 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a combination of counting and dynamic programming.",
+      "Focus on the maximum number and how many ways it can be combined with other elements."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Flood Fill",
+    "description": "You are given a 2D integer grid image where each integer represents the color of a pixel. You want to perform a 'flood fill' operation on the image starting from a pixel at coordinate (sr, sc). To do this, you need to change the color of the starting pixel as well as any pixels connected to the starting pixel that have the same color as the starting pixel. To perform the flood fill, follow these steps: Change the color of the starting pixel (sr, sc) to the new color. Then, change the color of any pixels connected to (sr, sc) that have the same color as the original color of (sr, sc) to the new color. Finally, return the modified image.",
+    "topic": "Depth-First Search",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "DFS",
+      "BFS",
+      "Flood Fill",
+      "Graph"
+    ],
+    "input_format": "A 2D integer array image, two integers sr and sc for the starting pixel coordinates, and an integer newColor that represents the new color.",
+    "output_format": "A 2D integer array representing the modified image after the flood fill operation.",
+    "constraints": [
+      "1 <= image.length, image[0].length <= 50",
+      "0 <= image[i][j], newColor <= 65535",
+      "0 <= sr < image.length",
+      "0 <= sc < image[0].length"
+    ],
+    "examples": [
+      {
+        "input": "image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, newColor = 2",
+        "output": "[[2,2,2],[2,2,0],[2,0,1]]",
+        "explanation": "The pixel at (1, 1) and its connected pixels of the same color (1) are changed to the new color (2)."
+      },
+      {
+        "input": "image = [[0,0,0],[0,1,1]], sr = 1, sc = 1, newColor = 1",
+        "output": "[[0,0,0],[0,1,1]]",
+        "explanation": "The pixel at (1, 1) is already of the new color (1), so the image remains unchanged."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use Depth-First Search or Breadth-First Search to traverse connected pixels.",
+      "Make sure to check boundary conditions to avoid index errors."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Accounts Merge",
+    "description": "You are given a list of accounts, where each account is represented by a list of strings. The first string is the name of the account owner, and the rest of the strings are email addresses associated with that account. The accounts may contain duplicate email addresses, and some accounts may represent the same user but have different email addresses. Your task is to merge the accounts that belong to the same user into a single account, while maintaining the order of the emails and ensuring that no duplicates exist. Return a list of merged accounts sorted by the account owner's name.",
+    "topic": "Union-Find",
+    "subtopic": "Graph",
+    "tags": [
+      "Union-Find",
+      "Graph",
+      "String"
+    ],
+    "input_format": "A list of accounts where each account is a list of strings.",
+    "output_format": "A list of merged accounts, where each account is itself a list of strings, sorted by the owner's name.",
+    "constraints": [
+      "1 <= accounts.length <= 1000",
+      "2 <= accounts[i].length <= 1000",
+      "The first element of each account list is the owner's name.",
+      "All email addresses within an account are unique."
+    ],
+    "examples": [
+      {
+        "input": "[[\"John\",\"johnsmith@mail.com\",\"john00@mail.com\"],[\"John\",\"johnnybravo@mail.com\"],[\"John\",\"johnsmith@mail.com\",\"john_newyork@mail.com\"]]",
+        "output": "[[\"John\",\"john00@mail.com\",\"john_newyork@mail.com\",\"johnsmith@mail.com\",\"johnnybravo@mail.com\"]]",
+        "explanation": "The first and the third accounts belong to the same user (John) and have common emails. They can be merged."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a union-find data structure to manage the merging of accounts.",
+      "You may need to maintain a mapping of emails to owners for effective merging."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Flood Fill"
+    ],
+    "input_format": "A 2D grid represented as a list of lists, where each inner list consists of characters '1' (land) and '0' (water).",
+    "output_format": "An integer representing the number of islands.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "[['1','1','1','1','0'],['1','1','0','1','0'],['1','1','0','0','0'],['0','0','0','0','0']]",
+        "output": "1",
+        "explanation": "There is one island formed by adjacent '1's."
+      },
+      {
+        "input": "[['1','1','0','0','0'],['0','1','0','0','1'],['0','0','0','1','1']]",
+        "output": "3",
+        "explanation": "There are three islands in the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use Depth-First Search (DFS) to explore each island.",
+      "Mark visited land cells to avoid counting them again."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Divisible Triplet Sums",
+    "description": "Given an array of integers, determine the number of triplets (i, j, k) such that 0 <= i < j < k < n and (nums[i] + nums[j] + nums[k]) is divisible by a given integer d. Your task is to count all such triplets in the array.",
+    "topic": "Array",
+    "subtopic": "Triplets",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums and an integer d.",
+    "output_format": "An integer representing the number of valid triplets.",
+    "constraints": [
+      "1 <= nums.length <= 3000",
+      "-10^9 <= nums[i] <= 10^9",
+      "1 <= d <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], d = 3",
+        "output": "1",
+        "explanation": "The valid triplet is (1, 2, 3) as their sum is 6, which is divisible by 3."
+      },
+      {
+        "input": "nums = [0, 1, 2, 3, 4], d = 2",
+        "output": "4",
+        "explanation": "The valid triplets are (0, 1, 2), (0, 1, 4), (0, 3, 4), and (1, 2, 3)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of modular arithmetic.",
+      "You can use a frequency array for modular classes.",
+      "Iterate through possible pairs and check for the required third element."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water II",
+    "description": "Given an m x n matrix of non-negative integers representing the height of the terrain, compute how much water it can trap after raining.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Priority Queue",
+    "tags": [
+      "Dynamic Programming",
+      "Priority Queue",
+      "Matrix"
+    ],
+    "input_format": "A 2D array of integers heights representing the heights of the terrain.",
+    "output_format": "An integer representing the total amount of water trapped.",
+    "constraints": [
+      "1 <= m, n <= 200",
+      "0 <= heights[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [[1,4,3,1,3,2],[3,2,1,3,2,4],[2,3,3,2,3,2],[2,4,3,4,5,5],[1,4,4,5,4,4]]",
+        "output": "10",
+        "explanation": "The water can be trapped over the lower areas formed by the heights, totaling to 10 units."
+      },
+      {
+        "input": "heights = [[2,1,3],[3,2,4],[2,4,3]]",
+        "output": "1",
+        "explanation": "Only 1 unit of water can be trapped over the height of 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the boundary conditions and how the heights influence water trapping.",
+      "Use a priority queue to help process the cells based on height."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Sort List",
+    "description": "Given an unsorted list of integers, implement a function to sort the list in ascending order. You must write a sorting algorithm from scratch, using any of the common sorting techniques (like bubble sort, selection sort, or insertion sort). Do not use built-in sorting functions.",
+    "topic": "Sorting",
+    "subtopic": "Sorting Algorithms",
+    "tags": [
+      "Sorting",
+      "Algorithms",
+      "Array"
+    ],
+    "input_format": "A list of integers `nums` to be sorted.",
+    "output_format": "A sorted list of integers in ascending order.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 2, 9, 1, 5, 6]",
+        "output": "[1, 2, 5, 5, 6, 9]",
+        "explanation": "Sorting the list in ascending order gives [1, 2, 5, 5, 6, 9]."
+      },
+      {
+        "input": "nums = [3, -1, -2, 5, 4]",
+        "output": "[-2, -1, 3, 4, 5]",
+        "explanation": "The sorted version of the list is [-2, -1, 3, 4, 5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider implementing a classic sorting algorithm.",
+      "Think about edge cases like an empty list or a list with one element."
+    ],
+    "company": "Palantir Technologies"
+  },
+  {
+    "question_id": "",
+    "title": "Daily Temperatures",
+    "description": "Given a list of daily temperatures represented as integers, return a list such that, for each day in the input, tells you how many days you have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead. You should solve it in O(n) time complexity where n is the number of days.",
+    "topic": "Array",
+    "subtopic": "Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Monotonic Stack"
+    ],
+    "input_format": "An array of integers temperatures that represent daily temperatures.",
+    "output_format": "An array of integers where each integer represents the number of days until a warmer temperature.",
+    "constraints": [
+      "1 <= temperatures.length <= 30000",
+      "30 <= temperatures[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "temperatures = [73, 74, 75, 71, 69, 72, 76, 73]",
+        "output": "[1, 1, 4, 2, 1, 1, 0, 0]",
+        "explanation": "Day 0 is 73 degrees and the next warmer temperature is 74 on day 1, so the answer is 1. Similarly, the answer for the other days are calculated."
+      },
+      {
+        "input": "temperatures = [30, 40, 50, 60]",
+        "output": "[1, 1, 1, 0]",
+        "explanation": "Day 0 is 30 degrees, and the next warmer temperature is 40 on day 1, and so forth."
+      },
+      {
+        "input": "temperatures = [30, 20, 10]",
+        "output": "[0, 0, 0]",
+        "explanation": "There are no warmer days ahead for any of the temperatures."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of indices of the temperatures.",
+      "Iterate through the temperature array and pop from the stack when you find a warmer temperature."
+    ],
+    "company": "Palantir Technologies"
+  }
+]

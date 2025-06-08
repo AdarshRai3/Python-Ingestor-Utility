@@ -1,0 +1,110 @@
+[
+  {
+    "question_id": "",
+    "title": "Find the Celebrity",
+    "description": "In a party of n people, there is one person known as the celebrity. The celebrity is defined as someone who is known by everyone else, but who does not know any of them. Given an array of pairs of integers, where each pair (a, b) indicates that person a knows person b, determine the celebrity of the party if one exists. If there is no celebrity, return -1.",
+    "topic": "Graph",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "Celebrity",
+      "Traversal"
+    ],
+    "input_format": "An integer n, followed by a list of pairs [a, b] where person a knows person b.",
+    "output_format": "Return the celebrity's index (0-based), or -1 if there is no celebrity.",
+    "constraints": [
+      "2 <= n <= 1000",
+      "The number of pairs will not exceed n * (n - 1) / 2."
+    ],
+    "examples": [
+      {
+        "input": "n = 4, knows = [[0, 1], [0, 2], [1, 2], [2, 0], [3, 0]]",
+        "output": "-1",
+        "explanation": "There is no single person who is known by everyone and doesn't know anyone."
+      },
+      {
+        "input": "n = 3, knows = [[0, 1], [0, 2], [1, 2]]",
+        "output": "2",
+        "explanation": "Person 2 is known by person 0 and person 1, but knows no one."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Track how many people each person knows and is known by.",
+      "Use a stack to eliminate candidates for the celebrity."
+    ],
+    "company": "Toast"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Palindrome",
+    "description": "Given a string s, return true if it is a palindrome, or false otherwise. A string is considered a palindrome if it reads the same forward and backward, ignoring cases and non-alphanumeric characters.",
+    "topic": "String",
+    "subtopic": "Palindrome",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "A string s consisting of uppercase and lowercase letters, digits, and symbols.",
+    "output_format": "A boolean value indicating whether the string is a valid palindrome.",
+    "constraints": [
+      "1 <= s.length <= 2 * 10^5",
+      "s consists only of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'A man, a plan, a canal: Panama'",
+        "output": "true",
+        "explanation": "Ignoring cases and non-alphanumeric characters, it reads 'amanaplanacanalpanama' which is a palindrome."
+      },
+      {
+        "input": "s = 'race a car'",
+        "output": "false",
+        "explanation": "Ignoring cases and non-alphanumeric characters, it reads 'raceacar' which is not a palindrome."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers.",
+      "Use a function to check if a character is alphanumeric."
+    ],
+    "company": "Toast"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array 'prices' where 'prices[i]' is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Maximizing Profit",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers 'prices' where 0 <= prices.length <= 10^5.",
+    "output_format": "An integer representing the maximum profit achievable.",
+    "constraints": [
+      "0 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate the profit for each price and update the maximum profit accordingly."
+    ],
+    "company": "Toast"
+  }
+]

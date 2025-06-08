@@ -1,0 +1,1447 @@
+[
+  {
+    "question_id": "",
+    "title": "Maximum Points After Enemy Battles",
+    "description": "In a game, you start with zero points. You can battle with enemies for points, but you need to strategize to maximize your total points after all battles. Each enemy can either give you points when defeated or take away points if they are too strong. You need to determine the maximum points you can accumulate after battling all enemies based on your choices.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Maximum Subarray Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers points where each element represents the points gained (positive) or lost (negative) from battling that enemy.",
+    "output_format": "An integer representing the maximum points you can achieve after battling all enemies.",
+    "constraints": [
+      "1 <= points.length <= 1000",
+      "-1000 <= points[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "points = [3, -1, 2, -1, 5]",
+        "output": "8",
+        "explanation": "You can choose to defeat all enemies, gaining points. The maximum points = 3 + (-1) + 2 + (-1) + 5 = 8."
+      },
+      {
+        "input": "points = [-1, -2, -3, -4]",
+        "output": "0",
+        "explanation": "Battling all enemies would only result in a loss of points, so the maximum points you can achieve is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about the maximum subarray sum.",
+      "Use a dynamic programming approach to keep track of the maximum points.",
+      "Consider the impact of skipping battles."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Stamping the Grid",
+    "description": "You are given a grid of size m x n and two arrays, stamp and target. The stamp array is a 2D square that can be placed anywhere in the grid. The goal is to determine if you can stamp the grid to make it match the target grid. When you stamp, you replace all elements in the covered area with a specified value from the stamp array. The stamp array can overlap with itself, and you can place it anywhere in the grid as long as it stays within the bounds. However, each cell in the target grid must match the corresponding cell in the grid after the stamp operation. Return true if it's possible to stamp the grid to match the target, otherwise return false.",
+    "topic": "Matrix",
+    "subtopic": "Grid Manipulation",
+    "tags": [
+      "Matrix",
+      "Grid",
+      "Stamping"
+    ],
+    "input_format": "Two 2D arrays, stamp and target, where both have dimensions m x n.",
+    "output_format": "A boolean value indicating whether the grid can be stamped to match the target.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "1 <= stamp.length, stamp[0].length <= 100",
+      "1 <= target.length, target[0].length <= 100",
+      "All elements in stamp and target are integers."
+    ],
+    "examples": [
+      {
+        "input": {
+          "stamp": [
+            [
+              1,
+              2
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "target": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              8,
+              9
+            ]
+          ]
+        },
+        "output": "true",
+        "explanation": "You can stamp the top-left corner with the stamp, covering the first two rows and first two columns."
+      },
+      {
+        "input": {
+          "stamp": [
+            [
+              1,
+              2
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "target": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              6,
+              6
+            ],
+            [
+              7,
+              8,
+              9
+            ]
+          ]
+        },
+        "output": "false",
+        "explanation": "There is no way to place the stamp that will satisfy the last row in the target."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider iterating through all possible stamp positions.",
+      "Think about how the replacement affects surrounding cells.",
+      "Use a simulation approach to test all placements."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Alice and Bob Playing Flower Game",
+    "description": "Alice and Bob are playing a flower game where they take turns picking flowers from a garden. Each player can pick a certain number of flowers based on the type of flower that is currently available. The goal is to maximize the number of flowers picked. Given an array representing the flowers available in the garden and the picking rules for each player, determine the maximum number of flowers that Alice can pick assuming both play optimally.",
+    "topic": "Game Theory",
+    "subtopic": "Optimal Strategy",
+    "tags": [
+      "Game Theory",
+      "Dynamic Programming",
+      "Optimal Strategy"
+    ],
+    "input_format": "An array of integers flowers, where flowers[i] represents the number of flowers of type i available.",
+    "output_format": "An integer representing the maximum number of flowers that Alice can pick.",
+    "constraints": [
+      "1 <= flowers.length <= 1000",
+      "0 <= flowers[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "[3, 9, 1, 2]",
+        "output": "10",
+        "explanation": "Alice can pick 9 from the second position, leaving 3, 1, and 2 for Bob. Bob can pick at most 3, and then Alice can take the remaining 2, totaling 10."
+      },
+      {
+        "input": "[1, 4, 2, 5]",
+        "output": "6",
+        "explanation": "Alice can take 4 from the second position. Bob can only take 2 or 1 from the remaining flowers, allowing Alice to take 2 more, totaling 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to store intermediate results.",
+      "Think about the choices available to both players at each step."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Random Pick with Weight",
+    "description": "You are given an integer array w where w[i] is the weight of the ith index. You want to select an index i randomly based on its weight, such that the probability of selecting index i is w[i] / sum(w). Implement the class 'Solution' that has the following methods:  \n\n1. `__init__(self, w: List[int])`: The constructor of the class, which accepts an integer array w.  \n2. `pickIndex(self) -> int`: This method should return a random integer representing the index selected based on the weights.",
+    "topic": "Random",
+    "subtopic": "Weighted Random Selection",
+    "tags": [
+      "Random",
+      "Math",
+      "Binary Search"
+    ],
+    "input_format": "An integer array w where 1 <= w.length <= 10000 and 1 <= w[i] <= 10^5.",
+    "output_format": "An integer representing the randomly chosen index based on the weights.",
+    "constraints": [
+      "1 <= w.length <= 10^4",
+      "1 <= w[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "w = [1, 3]",
+        "output": "1 or 1",
+        "explanation": "The probability of picking index 0 is 1/(1+3) = 0.25, and the probability of picking index 1 is 3/(1+3) = 0.75. Thus, index 1 is picked more frequently."
+      },
+      {
+        "input": "w = [1, 4, 2]",
+        "output": "1 or 1 or 2",
+        "explanation": "The probabilities are 1/(1+4+2) = 1/7 for index 0, 4/(1+4+2) = 4/7 for index 1, and 2/(1+4+2) = 2/7 for index 2. The higher weight on index 1 will cause it to be picked more often."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use prefix sums to keep track of weights.",
+      "Utilize binary search for efficient index selection."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Count Lattice Points Inside a Circle",
+    "description": "Given the coordinates of the center of a circle (x, y) and its radius r, count how many lattice points (points with integer coordinates) are located inside or on the boundary of the circle.",
+    "topic": "Geometry",
+    "subtopic": "Circle",
+    "tags": [
+      "Geometry",
+      "Circle",
+      "Counting"
+    ],
+    "input_format": "Three integers x, y, and r representing the center coordinates and radius of the circle, respectively.",
+    "output_format": "An integer representing the number of lattice points inside or on the boundary of the circle.",
+    "constraints": [
+      "-10^4 <= x, y <= 10^4",
+      "1 <= r <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "x = 0, y = 0, r = 1",
+        "output": "5",
+        "explanation": "The lattice points are (0,0), (1,0), (0,1), (-1,0), (0,-1)."
+      },
+      {
+        "input": "x = 1, y = 1, r = 2",
+        "output": "13",
+        "explanation": "The lattice points include (1,1) and points on the circle's boundary such as (3,1), (1,3), and so on."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the equation of the circle to determine if a point is inside or on the boundary.",
+      "Consider iterating through potential integer coordinates based on the radius."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Candy Crush",
+    "description": "You are given a 2D grid representing a candy crush game. Each cell in the grid contains a number representing the type of candy (from 1 to 9). A crush occurs when three or more candies of the same type are in a line either horizontally or vertically. Your goal is to simulate the candy crush operation. After each crush, the candies above the crushed candies will fall down. Implement a function that takes the grid as input and simulates the candy crush operation until no more crushes are possible. Return the resulting grid.",
+    "topic": "Array",
+    "subtopic": "2D Array Manipulation",
+    "tags": [
+      "Array",
+      "2D Array",
+      "Simulation"
+    ],
+    "input_format": "A 2D grid of integers 'grid' where 1 <= grid[i][j] <= 9.",
+    "output_format": "A 2D grid of integers after all possible crushes and drops have been applied.",
+    "constraints": [
+      "1 <= grid.length <= 50",
+      "1 <= grid[i].length <= 50",
+      "grid[i][j] is an integer from 1 to 9."
+    ],
+    "examples": [
+      {
+        "input": "[[1,1,1,1,2],[1,1,3,2,2],[1,4,4,2,4],[5,5,4,4,4],[5,5,5,5,5]]",
+        "output": "[[5,5,0,0,0],[5,5,4,0,0],[5,0,4,0,0],[0,0,4,0,0],[0,0,0,0,0]]",
+        "explanation": "The candies at the top of the grid crush and fall down, resulting in the grid shown."
+      },
+      {
+        "input": "[[1,1,2],[2,2,2],[1,1,1]]",
+        "output": "[[0,0,0],[0,0,0],[0,0,0]]",
+        "explanation": "Both rows are completely crushed in this case, resulting in a grid of zeros."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Look for horizontal and vertical sequences of three or more matching candies.",
+      "Consider using a visited matrix to mark candies for crushing.",
+      "Remember to simulate the dropping of candies after each crush."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. It should support the following operations: 'get' and 'put'. The 'get' operation retrieves an item from the cache, if the item exists, it should mark it as recently used. The 'put' operation adds an item to the cache. If the cache reaches its capacity, it should invalidate the least recently used item before inserting the new item. Implement the LRU Cache class with the following methods: - int get(int key) - Returns the value of the key if the key exists, otherwise returns -1. - void put(int key, int value) - Update the value of the key if the key exists, otherwise add the key-value pair to the cache. If the number of keys exceeds the capacity, evict the least recently used key.",
+    "topic": "Data Structures",
+    "subtopic": "Cache",
+    "tags": [
+      "Hash Map",
+      "Linked List",
+      "Design"
+    ],
+    "input_format": "The cache is initialized with a positive capacity.",
+    "output_format": "Return the value of the key if the key exists, otherwise return -1.",
+    "constraints": [
+      "The cache capacity is at most 10^4.",
+      "The keys and values are integers in the range of 1 to 10^5.",
+      "The number of operations performed on the cache will not exceed 2 * 10^5."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache cache = new LRUCache(2);\ncache.put(1, 1);\ncache.put(2, 2);\ncache.get(1); // returns 1\ncache.put(3, 3); // evicts key 2\ncache.get(2); // returns -1 (not found)\ncache.put(4, 4); // evicts key 1\ncache.get(1); // returns -1 (not found)\ncache.get(3); // returns 3\ncache.get(4); // returns 4",
+        "output": "[1, -1, -1, 3, 4]",
+        "explanation": "The sequences of operations lead to the stated outputs at each step."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to store key-value pairs.",
+      "Use a doubly linked list to maintain the order of usage."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Manhattan Distances of All Arrangements of Pieces",
+    "description": "Given a set of distinct points on a grid, calculate the sum of Manhattan distances for all unique arrangements of these points. A Manhattan distance between two points (x1, y1) and (x2, y2) is defined as |x1 - x2| + |y1 - y2|. The goal is to compute this sum efficiently rather than iterating through all permutations of the points.",
+    "topic": "Geometry",
+    "subtopic": "Distance Calculations",
+    "tags": [
+      "Geometry",
+      "Math",
+      "Distance",
+      "Combinatorics"
+    ],
+    "input_format": "An integer n followed by n points, where each point is represented by a pair of integers (x, y).",
+    "output_format": "An integer representing the total sum of Manhattan distances of all unique arrangements.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "-10^4 <= x, y <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "n = 3, points = [[0, 0], [1, 2], [2, 4]]",
+        "output": "20",
+        "explanation": "There are 6 unique arrangements of the points, and the sum of Manhattan distances across all arrangements equals 20."
+      },
+      {
+        "input": "n = 2, points = [[3, 2], [1, 1]]",
+        "output": "8",
+        "explanation": "There are only 2 arrangements. The Manhattan distance calculations lead to a total of 8."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how the Manhattan distance behaves across permutations rather than calculating for each individually.",
+      "Use pre-sorting to handle x and y coordinates separately for optimized distance calculation."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Find X Value of Array II",
+    "description": "You are given an integer array 'nums' and an integer 'X'. Your task is to determine the value 'X' which represents the maximum number of occurrences of any integer in the given array. If there are multiple integers that have the highest frequency, return the smallest integer among them. If the array is empty, return 0.",
+    "topic": "Array",
+    "subtopic": "Frequency Count",
+    "tags": [
+      "Array",
+      "Frequency",
+      "HashMap"
+    ],
+    "input_format": "An integer array nums and an integer X.",
+    "output_format": "An integer representing the value of X.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3, 3, 3], X = 0",
+        "output": "3",
+        "explanation": "The number 3 occurs the most frequently (three times) compared to any other numbers."
+      },
+      {
+        "input": "nums = [5, 5, 5, 2, 2, 2], X = 0",
+        "output": "2",
+        "explanation": "Both numbers 5 and 2 occur the same number of times (three times), but 2 is smaller."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Utilize a HashMap to keep track of the frequency of each integer.",
+      "Iterate through the HashMap to find the maximum frequency and corresponding integer."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Existence of a Substring in a String and Its Reverse",
+    "description": "Given two strings, `s1` and `s2`, return true if `s2` is a substring of `s1` or the reverse of `s2` is a substring of `s1`. Otherwise, return false. A substring is defined as a contiguous sequence of characters within a string.",
+    "topic": "String",
+    "subtopic": "Substring Search",
+    "tags": [
+      "String",
+      "Substring",
+      "Reverse"
+    ],
+    "input_format": "Two strings `s1` and `s2` where 1 <= |s1|, |s2| <= 1000.",
+    "output_format": "A boolean indicating whether `s2` or its reverse is a substring of `s1`.",
+    "constraints": [
+      "1 <= |s1|, |s2| <= 1000",
+      "Both strings consist of English letters."
+    ],
+    "examples": [
+      {
+        "input": "s1 = 'hello', s2 = 'ell'",
+        "output": "true",
+        "explanation": "'ell' is a substring of 'hello'."
+      },
+      {
+        "input": "s1 = 'hello', s2 = 'olle'",
+        "output": "true",
+        "explanation": "'olle' is the reverse of 'ello', which is a substring of 'hello'."
+      },
+      {
+        "input": "s1 = 'abcde', s2 = 'xyz'",
+        "output": "false",
+        "explanation": "'xyz' and its reverse 'zyx' are not substrings of 'abcde'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check if one string is a substring of another using built-in methods.",
+      "Reverse the second string and perform the same check."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Sum of Subsequence Powers",
+    "description": "Given an array of integers nums, find the sum of powers of all possible non-empty subsequences. The power of a subsequence is defined as the product of its elements. Since this sum can be very large, return the result modulo 10^9 + 7.",
+    "topic": "Array",
+    "subtopic": "Subsequences",
+    "tags": [
+      "Array",
+      "Mathematics",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the sum of powers of all possible non-empty subsequences, modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "1 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "23",
+        "explanation": "Subsequences are [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]. Their powers are: 1, 2, 3, 2, 3, 6, 6. The sum is 1 + 2 + 3 + 2 + 3 + 6 + 6 = 23."
+      },
+      {
+        "input": "nums = [2, 1]",
+        "output": "5",
+        "explanation": "Subsequences are [2], [1], [2, 1]. Their powers are: 2, 1, 2. The sum is 2 + 1 + 2 = 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the contribution of each element in the array to the total sum.",
+      "The number of times each element appears in the subsequences may help in simplifying your calculations."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Find Longest Special Substring That Occurs Thrice II",
+    "description": "You are given a string, and you need to find the longest substring that appears at least three times in the given string. The substring must not overlap with itself, meaning if the substring occurs at index i, it cannot occur again within the range of the substring's length in the same string. Return the longest substring that meets these criteria. If there are multiple valid substrings with the maximum length, return any one of them. If no such substring exists, return an empty string.",
+    "topic": "String",
+    "subtopic": "Substring Search",
+    "tags": [
+      "String",
+      "Substring",
+      "Search"
+    ],
+    "input_format": "A string s representing the input text.",
+    "output_format": "A string representing the longest special substring that occurs at least three times.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "abcabcabc",
+        "output": "abc",
+        "explanation": "The substring 'abc' appears thrice and is the longest one."
+      },
+      {
+        "input": "ababa",
+        "output": "",
+        "explanation": "No substring appears thrice."
+      },
+      {
+        "input": "aaabaaaabaaa",
+        "output": "aaa",
+        "explanation": "'aaa' appears three times non-overlapping."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "Keep track of the counts of substrings with a hash map.",
+      "Focus on longer substrings first to maximize the length."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Find X Value of Array I",
+    "description": "You are given an array of integers and a target integer X. Your task is to find two distinct indices i and j such that the sum of the elements at those indices equals X. If there are multiple pairs, return any one of them. If no such indices exist, return an empty array.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Searching"
+    ],
+    "input_format": "An array of integers nums and an integer X.",
+    "output_format": "An array of two integers representing the indices i and j, or an empty array if no such indices exist.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5",
+      "X can be any integer within the range of -2 * 10^5 to 2 * 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], X = 9",
+        "output": "[0, 1]",
+        "explanation": "The elements at indices 0 and 1 are 2 and 7, respectively. Their sum is 9."
+      },
+      {
+        "input": "nums = [3, 2, 4], X = 6",
+        "output": "[1, 2]",
+        "explanation": "The elements at indices 1 and 2 are 2 and 4, respectively. Their sum is 6."
+      },
+      {
+        "input": "nums = [1, 2, 3], X = 7",
+        "output": "[]",
+        "explanation": "There are no two distinct indices in the array that sum up to 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap for efficient lookup.",
+      "Think about the complement of the current number."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Distribute Candies Among Children III",
+    "description": "You are given an integer array candies, where candies[i] represents the number of candies each child receives. Your goal is to distribute candies among children in such a way that: \n1. Each child receives at least one candy. \n2. A child will receive more candies than their adjacent siblings if they have a higher rank than them. \n\nyou have to find the minimum number of candies required to satisfy these conditions.",
+    "topic": "Greedy",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Simulation"
+    ],
+    "input_format": "An integer array candies of length n, where 1 <= n <= 100000 and 1 <= candies[i] <= 10^5.",
+    "output_format": "An integer representing the minimum number of candies required.",
+    "constraints": [
+      "1 <= candies.length <= 100000",
+      "1 <= candies[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "candies = [3, 2, 1, 2, 3]",
+        "output": "11",
+        "explanation": "Distributing candies optimally gives: [3, 2, 1, 2, 3] which sums to 11."
+      },
+      {
+        "input": "candies = [1, 2, 2]",
+        "output": "4",
+        "explanation": "Distributing candies gives: [1, 2, 1] which sums to 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider two passes through the array to adjust candy distribution."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Distribute Candies Among Children II",
+    "description": "Alice has some candies, and she wants to distribute them among her children. However, there are some constraints regarding the distribution. Each child must receive at least one candy, and Alice has a fixed number of candies to distribute. Given the number of candies and the number of children, your task is to determine if it is possible to distribute the candies according to the above rules.",
+    "topic": "Greedy",
+    "subtopic": "Distribution",
+    "tags": [
+      "Greedy",
+      "Distribution",
+      "Simulation"
+    ],
+    "input_format": "Two integers, candies and num_children, representing the total number of candies and the number of children respectively.",
+    "output_format": "A boolean value (true or false) indicating whether the candies can be distributed according to the rules.",
+    "constraints": [
+      "1 <= candies <= 10^5",
+      "1 <= num_children <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "candies = 7, num_children = 3",
+        "output": "true",
+        "explanation": "Each child can receive at least 1 candy, and after giving each child 1 candy (3 candies total), there are 4 candies left. These can be redistributed among the children."
+      },
+      {
+        "input": "candies = 10, num_children = 11",
+        "output": "false",
+        "explanation": "It is not possible to distribute 10 candies to 11 children since each child must receive at least 1 candy."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the minimum candies needed for each child.",
+      "Think about how to distribute the remaining candies after ensuring everyone has at least one."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Distribute Candies Among Children I",
+    "description": "Alice has n candies, and she wants to distribute these candies to her k children in such a way that each child gets at least one candy. If there are any remaining candies after the initial distribution, she will continue to distribute one candy to each child in a round-robin fashion until no candies are left. Given the number of candies n and the number of children k, return the number of candies each child will receive after all candies have been distributed, represented as an array.",
+    "topic": "Greedy",
+    "subtopic": "Distribution",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Distribution"
+    ],
+    "input_format": "Two integers n (the number of candies) and k (the number of children).",
+    "output_format": "An array of integers representing the number of candies each child receives.",
+    "constraints": [
+      "1 <= n <= 10^4",
+      "1 <= k <= 100"
+    ],
+    "examples": [
+      {
+        "input": "n = 7, k = 3",
+        "output": "[2, 2, 3]",
+        "explanation": "Each child gets at least one candy, so 3 candies are distributed first. Then, 4 candies remain, which are distributed in a round-robin fashion: 1st child gets the 1st candy, 2nd child gets the 2nd candy, and 3rd child gets the 3rd candy, and finally, the 1st child gets the last candy."
+      },
+      {
+        "input": "n = 10, k = 4",
+        "output": "[3, 3, 2, 2]",
+        "explanation": "Each child gets 2 candies first, using up 8 candies. There are 2 remaining candies, which are distributed to the first two children."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think about distributing candies in rounds."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Maximize Subarray Sum After Removing All Occurrences of One Element",
+    "description": "Given an integer array nums and an integer value val, your task is to maximize the sum of a contiguous subarray after removing all occurrences of val from the array. You must return the maximum sum possible for any contiguous subarray after this operation. If no subarray exists, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Subarray",
+      "Greedy"
+    ],
+    "input_format": "An integer array nums and an integer val.",
+    "output_format": "An integer representing the maximum sum of the contiguous subarray after removing all occurrences of val.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5",
+      "-10^5 <= val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, -2, 0, 3], val = 2",
+        "output": "4",
+        "explanation": "The maximum subarray sum after removing all occurrences of 2 is 4 from the subarray [1, 0, 3]."
+      },
+      {
+        "input": "nums = [5, -1, 3, -2, 3], val = -1",
+        "output": "8",
+        "explanation": "The subarray [5, 3] has a sum of 8, which is the maximum sum after removing -1."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5], val = 1",
+        "output": "14",
+        "explanation": "Removing 1 gives us the subarray [2, 3, 4, 5] with a sum of 14."
+      },
+      {
+        "input": "nums = [2, 2, 2, 2], val = 2",
+        "output": "0",
+        "explanation": "All elements are 2, so removing them results in no subarray, and the sum is 0."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the properties of subarrays when eliminating values.",
+      "Use a sliding window or prefix sum approach for optimization.",
+      "Remember to handle cases where no valid subarray exists."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. All operations should be done in average O(1) time complexity.\n\n- `insert(val)`: Inserts an item val to the set. Returns true if the item was not already present.\n- `remove(val)`: Removes an item val from the set. Returns true if the item was present.\n- `getRandom()`: Returns a random element from the current set of elements. Each element must have the same probability of being returned.\n\nYou should implement the data structure using an array and a hash map.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "HashMap",
+      "Random",
+      "Array",
+      "Design"
+    ],
+    "input_format": "The operations will be provided as an array of strings, each representing the operation and followed by the value if applicable.",
+    "output_format": "An array of boolean values, corresponding to the results of insert and remove operations, and a random integer for each getRandom operation.",
+    "constraints": [
+      "All elements of the set are unique.",
+      "The operations will include a mix of insert, remove, and getRandom."
+    ],
+    "examples": [
+      {
+        "input": "[\"insert\", \"insert\", \"getRandom\", \"remove\", \"insert\", \"getRandom\"]\n[1, 2, [], [1], [2], []]",
+        "output": "[true, true, 1 or 2, true, false, 2]",
+        "explanation": "Initially, we insert 1 and 2. getRandom could return either 1 or 2. We remove 1, so 'insert' with 2 returns false, while getRandom could return 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map for fast lookups.",
+      "Maintain a list for random access."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Snapshot Array",
+    "description": "Design a Snapshot Array that allows taking 'snapshots' of the array at various points in time. Each time you take a snapshot, you should be able to retrieve the state of the array at that moment. Implement the SnapshotArray class that supports the following operations: \n1. SnapshotArray(int length): Initializes the snapshot array with the given length. The initial values of all indices are set to 0.\n2. void set(int index, int val): Sets the value at the given index to val.\n3. int snap(): Takes a snapshot of the current state of the array and returns the snapshot ID.\n4. int get(int index, int snap_id): Retrieves the value at the given index from the snapshot with the given ID. If the snapshot does not exist, return 0.",
+    "topic": "Design",
+    "subtopic": "Data Structure Design",
+    "tags": [
+      "Array",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "No specific input format for the constructor. The methods will be called separately on an instance of SnapshotArray.",
+    "output_format": "The output consists of the return values of the `snap()` and `get()` methods.",
+    "constraints": [
+      "1 <= length <= 50000",
+      "0 <= index < length",
+      "0 <= snap_id < number of snaps taken so far",
+      "0 <= val <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "SnapshotArray snapshotArray = new SnapshotArray(3);\nsnapshotArray.set(0, 5);\nsnapshotArray.snap();\nsnapshotArray.set(0, 6);\nint result = snapshotArray.get(0, 0);",
+        "output": "5",
+        "explanation": "After the first `snap()`, the value at index 0 is 5. The second call to `set()` changes it to 6, but calling `get(0, 0)` retrieves the value from the first snapshot."
+      },
+      {
+        "input": "SnapshotArray snapshotArray = new SnapshotArray(5);\nsnapshotArray.set(0, 1);\nsnapshotArray.set(1, 2);\nint snapId1 = snapshotArray.snap();\nsnapshotArray.set(0, 3);\nsnapshotArray.set(1, 4);\nint snapId2 = snapshotArray.snap();\nint result1 = snapshotArray.get(0, snapId1);\nint result2 = snapshotArray.get(1, snapId2);",
+        "output": "1\n4",
+        "explanation": "The first snapshot has values [1, 2, 0, 0, 0]. After updating values and taking a second snapshot, `get(0, snapId1)` returns 1, and `get(1, snapId2)` returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a list of maps to store snapshot states.",
+      "Keep track of the last known values for each index."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Web Crawler Multithreaded",
+    "description": "Design a multithreaded web crawler that fetches the content of web pages from a list of URLs. The crawler should be able to handle a specified maximum number of concurrent threads while ensuring that no page is crawled more than once. Additionally, your implementation should respect the robots.txt file of the domain, if available, to avoid crawling disallowed paths.",
+    "topic": "Concurrency",
+    "subtopic": "Multithreading",
+    "tags": [
+      "Concurrency",
+      "Multithreading",
+      "Web Crawler"
+    ],
+    "input_format": "A list of URLs to crawl and a maximum number of concurrent threads.",
+    "output_format": "A list of fetched contents from the crawled pages, in the order of the URLs provided.",
+    "constraints": [
+      "1 <= urls.length <= 1000",
+      "1 <= max_threads <= 20",
+      "URLs should be valid HTTP/HTTPS links."
+    ],
+    "examples": [
+      {
+        "input": {
+          "urls": [
+            "http://example.com",
+            "http://example.org"
+          ],
+          "max_threads": 2
+        },
+        "output": [
+          "Content of http://example.com",
+          "Content of http://example.org"
+        ],
+        "explanation": "The crawler fetches the contents of both URLs using 2 threads."
+      },
+      {
+        "input": {
+          "urls": [
+            "http://example.com",
+            "http://example.com/path"
+          ],
+          "max_threads": 1
+        },
+        "output": [
+          "Content of http://example.com",
+          "Content of http://example.com/path"
+        ],
+        "explanation": "With only one thread, the crawler fetches the content sequentially."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a thread pool to manage concurrent threads.",
+      "Ensure to implement a way to check if a URL has already been crawled before downloading its content.",
+      "Handle exceptions gracefully to ensure the crawler continues operating."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Scramble String",
+    "description": "Given two strings s1 and s2, write a function to determine if s2 is a scrambled string of s1. A scrambled string is obtained by recursively swapping the first character of the string with any other character and then recursively dividing the string into two parts and scrambling those parts. You need to check if the two strings are scrambles of each other or not.",
+    "topic": "String",
+    "subtopic": "Recursion",
+    "tags": [
+      "String",
+      "Recursion",
+      "Dynamic Programming"
+    ],
+    "input_format": "Two strings s1 and s2 where 1 <= s1.length, s2.length <= 30.",
+    "output_format": "Return true if s2 is a scrambled string of s1, otherwise return false.",
+    "constraints": [
+      "s1 and s2 consist of lowercase English letters.",
+      "s1.length == s2.length"
+    ],
+    "examples": [
+      {
+        "input": "s1 = \"great\", s2 = \"rgeat\"",
+        "output": "true",
+        "explanation": "\"rgeat\" is a scrambled string of \"great\"."
+      },
+      {
+        "input": "s1 = \"abcde\", s2 = \"caebd\"",
+        "output": "false",
+        "explanation": "\"caebd\" is not a scrambled string of \"abcde\"."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the frequencies of characters in the strings.",
+      "If the character counts don't match, s2 cannot be a scramble of s1."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Next Permutation",
+    "description": "Implement the function nextPermutation that finds the next lexicographical permutation of an array of integers. The function should rearrange the numbers in-place to form the next permutation, and if one does not exist, it must rearrange it to the lowest possible order (i.e., sorted in ascending order).",
+    "topic": "Array",
+    "subtopic": "Permutations",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-Place",
+      "Permutation"
+    ],
+    "input_format": "An array of distinct integers nums of size n.",
+    "output_format": "Modify nums in-place to represent the next permutation.",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[1, 3, 2]",
+        "explanation": "The next permutation of [1, 2, 3] is [1, 3, 2]."
+      },
+      {
+        "input": "nums = [3, 2, 1]",
+        "output": "[1, 2, 3]",
+        "explanation": "The input is the last permutation. The next permutation is the first permutation [1, 2, 3]."
+      },
+      {
+        "input": "nums = [1, 1, 5]",
+        "output": "[1, 5, 1]",
+        "explanation": "The next permutation of [1, 1, 5] is [1, 5, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Identify the longest suffix that is non-increasing.",
+      "Find the pivot just before that suffix.",
+      "Swap the pivot with the smallest number in the suffix that is larger than the pivot."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Edit Distance",
+    "description": "Given two strings 'word1' and 'word2', return the minimum number of operations required to convert 'word1' to 'word2'. You can perform three types of operations: insert a character, delete a character, or replace a character.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Edit Distance"
+    ],
+    "input_format": "Two strings 'word1' and 'word2'.",
+    "output_format": "An integer representing the minimum number of operations required to convert 'word1' to 'word2'.",
+    "constraints": [
+      "0 <= word1.length, word2.length <= 100",
+      "word1 and word2 consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "word1 = 'horse', word2 = 'ros'",
+        "output": "3",
+        "explanation": "The operations needed are: replace 'h' with 'r', replace 'r' with 'o', and delete 'e'."
+      },
+      {
+        "input": "word1 = 'intention', word2 = 'execution'",
+        "output": "5",
+        "explanation": "The sequence of operations is: replace 'i' with 'e', replace 'n' with 'x', insert 'u', insert 't', and then insert 'i'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a 2D array to store the results of subproblems.",
+      "Try to identify overlapping subproblems and use dynamic programming to solve them."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Add and Search Words Data Structure",
+    "description": "Design a data structure that supports adding new words and searching for a given string in the data structure. The search string can contain the '.' character, which can represent any letter. You should implement the 'WordDictionary' class which has two methods: 'addWord' and 'search'. The 'addWord' method adds a word into the data structure, while the 'search' method returns true if the word is in the data structure or false if it isn't.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Trie",
+      "Design",
+      "Search"
+    ],
+    "input_format": "The input consists of two types of operations: 'addWord' for adding a word and 'search' for searching a word.",
+    "output_format": "The output of the 'search' method is a boolean value - 'true' if the word exists and 'false' otherwise.",
+    "constraints": [
+      "1 <= word.length <= 25",
+      "addWord will be called at most 1000 times.",
+      "Each word consists of lowercase letters a-z."
+    ],
+    "examples": [
+      {
+        "input": "addWord('bad'); addWord('dad'); addWord('mad'); search('pad')",
+        "output": "false",
+        "explanation": "The word 'pad' has not been added yet."
+      },
+      {
+        "input": "search('bad')",
+        "output": "true",
+        "explanation": "The word 'bad' was added to the data structure."
+      },
+      {
+        "input": "search('.ad')",
+        "output": "true",
+        "explanation": "The '.' can represent any letter, so 'bad', 'dad', and 'mad' match this pattern."
+      },
+      {
+        "input": "search('..d')",
+        "output": "true",
+        "explanation": "The '.' can represent any letter, so 'bad', 'dad', and 'mad' match this pattern."
+      },
+      {
+        "input": "search('b..')",
+        "output": "true",
+        "explanation": "The '.' can represent any letter, so 'bad' matches this pattern."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a trie data structure.",
+      "When searching, iterate through each character of the search word."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Design a Text Editor",
+    "description": "Implement a simple text editor that supports the following operations: insert a character, delete a character, move the cursor left or right, and undo the last operation. The editor must maintain the current text and cursor position. You need to implement these functionalities within a class called `TextEditor` with the specified methods.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Text Editor"
+    ],
+    "input_format": "Operations provided as a list of strings. Each operation is one of: 'insert c', 'delete', 'move left', 'move right', 'undo'. The character 'c' is a single lowercase letter.",
+    "output_format": "The current content of the text editor as a string after performing all operations.",
+    "constraints": [
+      "The length of operations can be at most 1000.",
+      "0 <= cursor position <= current text length"
+    ],
+    "examples": [
+      {
+        "input": "operations = ['insert a', 'insert b', 'move left', 'delete', 'undo']",
+        "output": "a",
+        "explanation": "After performing the operations, 'a' remains as the only character in the text."
+      },
+      {
+        "input": "operations = ['insert h', 'insert e', 'insert l', 'insert l', 'insert o', 'move left', 'delete', 'undo']",
+        "output": "hell",
+        "explanation": "After inserting 'hello', moving one position left, deleting 'o', and undoing the delete, we get 'hell'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a stack to keep track of operations for undo functionality.",
+      "Maintain a cursor index to represent the current position in the text."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Web Crawler",
+    "description": "Implement a web crawler that takes a starting URL and a depth limit as input and returns all the unique URLs found by crawling up to that depth. The crawler should only follow links that are within the same domain as the starting URL and should ignore any external links. Your crawler should handle cyclic links and avoid visiting the same URL multiple times.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "Traversal",
+      "Web Crawling"
+    ],
+    "input_format": "A string representing the starting URL and an integer representing the depth limit.",
+    "output_format": "A list of unique URLs found within the specified depth as strings.",
+    "constraints": [
+      "1 <= depth <= 10",
+      "The starting URL is guaranteed to be a valid URL.",
+      "The number of links on any page is at most 100."
+    ],
+    "examples": [
+      {
+        "input": "startUrl = 'http://example.com', depth = 2",
+        "output": "['http://example.com', 'http://example.com/about', 'http://example.com/contact']",
+        "explanation": "The crawler starts at http://example.com, finds links to about and contact pages, and crawls them up to 2 levels deep."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a queue to implement BFS for traversing the links.",
+      "Keep track of visited URLs to avoid cycles."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Task Scheduler",
+    "description": "You are given a list of tasks represented by uppercase letters and a non-negative integer n representing the cooldown time between two same tasks. Your objective is to determine the minimum number of units of time that the tasks can be finished if you follow the cooldown constraint. The same task cannot be executed within n units of time. Tasks can be scheduled in any order.",
+    "topic": "Greedy",
+    "subtopic": "Task Scheduling",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Scheduling"
+    ],
+    "input_format": "An array of characters tasks and a non-negative integer n.",
+    "output_format": "An integer representing the minimum time units needed to finish all tasks.",
+    "constraints": [
+      "1 <= tasks.length <= 10^4",
+      "1 <= n <= 26"
+    ],
+    "examples": [
+      {
+        "input": "tasks = ['A', 'A', 'A', 'B', 'B', 'B'], n = 2",
+        "output": "8",
+        "explanation": "One possible schedule is: A -> B -> idle -> A -> B -> idle -> A -> B. Total time units is 8."
+      },
+      {
+        "input": "tasks = ['A', 'A', 'A', 'B', 'B', 'B'], n = 0",
+        "output": "6",
+        "explanation": "With no cooldown, all tasks can be scheduled back-to-back for total time units of 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a frequency array to count the occurrences of each task.",
+      "Identify how to optimally fill in the idle time."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an integer array nums and an integer k, return the maximum sliding window for each sliding window of size k. You may assume that the input is always valid, and there will be at least one element in the array.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Queue"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An array of integers representing the maximum value in each sliding window.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, -1, -3, 5, 3, 6, 7], k = 3",
+        "output": "[3, 3, 5, 5, 6, 7]",
+        "explanation": "The maximum values for the sliding windows are: [3] from [1, 3, -1], [3] from [3, -1, -3], [5] from [-1, -3, 5], [5] from [-3, 5, 3], [6] from [5, 3, 6], and [7] from [3, 6, 7]."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "With only one element in the array and window size of 1, the maximum is the element itself."
+      },
+      {
+        "input": "nums = [1, -1], k = 1",
+        "output": "[1, -1]",
+        "explanation": "Each single element is a window of size 1, so the maximums are the elements themselves."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a deque to maintain the maximums.",
+      "Think about how to efficiently add and remove elements from the sliding window.",
+      "Keep track of indices in the deque to avoid processing stale elements."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Building H2O",
+    "description": "You are tasked with building molecules of water (H2O) using a limited number of hydrogen (H) and oxygen (O) atoms. Each molecule of water requires two hydrogen atoms and one oxygen atom. Given the number of available hydrogen and oxygen atoms, determine how many water molecules can be formed.",
+    "topic": "Greedy",
+    "subtopic": "Resource Allocation",
+    "tags": [
+      "Greedy",
+      "Simulation",
+      "Math"
+    ],
+    "input_format": "Two integers, hydrogen and oxygen, representing the available hydrogen and oxygen atoms.",
+    "output_format": "An integer representing the maximum number of H2O molecules that can be formed.",
+    "constraints": [
+      "0 <= hydrogen, oxygen <= 100"
+    ],
+    "examples": [
+      {
+        "input": "hydrogen = 4, oxygen = 2",
+        "output": "2",
+        "explanation": "You can form 2 water molecules using 4 hydrogen atoms and 2 oxygen atoms."
+      },
+      {
+        "input": "hydrogen = 2, oxygen = 1",
+        "output": "1",
+        "explanation": "You can form 1 water molecule using 2 hydrogen atoms and 1 oxygen atom."
+      },
+      {
+        "input": "hydrogen = 0, oxygen = 5",
+        "output": "0",
+        "explanation": "No water molecules can be formed without hydrogen atoms."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the ratio of hydrogen to oxygen needed for each water molecule.",
+      "Use the minimum of available hydrogen // 2 and available oxygen."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "4Sum",
+    "description": "Given an array of integers nums and an integer target, return all unique quadruplets (a,b,c,d) such that a + b + c + d = target. You may return the answer in any order. Each quadruplet should be unique, meaning there should be no duplicate quadruplets in your output.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Hash Table"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "A list of unique quadruplets that add up to the target.",
+    "constraints": [
+      "0 <= nums.length <= 200",
+      "-10^9 <= nums[i] <= 10^9",
+      "The solution set must not contain duplicate quadruplets."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 0, -1, 0, -2, 2], target = 0",
+        "output": "[[-2, -1, 0, 1], [0, 0, 0, 0]]",
+        "explanation": "The unique quadruplets that sum to zero are [-2, -1, 0, 1] and [0, 0, 0, 0]."
+      },
+      {
+        "input": "nums = [2, 2, 2, 2, 2], target = 8",
+        "output": "[[2, 2, 2, 2]]",
+        "explanation": "The only unique quadruplet that sums to eight is [2, 2, 2, 2]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using sorting to simplify the problem of finding quadruplets.",
+      "Use two pointers technique after fixing two elements.",
+      "Be cautious of duplicates when adding results."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Prefix and Suffix Search",
+    "description": "You are tasked with designing a data structure that supports the following operations: inserting a word and searching for a word with a given prefix or suffix. Implement a class `WordFilter` that allows for efficiently performing these operations. The class should support the following methods:\n\n- `WordFilter(words: List[str])`: Initializes the data structure with a list of words.\n- `f(prefix: str, suffix: str)`: Returns the index of the word in the list that has the given prefix and suffix. If no such word exists, return -1.\n\nNote that the search function can be called multiple times, so efficiency is key.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Trie",
+      "String Matching"
+    ],
+    "input_format": "A list of strings `words` for initialization and a string for prefix and suffix when searching.",
+    "output_format": "An integer representing the last index of a word that matches the given prefix and suffix, or -1 if no match is found.",
+    "constraints": [
+      "1 <= words.length <= 10^4",
+      "1 <= words[i].length <= 100",
+      "words[i] consists of lowercase letters only."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"apple\", \"banana\", \"apricot\", \"pear\"]\nf(\"a\", \"e\")",
+        "output": "0",
+        "explanation": "The word \"apple\" has the prefix \"a\" and suffix \"e\", and is at index 0."
+      },
+      {
+        "input": "words = [\"apple\", \"banana\", \"apricot\", \"pear\"]\nf(\"b\", \"a\")",
+        "output": "1",
+        "explanation": "The word \"banana\" has the prefix \"b\" and suffix \"a\", and is at index 1."
+      },
+      {
+        "input": "words = [\"apple\", \"banana\", \"apricot\", \"pear\"]\nf(\"p\", \"r\")",
+        "output": "-1",
+        "explanation": "No word has the prefix \"p\" and suffix \"r\"."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a prefix tree for efficient searching.",
+      "Think about storing suffixes alongside prefixes."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Invalid Parentheses",
+    "description": "Given a string s that contains parentheses and lowercase letters, remove the minimum number of invalid parentheses to make the input string valid. Return all possible results. A parentheses string is valid if and only if every open parenthesis has a corresponding close parenthesis and the open parentheses are closed in the correct order.",
+    "topic": "String",
+    "subtopic": "Backtracking",
+    "tags": [
+      "String",
+      "Backtracking",
+      "Recursion"
+    ],
+    "input_format": "A string s consisting of lowercase English letters and parentheses.",
+    "output_format": "A list of strings, each representing a valid string after removing parentheses.",
+    "constraints": [
+      "1 <= s.length <= 25",
+      "s consists of lowercase English letters and parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = \"()())()\"",
+        "output": "[\"()()()\", \"(())()\"]",
+        "explanation": "Removing one pair of parentheses from the input, we get the valid strings: \"()()()\" or \"(())()\"."
+      },
+      {
+        "input": "(a)())()",
+        "output": "[\"(a)()\", \"(a())()\"]",
+        "explanation": "Possible valid strings after removal are: \"(a)()\" or \"(a())()\"."
+      },
+      {
+        "input": ")(",
+        "output": "[\"\"]",
+        "explanation": "The only valid string is the empty string after removing both parentheses."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using BFS to explore all possible removals.",
+      "Track the balance of parentheses as you build potential results.",
+      "Use a set to avoid duplicates in the results."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Cherry Pickup II",
+    "description": "You are given a grid representing a field of cherries, where each cell contains either a cherry (1) or an empty space (0). You have two robots that can simultaneously pick cherries, starting at the top-left corner of the grid and moving to the bottom-right corner. The robots can only move down or right. They can also collide and collect the same cherry, but each robot can only go to different paths. Your goal is to maximize the number of cherries collected by both robots by the time they reach the bottom-right corner of the grid.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Path Optimization",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "DFS"
+    ],
+    "input_format": "A 2D array grid where grid[i][j] is either 0 or 1.",
+    "output_format": "An integer representing the maximum number of cherries both robots can collect.",
+    "constraints": [
+      "1 <= grid.length <= 50",
+      "1 <= grid[i].length <= 50",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0, 1, 0], [1, 1, 1], [0, 0, 1]]",
+        "output": "5",
+        "explanation": "The first robot can collect 1 cherry in (0, 1) and the second robot collects cherries along (1, 0) and (1, 1) and finishes at (2, 2). Total cherries collected by both robots: 5."
+      },
+      {
+        "input": "grid = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]",
+        "output": "3",
+        "explanation": "Each robot can collect cherries located at (0, 0), (1, 1), and (2, 2). Total cherries collected: 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider dynamic programming to track the best paths for both robots.",
+      "Think about how to represent the states of both robots as they move through the grid."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Refueling Stops",
+    "description": "You are traveling to a destination that is `target` miles away. You have a car that has a fuel tank capacity of `tank` miles. You start with a full tank, and you have access to a list of `stations` where each station has a specific distance from your starting point and a certain amount of fuel available. You can only refuel at these stations. Your goal is to determine the minimum number of refueling stops you will need to reach your target destination. If it is impossible to reach the destination, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer target, an integer tank, and a list of stations where each station is represented as an array of two integers [distance, fuel].",
+    "output_format": "An integer representing the minimum number of refueling stops; return -1 if you cannot reach the destination.",
+    "constraints": [
+      "1 <= target <= 10^9",
+      "1 <= tank <= 10^9",
+      "0 <= stations.length <= 100",
+      "0 <= stations[i][0] < target",
+      "0 <= stations[i][1] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "target = 100, tank = 10, stations = [[10, 60], [20, 30], [30, 30], [60, 40]]",
+        "output": "2",
+        "explanation": "You need to refuel at the station at 10 miles (60 fuel) and then at 30 miles (30 fuel), allowing you to reach the target."
+      },
+      {
+        "input": "target = 100, tank = 1, stations = [[10, 100]]",
+        "output": "-1",
+        "explanation": "It's impossible to reach any station since the tank capacity is only 1 mile."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a max heap to keep track of refueling options.",
+      "Consider edge cases where the tank capacity is not sufficient to reach even the first station."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Design Bounded Blocking Queue",
+    "description": "Implement a bounded blocking queue that supports the following operations: `put(value)` which adds an item to the queue, and `get()` which retrieves and removes an item from the queue. The queue should have a fixed capacity, and the `put(value)` operation will block if the queue is full until space is available. The `get()` operation will block if the queue is empty until an item is present. You may assume that the queue will have at least one consumer and one producer.",
+    "topic": "Concurrency",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Concurrency",
+      "Data Structure",
+      "Queue"
+    ],
+    "input_format": "Operations to put and get items from the queue.",
+    "output_format": "The output of get operations should be the values retrieved from the queue.",
+    "constraints": [
+      "The capacity of the queue will be between 1 and 10^6.",
+      "The input includes a series of put and get operations."
+    ],
+    "examples": [
+      {
+        "input": "put(1), put(2), get(), put(3), get(), get()",
+        "output": "1, 2, 3",
+        "explanation": "First, 1 and 2 are added to the queue, then 1 is retrieved. 3 is added next, and both 2 and 3 are retrieved in order."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using condition variables to manage the blocking behavior.",
+      "Think about utilizing a synchronized collection to handle concurrent access."
+    ],
+    "company": "Rubrik"
+  },
+  {
+    "question_id": "",
+    "title": "Design Memory Allocator",
+    "description": "Implement a memory allocator that can allocate and deallocate memory blocks of a specified size. Your allocator should manage memory using a simple strategy where blocks can be allocated and freed in arbitrary order. The allocator should support the following operations: 'allocate(size)', which allocates a block of memory of at least the requested size and returns a pointer to it; and 'deallocate(pointer)', which frees the block of memory pointed to by the pointer. Ensure that your allocator efficiently manages memory and minimizes fragmentation.",
+    "topic": "Memory Management",
+    "subtopic": "Dynamic Memory Allocation",
+    "tags": [
+      "Memory",
+      "Allocator",
+      "Heap Management"
+    ],
+    "input_format": "The input consists of a list of operations where each operation is either 'allocate(size)' or 'deallocate(pointer)'.",
+    "output_format": "Return the result of each 'allocate' operation, which is a pointer to the allocated block, or -1 if the allocation fails.",
+    "constraints": [
+      "1 <= size <= 10^6",
+      "The pointer returned will be unique and valid during its lifetime."
+    ],
+    "examples": [
+      {
+        "input": "operations = [ 'allocate(100)', 'allocate(200)', 'deallocate(0)', 'allocate(50)']",
+        "output": "[0, 1, -1]",
+        "explanation": "After allocating 100 bytes, we get pointer 0. Allocating 200 bytes gives pointer 1. Deallocating pointer 0 frees that block, and the next allocation of 50 bytes successfully reuses the freed block, resulting in returns [0, 1, -1]."
+      },
+      {
+        "input": "operations = [ 'allocate(100)', 'deallocate(0)', 'allocate(150)', 'deallocate(1)']",
+        "output": "[0, -1, -1]",
+        "explanation": "The first allocation returns pointer 0. Deallocating pointer 0 frees it, but at the time to allocate 150, no suitable block is available so it returns -1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a linked list or array-based structure to manage free blocks.",
+      "Keep track of allocated and free sizes to reduce fragmentation.",
+      "Use a simple first-fit strategy or best-fit strategy for allocation."
+    ],
+    "company": "Rubrik"
+  }
+]

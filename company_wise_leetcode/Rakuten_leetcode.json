@@ -1,0 +1,269 @@
+[
+  {
+    "question_id": "",
+    "title": "Longest Happy String",
+    "description": "A happy string is a string that does not contain the substrings 'aaa', 'bbb', or 'ccc'. Given three integers a, b, and c, representing the number of 'a's, 'b's, and 'c's that can be used to construct the happy string, return the longest happy string that can be created. If there are multiple longest happy strings, return any of them. If there is no valid string that can be created, return an empty string.",
+    "topic": "String",
+    "subtopic": "Construction",
+    "tags": [
+      "String",
+      "Greedy",
+      "Construction"
+    ],
+    "input_format": "Three integers a, b, and c representing the count of 'a's, 'b's, and 'c's respectively.",
+    "output_format": "A string representing the longest happy string that can be constructed.",
+    "constraints": [
+      "0 <= a, b, c <= 100"
+    ],
+    "examples": [
+      {
+        "input": "a = 1, b = 1, c = 7",
+        "output": "ccaccbcc",
+        "explanation": "One possible longest happy string is 'ccaccbcc'. It contains 1 'a', 1 'b', and 7 'c's without 'aaa', 'bbb', or 'ccc'."
+      },
+      {
+        "input": "a = 2, b = 2, c = 1",
+        "output": "aabbc",
+        "explanation": "One possible longest happy string is 'aabbc'. It contains all required characters without any invalid substrings."
+      },
+      {
+        "input": "a = 7, b = 1, c = 0",
+        "output": "aaaaaaa",
+        "explanation": "It is impossible to create a happy string since only 'a' can be used and it creates 'aaaaaaa'. Hence the result is empty string."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to keep the character counts balanced.",
+      "Use a greedy approach to add characters to the result string."
+    ],
+    "company": "Rakuten"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock II",
+    "description": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you can make as many transactions as you like (i.e., buy one and sell one share of the stock multiple times). Note that you cannot sell a stock before you buy it. Find the maximum profit you can achieve.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the stock prices on different days.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 3 * 10^4",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5. Then buy on day 4 (price = 3) and sell on day 5 (price = 4). Profit = 4 - 3 = 1. Total profit = 5 + 1 = 6."
+      },
+      {
+        "input": "prices = [1, 2, 3, 4, 5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5). Profit = 5 - 1 = 4."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done, and the max profit is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how you can collect profit from every increase in price.",
+      "Iterate through the array and accumulate profit whenever the next day's price is greater."
+    ],
+    "company": "Rakuten"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing stock prices on different days.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "There is no transaction that can maximize profit. Return 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Track the minimum price encountered so far as you iterate through the array.",
+      "Calculate the potential profit at each price and keep the maximum profit."
+    ],
+    "company": "Rakuten"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. The function should not return anything, but modify nums1 in-place instead. The merged array should be a sorted array. You may assume that nums1 has enough space to hold additional elements from nums2.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Merge"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2 where nums1 has a size of m + n and the first m elements denote the initial numbers in nums1, and the last n elements are set to 0. nums2 has a size of n.",
+    "output_format": "The merged array in nums1.",
+    "constraints": [
+      "1 <= m, n <= 200",
+      "0 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [2, 5, 6], n = 3",
+        "output": "nums1 = [1, 2, 2, 3, 5, 6]",
+        "explanation": "Merging the two arrays results in the sorted array [1, 2, 2, 3, 5, 6]."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "nums1 = [1]",
+        "explanation": "The first array is already sorted and contains one element: [1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to keep track of the current index in each array.",
+      "Start merging from the end of nums1 to avoid overwriting existing values."
+    ],
+    "company": "Rakuten"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) cache. It should support the following operations: get and put. The get operation retrieves the value of the key if the key exists in the cache. Otherwise, it returns -1. The put operation updates or adds a key-value pair. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structure",
+    "subtopic": "Cache",
+    "tags": [
+      "Data Structure",
+      "Cache",
+      "Design"
+    ],
+    "input_format": "A series of operations using the LRUCache class methods: LRUCache(capacity), get(key), and put(key, value).",
+    "output_format": "Return the value of the key for the get operation, and do not return anything for the put operation.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key, value <= 10^4",
+      "The number of calls to get and put will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache(2); lruCache.put(1, 1); lruCache.put(2, 2); lruCache.get(1); lruCache.put(3, 3); lruCache.get(2); lruCache.put(4, 4); lruCache.get(1); lruCache.get(3); lruCache.get(4);",
+        "output": "1, -1, -1, 3, 4",
+        "explanation": "The cache is [1, 2] at first. After accessing 1, the cache is [2, 1]. After putting 3, the cache removes 2 (least recently used). The cache is now [1, 3]. The next put removes 1 for 4. Final cache is [3, 4]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to store keys and their corresponding nodes in a doubly linked list.",
+      "The doubly linked list will keep track of the access order."
+    ],
+    "company": "Rakuten"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Image",
+    "description": "You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise) in-place. You have to do this without using any extra space for another array.",
+    "topic": "Array",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Array",
+      "Matrix",
+      "In-place"
+    ],
+    "input_format": "An n x n 2D array, representing the image.",
+    "output_format": "The input 2D array should be rotated 90 degrees clockwise in place.",
+    "constraints": [
+      "1 <= n <= 20",
+      "0 <= matrix[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[[7, 4, 1], [8, 5, 2], [9, 6, 3]]",
+        "explanation": "Rotating the given matrix 90 degrees clockwise results in the output matrix."
+      },
+      {
+        "input": "matrix = [[1]]",
+        "output": "[[1]]",
+        "explanation": "Rotating a single element matrix results in the same matrix."
+      },
+      {
+        "input": "matrix = [[1, 2], [3, 4]]",
+        "output": "[[3, 1], [4, 2]]",
+        "explanation": "The matrix after 90 degrees clockwise rotation transforms the first row into the last column."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider rotating layers of the matrix one by one.",
+      "Use temporary variables to assist with the swaps."
+    ],
+    "company": "Rakuten"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an array of integers nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of unique triplets, where each triplet is represented as an array of three integers.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "There are no triplets in an empty array."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "No triplet can sum to zero in the array [0, 1, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array first to make it easier to avoid duplicates.",
+      "Use a loop to fix one number and then use two pointers to find the other two."
+    ],
+    "company": "Rakuten"
+  }
+]

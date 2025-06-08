@@ -1,0 +1,288 @@
+[
+  {
+    "question_id": "",
+    "title": "Collect Coins in a Tree",
+    "description": "You are given a binary tree where each node contains a coin with a certain value. Your task is to collect the maximum number of coins you can while traversing from the root to any leaf node. You are allowed to collect coins from the nodes you visit but cannot revisit any node. The tree may have nodes with no coins (value zero) as well. You should return the maximum number of coins you can collect on your path from the root to any leaf node.",
+    "topic": "Tree",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Tree",
+      "Dynamic Programming",
+      "Depth-First Search"
+    ],
+    "input_format": "A binary tree represented as a root node, where each node has a value representing the number of coins.",
+    "output_format": "An integer representing the maximum number of coins collectible from root to any leaf node.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 1000].",
+      "1 <= node.val <= 100."
+    ],
+    "examples": [
+      {
+        "input": "root = [3, 2, 1, null, 4]",
+        "output": "7",
+        "explanation": "The path 3 -> 2 -> 4 collects 3 + 2 + 4 = 9 coins."
+      },
+      {
+        "input": "root = [1, 0, 0, 0, 0, 1, 0]",
+        "output": "2",
+        "explanation": "The path 1 -> 1 collects 1 + 1 = 2 coins."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use Depth-First Search to explore all paths.",
+      "Keep track of the coins collected along each path."
+    ],
+    "company": "Lucid"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Balls in a Box",
+    "description": "You are given an integer numBalls which represents the total number of balls. You decide to put these balls into several boxes. Each box can hold any number of balls, but you want to maximize the number of balls in any single box. If you assign balls into each box by following certain rules, what is the maximum number of balls you can have in a box?",
+    "topic": "Math",
+    "subtopic": "Simulation",
+    "tags": [
+      "Math",
+      "Simulation",
+      "Greedy"
+    ],
+    "input_format": "An integer numBalls (1 <= numBalls <= 10^6) representing the total number of balls.",
+    "output_format": "An integer that indicates the maximum number of balls that can be placed in a single box.",
+    "constraints": [
+      "1 <= numBalls <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "numBalls = 10",
+        "output": "4",
+        "explanation": "You can arrange 10 balls in 4 boxes such that the configuration is [4, 3, 2, 1]. The maximum in any box is 4."
+      },
+      {
+        "input": "numBalls = 5",
+        "output": "2",
+        "explanation": "You can arrange 5 balls in 3 boxes such that the configuration is [2, 2, 1]. The maximum in any box is 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how distributing the balls could maximize the count in one of the boxes."
+    ],
+    "company": "Lucid"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket. The brackets must be closed in the correct order.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of parentheses characters.",
+    "output_format": "A boolean value indicating whether the input string of parentheses is valid.",
+    "constraints": [
+      "0 <= s.length <= 10^4",
+      "s consists of parentheses only '(){}[]'."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are correctly matched and nested."
+      },
+      {
+        "input": "s = '(]')",
+        "output": "false",
+        "explanation": "The brackets are not correctly matched."
+      },
+      {
+        "input": "s = '([{}])'",
+        "output": "true",
+        "explanation": "All brackets are correctly matched and nested."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of the opening brackets.",
+      "Pop from the stack when you encounter a closing bracket and check for matches."
+    ],
+    "company": "Lucid"
+  },
+  {
+    "question_id": "",
+    "title": "Min Stack",
+    "description": "Design a stack that supports push, pop, top, and retrieving the minimum element in constant time. Implement the MinStack class with the following methods: \n\n - MinStack() initializes the stack object. \n - void push(int val) pushes the element val onto the stack. \n - void pop() removes the element on the top of the stack. \n - int top() retrieves the top element of the stack. \n - int getMin() retrieves the minimum element in the stack.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Stack",
+      "Data Structure",
+      "Design"
+    ],
+    "input_format": "Operations are provided as an array of strings representing the method calls, with optional integer values for push.",
+    "output_format": "Return the results for top() and getMin() method calls in an array.",
+    "constraints": [
+      "All operations are valid.",
+      "The number of calls to push, pop, top, and getMin will not exceed 1000."
+    ],
+    "examples": [
+      {
+        "input": "operations = [\"MinStack\", \"push\", \"push\", \"push\", \"getMin\", \"top\", \"pop\", \"getMin\"]\nvalues = [[], [5], [2], [1], [], [], [], []]",
+        "output": "[null, null, null, null, 1, 1, null, 2]",
+        "explanation": "After pushing 5, 2, and 1, the minimum is 1. The top is also 1. After popping, the minimum becomes 2."
+      },
+      {
+        "input": "operations = [\"MinStack\", \"push\", \"push\", \"getMin\", \"pop\", \"getMin\"]\nvalues = [[], [3], [5], [], [], []]",
+        "output": "[null, null, null, 3, null, 3]",
+        "explanation": "After pushing 3 and 5, the minimum is 3. After popping 5, the minimum remains 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using additional data structures to keep track of the minimum."
+    ],
+    "company": "Lucid"
+  },
+  {
+    "question_id": "",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses. A pair of parentheses is well-formed if for every open parenthesis, there exists a corresponding closing parenthesis that comes after it.",
+    "topic": "Backtracking",
+    "subtopic": "Combination Generation",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "String"
+    ],
+    "input_format": "An integer n (0 <= n <= 8), representing the number of pairs of parentheses.",
+    "output_format": "A list of strings representing all combinations of well-formed parentheses.",
+    "constraints": [
+      "0 <= n <= 8"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\"]",
+        "explanation": "With 3 pairs of parentheses, we can combine open and close in multiple configurations that keep them well-formed."
+      },
+      {
+        "input": "n = 1",
+        "output": "[\"()\"]",
+        "explanation": "With 1 pair of parentheses, the only valid configuration is a single open followed by a close."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use backtracking to explore the possible combinations.",
+      "Keep track of the number of open and close parentheses used so far."
+    ],
+    "company": "Lucid"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within the string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Map"
+    ],
+    "input_format": "A single string s containing lowercase or uppercase letters, digits, or symbols.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of English letters, digits, symbols and spaces."
+    ],
+    "examples": [
+      {
+        "input": "abcabcbb",
+        "output": "3",
+        "explanation": "The longest substring is 'abc', with a length of 3."
+      },
+      {
+        "input": "bbbbb",
+        "output": "1",
+        "explanation": "The longest substring is 'b', with a length of 1."
+      },
+      {
+        "input": "pwwkew",
+        "output": "3",
+        "explanation": "The longest substring is 'wke', with a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to keep track of character indices.",
+      "Try to maintain a sliding window to find the longest substring."
+    ],
+    "company": "Lucid"
+  },
+  {
+    "question_id": "",
+    "title": "Gas Station",
+    "description": "There are N gas stations along a circular route, where the amount of gas at the i-th station is gas[i]. You also have a car with a certain amount of gas. The car can travel from one gas station to the next if it has enough gas. The objective is to determine the starting gas station index from which you can travel around the circuit once without running out of gas. If there is no solution, return -1.",
+    "topic": "Greedy",
+    "subtopic": "Circulating Array",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Circular Path"
+    ],
+    "input_format": "Two integer arrays: gas and cost, where gas[i] represents the amount of gas at station i and cost[i] represents the cost of gas to travel to the next station.",
+    "output_format": "An integer representing the starting gas station index, or -1 if it's not possible to complete the circuit.",
+    "constraints": [
+      "N == gas.length == cost.length",
+      "1 <= N <= 10^4",
+      "0 <= gas[i], cost[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": {
+          "gas": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "cost": [
+            3,
+            4,
+            5,
+            1,
+            2
+          ]
+        },
+        "output": "3",
+        "explanation": "Starting at station 3, the car can travel to station 4 (gains 4, loses 1), then to station 0 (gains 5, loses 2), and finally back to station 3 (gains 1 and loses 3)."
+      },
+      {
+        "input": {
+          "gas": [
+            2,
+            3,
+            4
+          ],
+          "cost": [
+            3,
+            4,
+            3
+          ]
+        },
+        "output": "-1",
+        "explanation": "It's impossible to travel around the circuit as the cost exceeds the gas at all stations."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Calculate the balance of gas at each station.",
+      "If the total gas is less than the total cost, return -1 immediately.",
+      "Keep track of the starting index and the remaining gas."
+    ],
+    "company": "Lucid"
+  }
+]

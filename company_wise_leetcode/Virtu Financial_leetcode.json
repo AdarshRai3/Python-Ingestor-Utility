@@ -1,0 +1,196 @@
+[
+  {
+    "question_id": "",
+    "title": "How Many Apples Can You Put into the Basket",
+    "description": "You have a basket that can hold a maximum weight of W. You are given an array of weights representing apples, and you need to determine how many apples you can fit into the basket without exceeding its weight limit. You can place as many apples in the basket as you want, but you must not exceed the maximum weight. Return the maximum number of apples you can fit in the basket.",
+    "topic": "Greedy",
+    "subtopic": "Optimization",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Optimization"
+    ],
+    "input_format": "An integer W representing the maximum weight of the basket followed by an array of integers weights representing the weights of apples.",
+    "output_format": "An integer representing the maximum number of apples that can fit in the basket.",
+    "constraints": [
+      "1 <= W <= 10^5",
+      "1 <= weights.length <= 10^4",
+      "1 <= weights[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "W = 10, weights = [1, 2, 3, 4]",
+        "output": "4",
+        "explanation": "All apples can fit into the basket without exceeding the weight limit. Total weight = 1 + 2 + 3 + 4 = 10."
+      },
+      {
+        "input": "W = 5, weights = [5, 2, 1]",
+        "output": "2",
+        "explanation": "You can fit apple with weight 2 and weight 1 into the basket. Total weight = 2 + 1 = 3, which is below the limit."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Sort the weights array to try and fit the lightest apples first."
+    ],
+    "company": "Virtu Financial"
+  },
+  {
+    "question_id": "",
+    "title": "Array Transformation",
+    "description": "You are given an array of integers. Your task is to transform this array into a new array where each element at index i is the product of all the numbers in the original array except the one at i. You must accomplish this without using division and in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Product Array",
+    "tags": [
+      "Array",
+      "Product",
+      "Transformation"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing the transformed array.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "[24, 12, 8, 6]",
+        "explanation": "The product array is calculated as follows: [2*3*4, 1*3*4, 1*2*4, 1*2*3] = [24, 12, 8, 6]."
+      },
+      {
+        "input": "nums = [-1, 1, 0, -3, 3]",
+        "output": "[0, 0, 9, 0, 0]",
+        "explanation": "The product array is calculated as follows: [1*0*(-3)*3, -1*0*(-3)*3, -1*1*(-3)*3, -1*1*0*3, -1*1*0*(-3)] = [0, 0, 9, 0, 0]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two arrays to keep track of the left and right products.",
+      "You can also calculate the result in a single pass after building the left products."
+    ],
+    "company": "Virtu Financial"
+  },
+  {
+    "question_id": "",
+    "title": "Hexspeak",
+    "description": "In a hexadecimal number system, the digits are represented by the characters 0-9 and A-F. Given an integer n, convert it to its hexadecimal representation and determine if it only contains the digits 0, 1, 2, 5, A, B, C, D, E, and F. If it does, return the hexadecimal representation as a string; otherwise, return 'ERROR'.",
+    "topic": "Math",
+    "subtopic": "Hexadecimal Conversion",
+    "tags": [
+      "Math",
+      "Hexadecimal",
+      "String"
+    ],
+    "input_format": "An integer n (0 <= n <= 2^31 - 1).",
+    "output_format": "A string representing the hexadecimal representation or 'ERROR'.",
+    "constraints": [
+      "0 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 26",
+        "output": "1A",
+        "explanation": "26 in hexadecimal is 1A, which only contains the digits allowed."
+      },
+      {
+        "input": "n = 27",
+        "output": "ERROR",
+        "explanation": "27 in hexadecimal is 1B, which contains the digit 'B' that is allowed, but the next valid character is not."
+      },
+      {
+        "input": "n = 0",
+        "output": "0",
+        "explanation": "0 in hexadecimal is 0, which is valid."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Convert the number to hexadecimal using built-in functions.",
+      "Check each character in the hexadecimal string against the allowed set."
+    ],
+    "company": "Virtu Financial"
+  },
+  {
+    "question_id": "",
+    "title": "Count Substrings with Only One Distinct Letter",
+    "description": "Given a string s, return the number of substrings that have only one distinct letter. A substring is defined as a contiguous sequence of characters in the string.",
+    "topic": "String",
+    "subtopic": "Substring",
+    "tags": [
+      "String",
+      "Substring",
+      "Counting"
+    ],
+    "input_format": "A single string s consisting of lowercase English letters.",
+    "output_format": "An integer representing the count of substrings with only one distinct letter.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of only lowercase English letters"
+    ],
+    "examples": [
+      {
+        "input": "s = 'aaab'",
+        "output": "7",
+        "explanation": "The substrings are: 'a', 'a', 'a', 'aa', 'aa', 'aaa', and 'b'."
+      },
+      {
+        "input": "s = 'abc'",
+        "output": "3",
+        "explanation": "The substrings are: 'a', 'b', and 'c'."
+      },
+      {
+        "input": "s = 'cccc'",
+        "output": "10",
+        "explanation": "The substrings are: 'c', 'c', 'c', 'c', 'cc', 'cc', 'cc', 'ccc', 'ccc', 'cccc'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "A substring can be counted multiple times if it appears more than once.",
+      "Consider counting how many times each character appears consecutively."
+    ],
+    "company": "Virtu Financial"
+  },
+  {
+    "question_id": "",
+    "title": "Count Number of Homogeneous Substrings",
+    "description": "Given a string `s`, return the number of homogeneous substrings in `s`. A substring is considered homogeneous if all its characters are the same. For example, the string 'aaabb' contains the homogeneous substrings: 'a', 'a', 'a', 'aa', 'aa', 'aaa', 'b', 'b', 'bb'. The answer for this example is 9.",
+    "topic": "String",
+    "subtopic": "Counting Substrings",
+    "tags": [
+      "String",
+      "Counting",
+      "Substrings"
+    ],
+    "input_format": "A single string s (1 <= s.length <= 10000).",
+    "output_format": "An integer representing the number of homogeneous substrings.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"aaabb\"",
+        "output": "9",
+        "explanation": "The homogeneous substrings are: 'a', 'a', 'a', 'aa', 'aa', 'aaa', 'b', 'b', 'bb'. Total = 9."
+      },
+      {
+        "input": "s = \"sss\"",
+        "output": "6",
+        "explanation": "The homogeneous substrings are: 's', 's', 's', 'ss', 'ss', 'sss'. Total = 6."
+      },
+      {
+        "input": "s = \"abc\"",
+        "output": "3",
+        "explanation": "The homogeneous substrings are: 'a', 'b', 'c'. Total = 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the contributions of each character to the count of homogeneous substrings.",
+      "Use a sliding window or two-pointer technique to efficiently count substrings."
+    ],
+    "company": "Virtu Financial"
+  }
+]

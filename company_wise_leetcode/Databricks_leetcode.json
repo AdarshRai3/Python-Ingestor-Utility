@@ -1,0 +1,1410 @@
+[
+  {
+    "question_id": "",
+    "title": "Design Hit Counter",
+    "description": "Design a hit counter which counts the number of hits received in the past 5 minutes. Each hit is represented by a timestamp (in seconds, granularity of 1 second). When a hit is received, it is counted towards the 5-minute window. If a hit occurs, it returns the total number of hits in the past 5 minutes. If the timestamp of the hit is older than 5 minutes, it is not counted.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Counting"
+    ],
+    "input_format": "A timestamp (integer) representing the current time in seconds.",
+    "output_format": "An integer representing the number of hits in the past 5 minutes.",
+    "constraints": [
+      "The timestamps will be in non-decreasing order.",
+      "1 <= timestamp <= 2 * 10^9",
+      "The number of hits will not exceed 10000."
+    ],
+    "examples": [
+      {
+        "input": "hit(1), hit(2), hit(3), hit(300)",
+        "output": "3",
+        "explanation": "The hits at timestamps 1, 2, and 3 are within 5 minutes. The hit at timestamp 300 is outside the 5-minute window, so it's ignored."
+      },
+      {
+        "input": "hit(1), hit(2), hit(3), hit(6)",
+        "output": "3",
+        "explanation": "The hits at timestamps 1, 2, and 3 are counted. The hit at timestamp 6 is outside the 5-minute window."
+      },
+      {
+        "input": "hit(300), hit(300), hit(600)",
+        "output": "2",
+        "explanation": "The first two hits at timestamp 300 are within the same timestamp. The hit at timestamp 600 is outside the 5-minute window."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a data structure to store timestamps efficiently.",
+      "Consider using a queue to manage the hits and ensure they're within the 5-minute frame."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "IP to CIDR",
+    "description": "Given an IP address and a number of IP addresses to be allocated, return all the CIDR blocks that will cover the given range of IP addresses. An IP address is given in standard dot-decimal notation and the number of addresses is a non-negative integer. CIDR notation is a compact representation of an IP address and its associated network mask.",
+    "topic": "Networking",
+    "subtopic": "IP Addressing",
+    "tags": [
+      "CIDR",
+      "Networking",
+      "IP Address"
+    ],
+    "input_format": "A string representing the IP address and a non-negative integer representing the desired number of addresses.",
+    "output_format": "A list of strings, each representing a CIDR block.",
+    "constraints": [
+      "The IP address is a valid IPv4 address.",
+      "1 <= number of addresses <= 2^32 - 1."
+    ],
+    "examples": [
+      {
+        "input": "ip = '255.0.0.7', n = 10",
+        "output": "['255.0.0.7/32', '255.0.0.8/31', '255.0.0.10/30']",
+        "explanation": "The CIDR blocks cover the range of 10 IP addresses starting from 255.0.0.7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider converting the IP to a numerical format for easier calculations.",
+      "Use bit manipulation to determine the CIDR ranges."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, and adjacent houses have security systems connected. If two adjacent houses are robbed, the alarm will trigger. Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.",
+    "topic": "Dynamic Programming",
+    "subtopic": "1D DP",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers nums where 0 <= nums.length <= 100.",
+    "output_format": "An integer representing the maximum amount of money you can rob.",
+    "constraints": [
+      "0 <= nums.length <= 100",
+      "0 <= nums[i] <= 400"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 9, 3, 1]",
+        "output": "12",
+        "explanation": "Robbing houses at indices 1 (7) and 2 (9) gives you a maximum of 7 + 9 = 16."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Robbing houses at indices 0 (1) and 2 (3) gives you a maximum of 1 + 3 = 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to keep track of the maximum money you can rob."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber II",
+    "description": "You are a professional robber who specializes in robbing houses. Each house has a certain amount of money stashed, but adjacent houses have security systems connected. If two adjacent houses are broken into on the same night, the alarm will trigger. Given an integer array `nums` representing the amount of money at each house, return the maximum amount of money you can rob tonight without alerting the police. Note that this is a circular arrangement of houses, meaning the first and last houses are adjacent.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Robber Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Robbery"
+    ],
+    "input_format": "An array of integers `nums` where `nums[i]` represents the amount of money in the i-th house.",
+    "output_format": "An integer representing the maximum amount of money you can rob without triggering the alarm.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 2]",
+        "output": "3",
+        "explanation": "Robbing the second house will yield the maximum amount of 3."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Robbing the first and third houses will yield the maximum amount of 4."
+      },
+      {
+        "input": "nums = [5, 1, 2, 10]",
+        "output": "15",
+        "explanation": "Robbing the first and fourth houses will yield the maximum amount of 15."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider reducing the problem to a simpler version by removing one house.",
+      "Think about using dynamic programming to store results of subproblems."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Design Tic-Tac-Toe",
+    "description": "Design a Tic-Tac-Toe game that allows two players to play the game on a 3x3 grid. The game should allow players to take turns, mark their spots, and declare a winner whenever one of the players aligns three of their marks vertically, horizontally, or diagonally. Implement a class TicTacToe that supports the following operations:\n1. `TicTacToe(int n)`: Initializes the game with an n x n grid.\n2. `int move(int row, int col, int player)`: Places a mark for the player at the specified row and column (0-indexed) and returns:\n   - 0 if the game continues,\n   - 1 if player wins,\n   - 2 if it is a draw.\n   Assume player 1 is represented by `1` and player 2 is represented by `2`.",
+    "topic": "Design",
+    "subtopic": "Game Design",
+    "tags": [
+      "Design",
+      "Game",
+      "Matrix"
+    ],
+    "input_format": "The input to the constructor is an integer n representing the size of the Tic-Tac-Toe grid. The input to the 'move' function is three integers: row, column, and player.",
+    "output_format": "The output of the move function will be an integer representing the game status as described above.",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= row, col < n",
+      "player is either 1 or 2"
+    ],
+    "examples": [
+      {
+        "input": "TicTacToe(3);\nmove(0, 0, 1);\nmove(0, 1, 2);\nmove(0, 2, 1);",
+        "output": "1",
+        "explanation": "Player 1 wins by marking the first row."
+      },
+      {
+        "input": "TicTacToe(2);\nmove(0, 0, 1);\nmove(1, 1, 2);\nmove(0, 1, 1);\nmove(1, 0, 2);\nmove(1, 0, 1);",
+        "output": "0",
+        "explanation": "Game continues after the last move."
+      },
+      {
+        "input": "TicTacToe(3);\nmove(0, 0, 1);\nmove(0, 1, 2);\nmove(1, 0, 1);\nmove(1, 1, 2);\nmove(2, 0, 1);\nmove(2, 1, 2);\nmove(2, 2, 1);",
+        "output": "1",
+        "explanation": "Player 1 wins with the first column."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of player moves separately for each player.",
+      "Check for a win condition after each move."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value store that can store multiple values for the same key, each with a timestamp. Implement a class that supports the following operations: set(key: str, value: str, timestamp: int) and get(key: str, timestamp: int) which retrieves the value associated with the key at the latest timestamp less than or equal to the given timestamp.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Hash Map",
+      "Binary Search"
+    ],
+    "input_format": "The set operation takes three parameters: a string key, a string value, and an integer timestamp. The get operation takes a string key and an integer timestamp.",
+    "output_format": "The get operation returns the value associated with the key at the most recent timestamp or an empty string if no such timestamp exists.",
+    "constraints": [
+      "All key/value strings are non-empty and have at most length 100.",
+      "Timestamp values are positive integers and will not exceed 10^9.",
+      "The set operation will be called with unique timestamp values.",
+      "The total number of calls to the set and get functions will not exceed 10000."
+    ],
+    "examples": [
+      {
+        "input": [
+          "store.set('foo', 'bar', 1)",
+          "store.get('foo', 1)",
+          "store.get('foo', 3)",
+          "store.set('foo', 'baz', 2)",
+          "store.get('foo', 2)",
+          "store.get('foo', 4)"
+        ],
+        "output": [
+          "null",
+          "bar",
+          "bar",
+          "null",
+          "baz",
+          "baz"
+        ],
+        "explanation": "The set and get operations have been executed as follows: 'foo' is set to 'bar' at timestamp 1, which is then retrieved at timestamp 1 and 3. At timestamp 2, 'foo' is updated to 'baz', which is retrieved at timestamp 2 and 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dictionary to store the key-value pairs and their timestamps.",
+      "A binary search can help find the most recent timestamp efficiently."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Snapshot Array",
+    "description": "Design a snapshot array that collects integers, allowing you to take snapshots of its current state at any point in time. Each snapshot keeps a copy of the array so that you can access it later. The snapshot array allows for dynamic updates without affecting past snapshots. Implement the SnapshotArray class: \n- `SnapshotArray(int length)`: Initializes the array with the given length. Set all elements to zero. \n- `void set(int index, int val)`: Sets the element at index `index` to `val`. \n- `int snap()`: Takes a snapshot of the array and returns the snapshot's ID. \n- `int get(int index, int snap_id)`: Returns the element at index `index` from the snapshot with id `snap_id`. \n\nYou may assume the maximum length of the array will not exceed 50000, and the number of calls to `snap()` will not exceed 50000.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Dynamic Array"
+    ],
+    "input_format": "Multiple calls to SnapshotArray methods.",
+    "output_format": "Return values from `snap()` and `get()` calls.",
+    "constraints": [
+      "1 <= length <= 50000",
+      "0 <= index < length",
+      "0 <= val <= 1000",
+      "0 <= snap_id <= 50000"
+    ],
+    "examples": [
+      {
+        "input": "SnapshotArray snapshotArray = new SnapshotArray(3);\nsnapshotArray.set(0, 5);\nsnapshotArray.snap();\nsnapshotArray.set(0, 6);\nint output = snapshotArray.get(0, 0);",
+        "output": "5",
+        "explanation": "After the first snap, the state of the array is [5, 0, 0]. The get method retrieves the value before the last set operation."
+      },
+      {
+        "input": "snapshotArray.set(2, 1);\nint output2 = snapshotArray.snap();\nsnapshotArray.set(0, 2);\nint output3 = snapshotArray.get(2, 0);",
+        "output": "1",
+        "explanation": "The value at index 2 was set to 1 before the first snap, and remains the same in this snapshot."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider maintaining an array of maps for storing snapshots.",
+      "Use a list to keep track of snapshot history efficiently."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindrome by Concatenating Two Letter Words",
+    "description": "Given a list of two-letter words, find the length of the longest palindrome that can be formed by concatenating the given words. A palindrome is a string that reads the same backward as forward. You can use each word at most once, and the concatenation can form the palindrome in any order.",
+    "topic": "String",
+    "subtopic": "Palindrome",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Greedy"
+    ],
+    "input_format": "A list of two-letter strings words.",
+    "output_format": "An integer representing the length of the longest palindrome that can be formed.",
+    "constraints": [
+      "1 <= words.length <= 2000",
+      "word[i].length == 2",
+      "words[i] consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"ab\", \"ba\", \"cc\", \"dd\", \"aa\"]",
+        "output": "8",
+        "explanation": "The palindrome can be formed by using \"ab\", \"ba\", \"cc\", and \"aa\". The longest palindrome is \"abccbaa\"."
+      },
+      {
+        "input": "words = [\"xy\", \"yx\", \"zz\", \"zz\"]",
+        "output": "6",
+        "explanation": "The palindrome can be formed by using two \"zz\" and either \"xy\" and \"yx\". The longest palindrome is \"zyxzzxy\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count how often each pair appears.",
+      "Use pairs that are reversible for maximum length.",
+      "Single pairs can contribute to the middle of the palindrome."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Closest Leaf in a Binary Tree",
+    "description": "Given a binary tree, find the value of the nearest leaf node to a given target node. A leaf node is defined as a node that has no children. The distance between two nodes is defined as the number of edges in the path connecting them. If the target node is itself a leaf, the distance should be 0.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Depth First Search"
+    ],
+    "input_format": "The root of a binary tree and the value of the target node.",
+    "output_format": "An integer representing the value of the nearest leaf node.",
+    "constraints": [
+      "The binary tree has at least one node.",
+      "-10^5 <= node.val <= 10^5",
+      "The target node is guaranteed to be in the tree."
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4, null, 5, 6], target = 2",
+        "output": "4",
+        "explanation": "The nearest leaf to node 2 is node 4."
+      },
+      {
+        "input": "root = [1, 2, 3], target = 1",
+        "output": "2",
+        "explanation": "The nearest leaf to node 1 is node 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Depth First Search (DFS) to traverse the tree.",
+      "Keep track of leaf nodes as you traverse the tree."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Smallest Range Covering Elements from K Lists",
+    "description": "Given a list of k sorted lists of integers, return the smallest range that includes at least one number from each of the k lists. The range should be represented as a two-element array [start, end]. If there are multiple smallest ranges, return the one that has the smallest 'start'.",
+    "topic": "Sorting",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Sorting",
+      "Two Pointers",
+      "Heap"
+    ],
+    "input_format": "A list of k sorted lists where each list contains integers.",
+    "output_format": "A two-element array [start, end] representing the smallest range.",
+    "constraints": [
+      "k == lists.length",
+      "1 <= k <= 10^4",
+      "1 <= lists[i].length <= 100",
+      "-10^5 <= lists[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "lists = [[1, 2, 3], [4, 5], [1, 2, 6]]",
+        "output": "[1, 5]",
+        "explanation": "The smallest range covering the numbers 1, 2, 3, 4, 5, and 6 is [1, 5]."
+      },
+      {
+        "input": "lists = [[1, 2, 3], [3, 4], [5, 6]]",
+        "output": "[3, 4]",
+        "explanation": "The smallest range covering the numbers 1, 2, 3, 4, 5, and 6 is [3, 4]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a priority queue to maintain the current range.",
+      "Track the current max and min values across all lists."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Absolute Difference Between Elements With Constraint",
+    "description": "Given an array of integers and a constraint value k, find the minimum absolute difference between any two elements in the array, where one element must be less than or equal to k and the other must be greater than k. If no such pair exists, return -1.",
+    "topic": "Array",
+    "subtopic": "Sorting and Searching",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Searching"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the minimum absolute difference. Return -1 if no valid pairs exist.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i], k <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 6, 7, 8], k = 5",
+        "output": "1",
+        "explanation": "The pairs (3, 6) or (5, 6) yield the minimum absolute difference of 1."
+      },
+      {
+        "input": "nums = [4, 2, 5], k = 3",
+        "output": "1",
+        "explanation": "The pair (2, 4) yields the minimum absolute difference of 1."
+      },
+      {
+        "input": "nums = [1, 2, 3], k = 3",
+        "output": "-1",
+        "explanation": "There are no elements less than or equal to 3 and greater than 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array to facilitate finding pairs.",
+      "Consider using a two-pointer technique after sorting."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Split Message Based on Limit",
+    "description": "You are tasked with splitting a message into parts based on a given character limit. Each part must contain a maximum of 'limit' characters, and you may not split a word across parts. If a word exceeds the limit, return it as a separate part. If there are any remaining characters in the last part after all words have been added, they should be included as is. Construct the output as a list of strings where each string is a part of the message.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Splitting"
+    ],
+    "input_format": "A string 'message' and an integer 'limit' representing the maximum characters per part.",
+    "output_format": "A list of strings where each string is a part of the split message.",
+    "constraints": [
+      "1 <= message.length <= 10^6",
+      "1 <= limit <= 1000"
+    ],
+    "examples": [
+      {
+        "input": {
+          "message": "The quick brown fox jumps over the lazy dog",
+          "limit": 10
+        },
+        "output": [
+          "The quick",
+          "brown fox",
+          "jumps over",
+          "the lazy",
+          "dog"
+        ],
+        "explanation": "The message is split into parts with each part containing at most 10 characters without splitting any words."
+      },
+      {
+        "input": {
+          "message": "HelloWorld ThisIsATest",
+          "limit": 5
+        },
+        "output": [
+          "Hello",
+          "World",
+          "ThisI",
+          "sATe",
+          "st"
+        ],
+        "explanation": "Words that exceed the limit are split into multiple parts."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to track the length of each part while iterating through words.",
+      "You may need to handle spaces carefully when splitting."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Step-By-Step Directions From a Binary Tree Node to Another",
+    "description": "Given a binary tree and two nodes in it, return the step-by-step directions from one node to another. You can assume that both nodes exist in the tree. The directions should be in terms of 'U' for up to the parent node and 'L' for going to the left child and 'R' for going to the right child. If you must go up to the parent node first, you should use 'U' followed by the appropriate path from the parent to the target node.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Depth-First Search"
+    ],
+    "input_format": "The root of the binary tree and the two target nodes.",
+    "output_format": "A string representing the step-by-step directions from the first node to the second.",
+    "constraints": [
+      "The binary tree contains unique values.",
+      "The values of the nodes are between 1 and 10^5.",
+      "The depth of the binary tree will not exceed 100."
+    ],
+    "examples": [
+      {
+        "input": "root = [1,2,3,4,5,6,7], start = 4, dest = 5",
+        "output": "UUR",
+        "explanation": "From node 4, go up to node 2 ('U'), then go right to node 5 ('R'). So the directions are 'UUR'."
+      },
+      {
+        "input": "root = [1,2,3,4,5,6,7], start = 7, dest = 6",
+        "output": "U",
+        "explanation": "From node 7, go up to node 3 ('U'), then directly to node 6 ('L'). So the directions are 'U'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to find the lowest common ancestor (LCA) of the two nodes.",
+      "Use depth-first search to find paths to both nodes.",
+      "You may need to backtrack to the LCA before proceeding to the second node."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Flowers in Full Bloom",
+    "description": "You are given an array of integers representing the bloom and wilt status of flowers at different time points. Each integer represents a time point when flowers either bloom (1) or wilt (0). Your task is to determine the maximum amount of flowers that are in full bloom at any given time. Flowers are considered in full bloom only when they have bloomed and have not wilted yet.",
+    "topic": "Array",
+    "subtopic": "Interval Management",
+    "tags": [
+      "Array",
+      "Interval",
+      "Blooming"
+    ],
+    "input_format": "An array of integers where each integer is either 0 or 1, representing the wilt or bloom status of flowers.",
+    "output_format": "An integer representing the maximum number of flowers in full bloom at one time.",
+    "constraints": [
+      "1 <= nums.length <= 10^6",
+      "nums[i] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 0, 1, 1, 1, 0, 0, 1]",
+        "output": "4",
+        "explanation": "The maximum number of flowers in bloom at one time is 4, which occurs between the third and sixth positions."
+      },
+      {
+        "input": "nums = [1, 0, 1, 1, 0, 1, 1, 1]",
+        "output": "3",
+        "explanation": "The maximum number of flowers in bloom is 3, which occurs between the fifth and seventh positions."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Track the count of flowers that bloom and wilt at each time point.",
+      "Use a sliding window approach to manage the blooming interval."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of strings words and a maximum width maxWidth, format the text so that each line has exactly maxWidth characters and is fully justified. You should pack as many words as possible on each line. Extra spaces should be distributed evenly between the words. If the number of spaces on a line is not uniformly distributable, the extra spaces should be moved to the left. For the last line of text, it should be left-justified and no extra space is inserted between words. Return the formatted text as an array of strings.",
+    "topic": "String",
+    "subtopic": "Text Alignment",
+    "tags": [
+      "String",
+      "Text Justification",
+      "Formatting"
+    ],
+    "input_format": "An array of strings words and an integer maxWidth.",
+    "output_format": "An array of strings representing the justified text.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 100",
+      "1 <= maxWidth <= 100"
+    ],
+    "examples": [
+      {
+        "input": "words = [\"This\", \"is\", \"an\", \"example\", \"of\", \"text\", \"justification.\"], maxWidth = 16",
+        "output": "[\"This    is    an\", \"example  of text\", \"justification.  \"]",
+        "explanation": "The first line has 4 spaces between 'This' and 'is', 4 spaces between 'is' and 'an'; the second line has 2 spaces between 'example' and 'of', 2 between 'of' and 'text'; the last line is left-justified."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to distribute spaces between words.",
+      "Keep track of the number of characters and spaces.",
+      "Handle the last line differently."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Web Crawler Multithreaded",
+    "description": "Design a multithreaded web crawler that collects links from a given list of URLs. The crawler should explore the links to a certain depth and return all unique URLs found. Ensure that the program handles concurrent requests efficiently and adheres to a maximum thread count. It should also avoid crawling the same URL multiple times.",
+    "topic": "Concurrency",
+    "subtopic": "Multithreading",
+    "tags": [
+      "Concurrency",
+      "Multithreading",
+      "Web Crawler"
+    ],
+    "input_format": "A list of URLs to start crawling from and an integer for the maximum depth of crawling.",
+    "output_format": "A set of unique URLs collected by the crawler.",
+    "constraints": [
+      "1 <= urls.length <= 100",
+      "1 <= max_depth <= 10",
+      "URLs are valid and well-formed."
+    ],
+    "examples": [
+      {
+        "input": {
+          "urls": [
+            "http://example.com"
+          ],
+          "max_depth": 2
+        },
+        "output": [
+          "http://example.com",
+          "http://example.com/page1",
+          "http://example.com/page2",
+          "http://example.com/page1/child"
+        ],
+        "explanation": "Starting from http://example.com, the crawler collects links up to depth 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a thread pool for managing threads effectively.",
+      "Use a data structure to keep track of visited URLs."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Count Integers in Intervals",
+    "description": "You are given a list of intervals, where each interval is defined by a pair of integers [start, end]. Your task is to count how many integers fall within these intervals. An integer is counted if it is covered by at least one interval. The intervals may overlap, and you should return the count of unique integers present across all given intervals.",
+    "topic": "Interval",
+    "subtopic": "Counting",
+    "tags": [
+      "Interval",
+      "Counting",
+      "Set"
+    ],
+    "input_format": "A list of intervals, where each interval is a pair of integers [start, end], represented as a list of lists.",
+    "output_format": "An integer representing the count of unique integers present in all intervals.",
+    "constraints": [
+      "1 <= intervals.length <= 10^5",
+      "intervals[i].length == 2",
+      "\u221210^9 <= intervals[i][0] <= intervals[i][1] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1, 5], [2, 4], [6, 8]]",
+        "output": "8",
+        "explanation": "The unique integers covered by the intervals are 1, 2, 3, 4, 5, 6, 7, and 8."
+      },
+      {
+        "input": "intervals = [[1, 3], [4, 6], [2, 5]]",
+        "output": "5",
+        "explanation": "The unique integers covered are 1, 2, 3, 4, 5, and 6."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider merging overlapping intervals to count unique integers.",
+      "Use a data structure to keep track of all integers efficiently."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Recent Calls",
+    "description": "Design a class `RecentCounter` that counts the number of recent requests within a 3000 milliseconds time frame. Implement the following methods: `RecentCounter()` which initializes the counter, and `ping(int t)` which adds a new request at time `t` and returns the number of requests that occurred in the last 3000 milliseconds (including the new request). Assume that every call to `ping` uses a strictly positive integer as its parameter.",
+    "topic": "Queue",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Queue",
+      "Sliding Window",
+      "Design"
+    ],
+    "input_format": "A series of calls to the `ping` method, where each call provides an integer `t` representing the time in milliseconds.",
+    "output_format": "An integer representing the number of requests that have occurred in the last 3000 milliseconds.",
+    "constraints": [
+      "1 <= t <= 10^9",
+      "It is guaranteed that each call to `ping` will be made with a time greater than all previous calls."
+    ],
+    "examples": [
+      {
+        "input": "RecentCounter counter = new RecentCounter();\n counter.ping(1);\n counter.ping(100);\n counter.ping(3001);\n counter.ping(3002);",
+        "output": "3",
+        "explanation": "The calls to ping at times 1, 100, and 3001 are all within 3000 milliseconds of the last call at time 3002."
+      },
+      {
+        "input": "RecentCounter counter = new RecentCounter();\n counter.ping(1);\n counter.ping(2);\n counter.ping(3);\n counter.ping(4);",
+        "output": "4",
+        "explanation": "All pings are within 3000 milliseconds of each other."
+      },
+      {
+        "input": "RecentCounter counter = new RecentCounter();\n counter.ping(1);\n counter.ping(3002);\n counter.ping(3005);",
+        "output": "2",
+        "explanation": "The calls to ping at times 1 and 3002 are within 3000 milliseconds of 3005 but the first call at 1 is out of the 3000 ms range."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a queue to maintain the timestamps of pings.",
+      "Ensure to keep track of the time difference when counting recent calls."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Mountain in Array",
+    "description": "Given an array of integers, find the length of the longest mountain. A mountain is defined as a subarray that first increases and then decreases. The peak is the highest point, and a mountain must have at least three elements. Return 0 if there is no mountain in the array.",
+    "topic": "Array",
+    "subtopic": "Subarray",
+    "tags": [
+      "Array",
+      "Subarray",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest mountain.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 1, 1, 5, 6, 2, 3, 1]",
+        "output": "5",
+        "explanation": "The longest mountain is [1, 5, 6, 2, 3] with length 5."
+      },
+      {
+        "input": "nums = [2, 2, 2]",
+        "output": "0",
+        "explanation": "There are no mountains in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Look for the peak of a mountain first.",
+      "Use two pointers to expand from the peak outward.",
+      "A mountain must have at least three elements."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "First Missing Positive",
+    "description": "Given an unsorted integer array nums, find the smallest missing positive integer.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Search",
+      "Positive Integers"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the first missing positive integer.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, -1, 1]",
+        "output": "2",
+        "explanation": "The positive integers in this array are 1, 3, and 4. The smallest missing positive integer is 2."
+      },
+      {
+        "input": "nums = [1, 2, 0]",
+        "output": "3",
+        "explanation": "The positive integers in this array are 1 and 2. The smallest missing positive integer is 3."
+      },
+      {
+        "input": "nums = [7, 8, 9, 11, 12]",
+        "output": "1",
+        "explanation": "There are no positive integers 1, 2, 3, 4, 5, or 6 in this array, so the first missing positive integer is 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider modifying the input array to achieve O(n) time complexity.",
+      "Using index to mark the presence of numbers might be beneficial."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Second Degree Follower",
+    "description": "In a social network, each user can follow other users. A second degree follower of a user is defined as a user who is not followed by the given user directly, but is followed by someone whom that user is following. Given a list of pairs representing follower relationships and a target user, return a list of users who are second degree followers of the target user.",
+    "topic": "Graph",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "Traversal",
+      "Followers"
+    ],
+    "input_format": "A list of pairs of integers 'edges', where each pair (a, b) means user 'a' follows user 'b', and an integer 'target' representing the target user.",
+    "output_format": "A list of integers representing the second degree followers of the target user.",
+    "constraints": [
+      "1 <= edges.length <= 10^4",
+      "1 <= edges[i][0], edges[i][1], target <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "edges = [[1, 2], [1, 3], [2, 4], [3, 4]], target = 1",
+        "output": "[4]",
+        "explanation": "User 1 follows users 2 and 3. User 2 follows user 4, and user 3 also follows user 4; hence the second degree follower is user 4."
+      },
+      {
+        "input": "edges = [[1, 2], [2, 3], [3, 4]], target = 2",
+        "output": "[4]",
+        "explanation": "User 2 follows user 3, and user 3 follows user 4; thus, user 4 is a second degree follower of user 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a graph to represent the follower relationships.",
+      "Track direct followers first and then find users followed by those followers."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, given the intervals [[1,3],[2,6],[8,10],[15,18]], the merged intervals would be [[1,6],[8,10],[15,18]]. You should return the merged intervals in ascending order.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A 2D array of integers intervals where each interval is represented as [start, end].",
+    "output_format": "A 2D array of merged intervals.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they are merged into [1,6]. The other intervals do not overlap."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] touch at the endpoint and should be merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "First, sort the intervals by their start value.",
+      "Iterate through the intervals and merge them if they overlap."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Finding Pairs With a Certain Sum",
+    "description": "Given an array of integers and a target sum, determine how many unique pairs of integers in the array add up to the specified target sum. A pair is defined as two distinct integers, and the order of integers in the pair does not matter.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Hashmap"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An integer representing the number of unique pairs that sum up to the target.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "The target is a valid integer."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 3, 5], target = 6",
+        "output": "2",
+        "explanation": "The pairs (1, 5) and (2, 4) add up to 6. We don't count (3, 3) because it's not unique."
+      },
+      {
+        "input": "nums = [3, 3, 4, 5], target = 6",
+        "output": "1",
+        "explanation": "The only unique pair is (3, 3)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a HashSet to track encountered numbers.",
+      "A pair can be formed using two distinct elements from the array."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Find Peak Element",
+    "description": "A peak element in an array is an element that is greater than its neighbors. Given an array of integers, find any peak element in the array. The peak element can be at the beginning, the end, or in the middle of the array. You may assume that the input array is non-empty and contains at least one peak element.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Peak Finding"
+    ],
+    "input_format": "An array of integers 'nums'.",
+    "output_format": "An integer representing the peak element.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "3",
+        "explanation": "3 is a peak element because it is greater than its neighbor 2."
+      },
+      {
+        "input": "nums = [1, 2, 1, 3, 5, 6, 4]",
+        "output": "2",
+        "explanation": "2 is a peak element because it is greater than its neighbor 1."
+      },
+      {
+        "input": "nums = [1, 3, 2]",
+        "output": "3",
+        "explanation": "3 is a peak element because it is greater than its neighbor 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "You can use binary search to reduce the time complexity.",
+      "Consider the conditions of the neighbors when checking for a peak."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Find All Anagrams in a String",
+    "description": "Given a string `s` and a non-empty string `p`, return all the start indices of `p`'s anagrams in `s`. You may return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Anagram",
+      "Sliding Window"
+    ],
+    "input_format": "A string s and a string p.",
+    "output_format": "A list of integers representing the starting indices of p's anagrams in s.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "1 <= p.length <= 1000",
+      "s and p consist of lowercase letters only."
+    ],
+    "examples": [
+      {
+        "input": "s = \"cbaebabacd\", p = \"abc\"",
+        "output": "[0, 6]",
+        "explanation": "The substring starting at index 0 is \"cba\", which is an anagram of \"abc\". The substring starting at index 6 is \"bac\", which is also an anagram of \"abc\"."
+      },
+      {
+        "input": "s = \"abab\", p = \"ab\"",
+        "output": "[0, 1, 2]",
+        "explanation": "The substring starting at index 0 is \"ab\", which is an anagram of \"ab\". The substring starting at index 1 is \"ba\", which is also an anagram of \"ab\". The substring starting at index 2 is again \"ab\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a frequency count to track characters.",
+      "Compare counts in the sliding window of size p.length."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order. The spiral order starts from the top-left corner of the matrix, goes right until the end of the row, then goes down the last column, then goes left along the bottom row and finally goes up the first column, continuing this pattern until all elements are visited.",
+    "topic": "Matrix",
+    "subtopic": "Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Spiral"
+    ],
+    "input_format": "An m x n matrix represented as a 2D list of integers.",
+    "output_format": "A list of integers representing the elements of the matrix in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "m * n <= 10^4",
+      "-100 <= matrix[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The elements in spiral order are: 1, 2, 3, 6, 9, 8, 7, 4, 5."
+      },
+      {
+        "input": "matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]",
+        "output": "[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]",
+        "explanation": "The elements in spiral order are: 1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use four pointers to keep track of the boundaries of the current layer.",
+      "Iterate in the order of right, down, left, and up, adjusting the boundaries accordingly."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
+    "description": "Given an integer array nums and an integer limit, return the length of the longest subarray such that the absolute difference between any two elements in this subarray is less than or equal to limit.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums followed by an integer limit.",
+    "output_format": "An integer representing the length of the longest continuous subarray with the required property.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^9",
+      "0 <= limit <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [8, 2, 4, 7], limit = 4",
+        "output": "2",
+        "explanation": "The longest subarray with absolute difference <= 4 is [2, 4]."
+      },
+      {
+        "input": "nums = [10, 1, 2, 3, 4, 5], limit = 2",
+        "output": "4",
+        "explanation": "The longest subarray is [1, 2, 3, 4] with differences of at most 2."
+      },
+      {
+        "input": "nums = [4, 2, 2, 2, 4], limit = 0",
+        "output": "3",
+        "explanation": "The longest subarray with absolute difference of 0 is [2, 2, 2]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window approach to maintain the current valid subarray.",
+      "Use a data structure to easily access the minimum and maximum values in the current window."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Length of the Longest Common Prefix",
+    "description": "Write a function to find the length of the longest common prefix string among an array of strings. If there is no common prefix, return 0.",
+    "topic": "String",
+    "subtopic": "Prefix",
+    "tags": [
+      "String",
+      "Prefix",
+      "Searching"
+    ],
+    "input_format": "An array of strings strs where 0 <= strs.length <= 200 and 0 <= strs[i].length <= 200.",
+    "output_format": "An integer representing the length of the longest common prefix.",
+    "constraints": [
+      "0 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "All strings consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\", \"flow\", \"flight\"]",
+        "output": "2",
+        "explanation": "The longest common prefix is \"fl\"."
+      },
+      {
+        "input": "strs = [\"dog\", \"racecar\", \"car\"]",
+        "output": "0",
+        "explanation": "There is no common prefix among the strings."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the first string as a starting point for the prefix.",
+      "Iterate through the characters of the strings to find the common prefix."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Data Stream as Disjoint Intervals",
+    "description": "You are tasked with managing a data stream of integers. These integers can be added to a collection in real-time, and you need to maintain a list of disjoint intervals that represent the ranges of numbers added so far. When a new integer is added, it may either extend an existing interval, merge with an adjacent interval, or create a new interval. Your goal is to implement a function that tracks the intervals efficiently and outputs the current list of disjoint intervals after each insertion.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Intervals"
+    ],
+    "input_format": "A stream of integers, representing the numbers to be added to the collection.",
+    "output_format": "A list of disjoint intervals, where each interval is represented as a pair of integers [start, end].",
+    "constraints": [
+      "The stream can contain up to 10^6 integers.",
+      "-10^9 <= number <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "[1, 3, 7, 2, 6]",
+        "output": "[[1, 1], [2, 3], [6, 7]]",
+        "explanation": "The intervals after processing the stream are: [1, 1] for 1, [2, 3] for 2 and 3, and [6, 7] for 6 and 7."
+      },
+      {
+        "input": "[5, 1, 4, 2, 3, 6]",
+        "output": "[[1, 6]]",
+        "explanation": "All numbers from 1 to 6 form a continuous interval, hence they merge into one interval."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a balanced tree or a sorted list to maintain intervals.",
+      "You may need to merge intervals when a new number falls between existing intervals."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Profit in Job Scheduling",
+    "description": "You are given a list of jobs, where each job consists of a start time, end time, and profit associated with that job. Your goal is to maximize the total profit you can earn by scheduling non-overlapping jobs. You can only schedule one job at a time, and you must choose jobs such that their time intervals do not overlap. Write a function to determine the maximum profit you can achieve.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Interval Scheduling"
+    ],
+    "input_format": "A list of jobs, where each job is represented as a tuple (start, end, profit).",
+    "output_format": "An integer representing the maximum profit that can be earned by scheduling non-overlapping jobs.",
+    "constraints": [
+      "1 <= jobs.length <= 10^4",
+      "0 <= start < end <= 10^9",
+      "0 <= profit <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "jobs = [(1, 3, 50), (3, 5, 20), (5, 6, 100), (6, 9, 200)]",
+        "output": "270",
+        "explanation": "Schedule jobs (1, 3, 50), (5, 6, 100), (6, 9, 200). Total profit = 50 + 100 + 200 = 350."
+      },
+      {
+        "input": "jobs = [(1, 2, 1), (2, 3, 2), (3, 4, 3)]",
+        "output": "6",
+        "explanation": "Schedule all jobs since they do not overlap. Total profit = 1 + 2 + 3 = 6."
+      },
+      {
+        "input": "jobs = [(1, 4, 3), (2, 3, 2), (3, 5, 5), (6, 7, 4)]",
+        "output": "7",
+        "explanation": "Schedule jobs (2, 3, 2) and (3, 5, 5). Total profit = 2 + 5 = 7."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider sorting the jobs based on their end time.",
+      "Use dynamic programming to build up the maximum profit solution.",
+      "Look for the last non-conflicting job when considering a job."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Web Crawler",
+    "description": "Write a web crawler that starts from a given URL and extracts all unique URLs found on the webpage. The crawler should be able to traverse multiple levels of links as long as the depth does not exceed a specified limit. Ensure that the crawler handles both HTTP and HTTPS protocols, and only follows links that belong to the same domain as the starting URL.",
+    "topic": "Networking",
+    "subtopic": "Web Crawling",
+    "tags": [
+      "Networking",
+      "Web Crawling",
+      "Depth First Search"
+    ],
+    "input_format": "A string 'start_url' representing the starting URL and an integer 'max_depth' representing the maximum depth to crawl.",
+    "output_format": "A list of unique URLs found during the crawl.",
+    "constraints": [
+      "1 <= start_url.length <= 1000",
+      "1 <= max_depth <= 10"
+    ],
+    "examples": [
+      {
+        "input": {
+          "start_url": "http://example.com",
+          "max_depth": 2
+        },
+        "output": [
+          "http://example.com",
+          "http://example.com/about",
+          "http://example.com/contact"
+        ],
+        "explanation": "The crawler starts from 'http://example.com' and finds links to 'about' and 'contact' pages within depth 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a queue to manage the URLs to explore.",
+      "Store visited URLs in a set to avoid duplicates.",
+      "Use a library to handle HTTP requests and parsing HTML."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule II",
+    "description": "There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. Some courses may have prerequisites, forming a directed graph where an edge from course a to course b indicates that course a must be taken before course b. Given the total number of courses and a list of prerequisite pairs, return the ordering of courses you should take to finish all courses. If it is impossible to finish all courses, return an empty array. The order of courses in the result should be a valid topological sorting of the graph represented by the courses and their prerequisites.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "An integer numCourses representing the number of courses and an array prerequisites where prerequisites[i] = [a, b] indicates that taking course a is a prerequisite for taking course b.",
+    "output_format": "An array of integers representing the order of courses taken. If no such order exists, return an empty array.",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2",
+      "All prerequisite pairs are distinct."
+    ],
+    "examples": [
+      {
+        "input": "numCourses = 4, prerequisites = [[1,0],[2,1],[3,2]]",
+        "output": "[0,1,2,3]",
+        "explanation": "Taking course 0 allows us to take course 1, taking course 1 allows us to take course 2, which allows us to take course 3."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "[]",
+        "explanation": "It is impossible to complete the courses since they form a cycle."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS or BFS to perform topological sorting.",
+      "Keep track of the number of prerequisites for each course."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Accounts Merge",
+    "description": "You are given a list of accounts, where each account is represented as a list of strings. The first string is the name of the account owner, followed by their email addresses. Two accounts are considered the same if they have the same owner name and at least one email address in common. Merge all accounts that are the same into a single account, removing duplicate emails (keeping only the unique emails). The merged account should be represented with the owner's name followed by the sorted list of unique emails.",
+    "topic": "Graph",
+    "subtopic": "Union Find",
+    "tags": [
+      "Graph",
+      "Union Find",
+      "String"
+    ],
+    "input_format": "A list of lists, where each inner list contains strings representing the account owner's name followed by their email addresses.",
+    "output_format": "A list of lists, with each inner list containing the owner\u2019s name followed by the sorted unique email addresses.",
+    "constraints": [
+      "1 <= accounts.length <= 100",
+      "2 <= accounts[i].length <= 100",
+      "1 <= accounts[i][j].length <= 30"
+    ],
+    "examples": [
+      {
+        "input": "[[\"John\", \"johnsmith@mail.com\", \"john00@mail.com\"], [\"John\", \"johnnybravo@mail.com\"], [\"John\", \"johnsmith@mail.com\", \"john_newyork@mail.com\"]]",
+        "output": "[[\"John\", \"john00@mail.com\", \"john_newyork@mail.com\", \"johnsmith@mail.com\"], [\"John\", \"johnnybravo@mail.com\"]]",
+        "explanation": "The first and third accounts are merged because they share the email 'johnsmith@mail.com'. The merged account is then sorted."
+      },
+      {
+        "input": "[[\"Mary\", \"mary@mail.com\"], [\"John\", \"john@mail.com\", \"john@doe.com\"]]",
+        "output": "[[\"John\", \"john@mail.com\", \"john@doe.com\"], [\"Mary\", \"mary@mail.com\"]]",
+        "explanation": "The accounts do not share any email addresses and remain separate."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a union-find data structure.",
+      "Utilize a map to track email connections."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Design A Leaderboard",
+    "description": "You are tasked with designing a leaderboard that can keep track of scores, and support operations such as adding scores, getting the rank of a user, and resetting scores. Your leaderboard should have the following functionalities:\n\n1. `addScore(username: str, score: int)`: Add a score for the given user. If the user does not exist, create a new user entry.\n2. `getRank(username: str) -> int`: Get the current rank of the user. The rank is calculated based on the total scores, with the highest score being rank 1.\n3. `reset(username: str)`: Reset the score of the specified user to zero.\n\nYou may assume that the number of users will not exceed 1000, and that all usernames are unique.",
+    "topic": "Design",
+    "subtopic": "Leaderboard",
+    "tags": [
+      "Design",
+      "Leaderboard",
+      "Data Structure"
+    ],
+    "input_format": "Operations to perform on the leaderboard.",
+    "output_format": "Results of the getRank operations.",
+    "constraints": [
+      "1 <= score <= 10^4",
+      "1 <= total number of users <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "addScore('Alice', 50); addScore('Bob', 30); getRank('Alice');",
+        "output": "1",
+        "explanation": "Alice has a score of 50, which is higher than Bob's score of 30, hence Alice's rank is 1."
+      },
+      {
+        "input": "addScore('Alice', 50); addScore('Bob', 30); addScore('Alice', 50); getRank('Bob');",
+        "output": "2",
+        "explanation": "After adding 50 to Alice's score, her total is 100, making her rank 1. Bob remains at rank 2."
+      },
+      {
+        "input": "addScore('Charlie', 20); reset('Alice'); getRank('Alice');",
+        "output": "0",
+        "explanation": "After resetting Alice's score, she has no score and thus has no rank."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dictionary to store scores.",
+      "You may want to sort user scores when retrieving ranks."
+    ],
+    "company": "Databricks"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Path in a Grid with Obstacles Elimination",
+    "description": "You are given a grid of size m x n, where each cell can either be an obstacle (1) or free (0). You are initially positioned at the top-left corner (0, 0) and you want to reach the bottom-right corner (m - 1, n - 1). However, you can eliminate up to k obstacles. You can move up, down, left, or right. Your task is to return the length of the shortest path from the top-left to the bottom-right corner in the grid after eliminating at most k obstacles. If it is not possible to reach the bottom-right corner, return -1.",
+    "topic": "Graph",
+    "subtopic": "Shortest Path",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Shortest Path"
+    ],
+    "input_format": "A grid represented by a 2D array of integers and an integer k.",
+    "output_format": "An integer representing the length of the shortest path.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 40",
+      "grid[i][j] is 0 or 1.",
+      "0 <= k <= m * n"
+    ],
+    "examples": [
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "k": 1
+        },
+        "output": 4,
+        "explanation": "The shortest path is: (0,0) -> (0,1) -> (0,2) -> (1,2) -> (2,2)."
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "k": 1
+        },
+        "output": -1,
+        "explanation": "It is not possible to reach the bottom-right corner."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using BFS for shortest path exploration.",
+      "Keep track of obstacles eliminated and ensure bounds are respected.",
+      "Use a priority queue to optimize your path selection."
+    ],
+    "company": "Databricks"
+  }
+]

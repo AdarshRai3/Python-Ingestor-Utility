@@ -1,0 +1,2015 @@
+[
+  {
+    "question_id": "",
+    "title": "Flatten Nested List Iterator",
+    "description": "You are given a nested list of integers. Each element in the nested list could be either an integer or another nested list. Your task is to implement an iterator that flattens this nested list upon initialization, allowing you to iterate over the integers in a one-dimensional manner. The iterator should support the 'next()' and 'hasNext()' methods. The 'next()' method should return the next integer in the flattened order, while 'hasNext()' should return true if there are more elements to iterate over.",
+    "topic": "Design",
+    "subtopic": "Iterator",
+    "tags": [
+      "Design",
+      "Iterator",
+      "Nested List"
+    ],
+    "input_format": "A nested list of integers where each element is either an integer or another list of integers.",
+    "output_format": "Use the 'next()' method to get the next integer and 'hasNext()' method to check if there are more integers.",
+    "constraints": [
+      "The nested list will not exceed 1000 elements.",
+      "Each integer will be in the range of [-10^6, 10^6]."
+    ],
+    "examples": [
+      {
+        "input": "[1, [2, [3]], 4]",
+        "output": "[1, 2, 3, 4]",
+        "explanation": "The nested list is flattened to [1, 2, 3, 4]."
+      },
+      {
+        "input": "[[1, 1], 2, [1, 1]]",
+        "output": "[1, 1, 2, 1, 1]",
+        "explanation": "The nested list is flattened to [1, 1, 2, 1, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to maintain the current position in the nested list.",
+      "Handle the case where a list is encountered by pushing its elements onto the stack."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the heights of bars in a histogram, compute how much water can be trapped between the bars after it rains. The water trapped on top of the ith bar is determined by how tall the tallest bars to the left and right of it are.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers representing the heights of the bars.",
+    "output_format": "An integer representing the total units of water trapped.",
+    "constraints": [
+      "0 <= heights.length <= 2 * 10^4",
+      "0 <= heights[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water can be trapped on top of bars with heights 1, 2, and 1, resulting in a total of 6 units."
+      },
+      {
+        "input": "heights = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "Water can be trapped between the bars at heights 4, 2, 3, and 5, totaling 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how water is trapped between the tallest bars on both sides.",
+      "Using two pointers can help manage the left and right boundaries."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Design Twitter",
+    "description": "Design a simplified Twitter-like platform where users can post tweets, follow other users, and see the latest tweets from the users they follow. Your implementation should support the following operations:\n\n1. **PostTweet(userId, tweetId)**: Compose a new tweet.\n2. **GetNewsFeed(userId)**: Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be tweets from users the user followed, plus the user's own tweets.\n3. **Follow(followerId, followeeId)**: Simulate a user following another user.\n4. **Unfollow(followerId, followeeId)**: Simulate a user unfollowing another user. A user cannot unfollow themselves.\n\nNote that the order of tweets in the news feed should be in reverse chronological order (most recent first).",
+    "topic": "Design",
+    "subtopic": "System Design",
+    "tags": [
+      "Design",
+      "Twitter",
+      "System Design"
+    ],
+    "input_format": "Methods to execute with respective arguments.",
+    "output_format": "List of tweet IDs for GetNewsFeed operation.",
+    "constraints": [
+      "The number of tweets and users for the simulation will not exceed 10^4.",
+      "Tweet IDs and User IDs will be unique integers."
+    ],
+    "examples": [
+      {
+        "input": [
+          "PostTweet(1, 5)",
+          "GetNewsFeed(1)",
+          "PostTweet(2, 6)",
+          "Follow(1, 2)",
+          "GetNewsFeed(1)"
+        ],
+        "output": [
+          [],
+          [
+            5
+          ],
+          [],
+          [],
+          [
+            6,
+            5
+          ]
+        ],
+        "explanation": "Initially, User 1 posts tweet 5. When User 1 requests their news feed, they see tweet 5. Then User 2 posts tweet 6, and User 1 follows User 2. User 1's subsequent news feed includes tweets 6 and 5, with 6 being the most recent."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a data structure to store users and their tweets.",
+      "Consider using a priority queue for retrieving the most recent tweets."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Tweet Counts Per Frequency",
+    "description": "Design a system that records the number of tweets sent per user over a given period of time, categorized by hourly, daily, or monthly frequencies. Your system should allow for the addition of tweets with a provided timestamp and retrieve the number of tweets sent by a user in the specified frequency.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Twitter"
+    ],
+    "input_format": "Two types of method calls: 1) addTweet(username, timestamp) where username is a string and timestamp is a non-negative integer representing the number of seconds since the epoch; 2) getTweetCountsPerFrequency(freq, username, startTime, endTime) where freq is one of 'hour', 'day', or 'month', and startTime and endTime are non-negative integers.",
+    "output_format": "A list of integers representing the number of tweets per specified frequency.",
+    "constraints": [
+      "The number of tweets will not exceed 10^4.",
+      "Timestamps are given in seconds.",
+      "0 <= startTime <= endTime <= 10^9."
+    ],
+    "examples": [
+      {
+        "input": "addTweet('user1', 1);\naddTweet('user1', 2);\naddTweet('user1', 60);\ngetTweetCountsPerFrequency('hour', 'user1', 1, 60)",
+        "output": "[3]",
+        "explanation": "For 'user1', there are 3 tweets in the first hour, corresponding to timestamps 1, 2, and 60."
+      },
+      {
+        "input": "addTweet('user2', 300);\naddTweet('user2', 300);\naddTweet('user2', 600);\ngetTweetCountsPerFrequency('day', 'user2', 0, 86400)",
+        "output": "[3]",
+        "explanation": "For 'user2', all three tweets occur within the same day."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to store user tweets with their timestamps.",
+      "Consider edge cases with overlapping time intervals."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, if the input intervals are [[1,3],[2,6],[8,10],[15,18]], the merged intervals are [[1,6],[8,10],[15,18]]. You need to return the merged list of intervals sorted by their start time.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Merging"
+    ],
+    "input_format": "A 2D array of 'intervals' where each interval is represented as an array of two integers [start, end].",
+    "output_format": "A 2D array representing the merged intervals.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they are merged into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] touch each other and should be merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on their start times.",
+      "Use a new list to keep track of merged intervals."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Trie (Prefix Tree)",
+    "description": "Implement a trie with insert, search, and startsWith methods. A trie (pronounced as 'try') is a special type of tree used to store associative data structures. A common application of a trie is storing a predictive text or autocomplete dictionary. Implement the following methods for the trie:\n\n1. **insert(word: str)**: Inserts the string `word` into the trie.\n2. **search(word: str) -> bool**: Returns `true` if the string `word` is in the trie (i.e. was inserted before), and `false` otherwise.\n3. **startsWith(prefix: str) -> bool**: Returns `true` if there is a previously inserted string `word` that starts with the given `prefix`, and `false` otherwise.",
+    "topic": "Data Structure",
+    "subtopic": "Tries",
+    "tags": [
+      "Trie",
+      "Data Structure",
+      "Tree"
+    ],
+    "input_format": "Various methods will receive a string as an input.",
+    "output_format": "Each method returns a boolean value for search and startsWith, and nothing for insert.",
+    "constraints": [
+      "1 <= word.length <= 200",
+      "All strings consist of lowercase English letters.",
+      "At most 10^4 calls will be made to insert, search, and startsWith."
+    ],
+    "examples": [
+      {
+        "input": "Insert 'apple', Search 'apple', Search 'app', StartsWith 'app'",
+        "output": "[null, true, false, true]",
+        "explanation": "After inserting 'apple', searching for 'apple' returns true. Searching for 'app' returns false as it was not inserted but 'app' is a valid prefix of 'apple'."
+      },
+      {
+        "input": "Insert 'banana', Search 'ban', StartsWith 'ban'",
+        "output": "[null, false, true]",
+        "explanation": "'ban' was not inserted, but 'ban' is a valid prefix of 'banana'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a map to represent the children of each node.",
+      "Each node can store a flag to indicate if a word ends at that node."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Best Meeting Point",
+    "description": "Given a 2D grid where each cell represents a person's location, find the best meeting point that minimizes the total distance traveled by all people. Assume that each person can move to any adjacent cell in one unit of time. Return the minimum total distance of all individuals to this meeting point. If multiple meeting points yield the same distance, return the one with the smallest coordinates.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Distance"
+    ],
+    "input_format": "A 2D array of integers grid where grid[i][j] represents the location of a person with value 1. A cell with value 0 is empty.",
+    "output_format": "An integer representing the minimum total distance to the best meeting point.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,0,0],[0,1,0],[0,0,1]]",
+        "output": "6",
+        "explanation": "The best meeting point is (1, 1) with the total distance of 6."
+      },
+      {
+        "input": "grid = [[1,0,0,0],[0,0,0,1],[0,0,0,0]]",
+        "output": "8",
+        "explanation": "The best meeting point is (1, 1) again, with total distances sum to 8."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a BFS or DFS approach to calculate distances from each person.",
+      "Consider the coordinates and how to optimize the meeting point."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that implements a Least Recently Used (LRU) cache. It should support the following operations: get and put. The get function retrieves a value from the cache. If the value does not exist, return -1. The put function adds a new key-value pair to the cache. If the cache reaches its capacity, it should invalidate the least recently used item before adding the new item. The cache should be initialized with a positive capacity.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Cache",
+      "LRU",
+      "Design",
+      "Data Structures"
+    ],
+    "input_format": "A series of commands to interact with the LRU Cache such as 'put(key, value)' and 'get(key)'.",
+    "output_format": "Return the value associated with the key if it exists, or -1 if it doesn't.",
+    "constraints": [
+      "The capacity of the cache is a positive integer.",
+      "1 <= key, value <= 10^4.",
+      "The number of calls to get and put will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "cache = LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2);",
+        "output": "1, -1",
+        "explanation": "Cache is filled with {1=1, 2=2}. Getting 1 returns 1. Adding 3 evicts key 2. Getting 2 returns -1."
+      },
+      {
+        "input": "cache = LRUCache(1); cache.put(1, 10); cache.get(1); cache.put(2, 20); cache.get(1);",
+        "output": "10, -1",
+        "explanation": "Cache can hold one item. Storing (1,10) and retrieving gives 10. Adding (2,20) evicts (1,10)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using an ordered dictionary or a linked list with a hashmap.",
+      "Maintain a doubly linked list for tracking the order of usage of keys."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Investments in 2016",
+    "description": "You are given a list of investments made during the year 2016. Each investment has a corresponding value and a year in which it was made. Your task is to calculate the total returns on all investments made in 2016, given that each investment earns a fixed interest rate over the year. If an investment has a value of 0, it is considered invalid and should not contribute to the total. The interest rate is provided as an input. Return the final returns rounded to two decimal places.",
+    "topic": "Finance",
+    "subtopic": "Investment Calculations",
+    "tags": [
+      "Finance",
+      "Investments",
+      "Calculations"
+    ],
+    "input_format": "A list of integers 'investments' representing the values of the investments, followed by a float 'interest_rate' indicating the fixed interest rate.",
+    "output_format": "A float representing the total returns on investments made in 2016, rounded to two decimal places.",
+    "constraints": [
+      "1 <= investments.length <= 10^5",
+      "-10^5 <= investments[i] <= 10^5",
+      "0 <= interest_rate <= 100.0"
+    ],
+    "examples": [
+      {
+        "input": "investments = [1000, 2000, 0, 1500], interest_rate = 5.0",
+        "output": "3150.00",
+        "explanation": "Only investments of 1000 and 2000 are valid. The total returns are (1000 * 1.05) + (2000 * 1.05) = 3150.00."
+      },
+      {
+        "input": "investments = [0, 0, 0], interest_rate = 10.0",
+        "output": "0.00",
+        "explanation": "All investments are invalid (0), so the total returns are 0.00."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "You can ignore investments with a value of 0.",
+      "Calculate returns with the formula: final_value = original_value * (1 + interest_rate / 100)."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Customer Placing the Largest Number of Orders",
+    "description": "You are provided with a list of customer orders, where each order contains a customer ID. Your goal is to identify the customer who has placed the largest number of orders. If there are multiple customers with the same number of orders, return any one of them. Implement a function that takes a list of customer IDs and returns the customer ID of the one with the highest order count.",
+    "topic": "Hash Table",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Hash Table",
+      "Counting",
+      "Customer Orders"
+    ],
+    "input_format": "A list of strings representing customer IDs.",
+    "output_format": "A string representing the customer ID of the one who placed the largest number of orders.",
+    "constraints": [
+      "1 <= orders.length <= 10^5",
+      "1 <= length of orders[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "orders = ['A', 'B', 'A', 'C', 'B', 'A']",
+        "output": "'A'",
+        "explanation": "'A' has placed 3 orders, which is the highest count."
+      },
+      {
+        "input": "orders = ['X', 'Y', 'X', 'Z', 'Y', 'Z', 'Y']",
+        "output": "'Y'",
+        "explanation": "'Y' has placed 3 orders, while 'X' and 'Z' have placed 2 each."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hashmap to count the occurrences of each customer ID.",
+      "Track the maximum count while iterating over the hashmap."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Genetic Mutation",
+    "description": "A gene can be represented as a string consisting of the characters 'A', 'C', 'G', and 'T'. A gene mutation is an operation that changes one character in the string to another character. Given a start gene string 'start' and a target gene string 'end', along with a list of allowed mutation strings 'bank', your task is to determine the minimum number of mutations required to transform 'start' into 'end'. If it is not possible to transform 'start' into 'end' using the allowed mutations, return -1.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "String"
+    ],
+    "input_format": "A string 'start', a string 'end', and an array of strings 'bank'.",
+    "output_format": "An integer representing the minimum number of mutations required.",
+    "constraints": [
+      "1 <= start.length <= 8",
+      "1 <= end.length <= 8",
+      "1 <= bank.length <= 200",
+      "Each string in bank is of the same length as start and end.",
+      "start, end, and all strings in bank consist of the characters 'A', 'C', 'G', 'T'."
+    ],
+    "examples": [
+      {
+        "input": "start = \"AACCGGTT\", end = \"AACCGGTA\", bank = [\"AACCGGTA\"]",
+        "output": "1",
+        "explanation": "We can mutate the last 'T' to 'A' in one operation."
+      },
+      {
+        "input": "start = \"AACCGGTT\", end = \"AACCGGTA\", bank = [\"AACCGGTA\", \"AACCGCTA\", \"AACCGTAA\"]",
+        "output": "2",
+        "explanation": "We can mutate to 'AACCGCTA' (1 mutation) and then to 'AACCGGTA' (2 mutations total)."
+      },
+      {
+        "input": "start = \"AAAAACCC\", end = \"AACCCCCC\", bank = [\"AAAACCCC\", \"AAACCCCC\", \"AACCCCCC\"]",
+        "output": "3",
+        "explanation": "We can mutate through 'AAAACCCC' -> 'AAACCCCC' -> 'AACCCCCC' in three mutations."
+      },
+      {
+        "input": "start = \"AAAAACCC\", end = \"AACCCCCC\", bank = [\"AAAACCCC\", \"AAACCCCC\"]",
+        "output": "-1",
+        "explanation": "It's not possible to mutate 'start' into 'end' using the given bank."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a breadth-first search (BFS) to explore the mutations.",
+      "Track the number of mutations as you progress through the gene strings.",
+      "Remember to check if a mutated gene exists in the bank."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Steps to Make Two Strings Anagram",
+    "description": "Given two strings s1 and s2, return the minimum number of steps required to make s1 and s2 anagrams of each other. A step is defined as deleting one character in either string. Two strings are anagrams of each other if they can be rearranged to form each other.",
+    "topic": "String",
+    "subtopic": "Anagrams",
+    "tags": [
+      "String",
+      "Anagram",
+      "Greedy",
+      "Hash Table"
+    ],
+    "input_format": "Two strings s1 and s2, where 1 <= s1.length, s2.length <= 10^5.",
+    "output_format": "An integer representing the minimum number of steps needed to make the strings anagrams.",
+    "constraints": [
+      "1 <= s1.length, s2.length <= 10^5",
+      "s1 and s2 consist of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "s1 = \"anagram\", s2 = \"manga\"",
+        "output": "3",
+        "explanation": "To make s1 and s2 anagrams, we can remove 'a', 'n', and 'g' from s1, which leads to 'ram' becoming 'manga'."
+      },
+      {
+        "input": "s1 = \"hello\", s2 = \"billion\"",
+        "output": "7",
+        "explanation": "We need to delete 'h', 'e', 'l', 'l', 'o' from s1 and 'b', 'i', 'l', 'l', 'i', 'o', 'n' from s2, resulting in both strings becoming empty."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count the frequency of each character in both strings.",
+      "Calculate the difference in character counts to find the total deletions needed."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Validate IP Address",
+    "description": "Given a string s, determine if it is a valid IPv4 or IPv6 address. A valid IPv4 address is formatted as four decimal numbers separated by dots (e.g., '192.168.1.1'), with each segment taking values between 0 and 255. A valid IPv6 address consists of eight groups of four hexadecimal digits separated by colons (e.g., '2001:0db8:85a3:0000:0000:8a2e:0370:7334'). If the address is valid, return 'IPv4' or 'IPv6'. If neither, return 'Neither'.",
+    "topic": "String",
+    "subtopic": "Validation",
+    "tags": [
+      "String",
+      "Validation",
+      "IP Address"
+    ],
+    "input_format": "A single string s representing the IP Address.",
+    "output_format": "A string indicating whether the IP address is 'IPv4', 'IPv6', or 'Neither'.",
+    "constraints": [
+      "1 <= s.length <= 40"
+    ],
+    "examples": [
+      {
+        "input": "s = '192.168.1.1'",
+        "output": "'IPv4'",
+        "explanation": "This IP address is valid as it contains four segments, each ranging from 0 to 255."
+      },
+      {
+        "input": "s = '2001:0db8:85a3:0000:0000:8a2e:0370:7334'",
+        "output": "'IPv6'",
+        "explanation": "This IP address is valid as it consists of eight groups of four hexadecimal digits."
+      },
+      {
+        "input": "s = '256.256.256.256'",
+        "output": "'Neither'",
+        "explanation": "This IP address is invalid because the segments exceed the maximum value of 255."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use string split functions to divide the address into segments.",
+      "Check each segment of IPv4 to ensure it\u2019s within range.",
+      "For IPv6 segments, ensure they contain valid hexadecimal characters."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Count Student Number in Departments",
+    "description": "You are given a list of student records, where each record consists of a student ID and a department name. Your task is to count the number of students in each department. The records may contain duplicate student IDs, so ensure that each student is counted only once per department.",
+    "topic": "Hash Table",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Hash Table",
+      "Counting",
+      "Sets"
+    ],
+    "input_format": "A list of student records, where each record is a tuple (student_id, department_name).",
+    "output_format": "A dictionary where the keys are department names and the values are the number of unique students in each department.",
+    "constraints": [
+      "1 <= records.length <= 10^5",
+      "1 <= student_id <= 10^9",
+      "1 <= department_name.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "[('1', 'CS'), ('2', 'CS'), ('1', 'CS'), ('3', 'EE'), ('4', 'EE'), ('5', 'ME')]",
+        "output": "{'CS': 2, 'EE': 2, 'ME': 1}",
+        "explanation": "In the CS department, there are students with IDs 1 and 2 (ID 1 is counted once). In the EE department, there are IDs 3 and 4, each counted once. In the ME department, only ID 5 is present."
+      },
+      {
+        "input": "[('1', 'Math'), ('2', 'Math'), ('2', 'Science'), ('3', 'Math'), ('1', 'Science')]",
+        "output": "{'Math': 3, 'Science': 2}",
+        "explanation": "In the Math department, IDs 1, 2, and 3 are unique. In Science, IDs 2 and 1 are unique."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a set to track unique student IDs in each department.",
+      "Consider using a default dictionary to simplify counting."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Rectangles Area",
+    "description": "Given the coordinates of two rectangles on a 2D plane, determine the area of their overlap. Each rectangle is defined by the coordinates of its bottom-left and top-right corners. Your task is to calculate the area covered by both rectangles. If the rectangles do not overlap, the area should return 0.",
+    "topic": "Geometry",
+    "subtopic": "Rectangle Intersection",
+    "tags": [
+      "Geometry",
+      "Rectangles",
+      "Area"
+    ],
+    "input_format": "Four integers x1, y1, x2, y2 representing the bottom-left and top-right corners of the first rectangle, and four integers x3, y3, x4, y4 for the second rectangle.",
+    "output_format": "An integer representing the area of overlap between the two rectangles.",
+    "constraints": [
+      "-10^4 <= x1 < x2 <= 10^4",
+      "-10^4 <= y1 < y2 <= 10^4",
+      "-10^4 <= x3 < x4 <= 10^4",
+      "-10^4 <= y3 < y4 <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "x1 = 0, y1 = 0, x2 = 2, y2 = 2, x3 = 1, y3 = 1, x4 = 3, y4 = 3",
+        "output": "1",
+        "explanation": "The overlapping area is a square from (1,1) to (2,2), which has an area of 1."
+      },
+      {
+        "input": "x1 = 0, y1 = 0, x2 = 1, y2 = 1, x3 = 1, y3 = 1, x4 = 2, y4 = 2",
+        "output": "0",
+        "explanation": "The rectangles do not overlap at all."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider finding the overlapping rectangle's coordinates.",
+      "Use max and min functions to determine the edges of the overlapping area."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Invalid Tweets",
+    "description": "You are tasked with validating a list of tweets. A tweet is considered invalid if it exceeds 280 characters, contains any offensive words, or has URLs (indicated by 'http' or 'https'). Your job is to write a function that checks a given list of tweets and returns a list of boolean values indicating whether each tweet is valid or not.",
+    "topic": "String",
+    "subtopic": "Validation",
+    "tags": [
+      "String",
+      "Validation",
+      "Boolean"
+    ],
+    "input_format": "A list of strings, where each string represents a tweet.",
+    "output_format": "A list of booleans where each boolean indicates the validity of the corresponding tweet.",
+    "constraints": [
+      "1 <= tweets.length <= 1000",
+      "1 <= length of each tweet <= 1000",
+      "Offensive words are defined in a predefined list."
+    ],
+    "examples": [
+      {
+        "input": [
+          "This is a valid tweet.",
+          "http://example.com",
+          "This tweet contains an offensive word."
+        ],
+        "output": [
+          true,
+          false,
+          false
+        ],
+        "explanation": "The first tweet is valid. The second tweet contains a URL and is thus invalid. The third tweet contains offensive content and is invalid."
+      },
+      {
+        "input": [
+          "Just another day in paradise!",
+          "Check this out: https://example.com",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        ],
+        "output": [
+          true,
+          false,
+          false
+        ],
+        "explanation": "The first tweet is valid. The second tweet contains a URL and is thus invalid. The third tweet exceeds the character limit of 280, making it invalid."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check the length of each tweet first.",
+      "Look for the substrings 'http' or 'https' to identify URLs.",
+      "Cross-reference tweets against a list of offensive words."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Tree Node",
+    "description": "Given a binary tree node, implement a function that returns the height of the tree. The height of a tree is defined as the number of edges in the longest path from the root node to a leaf node.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Recursion"
+    ],
+    "input_format": "A binary tree node represented as a TreeNode object, where each node contains an integer value and two children nodes.",
+    "output_format": "An integer representing the height of the tree.",
+    "constraints": [
+      "0 <= number of nodes <= 10^4",
+      "Node values are integers between -10^4 and 10^4."
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4, null, null, null]",
+        "output": "2",
+        "explanation": "The height of the tree is 2. The longest path is from node 1 to node 4."
+      },
+      {
+        "input": "root = [1]",
+        "output": "0",
+        "explanation": "The height of the tree is 0, as there are no edges."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a recursive approach to calculate the height.",
+      "The height of a node is 1 plus the maximum height of its children."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Black Blocks",
+    "description": "You are given a 2D grid consisting of 'B' (representing black blocks) and 'W' (representing white blocks). Your task is to find the total number of black blocks in the grid. The grid may have varying dimensions. Return the count of 'B' blocks in the grid.",
+    "topic": "Matrix",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Matrix",
+      "Counting",
+      "Grid"
+    ],
+    "input_format": "A 2D array of characters representing the grid.",
+    "output_format": "An integer representing the total number of 'B' blocks in the grid.",
+    "constraints": [
+      "1 <= grid.length <= 100",
+      "1 <= grid[i].length <= 100",
+      "grid[i][j] can only be 'B' or 'W'."
+    ],
+    "examples": [
+      {
+        "input": "[['B', 'W', 'B'], ['W', 'B', 'W'], ['B', 'B', 'W']]",
+        "output": "5",
+        "explanation": "There are 5 'B' blocks in the grid."
+      },
+      {
+        "input": "[['W', 'W'], ['W', 'W']]",
+        "output": "0",
+        "explanation": "There are no 'B' blocks in the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Loop through each row and then each column to count 'B' blocks."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Masking Personal Information",
+    "description": "You are tasked with masking personal information in a given string. The input string may contain a person's name, email address, or phone number, and your goal is to return a formatted string where personal details are appropriately masked. For names, replace all but the first and last letters with asterisks. For email addresses, mask everything before the '@' with asterisks, while keeping the domain intact. For phone numbers, replace all digits except the last four with asterisks.",
+    "topic": "String Manipulation",
+    "subtopic": "Masking Information",
+    "tags": [
+      "String",
+      "Masking",
+      "Regular Expressions"
+    ],
+    "input_format": "A string containing personal information.",
+    "output_format": "A string with personal information masked as per the rules specified.",
+    "constraints": [
+      "The input string will contain at least one personal detail.",
+      "The length of the input string will be between 1 and 1000 characters."
+    ],
+    "examples": [
+      {
+        "input": "John Doe, Email: john.doe@example.com, Phone: 123-456-7890",
+        "output": "J*** D***, Email: ******@example.com, Phone: ***-***-7890",
+        "explanation": "The first name is masked to 'J***' and last name to 'D***'. The email is masked to '******@example.com' and the phone number is masked to '***-***-7890'."
+      },
+      {
+        "input": "Contact: jane_smith123@gmail.com, Call: (555) 123-4567",
+        "output": "Contact: ******@gmail.com, Call: (***) ***-4567",
+        "explanation": "The email is masked to '******@gmail.com' and the phone number is masked to '( ***) ***-4567'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to use string replacement effectively.",
+      "Consider regular expressions for identifying patterns in strings.",
+      "Pay attention to different formats of phone numbers."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Design Authentication Manager",
+    "description": "You are tasked with designing an Authentication Manager that will manage session tokens for user authentication. The Authentication Manager should support the following operations: createSession(token, timeToLive), renewSession(token, timeToLive), and countUnexpiredSessions(). A session is created with a token and a time-to-live value (TTL) in seconds, after which it expires. Renewing a session reassigns the TTL to the existing session. Your task is to implement the Authentication Manager with the specified methods.",
+    "topic": "Design",
+    "subtopic": "System Design",
+    "tags": [
+      "Design",
+      "System Design",
+      "Authentication"
+    ],
+    "input_format": "A series of operations on the Authentication Manager using the specified methods.",
+    "output_format": "An integer representing the count of unexpired sessions.",
+    "constraints": [
+      "All token strings are unique and contain lowercase letters.",
+      "1 <= timeToLive <= 10^6",
+      "The total number of operations will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "createSession('session1', 5), renewSession('session1', 2), countUnexpiredSessions()",
+        "output": "1",
+        "explanation": "Only one session is active and has not expired."
+      },
+      {
+        "input": "createSession('session2', 3), createSession('session3', 5), countUnexpiredSessions()",
+        "output": "2",
+        "explanation": "Both sessions were created and are still valid."
+      },
+      {
+        "input": "createSession('session4', 2), countUnexpiredSessions(), sleep(3), countUnexpiredSessions()",
+        "output": "1",
+        "explanation": "After sleeping for 3 seconds, session4 has expired."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a data structure to store active sessions.",
+      "Consider using a dictionary to map tokens to their expiration times.",
+      "When counting unexpired sessions, check their current status against the current time."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Elements to Add to Form a Given Sum",
+    "description": "Given an array of integers and a target sum, determine the minimum number of elements that need to be added from the array such that their sum is equal to the target sum. If it is not possible to form the target sum with the given elements, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum",
+    "tags": [
+      "Dynamic Programming",
+      "Subset Sum",
+      "Greedy"
+    ],
+    "input_format": "An integer array `nums` and an integer `target`.",
+    "output_format": "An integer representing the minimum number of elements required to form the target sum, or -1 if it is not possible.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i], target <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3], target = 6",
+        "output": "2",
+        "explanation": "By adding 3 (1 + 2 + 3 = 6), we need 2 elements, 3 and 3."
+      },
+      {
+        "input": "nums = [5, 3, 2], target = 11",
+        "output": "-1",
+        "explanation": "It's impossible to reach the target sum of 11 with given numbers."
+      },
+      {
+        "input": "nums = [2, 3, 5], target = 7",
+        "output": "1",
+        "explanation": "Only one element, 5, is needed to reach the target sum of 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to store results.",
+      "Think about how to build up to the target sum from smaller sums."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Gap",
+    "description": "Given a positive integer N, find the longest sequence of consecutive zeros in its binary representation, bounded by ones. The binary gap is defined as the maximum length of such sequences of zeros. For example, the binary representation of 20 is '10100', which has a binary gap of 1 (between the two ones).",
+    "topic": "Math",
+    "subtopic": "Binary Representation",
+    "tags": [
+      "Binary",
+      "Math",
+      "Bit Manipulation"
+    ],
+    "input_format": "A single integer N (1 <= N <= 2^31 - 1).",
+    "output_format": "An integer representing the length of the longest binary gap.",
+    "constraints": [
+      "1 <= N <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "N = 20",
+        "output": "1",
+        "explanation": "The binary representation of 20 is '10100', and the longest gap of zeros between the ones is of length 1."
+      },
+      {
+        "input": "N = 15",
+        "output": "0",
+        "explanation": "The binary representation of 15 is '1111', which has no gaps."
+      },
+      {
+        "input": "N = 32",
+        "output": "0",
+        "explanation": "The binary representation of 32 is '100000', which has no gaps."
+      },
+      {
+        "input": "N = 1041",
+        "output": "5",
+        "explanation": "The binary representation of 1041 is '10000010001', which has a longest gap of 5 zeros."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider converting the number to binary and analyzing the string representation.",
+      "Use a loop to count the zeros between ones."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Finding the Users Active Minutes",
+    "description": "You are given a list of user activity logs, where each log is represented as a pair consisting of the user's ID and the active minutes they logged in a day. Your task is to determine how many unique users had their maximum active minutes on any given day. You should return the count of these unique users.",
+    "topic": "Hash Table",
+    "subtopic": "Counting Unique Users",
+    "tags": [
+      "Hash Table",
+      "Counting",
+      "Unique",
+      "Active Minutes"
+    ],
+    "input_format": "A list of tuples, where each tuple consists of (user_id: int, active_minutes: int).",
+    "output_format": "An integer representing the count of unique users with the maximum active minutes.",
+    "constraints": [
+      "1 <= logs.length <= 10^5",
+      "1 <= user_id <= 10^6",
+      "0 <= active_minutes <= 1440"
+    ],
+    "examples": [
+      {
+        "input": "logs = [(1, 30), (2, 45), (1, 60), (2, 45), (3, 60), (4, 30)]",
+        "output": "3",
+        "explanation": "Users 1, 2, and 3 have logged their maximum active minutes on different days (60 minutes)."
+      },
+      {
+        "input": "logs = [(1, 10), (2, 10), (3, 15), (1, 20), (2, 20)]",
+        "output": "2",
+        "explanation": "Users 1 and 2 maxed out with 20 active minutes."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Utilize a dictionary to track the maximum active minutes for each user.",
+      "Iterate through the logs to update the maximum values accordingly."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Process Tasks Using Servers",
+    "description": "You are given a list of tasks and a fixed number of servers. Each task requires a certain amount of time to complete. Your goal is to assign each task to a server in such a way that the time taken to complete all tasks is minimized. Each server can only handle one task at a time, and once a server is assigned a task, it can only take up a new task after the previous task is completed. Return the minimum time required to finish all tasks.",
+    "topic": "Greedy",
+    "subtopic": "Task Scheduling",
+    "tags": [
+      "Greedy",
+      "Scheduling",
+      "Array"
+    ],
+    "input_format": "An array of integers tasks representing the time taken for each task and an integer servers representing the number of servers.",
+    "output_format": "An integer representing the minimum time required to complete all tasks.",
+    "constraints": [
+      "1 <= tasks.length <= 10^4",
+      "1 <= tasks[i] <= 10^5",
+      "1 <= servers <= 100"
+    ],
+    "examples": [
+      {
+        "input": "tasks = [1, 2, 3, 4, 5], servers = 2",
+        "output": "7",
+        "explanation": "One possible assignment is (1, 2), (3, 4), and then 5. Total time = 7."
+      },
+      {
+        "input": "tasks = [5, 2, 3, 8], servers = 2",
+        "output": "8",
+        "explanation": "We can execute tasks 1 and 2 from one server and tasks 3 on the other. Thus the total time is maximized at 8."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a priority queue to manage server availability.",
+      "Greedily assign tasks to the least busy server."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Remove All Occurrences of a Substring",
+    "description": "Given a string 's' and a substring 'part', you need to remove all occurrences of 'part' from 's' repeatedly until no more occurrences can be found. Return the modified string after all removals.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Substring"
+    ],
+    "input_format": "Two strings, 's' (the original string) and 'part' (the substring to be removed).",
+    "output_format": "A string representing the modified version of 's' after removing all occurrences of 'part'.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= part.length <= 1000",
+      "s and part consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'daabcbaabcbc', part = 'abc'",
+        "output": "'dab'",
+        "explanation": "The initial string is 'daabcbaabcbc'. After removing 'abc', we get 'dabcb'. Then removing 'abc' again gives us 'dab'."
+      },
+      {
+        "input": "s = 'axxxxyyyyb', part = 'xy'",
+        "output": "'ab'",
+        "explanation": "The initial string 'axxxxyyyyb' has 'xy' which can be removed, leading to 'axxxxxyyb' and further removing 'yy' results in 'ab'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a loop that continues until no more occurrences are found.",
+      "You can use string replacement techniques to help with removals."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Count Sub Islands",
+    "description": "You are given a 2D grid of '1's (land) and '0's (water). A sub-island is a contiguous group of '1's that is completely surrounded by '0's, and is not connected to the edge of the grid. Your task is to count the number of sub-islands in the grid. Note that for a land cell to be counted as part of a sub-island, all the land connected to it must also be contained within the boundaries defined by water cells.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid represented as a list of lists, where each element is either 1 (land) or 0 (water).",
+    "output_format": "An integer representing the number of sub-islands in the grid.",
+    "constraints": [
+      "1 <= grid.length <= 100",
+      "1 <= grid[i].length <= 100",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1, 0, 0], [0, 1, 1], [0, 0, 1]]",
+        "output": "1",
+        "explanation": "There is one sub-island at the bottom-right corner of the grid."
+      },
+      {
+        "input": "grid = [[0, 1], [1, 0]]",
+        "output": "0",
+        "explanation": "No group of '1's is surrounded by '0's."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a DFS or BFS approach to explore the islands.",
+      "Remember to check boundaries when exploring neighboring cells."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water II",
+    "description": "Given a 2D matrix representing an elevation map where the value at each cell represents the height of the terrain, calculate how much rainwater can be trapped after raining. The water can only be tripped if it is surrounded by taller terrain on all four sides (left, right, up, down).",
+    "topic": "Dynamic Programming",
+    "subtopic": "2D Arrays",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Matrix"
+    ],
+    "input_format": "A 2D array of integers representing the height map.",
+    "output_format": "An integer representing the total units of trapped rainwater.",
+    "constraints": [
+      "1 <= height.length, height[i].length <= 200",
+      "0 <= height[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "[[1,4,3,1,3,2],[3,2,1,3,2,4],[2,3,3,2,3,4],[6,5,3,6,4,5],[5,4,4,5,4,6]]",
+        "output": "10",
+        "explanation": "The trapped water can be visualized in the valleys created by the surrounding heights."
+      },
+      {
+        "input": "[[12,13,1,12],[13,4,13,12],[13,8,10,12],[12,13,12,12],[13,13,13,13]]",
+        "output": "14",
+        "explanation": "Water accumulates in the lower regions surrounded by taller regions."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a priority queue to keep track of the boundaries efficiently.",
+      "Remember to update the boundary height as you process each cell."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Regular Expression Matching",
+    "description": "Implement a function that takes two strings: `s` and `p`, and returns true if `s` matches the pattern `p`. The pattern may contain the following special characters: '.' which matches any single character, and '*' which matches zero or more of the preceding element. The matching should cover the entire string (not partial matching).",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Matching",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Regular Expression"
+    ],
+    "input_format": "Two strings, s and p, where 1 <= s.length, p.length <= 20.",
+    "output_format": "A boolean value indicating whether the string s matches the pattern p.",
+    "constraints": [
+      "1 <= s.length, p.length <= 20",
+      "s and p consist of lowercase English letters and the characters '.' and '*'"
+    ],
+    "examples": [
+      {
+        "input": "s = 'aa', p = 'a'",
+        "output": "false",
+        "explanation": "'a' does not match 'aa'."
+      },
+      {
+        "input": "s = 'aa', p = 'a*'",
+        "output": "true",
+        "explanation": "'a*' matches 'aa' by treating '*' as matching the preceding 'a' one or more times."
+      },
+      {
+        "input": "s = 'ab', p = '.*'",
+        "output": "true",
+        "explanation": "'.*' matches 'ab' as '.' matches 'a' and '*' matches 'b'."
+      },
+      {
+        "input": "s = 'aab', p = 'c*a*b'",
+        "output": "true",
+        "explanation": "'c*' matches empty string, 'a*b' matches 'aab'."
+      },
+      {
+        "input": "s = 'mississippi', p = 'mis*is*p*.'",
+        "output": "false",
+        "explanation": "'mis*is*p*.' does not match 'mississippi'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use dynamic programming to build a solution iteratively.",
+      "Consider using a 2D array to keep track of matches.",
+      "Think about how to handle the '*' character in your logic."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Smallest Element in a Sorted Matrix",
+    "description": "Given an n x n matrix where each of its rows and columns is sorted in ascending order, find the kth smallest element in the matrix. Note that it is the kth smallest element in the sorted order, not the kth distinct element.",
+    "topic": "Matrix",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Matrix",
+      "Binary Search",
+      "Sorting"
+    ],
+    "input_format": "An n x n matrix of integers and an integer k.",
+    "output_format": "An integer representing the kth smallest element in the matrix.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "1 <= k <= n * n",
+      "The elements of the matrix are distinct."
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 5, 9], [10, 11, 13], [12, 13, 15]], k = 8",
+        "output": "13",
+        "explanation": "The 8th smallest element in the sorted order is 13."
+      },
+      {
+        "input": "matrix = [[-5]], k = 1",
+        "output": "-5",
+        "explanation": "The only element is -5, which is the 1st smallest."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider a binary search approach to find the kth smallest element.",
+      "Try to use the properties of the sorted matrix to optimize the search."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to Roman",
+    "description": "Given an integer, convert it to a Roman numeral. Roman numerals are represented by seven different symbols: I, V, X, L, C, D, and M. For example, the integer 3 is represented as 'III', and 58 is represented as 'LVIII'. The integers are in the range from 1 to 3999.",
+    "topic": "Math",
+    "subtopic": "Conversion",
+    "tags": [
+      "Math",
+      "String",
+      "Conversion"
+    ],
+    "input_format": "A single integer num (1 <= num <= 3999).",
+    "output_format": "A string representing the corresponding Roman numeral.",
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "examples": [
+      {
+        "input": "num = 3",
+        "output": "III",
+        "explanation": "The integer 3 corresponds to the Roman numeral III, which is formed by adding 'I' three times."
+      },
+      {
+        "input": "num = 58",
+        "output": "LVIII",
+        "explanation": "The integer 58 corresponds to the Roman numeral LVIII, composed of L (50), V (5), and III (3) = 50 + 5 + 3."
+      },
+      {
+        "input": "num = 1994",
+        "output": "MCMXCIV",
+        "explanation": "The integer 1994 represents the Roman numeral MCMXCIV, which is formed by 1000 (M) + 900 (CM) + 90 (XC) + 4 (IV)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider breaking down the integer into thousands, hundreds, tens, and units.",
+      "Use a mapping of integers to their corresponding Roman numeral symbols."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of parentheses characters.",
+    "output_format": "A boolean value indicating whether the string is valid or not.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only '(', ')', '{', '}', '[' and ']'"
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The brackets are correctly closed."
+      },
+      {
+        "input": "s = '([{}])'",
+        "output": "true",
+        "explanation": "All brackets are closed in the correct order."
+      },
+      {
+        "input": "s = '([)'",
+        "output": "false",
+        "explanation": "The brackets are not closed in the correct order."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Pop from the stack when a matching closing bracket is found."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Merge k Sorted Lists",
+    "description": "You are given an array of k linked-lists, each list is sorted in ascending order. Merge all the linked-lists into one sorted linked-list and return it. The resulting list should be made by splicing together the nodes of the given lists.",
+    "topic": "Linked List",
+    "subtopic": "Merge K Lists",
+    "tags": [
+      "Linked List",
+      "Merge",
+      "Sorting"
+    ],
+    "input_format": "An array of k linked-lists where each linked-list is represented as the head node of the list.",
+    "output_format": "The head node of the merged sorted linked-list.",
+    "constraints": [
+      "0 <= k <= 10^4",
+      "0 <= node.val <= 10^4",
+      "The total number of nodes across all lists is at most 10^4."
+    ],
+    "examples": [
+      {
+        "input": "[1->4->5, 1->3->4, 2->6]",
+        "output": "[1->1->2->3->4->4->5->6]",
+        "explanation": "Merging the three lists results in the sorted linked-list: 1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6."
+      },
+      {
+        "input": "[]",
+        "output": "[]",
+        "explanation": "An empty list results in an empty linked-list."
+      },
+      {
+        "input": "[5->6->7, 2->3->8, 1->4]",
+        "output": "[1->2->3->4->5->6->7->8]",
+        "explanation": "Merging these lists gives the sorted linked-list: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a min-heap to efficiently merge the lists.",
+      "Consider the time complexity of merging k lists."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Multiply Strings",
+    "description": "Given two non-negative integers represented as strings, return the product of these integers as a string. You must not use any built-in BigInteger library or convert the inputs to integer directly. The product of two numbers is the sum of the products of each digit of one number with each digit of the other number, appropriately shifted based on their positions.",
+    "topic": "Math",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Math",
+      "String Manipulation",
+      "Multiplication"
+    ],
+    "input_format": "Two non-negative integers num1 and num2 represented as strings.",
+    "output_format": "A string representing the product of the two numbers.",
+    "constraints": [
+      "1 <= num1.length, num2.length <= 200",
+      "num1 and num2 consist of digits only.",
+      "Both numbers do not contain leading zeros."
+    ],
+    "examples": [
+      {
+        "input": "num1 = '123', num2 = '456'",
+        "output": "'56088'",
+        "explanation": "123 multiplied by 456 equals 56088."
+      },
+      {
+        "input": "num1 = '2', num2 = '3'",
+        "output": "'6'",
+        "explanation": "2 multiplied by 3 equals 6."
+      },
+      {
+        "input": "num1 = '0', num2 = '987'",
+        "output": "'0'",
+        "explanation": "Any number multiplied by 0 equals 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using an array to hold intermediate results.",
+      "Pay attention to the digit positions when summing the products.",
+      "Don't forget to handle leading zeros in the final result."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Wildcard Matching",
+    "description": "Implement a function that takes a string `s` and a string `p` as input, where `p` can contain wildcard characters '?' and '*'. The character '?' matches any single character, while '*' matches any sequence of characters (including the empty sequence). The function should return true if `s` matches `p`, otherwise it returns false.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Wildcard Matching"
+    ],
+    "input_format": "Two strings: s (the input string) and p (the pattern string).",
+    "output_format": "A boolean value indicating whether the input string matches the pattern.",
+    "constraints": [
+      "0 <= s.length, p.length <= 2000"
+    ],
+    "examples": [
+      {
+        "input": "s = 'aa', p = 'a'",
+        "output": "false",
+        "explanation": "'a' does not match 'aa'."
+      },
+      {
+        "input": "s = 'aa', p = '*'",
+        "output": "true",
+        "explanation": "'*' matches any string, thus it matches 'aa'."
+      },
+      {
+        "input": "s = 'cb', p = '?a'",
+        "output": "false",
+        "explanation": "'?a' requires a character followed by 'a', but 'cb' doesn't have 'a' at the second position."
+      },
+      {
+        "input": "s = 'adceb', p = '*a*b'",
+        "output": "true",
+        "explanation": "'*a*b' matches 'adceb' by taking 'dce' as the match for '*'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to solve the matching problem.",
+      "Use a 2D array to keep track of matched states."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Permutation Sequence",
+    "description": "Given a positive integer n and an integer k, return the kth permutation sequence of the numbers 1 to n. For example, if n = 3, the permutations are 1, 2, 3 are: 123, 132, 213, 231, 312, 321. The second permutation is '132', so if k = 2, the output should be '132'.",
+    "topic": "Mathematics",
+    "subtopic": "Combinatorics",
+    "tags": [
+      "Permutation",
+      "Mathematics",
+      "String",
+      "Backtracking"
+    ],
+    "input_format": "Two integers n and k.",
+    "output_format": "A string representing the kth permutation sequence.",
+    "constraints": [
+      "1 <= n <= 9",
+      "1 <= k <= n!"
+    ],
+    "examples": [
+      {
+        "input": "n = 3, k = 3",
+        "output": "213",
+        "explanation": "The permutations of {1, 2, 3} are: 123, 132, 213, 231, 312, 321. The third permutation is '213'."
+      },
+      {
+        "input": "n = 4, k = 9",
+        "output": "2314",
+        "explanation": "The permutations of {1, 2, 3, 4} are: 1234, 1243, 1324, 1342, 1423, 1432, 2134, 2143, 2314, 2341, 2413, 2431, 3124, 3142, 3214, 3241, 3412, 3421, 4123, 4132, 4213, 4231, 4312, 4321. The ninth permutation is '2314'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Factorials can help to determine the block of permutations.",
+      "Use a list to track available numbers.",
+      "Consider the division and remainder to dictate positions."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Pascal's Triangle",
+    "description": "Given an integer numRows, return the first numRows of Pascal's triangle. In Pascal's triangle, each number is the sum of the two numbers directly above it. The triangle starts with a 1 at the top. Each subsequent row contains one more element than the previous row.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Triangle"
+    ],
+    "input_format": "An integer numRows representing the number of rows of Pascal's triangle to generate.",
+    "output_format": "A list of lists, where each list represents a row of Pascal's triangle.",
+    "constraints": [
+      "1 <= numRows <= 30"
+    ],
+    "examples": [
+      {
+        "input": "numRows = 5",
+        "output": "[[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]",
+        "explanation": "The first 5 rows of Pascal's triangle are constructed as follows: \nRow 0: [1] \nRow 1: [1, 1] \nRow 2: [1, 2, 1] \nRow 3: [1, 3, 3, 1] \nRow 4: [1, 4, 6, 4, 1]."
+      },
+      {
+        "input": "numRows = 1",
+        "output": "[[1]]",
+        "explanation": "The first row of Pascal's triangle contains only the number 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Each row starts and ends with 1.",
+      "Use the previous row to compute the current row."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Word Break II",
+    "description": "Given a string s and a dictionary of words dict, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences. You may return the answer in any order. The same word in the dictionary may be reused multiple times in the segmentation.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "Backtracking",
+      "String"
+    ],
+    "input_format": "A string s and a list of strings dict.",
+    "output_format": "A list of all possible sentences formed by inserting spaces.",
+    "constraints": [
+      "1 <= s.length <= 20",
+      "1 <= dict.length <= 1000",
+      "1 <= dict[i].length <= 20",
+      "All string inputs are lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"catsanddog\", dict = [\"cat\", \"cats\", \"and\", \"sand\", \"dog\"]",
+        "output": "[\"cats and dog\", \"cat sand dog\"]",
+        "explanation": "The string can be segmented into 'cats' and 'and dog', or into 'cat', 'sand', and 'dog'."
+      },
+      {
+        "input": "s = \"pineapplepenapple\", dict = [\"apple\", \"pen\", \"applepen\", \"pine\", \"pineapple\"]",
+        "output": "[\"pine apple pen apple\", \"pineapple pen apple\", \"pine applepen apple\"]",
+        "explanation": "The string can be segmented in multiple ways using the words from the dictionary."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using recursion with memoization to optimize the solution.",
+      "Try building words in reverse order by checking substrings.",
+      "Utilize a backtracking approach to explore all possible space insertions."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Time Needed to Buy Tickets",
+    "description": "You are given an array 'tickets' where tickets[i] represents the number of tickets the ith person in line will buy. Each person in front of you will buy their tickets before you can buy yours. You need to calculate the total time it takes for you to buy all your tickets. Each ticket takes 1 second to process. You need to calculate the time taken for all the tickets of the people in front of you, then the time taken for your own tickets.",
+    "topic": "Simulation",
+    "subtopic": "Queue",
+    "tags": [
+      "Simulation",
+      "Queue",
+      "Math"
+    ],
+    "input_format": "An integer array tickets representing the number of tickets each person will buy.",
+    "output_format": "An integer representing the total time needed for you to buy your tickets.",
+    "constraints": [
+      "1 <= tickets.length <= 100",
+      "1 <= tickets[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "tickets = [2, 3, 2], pos = 2",
+        "output": "6",
+        "explanation": "First person needs 2 seconds, second person needs 3 seconds, and you need 2 seconds. Total = 2 + 3 + 2 = 7 seconds."
+      },
+      {
+        "input": "tickets = [5, 1, 1, 1], pos = 0",
+        "output": "8",
+        "explanation": "You will take 5 seconds to buy your tickets. The others, each taking 1 second, will add 3 seconds to the total. Total = 5 + 3 = 8 seconds."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Iterate through the tickets array to calculate the total time based on the position."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Max Points on a Line",
+    "description": "Given a set of points in a 2D plane, each represented by an integer pair (x, y), return the maximum number of points that lie on the same straight line.",
+    "topic": "Geometry",
+    "subtopic": "Line Detection",
+    "tags": [
+      "Geometry",
+      "Math",
+      "Points"
+    ],
+    "input_format": "An array of points represented by coordinates, where each point is an array of two integers [x, y].",
+    "output_format": "An integer representing the maximum number of points that can lie on a single straight line.",
+    "constraints": [
+      "1 <= points.length <= 300",
+      "-10^4 <= points[i][0], points[i][1] <= 10^4",
+      "All points are unique."
+    ],
+    "examples": [
+      {
+        "input": "points = [[1,1],[2,2],[3,3]]",
+        "output": "3",
+        "explanation": "All three points lie on the line defined by y = x."
+      },
+      {
+        "input": "points = [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]",
+        "output": "4",
+        "explanation": "The maximum number of points on a single line is 4: points at (1, 1), (2, 3), (3, 2), and (4, 1) can form a line."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the slope between each pair of points.",
+      "Use a hashmap to track the count of points with the same slope.",
+      "Vertical lines have an undefined slope, handle them separately."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "One Edit Distance",
+    "description": "Given two strings s and t, return true if they are both one edit distance apart, or false otherwise. A string is considered one edit distance apart from another if you can transform one string into the other by either inserting one character, deleting one character, or replacing one character.",
+    "topic": "String",
+    "subtopic": "Edit Distance",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Two Pointers"
+    ],
+    "input_format": "Two strings, s and t, where 0 <= |s|, |t| <= 100.",
+    "output_format": "A boolean value: true if s and t are one edit distance apart, otherwise false.",
+    "constraints": [
+      "0 <= |s|, |t| <= 100",
+      "s and t consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abc\", t = \"ac\"",
+        "output": "true",
+        "explanation": "By deleting the character 'b' from 'abc', we can obtain 'ac'."
+      },
+      {
+        "input": "s = \"ab\", t = \"ba\"",
+        "output": "false",
+        "explanation": "The strings require two edits: one to swap 'a' and 'b'."
+      },
+      {
+        "input": "s = \"a\", t = \"b\"",
+        "output": "true",
+        "explanation": "By replacing 'a' with 'b', we can obtain 'b'."
+      },
+      {
+        "input": "s = \"\", t = \"a\"",
+        "output": "true",
+        "explanation": "By inserting 'a' into the empty string, we can obtain 'a'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the lengths of both strings and compare them.",
+      "Try to identify the position of the first differing character."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Happy Number",
+    "description": "A happy number is defined by the following process: starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle that does not include 1. Numbers for which this process ends in 1 are happy numbers. Write a function to determine if a given positive integer is a happy number.",
+    "topic": "Math",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Math",
+      "Number Theory",
+      "Recursion"
+    ],
+    "input_format": "A positive integer n.",
+    "output_format": "Return true if n is a happy number, and false if not.",
+    "constraints": [
+      "1 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 19",
+        "output": "true",
+        "explanation": "1^2 + 9^2 = 82 -> 8^2 + 2^2 = 68 -> 6^2 + 8^2 = 100 -> 1^2 + 0^2 + 0^2 = 1. (Happy number)"
+      },
+      {
+        "input": "n = 2",
+        "output": "false",
+        "explanation": "The sequence is 2 -> 4 -> 16 -> 37 -> 58 -> 89 -> 145 -> 42 -> 20 -> 4. (Loop, not a happy number)"
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a set to track the seen numbers.",
+      "The sum of squares can be computed by converting the integer to a string."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Linked List",
+    "description": "Given the head of a singly linked list, reverse the list, and return the reversed list's head.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Pointer"
+    ],
+    "input_format": "A singly linked list represented by the head node.",
+    "output_format": "The head of the reversed linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000]",
+      "-5000 <= Node.val <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5]",
+        "output": "[5, 4, 3, 2, 1]",
+        "explanation": "Reversing the linked list gives us the order: 5 -> 4 -> 3 -> 2 -> 1."
+      },
+      {
+        "input": "head = []",
+        "output": "[]",
+        "explanation": "An empty linked list remains empty when reversed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use three pointers to help reverse the links.",
+      "Iterate through the list while changing the next pointers."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "The Skyline Problem",
+    "description": "Given a list of buildings represented by their start and end coordinates (x1, y1) and (x2, y2), where y1 and y2 are the heights of the buildings, return the coordinates of the horizontal skyline formed by the outline of these buildings. The skyline should be represented as a list of key points, where each key point is represented as a pair of coordinates [x, y]. The resulting list should be in ascending order of x coordinates. If two key points have the same x coordinate, the one with higher y should come first.",
+    "topic": "Geometry",
+    "subtopic": "Sweep Line Algorithm",
+    "tags": [
+      "Geometry",
+      "Sweep Line",
+      "Sorting"
+    ],
+    "input_format": "A list of buildings, where each building is represented as a list of three integers [x1, y1, x2] indicating the left x coordinate, height and right x coordinate.",
+    "output_format": "A list of key points representing the skyline outline of the buildings.",
+    "constraints": [
+      "1 <= buildings.length <= 10^4",
+      "0 <= x1 < x2 <= 10^9",
+      "1 <= y1 <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "buildings = [[1, 3, 4], [2, 5, 3], [4, 6, 5]]",
+        "output": "[[1, 3], [2, 5], [4, 6], [5, 0]]",
+        "explanation": "The skyline starts at (1, 3), rises to (2, 5) and then descends to (4, 6) before going down to ground level at (5, 0)."
+      },
+      {
+        "input": "buildings = [[0, 2, 2], [2, 3, 5], [3, 0, 4]]",
+        "output": "[[0, 2], [2, 3], [5, 0]]",
+        "explanation": "The skyline begins at (0, 2), rises to (2, 3) and then descends to ground level at (5, 0)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a priority queue to keep track of active heights.",
+      "A sweep line approach may help to determine where the skyline changes."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Lowest Common Ancestor of a Binary Search Tree",
+    "description": "Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST. According to the definition of LCA on a binary tree, the lowest common ancestor is defined between two nodes p and q as the lowest node in the tree that has both p and q as descendants (where we allow a node to be a descendant of itself).",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "Binary Search Tree",
+      "Lowest Common Ancestor"
+    ],
+    "input_format": "The root node of the binary search tree and two nodes p and q in the tree.",
+    "output_format": "The lowest common ancestor of the two nodes p and q.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [2, 10^5].",
+      "All values of the nodes are unique.",
+      "p and q are different and both values will exist in the BST."
+    ],
+    "examples": [
+      {
+        "input": "root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8",
+        "output": "6",
+        "explanation": "The LCA of nodes 2 and 8 is 6."
+      },
+      {
+        "input": "root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4",
+        "output": "2",
+        "explanation": "The LCA of nodes 2 and 4 is 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the properties of a BST to traverse the tree.",
+      "If both nodes are lesser than the root, go left; if both are greater, go right."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Flatten 2D Vector",
+    "description": "Implement a 2D Vector class that supports adding a vector of integers and flattening it into a single one-dimensional vector. The class should support the following operations: add(vector) - adds a vector of integers to the 2D Vector, and flatten() - returns a flattened one-dimensional vector representation of the 2D Vector.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Vector"
+    ],
+    "input_format": "A vector of integers, passed as a list of lists.",
+    "output_format": "A flattened list of integers.",
+    "constraints": [
+      "1 <= vector.length <= 100",
+      "1 <= vector[i].length <= 100",
+      "-10^5 <= vector[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "vector = [[1, 2], [3, 4]]",
+        "output": "[1, 2, 3, 4]",
+        "explanation": "The input 2D vector is flattened into a single list containing all elements."
+      },
+      {
+        "input": "vector = [[1], [2, 3], [4]]",
+        "output": "[1, 2, 3, 4]",
+        "explanation": "All elements from the nested lists are combined into a single list."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a single list to store the flattened elements.",
+      "Iterate through each sub-list and append elements to the main list."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Alien Dictionary",
+    "description": "Given a list of words sorted lexicographically by the rules of an alien language, determine the order of characters in the alien alphabet. The input consists of an array of strings, representing the words in the alien language. You must derive the correct order of letters based on the given words.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "Sorting"
+    ],
+    "input_format": "An array of strings words, where each string contains only lowercase letters.",
+    "output_format": "A string representing the order of characters in the alien language. If the order cannot be determined, return an empty string.",
+    "constraints": [
+      "1 <= words.length <= 100",
+      "1 <= words[i].length <= 100",
+      "All characters in words are unique."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"wrt\", \"wrf\", \"er\", \"ett\", \"rftt\"]",
+        "output": "wertf",
+        "explanation": "From the given words, we can derive the order: 'w' comes before 'e', 'e' comes before 'r', 'r' comes before 't', and 't' comes before 'f'. Thus, the order is 'wertf'."
+      },
+      {
+        "input": "words = [\"z\", \"x\"]",
+        "output": "zx",
+        "explanation": "The words indicate that 'z' comes before 'x', giving us the order 'zx'."
+      },
+      {
+        "input": "words = [\"z\", \"x\", \"z\"]",
+        "output": "",
+        "explanation": "The input is inconsistent as 'z' cannot come before 'x' and also be the same word later. Thus, it results in an empty string."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a directed graph to represent the relationship between characters.",
+      "Perform a topological sort to find the valid order of characters."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Design Skiplist",
+    "description": "A Skiplist is a data structure that allows for fast search, insertion, and deletion operations. It is a probabilistic alternative to balanced trees. Implement the following operations of a Skiplist: \n\n1. `search(target: int) -> bool`: Return true if `target` exists in the Skiplist or false otherwise. \n2. `add(num: int) -> None`: Insert a value `num` into the Skiplist. \n3. `erase(num: int) -> bool`: Remove a value `num` from the Skiplist and return true if the element is removed. Return false if the element was not present.\n\nYou should implement the Skiplist using a linked list structure, where each node contains an array of pointers to other nodes in the Skiplist at various levels, allowing for efficient searching and modification.",
+    "topic": "Data Structure",
+    "subtopic": "Skiplist",
+    "tags": [
+      "Skiplist",
+      "Data Structure",
+      "Design"
+    ],
+    "input_format": "You will simulate operations on Skiplist using method calls: search, add, and erase.",
+    "output_format": "Return the boolean result for search and erase operations; the add operation returns nothing.",
+    "constraints": [
+      "0 <= num, target <= 10^7",
+      "At most 5 * 10^4 calls will be made to search, add, and erase."
+    ],
+    "examples": [
+      {
+        "input": "skiplist.add(1); skiplist.add(2); skiplist.add(3); skiplist.search(0);",
+        "output": "false",
+        "explanation": "0 does not exist in the Skiplist."
+      },
+      {
+        "input": "skiplist.add(1); skiplist.add(2); skiplist.add(3); skiplist.search(1);",
+        "output": "true",
+        "explanation": "1 exists in the Skiplist."
+      },
+      {
+        "input": "skiplist.erase(1); skiplist.search(1);",
+        "output": "false",
+        "explanation": "1 is removed from the Skiplist."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using multiple pointers to implement the Skiplist levels.",
+      "Randomization is key in maintaining balance in the list."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Connected Components in an Undirected Graph",
+    "description": "You are given an undirected graph represented as a list of edges. Write a function to count the number of connected components in the graph. A connected component is a subset of the graph where any two vertices are connected to each other by paths and which is connected to no additional vertices in the supergraph.",
+    "topic": "Graph",
+    "subtopic": "Connected Components",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Union Find"
+    ],
+    "input_format": "A list of edges, where each edge is represented as a list of two integers [u, v], indicating an undirected edge between vertex u and vertex v.",
+    "output_format": "An integer representing the number of connected components in the graph.",
+    "constraints": [
+      "1 <= edges.length <= 10^4",
+      "0 <= u, v < 10^4"
+    ],
+    "examples": [
+      {
+        "input": "edges = [[0, 1], [1, 2], [3, 4]]",
+        "output": "2",
+        "explanation": "There are two connected components: one containing vertices 0, 1, 2 and another containing vertices 3, 4."
+      },
+      {
+        "input": "edges = [[0, 1], [1, 2], [2, 3], [3, 4]]",
+        "output": "1",
+        "explanation": "All vertices are connected in a single component."
+      },
+      {
+        "input": "edges = [[0, 1], [2, 3], [4, 5], [6, 7], [7, 8]]",
+        "output": "5",
+        "explanation": "There are 5 separate components: [0, 1], [2, 3], [4, 5], [6, 7, 8]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Depth First Search (DFS) or Breadth First Search (BFS) to explore the graph.",
+      "You can use an adjacency list for representing the graph.",
+      "Track visited nodes to avoid counting the same connected component multiple times."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Random Pick with Weight",
+    "description": "You are given a non-empty array of positive integers w where w[i] represents the weight of the ith index. You want to implement a method that randomly picks an index from the array based on the weights. The probability of picking index i is w[i] / sum(w). Implement the class RandomPicker that has the following methods: \n\n- RandomPicker(int[] w): Constructor accepting the weights. \n- int pickIndex(): Returns a random index based on the weights.",
+    "topic": "Binary Search",
+    "subtopic": "Randomized Algorithm",
+    "tags": [
+      "Random",
+      "Binary Search",
+      "Probability"
+    ],
+    "input_format": "An array of positive integers w of length n (1 <= n <= 10^4).",
+    "output_format": "An integer representing the chosen index based on weights.",
+    "constraints": [
+      "1 <= w.length <= 10^4",
+      "1 <= w[i] <= 10^6",
+      "The sum of weights will not exceed 10^9."
+    ],
+    "examples": [
+      {
+        "input": "w = [1, 3]",
+        "output": "0 or 1",
+        "explanation": "With weights 1 and 3, index 0 has a probability of 1/4 and index 1 has a probability of 3/4."
+      },
+      {
+        "input": "w = [1, 2, 3, 4]",
+        "output": "0, 1, 2, or 3",
+        "explanation": "The probability of index 0 is 1/10, index 1 is 2/10, index 2 is 3/10, and index 3 is 4/10."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "You may want to use prefix sums to calculate the ranges for random picking.",
+      "Consider using a binary search to find the correct index based on a random number."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water. \n\nImplement a function that returns the total number of islands in the given grid.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "Depth-First Search",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid represented as a list of list of characters where each character is either '1' (land) or '0' (water).",
+    "output_format": "An integer representing the number of islands in the grid.",
+    "constraints": [
+      "1 <= grid.length <= 300",
+      "1 <= grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [['1', '1', '0', '0', '0'], ['1', '1', '0', '0', '0'], ['0', '0', '1', '0', '0'], ['0', '0', '0', '1', '1']]",
+        "output": "3",
+        "explanation": "There are three islands in the grid: (1) consisting of the top-left '1's, (2) the single '1' in the middle, and (3) the '1's on the bottom right."
+      },
+      {
+        "input": "grid = [['0', '0', '0', '0'], ['0', '0', '0', '0'], ['0', '0', '0', '0']]",
+        "output": "0",
+        "explanation": "There are no islands in the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Depth-First Search (DFS) to explore the grid.",
+      "Mark the visited land cells to avoid counting them again.",
+      "Handle edge cases where the grid may be empty."
+    ],
+    "company": "X"
+  },
+  {
+    "question_id": "",
+    "title": "Rotting Oranges",
+    "description": "In a given grid of size m x n, each cell can either be empty, contain a fresh orange, or contain a rotten orange. Every minute, any fresh orange that is adjacent (horizontally or vertically) to a rotten orange will rot. Return the minimum number of minutes that must elapse until no fresh oranges remain. If this is impossible, return -1.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "BFS",
+      "Graph",
+      "Simulation"
+    ],
+    "input_format": "A 2D grid where each cell can have the values 0 (empty), 1 (fresh orange), or 2 (rotten orange).",
+    "output_format": "An integer representing the minimum number of minutes until no fresh oranges remain, or -1 if it's impossible.",
+    "constraints": [
+      "1 <= m, n <= 300",
+      "grid[i][j] is 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "[[2,1,1],[1,1,0],[0,1,1]]",
+        "output": "4",
+        "explanation": "Starting from the rotten oranges, all fresh oranges will rot in 4 minutes."
+      },
+      {
+        "input": "[[2,1,1],[0,1,1],[1,0,2]]",
+        "output": "-1",
+        "explanation": "The fresh orange in the middle cannot rot because it's surrounded by empty cells and will remain forever."
+      },
+      {
+        "input": "[[0,2]]",
+        "output": "0",
+        "explanation": "There are no fresh oranges, so the time is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use BFS to spread the rot from rotten oranges.",
+      "Count the number of fresh oranges and track the time taken."
+    ],
+    "company": "X"
+  }
+]

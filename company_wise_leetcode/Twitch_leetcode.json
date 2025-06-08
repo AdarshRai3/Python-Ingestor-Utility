@@ -1,0 +1,257 @@
+[
+  {
+    "question_id": "",
+    "title": "Create a Session Bar Chart",
+    "description": "Given a list of session start and end times for users, generate a session bar chart representation of the user sessions. Each session is represented by a bar on the chart that spans from the session start to the session end. Your task is to return a list of tuples where each tuple contains the start time and the duration of each session in hours.",
+    "topic": "Data Visualization",
+    "subtopic": "Bar Chart Generation",
+    "tags": [
+      "Data Visualization",
+      "Bar Chart",
+      "Sessions"
+    ],
+    "input_format": "A list of tuples where each tuple contains two strings, start_time and end_time, representing the start and end times of a session in the format 'YYYY-MM-DD HH:MM'.",
+    "output_format": "A list of tuples where each tuple contains a string representing the start_time and an integer representing the duration in hours.",
+    "constraints": [
+      "1 <= sessions.length <= 10^4",
+      "start_time and end_time are valid datetime strings."
+    ],
+    "examples": [
+      {
+        "input": "[('2023-10-01 08:30', '2023-10-01 09:30'), ('2023-10-01 10:00', '2023-10-01 11:00')]",
+        "output": "[('2023-10-01 08:30', 1), ('2023-10-01 10:00', 1)]",
+        "explanation": "The first session starts at 08:30 and ends at 09:30, which is a duration of 1 hour. The second session starts at 10:00 and ends at 11:00, which is also a duration of 1 hour."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Convert the string times into a datetime format to perform calculations.",
+      "Calculate the difference between end_time and start_time to get the duration."
+    ],
+    "company": "Twitch"
+  },
+  {
+    "question_id": "",
+    "title": "Design a File Sharing System",
+    "description": "You are tasked with designing a file sharing system that allows users to upload, download, and share files. Your system should be able to handle concurrent uploads and downloads, ensuring that files are available to users as soon as they are uploaded. Additionally, users should be able to share files with other users, and the system should track which users have access to which files. You need to implement a set of functions that simulate these functionalities.",
+    "topic": "System Design",
+    "subtopic": "File Sharing",
+    "tags": [
+      "Design",
+      "System",
+      "File Sharing"
+    ],
+    "input_format": "The input will consist of a series of commands represented as strings. Commands include: 'upload(user_id, file_name)', 'download(user_id, file_name)', 'share(from_user, to_user, file_name)'.",
+    "output_format": "The output should be the result of each command. For 'upload' and 'download', output 'success' or 'failure'. For 'share', output 'shared' or 'not found'.",
+    "constraints": [
+      "1 <= user_id <= 10^5",
+      "1 <= file_name.length <= 50",
+      "Conditions for success and failure should account for existing uploads, user permissions, and non-existent files."
+    ],
+    "examples": [
+      {
+        "input": "upload(1, 'file1.txt')",
+        "output": "success",
+        "explanation": "User 1 successfully uploads 'file1.txt'."
+      },
+      {
+        "input": "download(1, 'file1.txt')",
+        "output": "success",
+        "explanation": "User 1 successfully downloads 'file1.txt' after uploading it."
+      },
+      {
+        "input": "share(1, 2, 'file1.txt')",
+        "output": "shared",
+        "explanation": "User 1 shares 'file1.txt' with User 2."
+      },
+      {
+        "input": "download(2, 'file1.txt')",
+        "output": "failure",
+        "explanation": "User 2 cannot download 'file1.txt' because they do not have access."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a data structure to keep track of users and their permissions.",
+      "Think about thread-safety for concurrent uploads and downloads."
+    ],
+    "company": "Twitch"
+  },
+  {
+    "question_id": "",
+    "title": "Toss Strange Coins",
+    "description": "You have a collection of coins with a strange property: each coin can either show heads or tails when tossed, and the probability for heads is given as a fraction. You need to determine the probability of obtaining a specific number of heads after tossing a given number of coins. Each coin's probability of landing heads is independent of the others. Implement a function to calculate the probability of getting exactly 'k' heads when tossing 'n' coins.",
+    "topic": "Probability",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Probability",
+      "Dynamic Programming",
+      "Combinatorics"
+    ],
+    "input_format": "Three integers n (1 <= n <= 100), k (0 <= k <= n), and a fraction p (0 <= p <= 1) represented as a string 'a/b'.",
+    "output_format": "A float representing the probability of getting exactly k heads when tossing n coins, rounded to six decimal places.",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= k <= n",
+      "0 <= p <= 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 3, k = 2, p = '1/2'",
+        "output": "0.375",
+        "explanation": "The possible outcomes for 3 coins are 8. The outcomes with exactly 2 heads are: HHT, HTH, THH (3 ways). The probability for each is (1/2)^3 = 1/8. Thus, the probability of getting exactly 2 heads is 3/8 = 0.375."
+      },
+      {
+        "input": "n = 2, k = 1, p = '1/4'",
+        "output": "0.375",
+        "explanation": "The possible outcomes for 2 coins are 4. The outcomes with exactly 1 head are: HT, TH (2 ways). The probability for each is (1/4)*(3/4) = 3/16. Thus, the total probability is 2 * 3/16 = 0.375."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the binomial coefficient to calculate combinations.",
+      "Consider using memoization to optimize recursive solutions."
+    ],
+    "company": "Twitch"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) Cache. It should support the following operations: get and put. The get operation retrieves an item from the cache. If the item does not exist, it returns -1. The put operation adds an item to the cache. If the number of items exceeds the cache's capacity, it should invalidate the least recently used item. The cache should be initialized with a positive capacity.",
+    "topic": "Data Structures",
+    "subtopic": "Cache Implementation",
+    "tags": [
+      "Design",
+      "Hash Table",
+      "Linked List"
+    ],
+    "input_format": "The cache is initialized with a positive capacity. The get and put operations are performed as described.",
+    "output_format": "An integer representing the value retrieved from the cache, or -1 if the key does not exist.",
+    "constraints": [
+      "The capacity of the cache is between 1 and 3000.",
+      "The key and value for put operations are both integers.",
+      "The key for the get operation will be a valid key."
+    ],
+    "examples": [
+      {
+        "input": "cache = new LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1, -1, 3, 4]",
+        "explanation": "Cache capacity is 2. After adding (1, 1) and (2, 2), get(1) returns 1. After adding (3, 3), (2, 2) is evicted. Adding (4, 4) evicts (1, 1). Lastly, get(1) returns -1, get(3) returns 3, and get(4) returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hash map and a linked list.",
+      "Maintain the order of access to efficiently invalidate the least recently used item.",
+      "You might need to create a class for the linked list node."
+    ],
+    "company": "Twitch"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Vowels of a String",
+    "description": "Given a string s, reverse the vowels of the string and return it. The vowels are 'a', 'e', 'i', 'o', 'u' (both lowercase and uppercase). The positions of consonants should remain unchanged.",
+    "topic": "String",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "String",
+      "Two Pointers",
+      "In-place"
+    ],
+    "input_format": "A string s consisting of printable ASCII characters.",
+    "output_format": "A string with the vowels reversed while consonants remain in the same position.",
+    "constraints": [
+      "1 <= s.length <= 3 * 10^5",
+      "s consists of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'hello'",
+        "output": "holle",
+        "explanation": "The vowels in 'hello' are 'e' and 'o'. After reversing them, the string becomes 'holle'."
+      },
+      {
+        "input": "s = 'leetcode'",
+        "output": "leotcede",
+        "explanation": "The vowels in 'leetcode' are 'e', 'e', 'o', and 'e'. After reversing them, the string becomes 'leotcede'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to locate and swap the vowels."
+    ],
+    "company": "Twitch"
+  },
+  {
+    "question_id": "",
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. A mapping of digit to letters is provided (2 = 'abc', 3 = 'def', 4 = 'ghi', 5 = 'jkl', 6 = 'mno', 7 = 'pqrs', 8 = 'tuv', 9 = 'wxyz'). The output should be in lexicographical order.",
+    "topic": "Backtracking",
+    "subtopic": "Combination Generation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Combination"
+    ],
+    "input_format": "A string digits (1 <= digits.length <= 4) containing digits from 2 to 9.",
+    "output_format": "A list of strings representing all possible letter combinations.",
+    "constraints": [
+      "1 <= digits.length <= 4",
+      "digits[i] is a digit in '23456789'."
+    ],
+    "examples": [
+      {
+        "input": "digits = '23'",
+        "output": "['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']",
+        "explanation": "The mappings are: 2 = 'abc', 3 = 'def'. Possible combinations are formed by combining letters of these mappings."
+      },
+      {
+        "input": "digits = '2'",
+        "output": "['a', 'b', 'c']",
+        "explanation": "Only one digit is present, yielding combinations from 'abc'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a recursive function to explore combinations.",
+      "Consider using backtracking to generate all possible combinations."
+    ],
+    "company": "Twitch"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Email Addresses",
+    "description": "Given a list of email addresses, count the number of unique email addresses after processing them. An email address can be valid if it follows some rules: A valid email address consists of a local name and a domain name, separated by an '@' symbol.\n\nThe local name can contain alphabets, digits, underscores, and dots. However, if there are dots in the local name, they can be ignored. Additionally, a '+' sign in the local name signifies the start of an ignored substring, which also does not count towards uniqueness.\n\nFor example, 'test.email+alex@leetcode.com' and 'test.e.mail+bob@leetcode.com' both refer to the same email address 'testemail@leetcode.com'.",
+    "topic": "String",
+    "subtopic": "Email Processing",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Email"
+    ],
+    "input_format": "A list of strings emails representing the email addresses.",
+    "output_format": "An integer representing the count of unique email addresses.",
+    "constraints": [
+      "1 <= emails.length <= 10^4",
+      "1 <= emails[i].length <= 50"
+    ],
+    "examples": [
+      {
+        "input": "emails = [\"test.email+alex@leetcode.com\", \"test.e.mail+bob@leetcode.com\", \"testemail@leetcode.com\"]",
+        "output": "2",
+        "explanation": "The two unique emails are 'testemail@leetcode.com' and 'testemail@leetcode.com'."
+      },
+      {
+        "input": "emails = [\"a@b.com\", \"b@a.com\"]",
+        "output": "2",
+        "explanation": "Both email addresses are unique."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a set to store unique email addresses.",
+      "Process the local part by removing dots and ignoring anything after a plus sign."
+    ],
+    "company": "Twitch"
+  }
+]

@@ -1,0 +1,377 @@
+[
+  {
+    "question_id": "",
+    "title": "Arithmetic Slices II - Subsequence",
+    "description": "A sequence of integers is called an arithmetic slice if it contains at least three elements and the difference between any two consecutive elements is the same. You are given an integer array nums of length n. Return the number of arithmetic slices in nums. A slice is considered to be a subsequence, which means that the elements are not necessarily contiguous. You may use the same element in nums multiple times, and the order of the elements in the slice must be preserved.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "Subsequence",
+      "Arithmetic Progression"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the number of arithmetic slices.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "6",
+        "explanation": "The arithmetic slices are [1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4], [1, 2, 3, 4], and [1, 2, 3]."
+      },
+      {
+        "input": "nums = [1, 3, 5, 7]",
+        "output": "7",
+        "explanation": "The arithmetic slices are [1, 3, 5], [1, 3, 7], [1, 5, 7], [3, 5, 7], [1, 3, 5, 7], [1, 3], [3, 5]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the differences between the numbers.",
+      "Use a hashmap to count occurrences of subsequences.",
+      "Start building subsequences from smaller segments."
+    ],
+    "company": "Baidu"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Maximum Path Sum",
+    "description": "Given a non-empty binary tree, find the maximum path sum. For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root. Maximum path sum is the largest sum you can get by following a path in the tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Depth-First Search",
+      "Dynamic Programming"
+    ],
+    "input_format": "The input is a binary tree represented by a root node.",
+    "output_format": "An integer representing the maximum path sum.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 3 * 10^4].",
+      "-1000 <= Node.val <= 1000."
+    ],
+    "examples": [
+      {
+        "input": "root = [-10,9,20,null,null,15,7]",
+        "output": "42",
+        "explanation": "The maximum path sum is obtained from the path 15 -> 20 -> 7, which sums up to 15 + 20 + 7 = 42."
+      },
+      {
+        "input": "root = [1,2,3]",
+        "output": "6",
+        "explanation": "The maximum path sum is obtained from the path 2 -> 1 -> 3, which sums up to 2 + 1 + 3 = 6."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider each node as a potential root for the maximum path sum.",
+      "You can use depth-first search (DFS) to calculate the maximum path sum."
+    ],
+    "company": "Baidu"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring with At Least K Repeating Characters",
+    "description": "Given a string s and an integer k, return the length of the longest substring of s that contains at least k repeating characters. A substring is a contiguous sequence of characters within a string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Substring"
+    ],
+    "input_format": "A string s and an integer k, where 1 <= s.length <= 10^5 and 1 <= k <= 10^5.",
+    "output_format": "An integer representing the length of the longest substring with at least k repeating characters.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "1 <= k <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "s = 'aaabb', k = 3",
+        "output": "3",
+        "explanation": "The longest substring with at least 3 repeating characters is 'aaa', which has a length of 3."
+      },
+      {
+        "input": "s = 'ababbc', k = 2",
+        "output": "5",
+        "explanation": "The longest substring with at least 2 repeating characters is 'ababb', which has a length of 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to use a sliding window to keep track of character counts.",
+      "Consider using a hashmap to count characters."
+    ],
+    "company": "Baidu"
+  },
+  {
+    "question_id": "",
+    "title": "Integer Replacement",
+    "description": "Given a positive integer n, you can perform the following operations: If n is even, you must divide it by 2. If n is odd, you can either add or subtract 1 from it. Your goal is to reduce n to 1 using the minimum number of operations possible. Write a function to determine the minimum number of operations required.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Recursive & Memoization",
+    "tags": [
+      "Dynamic Programming",
+      "Mathematics",
+      "Recursion"
+    ],
+    "input_format": "A single integer n (1 <= n <= 2^31 - 1).",
+    "output_format": "An integer representing the minimum number of operations to reduce n to 1.",
+    "constraints": [
+      "1 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 8",
+        "output": "3",
+        "explanation": "First, 8 is even, divide by 2 -> 4; then 4 is even, divide by 2 -> 2; finally 2 is even, divide by 2 -> 1. Total operations = 3."
+      },
+      {
+        "input": "n = 7",
+        "output": "4",
+        "explanation": "First, 7 is odd, reduce by 1 to get 6; then 6 is even, divide by 2 to get 3; then 3 is odd, increase by 1 to get 4; finally 4 is even, divide by 2 to get 2, and then divide by 2 to get 1. Total operations = 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the parity of n when implementing the solution.",
+      "Using a recursive approach with memoization can significantly reduce redundant calculations.",
+      "Think about how many steps are needed if n is even vs. if n is odd."
+    ],
+    "company": "Baidu"
+  },
+  {
+    "question_id": "",
+    "title": "Split Array Largest Sum",
+    "description": "Given an array of integers nums and an integer k, you need to split nums into k non-empty continuous subarrays. You need to minimize the largest sum among these subarrays. Return the smallest largest sum possible.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Binary Search"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the minimized largest sum among the k subarrays.",
+    "constraints": [
+      "1 <= k <= nums.length <= 500",
+      "0 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [7,2,5,10,8], k = 2",
+        "output": "18",
+        "explanation": "One possible split can be [7,2,5] and [10,8]. The sums are 14 and 18, and the largest is 18."
+      },
+      {
+        "input": "nums = [1,2,3,4,5], k = 2",
+        "output": "9",
+        "explanation": "The best split is [1,2,3] and [4,5]. The sums are 6 and 9, and the largest is 9."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider binary searching for the largest sum.",
+      "If you know the maximum sum, determine how many subarrays you can split."
+    ],
+    "company": "Baidu"
+  },
+  {
+    "question_id": "",
+    "title": "Arithmetic Slices",
+    "description": "An arithmetic slice is a subarray that consists of at least three elements and forms an arithmetic sequence. An arithmetic sequence is a sequence of numbers such that the difference between consecutive elements is the same. Given an integer array nums, return the number of arithmetic slices in the array.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the number of arithmetic slices in the array.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "-1000 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "3",
+        "explanation": "The arithmetic slices are: [1, 2, 3], [2, 3, 4], and [1, 2, 3, 4]. So the total is 3."
+      },
+      {
+        "input": "nums = [1, 3, 5, 7, 9]",
+        "output": "6",
+        "explanation": "The arithmetic slices are: [1, 3, 5], [3, 5, 7], [5, 7, 9], [1, 3, 5, 7], [3, 5, 7, 9], [1, 3, 5, 7, 9]. Thus, total is 6."
+      },
+      {
+        "input": "nums = [7, 7, 7, 7]",
+        "output": "1",
+        "explanation": "The only arithmetic slice is [7, 7, 7]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to count the slices.",
+      "Keep track of the number of slices ending at each position."
+    ],
+    "company": "Baidu"
+  },
+  {
+    "question_id": "",
+    "title": "Zuma Game",
+    "description": "In the Zuma Game, you have a row of balls, each colored either red, green, or blue. Your goal is to eliminate all the balls by shooting additional balls. When 3 or more adjacent balls of the same color are present, they will automatically be removed. You can shoot any color you want at any position in the row. The task is to determine whether you can clear the row completely by shooting a single ball of a given color at a given position.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Greedy"
+    ],
+    "input_format": "A string representing the row of balls and a ball color to shoot, followed by the position to shoot it.",
+    "output_format": "A boolean value that indicates whether it is possible to clear the row completely.",
+    "constraints": [
+      "1 <= row.length <= 10^5",
+      "row consists of characters: 'R', 'G', 'B'",
+      "1 <= position <= row.length"
+    ],
+    "examples": [
+      {
+        "input": "row = 'RRYYGG', color = 'Y', position = 3",
+        "output": "true",
+        "explanation": "By shooting 'Y' at position 3, the row becomes 'RRYYYG', which will then eliminate 'RRYYY' resulting in 'G'."
+      },
+      {
+        "input": "row = 'RBGBG', color = 'R', position = 2",
+        "output": "false",
+        "explanation": "Shooting 'R' at position 2 will not lead to any removals."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a recursive or DFS approach.",
+      "Think about how you can combine consecutive balls and when to shoot."
+    ],
+    "company": "Baidu"
+  },
+  {
+    "question_id": "",
+    "title": "Out of Boundary Paths",
+    "description": "You are given an m x n grid representing a box and you are given two integers maxMove and startPos. Your task is to find the number of paths to move from the start position to the outside of the grid within maxMove number of moves. You can move up, down, left, or right from a cell, and if the next move would go out of bounds, you can consider it as a valid path. Return the total number of valid paths modulo 10^9 + 7.",
+    "topic": "Dynamic Programming",
+    "subtopic": "State Compression",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "DFS"
+    ],
+    "input_format": "An integer m denoting the number of rows, an integer n denoting the number of columns, an integer maxMove indicating the maximum number of moves, and an array startPos with two integers indicating the starting coordinates (row, column).",
+    "output_format": "An integer representing the total number of valid paths modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "0 <= maxMove <= 100",
+      "0 <= startPos[0] < m",
+      "0 <= startPos[1] < n"
+    ],
+    "examples": [
+      {
+        "input": "m = 2, n = 2, maxMove = 2, startPos = [0,0]",
+        "output": "6",
+        "explanation": "From position (0,0), there are 6 valid paths that lead out of the grid."
+      },
+      {
+        "input": "m = 1, n = 3, maxMove = 3, startPos = [0,1]",
+        "output": "12",
+        "explanation": "From position (0,1), there are 12 valid paths to move out of the grid within 3 moves."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to store intermediate results.",
+      "Think about how to handle out-of-bound conditions."
+    ],
+    "company": "Baidu"
+  },
+  {
+    "question_id": "",
+    "title": "Design In-Memory File System",
+    "description": "Design a data structure that simulates a simple in-memory file system. The file system should support the following operations: creating a file, creating a directory, listing directory contents, reading from a file, and writing to a file. Each file has a name and a content, while each directory can contain both files and other directories.",
+    "topic": "Design",
+    "subtopic": "File System",
+    "tags": [
+      "Design",
+      "File System",
+      "Data Structure"
+    ],
+    "input_format": "Various commands indicating operations in the file system.",
+    "output_format": "Responses from the operations such as file contents, directory listings, or success messages.",
+    "constraints": [
+      "The name of files and directories are unique within the same directory.",
+      "Directory names can only contain lowercase letters and cannot be empty.",
+      "The total number of operations will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "create_dir('/home/user')\ncreate_file('/home/user/file.txt', 'Hello, World!')\nread_file('/home/user/file.txt')",
+        "output": "'Hello, World!'",
+        "explanation": "First, a directory is created, then a file with content 'Hello, World!' is created, and finally, the file is read."
+      },
+      {
+        "input": "create_dir('/home/user/docs')\ncreate_file('/home/user/docs/file1.txt', 'Sample Text')\nlist_dir('/home/user/docs')",
+        "output": "['file1.txt']",
+        "explanation": "A directory is created, a file is created within that directory, and then listing its contents returns the file name."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a tree structure to represent directories and files.",
+      "Store file contents as strings associated with their file names."
+    ],
+    "company": "Baidu"
+  },
+  {
+    "question_id": "",
+    "title": "Length of Longest Fibonacci Subsequence",
+    "description": "Given a list of integers, you need to find the length of the longest subsequence of the list that forms a Fibonacci sequence. A Fibonacci sequence starts with two numbers, and the next number is the sum of the two preceding ones. For example, the Fibonacci sequence starting with 1 and 2 is 1, 2, 3, 5, 8, ... You may assume that the sequence must be chosen from the list in a strictly increasing order.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Subsequence"
+    ],
+    "input_format": "An array of integers nums, where 1 <= nums.length <= 1000 and 1 <= nums[i] <= 10^3.",
+    "output_format": "An integer representing the length of the longest Fibonacci subsequence.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "1 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5, 6, 7, 8]",
+        "output": "5",
+        "explanation": "The longest Fibonacci-like subsequence is [1, 2, 3, 5, 8]."
+      },
+      {
+        "input": "nums = [1, 3, 7, 11, 12, 14, 18]",
+        "output": "3",
+        "explanation": "The longest Fibonacci-like subsequence is [1, 11, 12]."
+      },
+      {
+        "input": "nums = [3, 4, 5, 6, 7, 8]",
+        "output": "0",
+        "explanation": "There is no Fibonacci-like subsequence."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to keep track of lengths of Fibonacci-like subsequences.",
+      "Use a hash set to quickly check for the existence of required numbers."
+    ],
+    "company": "Baidu"
+  }
+]

@@ -1,0 +1,778 @@
+[
+  {
+    "question_id": "",
+    "title": "Count Submatrices with Top-Left Element and Sum Less Than k",
+    "description": "Given a matrix of integers and an integer k, count the number of submatrices that have their top-left element in the matrix and a sum of all their elements less than k. The submatrices must be rectangular and can have any size. For each top-left corner, consider all possible bottom-right corners to form valid submatrices.",
+    "topic": "Matrix",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Matrix",
+      "Submatrix",
+      "Prefix Sum",
+      "Count"
+    ],
+    "input_format": "A 2D array of integers matrix and an integer k.",
+    "output_format": "An integer representing the number of valid submatrices.",
+    "constraints": [
+      "1 <= matrix.length, matrix[i].length <= 100",
+      "-10^4 <= matrix[i][j] <= 10^4",
+      "-10^9 <= k <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 0, 1], [0, -2, 3], [1, 1, 1]], k = 2",
+        "output": "4",
+        "explanation": "The valid submatrices are: [[1]], [[0]], [[0, -2]], [[1, 0], [0, -2]] with sums less than 2."
+      },
+      {
+        "input": "matrix = [[2, -1, 3], [-1, 4, 2], [0, 1, -1]], k = 5",
+        "output": "7",
+        "explanation": "The valid submatrices are: [[2]], [[-1]], [[3]], [[2, -1]], [[-1, 4]], [[4, 2]], [[0]] with sums less than 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using prefix sums to efficiently calculate the sums of submatrices.",
+      "Iterate through all possible top-left corners and calculate the possible bottom-right corners."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Mark Elements on Array by Performing Queries",
+    "description": "You are given an integer array `arr` and a list of queries. Each query consists of two integers: `start` and `end`. For each query, mark all elements in the `arr` from index `start` to `end` (inclusive) with the value of the query. After performing all queries, return the modified array.",
+    "topic": "Array",
+    "subtopic": "Range Update",
+    "tags": [
+      "Array",
+      "Range Update",
+      "Queries"
+    ],
+    "input_format": "An integer array arr and a list of queries where each query is represented by a tuple (start, end).",
+    "output_format": "An integer array representing the modified array after performing all queries.",
+    "constraints": [
+      "1 <= arr.length <= 10^5",
+      "1 <= queries.length <= 10^4",
+      "0 <= start <= end < arr.length",
+      "1 <= value of the query <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": {
+          "arr": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "queries": [
+            [
+              1,
+              3,
+              5
+            ],
+            [
+              0,
+              4,
+              3
+            ]
+          ]
+        },
+        "output": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "explanation": "After performing the first query, elements from index 1 to 3 are marked with 5. Then, the second query marks all elements with 3, resulting in [3, 3, 3, 3, 3]."
+      },
+      {
+        "input": {
+          "arr": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "queries": [
+            [
+              1,
+              2,
+              10
+            ],
+            [
+              0,
+              1,
+              20
+            ]
+          ]
+        },
+        "output": [
+          20,
+          20,
+          10,
+          4
+        ],
+        "explanation": "The first query marks arr[1] and arr[2] with 10. The second query marks arr[0] and arr[1] with 20, resulting in [20, 20, 10, 4]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using an auxiliary array to manage the range updates efficiently.",
+      "Look into applying the difference array concept to handle multiple updates."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Furthest Point From Origin",
+    "description": "Given an array of points in a 2D plane represented by their coordinates (x, y), find the furthest point from the origin (0, 0). The furthest point is defined as the point that has the maximum Euclidean distance from the origin. Return the coordinates of this point. If there are multiple points at the maximum distance, return any of them.",
+    "topic": "Geometry",
+    "subtopic": "Distance Calculation",
+    "tags": [
+      "Geometry",
+      "Distance",
+      "Array"
+    ],
+    "input_format": "An array of points where each point is represented as an array of two integers [x, y].",
+    "output_format": "An array of two integers representing the coordinates of the furthest point from the origin.",
+    "constraints": [
+      "1 <= points.length <= 10^4",
+      "-10^4 <= points[i][0], points[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "points = [[1, 2], [3, 4], [-5, -6]]",
+        "output": "[-5, -6]",
+        "explanation": "The distances from origin are \u221a(1^2 + 2^2) = \u221a5, \u221a(3^2 + 4^2) = 5, and \u221a((-5)^2 + (-6)^2) = \u221a61. The furthest point is (-5, -6)."
+      },
+      {
+        "input": "points = [[0, 0], [1, 1], [-1, -1]]",
+        "output": "[1, 1]",
+        "explanation": "The distances are 0 for (0,0), \u221a2 for (1,1) and (-1,-1). The furthest point is (1,1)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Calculate the distance using the Euclidean formula \u221a(x^2 + y^2).",
+      "Use a loop to check each point in the array.",
+      "Keep track of the maximum distance found and the corresponding point."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Double Modular Exponentiation",
+    "description": "Given three integers `a`, `b`, and `m`, calculate the value of (a^b) mod m, and then find the result of ((a^b) mod m)^2 mod m. Implement a function that efficiently computes this without directly calculating a^b, as the values can be extremely large.",
+    "topic": "Mathematics",
+    "subtopic": "Modular Arithmetic",
+    "tags": [
+      "Mathematics",
+      "ModularExponentiation"
+    ],
+    "input_format": "Three integers a, b, m (1 <= a, b <= 10^9, 2 <= m <= 10^9).",
+    "output_format": "An integer representing the result of ((a^b) mod m)^2 mod m.",
+    "constraints": [
+      "1 <= a, b <= 10^9",
+      "2 <= m <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "a = 2, b = 10, m = 1000",
+        "output": "729",
+        "explanation": "First compute (2^10) mod 1000 = 24. Then, (24^2) mod 1000 = 576."
+      },
+      {
+        "input": "a = 3, b = 3, m = 7",
+        "output": "4",
+        "explanation": "Compute (3^3) mod 7 = 6. Then, (6^2) mod 7 = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the modular exponentiation technique to prevent overflow.",
+      "Consider dividing the exponentiation into smaller pieces."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers 'nums' and an integer 'target', return the indices of the two numbers such that they add up to 'target'. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers 'nums' followed by an integer 'target'.",
+    "output_format": "An array of two integers representing the indices of the two numbers that add up to 'target'.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "Assume that there is exactly one solution."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "The numbers at indices 0 and 1 are 2 and 7, which add up to 9."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "The numbers at indices 1 and 2 are 2 and 4, which add up to 6."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash table to track the numbers and their indices.",
+      "Check if the complement of the current number exists in the hash table."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Lexicographically Smallest Generated String",
+    "description": "Given a string s of lowercase letters, you can create a new string by performing the following operations: flip a substring, reverse a substring, or concatenate a substring and perform these operations as many times as you like. Your goal is to return the lexicographically smallest string you can generate from the original string using these operations.",
+    "topic": "String Manipulation",
+    "subtopic": "Lexicographical Order",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Lexicographical"
+    ],
+    "input_format": "A single string s, consisting of lowercase English letters.",
+    "output_format": "A string representing the lexicographically smallest generated string.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists only of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "cba",
+        "output": "abc",
+        "explanation": "By reversing the whole string, we get 'abc', which is the smallest."
+      },
+      {
+        "input": "acbd",
+        "output": "abcd",
+        "explanation": "By reversing 'cb', we can get 'abcd'."
+      },
+      {
+        "input": "zyxw",
+        "output": "wxyz",
+        "explanation": "By performing multiple operations, 'wxyz' is achieved."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider all possible substrings and their manipulations.",
+      "The problem can be solved using greedy techniques.",
+      "Think about how sorting might help in generating the smallest string."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Depth-First Search",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "DFS",
+      "Graph",
+      "Grid"
+    ],
+    "input_format": "A 2D grid represented as a list of lists of characters, where each character is either '1' or '0'.",
+    "output_format": "An integer representing the total number of islands in the grid.",
+    "constraints": [
+      "1 <= grid.length <= 300",
+      "1 <= grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "[['1', '1', '0', '0', '0'], ['1', '1', '0', '0', '0'], ['0', '0', '1', '0', '0'], ['0', '0', '0', '1', '1']]",
+        "output": "3",
+        "explanation": "The grid contains three islands. The first island consists of the '1's in the top left, the second island is the single '1' in the center left, and the third island consists of the '1's in the bottom right."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS or BFS to traverse through the grid and mark visited land.",
+      "Count each time you start the traversal from an unvisited land cell."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of the characters '(', ')', '{', '}', '[' and ']' with length n.",
+    "output_format": "Return true if the string s is valid, otherwise return false.",
+    "constraints": [
+      "0 <= s.length <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are properly matched and nested."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "All parentheses are properly matched and nested."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The parentheses are not properly matched."
+      },
+      {
+        "input": "s = '([)]'",
+        "output": "false",
+        "explanation": "The parentheses are not properly nested."
+      },
+      {
+        "input": "s = '{[]}{}'",
+        "output": "true",
+        "explanation": "All parentheses are properly matched and nested."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Each time you encounter a closing bracket, check if it matches the top of the stack."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Isomorphic Strings",
+    "description": "Given two strings s and t, determine if they are isomorphic. Two strings are isomorphic if the characters in s can be replaced to get t. All occurrences of a character must map to the same character while no two characters may map to the same character.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Hash Map",
+      "Isomorphic"
+    ],
+    "input_format": "Two strings s and t, where 0 <= s.length == t.length <= 5 * 10^4.",
+    "output_format": "A boolean value indicating whether the two strings are isomorphic.",
+    "constraints": [
+      "s and t consist of any printable ASCII characters.",
+      "The lengths of s and t are equal."
+    ],
+    "examples": [
+      {
+        "input": "s = \"egg\", t = \"add\"",
+        "output": "true",
+        "explanation": "The character 'e' maps to 'a', and 'g' maps to 'd'. Thus, they are isomorphic."
+      },
+      {
+        "input": "s = \"foo\", t = \"bar\"",
+        "output": "false",
+        "explanation": "The character 'o' in s maps to 'a' in t, but 'f' and 'b' cannot map to both 'f' and 'b'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to track character mappings."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Employees to Be Invited to a Meeting",
+    "description": "Given a list of employee availability and the relationships between them, determine the maximum number of employees that can be invited to a meeting while ensuring that no two employees who do not get along can be invited at the same time. Each employee can either attend or not, given their relationships with others. Relationships are represented as a list of pairs, where each pair contains two employees who cannot attend the meeting together.",
+    "topic": "Graph",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer n representing the number of employees and a list of pairs of integers representing the relationships between employees.",
+    "output_format": "An integer representing the maximum number of employees that can be invited to the meeting.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "0 <= relationships.length <= 10000",
+      "Each relationship pair contains distinct integers in the range [0, n-1]."
+    ],
+    "examples": [
+      {
+        "input": "n = 4, relationships = [[0, 1], [1, 2], [2, 3]]",
+        "output": "2",
+        "explanation": "Invite employees 0 and 2. They do not have any conflicting relationships."
+      },
+      {
+        "input": "n = 5, relationships = [[0, 1], [1, 4], [4, 3], [2, 3]]",
+        "output": "3",
+        "explanation": "Invite employees 0, 2, and 4. No two invited employees have a direct conflict."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using graph coloring techniques to separate conflicting employees.",
+      "Explore the connectivity of employees and use dynamic programming to maximize the count."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Refueling Stops",
+    "description": "You are driving a car that can travel at most K miles on a full tank of gas. The car starts with a full tank and you have a list of gas stations along the way, where each gas station is at a specific distance from the starting point. You need to determine the minimum number of refueling stops required to reach your destination, which is a certain distance D miles away. If it is not possible to reach the destination, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Math"
+    ],
+    "input_format": "An integer D representing the destination distance, an integer K representing the maximum distance the car can travel on a full tank, and an array of integers stations representing the positions of the gas stations.",
+    "output_format": "An integer representing the minimum number of refueling stops required to reach the destination. Return -1 if it's not possible.",
+    "constraints": [
+      "0 <= stations.length <= 100",
+      "0 < D <= 10^9",
+      "0 < K <= D"
+    ],
+    "examples": [
+      {
+        "input": "D = 100, K = 10, stations = [10, 20, 30, 40, 50, 60, 70, 80, 90]",
+        "output": "9",
+        "explanation": "You need to stop at every station to reach the destination."
+      },
+      {
+        "input": "D = 100, K = 50, stations = [25, 50, 75]",
+        "output": "2",
+        "explanation": "You can reach station at 25, then refuel to reach station at 50, and finally reach the destination."
+      },
+      {
+        "input": "D = 100, K = 10, stations = [11, 12, 13, 14, 15]",
+        "output": "-1",
+        "explanation": "It's impossible to reach the destination."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about how to keep track of your current position and the stations available.",
+      "Consider using a priority queue to help with station selection."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an array of integers nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Hashing & Sorting",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of lists of integers, where each inner list represents a unique triplet that sums up to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "No triplet can be formed from an empty array."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "No triplet can sum to zero from the elements."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array first to facilitate the two-pointer approach.",
+      "Avoid duplicates by checking adjacent elements.",
+      "Think about how to efficiently find pairs that sum to a specific value."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. The number of elements initialized in nums1 and nums2 are m and n respectively. You may assume that nums1 has a size of at least m + n to accommodate additional elements from nums2.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Merge"
+    ],
+    "input_format": "Two integer arrays, nums1 and nums2. The first array, nums1, has enough space to hold additional elements from nums2.",
+    "output_format": "The merged array nums1 sorted in non-decreasing order.",
+    "constraints": [
+      "0 <= m, n <= 200",
+      "1 <= m + n <= 200",
+      "-10^9 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [2, 5, 6], n = 3",
+        "output": "[1, 2, 2, 3, 5, 6]",
+        "explanation": "After merging, the sorted array is [1, 2, 2, 3, 5, 6]."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "Since nums2 is empty, the merged array is just nums1."
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "explanation": "The merged array is [1] as nums1 initially has no elements."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You can start merging from the end of nums1.",
+      "Use two pointers to keep track of the current index in nums1 and nums2."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Linked List",
+    "description": "Given a singly linked list, determine if it is a palindrome. A linked list is considered a palindrome if it reads the same forward and backward. Implement a function to check if the given linked list is a palindrome without using extra space for storing the linked list values.",
+    "topic": "Linked List",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Linked List",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "The head of a singly linked list, where each node contains an integer value.",
+    "output_format": "Return true if the linked list is a palindrome, otherwise false.",
+    "constraints": [
+      "The number of nodes in the linked list is in the range [1, 10^5].",
+      "-10^5 <= Node.val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 2, 1]",
+        "output": "true",
+        "explanation": "The linked list reads the same forward and backward."
+      },
+      {
+        "input": "head = [1, 2]",
+        "output": "false",
+        "explanation": "The linked list does not read the same backward."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to find the midpoint of the linked list.",
+      "Reverse the second half of the linked list and compare it with the first half."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Lexicographical Numbers",
+    "description": "Given an integer n, return all the lexicographically smallest integers in the range from 1 to n. The result should be in an array sorted in ascending order.",
+    "topic": "Number Theory",
+    "subtopic": "Sorting",
+    "tags": [
+      "Sorting",
+      "Lexicographical Order",
+      "Depth-First Search"
+    ],
+    "input_format": "An integer n (1 <= n <= 10^4).",
+    "output_format": "An array of integers representing numbers from 1 to n in lexicographical order.",
+    "constraints": [
+      "1 <= n <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "n = 13",
+        "output": "[1, 10, 11, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9]",
+        "explanation": "The lexicographical order for numbers between 1 to 13 is [1, 10, 11, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9]."
+      },
+      {
+        "input": "n = 1",
+        "output": "[1]",
+        "explanation": "There's only one number, which is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using depth-first search (DFS) to explore the numbers.",
+      "Think about how you can generate numbers in a lexicographical manner."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An integer array nums.",
+    "output_format": "An integer representing the largest sum of the contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The contiguous subarray [4,-1,2,1] has the largest sum = 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The only element in the array is 1, which is the maximum sum."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The contiguous subarray [5,4,-1,7,8] has the largest sum = 23."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a variable to keep track of the current maximum subarray sum.",
+      "Consider whether to start a new subarray or to continue the current one."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Climbing Stairs",
+    "description": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "topic": "Dynamic Programming",
+    "subtopic": "Fibonacci Sequence",
+    "tags": [
+      "Dynamic Programming",
+      "Climbing Stairs",
+      "Fibonacci"
+    ],
+    "input_format": "An integer n representing the number of steps to reach the top of the staircase.",
+    "output_format": "An integer representing the number of distinct ways to climb to the top.",
+    "constraints": [
+      "1 <= n <= 45"
+    ],
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "There are two ways to climb to the top: 1 step + 1 step or 2 steps."
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "explanation": "There are three ways to climb to the top: 1 step + 1 step + 1 step, 1 step + 2 steps, or 2 steps + 1 step."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think of the problem as a recurrence relation.",
+      "Use dynamic programming to store the results of subproblems."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Permutations",
+    "description": "Given a collection of distinct integers, return all possible permutations. You need to implement a function that generates all the unique permutations of the provided list of integers, considering that the order matters.",
+    "topic": "Backtracking",
+    "subtopic": "Permutations",
+    "tags": [
+      "Backtracking",
+      "Permutations"
+    ],
+    "input_format": "A list of distinct integers.",
+    "output_format": "A list of lists, where each list represents a unique permutation of the input integers.",
+    "constraints": [
+      "1 <= nums.length <= 10",
+      "-10 <= nums[i] <= 10"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]",
+        "explanation": "The possible unique permutations of the integers 1, 2, and 3 are all the arrangements of these numbers."
+      },
+      {
+        "input": "nums = [0, 1]",
+        "output": "[[0,1],[1,0]]",
+        "explanation": "The possible unique permutations of the integers 0 and 1 are just their two arrangements."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to explore all possible arrangements.",
+      "Think about how to manage duplicates if the integers were not distinct."
+    ],
+    "company": "Barclays"
+  },
+  {
+    "question_id": "",
+    "title": "Second Highest Salary",
+    "description": "Write a SQL query to get the second highest salary from the Employee table. If there is no second highest salary, the query should return null.",
+    "topic": "SQL",
+    "subtopic": "Aggregate Functions",
+    "tags": [
+      "SQL",
+      "Aggregate",
+      "Salary"
+    ],
+    "input_format": "The input consists of a table named 'Employee' with the following schema: Employee (Id, Salary).",
+    "output_format": "A single value, which is the second highest salary, or null if it does not exist.",
+    "constraints": [
+      "The Employee table will have at least one record.",
+      "Salary can be null."
+    ],
+    "examples": [
+      {
+        "input": "SELECT Salary FROM Employee",
+        "output": "2000",
+        "explanation": "Given the salaries [3000, 2000, 1000], the second highest salary is 2000."
+      },
+      {
+        "input": "SELECT Salary FROM Employee",
+        "output": "null",
+        "explanation": "If there is only one unique salary like [1000, 1000], the second highest does not exist."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the DISTINCT keyword to avoid duplicates.",
+      "Consider using LIMIT and OFFSET to get the second highest."
+    ],
+    "company": "Barclays"
+  }
+]

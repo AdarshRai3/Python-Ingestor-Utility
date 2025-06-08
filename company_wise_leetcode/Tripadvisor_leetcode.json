@@ -1,0 +1,148 @@
+[
+  {
+    "question_id": "",
+    "title": "Find Common Characters",
+    "description": "Given an array of strings 'words', return a list of characters that occur in each string within the array. Each character in the output should appear as many times as it occurs in every string. For example, if the character 'a' appears 2 times in one string and 1 time in another, it should appear once in the output. The order of the output characters does not matter.",
+    "topic": "String",
+    "subtopic": "Character Frequency",
+    "tags": [
+      "String",
+      "Frequency",
+      "Array"
+    ],
+    "input_format": "An array of strings words.",
+    "output_format": "A list of characters that appear in all input strings.",
+    "constraints": [
+      "1 <= words.length <= 100",
+      "1 <= words[i].length <= 100",
+      "All strings contain lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"bella\", \"label\", \"roller\"]",
+        "output": "[\"e\", \"l\"]",
+        "explanation": "The characters 'e' and 'l' appear in all three strings."
+      },
+      {
+        "input": "words = [\"cool\", \"lock\", \"cook\"]",
+        "output": "[\"c\", \"o\"]",
+        "explanation": "The characters 'c' and 'o' appear in all three strings."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a frequency counter to track character occurrences.",
+      "Consider using intersection logic for the character counts."
+    ],
+    "company": "Tripadvisor"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order, and every opening bracket has a corresponding closing bracket.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of characters '(', ')', '{', '}', '[' and ']'",
+    "output_format": "Return true if the input string is valid; otherwise, return false.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The string contains a pair of parentheses that are correctly matched."
+      },
+      {
+        "input": "s = '([{}])'",
+        "output": "true",
+        "explanation": "The string contains various types of brackets that are correctly nested and matched."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The string contains mismatched parentheses."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of the opening parentheses.",
+      "Make sure every closing bracket corresponds to the most recent opening bracket."
+    ],
+    "company": "Tripadvisor"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. It should support the following operations: `get(key)` and `put(key, value)`. The `get(key)` method retrieves the value associated with the key if it exists in the cache. Otherwise, it returns -1. The `put(key, value)` method updates the existing key value if the key is found or adds the key-value pair to the cache. If the number of keys exceeds the capacity, it should invalidate the least recently used key. The cache should be initialized with a positive integer representing its capacity.",
+    "topic": "Design",
+    "subtopic": "Cache",
+    "tags": [
+      "Design",
+      "Cache",
+      "Data Structure"
+    ],
+    "input_format": "Two operations - `get(key)` and `put(key, value)`. The capacity of the cache is provided at initialization.",
+    "output_format": "Return the value for `get(key)`, or -1 if the key does not exist. `put(key, value)` does not return anything.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "LRUCache(2); lruCache.put(1, 1); lruCache.put(2, 2); lruCache.get(1); lruCache.put(3, 3); lruCache.get(2); lruCache.put(4, 4); lruCache.get(1); lruCache.get(3); lruCache.get(4);",
+        "output": "[1,-1,4,3]",
+        "explanation": "After putting (1,1) and (2,2), get(1) returns 1. When putting (3,3), the least recently used key (2) is evicted. Thus, get(2) returns -1. After putting (4,4), the least recently used key (1) is evicted. Finally, get(1) returns -1, get(3) returns 3, and get(4) returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a doubly linked list to maintain the LRU order.",
+      "Hash map can help in O(1) access to cache entries."
+    ],
+    "company": "Tripadvisor"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Profit"
+    ],
+    "input_format": "An array of integers prices, representing the stock prices on each day.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate the profit for each day and update the maximum profit."
+    ],
+    "company": "Tripadvisor"
+  }
+]

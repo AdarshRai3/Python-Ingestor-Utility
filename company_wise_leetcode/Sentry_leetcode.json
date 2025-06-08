@@ -1,0 +1,76 @@
+[
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a length maxWidth, format the text such that each line has exactly maxWidth characters and is fully justified. You should place spaces between words such that each line has exactly maxWidth characters. The last line should be left-justified and no extra spaces should be inserted. Each line must have at least one word. You can assume that all input words are valid and consist only of lowercase English letters.",
+    "topic": "String",
+    "subtopic": "Text Formatting",
+    "tags": [
+      "String",
+      "Formatting",
+      "Justification"
+    ],
+    "input_format": "An array of strings words representing the input words and an integer maxWidth representing the maximum width of each line.",
+    "output_format": "An array of strings where each string represents a fully justified line of text.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 20",
+      "1 <= maxWidth <= 100"
+    ],
+    "examples": [
+      {
+        "input": "words = [\"This\", \"is\", \"an\", \"example\", \"of\", \"text\", \"justification.\"]\nmaxWidth = 16",
+        "output": "[\"This    is    an\",\n\"example  of text\",\n\"justification.  \"]",
+        "explanation": "The first line is justified to 16 characters with extra spaces distributed between the words. The last line is left-justified."
+      },
+      {
+        "input": "words = [\"What\", \"must\", \"be\", \"acknowledgment\", \"shall\", \"be\"]\nmaxWidth = 16",
+        "output": "[\"What   must   be\",\n\"acknowledgment  \",\n\"shall be        \"]",
+        "explanation": "The first line contains the words 'What', 'must', and 'be' distributed to fit 16 characters and the last line is left-justified."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how spaces should be distributed across words.",
+      "Keep track of the number of characters and spaces used as you build each line.",
+      "Handle the last line differently since it should be left-justified."
+    ],
+    "company": "Sentry"
+  },
+  {
+    "question_id": "",
+    "title": "Design Hit Counter",
+    "description": "Design a hit counter that counts the number of hits received in the past 5 minutes. When a request comes in, it should record the timestamp of that request. Whenever the total number of hits in the last 5 minutes is queried, it should return that count. You need to implement the HitCounter class with the following methods:\n\n- `HitCounter()` Initializes the counter object.\n- `void hit(int timestamp)` Records a hit that occurred at the given timestamp (in seconds granularity).\n- `int getHits(int timestamp)` Returns the number of hits in the past 5 minutes from the given timestamp.\n\nNote that the timestamps are monotonically increasing; that is, each subsequent hit has a timestamp greater than the previous.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Monotonic Queue"
+    ],
+    "input_format": "A timestamp represented as an integer (in seconds).",
+    "output_format": "An integer representing the number of hits in the last 5 minutes.",
+    "constraints": [
+      "1 <= timestamp <= 2 * 10^9",
+      "Each timestamp is guaranteed to be not smaller than the previous one."
+    ],
+    "examples": [
+      {
+        "input": "HitCounter hitCounter = new HitCounter();\nhitCounter.hit(1);\nhitCounter.hit(2);\nhitCounter.hit(3);\nint hitCount = hitCounter.getHits(4);",
+        "output": "3",
+        "explanation": "Hits occurred at timestamps 1, 2, and 3. At timestamp 4, all three are counted."
+      },
+      {
+        "input": "hitCounter.hit(300);\nint hitCount = hitCounter.getHits(300);\nhitCounter.hit(301);\nint hitCount2 = hitCounter.getHits(300);\nint hitCount3 = hitCounter.getHits(301);",
+        "output": "1\n1\n2",
+        "explanation": "At timestamp 300, there's 1 hit.\nAt timestamp 300 again, still 1 hit (301 is irrelevant).\nAt timestamp 301, both 300 and 301 are counted."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a data structure that can efficiently handle time decay.",
+      "Consider using a queue to store the timestamps of hits."
+    ],
+    "company": "Sentry"
+  }
+]

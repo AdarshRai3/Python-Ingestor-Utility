@@ -1,0 +1,111 @@
+[
+  {
+    "question_id": "",
+    "title": "Rotting Oranges",
+    "description": "You are given an m x n grid where each cell can have one of three values: 0 (empty cell), 1 (fresh orange), or 2 (rotten orange). Every minute, any fresh orange that is adjacent (4-directionally) to a rotten orange will rot. Return the minimum number of minutes that must elapse until no fresh oranges remain. If it is impossible to rot every fresh orange, return -1.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid represented as a list of lists where each element is either 0, 1, or 2.",
+    "output_format": "An integer representing the minimum number of minutes until no fresh oranges remain or -1 if impossible.",
+    "constraints": [
+      "1 <= m, n <= 300",
+      "grid[i][j] is 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "[[2,1,1],[1,1,0],[0,1,2]]",
+        "output": "4",
+        "explanation": "Initially, there is one rotten orange (2) at grid[0][0]. In four minutes, all fresh oranges will be rotten."
+      },
+      {
+        "input": "[[2,1,1],[0,1,1],[1,0,2]]",
+        "output": "-1",
+        "explanation": "One fresh orange is isolated by empty cells, so it cannot rot."
+      },
+      {
+        "input": "[[0,2]]",
+        "output": "0",
+        "explanation": "There are no fresh oranges, so the time elapsed is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using BFS to spread the rot.",
+      "Count the number of fresh oranges at the beginning.",
+      "Track the time taken for each level of BFS."
+    ],
+    "company": "Informatica"
+  },
+  {
+    "question_id": "",
+    "title": "Min Stack",
+    "description": "Design a stack that supports the following operations: push, pop, top, and retrieving the minimum element in constant time. Implement the MinStack class as follows: - MinStack() initializes the stack object. - void push(int val) pushes the element val onto the stack. - void pop() removes the element on the top of the stack. - int top() retrieves the element on the top of the stack. - int getMin() retrieves the minimum element in the stack.",
+    "topic": "Data Structures",
+    "subtopic": "Stack",
+    "tags": [
+      "Stack",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "The operations push, pop, top, and getMin with respective values as needed.",
+    "output_format": "For each top and getMin operation, return the corresponding value.",
+    "constraints": [
+      "The number of operations will not exceed 1000.",
+      "-10^5 <= val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "MinStack minStack = new MinStack(); minStack.push(-2); minStack.push(0); minStack.push(-3); minStack.getMin(); minStack.pop(); minStack.top(); minStack.getMin();",
+        "output": "-3, 0, -2",
+        "explanation": "After pushing -2, 0, and -3, the minimum is -3. After popping -3, the top is 0, and the minimum is -2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two stacks to keep track of the minimum.",
+      "Think about how to maintain a minimum value while popping elements."
+    ],
+    "company": "Informatica"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. You are initially positioned at the first index, and your goal is to reach the last index. Write a function that returns true if you can reach the last index, or false otherwise.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "A boolean indicating whether it is possible to reach the last index.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "true",
+        "explanation": "You can jump to index 1 (3), then jump to the last index (4)."
+      },
+      {
+        "input": "nums = [3, 2, 1, 0, 4]",
+        "output": "false",
+        "explanation": "It is not possible to reach the last index because you get stuck at index 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider keeping track of the farthest position you can reach.",
+      "If at any point you cannot proceed from the current index, return false."
+    ],
+    "company": "Informatica"
+  }
+]

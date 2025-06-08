@@ -1,0 +1,1644 @@
+[
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, if the input is [[1,3],[2,6],[8,10],[15,18]], the merged output should be [[1,6],[8,10],[15,18]].",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Interval",
+      "Sorting"
+    ],
+    "input_format": "A 2D list of integers intervals where intervals[i] = [start_i, end_i].",
+    "output_format": "A 2D list of merged intervals.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= start_i < end_i <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "Intervals [1,3] and [2,6] overlap and can be merged into [1,6]."
+      },
+      {
+        "input": "[[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "Intervals [1,4] and [4,5] touch at 4, so they can be merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the starting time.",
+      "Use a list to store the merged intervals."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Logger Rate Limiter",
+    "description": "You have a logger that receives log messages in the form of strings, each with a timestamp that is a non-negative integer representing seconds. Implement a logger that restricts the same message from being printed more than once every 10 seconds. The logger should have a method `shouldPrintMessage(timestamp: int, message: str) -> bool` that returns true if the message should be printed at the given timestamp (it hasn't been printed in the last 10 seconds), and false otherwise.",
+    "topic": "Design",
+    "subtopic": "Rate Limiting",
+    "tags": [
+      "Design",
+      "Hash Table",
+      "Rate Limiting"
+    ],
+    "input_format": "An integer timestamp and a string message.",
+    "output_format": "A boolean value indicating whether the message should be printed.",
+    "constraints": [
+      "0 <= timestamp <= 10^9",
+      "1 <= message.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "timestamp = 1, message = 'foo'",
+        "output": "true",
+        "explanation": "'foo' has not been logged yet, so it can be printed."
+      },
+      {
+        "input": "timestamp = 2, message = 'bar'",
+        "output": "true",
+        "explanation": "'bar' has not been logged yet, so it can be printed."
+      },
+      {
+        "input": "timestamp = 3, message = 'foo'",
+        "output": "true",
+        "explanation": "'foo' can be printed again since it was logged at timestamp 1."
+      },
+      {
+        "input": "timestamp = 11, message = 'foo'",
+        "output": "true",
+        "explanation": "'foo' was logged at timestamp 1, which is more than 10 seconds ago."
+      },
+      {
+        "input": "timestamp = 10, message = 'foo'",
+        "output": "false",
+        "explanation": "'foo' was logged at timestamp 1 and cannot be printed again until timestamp 11."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a dictionary to track the last logged timestamp for each message.",
+      "Check if the current timestamp minus the last timestamp is greater than or equal to 10."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "First Missing Positive",
+    "description": "Given an unsorted integer array nums, return the smallest missing positive integer.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Hashing"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the smallest missing positive integer.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, -1, 1]",
+        "output": "2",
+        "explanation": "The numbers 1 and 2 are present in the array, and 3 is the first missing positive integer."
+      },
+      {
+        "input": "nums = [1, 2, 0]",
+        "output": "3",
+        "explanation": "The array contains 1 and 2, so the smallest missing positive integer is 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use an approach that modifies the input array for optimal space usage.",
+      "Think about how you can use the index to represent the positive integers."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Meeting Rooms II",
+    "description": "Given an array of intervals representing the start and end times of meetings, find the minimum number of conference rooms required to hold all the meetings. Each meeting can be represented as a pair of integers where the first integer is the start time and the second integer is the end time.",
+    "topic": "Interval Scheduling",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Intervals",
+      "Greedy",
+      "Sorting"
+    ],
+    "input_format": "A list of non-overlapping intervals, where each interval is represented as an array of two integers [start, end].",
+    "output_format": "An integer representing the minimum number of conference rooms required.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "0 <= intervals[i][0] < intervals[i][1] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[0, 30], [5, 10], [15, 20]]",
+        "output": "2",
+        "explanation": "The meetings [0, 30] and [5, 10] overlap thus requiring two rooms."
+      },
+      {
+        "input": "intervals = [[7, 10], [2, 4]]",
+        "output": "1",
+        "explanation": "The meetings do not overlap, thus only one room is needed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the intervals based on start times.",
+      "Use a min-heap to track the end times of meetings."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Reconstruct Itinerary",
+    "description": "You are given a list of airline tickets represented as pairs of departure and arrival airports. Each ticket is represented as a list of two strings [from, to]. An itinerary is valid if you can use all the tickets exactly once and visit all airports in a single path starting from 'JFK'. Your task is to reconstruct the itinerary and return the result as a list of strings in the order of the airports visited.",
+    "topic": "Graph",
+    "subtopic": "Depth First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Backtracking"
+    ],
+    "input_format": "A list of tickets, where each ticket is represented as a list of two strings [from, to].",
+    "output_format": "A list of strings representing the reconstructed itinerary.",
+    "constraints": [
+      "1 <= tickets.length <= 1000",
+      "Each ticket is a valid pair of strings.",
+      "All strings consist of uppercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "[[\"MUC\", \"LHR\"], [\"JFK\", \"MUC\"], [\"SFO\", \"SJC\"], [\"LHR\", \"SFO\"]]",
+        "output": "[\"JFK\", \"MUC\", \"LHR\", \"SFO\", \"SJC\"]",
+        "explanation": "The valid itinerary is \"JFK\" -> \"MUC\" -> \"LHR\" -> \"SFO\" -> \"SJC\"."
+      },
+      {
+        "input": "[[\"JFK\", \"SFO\"], [\"JFK\", \"ATL\"], [\"SFO\", \"ATL\"], [\"ATL\", \"JFK\"]]",
+        "output": "[\"JFK\", \"ATL\", \"JFK\", \"SFO\", \"ATL\"]",
+        "explanation": "The valid itinerary is \"JFK\" -> \"ATL\" -> \"JFK\" -> \"SFO\" -> \"ATL\"."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack for backtracking.",
+      "Use an adjacency list to store the graph.",
+      "Prioritize the lexical order among destinations when traversing."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Random Pick with Weight",
+    "description": "You are given an array of integers 'w' where 'w[i]' is the weight of the ith index. Write a function that selects an index 'i' with a probability proportional to 'w[i]'. That is, the larger the weight of an index, the higher the chance it will be selected. You need to implement the `pickIndex()` method which returns a randomly selected index.",
+    "topic": "Binary Search",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Random",
+      "Binary Search",
+      "Probability"
+    ],
+    "input_format": "An array 'w' of positive integers representing the weight of each index.",
+    "output_format": "An integer representing the randomly selected index based on the probability distribution.",
+    "constraints": [
+      "1 <= w.length <= 10^4",
+      "1 <= w[i] <= 10^6",
+      "The sum of weights will not exceed 10^7."
+    ],
+    "examples": [
+      {
+        "input": "w = [1, 3]",
+        "output": "1",
+        "explanation": "With weights [1, 3], the probability of selecting index 0 is 1/4 and index 1 is 3/4. Select index 1 more frequently."
+      },
+      {
+        "input": "w = [1, 1, 1, 1, 1]",
+        "output": "0 or 1 or 2 or 3 or 4",
+        "explanation": "With equal weights, each index has an equal chance of being selected."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a cumulative sum array.",
+      "Binary search can help in selecting an index based on the prefix sums."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Flatten Nested List Iterator",
+    "description": "Given a nested list of integers, implement an iterator to flatten the list into a single integer list. The nested list may contain integers or more nested lists. Your iterator should return integers one by one in a flat manner. Implement the class NestedIterator with the following methods: \n\n- __init__(self, nestedList: List[NestedInteger])`: Initializes the iterator with the nested list. \n- `next(self) -> int`: Returns the next integer in the flattened list. \n- `hasNext(self) -> bool`: Returns whether there are more integers to be returned.",
+    "topic": "Design",
+    "subtopic": "Iterator",
+    "tags": [
+      "Iterator",
+      "Design",
+      "Nested List"
+    ],
+    "input_format": "A List of NestedInteger, where NestedInteger can be either a single integer or a list of NestedInteger.",
+    "output_format": "An integer if `next()` is called or a boolean if `hasNext()` is called.",
+    "constraints": [
+      "1 <= nestedList.length <= 10^4",
+      "Each NestedInteger can contain up to 10^4 NestedInteger objects."
+    ],
+    "examples": [
+      {
+        "input": "nestedList = [[1,1], 2, [1,1]]",
+        "output": "[1,1,2,1,1]",
+        "explanation": "Calling 'next()' sequentially will return 1, then 1, then 2, then 1, and finally 1 again."
+      },
+      {
+        "input": "[1,[4,[6]]]",
+        "output": "[1,4,6]",
+        "explanation": "Flattening the nested list will yield 1, 4, and 6 in order."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to manage nested structures.",
+      "You might need a helper function to move through the nested lists."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value data structure that can store (key, value) pairs, along with timestamps. Implement methods to set a value at a specific time, retrieve a value at a specific time, and get the most recent value before a given timestamp. The key-value store should only store unique keys, and there may be multiple values associated with the same key over time.",
+    "topic": "Data Structure",
+    "subtopic": "Hash Map",
+    "tags": [
+      "Hash Map",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "The input consists of multiple operations in the form of strings:\n1. 'set(key, value, timestamp)': Set the value of the key at the given timestamp.\n2. 'get(key, timestamp)': Get the most recent value of the key before or at the given timestamp.",
+    "output_format": "Return the value associated with the key at the given timestamp, or an empty string if the key does not exist.",
+    "constraints": [
+      "1 <= number of operations <= 10^4",
+      "1 <= key.length <= 100",
+      "1 <= value.length <= 100",
+      "0 <= timestamp <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "set('foo', 'bar', 1); get('foo', 1); get('foo', 3); set('foo', 'baz', 2); get('foo', 2); get('foo', 4);",
+        "output": "'bar', 'bar', 'baz', 'baz'",
+        "explanation": "Initially, 'foo' is set to 'bar' at timestamp 1. The first call to get returns 'bar'. The second call to get at timestamp 3 still returns 'bar'. 'baz' is then set at timestamp 2, and 'baz' is returned for both calls to get at timestamp 2 and 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a map to store keys against their timestamp-value pairs.",
+      "You may need to use binary search to efficiently find the most recent value."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Summary Ranges",
+    "description": "Given a sorted integer array without duplicates, return the summary of its ranges. A range `[a, b]` is represented as `a->b` if `a != b`, or just `a` if `a == b`.",
+    "topic": "Array",
+    "subtopic": "Range Summarization",
+    "tags": [
+      "Array",
+      "Summarization",
+      "Ranges"
+    ],
+    "input_format": "A sorted array of integers nums without duplicates.",
+    "output_format": "A list of strings representing the summary of ranges.",
+    "constraints": [
+      "0 <= nums.length <= 10^4",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 1, 2, 4, 5, 7]",
+        "output": "[\"0->2\", \"4->5\", \"7\"]",
+        "explanation": "The ranges are 0, 1, 2 which can be summarized as '0->2'. The numbers 4 and 5 form another range, and 7 stands alone."
+      },
+      {
+        "input": "nums = [0, 2, 3, 4, 6, 8, 9]",
+        "output": "[\"0\", \"2->4\", \"6\", \"8->9\"]",
+        "explanation": "0 is individual, 2, 3, and 4 can be summarized as '2->4', 6 is individual, and 8 and 9 form '8->9'."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "An empty array results in no ranges."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a loop to iterate through the array and track the start of each range.",
+      "If the next number isn't consecutive, finalize the current range."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Elements",
+    "description": "Given a non-empty array of integers, return the k most frequent elements. You may return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums and an integer k, where nums is the input array and k is the number of top frequent elements to return.",
+    "output_format": "An array of the k most frequent elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^4",
+      "k is always valid, 1 <= k <= number of unique elements in the array."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 1, 2, 2, 3], k = 2",
+        "output": "[1, 2]",
+        "explanation": "The element '1' appears the most, so it is included. The element '2' is next, making it the second most frequent."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Only one element is present in the array, thus it is the most frequent."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to count frequencies.",
+      "You can use a heap or sorting to find the top k elements."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for an LRU (Least Recently Used) cache. It should support the following operations: get and put. The get operation retrieves the value of the key if the key exists in the cache, otherwise returns -1. The put operation updates the value of the key if the key exists. If the key does not exist, it will insert the key-value pair into the cache. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Cache",
+      "Design",
+      "Data Structures"
+    ],
+    "input_format": "The input consists of a series of operations using 'get' and 'put'.",
+    "output_format": "The output should be the results of the 'get' operations.",
+    "constraints": [
+      "The cache will be initialized with a positive capacity.",
+      "The maximum capacity will not exceed 1000.",
+      "Keys and values are guaranteed to be non-negative."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache cache = new LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1,-1,-1,4]",
+        "explanation": "The operations result in the following states: get(1) returns 1, get(2) returns -1 because it was evicted, get(1) again returns -1 because it was also evicted, get(3) returns 3, and get(4) returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a combination of a hashmap and a doubly linked list.",
+      "Make sure to update the order of usage when accessing keys.",
+      "Think about how to efficiently handle eviction."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Cache With Time Limit",
+    "description": "You are tasked with implementing a caching system that stores key-value pairs with an associated time limit in seconds. The system should allow for insertion of new key-value pairs, retrieval of value by key, and automatic expiration of entries after their time limit has elapsed. If a key is accessed after its expiration time, it should return a null value. Design your cache with the following operations: 'set(key, value, duration)' to insert the key-value pair with the specified duration, and 'get(key)' to retrieve the value associated with the key, returning null if the key has expired or does not exist.",
+    "topic": "Cache",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Cache",
+      "Data Structure",
+      "System Design"
+    ],
+    "input_format": "A series of commands where each command is either 'set(key, value, duration)' or 'get(key)'.",
+    "output_format": "For each 'get(key)' command, return the value associated with the key or null.",
+    "constraints": [
+      "1 <= duration <= 10^6",
+      "1 <= key.length <= 100",
+      "1 <= value.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "set('a', 'apple', 5); get('a');",
+        "output": "'apple'",
+        "explanation": "The key 'a' is set with value 'apple' for 5 seconds. The value is retrieved successfully."
+      },
+      {
+        "input": "set('b', 'banana', 2); sleep(3); get('b');",
+        "output": "null",
+        "explanation": "The key 'b' is set for 2 seconds, but after 3 seconds, it has expired."
+      },
+      {
+        "input": "set('c', 'cherry', 10); sleep(5); get('c');",
+        "output": "'cherry'",
+        "explanation": "The key 'c' is still valid after 5 seconds, so 'cherry' is returned."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to store key-value pairs alongside their expiration time.",
+      "Use a priority queue or similar structure for managing expiration efficiently."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Write a function that will help you determine the maximum profit you can achieve. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where 0 <= prices.length <= 10^5.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "0 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate profit at each day and update maximum profit accordingly."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "You are given an integer array nums sorted in ascending order, which is then rotated at an unknown pivot index. Write a function to search for a target value in the rotated array. If the target exists, then return its index; otherwise, return -1. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An integer array nums and an integer target.",
+    "output_format": "An integer representing the index of the target in nums or -1 if not found.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      " -10^4 <= nums[i] <= 10^4",
+      "All integers in nums are unique.",
+      "nums is guaranteed to be rotated at some pivot."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "0 is found at index 4 in the rotated array."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "3 is not present in the array."
+      },
+      {
+        "input": "nums = [1], target = 0",
+        "output": "-1",
+        "explanation": "0 is not present in the array with just one element."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how array rotations impact the sorted properties.",
+      "Use binary search to efficiently find the target."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket has a corresponding closing bracket, and the brackets must be closed in the correct order.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of parentheses, brackets, and braces.",
+    "output_format": "A boolean value indicating whether the input string is valid.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of '(', ')', '{', '}', '[' and ']'"
+    ],
+    "examples": [
+      {
+        "input": "s = \"()\"",
+        "output": "true",
+        "explanation": "The parentheses are correctly matched and nested."
+      },
+      {
+        "input": "s = \"()[]{}\"",
+        "output": "true",
+        "explanation": "The brackets are correctly matched and in order."
+      },
+      {
+        "input": "s = \"(]\"",
+        "output": "false",
+        "explanation": "The brackets are not correctly matched."
+      },
+      {
+        "input": "s = \"([)]\"",
+        "output": "false",
+        "explanation": "The brackets are not closed in the correct order."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of the opening brackets.",
+      "Check if the top of the stack matches the current closing bracket.",
+      "An empty stack after processing the string indicates a valid sequence."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. The operations should be done in constant average time complexity O(1). Implement the RandomizedSet class with the following methods: \n\n- `insert(val: int) -> bool`: Inserts an item val into the set, returns true if the item was not already present.\n- `remove(val: int) -> bool`: Removes an item val from the set, returns true if the item was present.\n- `getRandom() -> int`: Returns a random element from the current set of elements (it is guaranteed that at least one element exists when this method is called). You must implement the solution using a data structure that maintains O(1) time complexity for each of the insert and delete operations.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "HashTable",
+      "Random",
+      "Data Structure"
+    ],
+    "input_format": "A sequence of operations will be provided, where each operation is in the form of a command like 'insert', 'remove', or 'getRandom'.",
+    "output_format": "A boolean output for 'insert' and 'remove' commands, and an integer output for 'getRandom' commands.",
+    "constraints": [
+      "-2^31 <= val <= 2^31 - 1",
+      "The operations are performed on a maximum of 2 * 10^5 calls.",
+      "All values are unique."
+    ],
+    "examples": [
+      {
+        "input": "randomizedSet.insert(1); randomizedSet.remove(2); randomizedSet.insert(2); randomizedSet.getRandom();",
+        "output": "1 or 2",
+        "explanation": "At this point, the set contains 1 and 2. Calling getRandom can return either 1 or 2."
+      },
+      {
+        "input": "randomizedSet.remove(1); randomizedSet.insert(2); randomizedSet.getRandom();",
+        "output": "2",
+        "explanation": "Now the only element in the set is 2 after removing 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a list to store elements for O(1) access.",
+      "Use a hash map to store the index of elements for O(1) deletion."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search",
+    "description": "Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where 'adjacent' cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.",
+    "topic": "Backtracking",
+    "subtopic": "Matrix",
+    "tags": [
+      "DFS",
+      "Backtracking",
+      "Matrix"
+    ],
+    "input_format": "A 2D board represented as a list of lists, and a string 'word'.",
+    "output_format": "A boolean value indicating whether the word exists in the grid.",
+    "constraints": [
+      "1 <= board.length <= 200",
+      "1 <= board[i].length <= 200",
+      "board[i][j] is a lowercase English letter.",
+      "1 <= word.length <= 1000"
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCCED"
+        },
+        "output": "true",
+        "explanation": "The word can be found by following the path A -> B -> C -> C -> E -> D."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "SEE"
+        },
+        "output": "true",
+        "explanation": "The word can be found by following the path S -> E -> E."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCB"
+        },
+        "output": "false",
+        "explanation": "The word cannot be constructed as the letter B cannot be used twice."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use Depth First Search (DFS) to explore the board.",
+      "Keep track of visited cells to avoid revisiting."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Koko Eating Bananas",
+    "description": "Koko loves to eat bananas. There are N piles of bananas, and the i-th pile has piles[i] bananas. Koko can decide her eating speed K bananas per hour. She wants to finish eating all the bananas within H hours. Your task is to determine the minimum integer K such that she can eat all the bananas within H hours. If K is not possible, return -1.",
+    "topic": "Binary Search",
+    "subtopic": "Search Algorithms",
+    "tags": [
+      "Binary Search",
+      "Greedy",
+      "Math"
+    ],
+    "input_format": "An integer array piles representing the piles of bananas and an integer H representing the maximum hours to finish eating.",
+    "output_format": "An integer representing the minimum eating speed K in hours. If not possible, return -1.",
+    "constraints": [
+      "1 <= piles.length <= 10^4",
+      "1 <= piles[i] <= 10^9",
+      "1 <= H <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "piles = [3,6,7,11], H = 8",
+        "output": "4",
+        "explanation": "With an eating speed of 4, Koko can eat the piles in 8 hours: 3 (1 hour), 6 (2 hours), 7 (2 hours), 11 (3 hours) totaling 8 hours."
+      },
+      {
+        "input": "piles = [30,11,23,4,20], H = 5",
+        "output": "30",
+        "explanation": "Koko can eat the piles in 5 hours with an eating speed of 30, resulting in various distributions that allow her to finish in exactly 5 hours."
+      },
+      {
+        "input": "piles = [30,11,23,4,20], H = 6",
+        "output": "23",
+        "explanation": "With an eating speed of 23, Koko can finish the bananas in 6 hours."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to optimize the eating speed.",
+      "The upper bound for K could be the maximum value in the piles.",
+      "Calculate how many hours it would take at a given speed."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Contains Duplicate II",
+    "description": "Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Searching"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "A boolean value indicating if the condition is met.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "0 <= k <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1], k = 3",
+        "output": "true",
+        "explanation": "The index of '1' are 0 and 3. |3 - 0| <= 3, so return true."
+      },
+      {
+        "input": "nums = [1, 0, 1, 1], k = 1",
+        "output": "true",
+        "explanation": "The index of '1' are 2 and 3. |3 - 2| <= 1, so return true."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1, 2, 3], k = 2",
+        "output": "false",
+        "explanation": "There are no indices i and j such that nums[i] == nums[j] and |i - j| <= 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the index of the elements.",
+      "Check the last seen index of each element during iteration."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "HashMap",
+      "Sliding Window"
+    ],
+    "input_format": "A single string s consisting of Unicode characters.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of English letters, digits, symbols and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'abc', with a length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is 'b', with a length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'wke', with a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using a sliding window technique.",
+      "Use a hash map to track the characters and their indices."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Daily Temperatures",
+    "description": "Given an array of integers representing daily temperatures, return an array such that for each day in the input array, you tell how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead. Specifically, you must find the number of days until a warmer temperature for each day in the input array.",
+    "topic": "Array",
+    "subtopic": "Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Monotonic Stack"
+    ],
+    "input_format": "An array of integers temperatures representing daily temperatures.",
+    "output_format": "An array of integers where each integer is the number of days until a warmer temperature.",
+    "constraints": [
+      "1 <= temperatures.length <= 30000",
+      "30 <= temperatures[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "temperatures = [73, 74, 75, 71, 69, 72, 76, 73]",
+        "output": "[1, 1, 4, 2, 1, 1, 0, 0]",
+        "explanation": "For the first day (73), the next warmer day is the second day (74), which is 1 day later. The same applies for the second day (74) to the third day (75). For the remaining days, we keep track of warmer days."
+      },
+      {
+        "input": "temperatures = [30, 40, 50, 60]",
+        "output": "[1, 1, 1, 0]",
+        "explanation": "Each day has a warmer temperature the following day until the last day."
+      },
+      {
+        "input": "temperatures = [30, 60, 90]",
+        "output": "[1, 1, 0]",
+        "explanation": "Only the first two days have warmer temperatures."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to keep track of indices.",
+      "Process the temperatures from the end to the beginning."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule II",
+    "description": "There are a total of n courses you have to take, labeled from 0 to n-1. Some courses may have prerequisites, which are given as a pair of course prerequisites where the first course must be taken before the second course. You need to find a possible order to finish all courses. If there are no such order, return an empty array. Your task is to determine the order of courses you can take.",
+    "topic": "Graph",
+    "subtopic": "Topological Sort",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "An integer n (number of courses) and a 2D array prerequisites representing the prerequisite pairs.",
+    "output_format": "A list of integers representing the course order or an empty list if it's impossible to finish all courses.",
+    "constraints": [
+      "1 <= n <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2",
+      "0 <= prerequisites[i][0], prerequisites[i][1] < n"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, prerequisites = [[1,0],[2,1],[3,2]]",
+        "output": "[0,1,2,3]",
+        "explanation": "The order of courses can be taken as 0 -> 1 -> 2 -> 3. Course 0 must be completed before course 1, course 1 before course 2, and course 2 before course 3."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "[]",
+        "explanation": "It's impossible to finish all courses due to a cycle."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a graph to represent the courses and prerequisites.",
+      "Detect cycles in the graph.",
+      "Use Topological Sorting to find a valid course order."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Words",
+    "description": "Given a list of words, return the top k most frequent words in the list. The words should be returned in descending order of frequency. If two words have the same frequency, they should be sorted in lexicographical order.",
+    "topic": "Hash Table",
+    "subtopic": "Frequency Count",
+    "tags": [
+      "Hash Table",
+      "Sorting",
+      "String"
+    ],
+    "input_format": "A list of strings 'words' and an integer 'k'.",
+    "output_format": "A list of the top k frequent words, sorted according to the specified criteria.",
+    "constraints": [
+      "1 <= words.length <= 10000",
+      "0 < k <= number of distinct words in the list",
+      "1 <= words[i].length <= 100",
+      "words[i] consists of lowercase English letters and some may be duplicates."
+    ],
+    "examples": [
+      {
+        "input": "words = ['i', 'love', 'leetcode', 'i', 'love', 'coding'], k = 2",
+        "output": "['i', 'love']",
+        "explanation": "The word 'i' appears 2 times and 'love' appears 2 times. Both are the top two frequent words."
+      },
+      {
+        "input": "words = ['the', 'day', 'is', 'sunny', 'the', 'the', 'sunny', 'is', 'is'], k = 4",
+        "output": "['is', 'the', 'sunny', 'day']",
+        "explanation": "'is' appears 3 times, 'the' appears 3 times, 'sunny' appears 2 times, and 'day' appears 1 time."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to count the frequency of each word.",
+      "Consider using a priority queue to find the top k elements efficiently.",
+      "Sort the words by frequency and lexicographically if they are the same."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Remove to Make Valid Parentheses",
+    "description": "Given a string s that consists of parentheses, letters, and digits, your task is to remove the minimum number of parentheses to make the input string valid. A string is considered valid if the brackets are closed in the correct order. Return the resulting string after removing the minimum number of parentheses to make it valid. Note that you may return multiple valid results as long as they are valid after the removal.",
+    "topic": "String",
+    "subtopic": "Parentheses Validation",
+    "tags": [
+      "String",
+      "Parentheses",
+      "Validation"
+    ],
+    "input_format": "A single string s.",
+    "output_format": "A string that is a valid version of the input.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of lowercase English letters, digits, and characters '(', ')'."
+    ],
+    "examples": [
+      {
+        "input": "lee(t(c)o)de)",
+        "output": "lee(t(c)o)de",
+        "explanation": "Removing the last ')' makes the string valid."
+      },
+      {
+        "input": "a)b(c)d",
+        "output": "ab(c)d",
+        "explanation": "Removing the first ')' makes the string valid."
+      },
+      {
+        "input": "))((",
+        "output": "",
+        "explanation": "Removing all ')' makes the string valid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the indices of unmatched parentheses.",
+      "Count the excess closing and opening parentheses."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Word Break",
+    "description": "Given a string s and an array of strings wordDict, determine if s can be segmented into a space-separated sequence of one or more dictionary words from wordDict. Note that the same word in the dictionary may be reused multiple times in the segmentation.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Backtracking"
+    ],
+    "input_format": "A string s and an array of strings wordDict.",
+    "output_format": "A boolean indicating whether s can be segmented into words from wordDict.",
+    "constraints": [
+      "1 <= s.length <= 300",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 20",
+      "The input string and words in wordDict consist of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": {
+          "s": "leetcode",
+          "wordDict": [
+            "leet",
+            "code"
+          ]
+        },
+        "output": "true",
+        "explanation": "The string 'leetcode' can be segmented as 'leet' and 'code'."
+      },
+      {
+        "input": {
+          "s": "applepenapple",
+          "wordDict": [
+            "apple",
+            "pen"
+          ]
+        },
+        "output": "true",
+        "explanation": "The string 'applepenapple' can be segmented as 'apple', 'pen', 'apple'."
+      },
+      {
+        "input": {
+          "s": "catsandog",
+          "wordDict": [
+            "cats",
+            "dog",
+            "sand",
+            "and",
+            "cat"
+          ]
+        },
+        "output": "false",
+        "explanation": "The string 'catsandog' cannot be segmented into any combination of the words in the dictionary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to track your progress through the string.",
+      "Think about storing whether a substring of s can be segmented into words."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Contains Duplicate",
+    "description": "Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.",
+    "topic": "Array",
+    "subtopic": "Set Operations",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Set"
+    ],
+    "input_format": "An integer array nums.",
+    "output_format": "A boolean value indicating whether any value appears at least twice.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "true",
+        "explanation": "The number 1 appears twice in the array."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "false",
+        "explanation": "All elements are distinct."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5, 1]",
+        "output": "true",
+        "explanation": "The number 1 appears twice in the array."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a set to track the numbers you've seen.",
+      "If you find a number that's already in the set, return true."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "To Be Or Not To Be",
+    "description": "Given a string input containing words, determine how many times the phrase 'to be or not to be' appears in the string. Count overlaps and ignore case sensitivity. The phrase is defined as a sequence of the words 'to', 'be', 'or', 'not', 'to', 'be' with whitespace or punctuation separating them.",
+    "topic": "String",
+    "subtopic": "Searching",
+    "tags": [
+      "String",
+      "Counting",
+      "Searching"
+    ],
+    "input_format": "A single string 's' representing the input sentence.",
+    "output_format": "An integer representing the number of occurrences of the phrase 'to be or not to be'.",
+    "constraints": [
+      "1 <= s.length <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "To be or not to be, that is the question.",
+        "output": "1",
+        "explanation": "The phrase occurs once in the given input."
+      },
+      {
+        "input": "to BE Or not to be? Yes, to be or not to BE!",
+        "output": "2",
+        "explanation": "The phrase occurs twice in the given input, considering case insensitivity."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider normalizing the case of the string.",
+      "You can split the input string by whitespace and punctuation."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Image",
+    "description": "You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise). You have to do this in-place, which means you need to modify the input 2D matrix directly. Do not use an additional matrix to accomplish this task.",
+    "topic": "Matrix",
+    "subtopic": "In-place Operations",
+    "tags": [
+      "Matrix",
+      "In-place",
+      "Array Manipulation"
+    ],
+    "input_format": "An n x n 2D matrix representing the image.",
+    "output_format": "The same 2D matrix rotated by 90 degrees clockwise.",
+    "constraints": [
+      "1 <= n <= 20",
+      "-1000 <= matrix[i][j] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1,2,3],[4,5,6],[7,8,9]]",
+        "output": "[[7,4,1],[8,5,2],[9,6,3]]",
+        "explanation": "Rotating the matrix 90 degrees clockwise gives the new arrangement."
+      },
+      {
+        "input": "matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]",
+        "output": "[[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]",
+        "explanation": "This is the rotated version after applying a 90-degree clockwise rotation."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the relationship between the indices of the elements.",
+      "You may want to transpose the matrix first and then reverse the rows."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Network Delay Time",
+    "description": "You are given a network of n nodes labeled from 1 to n, where each node represents a server. The network is represented by an array times where times[i] = [u, v, w] indicates that it takes w milliseconds to send a signal from node u to node v. You are also given an integer k, representing the starting node. Return the time it takes for all the servers to receive the signal. If it is impossible for all the servers to receive the signal, return -1.",
+    "topic": "Graph",
+    "subtopic": "Dijkstra's Algorithm",
+    "tags": [
+      "Graph",
+      "Dijkstra",
+      "Shortest Path"
+    ],
+    "input_format": "An integer n representing the total number of nodes, an array times containing the edges of the network, and an integer k indicating the starting node.",
+    "output_format": "An integer representing the time it takes for all servers to receive the signal, or -1 if not all servers can be reached.",
+    "constraints": [
+      "1 <= n <= 100",
+      "1 <= times.length <= 10^4",
+      "times[i].length == 3",
+      "1 <= u, v <= n",
+      "0 <= w <= 100",
+      "u != v"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, times = [[2, 1, 1], [2, 3, 1], [3, 4, 1]], k = 2",
+        "output": "2",
+        "explanation": "The signal takes 1ms to reach node 1 and 1ms to reach node 3, and then 1ms to reach node 4. All nodes receive the signal in 2ms."
+      },
+      {
+        "input": "n = 5, times = [[1, 2, 1], [2, 3, 2], [1, 3, 4]], k = 1",
+        "output": "3",
+        "explanation": "The signal takes 1ms to reach node 2 and then 2ms to reach node 3. All nodes can be reached in 3ms."
+      },
+      {
+        "input": "n = 3, times = [[1, 2, 1]], k = 2",
+        "output": "-1",
+        "explanation": "Node 3 cannot be reached from node 2, hence not all servers can receive the signal."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a priority queue to optimize the search for the shortest path.",
+      "Create an adjacency list to represent the graph.",
+      "Keep track of the time taken to reach each node."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order. The traversal should start from the top-left corner and proceed in a spiral pattern going right, down, left, and up, until all elements are visited.",
+    "topic": "Array",
+    "subtopic": "Matrix Traversal",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Traversal",
+      "Spiral"
+    ],
+    "input_format": "An m x n 2D array of integers.",
+    "output_format": "A list of integers representing the elements in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "1 <= m * n <= 10^4",
+      "-10^5 <= matrix[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "Starting from 1, we move right to 2 and 3, then down to 6, and then we traverse back to 5 and 4, finally visiting 7, 8 and 9."
+      },
+      {
+        "input": "matrix = [[1, 2], [3, 4]]",
+        "output": "[1, 2, 4, 3]",
+        "explanation": "We start at 1, move right to 2, then go down to 4 and finally go left to 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about the order of traversal: right, down, left, up.",
+      "Keep track of the boundaries of the spiral."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses. A pair of parentheses is well-formed if every opening parenthesis has a corresponding closing parenthesis and they are correctly ordered.",
+    "topic": "Backtracking",
+    "subtopic": "String Generation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Recursion"
+    ],
+    "input_format": "An integer n, representing the number of pairs of parentheses.",
+    "output_format": "A list of strings, each string representing a valid combination of well-formed parentheses.",
+    "constraints": [
+      "1 <= n <= 8"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\"]",
+        "explanation": "The valid combinations of 3 pairs of parentheses are ((())), (()()), (()), ()(), and ()()."
+      },
+      {
+        "input": "n = 1",
+        "output": "[\"()\"]",
+        "explanation": "The only valid combination for 1 pair of parentheses is ()."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a backtracking approach to explore all valid combinations.",
+      "Keep track of how many opening and closing parentheses are used to maintain validity."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a maximum line width, format the text such that each line has exactly maxWidth characters. The last line should be left-justified and any extra space at the end should be filled with spaces. We can only conditionally justify lines that are not the last line of the text. For each line except the last, every line should be fully justified such that each line contains exactly maxWidth characters. Extra spaces should be distributed evenly among the words. If the number of spaces between words is not evenly divisible, the extra spaces should be distributed such that the leftmost gaps receive one additional space.",
+    "topic": "String",
+    "subtopic": "Text Formatting",
+    "tags": [
+      "String",
+      "Text Justification",
+      "Formatting"
+    ],
+    "input_format": "An array of strings words and an integer maxWidth.",
+    "output_format": "An array of strings representing the justified text.",
+    "constraints": [
+      "1 <= words.length <= 300",
+      "1 <= words[i].length <= 20",
+      "1 <= maxWidth <= 100",
+      "The sum of words[i].length will not exceed maxWidth."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"This\", \"is\", \"an\", \"example\", \"of\", \"text\", \"justification.\"], maxWidth = 16",
+        "output": "[\"This    is    an\", \"example  of text\", \"justification.  \"]",
+        "explanation": "Each line is justified to the maxWidth of 16 characters."
+      },
+      {
+        "input": "words = [\"What\", \"must\", \"be\", \"acknowledgment\", \"shall\", \"be\"], maxWidth = 16",
+        "output": "[\"What   must   be\", \"acknowledgment  \", \"shall be        \"]",
+        "explanation": "The second line is the last line and thus is left-justified."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to distribute spaces between words.",
+      "Keep track of the number of characters in the current line.",
+      "Use a greedy approach to fill lines optimally."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Coin Change",
+    "description": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. You want to compute the fewest number of coins that you need to make up that amount. If that amount cannot be made up by any combination of the coins, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Coin Change",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array coins and an integer amount.",
+    "output_format": "An integer representing the fewest number of coins needed to make up the amount, or -1 if it is not possible.",
+    "constraints": [
+      "1 <= coins.length <= 12",
+      "1 <= coins[i] <= 2^31 - 1",
+      "0 <= amount <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "coins = [1, 2, 5], amount = 11",
+        "output": "3",
+        "explanation": "11 can be made by using 5 + 5 + 1."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "-1",
+        "explanation": "It is not possible to make amount 3 with coin denomination 2."
+      },
+      {
+        "input": "coins = [1], amount = 0",
+        "output": "0",
+        "explanation": "No coins are needed to make amount 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to build up solutions to smaller subproblems.",
+      "Try to minimize the number of coins used for each amount."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Queue using Stacks",
+    "description": "You are tasked with implementing a queue using two stacks. The queue should support the following operations: 'push' to add an element to the back of the queue, and 'pop' to remove the element from the front of the queue. You should also implement a 'peek' operation to return the front element without removing it, and an 'empty' operation to check if the queue is empty.",
+    "topic": "Data Structure",
+    "subtopic": "Stack and Queue",
+    "tags": [
+      "Stack",
+      "Queue",
+      "Data Structure"
+    ],
+    "input_format": "You will be given a series of operations as strings, either 'push x' to push back the element x, 'pop' to remove the front element, 'peek' to get the front element, or 'empty' to check if the queue is empty.",
+    "output_format": "An array of results corresponding to the operations 'pop', 'peek', and 'empty'. For 'push', no output is expected.",
+    "constraints": [
+      "The number of operations will be at most 1000.",
+      "The element x for 'push x' will be an integer within the range of -10^5 to 10^5."
+    ],
+    "examples": [
+      {
+        "input": [
+          "push 1",
+          "push 2",
+          "peek",
+          "pop",
+          "empty"
+        ],
+        "output": [
+          2,
+          1,
+          false
+        ],
+        "explanation": "After pushing 1 and 2, 'peek' returns 2 (the front of the queue), 'pop' removes the front (1), and 'empty' checks if the queue is empty (it is not)."
+      },
+      {
+        "input": [
+          "push 3",
+          "empty",
+          "push 4",
+          "pop",
+          "peek"
+        ],
+        "output": [
+          false,
+          4
+        ],
+        "explanation": "After pushing 3, the queue is not empty. Pushing 4 adds it to the back, 'pop' removes 3, and 'peek' returns 4."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how elements can be moved between the stacks to maintain queue order.",
+      "Use one stack for enqueueing and the other for dequeueing."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Flowers in Full Bloom",
+    "description": "You are given an array of integers representing the flowerbed, where 1 means a flower is planted and 0 means empty space. A flower can only bloom if it has empty spaces to both its left and right. Write a function to determine the maximum number of flowers that can be planted in the flowerbed without violating the blooming rule.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers flowerbed representing the flowerbed configuration.",
+    "output_format": "An integer representing the maximum number of flowers that can be planted.",
+    "constraints": [
+      "1 <= flowerbed.length <= 20000",
+      "flowerbed[i] is 0 or 1"
+    ],
+    "examples": [
+      {
+        "input": "flowerbed = [1,0,0,0,1]",
+        "output": "1",
+        "explanation": "Only one additional flower can be planted in the empty space between the existing flowers."
+      },
+      {
+        "input": "flowerbed = [1,0,0,0,0,1]",
+        "output": "2",
+        "explanation": "Two additional flowers can be planted in the empty spaces resulting in the configuration [1,0,1,0,1]."
+      },
+      {
+        "input": "flowerbed = [0,0,0,0,0]",
+        "output": "3",
+        "explanation": "Three flowers can be planted in the empty spaces resulting in the configuration [1,0,1,0,1]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the boundary conditions for the flowerbed.",
+      "Greedily try to place flowers in the first available empty spots."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Find Duplicate File in System",
+    "description": "Given a list of directory paths, where each directory path contains a list of files and their contents, find all the duplicate files in the system and return a list of groups, where each group contains the paths of the duplicate files. A file is considered a duplicate if it has the same content as another file.",
+    "topic": "Hash Table",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Hash Table",
+      "String",
+      "File System"
+    ],
+    "input_format": "A list of strings where each string represents a path to a directory, containing space-separated file names followed by their content in parentheses.",
+    "output_format": "A list of lists, where each inner list contains the paths of duplicate files.",
+    "constraints": [
+      "1 <= paths.length <= 2000",
+      "1 <= paths[i].length <= 3000",
+      "Each file in a directory has a unique name"
+    ],
+    "examples": [
+      {
+        "input": "[\"root/a 1.txt(hello) 2.txt(world)\", \"root/b 3.txt(hello)\", \"root/c 4.txt(world)\"]",
+        "output": "[[\"root/a/1.txt\", \"root/b/3.txt\"], [\"root/a/2.txt\", \"root/c/4.txt\"]]",
+        "explanation": "The files '1.txt' and '3.txt' have the same content 'hello', and '2.txt' and '4.txt' have the same content 'world'."
+      },
+      {
+        "input": "[\"root/a 1.txt(hello)\", \"root/b 2.txt(world)\", \"root/c 3.txt(hello)\"]",
+        "output": "[[\"root/a/1.txt\", \"root/c/3.txt\"]]",
+        "explanation": "The files '1.txt' and '3.txt' have the same content 'hello'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to store file content as keys and their paths as values.",
+      "Consider how to manage the directory structure while forming file paths.",
+      "Keep in mind to check for both content equality and path storage."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. The number of elements initialized in nums1 and nums2 are m and n respectively. You must do this in-place without making a copy of the array. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. Merge them in a way that results in a single sorted array.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2, where nums1 has a length of m+n and the first m elements denote the elements to be merged.",
+    "output_format": "The merged array in sorted order, which is stored in nums1.",
+    "constraints": [
+      "1 <= m, n <= 200",
+      "0 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [2, 5, 6], n = 3",
+        "output": "[1, 2, 2, 3, 5, 6]",
+        "explanation": "After merging, the sorted array is [1, 2, 2, 3, 5, 6]."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "There are no elements in nums2, so nums1 remains the same."
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "explanation": "Initial nums1 has no significant elements; nums2 is merged into nums1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to iterate through both arrays.",
+      "Consider merging from the end of nums1 to avoid overwriting elements."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Array",
+    "description": "Given an integer array nums and an integer k, rotate the array to the right by k steps, where k is non-negative. This means that the elements of the array will be shifted to the right by k indices and the elements that roll over back to the start of the array.",
+    "topic": "Array",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Array",
+      "Rotation",
+      "In-Place"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "The modified array nums after rotation.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= k <= 10^7",
+      "-2^31 <= nums[i] <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5, 6, 7], k = 3",
+        "output": "[5, 6, 7, 1, 2, 3, 4]",
+        "explanation": "After rotating the array 3 times to the right, it becomes [5, 6, 7, 1, 2, 3, 4]."
+      },
+      {
+        "input": "nums = [-1, -100, 3, 99], k = 2",
+        "output": "[3, 99, -1, -100]",
+        "explanation": "After rotating the array 2 times to the right, it becomes [3, 99, -1, -100]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using slicing techniques to simplify the rotation.",
+      "Modulus operation can help reduce the number of rotations needed."
+    ],
+    "company": "Netflix"
+  },
+  {
+    "question_id": "",
+    "title": "Contains Duplicate III",
+    "description": "Given an integer array nums and two integers k and t, return true if there are two distinct indices i and j in the array such that |nums[i] - nums[j]| <= t and abs(i - j) <= k.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Hash Map"
+    ],
+    "input_format": "An integer array nums, and two integers k and t.",
+    "output_format": "A boolean value: true if the condition is met, false otherwise.",
+    "constraints": [
+      "0 <= nums.length <= 2 * 10^4",
+      "-2^31 <= nums[i] <= 2^31 - 1",
+      "0 <= k <= 2 * 10^4",
+      "0 <= t <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 5, 9, 1, 5, 9], k = 2, t = 3",
+        "output": "false",
+        "explanation": "In this case, the indices that meet the criteria do not exist."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1], k = 3, t = 0",
+        "output": "true",
+        "explanation": "The numbers 1 are at indices 0 and 3, and |1 - 1| = 0 <= 0 and |0 - 3| <= 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a data structure that allows you to manage the sliding window.",
+      "Think about how to keep track of the number differences efficiently."
+    ],
+    "company": "Netflix"
+  }
+]

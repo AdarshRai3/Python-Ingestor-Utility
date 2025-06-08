@@ -1,0 +1,160 @@
+[
+  {
+    "question_id": "",
+    "title": "Minimize the Maximum Difference of Pairs",
+    "description": "You are given an array of integers `nums` and an integer `k`. Your task is to minimize the maximum difference between pairs of elements from the modified array, obtained by adding or subtracting `k` to each element in the array. You can only choose one of the two operations for each element. Determine the minimum possible maximum difference after modifying the array.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Sorting",
+      "Min-Max"
+    ],
+    "input_format": "An array of integers `nums` followed by an integer `k`.",
+    "output_format": "An integer representing the minimized maximum difference.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "0 <= k <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 6], k = 3",
+        "output": "3",
+        "explanation": "By adding 3 to 1 and 3, and keeping 6 unchanged, we get [4, 6, 6]. The maximum difference is 6 - 4 = 2."
+      },
+      {
+        "input": "nums = [10, 1, 2, 7], k = 5",
+        "output": "4",
+        "explanation": "Modifying the array by adding and subtracting gives [5, 6, 7, 2] resulting in max difference 7 - 2 = 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how adding or subtracting k can shift the range of possible values.",
+      "Sort the initial array to manage the differences easily.",
+      "Try to find a balance between the minimum and maximum values after operations."
+    ],
+    "company": "Navi"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Days to Make m Bouquets",
+    "description": "You are given an integer array bloomDays where bloomDays[i] is the number of days the ith flower takes to bloom. You want to make m bouquets of flowers. To make one bouquet, you need to pick k adjacent flowers. The flowers are blooming in a specific number of days, so you need to determine the minimum number of days needed to make all m bouquets. If it is impossible to make the bouquets, return -1.",
+    "topic": "Binary Search",
+    "subtopic": "Search on Answer",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Greedy"
+    ],
+    "input_format": "An array of integers bloomDays and two integers m and k.",
+    "output_format": "An integer representing the minimum number of days to make m bouquets, or -1 if it's impossible.",
+    "constraints": [
+      "1 <= bloomDays.length <= 10^5",
+      "1 <= bloomDays[i] <= 10^9",
+      "1 <= m <= 10^6",
+      "1 <= k <= bloomDays.length"
+    ],
+    "examples": [
+      {
+        "input": "bloomDays = [1, 10, 3, 10, 2], m = 3, k = 1",
+        "output": "3",
+        "explanation": "You can pick flowers on days 1, 2 and 3 to make 3 bouquets."
+      },
+      {
+        "input": "bloomDays = [1, 10, 3, 10, 2], m = 4, k = 1",
+        "output": "-1",
+        "explanation": "It is impossible to make 4 bouquets with the given flowers."
+      },
+      {
+        "input": "bloomDays = [7, 7, 7, 7, 12, 7, 7], m = 3, k = 2",
+        "output": "12",
+        "explanation": "You can make 3 bouquets on day 12 using the last flower with the earlier blooming flowers."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to find the minimum days.",
+      "Group the bloomDays based on whether they have bloomed by certain days."
+    ],
+    "company": "Navi"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "Given a rotated sorted array and a target value, write a function to search for target in the array. If the target exists, return its index. Otherwise, return -1. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Searching"
+    ],
+    "input_format": "An integer array nums, which is rotated and sorted, and an integer target.",
+    "output_format": "An integer representing the index of target in nums, or -1 if not found.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^4 <= nums[i] <= 10^4",
+      "nums is guaranteed to be rotated at some pivot.",
+      "You must not perform any extra space allocation."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "The target 0 is found at index 4."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "The target 3 does not exist in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of binary search.",
+      "Identify the sorted part of the array in each iteration.",
+      "Use the pivot point to decide which half to search."
+    ],
+    "company": "Navi"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given n non-negative integers representing the height of bars in a histogram (where the width of each bar is 1), compute how much water it can trap after raining.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers representing the height of bars.",
+    "output_format": "An integer representing the total amount of trapped rain water.",
+    "constraints": [
+      "0 <= height.length <= 2 * 10^4",
+      "0 <= height[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water can be trapped in the valleys formed by bars of height 1 and height 2."
+      },
+      {
+        "input": "height = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "Water can be trapped between the heights of bars, resulting in a total of 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use two pointers to traverse the array from both ends.",
+      "Keep track of the maximum height from both sides.",
+      "Water can be trapped between two heights."
+    ],
+    "company": "Navi"
+  }
+]

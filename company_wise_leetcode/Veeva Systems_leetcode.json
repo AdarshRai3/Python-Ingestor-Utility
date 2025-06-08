@@ -1,0 +1,448 @@
+[
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "Strings",
+    "subtopic": "Hashing",
+    "tags": [
+      "Strings",
+      "Hashing",
+      "Anagrams"
+    ],
+    "input_format": "An array of strings 'strs'.",
+    "output_format": "A list of lists, where each sublist contains strings that are anagrams of each other.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "1 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"ate\", \"eat\", \"tea\"], [\"nat\", \"tan\"], [\"bat\"]]",
+        "explanation": "The words 'eat', 'tea', and 'ate' are anagrams of each other; 'nat' and 'tan' are also anagrams."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "The input contains an empty string, which is an anagram of itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "The input contains a single character string, which is an anagram of itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to group words by their sorted character strings.",
+      "Consider using a tuple or a string as the key for the hash map."
+    ],
+    "company": "Veeva Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string s consisting of parentheses, determine if the input string is valid. An input string is valid if the brackets are matched correctly. For every opening bracket, there must be a corresponding closing bracket in the correct order.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s containing only '(', ')', '{', '}', '[' and ']' characters.",
+    "output_format": "Return true if the input string is valid; otherwise, return false.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are correctly matched."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "All the brackets are correctly matched and nested."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The opening bracket '(' and the closing bracket ']' do not match."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of the opening brackets.",
+      "Check for matching pairs while iterating through the input string."
+    ],
+    "company": "Veeva Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses. For example, if n = 3, a solution would be: '((()))', '(()())', '(())()', '()(())', '()()()'.",
+    "topic": "Backtracking",
+    "subtopic": "String Generation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Combinations"
+    ],
+    "input_format": "An integer n representing the number of pairs of parentheses.",
+    "output_format": "A list of strings containing all combinations of well-formed parentheses.",
+    "constraints": [
+      "1 <= n <= 8"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\"]",
+        "explanation": "With 3 pairs of parentheses, we can form five combinations that are correctly nested."
+      },
+      {
+        "input": "n = 1",
+        "output": "[\"()\"]",
+        "explanation": "With only 1 pair of parentheses, the only combination is '()'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use backtracking to form combinations.",
+      "Keep track of the number of open and close parentheses used."
+    ],
+    "company": "Veeva Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Min Stack",
+    "description": "Design a stack that supports the following operations: push, pop, top, and retrieving the minimum element in constant time. Implement the MinStack class with the following methods: \n\n- void push(int val): Pushes the element val onto the stack. \n- void pop(): Removes the element on the top of the stack. \n- int top(): Gets the top element of the stack. \n- int getMin(): Retrieves the minimum element in the stack. \n\nYou must implement the MinStack class such that all operations have an average time complexity of O(1).",
+    "topic": "Stack",
+    "subtopic": "Design",
+    "tags": [
+      "Stack",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "The methods of the MinStack class will be called with various integer values.",
+    "output_format": "The methods will return the appropriate values as specified in the problem description.",
+    "constraints": [
+      "All integers in the push method are in the range [-10^6, 10^6].",
+      "The stack will not be empty when pop or top is called."
+    ],
+    "examples": [
+      {
+        "input": [
+          "MinStack",
+          "push",
+          "push",
+          "push",
+          "getMin",
+          "pop",
+          "top",
+          "getMin"
+        ],
+        "output": [
+          null,
+          null,
+          null,
+          null,
+          -2,
+          null,
+          0,
+          -1
+        ],
+        "explanation": "Initially, the stack is empty. Push -2, then 0, then -3, so getMin returns -3. After popping -3, top returns 0, and getMin returns -2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use an auxiliary stack to keep track of the minimum values.",
+      "Both min stack and main stack should be synchronized on pushes and pops."
+    ],
+    "company": "Veeva Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine if a 9x9 Sudoku board is valid according to the following rules: Each row must contain the digits 1-9 without repetition, each column must contain the digits 1-9 without repetition, and each of the nine 3x3 sub-boxes must also contain the digits 1-9 without repetition. The Sudoku board may be partially filled, where empty cells are represented by the character '.'.",
+    "topic": "Array",
+    "subtopic": "2D Array",
+    "tags": [
+      "Array",
+      "2D Array",
+      "Validation"
+    ],
+    "input_format": "A 2D array representing the Sudoku board, where each cell is a character.",
+    "output_format": "A boolean value: return true if the Sudoku board is valid, false otherwise.",
+    "constraints": [
+      "board.length == 9",
+      "board[i].length == 9",
+      "board[i][j] is a digit '1' - '9' or '.'"
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "5",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "true",
+        "explanation": "The given Sudoku board is valid according to all Sudoku rules."
+      },
+      {
+        "input": [
+          [
+            "8",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "false",
+        "explanation": "The number '8' is repeated in the first column, making the Sudoku board invalid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use sets to track seen numbers for rows, columns, and boxes.",
+      "Consider using a 2D list for the boxes to simplify indexing.",
+      "Be careful with indexing for the 3x3 sub-boxes."
+    ],
+    "company": "Veeva Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is defined as a contiguous sequence of characters within the string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Table"
+    ],
+    "input_format": "A single input string s consisting of English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is \"abc\", which has a length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is \"b\", with a length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is \"wke\", which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window approach to keep track of characters and their indices.",
+      "Utilize a set or a hash map to store characters and their positions."
+    ],
+    "company": "Veeva Systems"
+  }
+]

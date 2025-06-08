@@ -1,0 +1,117 @@
+[
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for Least Recently Used (LRU) Cache. The cache should support the following operations: get(key) and put(key, value). \n\n - get(key): Retrieve the value of the key if the key exists in the cache. Otherwise, return -1.\n - put(key, value): Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity, invalidate the least recently used key.\n\n The cache should be initialized with a positive capacity.",
+    "topic": "Data Structure",
+    "subtopic": "Cache",
+    "tags": [
+      "Cache",
+      "Design",
+      "Linked List",
+      "Hash Map"
+    ],
+    "input_format": "The input consists of multiple calls to the methods get and put.",
+    "output_format": "The output will be derived from the results of the get calls.",
+    "constraints": [
+      "The capacity of the cache is a positive integer.",
+      "The keys and values used are non-negative integers.",
+      "The operations get and put are called a limited number of times."
+    ],
+    "examples": [
+      {
+        "input": "cache = LRUCache(2)\ncache.put(1, 1)\ncache.put(2, 2)\ncache.get(1)",
+        "output": "1",
+        "explanation": "The cache contains {1=1, 2=2}. The key 1 is found."
+      },
+      {
+        "input": "cache.put(3, 3)\ncache.get(2)",
+        "output": "-1",
+        "explanation": "The cache was full. The least recently used key (key 2) was evicted."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a linked list to maintain the order.",
+      "A hashmap can be utilized for quick access to cache entries."
+    ],
+    "company": "Navan"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the height of bars in a histogram where the width of each bar is 1, compute how much water it can trap after raining.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Two Pointers"
+    ],
+    "input_format": "An array of non-negative integers heights where heights[i] represents the height of the ith bar.",
+    "output_format": "An integer representing the total amount of water that can be trapped.",
+    "constraints": [
+      "0 <= heights.length <= 2 * 10^4",
+      "0 <= heights[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water can be trapped at positions 2, 4, 5, 6, and 8, totaling 6 units."
+      },
+      {
+        "input": "heights = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water can be trapped at positions 1, 2, and 3, totaling 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the highest bars on the left and right.",
+      "Use two pointers to track the left and right boundaries."
+    ],
+    "company": "Navan"
+  },
+  {
+    "question_id": "",
+    "title": "Word Ladder",
+    "description": "Given two words, beginWord and endWord, and a dictionary's word list, return the length of the shortest transformation sequence from beginWord to endWord, such that only one letter can be changed at a time. Each transformed word must exist in the word list. Note that beginWord is not a transformed word. If there is no such transformation sequence, return 0.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Word Transformation"
+    ],
+    "input_format": "A string beginWord, a string endWord, and a list of strings wordList.",
+    "output_format": "An integer representing the length of the shortest transformation sequence.",
+    "constraints": [
+      "1 <= beginWord.length <= 10",
+      "1 <= endWord.length <= 10",
+      "1 <= wordList.length <= 5000",
+      "beginWord, endWord, and all words in wordList consist of only lowercase alphabetic characters.",
+      "beginWord != endWord",
+      "All words in wordList are unique."
+    ],
+    "examples": [
+      {
+        "input": "beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"]",
+        "output": "5",
+        "explanation": "The shortest transformation sequence is \"hit\" -> \"hot\" -> \"dot\" -> \"dog\" -> \"cog\", which is 5 words long."
+      },
+      {
+        "input": "beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\"]",
+        "output": "0",
+        "explanation": "There is no possible transformation sequence from \"hit\" to \"cog\"."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a breadth-first search approach.",
+      "Think of the problem as a graph, where each word is a node.",
+      "Generate all possible transformations for a given word."
+    ],
+    "company": "Navan"
+  }
+]

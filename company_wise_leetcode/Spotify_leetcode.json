@@ -1,0 +1,508 @@
+[
+  {
+    "question_id": "",
+    "title": "Moving Average from Data Stream",
+    "description": "Design a class that calculates the moving average of a stream of integers. Implement the MovingAverage class with the following methods: \n- `MovingAverage(int size)` Initializes the moving average with the specified window size. \n- `double next(int val)` Computes the moving average after adding the new integer to the stream. The value returned should be accurate to 5 decimal places.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Moving Average"
+    ],
+    "input_format": "An integer 'size' for the window size and a stream of integers 'val'.",
+    "output_format": "A double representing the moving average after each insertion, accurate to 5 decimal places.",
+    "constraints": [
+      "1 <= size <= 10000",
+      "0 <= val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "MovingAverage m = new MovingAverage(3); m.next(1); m.next(10); m.next(3); m.next(5);",
+        "output": "[1.00, 5.50, 4.67, 6.00]",
+        "explanation": "The moving averages after each insertion are: 1, (1 + 10) / 2 = 5.5, (1 + 10 + 3) / 3 = 4.67, (10 + 3 + 5) / 3 = 6.00."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Maintain a fixed-size queue to track the last 'size' elements.",
+      "Consider using a sliding window to calculate the sum efficiently."
+    ],
+    "company": "Spotify"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "target is an integer."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 3 + 3 = 6."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the indices of the numbers you've seen.",
+      "Check if the complement of the current number exists in the map."
+    ],
+    "company": "Spotify"
+  },
+  {
+    "question_id": "",
+    "title": "Leetcodify Friends Recommendations",
+    "description": "You are given a list of users and their friendships in a social network. Each user is identified by a unique integer ID, and each friendship is a pair of user IDs indicating that the two users are friends. Your task is to create a function that takes this information and returns a list of recommended friends for each user based on mutual friends. A recommended friend is defined as a user who is not already a direct friend but shares at least two mutual friends with the user.",
+    "topic": "Graph",
+    "subtopic": "Friendship Recommendations",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Friendship",
+      "Recommendations"
+    ],
+    "input_format": "An integer n representing the number of users, followed by an array of pairs where each pair [a, b] indicates that user a and user b are friends.",
+    "output_format": "A list of lists, where each inner list contains the recommended friend IDs for the corresponding user based on mutual friends.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "0 <= friendships.length <= 10^4",
+      "Each friendship pair is unique and valid."
+    ],
+    "examples": [
+      {
+        "input": "n = 5, friendships = [[1, 2], [1, 3], [2, 4], [3, 4], [2, 5]]",
+        "output": "[[4, 5], [], [4], []]",
+        "explanation": "User 1 can be recommended user 4 and 5 (both friends with user 2). User 2 can be recommended no one as all mutual friends are already friends. User 3 has user 4 as a mutual friend and user 2 as a mutual friend. User 4 is a friend of user 2 and user 3. User 5 has no mutual friends with users."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a set to keep track of direct friends to avoid recommending them.",
+      "Count mutual friends for each potential recommendation."
+    ],
+    "company": "Spotify"
+  },
+  {
+    "question_id": "",
+    "title": "Leetcodify Similar Friends",
+    "description": "You are given a list of friends, each represented as a string. Your task is to determine which friends are similar based on the following criteria: Two friends are considered similar if their names are anagrams of each other. You need to return a list of lists, where each sublist contains names of similar friends. Each name should appear in only one sublist.",
+    "topic": "String",
+    "subtopic": "Anagram Detection",
+    "tags": [
+      "String",
+      "Anagram",
+      "Grouping"
+    ],
+    "input_format": "A list of strings 'friends' containing the names of friends.",
+    "output_format": "A list of lists, where each sublist contains names of similar friends.",
+    "constraints": [
+      "1 <= friends.length <= 10^4",
+      "1 <= friends[i].length <= 100",
+      "All characters in friends[i] are lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "friends = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"], [\"eat\", \"tea\", \"ate\"], [\"tan\", \"nat\"]]",
+        "explanation": "The names 'eat', 'tea', and 'ate' are anagrams of each other. 'tan' and 'nat' are also anagrams."
+      },
+      {
+        "input": "friends = [\"abcd\", \"dcba\", \"efgh\", \"hgef\"]",
+        "output": "[[\"abcd\", \"dcba\"], [\"efgh\", \"hgef\"]]",
+        "explanation": "Both pairs are made of anagrams."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a sorting mechanism to compare names.",
+      "Utilize a hash map to group anagrams efficiently."
+    ],
+    "company": "Spotify"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within a string. For example, in the string 'abcabcbb', the longest substring without repeating characters is 'abc', which has a length of 3.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A single string s consisting of English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'abc' which has a length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is 'b' which has a length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'wke', which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window to keep track of the characters.",
+      "Use a hash map to store the characters and their indices."
+    ],
+    "company": "Spotify"
+  },
+  {
+    "question_id": "",
+    "title": "Analyze User Website Visit Pattern",
+    "description": "You are given a list of user visit records for a website. Each record contains the user ID, the timestamp of the visit, and the page visited. Your task is to analyze the visit patterns and determine the most visited page for each user and the total number of visits. Additionally, identify the user with the highest number of visits to the website.",
+    "topic": "Hash Table",
+    "subtopic": "Counting & Frequency",
+    "tags": [
+      "Hash Table",
+      "Counting",
+      "Frequency"
+    ],
+    "input_format": "A list of visit records, where each record is represented as a tuple (userId, timestamp, page).",
+    "output_format": "Return a dictionary containing two keys: 'most_visited' and 'top_user'. 'most_visited' maps user IDs to their most visited page, and 'top_user' maps to the user ID with the highest total visits.",
+    "constraints": [
+      "1 <= records.length <= 10^5",
+      "1 <= userId <= 10^6",
+      "1 <= timestamp <= 10^6",
+      "1 <= page.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "[('user1', 1, 'homepage'), ('user1', 2, 'about'), ('user2', 3, 'homepage'), ('user1', 4, 'homepage')]",
+        "output": "{'most_visited': {'user1': 'homepage', 'user2': 'homepage'}, 'top_user': 'user1'}",
+        "explanation": "'user1' visited the homepage 3 times, which is the most for any user. 'user2' visited the homepage 1 time. Hence, 'user1' is the top user."
+      },
+      {
+        "input": "[('user1', 1, 'homepage'), ('user2', 2, 'about'), ('user1', 3, 'about'), ('user3', 4, 'homepage'), ('user2', 5, 'homepage')]",
+        "output": "{'most_visited': {'user1': 'about', 'user2': 'homepage', 'user3': 'homepage'}, 'top_user': 'user1'}",
+        "explanation": "'user1' has the highest total visits (2), primarily visiting 'about'. Both 'user2' and 'user3' visited 'homepage' the most but with fewer visits."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash table to store visit frequencies for each user.",
+      "Sort the visits to determine most frequent pages.",
+      "Keep track of the user with the highest number of total visits."
+    ],
+    "company": "Spotify"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of parentheses characters.",
+    "output_format": "A boolean value, true if the input string is valid, false otherwise.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The input string is valid with a single pair of parentheses."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "The string contains valid pairs of different types of brackets."
+      },
+      {
+        "input": "s = '(]')",
+        "output": "false",
+        "explanation": "The parentheses are not correctly matched; '[' does not match with ']'"
+      },
+      {
+        "input": "s = '([)]'",
+        "output": "false",
+        "explanation": "The brackets are open in the incorrect order."
+      },
+      {
+        "input": "s = '{[]}'",
+        "output": "true",
+        "explanation": "The brackets are correctly nested and matched."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Check pairs of brackets by using a mapping.",
+      "An empty stack at the end of processing indicates a valid sequence."
+    ],
+    "company": "Spotify"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Largest Element in an Array",
+    "description": "Given an integer array nums and an integer k, return the kth largest element in the array. Note that it is the kth largest element in the sorted order, not the kth distinct element. You must solve it in O(n log n) time complexity or better.",
+    "topic": "Array",
+    "subtopic": "Sorting and Searching",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Heap"
+    ],
+    "input_format": "An integer array nums followed by an integer k.",
+    "output_format": "An integer representing the kth largest element in the array.",
+    "constraints": [
+      "1 <= k <= nums.length <= 10^4",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 1, 5, 6, 4], k = 2",
+        "output": "5",
+        "explanation": "After sorting the array in descending order [6, 5, 4, 3, 2, 1], the 2nd largest element is 5."
+      },
+      {
+        "input": "nums = [3, 2, 3, 1, 2, 4, 5, 5, 6], k = 4",
+        "output": "4",
+        "explanation": "After sorting the array in descending order [6, 5, 5, 4, 3, 3, 2, 2, 1], the 4th largest element is 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a min-heap to store the top k elements.",
+      "The kth largest element is related to the (n-k)th smallest element."
+    ],
+    "company": "Spotify"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Palindrome",
+    "description": "Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring case. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward (ignoring spaces, punctuation, and capitalization).",
+    "topic": "Strings",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Strings",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "A string s consisting only of printable ASCII characters.",
+    "output_format": "A boolean value indicating whether the input string is a valid palindrome.",
+    "constraints": [
+      "0 <= s.length <= 2 * 10^5",
+      "s consists only of printable ASCII characters"
+    ],
+    "examples": [
+      {
+        "input": "A man, a plan, a canal: Panama",
+        "output": "true",
+        "explanation": "The string is a palindrome after removing non-alphanumeric characters and ignoring case."
+      },
+      {
+        "input": "race a car",
+        "output": "false",
+        "explanation": "The string is not a palindrome after removing non-alphanumeric characters."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to compare characters from start and end.",
+      "Ignore non-alphanumeric characters and convert to the same case."
+    ],
+    "company": "Spotify"
+  },
+  {
+    "question_id": "",
+    "title": "Find Median from Data Stream",
+    "description": "Design a data structure that supports the following operations: adding a number to the stream and finding the median of all elements added so far. The median is the middle value when the numbers are sorted. If there is an even number of elements, the median is the average of the two middle values.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Heap",
+      "Median",
+      "Dynamic Array"
+    ],
+    "input_format": "A stream of integers, where you can call addNum(num) to add a new integer to the data stream and findMedian() to find the median of the current numbers.",
+    "output_format": "A floating point number representing the median of the current numbers.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "addNum(1), addNum(2), findMedian()",
+        "output": "1.5",
+        "explanation": "The numbers added are [1, 2]. The median is (1 + 2) / 2 = 1.5."
+      },
+      {
+        "input": "addNum(3), findMedian()",
+        "output": "2",
+        "explanation": "The numbers added are [1, 2, 3]. The median is 2."
+      },
+      {
+        "input": "addNum(4), findMedian()",
+        "output": "2.5",
+        "explanation": "The numbers added are [1, 2, 3, 4]. The median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two heaps to maintain the lower half and upper half of the numbers.",
+      "Use the properties of heaps to efficiently get the median."
+    ],
+    "company": "Spotify"
+  },
+  {
+    "question_id": "",
+    "title": "Ransom Note",
+    "description": "Given two strings, `ransomNote` and `magazine`, return true if `ransomNote` can be constructed from the letters in `magazine`. Each letter in `magazine` can only be used once in the construction of `ransomNote`. For example, if `magazine` is 'aabbcc' and `ransomNote` is 'abc', the answer is true. However, if `ransomNote` is 'aabbcc' and `magazine` is 'abc', the answer is false because there are not enough 'a's, 'b's, or 'c's available.",
+    "topic": "String",
+    "subtopic": "Character Count",
+    "tags": [
+      "String",
+      "Hash Map",
+      "Counting"
+    ],
+    "input_format": "Two strings: `ransomNote` and `magazine`.",
+    "output_format": "A boolean value indicating whether `ransomNote` can be constructed from `magazine`.",
+    "constraints": [
+      "1 <= ransomNote.length, magazine.length <= 10^5",
+      "ransomNote and magazine consist of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "ransomNote = \"a\", magazine = \"b\"",
+        "output": "false",
+        "explanation": "The letter 'a' cannot be found in the magazine."
+      },
+      {
+        "input": "ransomNote = \"aa\", magazine = \"ab\"",
+        "output": "false",
+        "explanation": "There is only one 'a' in the magazine."
+      },
+      {
+        "input": "ransomNote = \"aa\", magazine = \"aab\"",
+        "output": "true",
+        "explanation": "There are two 'a's in the magazine, which can construct the ransom note."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Count the occurrences of each character in both strings.",
+      "Check if the count of each character in `ransomNote` is less than or equal to that in `magazine`."
+    ],
+    "company": "Spotify"
+  },
+  {
+    "question_id": "",
+    "title": "Walls and Gates",
+    "description": "You are given a 2D grid represented as a matrix of integers where each cell can be either a wall, a gate, or an empty room. A wall is represented by -1, a gate is represented by 0, and an empty room is represented by Infinity (or a large integer). Your task is to fill each empty room with the distance to its nearest gate. The distance of an empty room is defined as the minimum number of steps to reach any gate. If it is impossible to reach a gate, the cell should remain as Infinity. A step is defined as moving one unit in one of the four directions (up, down, left, right).",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "BFS",
+      "Matrix",
+      "Graph"
+    ],
+    "input_format": "A 2D grid of integers grid where each integer is either -1 (wall), 0 (gate), or Infinity (empty room).",
+    "output_format": "A modified 2D grid where each empty room contains the distance to the nearest gate.",
+    "constraints": [
+      "The dimensions of the grid will be M x N where 1 <= M, N <= 250.",
+      "The value of a wall is always -1, a gate is always 0, and an empty room is represented by a positive integer (Infinity)."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[Infinity, -1, 0, Infinity], [Infinity, Infinity, Infinity, -1], [Infinity, -1, Infinity, -1], [0, -1, Infinity, Infinity]]",
+        "output": "[[3, -1, 0, 1], [2, 1, 2, -1], [1, -1, 1, -1], [0, -1, 2, 3]]",
+        "explanation": "The distance to the nearest gate for each empty room is calculated and filled accordingly."
+      },
+      {
+        "input": "grid = [[-1]]",
+        "output": "[[-1]]",
+        "explanation": "There are no gates and only a wall, so the result remains unchanged."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using BFS to propagate distances from the gates.",
+      "Start from all gates and explore reachable empty rooms."
+    ],
+    "company": "Spotify"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Depth of Binary Tree",
+    "description": "Given a binary tree, return its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Depth",
+      "Binary Tree"
+    ],
+    "input_format": "A binary tree represented by its root node.",
+    "output_format": "An integer representing the maximum depth of the tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [3,9,20,null,null,15,7]",
+        "output": "3",
+        "explanation": "The maximum depth is 3, where the path is 3 -> 20 -> 15 (or 3 -> 20 -> 7)."
+      },
+      {
+        "input": "root = [1,null,2]",
+        "output": "2",
+        "explanation": "The maximum depth is 2, where the path is 1 -> 2."
+      },
+      {
+        "input": "root = []",
+        "output": "0",
+        "explanation": "An empty tree has a maximum depth of 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a recursive function to explore each path in the tree.",
+      "Keep track of the maximum depth as you traverse."
+    ],
+    "company": "Spotify"
+  }
+]

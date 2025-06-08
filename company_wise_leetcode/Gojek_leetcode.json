@@ -1,0 +1,210 @@
+[
+  {
+    "question_id": "",
+    "title": "Binary Tree Level Order Traversal",
+    "description": "Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Traversal"
+    ],
+    "input_format": "The input consists of the root node of a binary tree.",
+    "output_format": "A list of lists, where each list contains the values of nodes at the corresponding level.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 2000].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [3, 9, 20, null, null, 15, 7]",
+        "output": "[[3], [9, 20], [15, 7]]",
+        "explanation": "Level 0 has 1 node with value 3, level 1 has 2 nodes with values 9 and 20, and level 2 has 2 nodes with values 15 and 7."
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "explanation": "The tree is empty, so there are no levels to traverse."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a queue to help with level order traversal.",
+      "Don't forget to check for null nodes."
+    ],
+    "company": "Gojek"
+  },
+  {
+    "question_id": "",
+    "title": "Simplify Path",
+    "description": "Given a string representing an absolute path for a file (Unix-style), return the simplified canonical path. In a Unix-style path, the following rules apply: '.' refers to the current directory, '..' refers to the parent directory, and multiple consecutive slashes '/' are treated as a single slash. The path will always be absolute and does not have any leading or trailing slashes.",
+    "topic": "String",
+    "subtopic": "Path Manipulation",
+    "tags": [
+      "String",
+      "Path",
+      "Stack"
+    ],
+    "input_format": "A string path representing the absolute Unix-style file path.",
+    "output_format": "A string representing the simplified canonical path.",
+    "constraints": [
+      "1 <= path.length <= 3000",
+      "path consists of English letters, '/', and '.'"
+    ],
+    "examples": [
+      {
+        "input": "/a/./b/../../c/",
+        "output": "/c",
+        "explanation": "The current directory head is 'a', then goes to the current directory '.' which is still 'a', then goes up two directories '..' and then to 'c'."
+      },
+      {
+        "input": "/../",
+        "output": "/",
+        "explanation": "The input indicates to go up from the root directory, so the output is the root directory."
+      },
+      {
+        "input": "/home//foo/",
+        "output": "/home/foo",
+        "explanation": "Multiple consecutive slashes are treated as a single slash, so 'foo' remains in 'home'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the directories.",
+      "Ignore '.' since it refers to the current directory.",
+      "Use '..' to pop the last directory from the stack."
+    ],
+    "company": "Gojek"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an array of integers nums and an integer k, return the max sliding window of size k. You must solve it in O(n) time.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Queue"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An array of integers representing the maximum values of each sliding window.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, -1, -3, 5, 3, 6, 7], k = 3",
+        "output": "[3, 3, 5, 5, 6, 7]",
+        "explanation": "The sliding windows are [1, 3, -1], [3, -1, -3], [-1, -3, 5], [-3, 5, 3], [5, 3, 6], and [3, 6, 7]. The maximums are 3, 3, 5, 5, 6, and 7."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Since the window size is 1, the maximum is simply the single element."
+      },
+      {
+        "input": "nums = [1, -1], k = 1",
+        "output": "[1, -1]",
+        "explanation": "The maximums for each window of size 1 are the elements themselves."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a deque to maintain the indices of useful elements.",
+      "Pop elements from the front of the deque if they are out of the current window.",
+      "Before adding a new element index, pop elements from the back if they are smaller."
+    ],
+    "company": "Gojek"
+  },
+  {
+    "question_id": "",
+    "title": "Convert an Array Into a 2D Array With Conditions",
+    "description": "Given an array of integers, your task is to convert it into a 2D array based on specific conditions. The first row should contain all even integers and the second row should contain all odd integers. If there are no even or odd integers, the respective row should be empty.",
+    "topic": "Array",
+    "subtopic": "2D Arrays",
+    "tags": [
+      "Array",
+      "2D Arrays",
+      "Separation"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A 2D array where the first row contains even numbers and the second row contains odd numbers.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5, 6]",
+        "output": "[[2, 4, 6], [1, 3, 5]]",
+        "explanation": "The even numbers are 2, 4, and 6 which go into the first row. The odd numbers are 1, 3, and 5 which go into the second row."
+      },
+      {
+        "input": "nums = [7, 8, 10, 11, 13]",
+        "output": "[[8, 10], [7, 11, 13]]",
+        "explanation": "The even numbers are 8 and 10. The odd numbers are 7, 11, and 13."
+      },
+      {
+        "input": "nums = [2, 4, 6]",
+        "output": "[[2, 4, 6], []]",
+        "explanation": "All numbers are even, hence the odd row is empty."
+      },
+      {
+        "input": "nums = [1, 3, 5]",
+        "output": "[[], [1, 3, 5]]",
+        "explanation": "All numbers are odd, hence the even row is empty."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Separate even and odd numbers using the modulus operator.",
+      "Utilize two lists to store even and odd numbers during traversal."
+    ],
+    "company": "Gojek"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Hashing"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of unique triplets such that their sum is zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "No triplets can be formed from an empty array."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "No triplet sums to zero in this input."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array to simplify the problem of finding triplets.",
+      "Use a two-pointer technique to find pairs that sum to a specific target."
+    ],
+    "company": "Gojek"
+  }
+]

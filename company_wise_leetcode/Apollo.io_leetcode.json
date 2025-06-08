@@ -1,0 +1,159 @@
+[
+  {
+    "question_id": "",
+    "title": "Validate Stack Sequences",
+    "description": "Given two sequences pushed and popped that represent the push and pop operations on a stack, return true if and only if this could have been the result of some stack operations. Implement the function `validateStackSequences(pushed: List[int], popped: List[int]) -> bool`. Consider that you can push elements to a stack, and pop elements from the top of the stack. You need to ensure that the operations are valid and follow the stack's Last In First Out (LIFO) principle.",
+    "topic": "Stack",
+    "subtopic": "Stack Operations",
+    "tags": [
+      "Stack",
+      "Data Structure",
+      "Simulation"
+    ],
+    "input_format": "Two lists of integers 'pushed' and 'popped', where 1 <= pushed.length, popped.length <= 1000.",
+    "output_format": "A boolean value indicating whether the pop sequence is valid.",
+    "constraints": [
+      "1 <= pushed.length <= 1000",
+      "1 <= popped.length <= 1000",
+      "All elements in pushed are unique."
+    ],
+    "examples": [
+      {
+        "input": "pushed = [1,2,3,4,5], popped = [4,5,3,2,1]",
+        "output": "true",
+        "explanation": "Push 1, 2, 3, then 4; pop 4, pop 5, pop 3, pop 2, and finally pop 1. The sequence is valid."
+      },
+      {
+        "input": "pushed = [1,2,3,4,5], popped = [4,3,5,1,2]",
+        "output": "false",
+        "explanation": "It's impossible to pop 1 after 5 since 1 is below other elements in the stack."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to simulate the push and pop operations.",
+      "Keep track of the next element to pop."
+    ],
+    "company": "Apollo.io"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Window Substring",
+    "description": "Given two strings s and t, return the minimum window in s which will contain all the characters in t (including duplicates). If there is no such window in s that covers all characters in t, return the empty string \"\". The input strings are composed of English letters, and the order of the characters in t does not matter.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Map"
+    ],
+    "input_format": "Two strings s and t.",
+    "output_format": "A string representing the minimum window substring; returns an empty string if no such window exists.",
+    "constraints": [
+      "1 <= s.length, t.length <= 10^5",
+      "s and t consist of English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"ADOBECODEBANC\", t = \"ABC\"",
+        "output": "\"BANC\"",
+        "explanation": "The minimum window substring is \"BANC\" which contains all the characters of t."
+      },
+      {
+        "input": "s = \"a\", t = \"a\"",
+        "output": "\"a\"",
+        "explanation": "The minimum window substring is \"a\" which is equal to t."
+      },
+      {
+        "input": "s = \"a\", t = \"aa\"",
+        "output": "\"\"",
+        "explanation": "There is no window in s that contains all characters of t (the character 'a' is needed twice)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a sliding window approach to minimize the window size.",
+      "Keep track of character counts in both the window and the required string."
+    ],
+    "company": "Apollo.io"
+  },
+  {
+    "question_id": "",
+    "title": "Subarray Sum Equals K",
+    "description": "Given an array of integers and an integer k, return the total number of continuous subarrays whose sum equals to k.",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "HashMap",
+      "Prefix Sum"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the number of continuous subarrays whose sum equals k.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "-10^4 <= nums[i] <= 10^4",
+      "-10^7 <= k <= 10^7"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 1], k = 2",
+        "output": "2",
+        "explanation": "The subarrays [1, 1] (at index 0 and 1) and [1, 1] (at index 1 and 2) both sum up to 2."
+      },
+      {
+        "input": "nums = [1, 2, 3], k = 3",
+        "output": "2",
+        "explanation": "The subarrays [3] (at index 2) and [1, 2] (at index 0 and 1) sum up to 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to store the cumulative sum.",
+      "Check if the cumulative sum minus k exists in the hashmap.",
+      "Consider zero-sum subarrays."
+    ],
+    "company": "Apollo.io"
+  },
+  {
+    "question_id": "",
+    "title": "Evaluate Reverse Polish Notation",
+    "description": "You are given an array of strings tokens that represent an arithmetic expression in Reverse Polish Notation (RPN). Evaluate the expression and return the result. The valid operators are '+', '-', '*', and '/'. Each operation should be performed on the two most recent numbers. The division should truncate towards zero. Your task is to implement the function that computes the result of the expression.",
+    "topic": "Stack",
+    "subtopic": "Reverse Polish Notation",
+    "tags": [
+      "Stack",
+      "Mathematics",
+      "Expression Evaluation"
+    ],
+    "input_format": "An array of strings tokens where each string is either an operand or an operator.",
+    "output_format": "An integer that is the result of the evaluated RPN expression.",
+    "constraints": [
+      "1 <= tokens.length <= 10^4",
+      "tokens[i] is either an operator ('+', '-', '*', '/') or an integer in the range [-10^4, 10^4]."
+    ],
+    "examples": [
+      {
+        "input": "tokens = [\"2\", \"1\", \"+\", \"3\", \"*\"]",
+        "output": "9",
+        "explanation": "Following the operations: (2 + 1) * 3 = 9."
+      },
+      {
+        "input": "tokens = [\"4\", \"13\", \"5\", \"/\", \"+\"]",
+        "output": "6",
+        "explanation": "Following the operations: 4 + (13 / 5) = 4 + 2 = 6."
+      },
+      {
+        "input": "tokens = [\"10\", \"6\", \"9\", \"3\", \"+\", \"-11\", \"*\", \"/\", \"*\"]",
+        "output": "1",
+        "explanation": "The computation follows the RPN rules leading to a final result of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using a stack to keep track of the operands.",
+      "Make sure to handle the division correctly to truncate towards zero."
+    ],
+    "company": "Apollo.io"
+  }
+]

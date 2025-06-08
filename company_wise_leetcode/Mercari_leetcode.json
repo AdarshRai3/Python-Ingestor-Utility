@@ -1,0 +1,197 @@
+[
+  {
+    "question_id": "",
+    "title": "Smallest Missing Non-negative Integer After Operations",
+    "description": "You are given an integer array nums where each integer is in the range [0, n] (n is the length of the array). You can perform operations on the array to update its elements. The task is to find the smallest non-negative integer that is missing from the array after applying the operations. Your operations may include incrementing or decrementing the values, but they must remain within the valid range. Your goal is to determine the smallest integer that cannot be found in the modified array.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Greedy"
+    ],
+    "input_format": "An integer array nums of size n.",
+    "output_format": "An integer representing the smallest missing non-negative integer.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 0, 1]",
+        "output": "2",
+        "explanation": "After the operations, the array can become [3, 0, 1], where the smallest missing non-negative integer is 2."
+      },
+      {
+        "input": "nums = [0, 1, 2]",
+        "output": "3",
+        "explanation": "In this case, since all integers from 0 to 2 are present, the smallest missing integer is 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a set to store the existing numbers.",
+      "Iterate through the range from 0 to n to find the smallest missing number."
+    ],
+    "company": "Mercari"
+  },
+  {
+    "question_id": "",
+    "title": "Crawler Log Folder",
+    "description": "You are given a list of logs from a web crawler. Each log entry can either be a folder or a file. A log entry is represented as a string where folders are indicated with a trailing slash ('/') and files do not have this trailing slash. Your task is to determine the number of files in the deepest folder of the crawler\u2019s log. A file is defined as any entry that does not have a trailing slash, and you need to count the files that are present in the folder with the maximum depth.",
+    "topic": "String",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Parsing",
+      "Depth"
+    ],
+    "input_format": "A list of strings representing the logs.",
+    "output_format": "An integer representing the number of files in the deepest folder.",
+    "constraints": [
+      "1 <= logs.length <= 1000",
+      "1 <= logs[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "[\"dir1/\", \"dir1/file1.txt\", \"dir2/\", \"dir2/file2.txt\", \"dir2/dir3/\", \"dir2/dir3/file3.txt\"]",
+        "output": "1",
+        "explanation": "The deepest folder is 'dir2/dir3/' which contains 'file3.txt'."
+      },
+      {
+        "input": "[\"a/\", \"a/b/\", \"a/b/c.txt\", \"a/b/c/d.txt\"]",
+        "output": "1",
+        "explanation": "The deepest folder is 'a/b/c/' which has 1 file 'd.txt'."
+      },
+      {
+        "input": "[\"root/\", \"root/file1.txt\", \"root/folder1/\", \"root/folder1/file2.txt\", \"root/folder1/folder2/\"]",
+        "output": "1",
+        "explanation": "The deepest folder is 'folder1/' which contains the file 'file2.txt'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You may want to use a stack to keep track of the current depth.",
+      "Count files when you reach the maximum depth."
+    ],
+    "company": "Mercari"
+  },
+  {
+    "question_id": "",
+    "title": "Count Largest Group",
+    "description": "Given an integer array 'arr' where each element represents a group number, your task is to count how many groups have the maximum size. A group is defined as a set of integers that have the same value. Return the count of the largest group(s).",
+    "topic": "Array",
+    "subtopic": "Counting Groups",
+    "tags": [
+      "Array",
+      "Counting",
+      "Groups"
+    ],
+    "input_format": "An array of integers arr.",
+    "output_format": "An integer representing the count of the largest groups.",
+    "constraints": [
+      "1 <= arr.length <= 10^4",
+      "1 <= arr[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "arr = [1, 2, 3, 1, 2, 1]",
+        "output": "1",
+        "explanation": "The groups are {1: 3 times, 2: 2 times, 3: 1 time}. The largest group is '1' with size 3."
+      },
+      {
+        "input": "arr = [2, 2, 3, 3, 3, 4, 4]",
+        "output": "1",
+        "explanation": "The groups are {2: 2 times, 3: 3 times, 4: 2 times}. The largest group is '3' with size 3."
+      },
+      {
+        "input": "arr = [5, 5, 5, 1, 1, 2, 2]",
+        "output": "1",
+        "explanation": "The groups are {5: 3 times, 1: 2 times, 2: 2 times}. The largest group is '5' with size 3."
+      },
+      {
+        "input": "arr = [9, 9, 10, 10, 11, 11]",
+        "output": "2",
+        "explanation": "The groups are {9: 2 times, 10: 2 times, 11: 2 times}. The largest groups are '9', '10', and '11', each with size 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hashmap to count the occurrences of each number.",
+      "Find the maximum frequency and count how many numbers have that frequency."
+    ],
+    "company": "Mercari"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Subsequence in Non-Increasing Order",
+    "description": "Given an array of integers, you need to split the array into two subsequences such that the sum of the elements in the first subsequence is greater than the sum of the elements in the second subsequence. The first subsequence should be in non-increasing order. Return the minimum possible length of the first subsequence needed to achieve this condition.",
+    "topic": "Array",
+    "subtopic": "Subsequences",
+    "tags": [
+      "Array",
+      "Subsequences",
+      "Greedy"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the minimum length of the subsequence satisfying the conditions.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "1 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [4, 3, 10, 9, 8]",
+        "output": "2",
+        "explanation": "By choosing the first two numbers, [10, 9], the sum is 19, which is greater than the sum of the remaining numbers [8, 4, 3] which is 15."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5]",
+        "output": "3",
+        "explanation": "Choosing the first three numbers [5, 4, 3] gives a sum of 12, which is greater than the sum of [2, 1] which is 3."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Sort the array in descending order.",
+      "Keep a running total of the sums of both subsequences.",
+      "Stop when the sum of the first subsequence is greater than the second."
+    ],
+    "company": "Mercari"
+  },
+  {
+    "question_id": "",
+    "title": "Max Difference You Can Get From Changing an Integer",
+    "description": "Given an integer n, you can change at most one digit of n to obtain a new integer. Find the maximum difference between the original integer and the modified integer. The modified integer must be non-negative.",
+    "topic": "Math",
+    "subtopic": "Digit Manipulation",
+    "tags": [
+      "Math",
+      "Digit Manipulation",
+      "Greedy"
+    ],
+    "input_format": "An integer n where 0 <= n <= 10^9.",
+    "output_format": "An integer representing the maximum difference obtainable.",
+    "constraints": [
+      "0 <= n <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "n = 123",
+        "output": "876",
+        "explanation": "Changing the digit '1' to '9' gives 923, and the difference is 923 - 123 = 800. Changing '2' to '9' gives 193, with difference 193 - 123 = 70. Changing '3' to '0' gives 120, resulting in difference 120 - 123 = -3. The maximum difference is 800."
+      },
+      {
+        "input": "n = 100",
+        "output": "900",
+        "explanation": "Changing the digit '1' to '9' gives 900. The difference is 900 - 100 = 800."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider which digit to change to maximize the resulting integer.",
+      "Think about both increasing and decreasing the digits."
+    ],
+    "company": "Mercari"
+  }
+]

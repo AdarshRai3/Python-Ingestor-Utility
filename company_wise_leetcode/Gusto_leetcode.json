@@ -1,0 +1,116 @@
+[
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value data structure that can return the value of a key at a particular time. It should support the following operations:\n\n1. `set(key: str, value: str, timestamp: int)` - Set the value of a key to a value at a specified timestamp.\n2. `get(key: str, timestamp: int) -> str` - Retrieve the value of a key at a given timestamp. If the key has not been set at that timestamp, return the value associated with the most recent timestamp before it. If there is no such timestamp, return an empty string.",
+    "topic": "Design",
+    "subtopic": "Key-Value Store",
+    "tags": [
+      "Design",
+      "Hash Map",
+      "Binary Search"
+    ],
+    "input_format": "Input consists of several operations in the form of `set` and `get` with their respective parameters.",
+    "output_format": "The output for `get` operations is a string representing the value stored at the specified timestamp, or an empty string if not found.",
+    "constraints": [
+      "1 <= key.length, value.length <= 100",
+      "1 <= timestamp <= 10^9",
+      "The number of operations will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "set('foo', 'bar', 1);\nget('foo', 1);",
+        "output": "'bar'",
+        "explanation": "The value associated with key 'foo' at timestamp 1 is 'bar'."
+      },
+      {
+        "input": "set('foo', 'bar', 1);\nset('foo', 'baz', 2);\nget('foo', 3);",
+        "output": "'baz'",
+        "explanation": "At timestamp 3, the most recent value for key 'foo' is 'baz'."
+      },
+      {
+        "input": "get('foo', 2);",
+        "output": "''",
+        "explanation": "There is no value set for 'foo' at or before timestamp 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a map to store key-value pairs with their timestamps.",
+      "Binary search can be helpful to efficiently retrieve the most recent timestamp."
+    ],
+    "company": "Gusto"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to English Words",
+    "description": "Convert a non-negative integer to its English words representation. The integer must be between 0 and 2^31 - 1 (inclusive). For example, the number '123' is represented as 'One Hundred Twenty Three'.",
+    "topic": "Mathematics",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Math",
+      "String",
+      "Conversion"
+    ],
+    "input_format": "A single non-negative integer num.",
+    "output_format": "A string representing the English words for the given integer.",
+    "constraints": [
+      "0 <= num <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "num = 123",
+        "output": "One Hundred Twenty Three",
+        "explanation": "The number 123 breaks down into 'One Hundred' (100) and 'Twenty Three' (23)."
+      },
+      {
+        "input": "num = 100001",
+        "output": "One Hundred Thousand One",
+        "explanation": "The number includes 'One Hundred Thousand' (100,000) and 'One' (1)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Break the number down into groups of thousands.",
+      "Use predefined words for numbers below twenty and multiples of ten."
+    ],
+    "company": "Gusto"
+  },
+  {
+    "question_id": "",
+    "title": "Add Bold Tag in String",
+    "description": "Given a string `s` and a list of strings `dict`, you need to add bold tags in the string where the substrings appear in the dictionary. A substring is defined as a contiguous sequence of characters, and the bold tags should encompass the substrings in the original string. If the dictionary contains overlapping substrings, the resulting bold tags should merge together. Return the modified string.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Bold Tags"
+    ],
+    "input_format": "A string s and a list of strings dict.",
+    "output_format": "A string representing the modified string with bold tags.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= dict.length <= 100",
+      "1 <= dict[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcxyz123\"\ndict = [\"abc\", \"123\"]",
+        "output": "<b>abc</b>xyz<b>123</b>",
+        "explanation": "The substrings 'abc' and '123' from the dict are wrapped with bold tags."
+      },
+      {
+        "input": "s = \"aaabbbaaa\"\ndict = [\"aaa\", \"aab\"]",
+        "output": "<b>aaabbb</b>",
+        "explanation": "The substring 'aaabbb' is bolded because 'aaa' overlaps with 'aab'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using an array to track which indices should be bolded.",
+      "Merge the bold sections if they overlap."
+    ],
+    "company": "Gusto"
+  }
+]

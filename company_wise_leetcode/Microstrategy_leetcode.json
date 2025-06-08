@@ -1,0 +1,346 @@
+[
+  {
+    "question_id": "",
+    "title": "Airplane Seat Assignment Probability",
+    "description": "In an airplane with a row of 10 seats, a single passenger enters the airplane and randomly chooses a seat since their assigned seat is already taken. The subsequent passengers follow the same rule. You need to calculate the probability that the last passenger sits in their own assigned seat. Specifically, given the number of seats in the airplane, return the probability as a reduced fraction.",
+    "topic": "Probability",
+    "subtopic": "Combinatorics",
+    "tags": [
+      "Probability",
+      "Combinatorics",
+      "Math"
+    ],
+    "input_format": "An integer n representing the number of seats in the airplane.",
+    "output_format": "A string representing the probability in the form of 'P/Q', where P and Q are coprime integers.",
+    "constraints": [
+      "1 <= n <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "n = 1",
+        "output": "1/1",
+        "explanation": "With one seat, the only passenger will sit in their own seat."
+      },
+      {
+        "input": "n = 2",
+        "output": "1/2",
+        "explanation": "The first passenger has a 50% chance of sitting in their own seat or the other seat. If they sit in the second seat, the second passenger cannot sit in their seat."
+      },
+      {
+        "input": "n = 3",
+        "output": "1/3",
+        "explanation": "The probability that the last passenger sits in their own seat reduces to 1/3 as per derived combinatorial properties."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the pattern of seat choices and their outcomes.",
+      "Try to determine how the choices propagate down the line of passengers."
+    ],
+    "company": "Microstrategy"
+  },
+  {
+    "question_id": "",
+    "title": "Zigzag Conversion",
+    "description": "The string 'PAYPALISHIRING' is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)\n\nP   A   H   N\nA P L S I I G\nY   I   A\n\nAnd then read line by line: 'PAHNAPLSIIGYIR'. Implement a function that converts a given string into this zigzag pattern based on a specified number of rows and returns it as a single string.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Zigzag",
+      "Conversion"
+    ],
+    "input_format": "A string s and an integer numRows.",
+    "output_format": "A single string representing the words formed by reading the characters line by line.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= numRows <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "s = 'PAYPALISHIRING', numRows = 3",
+        "output": "PAHNAPLSIIGYIR",
+        "explanation": "The zigzag formation of 'PAYPALISHIRING' with 3 rows is 'PAHNAPLSIIGYIR'."
+      },
+      {
+        "input": "s = 'A', numRows = 1",
+        "output": "A",
+        "explanation": "With only one row, the output remains the same as the input."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how the characters are indexed based on the zigzag pattern.",
+      "You may need to use a list to store the characters in each row."
+    ],
+    "company": "Microstrategy"
+  },
+  {
+    "question_id": "",
+    "title": "Backspace String Compare",
+    "description": "Given two strings S and T, return true if they are equal when both are typed into empty text editors. '#' means a backspace character. Note that after backspacing an empty text, the text will continue empty.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Two Pointers",
+      "Stack"
+    ],
+    "input_format": "Two strings S and T.",
+    "output_format": "A boolean value indicating whether the two strings are equal after processing backspaces.",
+    "constraints": [
+      "1 <= S.length, T.length <= 200",
+      "S and T only contain lowercase letters and '#' characters."
+    ],
+    "examples": [
+      {
+        "input": "S = 'ab#c', T = 'ad#c'",
+        "output": "true",
+        "explanation": "Both strings become 'ac' after processing backspaces."
+      },
+      {
+        "input": "S = 'ab##', T = 'c#d#'",
+        "output": "true",
+        "explanation": "Both strings become '' after processing backspaces."
+      },
+      {
+        "input": "S = 'a#c', T = 'b'",
+        "output": "false",
+        "explanation": "S becomes 'c' while T is 'b', hence they are not equal."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to simulate the typing process.",
+      "Consider how to handle the '#' character."
+    ],
+    "company": "Microstrategy"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Elements",
+    "description": "Given a non-empty array of integers, return the k most frequent elements. You may return the answer in any order. For instance, if two elements have the same frequency, order them according to their natural order.",
+    "topic": "Hash Table",
+    "subtopic": "Counting Frequencies",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Counting",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "A list of the k most frequent elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^4",
+      "k is in the range [1, the number of unique elements in the array]."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 1, 2, 2, 3], k = 2",
+        "output": "[1, 2]",
+        "explanation": "1 is the most frequent element and 2 is the second most frequent element."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Only one element exists in the array."
+      },
+      {
+        "input": "nums = [1, 2], k = 1",
+        "output": "[1] or [2]",
+        "explanation": "Both numbers have the same frequency of 1, hence either can be returned."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to count the frequency of each element.",
+      "You can use a min-heap to keep track of the top k elements."
+    ],
+    "company": "Microstrategy"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Single-Dimensional DP",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An integer array prices where 0 <= prices.length <= 10^5 and 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit.",
+    "constraints": [
+      "0 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the lowest price seen so far and calculate potential profits."
+    ],
+    "company": "Microstrategy"
+  },
+  {
+    "question_id": "",
+    "title": "Battleships in a Board",
+    "description": "Given a 2D board representing a game of battleship, where 'X' represents a battleship and '.' represents water, count the number of battleships on the board. A battleship can only be placed horizontally or vertically and consists of at least one cell of 'X'. You must ensure that two battleships do not touch each other, which means that no adjacent cells (horizontal or vertical) can be 'X'.",
+    "topic": "Matrix",
+    "subtopic": "Counting",
+    "tags": [
+      "Matrix",
+      "Counting",
+      "Grid"
+    ],
+    "input_format": "A 2D character array board, where each cell is either 'X' or '.'.",
+    "output_format": "An integer representing the number of battleships on the board.",
+    "constraints": [
+      "1 <= board.length <= 200",
+      "1 <= board[i].length <= 200",
+      "board[i][j] is either 'X' or '.'."
+    ],
+    "examples": [
+      {
+        "input": "board = [['X', '.', 'X'], ['.', '.', 'X'], ['X', 'X', '.']]",
+        "output": "5",
+        "explanation": "There are 5 distinct battleships on the board."
+      },
+      {
+        "input": "board = [['.']]",
+        "output": "0",
+        "explanation": "There are no battleships on the board."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS or BFS to traverse through the board.",
+      "Count a battleship only when the top or left cell is not 'X'."
+    ],
+    "company": "Microstrategy"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Ways to Build Sturdy Brick Wall",
+    "description": "You are tasked with building a sturdy brick wall with height `h` and length `n`. Each brick has a width of 1 and can be placed either vertically or horizontally. A vertically placed brick covers 1 unit of height and 1 unit of length, while a horizontally placed brick occupies 2 units of length and 1 unit of height. The wall must be built such that no two horizontally placed bricks are adjacent. Determine the number of ways to build the wall following these constraints. Since the result can be very large, return it modulo 10^9 + 7.",
+    "topic": "Dynamic Programming",
+    "subtopic": "State Transition",
+    "tags": [
+      "Dynamic Programming",
+      "Combinatorics",
+      "Modulus Arithmetic"
+    ],
+    "input_format": "Two integers h and n, where 1 <= h, n <= 1000.",
+    "output_format": "An integer representing the number of ways to build the wall, modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= h, n <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "h = 3, n = 2",
+        "output": "1",
+        "explanation": "There is only one configuration where two vertical bricks are placed one on top of another."
+      },
+      {
+        "input": "h = 3, n = 3",
+        "output": "4",
+        "explanation": "Possible configurations include three vertical bricks, or one horizontal with two verticals on top."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the base cases for smaller heights and lengths.",
+      "Use dynamic programming to build up from smaller configurations."
+    ],
+    "company": "Microstrategy"
+  },
+  {
+    "question_id": "",
+    "title": "Permutations",
+    "description": "Given an array of distinct integers, return all possible permutations of the array. You can return the answer in any order. The problem requires generating all arrangements of the integers in every possible order.",
+    "topic": "Backtracking",
+    "subtopic": "Permutations",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "Permutations"
+    ],
+    "input_format": "An array of distinct integers nums.",
+    "output_format": "A list of all possible permutations of the input array.",
+    "constraints": [
+      "1 <= nums.length <= 6",
+      "-10 <= nums[i] <= 10"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]]",
+        "explanation": "The six possible permutations of the array [1, 2, 3] are listed in the output."
+      },
+      {
+        "input": "nums = [0, 1]",
+        "output": "[[0,1], [1,0]]",
+        "explanation": "The two permutations of the array [0, 1] are [0,1] and [1,0]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using a backtracking approach to generate permutations.",
+      "Consider swapping elements to create new arrangements."
+    ],
+    "company": "Microstrategy"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Swaps to Make the String Balanced",
+    "description": "Given a string containing only the characters '(' and ')', your task is to find the minimum number of swaps required to make the string balanced. A string is considered balanced if every opening bracket has a corresponding closing bracket, and they are properly nested.",
+    "topic": "String",
+    "subtopic": "Brackets",
+    "tags": [
+      "String",
+      "Brackets",
+      "Greedy"
+    ],
+    "input_format": "A single string s containing only the characters '(' and ')'.",
+    "output_format": "An integer representing the minimum number of swaps needed to make the string balanced.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists only of '(' and ')'."
+    ],
+    "examples": [
+      {
+        "input": "s = '())('",
+        "output": "2",
+        "explanation": "By swapping the first '(' with the first ')' from the end, we can make the string balanced: '()()'."
+      },
+      {
+        "input": "s = '))((('",
+        "output": "3",
+        "explanation": "Swapping the first two ')' with the first two '(' results in the balanced string '()()'."
+      },
+      {
+        "input": "s = '((()))'",
+        "output": "0",
+        "explanation": "The string is already balanced, so no swaps are needed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count the number of unmatched open and close brackets.",
+      "Each unmatched '(' needs a swap with an unmatched ')'."
+    ],
+    "company": "Microstrategy"
+  }
+]

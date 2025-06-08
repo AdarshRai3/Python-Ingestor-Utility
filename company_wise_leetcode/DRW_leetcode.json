@@ -1,0 +1,434 @@
+[
+  {
+    "question_id": "",
+    "title": "Subsequence of Size K With the Largest Even Sum",
+    "description": "Given an array of integers and a number K, determine the largest even sum possible from any subsequence of size K. A subsequence is derived from the array by deleting some or no elements without changing the order of the remaining elements. If no valid subsequence of size K can yield an even sum, return 0.",
+    "topic": "Array",
+    "subtopic": "Subsequences",
+    "tags": [
+      "Array",
+      "Subsequences",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers nums followed by an integer K.",
+    "output_format": "An integer representing the largest even sum of any subsequence of size K.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= K <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], K = 3",
+        "output": "12",
+        "explanation": "The subsequence [2, 4, 5] gives the even sum 2 + 4 + 5 = 11, but [3, 4, 5] gives 3 + 4 + 5 = 12 which is larger."
+      },
+      {
+        "input": "nums = [1, 3, 5], K = 2",
+        "output": "0",
+        "explanation": "Any subsequence of size 2 leads to an odd sum. Thus, we return 0."
+      },
+      {
+        "input": "nums = [0, 4, 2, 5], K = 2",
+        "output": "6",
+        "explanation": "The subsequence [4, 2] yields the even sum of 4 + 2 = 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the contributions of both even and odd numbers to the total sum.",
+      "You may need to sort or filter the array to find the optimal subsequences."
+    ],
+    "company": "DRW"
+  },
+  {
+    "question_id": "",
+    "title": "Counting Elements",
+    "description": "Given an array of integers, you need to count how many elements in the array have a corresponding element in the array such that the corresponding element is equal to the current element plus one. For example, for the array [1, 2, 3], the count would be 2 because 1 (for 0) and 2 (for 1) have a corresponding element in the array.",
+    "topic": "Array",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Array",
+      "Counting",
+      "HashMap"
+    ],
+    "input_format": "An array of integers nums representing the input.",
+    "output_format": "An integer representing the count of elements which have their corresponding element `element + 1` in the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 2, 3, 4]",
+        "output": "3",
+        "explanation": "The numbers 1, 2, and 3 have corresponding elements (2, 3, and 4 respectively), count is 3."
+      },
+      {
+        "input": "nums = [5, 6, 7, 8, 9]",
+        "output": "4",
+        "explanation": "All numbers except 5 have their corresponding elements (6, 7, 8, 9 respectively), count is 4."
+      },
+      {
+        "input": "nums = [1, 1, 1, 1]",
+        "output": "0",
+        "explanation": "There are no corresponding elements for 1, count is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a set for O(1) average time complexity checks.",
+      "Iterate through the array to build the frequency count."
+    ],
+    "company": "DRW"
+  },
+  {
+    "question_id": "",
+    "title": "Maximize Score After Pair Deletions",
+    "description": "You are given an array of integers 'nums'. You can perform a series of operations where in each operation, you select two adjacent elements and delete them. You obtain a score equal to the minimum of the two deleted elements. The goal is to maximize your score by strategically selecting pairs to delete. Return the maximum score you can achieve after performing this operation optimally.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Maximizing Score",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers nums representing the scores.",
+    "output_format": "An integer representing the maximum achievable score.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [4, 1, 2, 3, 5]",
+        "output": "6",
+        "explanation": "By deleting (4, 1) to get 6 and then (2, 3), the maximum score is 6."
+      },
+      {
+        "input": "nums = [1, 2, 2, 2, 1]",
+        "output": "4",
+        "explanation": "By deleting pairs (1, 2) and (2, 1), we achieve a score of 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the adjacent elements for the pairs you can delete.",
+      "Greedily choosing the minimum between adjacent pairs might lead to better results."
+    ],
+    "company": "DRW"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where 0 <= prices.length <= 10^5 and 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "0 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "There is no transaction that can be done, as prices are decreasing."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Track the minimum price seen so far.",
+      "Calculate the profit at each step and update the maximum profit."
+    ],
+    "company": "DRW"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicate Letters",
+    "description": "Given a string s, remove duplicate letters so that every letter appears once and only once. You must make sure your result is the smallest in lexicographical order among all possible results. You must also maintain the relative order of characters in the string.",
+    "topic": "String",
+    "subtopic": "Greedy",
+    "tags": [
+      "String",
+      "Greedy",
+      "Stack"
+    ],
+    "input_format": "A single string s consisting of lowercase English letters.",
+    "output_format": "A string representing the result after removing duplicate letters.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "bcabc",
+        "output": "abc",
+        "explanation": "By removing 'b' and 'c' in the appropriate order, we can form the result 'abc'."
+      },
+      {
+        "input": "cbacdcbc",
+        "output": "acdb",
+        "explanation": "The letters 'c' and 'b' can be removed in order to yield 'acdb'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to maintain the order of characters.",
+      "Keep track of the last occurrence of each character."
+    ],
+    "company": "DRW"
+  },
+  {
+    "question_id": "",
+    "title": "Maximal Network Rank",
+    "description": "You are given an integer n representing the number of nodes in a network, and a list of pairs, where each pair [a, b] represents an undirected edge between nodes a and b. The maximal network rank is defined as the maximum value of the sum of degrees of any two connected nodes in the network. The degree of a node is the number of edges connected to it. Your task is to return the maximal network rank of the network.",
+    "topic": "Graph",
+    "subtopic": "Graph Theory",
+    "tags": [
+      "Graph",
+      "Network",
+      "Degree"
+    ],
+    "input_format": "An integer n (1 <= n <= 100) and a list of pairs, where each pair contains two integers a and b (0 <= a, b < n) representing edges.",
+    "output_format": "An integer representing the maximal network rank.",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= edges.length <= n * (n - 1) / 2",
+      "0 <= a, b < n",
+      "a != b"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, edges = [[0, 1], [0, 2], [1, 2], [1, 3]]",
+        "output": "4",
+        "explanation": "Node 1 has degree 3 and node 0 has degree 2. The connected nodes are (0, 1), and their ranks sum to 2 + 3 = 5."
+      },
+      {
+        "input": "n = 4, edges = [[0, 1], [0, 2], [1, 2], [2, 3]]",
+        "output": "5",
+        "explanation": "Nodes 2 and 1 have the highest combined ranks, forming a total rank of 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to track the degrees of each node.",
+      "Ensure you compute degrees only for connected nodes."
+    ],
+    "company": "DRW"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Fuel Cost to Report to the Capital",
+    "description": "In a country represented as a tree, where each node is a city and edges represent roads between the cities, the capital is located at the root of the tree. Each city has a cost associated with it, powering its vehicles to report to the capital. Given the fuel cost for each city, your task is to calculate the minimum fuel cost required for all cities to send their reports to the capital. Each vehicle can only report to the capital directly and requires the fuel cost defined for that city. For a city, the fuel cost is the sum of its own cost plus the minimum fuel costs of its child cities.",
+    "topic": "Tree",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Tree",
+      "Dynamic Programming",
+      "Graph"
+    ],
+    "input_format": "The input consists of two parts: 1. An integer n, the number of cities. 2. An array costs of size n, where costs[i] represents the fuel cost of city i. 3. A list of edges representing the connections between the cities.",
+    "output_format": "An integer representing the minimum fuel cost for all cities to report to the capital.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "0 <= costs[i] <= 1000",
+      "edges are given as a list of pairs [u, v] where u and v are the indices of the cities."
+    ],
+    "examples": [
+      {
+        "input": "n = 3, costs = [1, 2, 3], edges = [[0, 1], [0, 2]]",
+        "output": "6",
+        "explanation": "City 0 has a cost of 1, city 1 has a cost of 2, and city 2 has a cost of 3. For city 0 to receive reports from its children (1 and 2), it needs 1 + 2 + 3 = 6 total fuel."
+      },
+      {
+        "input": "n = 4, costs = [0, 2, 4, 1], edges = [[0, 1], [0, 2], [1, 3]]",
+        "output": "7",
+        "explanation": "City 0 has a cost of 0, sending reports from city 1 requires 2 + 1 = 3, and from city 2 requires 4. So total cost is 0 + 3 + 4 = 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider a depth-first search (DFS) approach.",
+      "Use a memoization technique to store the minimum fuel costs."
+    ],
+    "company": "DRW"
+  },
+  {
+    "question_id": "",
+    "title": "Reorder Routes to Make All Paths Lead to the City Zero",
+    "description": "In a directed graph, you have a list of roads where each road is represented as a pair of nodes [a, b], meaning you can travel from node a to node b. Your goal is to reorder the minimum number of roads such that it is possible to reach the city zero from every other city. Return the minimum number of edges that need to be reversed to achieve this.",
+    "topic": "Graph",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Reorder"
+    ],
+    "input_format": "An integer n representing the number of cities, and a 2D array of edges where each edge is a pair of integers [a, b].",
+    "output_format": "An integer representing the minimum number of roads that need to be reordered.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "1 <= edges.length <= 10^5",
+      "edges[i] consists of two distinct integers a and b"
+    ],
+    "examples": [
+      {
+        "input": "n = 6, edges = [[0,1],[1,3],[2,3],[4,0],[4,5]]",
+        "output": "3",
+        "explanation": "We can reorder the roads: [1, 0], [3, 1], and [3, 2] to lead to city zero from all other cities."
+      },
+      {
+        "input": "n = 5, edges = [[1,0],[2,1],[3,2],[4,0]]",
+        "output": "2",
+        "explanation": "The roads [0, 1] and [0, 4] need to be reordered to lead all paths to city zero."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS or BFS to explore the graph.",
+      "Keep track of visited nodes to avoid cycles.",
+      "Count edges that are directed away from city zero."
+    ],
+    "company": "DRW"
+  },
+  {
+    "question_id": "",
+    "title": "Robot Room Cleaner",
+    "description": "Given a robot that can only move in four directions (up, down, left, right) and can only clean a room represented as a 2D grid, implement a solution that allows the robot to clean the room optimally. The robot is able to sense obstacles and cannot clean cells that have already been cleaned. You need to model its movement based on a series of commands and determine which cells it cleans.",
+    "topic": "Backtracking",
+    "subtopic": "Recursion",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "Simulation"
+    ],
+    "input_format": "A grid representing the room where each cell is either an obstacle (1) or free (0), and the robot's starting position in the grid.",
+    "output_format": "A list of coordinates representing the cells that were cleaned by the robot.",
+    "constraints": [
+      "1 <= room.length, room[i].length <= 100",
+      "room[i][j] is either 0 or 1",
+      "The coordinates of the starting position will always be free."
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "output": [
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "explanation": "Starting at (1,1), the robot cleans the accessible cells."
+      },
+      {
+        "input": [
+          [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "output": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "explanation": "Starting at (0,0), the robot cleans all accessible cells avoiding obstacles."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about using a depth-first search approach.",
+      "Keep track of visited cells to avoid cleaning the same cell multiple times."
+    ],
+    "company": "DRW"
+  }
+]

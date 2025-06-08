@@ -1,0 +1,157 @@
+[
+  {
+    "question_id": "",
+    "title": "String to Integer (atoi)",
+    "description": "Implement the 'myAtoi' function that converts a string to a 32-bit signed integer (similar to C/C++'s atoi function). The function should ignore leading whitespace, handle optional leading signs ('+' or '-'), and stop converting when encountering a non-numeric character. The overflow should be handled by clamping the output to the bounds of a 32-bit signed integer.",
+    "topic": "String",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Parsing",
+      "Conversion"
+    ],
+    "input_format": "A string s that potentially represents an integer.",
+    "output_format": "An integer representing the converted value from the string.",
+    "constraints": [
+      "1 <= |s| <= 200",
+      "s consists of English letters, digits, symbols and spaces.",
+      "The resulting integer must be within the range of a 32-bit signed integer."
+    ],
+    "examples": [
+      {
+        "input": "s = '   -42'",
+        "output": "-42",
+        "explanation": "Leading spaces are ignored, the '-' sign indicates a negative number, and '42' is converted to -42."
+      },
+      {
+        "input": "s = '4193 with words'",
+        "output": "4193",
+        "explanation": "Only the numeric part '4193' is considered, ignoring 'with words'."
+      },
+      {
+        "input": "s = 'words and 987'",
+        "output": "0",
+        "explanation": "No valid conversion can be made, so the output is 0."
+      },
+      {
+        "input": "s = '-91283472332'",
+        "output": "-2147483648",
+        "explanation": "The number is out of 32-bit signed integer range, so it is clamped to -2147483648."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Ignore leading whitespace and handle signs.",
+      "Use a loop to read characters until a non-digit is found.",
+      "Check for overflow conditions while converting."
+    ],
+    "company": "Niantic"
+  },
+  {
+    "question_id": "",
+    "title": "Brace Expansion",
+    "description": "Given a string containing braces '{' and '}', you need to expand the string into all possible combinations of strings formed by replacing each brace with the letters it contains. Every opening brace '{' must be matched with a closing brace '}'. If a brace does not contain any letters, it should be treated as an empty set. You should return the results in sorted order.",
+    "topic": "String",
+    "subtopic": "Backtracking",
+    "tags": [
+      "String",
+      "Backtracking",
+      "Combinatorics"
+    ],
+    "input_format": "A single string s that may contain lowercase letters and braces.",
+    "output_format": "A list of strings representing all possible combinations formed by the brace expansion, sorted in lexicographical order.",
+    "constraints": [
+      "1 <= s.length <= 50",
+      "The string s contains only lowercase letters and the characters '{' and '}'."
+    ],
+    "examples": [
+      {
+        "input": "s = '{a,b}c{d,e}'",
+        "output": "['acd', 'ace', 'bcd', 'bce']",
+        "explanation": "The string can be expanded to form 4 combinations: 'ac' appended with 'd' or 'e', and 'b' appended similarly."
+      },
+      {
+        "input": "s = 'a{b,c}'",
+        "output": "['ab', 'ac']",
+        "explanation": "The string expands to 'a' combined with either 'b' or 'c'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use recursive backtracking to generate combinations.",
+      "Keep track of the current position in the string and build combinations incrementally."
+    ],
+    "company": "Niantic"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for Least Recently Used (LRU) cache. The cache should be able to store a limited number of items. When the cache exceeds its limit, it should invalidate the least recently used item. The cache should support the following operations: get(key) and put(key, value). The get(key) method retrieves the value of the key if the key exists in the cache, otherwise returns -1. The put(key, value) method will insert or update the value of the key. If the number of keys exceeds the capacity, it should invalidate the least recently used key.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Cache",
+      "Design",
+      "Linked List",
+      "Hash Table"
+    ],
+    "input_format": "A positive integer capacity for the cache, and a sequence of operations (get or put) with the corresponding keys and values.",
+    "output_format": "The result of the get operations, where -1 is returned for non-existent keys.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^4",
+      "At most 10^4 calls will be made to get and put"
+    ],
+    "examples": [
+      {
+        "input": "operations = [put(1, 1), put(2, 2), get(1), put(3, 3), get(2), put(4, 4), get(1), get(3), get(4)]",
+        "output": "[null, null, 1, null, -1, null, -1, 3, 4]",
+        "explanation": "First, 1 and 2 are added to the cache. Fetching 1 returns 1. 3 is added, which evicts key 2. Fetching 2 returns -1, since it was evicted. Key 4 is added, evicting key 1. Fetching keys 1, 3, and 4 returns -1, 3 and 4 respectively."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a combination of a linked list and hash map to maintain the order of usage.",
+      "The most recently used item should be placed at the front of the linked list."
+    ],
+    "company": "Niantic"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Duplicate Number",
+    "description": "Given an array of integers nums containing n + 1 integers where each integer is between 1 and n (inclusive), prove that at least one duplicate number must exist. You must not modify the array and can only use constant extra space. Return the duplicate number in the array.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Binary Search",
+      "Floyd's Tortoise and Hare"
+    ],
+    "input_format": "An array of integers nums of size n where 1 <= n <= 10^5.",
+    "output_format": "An integer representing the duplicate number in the array.",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "1 <= nums[i] <= n - 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 4, 2, 2]",
+        "output": "2",
+        "explanation": "The number 2 appears twice in the array."
+      },
+      {
+        "input": "nums = [3, 1, 3, 4, 2]",
+        "output": "3",
+        "explanation": "The number 3 appears twice in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using the properties of cycle detection.",
+      "Consider using binary search on the value range."
+    ],
+    "company": "Niantic"
+  }
+]

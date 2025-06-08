@@ -1,0 +1,79 @@
+[
+  {
+    "question_id": "",
+    "title": "Maximum Array Hopping Score I",
+    "description": "You are given an array of integers where each element represents the maximum number of steps you can take forward from that element. Your goal is to find the maximum score you can obtain by starting at the first element and jumping through the array. The score is defined as the sum of the elements you land on, including the starting element. Can you devise a solution that efficiently calculates this score?",
+    "topic": "Dynamic Programming",
+    "subtopic": "Hopping",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers `nums` where each element represents the hop length.",
+    "output_format": "An integer representing the maximum score obtainable.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 1, 5, 0, 0]",
+        "output": "9",
+        "explanation": "Starting at index 0, you can hop to index 1 (score 1 + 3), then to index 3 (score 1 + 3 + 5) for a total score of 9."
+      },
+      {
+        "input": "nums = [2, 4, 1, 3, 5]",
+        "output": "14",
+        "explanation": "Starting at index 0, you hop to index 1 (score 2 + 4), then hop to index 3 (score 2 + 4 + 3), and finally to index 4 for a total score of 14."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how you can store the best scores at each index.",
+      "Consider whether you should move to maximum reachable indices."
+    ],
+    "company": "Zluri"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Array Hopping Score II",
+    "description": "You are given an integer array nums of length n. You can hop from index i to any index j such that j is greater than i and the value at index j is greater than the value at index i. The score of a hop from i to j is defined as the sum of values of all elements between indices i and j, inclusive. Your task is to find the maximum score you can achieve by performing any number of hops from the start index 0 to any valid index n-1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers nums, where nums[i] represents the value at the ith index.",
+    "output_format": "An integer representing the maximum score achievable through valid hops.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 2, 5, 4]",
+        "output": "9",
+        "explanation": "You can hop from index 0 (1) to index 1 (3) to index 3 (5). The score is 1 + 3 + 5 = 9."
+      },
+      {
+        "input": "nums = [5, 4, 3, 2, 1]",
+        "output": "5",
+        "explanation": "The best score can only be achieved by staying at index 0 (5) since no valid hops are possible."
+      },
+      {
+        "input": "nums = [1, 2, 3, 2, 5, 4, 6]",
+        "output": "15",
+        "explanation": "You can hop from 0 to 1 to 2 to 4 to 6: the score is 1 + 2 + 3 + 5 + 4 = 15."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how each valid hop contributes to the score.",
+      "You might want to keep track of scores at each index to avoid recalculating."
+    ],
+    "company": "Zluri"
+  }
+]

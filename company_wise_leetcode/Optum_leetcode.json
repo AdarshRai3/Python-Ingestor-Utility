@@ -1,0 +1,193 @@
+[
+  {
+    "question_id": "",
+    "title": "Reverse Prefix of Word",
+    "description": "Given a string 'word' and a character 'ch', reverse the segment of 'word' that starts from the beginning and ends at the first occurrence of 'ch' (inclusive). If 'ch' is not found in 'word', the entire word should be reversed. Return the resulting string after the operation.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Reverse"
+    ],
+    "input_format": "A string 'word' of lowercase letters and a character 'ch'.",
+    "output_format": "A string representing the modified version of 'word'.",
+    "constraints": [
+      "1 <= word.length <= 100",
+      "word consists of lowercase English letters only.",
+      "ch is a lowercase English letter."
+    ],
+    "examples": [
+      {
+        "input": "word = \"abcdef\", ch = 'd'",
+        "output": "dcbaef",
+        "explanation": "The first occurrence of 'd' is at index 3. Thus, we reverse the segment from the start till 'd', resulting in 'dcbaef'."
+      },
+      {
+        "input": "word = \"abcdef\", ch = 'z'",
+        "output": "fedcba",
+        "explanation": "'z' is not found in 'word', so we reverse the entire string, resulting in 'fedcba'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use string slicing to manipulate the segments.",
+      "Find the index of the first occurrence of 'ch' using str.index()."
+    ],
+    "company": "Optum"
+  },
+  {
+    "question_id": "",
+    "title": "Bank Account Summary",
+    "description": "You have a bank account that records transactions over time. Each transaction has an amount which can be either a deposit (positive number) or a withdrawal (negative number). Your task is to compute the total balance after all transactions, as well as the number of deposits and withdrawals made. Write a function that takes a list of transactions and returns a summary of the account balance, number of deposits, and number of withdrawals.",
+    "topic": "Array",
+    "subtopic": "Summarizing Data",
+    "tags": [
+      "Array",
+      "Accounting",
+      "Summation"
+    ],
+    "input_format": "A list of integers representing transactions, where each integer can be positive (deposit) or negative (withdrawal).",
+    "output_format": "An object containing total_balance (integer), num_deposits (integer), and num_withdrawals (integer).",
+    "constraints": [
+      "1 <= transactions.length <= 10^5",
+      "-10^5 <= transactions[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "transactions = [100, -50, 200, -30, 50]",
+        "output": "{ total_balance: 270, num_deposits: 3, num_withdrawals: 2 }",
+        "explanation": "Total balance is 100 - 50 + 200 - 30 + 50 = 270. There are 3 deposits and 2 withdrawals."
+      },
+      {
+        "input": "transactions = [-10, -20, -30]",
+        "output": "{ total_balance: -60, num_deposits: 0, num_withdrawals: 3 }",
+        "explanation": "Total balance is -10 - 20 - 30 = -60. There are 0 deposits and 3 withdrawals."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Iterate through the transactions to calculate the total balance.",
+      "Count deposits and withdrawals while iterating over the list."
+    ],
+    "company": "Optum"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within a string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A string s consisting of English letters, digits, symbols and spaces.",
+    "output_format": "An integer denoting the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 5 * 10^4",
+      "s consists of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'abc', which has a length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is 'b', with a length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'wke', with a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "Use a HashMap to track the characters and their indexes."
+    ],
+    "company": "Optum"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Common Subsequence",
+    "description": "Given two strings text1 and text2, return the length of their longest common subsequence. A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. For example, 'ace' is a subsequence of 'abcde' while 'aec' is not. If there is no common subsequence, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Longest Common Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "LCS"
+    ],
+    "input_format": "Two strings, text1 and text2, where 1 <= text1.length, text2.length <= 1000.",
+    "output_format": "An integer representing the length of the longest common subsequence between text1 and text2.",
+    "constraints": [
+      "1 <= text1.length, text2.length <= 1000",
+      "text1 and text2 consist of English letters only."
+    ],
+    "examples": [
+      {
+        "input": "text1 = 'abcde', text2 = 'ace'",
+        "output": "3",
+        "explanation": "The longest common subsequence is 'ace' with length 3."
+      },
+      {
+        "input": "text1 = 'abc', text2 = 'def'",
+        "output": "0",
+        "explanation": "There is no common subsequence, so the length is 0."
+      },
+      {
+        "input": "text1 = 'abcb', text2 = 'babc'",
+        "output": "3",
+        "explanation": "The longest common subsequences are 'abc' and 'babc', both with length 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a 2D array to store lengths of common subsequences.",
+      "Think about the base cases for empty strings."
+    ],
+    "company": "Optum"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Colors",
+    "description": "Given an array consisting of red, white, and blue elements represented by integers 0, 1, and 2, respectively, sort the array in a single pass. You must solve it without using the library's sort function and without allocating additional space for another array.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An array nums of length n, where n is in the range [1, 30000]. Each element is either 0, 1, or 2.",
+    "output_format": "The sorted array of integers.",
+    "constraints": [
+      "1 <= n <= 30000",
+      "nums[i] is either 0, 1, or 2"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 0, 2, 1, 1, 0]",
+        "output": "[0, 0, 1, 1, 2, 2]",
+        "explanation": "After sorting the input array, the values change from [2, 0, 2, 1, 1, 0] to [0, 0, 1, 1, 2, 2]."
+      },
+      {
+        "input": "nums = [2, 0, 1]",
+        "output": "[0, 1, 2]",
+        "explanation": "Sorting the input array [2, 0, 1] results in [0, 1, 2]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to maintain three pointers: one for 0's, one for 1's, and one for 2's.",
+      "Consider how to utilize the properties of the numbers to sort them in place."
+    ],
+    "company": "Optum"
+  }
+]

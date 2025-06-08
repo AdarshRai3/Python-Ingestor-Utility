@@ -1,0 +1,409 @@
+[
+  {
+    "question_id": "",
+    "title": "Final Prices With a Special Discount in a Shop",
+    "description": "You are given an array of integers representing the prices of items in a shop. When you buy an item, you will receive a discount equal to the price of the next item in the array. If there is no next item, the discount is 0. Your task is to calculate the final prices after applying the discounts. Return an array of integers representing the final prices of the items.",
+    "topic": "Array",
+    "subtopic": "Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Discount"
+    ],
+    "input_format": "An array of integers prices representing the prices of items.",
+    "output_format": "An array of integers representing the final prices after applying the discounts.",
+    "constraints": [
+      "1 <= prices.length <= 100",
+      "0 <= prices[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "prices = [8, 4, 6, 2, 3]",
+        "output": "[4, 2, 4, 2, 3]",
+        "explanation": "The final prices after discounts are: 8-4=4, 4-2=2, 6-2=4, 2-0=2, 3-0=3."
+      },
+      {
+        "input": "prices = [1, 2, 3, 4, 5]",
+        "output": "[1, 2, 3, 4, 5]",
+        "explanation": "The discounts are 1-0, 2-0, 3-0, 4-0, 5-0, so final prices are the same."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a stack to keep track of the next prices."
+    ],
+    "company": "Dream11"
+  },
+  {
+    "question_id": "",
+    "title": "Asteroid Collision",
+    "description": "You are given an array of integers, where each integer represents an asteroid. The negative values represent asteroids moving left, and the positive values represent asteroids moving right. When two asteroids collide, the larger asteroid will destroy the smaller one. If they are the same size, both will be destroyed. Return an array representing the asteroids that will remain after all collisions.",
+    "topic": "Stack",
+    "subtopic": "Greedy",
+    "tags": [
+      "Stack",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers asteroids representing the asteroids.",
+    "output_format": "An array of integers representing the remaining asteroids after all collisions.",
+    "constraints": [
+      "1 <= asteroids.length <= 10^4",
+      "-1000 <= asteroids[i] <= 1000",
+      "Asteroids cannot appear at the same position."
+    ],
+    "examples": [
+      {
+        "input": "asteroids = [5, 10, -5]",
+        "output": "[5, 10]",
+        "explanation": "The asteroid 10 collides with -5 and survives, while 5 survives without collision."
+      },
+      {
+        "input": "asteroids = [8, -8]",
+        "output": "[]",
+        "explanation": "Both asteroids collide and destroy each other."
+      },
+      {
+        "input": "asteroids = [10, 2, -5]",
+        "output": "[10]",
+        "explanation": "The asteroid 2 collides with -5 and is destroyed, while 10 remains."
+      },
+      {
+        "input": "asteroids = [-2, -1, 1, 2]",
+        "output": "[-2, -1, 1, 2]",
+        "explanation": "No collisions occur as all asteroids are moving in the same direction."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of remaining asteroids after collisions.",
+      "Consider the direction of the asteroids to determine which will collide."
+    ],
+    "company": "Dream11"
+  },
+  {
+    "question_id": "",
+    "title": "Furthest Building You Can Reach",
+    "description": "You are given an array of heights representing the heights of buildings along a street, and an integer 'bricks' representing the bricks you can use to reach higher buildings. You can also use ladders to reach a taller building directly. Your goal is to determine the furthest building index that you can reach. You can either climb using the available bricks (each move up costs one brick) or a ladder (each ladder can be used once for any height). Determine the furthest building index you can reach using the given number of bricks and an unlimited number of ladders.",
+    "topic": "Greedy",
+    "subtopic": "Priority Queue",
+    "tags": [
+      "Greedy",
+      "Priority Queue",
+      "Bricks",
+      "Ladders"
+    ],
+    "input_format": "An array of integers heights and an integer bricks.",
+    "output_format": "An integer representing the furthest building index that can be reached.",
+    "constraints": [
+      "1 <= heights.length <= 10^4",
+      "0 <= heights[i] <= 10^6",
+      "0 <= bricks <= 10^9",
+      "heights[i] <= heights[i + 1] for i = 0 to heights.length - 2"
+    ],
+    "examples": [
+      {
+        "input": "heights = [1, 2, 3, 4, 5], bricks = 3",
+        "output": "3",
+        "explanation": "You can reach building 3 using bricks. You need 1 brick to go from 1 to 2, 1 brick from 2 to 3, and 1 brick from 3 to 4. The total cost is 3 bricks."
+      },
+      {
+        "input": "heights = [1, 5, 3, 8, 6], bricks = 5",
+        "output": "4",
+        "explanation": "You can reach building 4 by climbing from 1 to 5 using bricks (4 bricks) and then from 5 straight up to 8 using a ladder."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a greedy approach with a priority queue to manage the heights.",
+      "Always check the difference in height to determine if bricks are needed."
+    ],
+    "company": "Dream11"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an array of integers nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Note that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Hash Table",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of unique triplets that sum to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum up to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "No triplets exist in an empty array."
+      },
+      {
+        "input": "nums = [0, 0, 0]",
+        "output": "[[0, 0, 0]]",
+        "explanation": "There is one triplet: [0, 0, 0]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array first to make finding triplets easier.",
+      "Use a two-pointer technique to reduce time complexity."
+    ],
+    "company": "Dream11"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Increments on Subarrays to Form a Target Array",
+    "description": "You are given an array of integers nums and a target array target of the same length. Your task is to determine the minimum number of increments needed on subarrays of nums to make it equal to target. An increment operation consists of selecting any contiguous subarray of nums and increasing each element by 1. You can perform this operation as many times as needed on any subarray. Return the minimum number of operations required to form the target array from the given array.",
+    "topic": "Array",
+    "subtopic": "Subarray Operations",
+    "tags": [
+      "Array",
+      "Subarray",
+      "Greedy",
+      "Simulation"
+    ],
+    "input_format": "Two arrays of integers nums and target, where both have the same length.",
+    "output_format": "An integer representing the minimum number of increments needed.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "0 <= nums[i], target[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3], target = [2, 3, 4]",
+        "output": "3",
+        "explanation": "We can increment the entire array [1, 2, 3] to [2, 3, 4] in one operation, needing a total of 3 increments."
+      },
+      {
+        "input": "nums = [5, 3, 4, 1], target = [6, 4, 5, 2]",
+        "output": "5",
+        "explanation": "Incrementing nums[0:2] (indices 0-2) by 1 makes it [6, 4, 5, 1], and then incrementing nums[3] by 1 makes it [6, 4, 5, 2]. Total increments = 1 + 1 + 1 + 1 + 1 = 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the differences between the target and the current array.",
+      "Use a sliding window approach to optimize the increments."
+    ],
+    "company": "Dream11"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Falling Path Sum",
+    "description": "Given a square grid of integers, find the minimum sum of any falling path through the grid. A falling path starts at any element in the first row and chooses one element from each row. The next row's chosen element must be in a column that is directly below or diagonally adjacent to the previous row's chosen element.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Minimum Path Sum"
+    ],
+    "input_format": "A 2D array of integers grid where grid[i][j] represents the value at the row i and column j.",
+    "output_format": "An integer representing the minimum falling path sum.",
+    "constraints": [
+      "1 <= grid.length == grid[0].length <= 100",
+      "-100 <= grid[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[2,1,3],[6,5,4],[7,8,9]]",
+        "output": "13",
+        "explanation": "The falling path can be 1 -> 5 -> 7, which gives a sum of 1 + 5 + 7 = 13."
+      },
+      {
+        "input": "grid = [[-19, 57], [-40, -5]]",
+        "output": "-59",
+        "explanation": "The falling path can be -19 -> -40, which gives a sum of -19 + -40 = -59."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to build a solution.",
+      "You can modify the grid as you compute the minimum sums."
+    ],
+    "company": "Dream11"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Common Supersequence",
+    "description": "Given two strings str1 and str2, return the length of their shortest common supersequence (SCS). A shortest common supersequence of two strings is the shortest string that has both given strings as subsequences.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Subsequence"
+    ],
+    "input_format": "Two strings str1 and str2.",
+    "output_format": "An integer representing the length of the shortest common supersequence.",
+    "constraints": [
+      "1 <= str1.length, str2.length <= 100",
+      "str1 and str2 consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "str1 = \"abac\", str2 = \"cab\"",
+        "output": "5",
+        "explanation": "The shortest common supersequence is \"cabac\" which has both strings as subsequences."
+      },
+      {
+        "input": "str1 = \"abc\", str2 = \"ac\"",
+        "output": "3",
+        "explanation": "The shortest common supersequence is \"abc\" which has both strings as subsequences."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use dynamic programming to find the length of the longest common subsequence.",
+      "The length of the shortest common supersequence can be derived from the lengths of the original strings and the longest common subsequence."
+    ],
+    "company": "Dream11"
+  },
+  {
+    "question_id": "",
+    "title": "Gas Station",
+    "description": "There are N gas stations along a circular route, where the amount of gas at station i is gas[i], and the cost of gas to travel from station i to station i + 1 is cost[i]. You start at a gas station and need to travel around the circuit once. You can only travel in the direction of the circuit. Determine the starting gas station index if you can travel around the circuit once without running out of gas. If there is no valid starting gas station, return -1.",
+    "topic": "Greedy",
+    "subtopic": "Circular Array",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Circular"
+    ],
+    "input_format": "Two arrays of integers, gas and cost, both of length N.",
+    "output_format": "An integer representing the starting index of the gas station or -1 if not possible.",
+    "constraints": [
+      "1 <= gas.length == cost.length <= 10^4",
+      "0 <= gas[i], cost[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": {
+          "gas": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "cost": [
+            2,
+            3,
+            4,
+            5,
+            1
+          ]
+        },
+        "output": "3",
+        "explanation": "Starting from index 3, the remaining gas after visiting each station is sufficient to complete the circuit."
+      },
+      {
+        "input": {
+          "gas": [
+            2,
+            3,
+            4
+          ],
+          "cost": [
+            3,
+            4,
+            3
+          ]
+        },
+        "output": "-1",
+        "explanation": "No starting station can allow a full circuit, as the total gas is less than the total cost."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to find a condition under which you can ensure that a starting point is valid.",
+      "The total gas must be greater than or equal to the total cost for any valid start."
+    ],
+    "company": "Dream11"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Ways to Select Buildings",
+    "description": "Given a binary string representing buildings, where '1' indicates a building and '0' indicates an empty space, find the number of non-overlapping groups of buildings that can be selected such that no two selected buildings are adjacent.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorial Selection",
+    "tags": [
+      "Dynamic Programming",
+      "Combinatorics",
+      "Binary String"
+    ],
+    "input_format": "A binary string s representing buildings and empty spaces.",
+    "output_format": "An integer representing the total number of ways to select non-overlapping groups of buildings.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists only of '0' and '1'."
+    ],
+    "examples": [
+      {
+        "input": "s = '101010'",
+        "output": "8",
+        "explanation": "The possible selections are: [], ['1'], ['1', '1'], ['1', '1', '1'], ['1', '1', '0', '0'], ['0', '0', '1'], ['0', '1'] and ['1', '0']."
+      },
+      {
+        "input": "s = '000'",
+        "output": "1",
+        "explanation": "The only selection is the empty set since there are no buildings."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider dynamic programming to count the selections.",
+      "Use bit masking techniques to represent subsets."
+    ],
+    "company": "Dream11"
+  },
+  {
+    "question_id": "",
+    "title": "Partition Equal Subset Sum",
+    "description": "Given an array of integers, determine if it can be partitioned into two subsets such that the sum of elements in both subsets is equal. If it can be partitioned, return true, otherwise return false.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Backtracking",
+      "Array"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A boolean value indicating whether the array can be partitioned into two equal subsets.",
+    "constraints": [
+      "1 <= nums.length <= 200",
+      "0 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 5, 11, 5]",
+        "output": "true",
+        "explanation": "The array can be partitioned into [1, 5, 5] and [11] which both sum to 11."
+      },
+      {
+        "input": "nums = [1, 2, 3, 5]",
+        "output": "false",
+        "explanation": "The array cannot be partitioned into two subsets with equal sum."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the total sum of the array.",
+      "If the total sum is odd, the answer is false.",
+      "Try to find a subset with a sum equal to half of the total sum."
+    ],
+    "company": "Dream11"
+  }
+]

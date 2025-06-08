@@ -1,0 +1,566 @@
+[
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, if the list of intervals is [[1,3],[2,6],[8,10],[15,18]], the merged intervals would be [[1,6],[8,10],[15,18]]. The intervals are represented as pairs of integers, where the first integer is the start and the second integer is the end of the interval.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A 2D list of integers representing the intervals.",
+    "output_format": "A 2D list of merged intervals.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "Intervals [1,3] and [2,6] overlap, so they are merged into [1,6]. The other intervals do not overlap."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "Intervals [1,4] and [4,5] overlap at endpoint 4, so they form one merged interval [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals by their starting point.",
+      "Use a stack or a list to keep track of merged intervals."
+    ],
+    "company": "Applied Intuition"
+  },
+  {
+    "question_id": "",
+    "title": "Minesweeper",
+    "description": "Design a function that simulates the classic game Minesweeper. You are given a 2D board represented by a grid of characters, where each cell can either be a mine ('M'), a number ('1'-'8') indicating the number of mines in the neighboring cells, or a blank cell ('E'). Your task is to reveal a cell and return the updated board after revealing that cell, applying the game's rules. If you reveal a cell that is a mine, the game is lost, and only the mine cells should be revealed. If you reveal a cell that is a number or a blank space, you need to apply the following rules accordingly.",
+    "topic": "Game",
+    "subtopic": "Simulation",
+    "tags": [
+      "Game",
+      "Simulation",
+      "Grid"
+    ],
+    "input_format": "A 2D board represented as a list of lists containing strings, and an integer representing the coordinate of the cell to reveal.",
+    "output_format": "A 2D board after revealing the specified cell.",
+    "constraints": [
+      "1 <= board.length <= 50",
+      "1 <= board[i].length <= 50",
+      "board[i][j] is either 'M', 'E', or a digit '1'-'8'",
+      "0 <= click[0] < board.length",
+      "0 <= click[1] < board[i].length"
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "E",
+              "E",
+              "E",
+              "E",
+              "E"
+            ],
+            [
+              "E",
+              "E",
+              "M",
+              "E",
+              "E"
+            ],
+            [
+              "E",
+              "E",
+              "E",
+              "E",
+              "E"
+            ],
+            [
+              "E",
+              "E",
+              "E",
+              "E",
+              "E"
+            ],
+            [
+              "E",
+              "E",
+              "E",
+              "E",
+              "E"
+            ]
+          ],
+          "click": [
+            3,
+            0
+          ]
+        },
+        "output": [
+          [
+            "B",
+            "1",
+            "E",
+            "E",
+            "E"
+          ],
+          [
+            "B",
+            "1",
+            "M",
+            "1",
+            "E"
+          ],
+          [
+            "B",
+            "1",
+            "E",
+            "E",
+            "E"
+          ],
+          [
+            "E",
+            "E",
+            "E",
+            "E",
+            "E"
+          ],
+          [
+            "E",
+            "E",
+            "E",
+            "E",
+            "E"
+          ]
+        ],
+        "explanation": "Clicking on (3,0) reveals a blank cell. The adjacent mines count is 1, updated board reflects the changes."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "E",
+              "E",
+              "E"
+            ],
+            [
+              "E",
+              "E",
+              "M"
+            ],
+            [
+              "E",
+              "E",
+              "E"
+            ]
+          ],
+          "click": [
+            1,
+            2
+          ]
+        },
+        "output": [
+          [
+            "E",
+            "E",
+            "E"
+          ],
+          [
+            "E",
+            "E",
+            "X"
+          ],
+          [
+            "E",
+            "E",
+            "E"
+          ]
+        ],
+        "explanation": "Clicking on (1,2) reveals a mine, hence the game is lost and revealed 'X' on the mine."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use depth-first search or breadth-first search to reveal cells.",
+      "Handle edge cases like clicking on a mine or a cell surrounded by mines."
+    ],
+    "company": "Applied Intuition"
+  },
+  {
+    "question_id": "",
+    "title": "Word Abbreviation",
+    "description": "Given an array of strings, you need to derive a robust abbreviation for each word in the list such that no two words have the same abbreviation. An abbreviation for a word is defined as the first character followed by the number of characters between the first and last characters and the last character (e.g., 'internationalization' becomes 'i18n'). If an abbreviation would lead to a conflict with another word, keep the word as is. The goal is to produce the shortest unique abbreviations for all words.",
+    "topic": "String",
+    "subtopic": "Abbreviation Generation",
+    "tags": [
+      "String",
+      "Abbreviation",
+      "Unique Identifier"
+    ],
+    "input_format": "An array of strings (words) where each string consists of lowercase English letters.",
+    "output_format": "An array of strings representing the unique abbreviations for the input words.",
+    "constraints": [
+      "1 <= words.length <= 2000",
+      "1 <= words[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "words = [\"like\", \"god\", \"internal\", \"me\", \"leetcode\"]",
+        "output": "[\"l2e\", \"g1d\", \"intern2l\", \"m1e\", \"l12e\"]",
+        "explanation": "Each abbreviation is unique, for which the characters in between are counted."
+      },
+      {
+        "input": "words = [\"a\", \"b\", \"c\"]",
+        "output": "[\"a\", \"b\", \"c\"]",
+        "explanation": "All words are single letters, so no abbreviations can be formed."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider starting with the simplest form of abbreviation first.",
+      "You may want to check for collisions with existing abbreviations as you go.",
+      "Think about how you can incrementally build your abbreviations."
+    ],
+    "company": "Applied Intuition"
+  },
+  {
+    "question_id": "",
+    "title": "Best Meeting Point",
+    "description": "Given a grid representing the positions of people in a city, where each cell contains either a person (1) or an empty space (0), determine the best meeting point where the total distance to all people is minimized. The distance between two points in the grid is the Manhattan distance, which is calculated as the sum of the absolute differences of their coordinates.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Optimization",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Grid"
+    ],
+    "input_format": "A 2D grid represented by a list of lists, with integers where 1 indicates a person and 0 indicates an empty space.",
+    "output_format": "An integer representing the minimum total distance from the best meeting point to all persons.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "The number of persons (1s) in the grid will be at least 1."
+    ],
+    "examples": [
+      {
+        "input": "[[0,0,0],[1,0,0],[0,0,1]]",
+        "output": "3",
+        "explanation": "The best meeting point is at (1, 0), where the total distance to the persons at (1, 0) and (2, 2) is minimized."
+      },
+      {
+        "input": "[[1,1,1],[0,0,0],[1,1,1]]",
+        "output": "4",
+        "explanation": "The best meeting point can be any of the 0s in the second row, with a minimum distance to all present persons."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the properties of Manhattan distance and how it relates to average positions.",
+      "Try iterating through possible meeting points and computing total distances."
+    ],
+    "company": "Applied Intuition"
+  },
+  {
+    "question_id": "",
+    "title": "Find Duplicate File in System",
+    "description": "You are given a list of directory paths, where each path contains a group of files. Each file has a unique name, along with its content. Your task is to identify all the files that have duplicate content. A file is considered to be a duplicate if its content matches the content of another file. The result should be returned as a list of lists, where each inner list contains the full paths of duplicate files.",
+    "topic": "Hash Table",
+    "subtopic": "String Processing",
+    "tags": [
+      "Hash Table",
+      "String",
+      "File System"
+    ],
+    "input_format": "An array of strings 'paths' where each string represents a directory path followed by files in the format 'filename(content)'.",
+    "output_format": "A list of lists, where each inner list contains the full paths of files that have duplicate content.",
+    "constraints": [
+      "1 <= paths.length <= 3000",
+      "1 <= paths[i].length <= 100",
+      "The total number of files will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "paths = [\"root/a 1.txt(light) 2.txt(light)\", \"root/b 3.txt(dark)\", \"root/c 4.txt(light)\"]",
+        "output": "[[\"root/a/1.txt\", \"root/a/2.txt\", \"root/c/4.txt\"]]",
+        "explanation": "The contents of 1.txt, 2.txt, and 4.txt are all 'light', thus they are duplicates."
+      },
+      {
+        "input": "paths = [\"root/a 1.txt(content1)\", \"root/b 2.txt(content2)\", \"root/c 3.txt(content1)\"]",
+        "output": "[[\"root/a/1.txt\", \"root/c/3.txt\"]]",
+        "explanation": "1.txt and 3.txt have the same content 'content1', hence they are duplicates."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to store file contents as the key and their paths as the value.",
+      "You can iterate through each path and split the filenames and contents."
+    ],
+    "company": "Applied Intuition"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Distance from All Buildings",
+    "description": "You are given a 2D grid of size m x n where each cell can be either a building (represented by 1), a park (represented by 0), or an obstacle (represented by -1). You want to find the cell in the grid that has the shortest distance to all buildings. The distance between two cells is the Manhattan distance (|x1 - x2| + |y1 - y2|). If there are multiple cells with the same distance, return the cell with the smallest coordinates. If there are no valid cells, return -1.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Shortest Path"
+    ],
+    "input_format": "A 2D grid (list of lists) containing integers, where each integer is either 0, 1, or -1.",
+    "output_format": "A list of two integers representing the row and column indices of the cell with the shortest distance to all buildings, or -1 if no such cell exists.",
+    "constraints": [
+      "1 <= m, n <= 20",
+      "The grid may contain up to 50 buildings."
+    ],
+    "examples": [
+      {
+        "input": "[[1, 0, 2, 0, 1], [0, 0, 0, 0, 0], [1, 0, 1, 0, 1]]",
+        "output": "[1, 2]",
+        "explanation": "The cell at (1, 2) has the shortest distance to all buildings with a total distance of 7."
+      },
+      {
+        "input": "[[1, -1], [-1, 1]]",
+        "output": "-1",
+        "explanation": "No valid cell exists to choose from since all cells are either buildings or obstacles."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use BFS to calculate distances from each building to all empty cells.",
+      "Keep track of the number of buildings accessible from each cell."
+    ],
+    "company": "Applied Intuition"
+  },
+  {
+    "question_id": "",
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "description": "Given an array of integers that is already sorted in non-decreasing order, find the starting and ending position of a given target value. If the target is not found in the array, return [-1, -1]. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Binary Search",
+    "subtopic": "Searching in Sorted Arrays",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Searching"
+    ],
+    "input_format": "A sorted array of integers nums and an integer target.",
+    "output_format": "A list of two integers representing the starting and ending position of the target in the array.",
+    "constraints": [
+      "0 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "Target is an integer between -10^9 and 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 8",
+        "output": "[3, 4]",
+        "explanation": "The target 8 appears at index 3 and index 4."
+      },
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 6",
+        "output": "[-1, -1]",
+        "explanation": "The target 6 is not present in the array."
+      },
+      {
+        "input": "nums = [], target = 0",
+        "output": "[-1, -1]",
+        "explanation": "An empty array has no elements, so the target cannot be found."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to find the positions efficiently.",
+      "You may need two separate binary searches."
+    ],
+    "company": "Applied Intuition"
+  },
+  {
+    "question_id": "",
+    "title": "Range Sum Query 2D - Immutable",
+    "description": "Given a 2D matrix, implement the NumMatrix class that allows you to efficiently calculate the sum of elements in a rectangular subregion of the matrix. The matrix is immutable, i.e., its values cannot be changed after initialization. Implement the NumMatrix class with the following methods:\n\n- NumMatrix(int[][] matrix): Initializes the object with the integer matrix.\n- int sumRegion(int row1, int col1, int row2, int col2): Returns the sum of the elements of the matrix within the rectangular subregion defined by its upper left corner (row1, col1) and its lower right corner (row2, col2).",
+    "topic": "Matrix",
+    "subtopic": "Range Queries",
+    "tags": [
+      "Matrix",
+      "Dynamic Programming",
+      "Prefix Sum"
+    ],
+    "input_format": "An integer 2D matrix and multiple queries defining the sum region.",
+    "output_format": "An integer representing the sum of the specified rectangular area in the matrix.",
+    "constraints": [
+      "0 <= matrix.length, matrix[i].length <= 200",
+      "-10^9 <= matrix[i][j] <= 10^9",
+      "Queries will be made such that row1 <= row2 and col1 <= col2."
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]], queries = [(0, 0, 1, 1), (1, 1, 2, 2)]",
+        "output": "[12, 28]",
+        "explanation": "For the first query, sum of elements (0,0) to (1,1) is 1+2+4+5 = 12. For the second query, sum of elements (1,1) to (2,2) is 5+6+8+9 = 28."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a prefix sum array for efficient range queries.",
+      "Think about how to calculate the sum in constant time after preprocessing."
+    ],
+    "company": "Applied Intuition"
+  },
+  {
+    "question_id": "",
+    "title": "Design Circular Queue",
+    "description": "Implement a circular queue data structure using an array. The queue should support the following operations: `enqueue`, `dequeue`, `front`, `rear`, and `isEmpty`. The circular queue should also have a fixed maximum size. Ensure that the enqueue operation fails if the queue is full and the dequeue operation fails if the queue is empty.",
+    "topic": "Data Structures",
+    "subtopic": "Queue",
+    "tags": [
+      "Queue",
+      "Circular Queue",
+      "Data Structures"
+    ],
+    "input_format": "The queue should be initialized with a maximum size. Operations will be provided as input commands: `enqueue(value)`, `dequeue()`, `front()`, `rear()`, `isEmpty()`.",
+    "output_format": "For each operation, return the output as follows: `enqueue` returns nothing; `dequeue` returns the removed element or -1 if empty; `front` returns the front element or -1 if empty; `rear` returns the rear element or -1 if empty; `isEmpty` returns true or false.",
+    "constraints": [
+      "1 <= maxSize <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "Initialize circular queue with max size 3; enqueue(1); enqueue(2); enqueue(3); dequeue(); front(); rear(); isEmpty(); enqueue(4); dequeue();",
+        "output": "1; 2; 3; false; -1;",
+        "explanation": "After enqueuing 1, 2, and 3, the queue is full. Dequeuing returns 1. Front is 2, rear is 3, isEmpty is false. Enqueueing 4 fails because the queue is full, so the next dequeue returns 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to manage the head and tail pointers.",
+      "Use modulo operation for circular behavior."
+    ],
+    "company": "Applied Intuition"
+  },
+  {
+    "question_id": "",
+    "title": "Cyclically Rotating a Grid",
+    "description": "Given a 2D grid of size m x n representing a matrix, you need to cyclically rotate the grid clockwise by 90 degrees. After the rotation, each element in the grid should be moved to its new position according to the rotation rule. You should perform this operation in place.",
+    "topic": "Matrix",
+    "subtopic": "2D Array Rotation",
+    "tags": [
+      "Matrix",
+      "Rotation",
+      "In-Place"
+    ],
+    "input_format": "A 2D grid represented as a list of lists, where each inner list contains integers.",
+    "output_format": "The same 2D grid after being rotated 90 degrees clockwise in place.",
+    "constraints": [
+      "1 <= m, n <= 20",
+      "-100 <= grid[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[[7, 4, 1], [8, 5, 2], [9, 6, 3]]",
+        "explanation": "After rotating the grid 90 degrees clockwise, the new grid is formed by moving the 1st row to the last column, the 2nd row to the middle column, and the 3rd row to the 1st column."
+      },
+      {
+        "input": "grid = [[1, 2], [3, 4], [5, 6]]",
+        "output": "[[5, 3, 1], [6, 4, 2]]",
+        "explanation": "After rotation, the positions of the elements change according to the clockwise movement."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider viewing the grid in layers when rotating.",
+      "Use a temporary grid to help with identifying new positions."
+    ],
+    "company": "Applied Intuition"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Visible Points",
+    "description": "You are given a circular arrangement of points on a plane, each defined by its angular position. You can view a point if it lies within your field of view, which is defined as a specific angle. Your task is to determine the maximum number of points that can be seen at once, given the positions of the points and the angle of your field of view. It is guaranteed that the angles of the points are distinct.",
+    "topic": "Geometry",
+    "subtopic": "Angle Manipulation",
+    "tags": [
+      "Geometry",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An array of angles representing the positions of points, and an integer representing the angle of your field of view.",
+    "output_format": "An integer representing the maximum number of points visible at once.",
+    "constraints": [
+      "1 <= angles.length <= 10^5",
+      "0 <= angles[i] < 360",
+      "1 <= field_of_view <= 360"
+    ],
+    "examples": [
+      {
+        "input": {
+          "angles": [
+            10,
+            20,
+            30,
+            40,
+            50
+          ],
+          "field_of_view": 30
+        },
+        "output": "3",
+        "explanation": "The maximum number of points within a 30-degree view can be achieved by covering angles 10 to 40, which includes points at 10, 20, and 30."
+      },
+      {
+        "input": {
+          "angles": [
+            0,
+            10,
+            20,
+            30,
+            310
+          ],
+          "field_of_view": 40
+        },
+        "output": "4",
+        "explanation": "By setting the field of view from angle 0 to 40, you can see points at 0, 10, 20, and 30."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider sorting the angles to simplify the problem.",
+      "Use a two-pointer technique to find the maximum range of visible points."
+    ],
+    "company": "Applied Intuition"
+  },
+  {
+    "question_id": "",
+    "title": "Design HashMap",
+    "description": "Implement a HashMap without any built-in hash table libraries. It should support the following operations: put(key, value), get(key), and remove(key). The put method should insert a key-value pair into the HashMap, the get method should return the value associated with the key, and the remove method should delete the value if the key exists. If a key doesn't exist in the map, the get method should return -1.",
+    "topic": "Data Structures",
+    "subtopic": "Hash Table",
+    "tags": [
+      "HashMap",
+      "Data Structure",
+      "Design"
+    ],
+    "input_format": "Operations will be a list of tuples, where each tuple consists of an operation followed by its parameters.",
+    "output_format": "Return the output of the get operations as a list of integers.",
+    "constraints": [
+      "1 <= operations.length <= 10^4",
+      "0 <= key, value <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "[['put', 1, 10], ['put', 2, 20], ['get', 1], ['get', 3], ['put', 2, 30], ['get', 2], ['remove', 2], ['get', 2]]",
+        "output": "[10, -1, 30, -1]",
+        "explanation": "The first put operation inserts key 1 with value 10. The second put inserts key 2 with value 20. The get operation for key 1 returns 10. The get operation for key 3 returns -1 since it doesn't exist. The put operation updates key 2's value to 30. The get operation for key 2 returns 30. The remove operation deletes key 2. The final get operation for key 2 returns -1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how you will handle collisions in your implementation.",
+      "Think about how to dynamically resize your data structure as it fills up."
+    ],
+    "company": "Applied Intuition"
+  }
+]

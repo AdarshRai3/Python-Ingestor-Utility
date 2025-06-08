@@ -1,0 +1,259 @@
+[
+  {
+    "question_id": "",
+    "title": "Find the Minimum and Maximum Number of Nodes Between Critical Points",
+    "description": "Given a linked list, you are required to identify all the critical points. A node in the linked list is defined as a critical point if it is the local minimum or maximum of the node's neighboring nodes. Your task is to determine the minimum and maximum number of nodes present between any two critical points in the linked list. If there are fewer than two critical points, return -1.",
+    "topic": "Linked List",
+    "subtopic": "Traversal",
+    "tags": [
+      "LinkedList",
+      "Traversal",
+      "Pointer"
+    ],
+    "input_format": "The input consists of a singly linked list represented by its head node.",
+    "output_format": "An array of two integers where the first element is the minimum number of nodes and the second is the maximum number of nodes between critical points.",
+    "constraints": [
+      "The linked list contains at least 2 nodes and at most 10^5 nodes.",
+      "Node values are integers between -10^6 and 10^6."
+    ],
+    "examples": [
+      {
+        "input": "head = 1 -> 3 -> 2 -> 1 -> 5 -> 6 -> 4 -> NULL",
+        "output": "[1, 3]",
+        "explanation": "Critical points are at indices 1 (value 3) and 4 (value 5) and between them are [2, 1] (1 node). Between 5 (index 4) and 6 (index 5), there are 2 nodes."
+      },
+      {
+        "input": "head = 1 -> 2 -> 3 -> 4 -> 5 -> NULL",
+        "output": "[-1]",
+        "explanation": "There are no critical points in the linked list as all values are in a strictly increasing order."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "You may need to traverse the linked list more than once.",
+      "Store the indices of critical points for easier calculations."
+    ],
+    "company": "Info Edge"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Maximum Factor Score of Array",
+    "description": "Given an array of integers, calculate the maximum factor score. The factor score for a number is defined as the largest integer k such that the number is divisible by k. Your task is to identify the maximum factor score among all elements in the array. If the array is empty or contains only negative numbers, return -1.",
+    "topic": "Array",
+    "subtopic": "Mathematics",
+    "tags": [
+      "Array",
+      "Mathematics",
+      "Divisibility"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum factor score or -1 if conditions are not met.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [12, 15, 27, 8]",
+        "output": "12",
+        "explanation": "The maximum factor score is 12 from the number 12, as it is divisible by 12, 6, 4, 3, 2, and 1."
+      },
+      {
+        "input": "nums = [-1, -2, -3, -4]",
+        "output": "-1",
+        "explanation": "All numbers in the array are negative, so the result is -1."
+      },
+      {
+        "input": "nums = []",
+        "output": "-1",
+        "explanation": "The array is empty, so the result is -1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Iterate through the array to find the largest positive number.",
+      "Check divisibility of each number starting from the largest down to 1."
+    ],
+    "company": "Info Edge"
+  },
+  {
+    "question_id": "",
+    "title": "Count Almost Equal Pairs I",
+    "description": "Given an array of integers, count the number of pairs (i, j) such that nums[i] < nums[j] and |nums[i] - nums[j]| <= 1. A pair is considered 'almost equal' if their values differ by at most 1.",
+    "topic": "Array",
+    "subtopic": "Counting Pairs",
+    "tags": [
+      "Array",
+      "Counting",
+      "Pairs"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the count of almost equal pairs.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3]",
+        "output": "5",
+        "explanation": "The valid pairs are (0,1), (0,2), (1,2), (1,3), and (2,3), which makes the count 5."
+      },
+      {
+        "input": "nums = [1, 3, 4, 5, 7]",
+        "output": "0",
+        "explanation": "No pairs satisfy the condition where nums[i] < nums[j] and |nums[i] - nums[j]| <= 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using nested loops for a brute force approach.",
+      "Optimizing your solution might involve sorting or using a hashmap."
+    ],
+    "company": "Info Edge"
+  },
+  {
+    "question_id": "",
+    "title": "Two Out of Three",
+    "description": "Given three integer arrays, return an array containing all the unique integers that are present in at least two of the three arrays. The result array should be returned in any order.",
+    "topic": "Array",
+    "subtopic": "Set Operations",
+    "tags": [
+      "Array",
+      "Set",
+      "Unique Integers"
+    ],
+    "input_format": "Three integer arrays arr1, arr2, and arr3.",
+    "output_format": "An array of unique integers present in at least two of the three arrays.",
+    "constraints": [
+      "1 <= arr1.length, arr2.length, arr3.length <= 100",
+      "-100 <= arr1[i], arr2[i], arr3[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "arr1 = [1, 2, 3], arr2 = [2, 3, 4], arr3 = [1, 4, 5]",
+        "output": "[1, 2, 3, 4]",
+        "explanation": "The integers present in at least two arrays are 1 (in arr1 and arr3), 2 (in arr1 and arr2), 3 (in arr1 and arr2), and 4 (in arr2 and arr3)."
+      },
+      {
+        "input": "arr1 = [1, 2], arr2 = [3, 4], arr3 = [5, 6]",
+        "output": "[]",
+        "explanation": "There are no integers that are present in at least two arrays."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a frequency map to count occurrences of each integer across the arrays.",
+      "Filter the integers that appear in at least two arrays."
+    ],
+    "company": "Info Edge"
+  },
+  {
+    "question_id": "",
+    "title": "Bus Routes",
+    "description": "You are given a list of bus routes, where each route is represented as an array of integers indicating the bus stops that the route covers. You also have a starting bus stop and a destination bus stop. Your task is to find the minimum number of buses required to travel from the starting stop to the destination stop. If it's not possible to reach the destination stop using the given bus routes, return -1.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Shortest Path"
+    ],
+    "input_format": "A list of bus routes, where each route is an array of integers and two integers representing the start and destination bus stops.",
+    "output_format": "An integer representing the minimum number of buses required to reach the destination, or -1 if it is not possible.",
+    "constraints": [
+      "1 <= routes.length <= 500",
+      "1 <= routes[i].length <= 100",
+      "0 <= start, destination <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "routes = [[1, 2, 7], [3, 6, 7]], start = 1, destination = 6",
+        "output": "2",
+        "explanation": "Take the bus route [1, 2, 7] to 7, then take the bus route [3, 6, 7] to reach 6."
+      },
+      {
+        "input": "routes = [[1, 2, 3], [4, 5, 6]], start = 1, destination = 6",
+        "output": "-1",
+        "explanation": "There is no way to reach 6 from 1 using the given bus routes."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a BFS approach to traverse through the bus routes.",
+      "Consider using a queue to keep track of the current bus stops and the number of buses taken so far."
+    ],
+    "company": "Info Edge"
+  },
+  {
+    "question_id": "",
+    "title": "Subrectangle Queries",
+    "description": "You are given a 2D matrix representing a rectangle. The rectangle can be queried for the sum of its elements over specified subrectangles, and you may also update the value of a specific element in the rectangle. Implement the class `SubrectangleQueries` with the following methods: `__init__(self, rectangle: List[List[int]])` to initialize the rectangle with a 2D list of integers and `update(self, row: int, col: int, newValue: int)` to update the element at position (row, col) to newValue. The `sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int` method returns the sum of elements in the subrectangle defined by its top-left corner (row1, col1) and bottom-right corner (row2, col2) (inclusive).",
+    "topic": "Matrix",
+    "subtopic": "Range Sum Query",
+    "tags": [
+      "Matrix",
+      "Sum Query",
+      "Update"
+    ],
+    "input_format": "A list of lists representing the rectangle followed by multiple updates and queries.",
+    "output_format": "An integer representing the sum of the specified subrectangle.",
+    "constraints": [
+      "1 <= rectangle.length, rectangle[i].length <= 100",
+      "0 <= rectangle[i][j] <= 10^5",
+      "0 <= row, row1, row2 < rectangle.length",
+      "0 <= col, col1, col2 < rectangle[i].length",
+      "row1 <= row2 and col1 <= col2",
+      "0 <= newValue <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "rectangle = [[1,2,1],[4,3,2],[1,2,3]]; obj = SubrectangleQueries(rectangle); obj.update(0, 0, 5); obj.sumRegion(0, 0, 2, 2)",
+        "output": "22",
+        "explanation": "After updating the element at (0,0) to 5, the matrix becomes [[5,2,1],[4,3,2],[1,2,3]]. The sum of the subrectangle from (0,0) to (2,2) is 5 + 2 + 1 + 4 + 3 + 2 + 1 + 2 + 3 = 22."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a prefix sum array for efficient range queries.",
+      "Make sure to handle updates correctly without recalculating the entire matrix."
+    ],
+    "company": "Info Edge"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest substring of s that is a palindrome. A palindrome is a string that reads the same backward as forward. If there are multiple longest palindromic substrings, return any of them.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Dynamic Programming"
+    ],
+    "input_format": "A single string s, where 1 <= s.length <= 1000.",
+    "output_format": "A string representing the longest palindromic substring.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"babad\"",
+        "output": "\"bab\"",
+        "explanation": "Both \"bab\" and \"aba\" are valid longest palindromic substrings. Returning \"bab\"."
+      },
+      {
+        "input": "s = \"cbbd\"",
+        "output": "\"bb\"",
+        "explanation": "The longest palindromic substring is \"bb\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around potential centers of palindromes.",
+      "A palindrome can be of odd or even length."
+    ],
+    "company": "Info Edge"
+  }
+]

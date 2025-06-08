@@ -1,0 +1,149 @@
+[
+  {
+    "question_id": "",
+    "title": "Subtree Removal Game with Fibonacci Tree",
+    "description": "In this game, you have a Fibonacci tree, which is a binary tree constructed using Fibonacci numbers. Each node in the tree has a value equal to a Fibonacci number, starting with F(0) = 0, F(1) = 1, F(2) = 1, F(3) = 2, and so forth. Your objective is to maximize your score by removing subtrees. When you remove a subtree rooted at a node, you gain points equal to the value of that node but lose the ability to collect from its children. The game ends when no more valid moves can be made. Determine the maximum score you can achieve from the Fibonacci tree after optimal moves.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Tree DP",
+    "tags": [
+      "Dynamic Programming",
+      "Tree",
+      "Game Theory"
+    ],
+    "input_format": "The input consists of the root node of the Fibonacci tree.",
+    "output_format": "An integer representing the maximum score achievable.",
+    "constraints": [
+      "The Fibonacci tree has at most 1000 nodes.",
+      "Node values are guaranteed to be Fibonacci numbers."
+    ],
+    "examples": [
+      {
+        "input": "root = [5, 3, 2, 1, null, 1, 0]",
+        "output": "6",
+        "explanation": "By removing the node with value 5, we gain 5 points and are left with options to gain further points from the remaining subtrees."
+      },
+      {
+        "input": "root = [3, 2, 1, null, 1, 0, null]",
+        "output": "3",
+        "explanation": "By selecting the root node with value 3, we maximize our score to 3 since all remaining nodes provide lower scores."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the consequences of removing a node on its children.",
+      "Use a bottom-up approach to calculate the maximum score for each subtree.",
+      "Memoization can help avoid recalculating results for the same subtree."
+    ],
+    "company": "Sony"
+  },
+  {
+    "question_id": "",
+    "title": "Reducing Dishes",
+    "description": "You are given an array of integers representing the satisfaction level of some dishes. Your task is to maximize the overall satisfaction of the meals prepared based on the satisfaction levels. The meals are served in the order they appear in the array, and you can only serve a dish if all preceding dishes have been served as well. You can choose to either serve certain dishes or none, and dishes served later have a multiplier effect on satisfaction levels. Your goal is to find the maximum total satisfaction you can achieve.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Optimization",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Sorting"
+    ],
+    "input_format": "An array of integers satisfaction.",
+    "output_format": "An integer representing the maximum total satisfaction.",
+    "constraints": [
+      "1 <= satisfaction.length <= 1000",
+      "-100 <= satisfaction[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "satisfaction = [-1, -8, 0, 5, -9]",
+        "output": "14",
+        "explanation": "The optimal way is to serve dishes with satisfaction levels 0, 5 (as it's the best choice) resulting in a total satisfaction of 0 + 5 + (5 * 2) = 14."
+      },
+      {
+        "input": "satisfaction = [4, 3, 2]",
+        "output": "20",
+        "explanation": "Serve all dishes, leading to satisfaction of 4*1 + 3*2 + 2*3 = 20."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider sorting the satisfaction array first.",
+      "Dynamic programming may help in maintaining the states.",
+      "Think about how to maximize the sum based on serving order."
+    ],
+    "company": "Sony"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Single Pass",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing stock prices on different days.",
+    "output_format": "An integer representing the maximum profit that can be made.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done, and the max profit is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate profit as current price minus the minimum price."
+    ],
+    "company": "Sony"
+  },
+  {
+    "question_id": "",
+    "title": "Random Pick with Weight",
+    "description": "You are given an array of positive integers 'w' where w[i] describes the weight of the ith index. You want to implement a function 'pickIndex' that randomly returns an index of 'w', where the likelihood of being picked is proportional to its weight. For example, if w = [1, 3], pickIndex should return 0 with a probability of 1/(1+3) = 0.25 and return 1 with a probability of 3/(1+3) = 0.75.",
+    "topic": "Random",
+    "subtopic": "Weighted Random Selection",
+    "tags": [
+      "Random",
+      "Probability",
+      "Algorithm"
+    ],
+    "input_format": "An integer array 'w' with positive integers.",
+    "output_format": "An integer index representing the randomly picked index based on weights.",
+    "constraints": [
+      "1 <= w.length <= 10^4",
+      "1 <= w[i] <= 10^5",
+      "The sum of weights will not exceed 10^7."
+    ],
+    "examples": [
+      {
+        "input": "w = [1, 3]",
+        "output": "1",
+        "explanation": "Index 1 is returned with probability 3/4 and index 0 with probability 1/4."
+      },
+      {
+        "input": "w = [1, 2, 3]",
+        "output": "2",
+        "explanation": "Index 2 has the highest weight and will likely be returned more frequently."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use prefix sums to determine the range for each weight.",
+      "Implement binary search to efficiently find the correct index."
+    ],
+    "company": "Sony"
+  }
+]

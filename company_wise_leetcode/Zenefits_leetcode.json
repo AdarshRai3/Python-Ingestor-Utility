@@ -1,0 +1,780 @@
+[
+  {
+    "question_id": "",
+    "title": "Majority Element",
+    "description": "Given an array of size n, find the majority element. The majority element is the element that appears more than n/2 times in the array. You may assume that the majority element always exists in the array.",
+    "topic": "Array",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Array",
+      "Counting",
+      "Majority Element"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the majority element.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 2, 1, 1, 1, 2, 2]",
+        "output": "2",
+        "explanation": "The number 2 appears 4 times, which is more than n/2 (7/2 = 3.5)."
+      },
+      {
+        "input": "nums = [3, 3, 4, 2, 4, 4, 2, 4, 4]",
+        "output": "4",
+        "explanation": "The number 4 appears 5 times, which is greater than n/2 (9/2 = 4.5)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hashmap to count the occurrences.",
+      "The Boyer-Moore Voting Algorithm is efficient for this problem."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid composed of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "DFS",
+      "Graph",
+      "Union Find"
+    ],
+    "input_format": "A 2D grid represented as a list of lists containing '1's and '0's.",
+    "output_format": "An integer representing the number of islands in the grid.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'"
+    ],
+    "examples": [
+      {
+        "input": "[['1', '1', '0', '0', '0'], ['1', '1', '0', '0', '0'], ['0', '0', '1', '0', '0'], ['0', '0', '0', '1', '1']]",
+        "output": "3",
+        "explanation": "There are three islands in the grid."
+      },
+      {
+        "input": "[['1', '1', '1'], ['0', '0', '0'], ['1', '1', '1']]",
+        "output": "1",
+        "explanation": "There is one island connected horizontally."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Depth-First Search to traverse and mark visited nodes.",
+      "You can modify the grid to mark visited pieces of land."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Graph Valid Tree",
+    "description": "Given an undirected graph represented as an adjacency list, determine if it forms a valid tree. A valid tree must satisfy the following conditions: it should have no cycles and it should be fully connected. You are to check if the given graph meets these criteria.",
+    "topic": "Graph",
+    "subtopic": "Cycle Detection",
+    "tags": [
+      "Graph",
+      "Tree",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "An integer n representing the number of nodes and a list of edges where each edge is represented as an array of two integers [u, v], indicating an undirected edge between node u and node v.",
+    "output_format": "A boolean indicating whether the graph forms a valid tree.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "0 <= edges.length <= n * (n - 1) / 2",
+      "edges[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, edges = [[0,1],[0,2],[0,3],[1,4]]",
+        "output": "true",
+        "explanation": "The graph has 5 nodes and it is fully connected without cycles."
+      },
+      {
+        "input": "n = 5, edges = [[0,1],[1,2],[2,3],[3,4],[4,0]]",
+        "output": "false",
+        "explanation": "The graph contains a cycle, thus it cannot be a valid tree."
+      },
+      {
+        "input": "n = 4, edges = [[0,1],[0,2]]",
+        "output": "false",
+        "explanation": "The graph is not fully connected; node 3 is isolated."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "A tree has exactly n - 1 edges for n nodes.",
+      "Use DFS or BFS to explore the graph and check for cycles."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Verify Preorder Sequence in Binary Search Tree",
+    "description": "Given an array of integers representing the preorder traversal of a binary search tree (BST), verify whether the given sequence could represent the preorder traversal of some BST. A preorder traversal of a BST is defined as visiting the root first, followed by the left subtree, and then the right subtree.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "BST",
+      "Recursion"
+    ],
+    "input_format": "An array of integers representing the preorder traversal of a binary search tree.",
+    "output_format": "A boolean value: true if the sequence could represent a valid BST preorder traversal, false otherwise.",
+    "constraints": [
+      "1 <= preorder.length <= 10^4",
+      "-10^9 <= preorder[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "[5, 2, 1, 3, 6]",
+        "output": "true",
+        "explanation": "This sequence represents a valid BST: \n    5 \n   / \\ \n  2   6 \n / \\ \n1   3"
+      },
+      {
+        "input": "[5, 1, 3, 2, 6]",
+        "output": "false",
+        "explanation": "This sequence does not represent a valid BST. The number 2 is in the wrong position."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider utilizing a stack to keep track of the elements.",
+      "Use a variable to keep track of the last popped element from the stack."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Flatten 2D Vector",
+    "description": "Design a 2D Vector class that implements a 2D vector and allows adding elements to specific positions in the vector. Your class should provide methods to retrieve elements from it and also a method to return a flattened version of the 2D vector as a 1D list.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "2D Vector"
+    ],
+    "input_format": "A 2D vector represented as a list of lists, and methods to manipulate its elements.",
+    "output_format": "A flattened 1D list containing all the elements of the 2D vector.",
+    "constraints": [
+      "The 2D vector can have at most 100 rows and 100 columns.",
+      "Elements added to the vector will be integers only."
+    ],
+    "examples": [
+      {
+        "input": "vector = new TwoDVector(); vector.add(1, 2); vector.add(3, 4); flatten = vector.flatten();",
+        "output": "[1, 2, 3, 4]",
+        "explanation": "After adding elements (1,2) and (3,4), the vector is [[1, 2], [3, 4]]. Flattening it gives [1, 2, 3, 4]."
+      },
+      {
+        "input": "vector = new TwoDVector(); vector.add(5, 6); flatten = vector.flatten();",
+        "output": "[5, 6]",
+        "explanation": "The vector only contains one element (5,6), so the flattened version is [5, 6]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to maintain the internal structure to allow for easy flattening.",
+      "Consider using a simple list to collect the flattened elements."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an integer array nums and an integer k, return the maximum sliding window for each sliding window of size k. You must return the result as a list of integers where each value corresponds to the maximum value of the respective sliding window.",
+    "topic": "Deque",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Deque"
+    ],
+    "input_format": "An integer array nums of length n and an integer k where 1 <= k <= n.",
+    "output_format": "A list of integers representing the maximum values of the sliding window.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= n"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,3,-1,-3,5,3,6,7], k = 3",
+        "output": "[3, 3, 5, 5, 6, 7]",
+        "explanation": "In each sliding window of size 3: [1,3,-1] -> max is 3, [3,-1,-3] -> max is 3, [-1,-3,5] -> max is 5, [-3,5,3] -> max is 5, [5,3,6] -> max is 6, [3,6,7] -> max is 7."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a deque to optimize the retrieval of maximum values.",
+      "Maintain indices of elements in the deque to help track the maximum in the current window."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Majority Element II",
+    "description": "Given an integer array of size n, you must find all elements that appear more than \u230a n/3 \u230b times. The algorithm should have a linear runtime complexity and use a constant space complexity. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Frequency Count",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing all elements that appear more than \u230a n/3 \u230b times.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 3]",
+        "output": "[3]",
+        "explanation": "The number 3 appears 2 times which is more than \u230a 3/3 \u230b = 1."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "[1]",
+        "explanation": "The number 1 appears 1 time which is more than \u230a 1/3 \u230b = 0."
+      },
+      {
+        "input": "nums = [1, 2]",
+        "output": "[]",
+        "explanation": "Both numbers appear 1 time which is not more than \u230a 2/3 \u230b = 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to count occurrences.",
+      "Only track elements that could possibly become majority elements.",
+      "Use the Boyer-Moore voting algorithm strategy."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule II",
+    "description": "There are a total of n courses you have to take, labeled from 0 to n - 1. Some courses may have prerequisites. For example, to take course 0 you have to first take course 1, which is expressed as a pair of courses [1, 0]. Given the total number of courses and a list of prerequisite pairs, return the ordering of courses you should take to finish all courses. If it is impossible to finish all courses, return an empty array. The output should be a valid topological ordering of the given courses.",
+    "topic": "Graph",
+    "subtopic": "Topological Sort",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS"
+    ],
+    "input_format": "An integer n representing the total number of courses, and a list of prerequisite pairs representing the prerequisites.",
+    "output_format": "An array of integers representing the order of courses.",
+    "constraints": [
+      "1 <= n <= 2000",
+      "0 <= prerequisite.length <= 5000",
+      "prerequisite[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, prerequisites = [[1,0],[2,1],[3,2]]",
+        "output": "[0,1,2,3]",
+        "explanation": "Taking course 0 first allows you to take course 1, then course 2, and finally course 3."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "[]",
+        "explanation": "There is a cycle between course 0 and course 1, thus it is impossible to complete the courses."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Kahn's algorithm for topological sorting.",
+      "Track the in-degree of each node.",
+      "Use a queue to process all nodes with zero in-degree."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given the number of courses and a list of prerequisites where each prerequisite is a pair [a, b] indicating that you must take course b before course a. Determine if it is possible for you to finish all courses. Return true if you can finish all courses, otherwise return false.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sorting",
+      "Depth-First Search"
+    ],
+    "input_format": "An integer numCourses representing the number of courses, and a 2D array prerequisites where prerequisites[i] = [a, b] means you must take course b before course a.",
+    "output_format": "A boolean value indicating whether it is possible to finish all courses.",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2",
+      "a != b"
+    ],
+    "examples": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1, 0]]",
+        "output": "true",
+        "explanation": "You can take course 0 first, and then course 1."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1, 0], [0, 1]]",
+        "output": "false",
+        "explanation": "You cannot complete either course due to a circular dependency."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a graph to represent the courses and prerequisites.",
+      "You might want to look for cycles in the graph."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Linked List",
+    "description": "Given the head of a singly linked list, reverse the list and return the reversed list.",
+    "topic": "Linked List",
+    "subtopic": "Reversing Linked List",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Data Structure"
+    ],
+    "input_format": "The input consists of a linked list represented by the head node.",
+    "output_format": "Return the head of the reversed linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000]",
+      "-5000 <= Node.val <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5]",
+        "output": "[5, 4, 3, 2, 1]",
+        "explanation": "The linked list is reversed from 1 -> 2 -> 3 -> 4 -> 5 to 5 -> 4 -> 3 -> 2 -> 1."
+      },
+      {
+        "input": "head = []",
+        "output": "[]",
+        "explanation": "An empty list remains empty when reversed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to keep track of the current and previous nodes.",
+      "Iterate through the list and reverse the pointers."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays. The overall run time complexity should be O(log(min(m,n))). You may assume nums1 and nums2 cannot be both empty.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Median"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2.",
+    "output_format": "A double representing the median of the two sorted arrays.",
+    "constraints": [
+      "0 <= nums1.length <= 1000",
+      "0 <= nums2.length <= 1000",
+      "0 <= nums1[i], nums2[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 3], nums2 = [2]",
+        "output": "2.0",
+        "explanation": "The merged array is [1, 2, 3], and the median is 2."
+      },
+      {
+        "input": "nums1 = [1, 2], nums2 = [3, 4]",
+        "output": "2.5",
+        "explanation": "The merged array is [1, 2, 3, 4], and the median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider binary search on the smaller array.",
+      "The median can be calculated based on the partitions."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Valid Parentheses"
+    ],
+    "input_format": "A string s consisting of parentheses characters.",
+    "output_format": "A boolean value indicating whether the input string is valid.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are correctly opened and closed."
+      },
+      {
+        "input": "s = '([)]'",
+        "output": "false",
+        "explanation": "The order of closing brackets is incorrect."
+      },
+      {
+        "input": "s = '{[]}'",
+        "output": "true",
+        "explanation": "Both types of brackets are correctly closed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "At the end, the stack should be empty if the string is valid."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Excel Sheet Column Title",
+    "description": "Given an integer columnNumber, return its corresponding column title as it appears in an Excel sheet. For example, 1 corresponds to 'A', 2 corresponds to 'B', and so on. In general, the nth column title is defined as follows: For example, 'A' = 1, 'B' = 2, ..., 'Z' = 26, 'AA' = 27, 'AB' = 28, and so on up to 'ZZZ'.",
+    "topic": "Math",
+    "subtopic": "Number System",
+    "tags": [
+      "Math",
+      "String Manipulation",
+      "Conversion"
+    ],
+    "input_format": "An integer columnNumber representing the column number in the Excel sheet.",
+    "output_format": "A string representing the column title corresponding to the given column number.",
+    "constraints": [
+      "1 <= columnNumber <= 2 * 10^6"
+    ],
+    "examples": [
+      {
+        "input": "columnNumber = 1",
+        "output": "'A'",
+        "explanation": "The first column is represented by 'A'."
+      },
+      {
+        "input": "columnNumber = 28",
+        "output": "'AB'",
+        "explanation": "The 28th column corresponds to 'AB'."
+      },
+      {
+        "input": "columnNumber = 701",
+        "output": "'ZY'",
+        "explanation": "The 701st column corresponds to 'ZY'."
+      },
+      {
+        "input": "columnNumber = 2147483647",
+        "output": "'FXSHRXW'",
+        "explanation": "The maximum value maps to 'FXSHRXW'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep dividing the columnNumber by 26 to find the corresponding characters.",
+      "Subtract 1 from columnNumber to use zero-based indexing."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Min Stack",
+    "description": "Design a stack that supports the following operations: push, pop, top, and retrieving the minimum element in constant time. Implement the MinStack class with the following methods: \n\n- **push(val: int)**: Pushes the element val onto the stack. \n- **pop()**: Removes the element on the top of the stack. \n- **top()**: Gets the top element of the stack. \n- **getMin()**: Retrieves the minimum element in the stack. \n\nYou must implement all of the operations with constant time complexity.",
+    "topic": "Data Structures",
+    "subtopic": "Stack",
+    "tags": [
+      "Stack",
+      "Design",
+      "Data Structures"
+    ],
+    "input_format": "A series of operations on the MinStack object, consisting of 'push', 'pop', 'top', and 'getMin'.",
+    "output_format": "The results of the getMin and top operations.",
+    "constraints": [
+      "All push, pop, top, and getMin operations are valid.",
+      "The number of operations will not exceed 1000."
+    ],
+    "examples": [
+      {
+        "input": "MinStack minStack = new MinStack();\nminStack.push(-2);\nminStack.push(0);\nminStack.push(-3);\nminStack.getMin();   // returns -3\nminStack.pop();\nminStack.top();      // returns 0\nminStack.getMin();   // returns -2",
+        "output": "[-3, 0, -2]",
+        "explanation": "The sequence of operations leads to -3 being the minimum, 0 being the top, and -2 being the new minimum after popping."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to manage the minimum element efficiently.",
+      "Consider using an additional stack to keep track of minimum values."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) Cache. It should support the following operations: get and put. The get operation should retrieve the value of the key if the key exists in the cache. If the key does not exist, it should return -1. The put operation should insert a key-value pair into the cache. If the number of keys exceeds the capacity, it should invalidate the least recently used key.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Cache",
+      "Design",
+      "Linked List",
+      "Hash Map"
+    ],
+    "input_format": "The cache will be instantiated with a positive capacity.",
+    "output_format": "Return the value of the key if it exists, else return -1 for the get operation.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10000",
+      "0 <= value <= 10000",
+      "The functions get and put must each run in O(1) average time complexity."
+    ],
+    "examples": [
+      {
+        "input": "cache = LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1,-1,3,4]",
+        "explanation": "Cache stores key-value pairs: (1, 1), (2, 2). When put(3, 3) is called, (2, 2) is evicted. The cache now contains (1, 1), (3, 3)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a combination of a hash map and a doubly linked list.",
+      "The recently used items should be moved to the front of the list.",
+      "Remember to handle the updating and removal of nodes efficiently."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Palindrome",
+    "description": "Given a string s, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases. A string is a palindrome if it reads the same forward and backward.",
+    "topic": "String",
+    "subtopic": "Two Pointer Technique",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "A string s consisting of any printable ASCII characters.",
+    "output_format": "A boolean value indicating whether the string is a palindrome.",
+    "constraints": [
+      "0 <= s.length <= 2 * 10^5",
+      "s consists only of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"A man, a plan, a canal: Panama\"",
+        "output": "true",
+        "explanation": "After filtering, the string becomes 'amanaplanacanalpanama', which is a palindrome."
+      },
+      {
+        "input": "s = \"race a car\"",
+        "output": "false",
+        "explanation": "After filtering, the string becomes 'raceacar', which is not a palindrome."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You can use two pointers to compare characters from the front and back.",
+      "Consider using a helper function to check if a character is alphanumeric."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Convert Sorted List to Binary Search Tree",
+    "description": "Given a singly linked list where elements are sorted in ascending order, convert it to a height-balanced binary search tree (BST). A height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differs by more than one.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "Linked List",
+      "BST"
+    ],
+    "input_format": "A singly linked list represented by the ListNode class. Each ListNode contains an integer value and a pointer to the next node.",
+    "output_format": "The root node of a height-balanced binary search tree.",
+    "constraints": [
+      "The number of nodes in the linked list is in the range [0, 10^4].",
+      "Node values are in the range [-10^4, 10^4]."
+    ],
+    "examples": [
+      {
+        "input": "head = [-10, -3, 0, 5, 9]",
+        "output": "[0,-3,9,-10,null,5]",
+        "explanation": "The BST formed from the sorted list is [0,-3,9,-10,null,5], which is height-balanced."
+      },
+      {
+        "input": "head = []",
+        "output": "null",
+        "explanation": "An empty linked list returns a null tree."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the middle element of the list as the root.",
+      "Use the left half of the list for the left subtree and the right half for the right subtree."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "N-Queens II",
+    "description": "The N-Queens II problem is a variation of the classic N-Queens problem. You are asked to determine how many distinct solutions exist to place N queens on an N\u00d7N chessboard so that no two queens threaten each other. A queen can move any number of squares vertically, horizontally, or diagonally. Your task is to return the total number of distinct arrangements for placing N queens on a chessboard of given size.",
+    "topic": "Backtracking",
+    "subtopic": "N-Queens",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "N-Queens"
+    ],
+    "input_format": "An integer n representing the size of the chessboard (n x n).",
+    "output_format": "An integer representing the total number of distinct solutions to the N-Queens problem.",
+    "constraints": [
+      "1 <= n <= 15"
+    ],
+    "examples": [
+      {
+        "input": "n = 4",
+        "output": "2",
+        "explanation": "There are two distinct solutions to the 4-Queens problem: one where queens are placed at (0, 1), (1, 3), (2, 0), and (3, 2) and another where they are at (0, 2), (1, 0), (2, 3), and (3, 1)."
+      },
+      {
+        "input": "n = 1",
+        "output": "1",
+        "explanation": "There is one distinct solution to the 1-Queens problem, placing the single queen on the board."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use backtracking to explore possible placements.",
+      "Maintain arrays to track columns and diagonals."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the height of bars in a histogram, calculate how much water can be trapped after raining. The width of each bar is 1, and water can be trapped where there are bars with height greater than the bar in question on both sides.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers heights representing the height of bars.",
+    "output_format": "An integer representing the total units of trapped rainwater.",
+    "constraints": [
+      "0 <= heights.length <= 10^5",
+      "0 <= heights[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "heights = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water trapped can be visualized as follows: 6 units of water can be trapped between the heights."
+      },
+      {
+        "input": "heights = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water trapped here is 9 units, specifically between various heights."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two pointers to traverse the heights.",
+      "Calculate the trapped water based on the minimum height from both sides."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses. For example, if n = 3, a solution set is: \"((()))\", \"(()())\", \"(())()\", \"()(())\", and \"()()()\".",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Generation",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "String"
+    ],
+    "input_format": "An integer n representing the number of pairs of parentheses.",
+    "output_format": "A list of strings containing all combinations of well-formed parentheses.",
+    "constraints": [
+      "1 <= n <= 8"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\"]",
+        "explanation": "These represent all the valid combinations of 3 pairs of parentheses."
+      },
+      {
+        "input": "n = 1",
+        "output": "[\"()\"]",
+        "explanation": "Only one combination is possible for one pair of parentheses."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to build the combinations incrementally.",
+      "Consider keeping track of the number of open and closed parentheses used."
+    ],
+    "company": "Zenefits"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Distance from All Buildings",
+    "description": "You are given a 2D grid of size m x n representing a map. Each cell can be either a wall (represented by '1'), a building (represented by '2'), or an empty land (represented by '0'). A '0' cell is considered to be an empty land that you can build on. You want to build a house on an empty land such that the distance from the house to the closest building is minimized. The distance between two cells is the Manhattan distance, which is defined as the sum of the absolute differences of their coordinates. Return the minimum distance that a new house should be from all existing buildings, or -1 if it is not possible to build a house that can reach all buildings.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Grid",
+      "BFS",
+      "Shortest Path"
+    ],
+    "input_format": "A 2D grid represented as a list of lists containing integers (0, 1, 2).",
+    "output_format": "An integer representing the minimum distance from the new house to all buildings, or -1 if it is not possible.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 20",
+      "grid[i][j] is 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0, 0, 0], [1, 0, 2], [0, 0, 0]]",
+        "output": "7",
+        "explanation": "The distance from the house to the closest building is 7."
+      },
+      {
+        "input": "grid = [[1, 0]]",
+        "output": "-1",
+        "explanation": "It is not possible to build a house that can reach all buildings."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using BFS to explore distances from multiple buildings.",
+      "Keep track of reachable buildings and distances as you explore the grid."
+    ],
+    "company": "Zenefits"
+  }
+]

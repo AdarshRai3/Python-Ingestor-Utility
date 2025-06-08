@@ -1,0 +1,495 @@
+[
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a maximum width, format the text such that each line has exactly maximum width characters and is fully justified. The last line should be left-justified. You should pack words together until you cannot fit any more in a line. The justification of each line is that words should be evenly spaced in a way that gives it a justified appearance. If the justified text cannot be spaced evenly, then you must add extra spaces between the words to make them fit perfectly.",
+    "topic": "String",
+    "subtopic": "Text Formatting",
+    "tags": [
+      "String",
+      "Justification",
+      "Formatting"
+    ],
+    "input_format": "An array of strings words and an integer maxWidth.",
+    "output_format": "An array of strings representing the fully justified text.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 20",
+      "maxWidth is between 1 and 100."
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "This",
+            "is",
+            "an",
+            "example",
+            "of",
+            "text",
+            "justification."
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "This    is    an",
+          "example  of text",
+          "justification.  "
+        ],
+        "explanation": "The words are arranged on three lines with given justification and maxWidth."
+      },
+      {
+        "input": {
+          "words": [
+            "What",
+            "must",
+            "be",
+            "acknowledgment",
+            "shall",
+            "be"
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "What   must   be",
+          "acknowledgment  ",
+          "shall be        "
+        ],
+        "explanation": "Each line is justified and fits within the specified width."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to distribute spaces between words.",
+      "Focus on filling the line with words without exceeding maxWidth.",
+      "Handle the last line differently for left justification."
+    ],
+    "company": "Coursera"
+  },
+  {
+    "question_id": "",
+    "title": "Reaching Points",
+    "description": "You are given two points, (sx, sy) and (tx, ty). You can perform the following operations to reach the target point (tx, ty) from the starting point (sx, sy):\n1. Add sx and sy to sx (i.e., sx = sx + sy).\n2. Add sx and sy to sy (i.e., sy = sx + sy).\n\nReturn true if it is possible to reach (tx, ty) from (sx, sy) using any number of operations, otherwise return false.",
+    "topic": "Math",
+    "subtopic": "Geometry",
+    "tags": [
+      "Math",
+      "Geometry",
+      "Simulation"
+    ],
+    "input_format": "Two integers sx, sy, tx, ty representing the starting point and target point.",
+    "output_format": "A boolean value indicating whether the target point can be reached from the starting point.",
+    "constraints": [
+      "1 <= sx, sy, tx, ty <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "sx = 1, sy = 1, tx = 3, ty = 5",
+        "output": "true",
+        "explanation": "Starting from (1, 1), we can reach (2, 1) then (3, 1) then (3, 2) and finally (3, 5)."
+      },
+      {
+        "input": "sx = 1, sy = 1, tx = 2, ty = 2",
+        "output": "false",
+        "explanation": "It is not possible to reach (2, 2) from (1, 1) as we can only move to (2, 1) or (1, 2) in the first operation."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how symmetry can help in reversing the operations.",
+      "Try to reduce (tx, ty) back to (sx, sy) instead of building up."
+    ],
+    "company": "Coursera"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Music Playlists",
+    "description": "You are tasked with creating a playlist of songs, where you want to maximize the number of unique songs while ensuring that no song is repeated within a given range of songs. Given two integers `n` and `m`, where `n` is the number of unique songs and `m` is the maximum number of times a song can repeat before the playlist is invalid, return the total number of distinct playlists of length `k` possible under these constraints.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorial Counting",
+    "tags": [
+      "Dynamic Programming",
+      "Combinatorics",
+      "Recursive"
+    ],
+    "input_format": "Three integers n, m, and k, where 1 <= n <= 100 and 0 <= m <= n and 1 <= k <= 100.",
+    "output_format": "An integer representing the number of distinct playlists of length k.",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= m <= n",
+      "1 <= k <= 100"
+    ],
+    "examples": [
+      {
+        "input": "n = 3, m = 1, k = 3",
+        "output": "6",
+        "explanation": "The distinct playlists are: [1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]. Each song occurs once."
+      },
+      {
+        "input": "n = 2, m = 1, k = 3",
+        "output": "0",
+        "explanation": "It is impossible to create a playlist of length 3 with 2 unique songs where each song can only occur once."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using recursive dynamic programming to build the solution.",
+      "Think about how to calculate the possibilities based on the last added song."
+    ],
+    "company": "Coursera"
+  },
+  {
+    "question_id": "",
+    "title": "Highest Grade For Each Student",
+    "description": "Given a list of student records, where each record consists of a student's name and their corresponding grades, return a list of names of students along with their highest grade. If a student has multiple entries, consider only the highest grade. The output should be sorted by the students' names in ascending order.",
+    "topic": "Hash Table",
+    "subtopic": "Data Aggregation",
+    "tags": [
+      "Hash Table",
+      "Sorting",
+      "Aggregation"
+    ],
+    "input_format": "A list of student records, where each record is a tuple (name: string, grade: integer).",
+    "output_format": "A list of tuples (name: string, highest_grade: integer) sorted by the names of the students.",
+    "constraints": [
+      "1 <= records.length <= 10^4",
+      "1 <= len(name) <= 100",
+      "0 <= grade <= 100"
+    ],
+    "examples": [
+      {
+        "input": "records = [('Alice', 85), ('Bob', 90), ('Alice', 95), ('Bob', 88), ('Charlie', 70)]",
+        "output": "[('Alice', 95), ('Bob', 90), ('Charlie', 70)]",
+        "explanation": "Alice has grades 85 and 95, so her highest grade is 95. Bob has grades 90 and 88, so his highest grade is 90. Charlie has a single grade of 70."
+      },
+      {
+        "input": "records = [('Eve', 75), ('Frank', 90), ('Eve', 95), ('Grace', 60)]",
+        "output": "[('Eve', 95), ('Frank', 90), ('Grace', 60)]",
+        "explanation": "Eve has the highest grade of 95, Frank has 90, and Grace has 60."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a dictionary to keep track of the highest grades for each student.",
+      "Sort the final results based on student names."
+    ],
+    "company": "Coursera"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Moves to Equal Array Elements",
+    "description": "You are given an integer array nums of size n. In one move, you can increment n - 1 elements of the array by 1. Your goal is to make all array elements equal. Return the minimum number of moves required to achieve this.",
+    "topic": "Array",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the minimum number of moves to make all elements equal.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "3",
+        "explanation": "You can increment the first two elements in three moves to make all elements equal to 3: [2, 3, 3] -> [3, 3, 3]."
+      },
+      {
+        "input": "nums = [1, 1, 1]",
+        "output": "0",
+        "explanation": "All elements are already equal, so no moves are needed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "To minimize moves, think about reducing all numbers to the minimum element.",
+      "The number of moves can be calculated based on the difference between each element and the minimum."
+    ],
+    "company": "Coursera"
+  },
+  {
+    "question_id": "",
+    "title": "N-th Tribonacci Number",
+    "description": "The Tribonacci sequence is defined as follows: T(0) = 0, T(1) = 1, T(2) = 1, and T(n) = T(n-1) + T(n-2) + T(n-3) for n > 2. Given an integer n, return the n-th Tribonacci number.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Memoization",
+    "tags": [
+      "Dynamic Programming",
+      "Recursion",
+      "Memoization"
+    ],
+    "input_format": "An integer n (0 <= n <= 37).",
+    "output_format": "An integer representing the n-th Tribonacci number.",
+    "constraints": [
+      "0 <= n <= 37"
+    ],
+    "examples": [
+      {
+        "input": "n = 4",
+        "output": "4",
+        "explanation": "The Tribonacci sequence starts as 0, 1, 1, 2, 4. Therefore, T(4) = 4."
+      },
+      {
+        "input": "n = 25",
+        "output": "1389537",
+        "explanation": "T(25) is the 25th number in the Tribonacci sequence, which is 1389537."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using an iterative approach to avoid excessive recursion.",
+      "You can store the previous three values to compute the next number."
+    ],
+    "company": "Coursera"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Increment to Make Array Unique",
+    "description": "Given an array of integers, you need to make the elements of the array unique by incrementing some of them. The cost of each increment is 1. Your task is to find the minimum number of increments needed to make all elements of the array unique.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Greedy"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the minimum number of increments required.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "0 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 1, 2, 1, 2]",
+        "output": "6",
+        "explanation": "Increment the second '2' to '3', the first '1' to '4', and the second '1' to '5'. The array becomes [3, 4, 1, 2, 5, 6]. Total increments = 1 + 2 + 3 = 6."
+      },
+      {
+        "input": "nums = [1, 2, 2]",
+        "output": "1",
+        "explanation": "Increment the second '2' to '3'. The array becomes [1, 2, 3]. Total increments = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array first to easily check for duplicates.",
+      "Keep track of the last unique number to efficiently calculate increments."
+    ],
+    "company": "Coursera"
+  },
+  {
+    "question_id": "",
+    "title": "Special Binary String",
+    "description": "A binary string is called special if and only if it satisfies the following conditions: The number of '0's and '1's is equal, and for any prefix of the string, the number of '1's is greater than or equal to the number of '0's. Given a special binary string S, you need to split S into some special binary strings such that every string you have split is also special. Return a lexicographically largest outer string among all the possible splits.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Recursion",
+      "Greedy"
+    ],
+    "input_format": "A string S, consisting of '0's and '1's.",
+    "output_format": "A string representing the lexicographically largest outer string.",
+    "constraints": [
+      "1 <= S.length <= 50",
+      "S[i] is either '0' or '1'.",
+      "S is guaranteed to be a special binary string."
+    ],
+    "examples": [
+      {
+        "input": "S = \"1100\"",
+        "output": "\"10\"",
+        "explanation": "Split into two parts: \"10\" and \"00\". The lexicographically largest outer string is \"10\"."
+      },
+      {
+        "input": "S = \"10011000\"",
+        "output": "\"11000\"",
+        "explanation": "Split into \"10\" and \"011000\", resulting in lexicographically largest \"11000\"."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a recursive approach to explore splitting possibilities.",
+      "Look for patterns in how special binary strings can be constructed."
+    ],
+    "company": "Coursera"
+  },
+  {
+    "question_id": "",
+    "title": "Rank Teams by Votes",
+    "description": "You are given a list of teams and their respective votes. Your task is to rank the teams based on the votes they received. If two teams have the same number of votes, they should be ranked alphabetically. Return a list of team names in order of their ranking.",
+    "topic": "Sorting",
+    "subtopic": "Custom Sorting",
+    "tags": [
+      "Sorting",
+      "Strings",
+      "Arrays"
+    ],
+    "input_format": "A list of tuples where each tuple contains a team name and its corresponding vote count.",
+    "output_format": "A list of team names sorted by their rank.",
+    "constraints": [
+      "1 <= teams.length <= 1000",
+      "1 <= votes <= 10^6",
+      "team names are unique and non-empty strings"
+    ],
+    "examples": [
+      {
+        "input": "[('A', 5), ('B', 3), ('C', 5), ('D', 1)]",
+        "output": "['A', 'C', 'B', 'D']",
+        "explanation": "Teams A and C have the highest votes (5) and are sorted alphabetically. Team B follows with 3 votes and D with 1 vote."
+      },
+      {
+        "input": "[('X', 2), ('Y', 2), ('Z', 3)]",
+        "output": "['Z', 'X', 'Y']",
+        "explanation": "Team Z has the highest votes (3), followed by X and Y, both with 2 votes, sorted alphabetically."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sorting function with a custom key.",
+      "Use negative votes for descending order while keeping alphabetical order for teams."
+    ],
+    "company": "Coursera"
+  },
+  {
+    "question_id": "",
+    "title": "Search Suggestions System",
+    "description": "Given a list of products and a search query, return a list of suggested products for the query. The suggestions should be based on the prefixes of the query. For each prefix of the query (from length 1 to length of the query), return a list of up to three product names that match that prefix, sorted lexicographically. If there are fewer than three matches, return all matches for that prefix.",
+    "topic": "String",
+    "subtopic": "Search",
+    "tags": [
+      "String",
+      "Search",
+      "Sorting"
+    ],
+    "input_format": "Two inputs: a list of strings products representing product names, and a string searchWord.",
+    "output_format": "A list of lists of strings, each representing suggestions for each prefix of searchWord.",
+    "constraints": [
+      "1 <= products.length <= 1000",
+      "1 <= products[i].length <= 100",
+      "1 <= searchWord.length <= 100",
+      "All product names are unique."
+    ],
+    "examples": [
+      {
+        "input": {
+          "products": [
+            "mobile",
+            "mouse",
+            "moneypot",
+            "monitor",
+            "mousepad"
+          ],
+          "searchWord": "mouse"
+        },
+        "output": [
+          [
+            "mobile",
+            "moneypot",
+            "monitor"
+          ],
+          [
+            "mobile",
+            "moneypot",
+            "monitor"
+          ],
+          [
+            "mouse",
+            "mousepad"
+          ],
+          [
+            "mouse",
+            "mousepad"
+          ],
+          [
+            "mouse",
+            "mousepad"
+          ]
+        ],
+        "explanation": "For each prefix of 'mouse', the corresponding suggestions are found. The output lists the possible suggestions."
+      },
+      {
+        "input": {
+          "products": [
+            "havana"
+          ],
+          "searchWord": "havana"
+        },
+        "output": [
+          [
+            "havana"
+          ],
+          [
+            "havana"
+          ],
+          [
+            "havana"
+          ],
+          [
+            "havana"
+          ],
+          [
+            "havana"
+          ],
+          [
+            "havana"
+          ]
+        ],
+        "explanation": "Only one product matches the entire query, so the same product is returned for each prefix."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a Trie (prefix tree) for efficient prefix searching.",
+      "Sort the products once before adding them to the Trie."
+    ],
+    "company": "Coursera"
+  },
+  {
+    "question_id": "",
+    "title": "Wildcard Matching",
+    "description": "Implement a function to perform wildcard matching with support for '?' and '*' where '?' matches any single character and '*' matches any sequence of characters (including the empty sequence). The string may contain both the pattern with wildcards and a text string to perform matching against.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Matching",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Matching"
+    ],
+    "input_format": "Two strings: `s` (the text string) and `p` (the wildcard pattern).",
+    "output_format": "A boolean indicating whether the text string matches the wildcard pattern.",
+    "constraints": [
+      "0 <= s.length, p.length <= 100",
+      "s and p consist of only lowercase English letters, '?' and '*'."
+    ],
+    "examples": [
+      {
+        "input": {
+          "s": "adceb",
+          "p": "*a*b"
+        },
+        "output": "true",
+        "explanation": "The pattern '*a*b' matches the text 'adceb' because '*' can match 'dce', while 'a' and 'b' match themselves."
+      },
+      {
+        "input": {
+          "s": "acdcb",
+          "p": "a*c?b"
+        },
+        "output": "false",
+        "explanation": "The pattern 'a*c?b' does not match the text 'acdcb' because the 'c' in the pattern must match a single character."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to store intermediate matching results.",
+      "Use a 2D array to track matches between the text and pattern."
+    ],
+    "company": "Coursera"
+  }
+]

@@ -1,0 +1,300 @@
+[
+  {
+    "question_id": "",
+    "title": "Number of Bit Changes to Make Two Integers Equal",
+    "description": "Given two integers, determine the number of bits that need to be changed in the binary representation of the first integer to make it equal to the second integer. The bit change is defined as flipping a 0 to a 1 or a 1 to a 0.",
+    "topic": "Bit Manipulation",
+    "subtopic": "Counting Bits",
+    "tags": [
+      "Bit Manipulation",
+      "Counting",
+      "Integers"
+    ],
+    "input_format": "Two integers a and b.",
+    "output_format": "An integer representing the number of bit changes needed.",
+    "constraints": [
+      "-10^9 <= a, b <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "a = 5, b = 1",
+        "output": "3",
+        "explanation": "The binary representation of 5 is 101, and for 1 it is 001. We need to change the first and the last two bits."
+      },
+      {
+        "input": "a = 10, b = 10",
+        "output": "0",
+        "explanation": "Both integers are the same, so no bits need to be changed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use XOR to determine the bits that differ between the two numbers.",
+      "Count the number of 1s in the result of the XOR operation."
+    ],
+    "company": "ThoughtWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum GCD-Sum of a Subarray",
+    "description": "Given an array of integers, you need to find a contiguous subarray that maximizes the sum of the GCD of each element in the subarray with the GCD of the entire array. Return this maximum GCD-sum. The GCD of an array is defined as the greatest common divisor of all its numbers.",
+    "topic": "Array",
+    "subtopic": "Subarray",
+    "tags": [
+      "Array",
+      "GCD",
+      "Subarray",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum GCD-sum of a subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [12, 15, 18, 30]",
+        "output": "48",
+        "explanation": "The GCD of the array is 3. The best subarray is [12, 15, 18] with GCD-sum: (GCD(12, 3) + GCD(15, 3) + GCD(18, 3)) = (3 + 3 + 3) = 9."
+      },
+      {
+        "input": "nums = [7, 14, 49, 28]",
+        "output": "70",
+        "explanation": "The GCD of the entire array is 7. The optimal subarray is [7, 14, 49] with GCD-sum: (GCD(7, 7) + GCD(14, 7) + GCD(49, 7)) = (7 + 7 + 7) = 21."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how GCD works for multiple numbers.",
+      "Look for patterns in subarrays to maximize the sum.",
+      "Calculating the GCD first can simplify the problem."
+    ],
+    "company": "ThoughtWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Maximize the Number of Partitions After Operations",
+    "description": "In a given array of integers, you can perform a series of operations to maximize the number of partitions of the array. Each operation consists of selecting two adjacent elements and modifying them according to specific rules. Your goal is to determine the maximum number of partitions possible after performing these operations optimally.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Partitioning Array",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Partition"
+    ],
+    "input_format": "An array of integers nums, where 1 <= nums.length <= 10^5.",
+    "output_format": "An integer representing the maximum number of partitions possible.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 1, 2]",
+        "output": "3",
+        "explanation": "You can partition the array into [1, 2], [1], and [2] with optimal operations."
+      },
+      {
+        "input": "nums = [2, 3, 2, 1, 5]",
+        "output": "4",
+        "explanation": "You can have partitions like [2], [3], [2], [1, 5] after optimal operations."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how adjacent structures in the array can influence the number of partitions.",
+      "Dynamic programming may help to track the best possible partitions."
+    ],
+    "company": "ThoughtWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Subarrays That Match a Pattern II",
+    "description": "Given an integer array nums and a pattern array pattern, return the number of contiguous subarrays in nums that match the given pattern. A subarray matches the pattern if it contains all elements of the pattern in the same order, though not necessarily contiguously. The elements in nums and pattern are integers, and a pattern may contain duplicates.",
+    "topic": "Array",
+    "subtopic": "Subarray Matching",
+    "tags": [
+      "Array",
+      "Subarrays",
+      "Pattern Matching"
+    ],
+    "input_format": "Two arrays of integers, `nums` and `pattern`.",
+    "output_format": "An integer representing the number of matching subarrays.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= pattern.length <= 100",
+      "-10^6 <= nums[i], pattern[j] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 1, 2, 1], pattern = [1, 2]",
+        "output": "6",
+        "explanation": "The matching subarrays are: [1, 2], [1, 2], [2, 1, 2], [1, 2, 1], [2, 1, 2], and [1, 2]."
+      },
+      {
+        "input": "nums = [3, 3, 3, 3], pattern = [3]",
+        "output": "10",
+        "explanation": "All elements in nums match the single element pattern, leading to: [3], [3], [3], [3], [3,3], [3,3], [3,3], [3,3], [3,3,3], [3,3,3,3]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "Think about how to manage counts of elements from the pattern."
+    ],
+    "company": "ThoughtWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices, where 1 <= prices.length <= 10^5 and 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit possible.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on the second day (price = 1) and sell on the fifth day (price = 6), the profit is 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate the profit for each day and keep track of the maximum profit."
+    ],
+    "company": "ThoughtWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within the string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "HashMap",
+      "Sliding Window"
+    ],
+    "input_format": "A single string s consisting of uppercase and lowercase letters, digits, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The answer is \"abc\", with the length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The answer is \"b\", with the length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The answer is \"wke\", with the length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window approach to keep track of the characters in the current substring.",
+      "You can use a set to store the characters of the substring."
+    ],
+    "company": "ThoughtWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket and the brackets must close in the correct order.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A single string s consisting of characters '(', ')', '{', '}', '[' and ']', with length n.",
+    "output_format": "A boolean value, return true if the string is valid, otherwise return false.",
+    "constraints": [
+      "0 <= s.length <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are correctly matched."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "All brackets are correctly matched."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The parentheses are not correctly matched."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of open brackets."
+    ],
+    "company": "ThoughtWorks"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string `s`, return the longest palindromic substring in `s`. A substring is a contiguous sequence of characters within a string. The method should find the longest substring that reads the same backward as forward.",
+    "topic": "Strings",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A string s consisting of lowercase and uppercase English letters.",
+    "output_format": "A string representing the longest palindromic substring.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consist of only digits and English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"babad\"",
+        "output": "\"bab\"",
+        "explanation": "The longest palindromic substring is \"bab\" or \"aba\"."
+      },
+      {
+        "input": "s = \"cbbd\"",
+        "output": "\"bb\"",
+        "explanation": "The longest palindromic substring is \"bb\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try expanding from the center for potential palindromes.",
+      "Check for both odd and even length palindromes."
+    ],
+    "company": "ThoughtWorks"
+  }
+]

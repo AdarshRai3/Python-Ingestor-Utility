@@ -1,0 +1,350 @@
+[
+  {
+    "question_id": "",
+    "title": "Teemo Attacking",
+    "description": "In a game, there is a character named Teemo who attacks enemies in a straight line. Given a list of enemies represented by their health values and a specified attack distance, your task is to determine the total health of all enemies that Teemo can attack at once. Teemo can attack enemies that are within the given distance from his position in a straight line. If the health of an enemy drops to 0 or below, they are considered defeated and won't count towards the total health for further attacks.",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "Game",
+      "Simulation"
+    ],
+    "input_format": "An array of integers representing the health of the enemies followed by an integer representing the attack distance.",
+    "output_format": "An integer representing the total health of all enemies Teemo can attack.",
+    "constraints": [
+      "1 <= enemies.length <= 1000",
+      "1 <= enemies[i] <= 10^4",
+      "0 <= attackDistance <= enemies.length - 1"
+    ],
+    "examples": [
+      {
+        "input": "[10, 20, 30, 40, 50], 2",
+        "output": "60",
+        "explanation": "Teemo can attack the first three enemies (10, 20, 30), giving a total health of 10 + 20 + 30 = 60."
+      },
+      {
+        "input": "[15, 25, 35, 45], 1",
+        "output": "40",
+        "explanation": "Teemo can only attack the first two enemies (15, 25), giving a total health of 15 + 25 = 40."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a loop to iterate through enemies within the attack distance.",
+      "You might want to sum the health of enemies in the valid range."
+    ],
+    "company": "Riot Games"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules: each row must contain the digits 1-9 without repetition, each column must contain the digits 1-9 without repetition, and each of the nine 3x3 sub-boxes must contain the digits 1-9 without repetition. The cells in the Sudoku board may be empty, represented by the character '.'.",
+    "topic": "Array",
+    "subtopic": "2D Array",
+    "tags": [
+      "Array",
+      "Backtracking",
+      "Matrix"
+    ],
+    "input_format": "A 2D array of characters representing the Sudoku board.",
+    "output_format": "A boolean value indicating whether the Sudoku board is valid.",
+    "constraints": [
+      "board.length == 9",
+      "board[i].length == 9",
+      "board[i][j] is either a digit from '1' to '9' or '.'."
+    ],
+    "examples": [
+      {
+        "input": "[['5','3','.','.','7','.','.','.','.'], ['6','.','.','1','9','5','.','.','.'], ['.','9','8','.','.','.','.','6','.'], ['8','.','.','.','6','.','.','.','3'], ['4','.','.','8','.','3','.','.','1'], ['7','.','.','.','2','.','.','.','6'], ['.','6','.','.','.','.','2','8','.'], ['.','.','.','4','1','9','.','.','5'], ['.','.','.','.','8','.','.','7','9']]",
+        "output": "true",
+        "explanation": "The board is valid according to Sudoku rules."
+      },
+      {
+        "input": "[['8','3','.','.','7','.','.','.','.'], ['6','.','.','1','9','5','.','.','.'], ['.','9','8','.','.','.','.','6','.'], ['8','.','.','.','6','.','.','.','3'], ['4','.','.','8','.','3','.','.','1'], ['7','.','.','.','2','.','.','.','6'], ['.','6','.','.','.','.','2','8','.'], ['.','.','.','4','1','9','.','.','5'], ['.','.','.','.','8','.','.','7','9']]",
+        "output": "false",
+        "explanation": "The number '8' is repeated in the first column."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use sets to track the numbers in each row, column, and sub-box.",
+      "Check each cell and update your sets accordingly."
+    ],
+    "company": "Riot Games"
+  },
+  {
+    "question_id": "",
+    "title": "Sudoku Solver",
+    "description": "Write a program to solve a given Sudoku puzzle by filling the empty cells. A Sudoku solution must satisfy the following rules: each of the digits from 1 to 9 must occur exactly once in each row, each column, and each of the nine 3x3 sub-grids.",
+    "topic": "Backtracking",
+    "subtopic": "Grid Problem",
+    "tags": [
+      "Backtracking",
+      "Grid",
+      "Sudoku"
+    ],
+    "input_format": "A 9x9 2D array representing the Sudoku board, where empty cells are represented by '.' (a single period).",
+    "output_format": "The solved Sudoku board as a 2D array.",
+    "constraints": [
+      "The given board represents a valid Sudoku with a unique solution.",
+      "The board will always be a 9x9 grid."
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "5",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": [
+          [
+            "5",
+            "3",
+            "4",
+            "6",
+            "7",
+            "8",
+            "9",
+            "1",
+            "2"
+          ],
+          [
+            "6",
+            "7",
+            "2",
+            "1",
+            "9",
+            "5",
+            "3",
+            "4",
+            "8"
+          ],
+          [
+            "1",
+            "9",
+            "8",
+            "3",
+            "4",
+            "2",
+            "5",
+            "6",
+            "7"
+          ],
+          [
+            "8",
+            "5",
+            "9",
+            "7",
+            "6",
+            "1",
+            "4",
+            "2",
+            "3"
+          ],
+          [
+            "4",
+            "2",
+            "6",
+            "8",
+            "5",
+            "3",
+            "7",
+            "9",
+            "1"
+          ],
+          [
+            "7",
+            "1",
+            "3",
+            "9",
+            "2",
+            "4",
+            "8",
+            "5",
+            "6"
+          ],
+          [
+            "9",
+            "6",
+            "1",
+            "2",
+            "3",
+            "5",
+            "2",
+            "8",
+            "4"
+          ],
+          [
+            "2",
+            "8",
+            "7",
+            "4",
+            "1",
+            "9",
+            "6",
+            "3",
+            "5"
+          ],
+          [
+            "3",
+            "4",
+            "5",
+            "3",
+            "8",
+            "6",
+            "1",
+            "7",
+            "9"
+          ]
+        ],
+        "explanation": "The filled Sudoku board satisfies all Sudoku rules."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Try to use backtracking to explore possible placements.",
+      "Remember to check if a number can be placed in a certain position.",
+      "Use a helper function to validate the Sudoku rules."
+    ],
+    "company": "Riot Games"
+  },
+  {
+    "question_id": "",
+    "title": "Better Compression of String",
+    "description": "You are given a string `s` consisting of lowercase letters. Your task is to compress the string such that consecutive identical characters are replaced by the character followed by the number of occurrences. For example, the string 'aaabb' should be compressed to 'a3b2'. If the compressed string is not shorter than the original string, return the original string. If the original string is empty, return an empty string.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Compression",
+      "Manipulation"
+    ],
+    "input_format": "A string s containing only lowercase letters.",
+    "output_format": "A string representing the compressed format or the original string.",
+    "constraints": [
+      "0 <= s.length <= 1000",
+      "s consists of lowercase letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'aaabb'",
+        "output": "a3b2",
+        "explanation": "The characters 'a' appear 3 times and 'b' appears 2 times, hence the compressed string is 'a3b2'."
+      },
+      {
+        "input": "s = 'abcdef'",
+        "output": "abcdef",
+        "explanation": "All characters are unique. The compressed string would be longer, so return 'abcdef'."
+      },
+      {
+        "input": "s = ''",
+        "output": "",
+        "explanation": "The string is empty, so return an empty string."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a loop to count consecutive characters.",
+      "Keep track of the last character to compare with the current one.",
+      "Be careful with edge cases, such as empty strings."
+    ],
+    "company": "Riot Games"
+  }
+]

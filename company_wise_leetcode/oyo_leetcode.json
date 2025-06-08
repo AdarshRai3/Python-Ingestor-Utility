@@ -1,0 +1,347 @@
+[
+  {
+    "question_id": "",
+    "title": "4Sum",
+    "description": "Given an array nums of n integers and an integer target, return all unique quadruplets (a, b, c, d) such that a + b + c + d = target.\n\nYou may return the answer in any order. Each quadruplet should be returned as a list of integers in increasing order, and the list of quadruplets should be returned in increasing order as well.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Hash Table"
+    ],
+    "input_format": "An array nums containing n integers and an integer target.",
+    "output_format": "A list of unique quadruplets, where each quadruplet is a list of four integers.",
+    "constraints": [
+      "0 <= n <= 200",
+      "-10^9 <= nums[i] <= 10^9",
+      "The solution set must not contain duplicate quadruplets."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 0, -1, 0, -2, 2], target = 0",
+        "output": "[[-2, -1, 0, 1], [0, 0, 0, 0]]",
+        "explanation": "The unique quadruplets that sum to 0 are [-2, -1, 1, 2] and [0, 0, 0, 0]."
+      },
+      {
+        "input": "nums = [2, 2, 2, 2, 2], target = 8",
+        "output": "[[2, 2, 2, 2]]",
+        "explanation": "The only quadruplet that sums to 8 is [2, 2, 2, 2]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array to make it easier to skip duplicates.",
+      "Use a nested loop approach with two pointers to find pairs that meet the target."
+    ],
+    "company": "oyo"
+  },
+  {
+    "question_id": "",
+    "title": "Furthest Building You Can Reach",
+    "description": "You are given an integer array heights representing the height of each building, and two integers bricks and ladders. You can either use one brick to climb one unit of height or one ladder to climb any number of units of height. Return the furthest building index you can reach using the given bricks and ladders.",
+    "topic": "Greedy",
+    "subtopic": "Heap",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Heap"
+    ],
+    "input_format": "An integer array heights followed by two integers bricks and ladders.",
+    "output_format": "An integer representing the furthest building index you can reach.",
+    "constraints": [
+      "1 <= heights.length <= 1000",
+      "1 <= heights[i] <= 10^6",
+      "0 <= bricks, ladders <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "heights = [4, 2, 7, 6, 9, 14], bricks = 5, ladders = 1",
+        "output": "4",
+        "explanation": "You can climb from building 0 to 1 using 0 bricks, from 1 to 2 using 2 bricks, from 2 to 3 using ladders, from 3 to 4 with 5 - 2 = 3 bricks left."
+      },
+      {
+        "input": "heights = [1, 5, 3, 6, 7], bricks = 0, ladders = 1",
+        "output": "3",
+        "explanation": "You can climb from building 0 to 1 using ladders, but cannot go further because you don't have enough bricks."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to utilize ladders effectively.",
+      "Always try to minimize brick usage."
+    ],
+    "company": "oyo"
+  },
+  {
+    "question_id": "",
+    "title": "Container With Most Water",
+    "description": "Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with the x-axis forms a container, such that the container contains the most water. Your goal is to return the maximum area of water that can be contained.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Geometry"
+    ],
+    "input_format": "An array of non-negative integers heights where heights[i] represents the height of the i-th line.",
+    "output_format": "An integer representing the maximum area of water that can be contained.",
+    "constraints": [
+      "2 <= heights.length <= 10^5",
+      "0 <= heights[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "heights = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The maximum area is between the lines at positions 1 and 8, which has a width of 7 and a height of 7, thus area = 7 * 7 = 49."
+      },
+      {
+        "input": "heights = [1,1]",
+        "output": "1",
+        "explanation": "The only container formed is with the two lines and has an area of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two pointers to optimize the search for the best container.",
+      "The area is determined by the shorter line, hence focus on maximizing the shorter height."
+    ],
+    "company": "oyo"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Rectangle in Histogram",
+    "description": "Given an array of integers representing the heights of bars in a histogram, find the area of the largest rectangle that can be formed within the histogram. Each bar's width is 1, and the height varies according to the given array.",
+    "topic": "Stack",
+    "subtopic": "Monotonic Stack",
+    "tags": [
+      "Stack",
+      "Array",
+      "Histogram",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers heights where 0 <= heights[i] <= 10^4.",
+    "output_format": "An integer representing the area of the largest rectangle that can be formed.",
+    "constraints": [
+      "1 <= heights.length <= 10^5",
+      "0 <= heights[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[2, 1, 5, 6, 2, 3]",
+        "output": "10",
+        "explanation": "The largest rectangle can be formed between the heights 5 and 6, with an area of 2 * 5 = 10."
+      },
+      {
+        "input": "[2, 4]",
+        "output": "4",
+        "explanation": "The largest rectangle can be formed with height 4, which gives an area of 4 * 1 = 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to keep track of the indices of the histogram bars.",
+      "For each bar, determine the width of the rectangle that can be formed using it as the smallest bar."
+    ],
+    "company": "oyo"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Profit in Job Scheduling",
+    "description": "You are given a list of jobs where each job has a start time, an end time, and a profit associated with it. The task is to find the maximum profit you can earn by scheduling these jobs such that no two jobs overlap in time. Each job is defined by a tuple (start_time, end_time, profit). You must return the maximum profit you can achieve.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Job Scheduling",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Interval Scheduling"
+    ],
+    "input_format": "A list of tuples where each tuple consists of (start_time, end_time, profit).",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= jobs.length <= 10^4",
+      "0 <= start_time < end_time <= 10^4",
+      "0 <= profit <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "jobs = [(1, 3, 50), (3, 5, 20), (6, 19, 100), (2, 100, 200)]",
+        "output": "250",
+        "explanation": "Selecting jobs (1, 3, 50), (3, 5, 20), and (6, 19, 100) gives a total profit of 50 + 20 + 100 = 170. The job (2, 100, 200) overlaps with the others, thus cannot be scheduled together."
+      },
+      {
+        "input": "jobs = [(1, 2, 10), (2, 3, 15), (1, 3, 20)]",
+        "output": "15",
+        "explanation": "Choosing the second job (2, 3, 15) provides the maximum profit as it does not overlap with any other job."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider sorting jobs based on their end time.",
+      "Use dynamic programming to build up solutions based on previously solved subproblems."
+    ],
+    "company": "oyo"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an array of integers nums and an integer k, return the maximum sliding window for each contiguous subarray of length k. The sliding window moves one position to the right after each step.",
+    "topic": "Deque",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Deque"
+    ],
+    "input_format": "An integer array nums of length n and an integer k (1 <= k <= n).",
+    "output_format": "An array of integers representing the maximum value in each sliding window.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= n"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, -1, -3, 5, 3, 6, 7], k = 3",
+        "output": "[3, 3, 5, 5, 6, 7]",
+        "explanation": "The maximum for each sliding window is: [3, 3, 5, 5, 6, 7]."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Only one element is present in the array."
+      },
+      {
+        "input": "nums = [1, -1], k = 1",
+        "output": "[1, -1]",
+        "explanation": "Each element is its own sliding window."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a deque to store indices of useful elements.",
+      "Maintain the order of indices stored in the deque.",
+      "Remove elements that are out of the current sliding window."
+    ],
+    "company": "oyo"
+  },
+  {
+    "question_id": "",
+    "title": "Koko Eating Bananas",
+    "description": "Koko loves to eat bananas. There are piles of bananas, each pile has a certain number of bananas. Koko can decide how many bananas to eat per hour. She wants to eat all the bananas in the piles within a given time limit. Given the piles of bananas and the time limit, find the minimum number of bananas Koko should eat per hour to finish all the bananas within the time limit.",
+    "topic": "Binary Search",
+    "subtopic": "Optimization Problems",
+    "tags": [
+      "Binary Search",
+      "Optimization",
+      "Greedy"
+    ],
+    "input_format": "Two input parameters: an array of integers piles, where each element represents the number of bananas in a pile, and an integer h representing the number of hours Koko has to eat all the bananas.",
+    "output_format": "An integer representing the minimum number of bananas Koko should eat per hour.",
+    "constraints": [
+      "1 <= piles.length <= 10^4",
+      "1 <= piles[i] <= 10^9",
+      "1 <= h <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "piles = [3, 6, 7, 11], h = 8",
+        "output": "4",
+        "explanation": "If Koko eats 4 bananas per hour, she will finish all the piles in 7 hours (3 hours for the first pile, 2 hours for the second pile, and 2 hours for the last two piles) within the 8-hour limit."
+      },
+      {
+        "input": "piles = [30, 11, 23, 4, 20], h = 5",
+        "output": "30",
+        "explanation": "Koko can eat 30 bananas in one hour and finish all piles in exactly 5 hours."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to optimize the number of bananas eaten per hour.",
+      "The maximum possible eating speed is the size of the largest pile."
+    ],
+    "company": "oyo"
+  },
+  {
+    "question_id": "",
+    "title": "Copy List with Random Pointer",
+    "description": "Given a linked list, each node contains a value and a random pointer which could point to any node in the list or null. You need to create a deep copy of the linked list. Each node in the new list should have the same value as the corresponding node in the original list, and the random pointer should point to the same node as the original list (if it points to a node) or null (if it points to null).",
+    "topic": "Linked List",
+    "subtopic": "Deep Copy",
+    "tags": [
+      "Linked List",
+      "Depth-First Search",
+      "Hash Table"
+    ],
+    "input_format": "A linked list with nodes that contain integer values and random pointers.",
+    "output_format": "Return the head of the new copied linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 100].",
+      "The value of each node is in the range [-10^4, 10^4].",
+      "All nodes' random pointers do not point to more than one node.",
+      "The random pointer of a node can be either null or point to any node in the list."
+    ],
+    "examples": [
+      {
+        "input": "head = [[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "output": "[[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "explanation": "The copied list maintains the same structure as the original list."
+      },
+      {
+        "input": "head = [[1,1],[2,1]]",
+        "output": "[[1,1],[2,1]]",
+        "explanation": "Both nodes point to each other for random pointers."
+      },
+      {
+        "input": "head = [[3,null],[3,0],[3,null]]",
+        "output": "[[3,null],[3,0],[3,null]]",
+        "explanation": "Each node with value 3 reflects the random pointer structure."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash table to map original nodes to their copies.",
+      "First pass: Create all new nodes.",
+      "Second pass: Assign the random pointers properly."
+    ],
+    "company": "oyo"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber III",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected. If two adjacent houses are robbed on the same night, the alarms will automatically trigger. Given the 'root' of the binary tree representing the houses, return the maximum amount of money you can rob tonight without triggering any alarms.",
+    "topic": "Tree",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Tree",
+      "Dynamic Programming",
+      "Depth First Search"
+    ],
+    "input_format": "The root of a binary tree, where each node's value represents the amount of money in that house.",
+    "output_format": "An integer representing the maximum amount of money that can be robbed without triggering alarms.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 100].",
+      "0 <= Node.val <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[3,2,3,null,3,null,1]",
+        "output": "7",
+        "explanation": "Robbing the second and third houses gives a total of 7 (2 + 3 + 1)."
+      },
+      {
+        "input": "[3,4,5,1,3,null,1]",
+        "output": "9",
+        "explanation": "Robbing the first, third, and fourth houses provides a total of 9 (3 + 5 + 1)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use depth first search to explore the tree.",
+      "Consider two cases for each house: rob it or skip it.",
+      "Use memoization to store results of subproblems."
+    ],
+    "company": "oyo"
+  }
+]

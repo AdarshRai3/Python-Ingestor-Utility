@@ -1,0 +1,471 @@
+[
+  {
+    "question_id": "",
+    "title": "Count Common Words With One Occurrence",
+    "description": "Given two strings, 'text1' and 'text2', return the number of common words that occur exactly once in both strings. A word is defined as a sequence of characters separated by spaces. For example, if 'text1' is 'apple banana' and 'text2' is 'banana orange', then the output should be 1 because the common word 'banana' occurs once in both strings.",
+    "topic": "Strings",
+    "subtopic": "Word Count",
+    "tags": [
+      "Strings",
+      "Hash Table",
+      "Counting"
+    ],
+    "input_format": "Two strings 'text1' and 'text2', each containing only lowercase English letters and spaces.",
+    "output_format": "An integer representing the count of common words that occur exactly once in both strings.",
+    "constraints": [
+      "1 <= text1.length, text2.length <= 1000",
+      "text1 and text2 consist of lowercase English letters and spaces only."
+    ],
+    "examples": [
+      {
+        "input": "text1 = 'apple apple banana' text2 = 'banana apple orange'",
+        "output": "1",
+        "explanation": "The common word 'banana' occurs once in both strings."
+      },
+      {
+        "input": "text1 = 'hello world' text2 = 'hello there'",
+        "output": "0",
+        "explanation": "There are no common words that occur once in both strings."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use sets to track the occurrences of each word.",
+      "Consider splitting strings into words using space as a delimiter."
+    ],
+    "company": "Jane Street"
+  },
+  {
+    "question_id": "",
+    "title": "Walking Robot Simulation",
+    "description": "A robot is located at the origin (0, 0) and can move in four directions: north, south, east, and west. You are given a string commands representing the movement of the robot. The robot should simulate its movement and return its final position after executing all commands. For simplicity, assume the robot can only face one direction at a time. The robot moves one unit in the direction it is facing when it receives the respective command. Each letter in commands can be 'G' (go forward), 'L' (turn left), or 'R' (turn right). A left turn and right turn changes the robot's direction but does not affect its current position. The robot keeps moving until all commands in the input are executed.",
+    "topic": "Simulation",
+    "subtopic": "Robot Movement",
+    "tags": [
+      "Simulation",
+      "Robot",
+      "Movement"
+    ],
+    "input_format": "A string commands containing the instructions for the robot.",
+    "output_format": "A two-element array representing the final (x, y) coordinates of the robot.",
+    "constraints": [
+      "1 <= commands.length <= 100",
+      "commands[i] is one of 'G', 'L', 'R'."
+    ],
+    "examples": [
+      {
+        "input": "commands = 'GGLLGG'",
+        "output": "[0, 0]",
+        "explanation": "The robot moves forward twice, turns left, moves forward twice, and ends up back at the origin."
+      },
+      {
+        "input": "commands = 'GLGLGLG'",
+        "output": "[0, 0]",
+        "explanation": "The robot continuously turns left and moves forward, forming a loop and ends up back at the starting position."
+      },
+      {
+        "input": "commands = 'GGRRRRGG'",
+        "output": "[2, 2]",
+        "explanation": "The robot moves forward twice in the positive Y direction, turns right four times (facing downwards), then moves forward twice, ending at (2, 2)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the robot's current direction using coordinates.",
+      "Use a map for left and right turns to simplify direction changes."
+    ],
+    "company": "Jane Street"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Time to Make Array Sum At Most x",
+    "description": "You are given an array of positive integers and an integer x. Your task is to determine the minimum time required to make the sum of the elements in the array at most x. In one time unit, you can remove any element from the array. If it is not possible to achieve a sum of at most x after any number of removals, return -1.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Sum"
+    ],
+    "input_format": "An array of integers nums and an integer x.",
+    "output_format": "An integer representing the minimum time required to make the sum at most x, or -1 if it cannot be done.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "1 <= nums[i] <= 10^7",
+      "1 <= x <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 20, 30], x = 25",
+        "output": "2",
+        "explanation": "Remove elements 20 and 30 to make the sum 10, which is at most 25."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5], x = 15",
+        "output": "-1",
+        "explanation": "The initial sum is 15, and since we cannot achieve a sum less than 15 with the removals, we return -1."
+      },
+      {
+        "input": "nums = [5, 5, 5], x = 10",
+        "output": "1",
+        "explanation": "Remove 5 to make the sum 10, which is equal to x."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Sort the array to efficiently remove the largest elements first.",
+      "Use a greedy approach to minimize the sum quickly."
+    ],
+    "company": "Jane Street"
+  },
+  {
+    "question_id": "",
+    "title": "Add Two Integers",
+    "description": "Create a function that takes two integers and returns their sum. You can assume that the input integers are within the range of a 32-bit signed integer.",
+    "topic": "Math",
+    "subtopic": "Basic Arithmetic",
+    "tags": [
+      "Math",
+      "Arithmetic",
+      "Addition"
+    ],
+    "input_format": "Two integers, a and b, where -2^31 <= a, b <= 2^31 - 1.",
+    "output_format": "An integer representing the sum of a and b.",
+    "constraints": [
+      "-2^31 <= a, b <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "a = 3, b = 5",
+        "output": "8",
+        "explanation": "The sum of 3 and 5 is 8."
+      },
+      {
+        "input": "a = -2, b = 2",
+        "output": "0",
+        "explanation": "The sum of -2 and 2 is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider handling the edge cases related to integer overflow."
+    ],
+    "company": "Jane Street"
+  },
+  {
+    "question_id": "",
+    "title": "Stream of Characters",
+    "description": "You are given a stream of characters from a finite alphabet. Your task is to implement a class 'Stream' that supports two operations: 'insert' and 'query'. The 'insert' operation adds a character to the stream, and the 'query' operation checks if a given string is equal to the last 'k' characters of the stream. The 'query' operation should return true if it is equal, and false otherwise. Characters in the stream can only be queried after they have been inserted.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Stream"
+    ],
+    "input_format": "You will receive a series of 'insert' and 'query' operations to be performed on the stream.",
+    "output_format": "A boolean value for each 'query' operation indicating whether the query string matches the last 'k' characters of the stream.",
+    "constraints": [
+      "1 <= k <= 10^4",
+      "The total number of operations will not exceed 10^5.",
+      "Each character is a lowercase alphabetic letter."
+    ],
+    "examples": [
+      {
+        "input": "stream = new Stream(); stream.insert('a'); stream.insert('b'); stream.query('ab');",
+        "output": "true",
+        "explanation": "The last 2 characters of the stream are 'ab', which matches the query."
+      },
+      {
+        "input": "stream.insert('a'); stream.insert('b'); stream.query('ba');",
+        "output": "false",
+        "explanation": "The last 2 characters of the stream are 'ab', which does not match 'ba'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a list to maintain the order of characters in the stream.",
+      "You may want to use slicing to compare the last k characters."
+    ],
+    "company": "Jane Street"
+  },
+  {
+    "question_id": "",
+    "title": "Add Strings",
+    "description": "Given two non-negative integers num1 and num2 represented as strings, return their sum as a string. You must not use any built-in BigInteger library or convert the inputs to integer directly.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Mathematics",
+      "Addition"
+    ],
+    "input_format": "Two non-negative integers num1 and num2 represented as strings.",
+    "output_format": "A string representing the sum of num1 and num2.",
+    "constraints": [
+      "1 <= num1.length, num2.length <= 10^4",
+      "num1 and num2 consist of digits only."
+    ],
+    "examples": [
+      {
+        "input": "num1 = \"11\", num2 = \"123\"",
+        "output": "\"134\"",
+        "explanation": "11 + 123 = 134."
+      },
+      {
+        "input": "num1 = \"456\", num2 = \"77\"",
+        "output": "\"533\"",
+        "explanation": "456 + 77 = 533."
+      },
+      {
+        "input": "num1 = \"0\", num2 = \"0\"",
+        "output": "\"0\"",
+        "explanation": "0 + 0 = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how you would add numbers manually, digit by digit."
+    ],
+    "company": "Jane Street"
+  },
+  {
+    "question_id": "",
+    "title": "Design a Text Editor",
+    "description": "Implement a simple text editor with the following operations: insert, delete, undo, and redo. The text editor should allow users to input text and perform editing operations in the following way:\n\n1. Insert a character at the current cursor position.\n2. Delete the character before the cursor.\n3. Undo the last operation (insert or delete).\n4. Redo the previously undone operation.\n\nThe text editor should maintain the current cursor position and allow for multiple undo and redo operations. If an undo is performed without any prior operations, it should do nothing. Similarly, if a redo is called without a preceding undo, it should also do nothing.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Text Editor"
+    ],
+    "input_format": "A list of operations, where each operation is one of: 'insert char', 'delete', 'undo', 'redo'. The character in 'insert char' is a single uppercase or lowercase letter.",
+    "output_format": "The final state of the text in the editor after performing all operations.",
+    "constraints": [
+      "1 <= operations.length <= 10^4",
+      "Each operation is valid and follows the format specified."
+    ],
+    "examples": [
+      {
+        "input": "operations = ['insert a', 'insert b', 'delete', 'undo', 'undo']",
+        "output": "a",
+        "explanation": "After inserting 'a' and 'b', and deleting the last character, we undo twice to get back 'a'."
+      },
+      {
+        "input": "operations = ['insert x', 'insert y', 'insert z', 'delete', 'redo', 'undo']",
+        "output": "xy",
+        "explanation": "Insert 'x', 'y', 'z', delete 'z', redo adds 'z' back, and undo removes 'z' again."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a stack for undo and redo operations.",
+      "Keep track of the cursor position and the text as a mutable structure."
+    ],
+    "company": "Jane Street"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Common Prefix",
+    "description": "Write a function to find the longest common prefix string among an array of strings. If there is no common prefix, return an empty string. Common prefix is the longest prefix that is common to all strings in the array.",
+    "topic": "String",
+    "subtopic": "Prefix",
+    "tags": [
+      "String",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A string representing the longest common prefix. If no common prefix exists, return an empty string.",
+    "constraints": [
+      "1 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "All strings consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\",\"flow\",\"flight\"]",
+        "output": "\"fl\"",
+        "explanation": "The longest common prefix among the strings is 'fl'."
+      },
+      {
+        "input": "strs = [\"dog\",\"racecar\",\"car\"]",
+        "output": "\"\"",
+        "explanation": "There is no common prefix among the strings."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "\"a\"",
+        "explanation": "The only string is 'a', so the longest common prefix is 'a'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider vertical scanning of characters.",
+      "Check each character position across all strings.",
+      "Stop if a mismatch is found."
+    ],
+    "company": "Jane Street"
+  },
+  {
+    "question_id": "",
+    "title": "Evaluate Division",
+    "description": "You are given a list of equations in the form of 'A / B = k', where 'A' and 'B' are variables represented as strings, and 'k' is a real number (float). You also have a list of queries, each query is just a division query of the form 'C / D' where 'C' and 'D' are variables. Your task is to evaluate each query based on the provided equations. If a query cannot be evaluated, return -1. The result for each query should be a real number (float) with a precision of 5 decimal places.",
+    "topic": "Graph",
+    "subtopic": "Union Find",
+    "tags": [
+      "Graph",
+      "Union Find",
+      "Math"
+    ],
+    "input_format": "An array of equations with string pairs and an array of queries.",
+    "output_format": "An array of floats representing the results of each query.",
+    "constraints": [
+      "The number of equations and queries does not exceed 100.",
+      "Each variable is a lowercase English letter.",
+      "All divisions are guaranteed to be non-zero."
+    ],
+    "examples": [
+      {
+        "input": {
+          "equations": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "b",
+              "c"
+            ]
+          ],
+          "values": [
+            2.0,
+            3.0
+          ],
+          "queries": [
+            [
+              "a",
+              "c"
+            ],
+            [
+              "b",
+              "a"
+            ],
+            [
+              "b",
+              "d"
+            ],
+            [
+              "x",
+              "y"
+            ]
+          ]
+        },
+        "output": [
+          6.0,
+          0.5,
+          -1.0,
+          -1.0
+        ],
+        "explanation": "For 'a / c', it can be calculated as a/b * b/c = 2.0 * 3.0 = 6.0. For 'b / a', it is 1/(a/b) = 1/2.0 = 0.5. Queries 'b / d' and 'x / y' cannot be evaluated since d and y are not in the equations."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a graph to represent the relationships between variables.",
+      "Consider using depth-first search (DFS) to find the values."
+    ],
+    "company": "Jane Street"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the height of bars in a histogram, compute how much water it can trap after raining. The water trapped above a bar is determined by the shortest of the tallest bars on the left and right, subtracting the height of the current bar.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers representing the heights of bars.",
+    "output_format": "An integer representing the total amount of water trapped.",
+    "constraints": [
+      "1 <= height.length <= 2 * 10^4",
+      "0 <= height[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water trapped is 6 units."
+      },
+      {
+        "input": "height = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water trapped is 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about how you can use two pointers to find the boundary walls.",
+      "Consider calculating water trapped at each position using precomputed boundaries."
+    ],
+    "company": "Jane Street"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Orders in the Backlog",
+    "description": "You are given two lists representing orders in a backlog. The first list contains the completed orders, and the second list contains the pending orders. Each order is represented by an integer where a positive integer indicates an order being placed, and a negative integer indicates an order being canceled. Your task is to determine the number of orders currently in the backlog after considering both completed and pending orders. If an order is canceled, it should be subtracted from the total count of orders in the backlog.",
+    "topic": "Array",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Array",
+      "Counting",
+      "Orders"
+    ],
+    "input_format": "Two lists of integers: completedOrders and pendingOrders.",
+    "output_format": "An integer representing the number of orders still in the backlog.",
+    "constraints": [
+      "0 <= completedOrders.length, pendingOrders.length <= 1000",
+      "-1000 <= completedOrders[i], pendingOrders[j] <= 1000",
+      "Each completed order and pending order is unique."
+    ],
+    "examples": [
+      {
+        "input": {
+          "completedOrders": [
+            1,
+            2,
+            -1
+          ],
+          "pendingOrders": [
+            3,
+            4,
+            -2
+          ]
+        },
+        "output": "4",
+        "explanation": "Initial orders are 1, 2, 3, 4. Order -1 cancels order 1, and order -2 cancels order 2. Finally, orders remaining are 3 and 4, totaling 4 orders."
+      },
+      {
+        "input": {
+          "completedOrders": [],
+          "pendingOrders": [
+            -1,
+            -2
+          ]
+        },
+        "output": "0",
+        "explanation": "All pending orders are canceled, hence there are 0 orders in the backlog."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Track positive orders as additions and negative orders as subtractions.",
+      "Consider using a count variable to manage the total orders."
+    ],
+    "company": "Jane Street"
+  }
+]

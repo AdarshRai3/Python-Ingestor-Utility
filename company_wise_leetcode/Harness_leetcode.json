@@ -1,0 +1,54 @@
+[
+  {
+    "question_id": "",
+    "title": "Simplify Path",
+    "description": "Given a string representing an absolute path for a file (Unix-style), simplify it. The path may contain the special elements '.' (current directory), '..' (parent directory), and multiple consecutive '/' characters. Your task is to return the simplified canonical path in a standardized format.",
+    "topic": "String",
+    "subtopic": "Path Manipulation",
+    "tags": [
+      "String",
+      "Path",
+      "Canonical"
+    ],
+    "input_format": "A string 'path' representing the absolute path in Unix-style.",
+    "output_format": "A string representing the simplified canonical path.",
+    "constraints": [
+      "1 <= path.length <= 3000",
+      "path consists of English letters, digits, '/', '.', and '..'.",
+      "The given path is always a valid absolute path."
+    ],
+    "examples": [
+      {
+        "input": "/home/",
+        "output": "/home",
+        "explanation": "The path '/home/' is simplified to '/home'."
+      },
+      {
+        "input": "/../",
+        "output": "/",
+        "explanation": "The path '/../' leads to the root directory, which is simply '/'."
+      },
+      {
+        "input": "/home//foo/",
+        "output": "/home/foo",
+        "explanation": "The path '/home//foo/' simplifies to '/home/foo'."
+      },
+      {
+        "input": "/a/./b/../../c/",
+        "output": "/c",
+        "explanation": "The path '/a/./b/../../c/' can be simplified to '/c'."
+      },
+      {
+        "input": "/a/b/c/../../../../d/",
+        "output": "/d",
+        "explanation": "The path '/a/b/c/../../../../d/' reduces to '/d'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to manage the components of the path.",
+      "Pay attention to how you handle '.' and '..' components."
+    ],
+    "company": "Harness"
+  }
+]

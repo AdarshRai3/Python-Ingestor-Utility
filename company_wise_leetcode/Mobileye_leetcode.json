@@ -1,0 +1,78 @@
+[
+  {
+    "question_id": "",
+    "title": "Copy List with Random Pointer",
+    "description": "A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null. You need to create a deep copy of the list. Each node in the new list should point to a new node in the copy of the list, and all random pointers should be correctly replicated.",
+    "topic": "Linked List",
+    "subtopic": "Deep Copy",
+    "tags": [
+      "Linked List",
+      "Copy",
+      "Random Pointer"
+    ],
+    "input_format": "The head of the original linked list.",
+    "output_format": "The head of the new deep-copied linked list.",
+    "constraints": [
+      "The number of nodes in the linked list is in the range [0, 1000].",
+      "Node.val is a unique integer in the range [-10^4, 10^4].",
+      "The random pointer for any node in the linked list is either null or pointing to some node in the linked list."
+    ],
+    "examples": [
+      {
+        "input": "Input list: head = [[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "output": "Output list: [[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "explanation": "Each node in the output list is a clone of the corresponding input node, with correct random pointers."
+      },
+      {
+        "input": "Input list: head = [[1,1],[2,1]]",
+        "output": "Output list: [[1,1],[2,1]]",
+        "explanation": "The copied nodes reference the correct random pointers in the copied list."
+      },
+      {
+        "input": "Input list: head = []",
+        "output": "Output list: []",
+        "explanation": "An empty list should return an empty list."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a HashMap to store mappings from original nodes to their copies.",
+      "Consider creating the new nodes first before assigning the random pointers.",
+      "Iterate twice over the list: once for cloning, once for connecting random pointers."
+    ],
+    "company": "Mobileye"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a least recently used (LRU) cache. It should support the following operations: get and put. The get operation retrieves the value of the key if the key exists in the cache, otherwise returns -1. The put operation inserts or updates the value of the key. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Cache",
+      "HashMap",
+      "LinkedList"
+    ],
+    "input_format": "You will initiate the cache with a capacity. The operations are given as a list, where 'put(key, value)' means to insert or update a key-value pair, and 'get(key)' means to retrieve the value for the key.",
+    "output_format": "The output will consist of the return values from the 'get' operations, in order of their occurrence.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^5",
+      "The operations will be called with a total of at most 10^4 times."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache cache = new LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1,-1,3,4]",
+        "explanation": "After inserting keys 1 and 2, accessing key 1 returns 1. Inserting key 3 evicts key 2. Accessing key 2 returns -1. Inserting key 4 evicts key 1. Finally, accessing keys 1, 3, and 4 return -1, 3, and 4 respectively."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Implement a combination of doubly linked list and a hash map.",
+      "The linked list will maintain the order of access, while the hash map will allow for O(1) access to any cached item."
+    ],
+    "company": "Mobileye"
+  }
+]

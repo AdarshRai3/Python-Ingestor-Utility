@@ -1,0 +1,201 @@
+[
+  {
+    "question_id": "",
+    "title": "Scramble String",
+    "description": "Given two strings s1 and s2, write a function to determine if s2 is a scrambled string of s1. A scrambled string is formed by recursively swapping non-empty substrings of a string. For example, 'great' can be transformed to 'rgeat' by swapping 'gr' and 'eat'.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Recursion"
+    ],
+    "input_format": "Two strings s1 and s2, both of length n.",
+    "output_format": "A boolean value indicating whether s2 is a scrambled string of s1.",
+    "constraints": [
+      "1 <= n <= 30",
+      "s1 and s2 consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s1 = 'great', s2 = 'rgeat'",
+        "output": "true",
+        "explanation": "'rgeat' is a scrambled string of 'great'."
+      },
+      {
+        "input": "s1 = 'abcde', s2 = 'caebd'",
+        "output": "false",
+        "explanation": "'caebd' is not a scrambled string of 'abcde'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the character counts in both strings.",
+      "Use a recursive approach to break down the problem."
+    ],
+    "company": "Darwinbox"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order. The spiral order is defined as traversing the matrix starting from the outermost elements and moving inward in a clockwise direction.",
+    "topic": "Matrix",
+    "subtopic": "Spiral Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Spiral"
+    ],
+    "input_format": "A 2D array of integers representing the matrix.",
+    "output_format": "A list of integers representing the elements of the matrix in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "m * n <= 10^6",
+      "0 <= matrix[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The elements in the spiral order are [1, 2, 3] from the first row, [6, 9] from the last column, [8, 7] from the last row, and [4, 5] from the middle row."
+      },
+      {
+        "input": "matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]",
+        "output": "[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]",
+        "explanation": "The traversal begins from the top left and circles around the outer elements before moving inward."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a loop that delineates the boundaries of the spiral.",
+      "Use variables to keep track of the boundaries (top, bottom, left, right)."
+    ],
+    "company": "Darwinbox"
+  },
+  {
+    "question_id": "",
+    "title": "Majority Element II",
+    "description": "Given an integer array of size n, find all elements that appear more than n/3 times. You may return the answer in any order. The majority element is defined as an element that appears more than n/3 times in the array.",
+    "topic": "Array",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Array",
+      "Hash Map",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing the elements that appear more than n/3 times.",
+    "constraints": [
+      "1 <= nums.length <= 5 * 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 3]",
+        "output": "[3]",
+        "explanation": "The only number that appears more than n/3 times is 3."
+      },
+      {
+        "input": "nums = [1, 1, 1, 3, 3, 2, 2, 2]",
+        "output": "[1, 2]",
+        "explanation": "1 appears 3 times and 2 appears 3 times, both greater than n/3."
+      },
+      {
+        "input": "nums = [5, 5, 5, 2, 2, 1, 1, 1]",
+        "output": "[5]",
+        "explanation": "5 appears 3 times, which is greater than n/3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to count occurrences.",
+      "Observe that at most two numbers can be candidates."
+    ],
+    "company": "Darwinbox"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Great Partitions",
+    "description": "Given an array of integers, you need to find the number of ways to partition the array into two subsets such that the difference of their sums is equal to a given target. A subset is considered 'great' if it can achieve the defined sum difference. Your task is to implement a function that returns the count of such partitions.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum",
+    "tags": [
+      "Dynamic Programming",
+      "Subset Sum",
+      "Partition"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An integer representing the number of valid great partitions.",
+    "constraints": [
+      "1 <= nums.length <= 200",
+      "0 <= nums[i] <= 1000",
+      "-1000 <= target <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2, 3], target = 1",
+        "output": "3",
+        "explanation": "The partitions (1, 2), (1, 3) and (2, 1, 3) achieve the target difference of 1."
+      },
+      {
+        "input": "nums = [1], target = 1",
+        "output": "1",
+        "explanation": "There is only one valid partition: (1) and an empty set achieving the target difference of 1."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4], target = 0",
+        "output": "2",
+        "explanation": "The valid partitions achieving a zero difference are (1, 2) & (3) and (1) & (2, 3, 4)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about using dynamic programming to track the sums.",
+      "Consider both possibilities for each number: including or excluding it from a subset.",
+      "Make sure to manage the target offset within the allowed range."
+    ],
+    "company": "Darwinbox"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Size Subarray Sum",
+    "description": "Given an array of positive integers nums and a positive integer target, return the minimal length of a contiguous subarray of which the sum is greater than or equal to target. If there is no such subarray, return 0 instead.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Two Pointers"
+    ],
+    "input_format": "An array of positive integers nums and an integer target.",
+    "output_format": "An integer representing the minimal length of the contiguous subarray with a sum >= target, or 0 if no such subarray exists.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^4",
+      "1 <= target <= 10^8"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 2, 4, 3], target = 7",
+        "output": "2",
+        "explanation": "The subarray [4,3] has the minimal length of 2 and a sum of 7."
+      },
+      {
+        "input": "nums = [1, 4, 4], target = 4",
+        "output": "1",
+        "explanation": "The subarray [4] has the minimal length of 1 and a sum of 4."
+      },
+      {
+        "input": "nums = [1, 1, 1, 1, 1, 1, 1, 1], target = 11",
+        "output": "0",
+        "explanation": "There is no subarray that can sum up to 11."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "Maintain a running sum and expand the window until the sum is adequate."
+    ],
+    "company": "Darwinbox"
+  }
+]

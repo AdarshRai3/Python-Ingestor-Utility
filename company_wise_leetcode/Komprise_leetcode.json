@@ -1,0 +1,75 @@
+[
+  {
+    "question_id": "",
+    "title": "Time Needed to Buy Tickets",
+    "description": "You are given an array of integers representing the number of people in line at each ticket counter, as well as an integer representing the time each person takes to buy a ticket. Your task is to determine the total time needed for all people in line to buy their tickets. You should use the strategy of serving the counter with the smallest number of people first to minimize the total time.",
+    "topic": "Greedy",
+    "subtopic": "Queue",
+    "tags": [
+      "Greedy",
+      "Queue",
+      "Simulation"
+    ],
+    "input_format": "An array of integers people representing the number of people in line at each counter and an integer time representing the time each person takes to buy a ticket.",
+    "output_format": "An integer representing the total time needed for all people to buy their tickets.",
+    "constraints": [
+      "1 <= people.length <= 100",
+      "1 <= people[i] <= 1000",
+      "1 <= time <= 100"
+    ],
+    "examples": [
+      {
+        "input": "people = [2, 3, 1], time = 2",
+        "output": "6",
+        "explanation": "The first counter serves 1 person in 2 minutes, the second counter serves 2 people in 4 minutes, and the third counter serves 3 people in 6 minutes. The total time is max(2, 4, 6) = 6."
+      },
+      {
+        "input": "people = [1, 4, 3], time = 1",
+        "output": "4",
+        "explanation": "The first counter serves 1 person in 1 minute, the second counter serves 4 people in 4 minutes, and the third counter serves 3 people in 3 minutes. The total time is max(1, 4, 3) = 4."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how many people each counter can serve simultaneously.",
+      "Think about sorting the counters by the number of people in line."
+    ],
+    "company": "Komprise"
+  },
+  {
+    "question_id": "",
+    "title": "Candy",
+    "description": "Alice is a teacher and she wants to distribute candies to her students. The students are arranged in a line, and each student has a rating. Alice wants to give at least one candy to each student, but students with a higher rating than their neighbors should receive more candies than those neighbors. Given an array of ratings, return the minimum number of candies Alice must give to her students.",
+    "topic": "Greedy",
+    "subtopic": "Cumulative Sum",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Cumulative Sum"
+    ],
+    "input_format": "An integer array ratings where ratings[i] represents the rating of the ith student.",
+    "output_format": "An integer representing the minimum number of candies required.",
+    "constraints": [
+      "1 <= ratings.length <= 2 * 10^4",
+      "0 <= ratings[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "ratings = [1, 0, 2]",
+        "output": "5",
+        "explanation": "Given the ratings, Alice can distribute candies as follows: [2, 1, 2]. Total = 2 + 1 + 2 = 5."
+      },
+      {
+        "input": "ratings = [1, 2, 2]",
+        "output": "4",
+        "explanation": "Alice can distribute candies as follows: [1, 2, 1]. Total = 1 + 2 + 1 = 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the relationship between ratings of adjacent students for candy distribution.",
+      "You may need to traverse the array multiple times to satisfy all conditions."
+    ],
+    "company": "Komprise"
+  }
+]

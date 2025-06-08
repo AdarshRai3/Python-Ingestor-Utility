@@ -1,0 +1,224 @@
+[
+  {
+    "question_id": "",
+    "title": "Happy Number",
+    "description": "A number is called a happy number if, after repeatedly replacing it with the sum of the squares of its digits, the number eventually equals 1. If it loops endlessly in a cycle that does not include 1, then it is not a happy number. Write a function that determines whether a given number is a happy number.",
+    "topic": "Mathematics",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Math",
+      "Number Theory",
+      "Simulation"
+    ],
+    "input_format": "An integer n representing the number to check.",
+    "output_format": "A boolean value, true if n is a happy number, false otherwise.",
+    "constraints": [
+      "1 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 19",
+        "output": "true",
+        "explanation": "The process is as follows: 1^2 + 9^2 = 1 + 81 = 82, 8^2 + 2^2 = 64 + 4 = 68, 6^2 + 8^2 = 36 + 64 = 100, 1^2 + 0^2 + 0^2 = 1. Hence, 19 is a happy number."
+      },
+      {
+        "input": "n = 2",
+        "output": "false",
+        "explanation": "The process is as follows: 2^2 = 4, 4^2 = 16, 1^2 + 6^2 = 1 + 36 = 37, 3^2 + 7^2 = 9 + 49 = 58, 5^2 + 8^2 = 25 + 64 = 89, and it loops endlessly without reaching 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a set to track numbers you've seen before.",
+      "If a number is already in the set, it means there's a loop."
+    ],
+    "company": "Jump Trading"
+  },
+  {
+    "question_id": "",
+    "title": "Check If It Is a Good Array",
+    "description": "Given an array of integers, you need to determine if it is a 'good array'. An array is considered 'good' if you can make all of its elements equal to zero by performing a series of operations. The operations allowed involve selecting any two indices, i and j, and performing the following operation: nums[i] = nums[i] - nums[j] or nums[j] = nums[j] - nums[i]. Your task is to check whether it is possible to reduce all elements of the array to zero using this operation.",
+    "topic": "Math",
+    "subtopic": "GCD",
+    "tags": [
+      "Math",
+      "Array",
+      "GCD"
+    ],
+    "input_format": "An array of integers nums where 1 <= nums.length <= 100 and -10^9 <= nums[i] <= 10^9.",
+    "output_format": "A boolean value: return true if it is possible to reduce all elements to zero, otherwise return false.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 6, 9]",
+        "output": "true",
+        "explanation": "The GCD of 3, 6, and 9 is 3, and we can repeatedly subtract 3 from each element to make them all zero."
+      },
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "false",
+        "explanation": "The GCD of 1, 2, and 3 is 1. We cannot reduce these numbers to 0 using the allowed operations."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how the GCD (Greatest Common Divisor) relates to the possibility of reducing the numbers to zero.",
+      "If the GCD of all elements is greater than 1, you cannot reduce them all to zero."
+    ],
+    "company": "Jump Trading"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock IV",
+    "description": "You are given an integer array prices where prices[i] is the price of a given stock on the i-th day, and an integer k. You want to maximize your profit by making at most k transactions. Note that you cannot engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again). Return the maximum profit you can achieve after completing at most k transactions. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Stock Buy and Sell",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array prices and an integer k.",
+    "output_format": "An integer representing the maximum profit.",
+    "constraints": [
+      "0 <= prices.length <= 1000",
+      "0 <= prices[i] <= 1000",
+      "0 <= k <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "prices = [2,4,1], k = 2",
+        "output": "2",
+        "explanation": "Buy on day 0 (price = 2) and sell on day 1 (price = 4). Profit = 4 - 2 = 2."
+      },
+      {
+        "input": "prices = [3,2,6,5,0,3], k = 2",
+        "output": "7",
+        "explanation": "Buy on day 1 (price = 2) and sell on day 2 (price = 6). Then buy on day 4 (price = 0) and sell on day 5 (price = 3). Profit = (6 - 2) + (3 - 0) = 7."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to solve the problem.",
+      "You can use a 2D array to track profits at different states."
+    ],
+    "company": "Jump Trading"
+  },
+  {
+    "question_id": "",
+    "title": "Subtree of Another Tree",
+    "description": "Given two binary trees, root and subRoot, return true if there is a subtree of root with the same structure and node values as subRoot. A subtree of a tree is a tree that consists of a node in the tree and all of this node's descendants. The Tree could also be an empty tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Recursion"
+    ],
+    "input_format": "Two binary tree roots: root and subRoot, where each node is represented by a structure containing a value and pointers to left and right child nodes.",
+    "output_format": "A boolean value indicating whether subRoot is a subtree of root.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 2000].",
+      "-10^4 <= Node.val <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "root = [3,4,5,1,2], subRoot = [4,1,2]",
+        "output": "true",
+        "explanation": "The tree starting with the node with value 4 in 'root' matches exactly with 'subRoot'."
+      },
+      {
+        "input": "root = [3,4,5,1,2,null,null,0], subRoot = [4,1,1]",
+        "output": "false",
+        "explanation": "There is no subtree of 'root' that matches 'subRoot'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You can use a recursive function to check if two trees are equal.",
+      "First, check if the current node matches the root of 'subRoot'."
+    ],
+    "company": "Jump Trading"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Combination With Bitwise AND Greater Than Zero",
+    "description": "You are given an array of integers. Your task is to find the maximum size of a combination of elements such that their bitwise AND is greater than zero. A combination is defined as any selection of elements from the array, and the bitwise AND operation on a combination is the result of performing the AND operation on all selected elements simultaneously. Return the size of the largest combination that satisfies this condition.",
+    "topic": "Array",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Array",
+      "Bit Manipulation",
+      "Combination"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the size of the largest combination with a bitwise AND greater than zero.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "0 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5]",
+        "output": "3",
+        "explanation": "The largest combination is [2, 3, 4] or [1, 3, 5], both with a bitwise AND greater than 0 and size 3."
+      },
+      {
+        "input": "nums = [0, 0, 0]",
+        "output": "0",
+        "explanation": "No combination can have a bitwise AND greater than 0 as all elements are 0."
+      },
+      {
+        "input": "nums = [7, 5, 6, 3]",
+        "output": "4",
+        "explanation": "All elements can be combined to produce a non-zero AND, hence size is 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the binary representation of numbers.",
+      "Focus on the counts of bits set to 1 in positions.",
+      "Using bitwise operations may help simplify the problem."
+    ],
+    "company": "Jump Trading"
+  },
+  {
+    "question_id": "",
+    "title": "Permutation Sequence",
+    "description": "Given a sequence of integers from 1 to n, find the kth permutation sequence in lexicographic order. The function should return the sequence as a string of numbers without any spaces in between.",
+    "topic": "Backtracking",
+    "subtopic": "Permutations",
+    "tags": [
+      "Backtracking",
+      "Permutations",
+      "Math"
+    ],
+    "input_format": "Two integers n and k, where 1 <= n <= 9 and 1 <= k <= n!.",
+    "output_format": "A string representing the kth permutation sequence.",
+    "constraints": [
+      "1 <= n <= 9",
+      "1 <= k <= n!"
+    ],
+    "examples": [
+      {
+        "input": "n = 3, k = 3",
+        "output": "213",
+        "explanation": "The permutations of [1, 2, 3] are [123, 132, 213, 231, 312, 321]. The 3rd permutation is '213'."
+      },
+      {
+        "input": "n = 4, k = 9",
+        "output": "2314",
+        "explanation": "The permutations in order are [1234, 1243, 1324, 1342, 1423, 1432, 2134, 2143, 2314]. The 9th permutation is '2314'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Factorial numbers can be useful for determining the number of permutations.",
+      "Think about how to determine which number should be in each position of the result."
+    ],
+    "company": "Jump Trading"
+  }
+]

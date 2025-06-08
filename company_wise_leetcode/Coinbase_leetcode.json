@@ -1,0 +1,573 @@
+[
+  {
+    "question_id": "",
+    "title": "Simple Bank System",
+    "description": "Design a simple bank system that supports the following operations: creating an account, depositing money, withdrawing money, and checking account balance. Implement the Bank class with the following methods: \n\n1. `Bank(long[] balance)`: Initializes the bank with a list of accounts. Each account has a unique account number starting from 1 to n.\n2. `boolean transfer(int sender, int receiver, long amount)`: Transfer money from account `sender` to account `receiver`. Returns true if the transaction is successful; otherwise, returns false.\n3. `boolean deposit(int account, long amount)`: Deposit money into account `account`. Returns true if the operation is successful; otherwise, returns false.\n4. `boolean withdraw(int account, long amount)`: Withdraw money from account `account`. Returns true if the operation is successful; otherwise, returns false.\n5. `long getBalance(int account)`: Fetch the current balance of account `account`.\n\nYou must ensure that the operations are performed in constant time.",
+    "topic": "Design",
+    "subtopic": "OOP",
+    "tags": [
+      "Design",
+      "OOP",
+      "Banking System"
+    ],
+    "input_format": "A long array representing the initial balances of accounts, where balance[i] represents the balance of the i-th account.",
+    "output_format": "Return a boolean for each operation indicating if it was successful or not.",
+    "constraints": [
+      "1 <= balance.length <= 1000",
+      "0 <= balance[i] <= 10^6",
+      "1 <= sender, receiver, account <= balance.length",
+      "0 <= amount <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "bank = new Bank([10, 20, 30])\nbank.withdraw(1, 10)\nbank.deposit(2, 5)\nbank.transfer(1, 2, 5)\nbank.getBalance(2)",
+        "output": "15",
+        "explanation": "After operations are performed, account 2 will have a balance of 15."
+      },
+      {
+        "input": "bank = new Bank([100, 200, 300])\nbank.transfer(1, 2, 250)\nbank.deposit(2, 100)\nbank.withdraw(3, 200)\nbank.getBalance(3)",
+        "output": "100",
+        "explanation": "After performing the operations, account 3 will have a balance of 100."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use an array to store the balance of each account.",
+      "Ensure to check for sufficient funds when withdrawing or transferring."
+    ],
+    "company": "Coinbase"
+  },
+  {
+    "question_id": "",
+    "title": "Zigzag Iterator",
+    "description": "Given two integer arrays v1 and v2, this problem requires you to return a single array that combines the elements of both arrays in a zigzag pattern. Start by taking one element from v1, then one from v2, and continue this process until all elements from both arrays are included. If one array is longer than the other, include the remaining elements from the longer array at the end.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Merging",
+      "Iterator"
+    ],
+    "input_format": "Two integer arrays v1 and v2.",
+    "output_format": "An array of integers representing the zigzag merged output.",
+    "constraints": [
+      "0 <= v1.length, v2.length <= 1000",
+      "-10^5 <= v1[i], v2[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "v1 = [1, 2], v2 = [3, 4, 5, 6]",
+        "output": "[1, 3, 2, 4, 5, 6]",
+        "explanation": "The zigzag pattern is formed by taking elements alternately from v1 and v2."
+      },
+      {
+        "input": "v1 = [1, 3, 5], v2 = [2, 4]",
+        "output": "[1, 2, 3, 4, 5]",
+        "explanation": "After alternating, v1 has one extra element which is appended at the end."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a loop to iterate through both arrays.",
+      "Keep track of which array's element to add next."
+    ],
+    "company": "Coinbase"
+  },
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value data structure that can store multiple values for the same key at different timestamps. The data structure should support the following operations:\n\n1. `set(key: String, value: String, timestamp: Integer)`: Store the value `value` associated with the key `key` at the given `timestamp`.\n2. `get(key: String, timestamp: Integer)`: Retrieve the value associated with the `key` that was stored at the largest `timestamp` less than or equal to the given `timestamp`. If there is no such timestamp, return an empty string.",
+    "topic": "Data Structures",
+    "subtopic": "Design",
+    "tags": [
+      "HashMap",
+      "TreeMap",
+      "Data Structure"
+    ],
+    "input_format": "The input consists of a sequence of operations followed by their respective parameters.",
+    "output_format": "For each `get` operation, output the value retrieved or an empty string if no valid timestamp exists.",
+    "constraints": [
+      "1 <= key.length, value.length <= 100",
+      "1 <= timestamp <= 10^7",
+      "The total number of operations will not exceed 2 * 10^4."
+    ],
+    "examples": [
+      {
+        "input": [
+          "set('foo', 'bar', 1)",
+          "set('foo', 'bar2', 4)",
+          "get('foo', 1)",
+          "get('foo', 3)",
+          "get('foo', 4)",
+          "get('foo', 5)"
+        ],
+        "output": [
+          "",
+          "bar",
+          "bar2",
+          "bar2"
+        ],
+        "explanation": "At timestamp 1, 'bar' is set. At timestamp 4, 'bar2' is set. When we get at timestamp 3, the last set value is 'bar'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider storing values in a sorted data structure.",
+      "Use binary search to efficiently find the right timestamp."
+    ],
+    "company": "Coinbase"
+  },
+  {
+    "question_id": "",
+    "title": "Decode the Message",
+    "description": "You are given a string message containing digits ranging from 1 to 26, where each digit represents a letter ('1' corresponds to 'a', '2' to 'b', ..., '26' to 'z'). Your task is to decode the message and return the total number of ways you can decode it. A valid decoding is defined as either a single digit mapping to a character or a pair of digits mapping to a character, as long as they are within the range of 1 to 26.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Decoding Ways",
+    "tags": [
+      "Dynamic Programming",
+      "Recursion",
+      "String"
+    ],
+    "input_format": "A string message consisting of digits (1-9 and 0-9).",
+    "output_format": "An integer representing the total number of ways to decode the message.",
+    "constraints": [
+      "1 <= message.length <= 100",
+      "message[i] != '0' for valid decodings"
+    ],
+    "examples": [
+      {
+        "input": "message = \"12\"",
+        "output": "2",
+        "explanation": "The message '12' can be decoded as 'ab' (1 2) or 'l' (12), hence there are 2 ways to decode it."
+      },
+      {
+        "input": "message = \"226\"",
+        "output": "3",
+        "explanation": "The message '226' can be decoded as 'bbf' (2 2 6), 'bz' (2 26), or 'vf' (22 6), hence there are 3 ways to decode it."
+      },
+      {
+        "input": "message = \"06\"",
+        "output": "0",
+        "explanation": "The message '06' cannot be decoded because '0' is not a valid single digit decoding."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using dynamic programming to store the number of ways to decode each substring.",
+      "Check the last one or two characters to determine valid decodings at each step."
+    ],
+    "company": "Coinbase"
+  },
+  {
+    "question_id": "",
+    "title": "Design In-Memory File System",
+    "description": "Implement a file system that supports the following operations: `createPath(path: str, value: int)`, which creates a new path (including all necessary directories) and assigns the value to the leaf node; and `get(path: str)`, which returns the value of the leaf node at the given path. The path will be represented as a string where each directory and file is separated by a `/`. If a path does not exist, return -1. If an operation cannot be completed, return -1.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "File System"
+    ],
+    "input_format": "A string representing the path and an integer value for the createPath operation.",
+    "output_format": "An integer representing the value at the given path or -1 if the path does not exist.",
+    "constraints": [
+      "The number of `createPath` and `get` calls will be at most 10^4.",
+      "Path strings are valid and consist of letters, digits, and `/` characters. They will not begin or end with a `/`."
+    ],
+    "examples": [
+      {
+        "input": "createPath(\"/a\", 1)",
+        "output": "1",
+        "explanation": "Creating the path /a with value 1 is successful."
+      },
+      {
+        "input": "createPath(\"/a/b\", 2)",
+        "output": "-1",
+        "explanation": "Path /a/b cannot be created since /a does not exist."
+      },
+      {
+        "input": "createPath(\"/a/c\", 3)",
+        "output": "-1",
+        "explanation": "Path /a/c cannot be created since /a does not exist."
+      },
+      {
+        "input": "get(\"/a\")",
+        "output": "1",
+        "explanation": "Path /a exists and its value is 1."
+      },
+      {
+        "input": "get(\"/a/b\")",
+        "output": "-1",
+        "explanation": "Path /a/b does not exist, so return -1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a nested structure to represent directories and files.",
+      "Ensure to handle creation of intermediate directories correctly.",
+      "A dictionary can be useful to represent the file system."
+    ],
+    "company": "Coinbase"
+  },
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a maximum line length, format the text so that each line has exactly maxWidth characters. Lines should be fully justified, meaning that extra spaces should be distributed as evenly as possible among the words. If the number of spaces cannot be evenly distributed, the extra spaces should be distributed from left to right. The last line should be left-justified and no extra space is inserted between words. Return a list of strings representing the fully justified text.",
+    "topic": "String",
+    "subtopic": "Text Formatting",
+    "tags": [
+      "String",
+      "Justification",
+      "Formatting"
+    ],
+    "input_format": "An array of strings words and an integer maxWidth.",
+    "output_format": "A list of strings representing the justified text.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 20",
+      "1 <= maxWidth <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "This",
+            "is",
+            "an",
+            "example",
+            "of",
+            "text",
+            "justification."
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "This    is    an",
+          "example  of text",
+          "justification."
+        ],
+        "explanation": "The first line contains four words with spaces distributed to fit 16 characters. The second line also fits perfectly. The last line is left-justified."
+      },
+      {
+        "input": {
+          "words": [
+            "What",
+            "must",
+            "be",
+            "acknowledged",
+            "shall",
+            "be"
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "What   must   be",
+          "acknowledged  ",
+          "shall be        "
+        ],
+        "explanation": "The first line distributes spaces to fit 16 characters with rooms filled from left to right. The last line is left-justified without extra spaces."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "You'll need to know how to count spaces and adjust them properly.",
+      "Consider edge cases, such as the last line of text.",
+      "Think about how you can distribute spaces evenly across the line."
+    ],
+    "company": "Coinbase"
+  },
+  {
+    "question_id": "",
+    "title": "Design File System",
+    "description": "You are tasked with designing a simplified file system that can store files and directories. A file can only reside within a directory, and each directory can contain any number of files and subdirectories. Implement the FileSystem class with the following methods: \n\n- `create(path: str) -> bool`: Creates a file or directory at the specified path. It returns `true` if the creation is successful, otherwise it returns `false` if a file or directory already exists. Paths are defined using slashes `/`, and the path must not be empty. \n\n- `delete(path: str) -> bool`: Deletes a file or directory at the specified path. It returns `true` if the deletion is successful, otherwise it returns `false` if the file or directory does not exist. \n\n- `list(path: str) -> List[str]`: Lists all files and directories under the specified path in lexicographical order. If the path does not exist, return an empty list.",
+    "topic": "Design",
+    "subtopic": "File System",
+    "tags": [
+      "Design",
+      "File System",
+      "Data Structure"
+    ],
+    "input_format": "The methods accept a string `path` as input.",
+    "output_format": "For `create` and `delete`, return a boolean value. For `list`, return a list of strings.",
+    "constraints": [
+      "1 <= path.length <= 50",
+      "The path must not have consecutive slashes and cannot start or end with a slash.",
+      "Each component of the path must be non-empty."
+    ],
+    "examples": [
+      {
+        "input": "fs.create('/a')",
+        "output": "true",
+        "explanation": "A directory 'a' was created successfully."
+      },
+      {
+        "input": "fs.create('/a/b')",
+        "output": "true",
+        "explanation": "A directory 'b' was created under 'a'."
+      },
+      {
+        "input": "fs.create('/a/b')",
+        "output": "false",
+        "explanation": "The directory 'b' already exists."
+      },
+      {
+        "input": "fs.list('/a')",
+        "output": "['b']",
+        "explanation": "Listing under 'a' returns the existing subdirectory 'b'."
+      },
+      {
+        "input": "fs.delete('/a/b')",
+        "output": "true",
+        "explanation": "The directory 'b' was deleted successfully."
+      },
+      {
+        "input": "fs.list('/a')",
+        "output": "[]",
+        "explanation": "Listing under 'a' returns an empty list after 'b' has been deleted."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to structure the file system data internally.",
+      "Consider using a trie-like structure to represent paths."
+    ],
+    "company": "Coinbase"
+  },
+  {
+    "question_id": "",
+    "title": "Check if There is a Valid Partition For The Array",
+    "description": "You are given an integer array nums. A valid partition is one in which the array can be divided into subsets of elements such that each subset contains either two consecutive equal elements or three consecutive equal elements. Write a function that determines if such a valid partition exists for the given array.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Partitioning",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Partition"
+    ],
+    "input_format": "An integer array nums, where 1 <= nums.length <= 10^5 and 1 <= nums[i] <= 100.",
+    "output_format": "A boolean indicating if a valid partition exists.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2, 2, 2, 2]",
+        "output": "true",
+        "explanation": "The array can be partitioned as [1, 1] and [2, 2, 2]."
+      },
+      {
+        "input": "nums = [1, 1, 1, 2]",
+        "output": "false",
+        "explanation": "The array cannot be partitioned into valid subsets."
+      },
+      {
+        "input": "nums = [1, 1, 1]",
+        "output": "true",
+        "explanation": "The array can be partitioned as [1, 1, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use dynamic programming to keep track of valid partitions.",
+      "Check for pairs and triplets when iterating through the array."
+    ],
+    "company": "Coinbase"
+  },
+  {
+    "question_id": "",
+    "title": "Random Pick with Weight",
+    "description": "You are given an integer array w of length n, where w[i] describes the weight of the ith index. You want to pick an index i with a probability proportional to its weight (i.e., the higher the weight, the higher the chance of picking that index). Implement the class RandomPickWithWeight which has the following method: pick() - returns a randomly selected index based on the weights in the array. The pick method should be O(1) on average.",
+    "topic": "Design",
+    "subtopic": "Probability",
+    "tags": [
+      "Design",
+      "Probability",
+      "Random"
+    ],
+    "input_format": "An integer array w where w[i] represents the weight of the ith index.",
+    "output_format": "An integer representing the index picked, based on the weights.",
+    "constraints": [
+      "1 <= w.length <= 10^4",
+      "1 <= w[i] <= 10^6",
+      "The sum of w will not exceed 10^9."
+    ],
+    "examples": [
+      {
+        "input": "w = [1, 3]",
+        "output": "1",
+        "explanation": "Index 0 is picked with a probability of 1/(1+3) = 0.25 and index 1 is picked with a probability of 3/(1+3) = 0.75. Hence, index 1 is expected to be picked more often."
+      },
+      {
+        "input": "w = [1, 2, 3]",
+        "output": "2",
+        "explanation": "The probabilities are: index 0 (1/6), index 1 (2/6), index 2 (3/6). Index 2 has the highest probability."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a prefix sum array to convert the weights into ranges.",
+      "Use binary search to efficiently find the correct range based on a random number."
+    ],
+    "company": "Coinbase"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Orders in the Backlog",
+    "description": "You are given two lists, `orders` and `stock`. The `orders` list contains orders in the format (orderId, productId, quantity) where orderId is a unique identifier, productId is the product's identifier, and quantity is the quantity to fulfill the order. The `stock` list contains stock information in the format (productId, availableQuantity). Your task is to determine how many orders remain unfulfilled after taking the available stock into account. An order can only be fulfilled if there is sufficient stock available for the corresponding product. If the stock is insufficient, the order remains in the backlog. Return the total number of unfulfilled orders in the backlog.",
+    "topic": "Array",
+    "subtopic": "Counting and Summation",
+    "tags": [
+      "Array",
+      "Counting",
+      "Order Fulfillment"
+    ],
+    "input_format": "Two lists: `orders`, a list of tuples, where each tuple is (orderId, productId, quantity), and `stock`, a list of tuples, where each tuple is (productId, availableQuantity).",
+    "output_format": "An integer representing the total number of unfulfilled orders in the backlog.",
+    "constraints": [
+      "1 <= orders.length <= 10^4",
+      "1 <= stock.length <= 10^4",
+      "1 <= productId <= 10^5",
+      "1 <= quantity, availableQuantity <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "orders = [(1, 100, 5), (2, 101, 3), (3, 100, 2)], stock = [(100, 6), (101, 2)]",
+        "output": "2",
+        "explanation": "Order 1 can be fulfilled with 6 available stock for product 100. Order 2 is unfulfilled due to insufficient stock (only 2 available for product 101). Order 3 can be fulfilled with 6 available stock for product 100. Therefore, there are 2 unfulfilled orders: order 2 and 3."
+      },
+      {
+        "input": "orders = [(1, 200, 10), (2, 200, 5), (3, 201, 4)], stock = [(200, 5), (201, 6)]",
+        "output": "1",
+        "explanation": "Order 1 is unfulfilled as stock 5 is not enough for quantity 10. Order 2 is unfulfilled as well for the same reason. Order 3 can be fulfilled, as there is enough stock for product 201. Thus, there is 1 order unfulfilled (order 1)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to store available quantities for efficient look-up.",
+      "Iterate through the orders to check if each one can be fulfilled."
+    ],
+    "company": "Coinbase"
+  },
+  {
+    "question_id": "",
+    "title": "Evaluate Division",
+    "description": "You are given an array of equations and an array of values, where each equation is represented as a list of two strings and represents a division operation between two variables. Given these equations and a list of queries, return the results of the division for each query. If the result of a query cannot be determined, return -1.0.",
+    "topic": "Graph",
+    "subtopic": "DFS/BFS",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Union-Find"
+    ],
+    "input_format": "A list of equations of format [a/b] and a corresponding list of values representing the results of those equations, followed by a list of queries.",
+    "output_format": "A list of answers to the queries, where each answer is the result of the corresponding query.",
+    "constraints": [
+      "1 <= equations.length <= 20",
+      "equations[i].length == 2",
+      "0 < values.length <= 20",
+      "values.length == equations.length",
+      "1 <= queries.length <= 20",
+      "All variables are non-empty strings."
+    ],
+    "examples": [
+      {
+        "input": {
+          "equations": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "b",
+              "c"
+            ]
+          ],
+          "values": [
+            2.0,
+            3.0
+          ],
+          "queries": [
+            [
+              "a",
+              "c"
+            ],
+            [
+              "b",
+              "a"
+            ],
+            [
+              "a",
+              "e"
+            ],
+            [
+              "a",
+              "a"
+            ],
+            [
+              "x",
+              "x"
+            ]
+          ]
+        },
+        "output": [
+          6.0,
+          0.5,
+          -1.0,
+          1.0,
+          -1.0
+        ],
+        "explanation": "From the equations a/b = 2.0 and b/c = 3.0, we can determine that a/c = 6.0 (since a/c = (a/b) * (b/c)). a/b = 0.5 follows as well. Queries involving variables not present return -1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a graph representation to model the relationships.",
+      "Use Depth-First Search (DFS) or Breadth-First Search (BFS) to find connections."
+    ],
+    "company": "Coinbase"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Length of the Longest Common Prefix",
+    "description": "Write a function that finds the length of the longest common prefix string amongst an array of strings. If there is no common prefix, return 0.",
+    "topic": "String",
+    "subtopic": "Prefix",
+    "tags": [
+      "String",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "An integer representing the length of the longest common prefix.",
+    "constraints": [
+      "0 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "All strings consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\", \"flow\", \"flight\"]",
+        "output": "2",
+        "explanation": "The longest common prefix is \"fl\", which has a length of 2."
+      },
+      {
+        "input": "strs = [\"dog\", \"racecar\", \"car\"]",
+        "output": "0",
+        "explanation": "There is no common prefix among the strings."
+      },
+      {
+        "input": "strs = [\"ab\", \"a\"]",
+        "output": "1",
+        "explanation": "The longest common prefix is \"a\", which has a length of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to compare characters in the strings.",
+      "Iterate through the strings to find the common characters."
+    ],
+    "company": "Coinbase"
+  }
+]

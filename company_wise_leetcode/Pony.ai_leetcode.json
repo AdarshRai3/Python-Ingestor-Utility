@@ -1,0 +1,153 @@
+[
+  {
+    "question_id": "",
+    "title": "K-th Smallest Prime Fraction",
+    "description": "Given an array of integers representing prime numbers and an integer k, return the k-th smallest prime fraction in the form of a list [numerator, denominator]. A prime fraction is defined as the fraction formed by two distinct primes from the list, where the numerator is less than the denominator.",
+    "topic": "Math",
+    "subtopic": "Fractions",
+    "tags": [
+      "Math",
+      "Fractions",
+      "Sorting"
+    ],
+    "input_format": "An array of distinct prime integers primes and an integer k (1 <= k <= n * (n - 1) / 2, where n is the length of the primes array).",
+    "output_format": "A list of two integers representing the numerator and denominator of the k-th smallest prime fraction.",
+    "constraints": [
+      "1 <= primes.length <= 1000",
+      "2 <= primes[i] <= 10^6",
+      "primes[i] are distinct primes."
+    ],
+    "examples": [
+      {
+        "input": "primes = [1, 2, 3], k = 2",
+        "output": "[1, 2]",
+        "explanation": "The possible fractions are 1/2, 1/3, and 2/3. The 2nd smallest is 1/2."
+      },
+      {
+        "input": "primes = [1, 2, 5, 7], k = 3",
+        "output": "[2, 5]",
+        "explanation": "The fractions are 1/2, 1/5, 1/7, 2/5, 2/7, and 5/7. The 3rd smallest is 2/5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to generate all prime fractions.",
+      "Using a min-heap can help you keep track of the smallest fractions efficiently."
+    ],
+    "company": "Pony.ai"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Profit in Job Scheduling",
+    "description": "You are given a list of jobs where each job has a start time, end time, and a profit associated with it. Your task is to select non-overlapping jobs to maximize your total profit. Each job is represented as a tuple (startTime, endTime, profit). You need to return the maximum profit you can earn by selecting a subset of jobs that do not overlap in time.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Intervals"
+    ],
+    "input_format": "A list of jobs, where each job is represented as a tuple (startTime, endTime, profit).",
+    "output_format": "An integer representing the maximum profit that can be obtained.",
+    "constraints": [
+      "1 <= jobs.length <= 10^5",
+      "0 <= startTime < endTime <= 10^9",
+      "0 <= profit <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "jobs = [(1, 3, 50), (3, 5, 20), (6, 19, 100), (2, 100, 200)]",
+        "output": "250",
+        "explanation": "Select job (1, 3, 50) and job (3, 5, 20) for a profit of 70, or select job (6, 19, 100) and (0, 100, 200) for a maximum profit of 250."
+      },
+      {
+        "input": "jobs = [(1, 2, 10), (2, 3, 15)]",
+        "output": "25",
+        "explanation": "Both jobs do not overlap, thus we can take both jobs for a total profit of 25."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider sorting the jobs based on their end times.",
+      "Use dynamic programming to keep track of maximum profit up to each job."
+    ],
+    "company": "Pony.ai"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Sideway Jumps",
+    "description": "You are given a matrix representing a road consisting of three lanes. Each lane is represented by an integer value, where 0 indicates a lane that is blocked and 1 indicates a lane that is open. Your objective is to find the minimum number of sideway jumps required to reach the end of the road starting from the first lane (index 0). You can only jump to an adjacent lane and cannot jump back to the lane you came from.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Minimum Jumps"
+    ],
+    "input_format": "A list of integers representing lanes, where each element is 0 (blocked) or 1 (open).",
+    "output_format": "An integer representing the minimum number of sideway jumps required to reach the end.",
+    "constraints": [
+      "1 <= lanes.length <= 100",
+      "lanes[i] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "[0, 1, 2, 1, 1, 0]",
+        "output": "1",
+        "explanation": "Starting from lane 0, we jump to lane 1, which allows us to reach the end with only one sideway jump."
+      },
+      {
+        "input": "[1, 2, 0, 1, 1]",
+        "output": "2",
+        "explanation": "Starting at lane 0, we have to jump to lane 1, then to lane 3, making it a total of two jumps."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to keep track of the minimum jumps needed at each lane.",
+      "Think about how to update your current position based on the lanes' availability."
+    ],
+    "company": "Pony.ai"
+  },
+  {
+    "question_id": "",
+    "title": "Frequency of the Most Frequent Element",
+    "description": "Given an array of integers, you need to find the frequency of the most frequent element in the array. Return the maximum frequency of any element present in the array. If there are multiple elements with the same maximum frequency, return the frequency of any one of them.",
+    "topic": "Array",
+    "subtopic": "Counting Frequencies",
+    "tags": [
+      "Array",
+      "Counting",
+      "Frequency"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum frequency of any element in the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3, 3, 3]",
+        "output": "3",
+        "explanation": "The number 3 appears the most frequently (3 times)."
+      },
+      {
+        "input": "nums = [1, 1, 1, 2, 2, 3]",
+        "output": "3",
+        "explanation": "The number 1 appears the most frequently (3 times)."
+      },
+      {
+        "input": "nums = [5, 5, 5, 5, 1, 1, 1, 1]",
+        "output": "4",
+        "explanation": "Both the numbers 5 and 1 appear 4 times each, but 4 is the maximum frequency."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to count the frequency of each element.",
+      "Iterate through the hashmap to find the maximum frequency."
+    ],
+    "company": "Pony.ai"
+  }
+]

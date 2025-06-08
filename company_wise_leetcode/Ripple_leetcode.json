@@ -1,0 +1,425 @@
+[
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hash Table",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Anagram"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of lists of strings, where each inner list contains words that are anagrams of each other.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "All input strings are lowercase."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"eat\", \"tea\", \"ate\"], [\"tan\", \"nat\"], [\"bat\"]]",
+        "explanation": "The anagrams are grouped together. 'eat', 'tea', and 'ate' are anagrams, 'tan' and 'nat' are anagrams, and 'bat' has no anagrams."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "The only string is an empty string, which is considered an anagram of itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "The only string is 'a', which has no anagrams."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash table to store lists of anagrams.",
+      "Sort each string to identify anagrams."
+    ],
+    "company": "Ripple"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. It should support the following operations: `get(key)` and `put(key, value)`. The `get(key)` method retrieves the value of the key if the key exists in the cache, otherwise returns -1. The `put(key, value)` method updates the value of the key if the key exists. If the key does not exist, it inserts the key-value pair. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Design",
+    "subtopic": "Cache",
+    "tags": [
+      "Design",
+      "Cache",
+      "Data Structure"
+    ],
+    "input_format": "An integer representing the capacity of the cache, followed by a sequence of operations as strings.",
+    "output_format": "The output of each `get` operation in the sequence.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^4",
+      "All keys used in the operations will be unique and valid."
+    ],
+    "examples": [
+      {
+        "input": "capacity = 2, operations = [put(1, 1), put(2, 2), get(1), put(3, 3), get(2), put(4, 4), get(1), get(3), get(4)]",
+        "output": "[1, -1, -1, 4]",
+        "explanation": "After operations: get(1) returns 1, get(2) returns -1 (evicted), get(3) returns 3, get(4) returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hash map and a doubly linked list.",
+      "The hash map allows O(1) access to cached elements."
+    ],
+    "company": "Ripple"
+  },
+  {
+    "question_id": "",
+    "title": "String Compression",
+    "description": "Given a string containing only alphabets, you need to compress it using the following approach: For each group of consecutive identical characters, replace the group with a single character followed by the count of repetitions. If the resulting compressed string is not shorter than the original string, return the original string. The compression should be case-sensitive, treating 'a' and 'A' as different characters.",
+    "topic": "String",
+    "subtopic": "Compression",
+    "tags": [
+      "String",
+      "Compression",
+      "Algorithm"
+    ],
+    "input_format": "A string s, with length between 1 and 1000.",
+    "output_format": "A string representing the compressed version of s or the original string if compression does not reduce its length.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of English letters (both upper and lower case)."
+    ],
+    "examples": [
+      {
+        "input": "s = \"aaabbbcc\"",
+        "output": "a3b3c2",
+        "explanation": "The original string has three 'a's, three 'b's, and two 'c's. The compressed form is 'a3b3c2'."
+      },
+      {
+        "input": "s = \"abcd\"",
+        "output": "abcd",
+        "explanation": "No characters are repeated, so the compressed string is the same as the original string."
+      },
+      {
+        "input": "s = \"aAaa\"",
+        "output": "aA2a1",
+        "explanation": "The compressed form counts 'a' as 1, 'A' as 1, and 'a' again as 2, so it becomes 'aA2a1'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a pointer to track the current character group.",
+      "Think about how to handle edge cases with mixed-case letters.",
+      "Remember to check the length of the resulting string before returning it."
+    ],
+    "company": "Ripple"
+  },
+  {
+    "question_id": "",
+    "title": "Product Sales Analysis I",
+    "description": "You are given a list of sales records, where each record contains the product ID, quantity sold, and the sale amount. Your task is to compute the total sales amount for each product and return a list of products along with their total sales amount in descending order. If two products have the same total sales amount, return them in ascending order of their product IDs.",
+    "topic": "Database",
+    "subtopic": "Aggregation",
+    "tags": [
+      "Database",
+      "Aggregation",
+      "Sorting"
+    ],
+    "input_format": "A list of sales records, where each record is represented as a tuple (product_id, quantity, amount).",
+    "output_format": "A list of tuples (product_id, total_amount) sorted by total amount in descending order.",
+    "constraints": [
+      "1 <= sales.length <= 10^5",
+      "1 <= product_id <= 10^6",
+      "quantity > 0",
+      "0 <= amount <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "sales = [(1, 2, 100), (2, 1, 200), (1, 3, 150), (2, 2, 300)]",
+        "output": "[(2, 500), (1, 250)]",
+        "explanation": "Product 1 has total sales of 100*2 + 150*3 = 250 and Product 2 has total sales of 200*1 + 300*2 = 500."
+      },
+      {
+        "input": "sales = [(3, 1, 300), (3, 2, 100), (4, 1, 400)]",
+        "output": "[(4, 400), (3, 500)]",
+        "explanation": "Product 4 has total sales of 400 and Product 3 has total sales of 300 + 100*2 = 500."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to accumulate sales amounts for each product.",
+      "Sort the result based on total sales amount and product ID."
+    ],
+    "company": "Ripple"
+  },
+  {
+    "question_id": "",
+    "title": "Linked List Cycle II",
+    "description": "Given a linked list, determine if it has a cycle in it. If a cycle exists, return the node where the cycle begins. If there is no cycle, return null. A linked list is said to have a cycle if any node is visited more than once while traversing the list.",
+    "topic": "Linked List",
+    "subtopic": "Cycle Detection",
+    "tags": [
+      "Linked List",
+      "Cycle Detection",
+      "Two Pointers"
+    ],
+    "input_format": "The input is a linked list with a head node. Each node contains an integer value and a pointer to the next node.",
+    "output_format": "Return the node where the cycle begins, or null if there is no cycle.",
+    "constraints": [
+      "The number of nodes in the linked list is in the range [0, 10^4].",
+      "The value of each node is in the range [-10^5, 10^5]."
+    ],
+    "examples": [
+      {
+        "input": "head = [3,2,0,-4], pos = 1",
+        "output": "[2]",
+        "explanation": "The linked list has a cycle at node with value 2."
+      },
+      {
+        "input": "head = [1,2], pos = 0",
+        "output": "[1]",
+        "explanation": "The linked list has a cycle at node with value 1."
+      },
+      {
+        "input": "head = [1], pos = -1",
+        "output": "null",
+        "explanation": "The linked list has no cycle."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a fast and slow pointer approach.",
+      "If they meet, there is a cycle.",
+      "To find the entry point of the cycle, move one pointer to the head and keep the other at the meeting point."
+    ],
+    "company": "Ripple"
+  },
+  {
+    "question_id": "",
+    "title": "Product of Array Except Self",
+    "description": "Given an array nums of n integers where n > 1, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].",
+    "topic": "Array",
+    "subtopic": "Prefix and Suffix Products",
+    "tags": [
+      "Array",
+      "Product",
+      "Prefix",
+      "Suffix"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing the product of elements except self.",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-30 <= nums[i] <= 30"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "[24, 12, 8, 6]",
+        "explanation": "For the input array [1, 2, 3, 4], the output will be [2*3*4, 1*3*4, 1*2*4, 1*2*3] = [24, 12, 8, 6]."
+      },
+      {
+        "input": "nums = [-1, 1, 0, -3, 3]",
+        "output": "[0, 0, 9, 0, 0]",
+        "explanation": "For the input array [-1, 1, 0, -3, 3], the output will be [0, 0, 9, 0, 0] since the product of numbers excluding 0 gives 9."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a prefix product and a suffix product.",
+      "Think about how to compute the product without using division."
+    ],
+    "company": "Ripple"
+  },
+  {
+    "question_id": "",
+    "title": "Subarray Sum Equals K",
+    "description": "Given an array of integers and an integer k, return the number of continuous subarrays whose sum equals to k.",
+    "topic": "Array",
+    "subtopic": "Subarray",
+    "tags": [
+      "Array",
+      "Prefix Sum",
+      "Hash Map"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the number of continuous subarrays whose sum equals k.",
+    "constraints": [
+      "1 <= nums.length <= 20,000",
+      "-1000 <= nums[i] <= 1000",
+      "-1,000,000 <= k <= 1,000,000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 1], k = 2",
+        "output": "2",
+        "explanation": "The subarrays [1, 1] (at indices 0 and 1) and [1, 1] (at indices 1 and 2) both sum to 2."
+      },
+      {
+        "input": "nums = [1, 2, 3], k = 3",
+        "output": "2",
+        "explanation": "The subarrays [3] (at index 2) and [1, 2] (at indices 0 and 1) both sum to 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to store the cumulative sums.",
+      "The cumulative sum approach can help reduce the time complexity."
+    ],
+    "company": "Ripple"
+  },
+  {
+    "question_id": "",
+    "title": "Stock Price Fluctuation",
+    "description": "You are given an array of integers representing stock prices at different times. Your task is to calculate the maximum profit that could be made by buying and selling the stock exactly once. A profit is made by buying at a lower price and selling at a higher price later. If no profit can be made, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Stock"
+    ],
+    "input_format": "An array of integers prices where 1 <= prices.length <= 10^5 and 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit that can be made.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate potential profit at each step and update the maximum profit accordingly."
+    ],
+    "company": "Ripple"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. A subarray is a contiguous part of an array.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum sum of a contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The subarray [4,-1,2,1] has the largest sum = 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The only subarray is [1] which has the sum of 1."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The subarray [5,4,-1,7,8] has the largest sum = 23."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using a dynamic programming approach.",
+      "Maintain a running sum and a maximum sum variable."
+    ],
+    "company": "Ripple"
+  },
+  {
+    "question_id": "",
+    "title": "Koko Eating Bananas",
+    "description": "Koko loves to eat bananas. There are piles of bananas, and each pile has a certain number of bananas in it. Koko can eat at a speed of `k` bananas per hour. Koko wants to eat all the bananas in the minimum number of hours possible. If Koko can\u2019t finish all bananas in whole hours, she can continue eating bananas in a partial hour. Given an array `piles`, where `piles[i]` represents the number of bananas in the `i-th` pile, you need to find the minimum integer `k` such that Koko can eat all bananas in `h` hours or less.",
+    "topic": "Binary Search",
+    "subtopic": "Search and Optimization",
+    "tags": [
+      "Binary Search",
+      "Greedy",
+      "Optimization"
+    ],
+    "input_format": "An integer array piles representing the number of bananas in each pile and an integer h representing the number of hours Koko has.",
+    "output_format": "An integer k which is the minimum eating speed required.",
+    "constraints": [
+      "1 <= piles.length <= 10^4",
+      "1 <= piles[i] <= 10^9",
+      "1 <= h <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "piles = [3, 6, 7, 11], h = 8",
+        "output": "4",
+        "explanation": "If Koko eats 4 bananas per hour, it will take her 3 hours to finish the first pile of 3, 2 hours to finish the second pile of 6, 2 hours to finish the third pile of 7, and 1 hour to finish the last pile of 11. Totaling to 3 + 2 + 2 + 1 = 8 hours."
+      },
+      {
+        "input": "piles = [30, 11, 23, 4, 20], h = 5",
+        "output": "30",
+        "explanation": "If Koko eats at a speed of 30 bananas per hour, she can finish all piles in 5 hours."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to optimize the solution.",
+      "Calculate the number of hours needed for a given speed.",
+      "The lower bound of k can be 1 and the upper bound is the maximum number of bananas in any pile."
+    ],
+    "company": "Ripple"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, if intervals = [[1,3],[2,6],[8,10],[15,18]], the output should be [[1,6],[8,10],[15,18]]. This means that the overlapping intervals [1,3] and [2,6] should be merged into [1,6].",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Interval"
+    ],
+    "input_format": "A list of intervals, where each interval is represented as a list of two integers [start, end].",
+    "output_format": "A merged list of intervals as output, where each interval is in the form of a list [start, end].",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they are merged into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] overlap at point 4, hence they are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the intervals based on the start time.",
+      "Use a list to keep track of merged intervals as you iterate."
+    ],
+    "company": "Ripple"
+  }
+]

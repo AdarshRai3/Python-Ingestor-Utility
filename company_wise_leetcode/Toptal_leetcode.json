@@ -1,0 +1,111 @@
+[
+  {
+    "question_id": "",
+    "title": "String Compression II",
+    "description": "Given a string s and an integer k, you need to compress the string such that the resulting string should not exceed the length k. You can compress characters by grouping them together and replacing them with their character and count as a substring, but only if this compression helps to shorten the string. For example, 'aaabb' can be transformed into 'a3b2', but 'a' cannot be transformed because it does not compress the string. Return the length of the compressed string after applying the compression rules.",
+    "topic": "String",
+    "subtopic": "Compression",
+    "tags": [
+      "String",
+      "Compression",
+      "Greedy"
+    ],
+    "input_format": "A string s and an integer k.",
+    "output_format": "An integer representing the length of the compressed string after compression.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= k <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "s = 'aabcccccaaa', k = 10",
+        "output": "7",
+        "explanation": "'aabcccccaaa' compresses to 'a2b1c5a3', which is of length 7."
+      },
+      {
+        "input": "s = 'abb', k = 2",
+        "output": "2",
+        "explanation": "'abb' can't be compressed beyond 'ab', which is of length 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Keep track of the current character and its count.",
+      "Only compress when the resulting length is shorter than the original.",
+      "Consider using a two-pointer approach for effective compression."
+    ],
+    "company": "Toptal"
+  },
+  {
+    "question_id": "",
+    "title": "Airplane Seat Assignment Probability",
+    "description": "Airplanes typically have a fixed number of seats in each row, and passengers are assigned seats either randomly or based on some criteria. In this problem, you're tasked with calculating the probability that a specific passenger will end up sitting in their assigned seat. Given the total number of seats on the airplane and the number of passengers, return the probability that a designated passenger (e.g., the first passenger) will sit in their assigned position (the first seat). Assume that if the designated passenger's seat is taken, they will randomly select another available seat among the remaining seats.",
+    "topic": "Probability",
+    "subtopic": "Combinatorics",
+    "tags": [
+      "Probability",
+      "Combinatorics",
+      "Mathematics"
+    ],
+    "input_format": "An integer n, representing the total number of seats (1 <= n <= 100).",
+    "output_format": "A float representing the probability that the designated passenger sits in their assigned seat, rounded to six decimal places.",
+    "constraints": [
+      "1 <= n <= 100"
+    ],
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "0.500000",
+        "explanation": "With 2 seats, there are two scenarios: the first passenger sits in their seat (1/2 chance) or they sit in the second seat (1/2 chance). Thus, the probability is 0.5."
+      },
+      {
+        "input": "n = 3",
+        "output": "0.333333",
+        "explanation": "With 3 seats, the first passenger can end up in any of the three seats with equal likelihood. They will only be in their own seat if they either sit in it directly or someone else selects the wrong seat giving them the potential to choose their own in the end."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the special cases when n is small.",
+      "Think about the likelihood of the first passenger choosing any seat randomly."
+    ],
+    "company": "Toptal"
+  },
+  {
+    "question_id": "",
+    "title": "Image Smoother",
+    "description": "Given a 2D integer array img representing the pixel values of an image, you need to smooth the image. The smoothing algorithm works as follows: For each pixel, the new pixel value is the average of all the pixel values in the 3x3 square centered at that pixel, including the pixel itself. If the pixel is at the edge of the image, you need to consider only the valid pixels in the 3x3 area. The result should be rounded down to the nearest integer.",
+    "topic": "Array",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Smoothing",
+      "Average"
+    ],
+    "input_format": "A 2D list img of size m x n where 1 <= m, n <= 100 and 0 <= img[i][j] <= 255.",
+    "output_format": "A 2D list of integers representing the smoothed image.",
+    "constraints": [
+      "1 <= img.length <= 100",
+      "1 <= img[i].length <= 100",
+      "0 <= img[i][j] <= 255"
+    ],
+    "examples": [
+      {
+        "input": "img = [[1,2,3],[4,5,6],[7,8,9]]",
+        "output": "[[4,4,5],[5,5,6],[6,6,7]]",
+        "explanation": "For the pixel at (1,1), the average of the surrounding pixels (including itself) is (1+2+3+4+5+6+7+8+9)/9 = 5. The same goes for other pixels."
+      },
+      {
+        "input": "img = [[100,200,100],[200,50,200],[100,200,100]]",
+        "output": "[[137,138,137],[138,136,138],[137,138,137]]",
+        "explanation": "The smoothed image is calculated by averaging values while considering edge cases."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a loop to traverse each pixel and calculate the average of the surrounding pixels."
+    ],
+    "company": "Toptal"
+  }
+]

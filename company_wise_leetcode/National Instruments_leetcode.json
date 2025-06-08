@@ -1,0 +1,158 @@
+[
+  {
+    "question_id": "",
+    "title": "Decoded String at Index",
+    "description": "Given an encoded string, return the character at a specific index after decoding the entire string. The encoded string follows the format 'k[encoded_string]', where the encoded_string inside the square brackets is being repeated exactly k times. For instance, to decode '3[a2[c]]', we interpret the input as 'accaccacc'. You will get the decoded string, and your goal is to find the character located at the 'index'.",
+    "topic": "String",
+    "subtopic": "Decoding String",
+    "tags": [
+      "String",
+      "Decoding",
+      "Indexing"
+    ],
+    "input_format": "A string s representing the encoded string and an integer index representing the position of the character to return.",
+    "output_format": "A single character which is the decoded character at the specified index.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "0 <= index < decoded_string.length"
+    ],
+    "examples": [
+      {
+        "input": "s = \"3[a2[c]]\", index = 3",
+        "output": "c",
+        "explanation": "The decoded string is 'accaccacc'. The character at index 3 is 'c'."
+      },
+      {
+        "input": "s = \"2[abc]3[cd]\", index = 5",
+        "output": "c",
+        "explanation": "The decoded string is 'abcabccdcdcd'. The character at index 5 is 'c'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to handle the nested parts of the encoded string.",
+      "Use a stack to help with decoding the string."
+    ],
+    "company": "National Instruments"
+  },
+  {
+    "question_id": "",
+    "title": "Champagne Tower",
+    "description": "Your task is to compute the volume of champagne in a glass after pouring a specified amount of champagne into the top glass of a champagne tower. The tower has a structure where each glass can hold a certain volume and overflow into the glasses below. If a glass overflows, the excess champagne is evenly distributed to the two glasses directly beneath it. The glasses are arranged in a triangular pyramid structure. Given the number of poured champagne and the coordinates of a specific glass, return the amount of champagne in that glass after pouring.",
+    "topic": "Mathematics",
+    "subtopic": "Simulation",
+    "tags": [
+      "Simulation",
+      "Mathematics",
+      "DP"
+    ],
+    "input_format": "You are given an integer poured representing the amount of champagne to pour, and two integers query_row and query_glass representing the row and glass number in the champagne tower.",
+    "output_format": "A double representing the amount of champagne in the specified glass, rounded to 5 decimal places.",
+    "constraints": [
+      "0 <= poured <= 10^9",
+      "0 <= query_row <= 100",
+      "0 <= query_glass <= query_row"
+    ],
+    "examples": [
+      {
+        "input": "poured = 1, query_row = 1, query_glass = 1",
+        "output": "0.00000",
+        "explanation": "The top glass receives 1 unit of champagne and overflows 0 unit into the second row glasses."
+      },
+      {
+        "input": "poured = 2, query_row = 1, query_glass = 1",
+        "output": "0.50000",
+        "explanation": "The top glass has 2 units, which means it will overflow and each glass in the second row receives 1 unit according to the overflow mechanism."
+      },
+      {
+        "input": "poured = 100000009, query_row = 33, query_glass = 17",
+        "output": "1.00000",
+        "explanation": "Even after pouring a large amount of champagne, glass (33, 17) can hold at most 1 unit before spilling over."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a list of lists to simulate the champagne tower.",
+      "Consider how to distribute overflow champagne to the glasses below."
+    ],
+    "company": "National Instruments"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array representing the height of bars in a histogram, calculate how much water can be trapped after raining. The width of each bar is 1. The water can only be trapped between the bars if the height of the current bar is less than the height of either bar surrounding it.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers heights where each integer represents the height of a bar.",
+    "output_format": "An integer representing the total units of trapped rain water.",
+    "constraints": [
+      "0 <= heights.length <= 2 * 10^4",
+      "0 <= heights[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water is trapped above the bars at index 2, 4, 5, 8, leading to a total of 6 units."
+      },
+      {
+        "input": "heights = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "Water can be trapped above the bars at indices 2 and 3, summing up to 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider maintaining left and right boundaries to encapsulate the water.",
+      "Use two pointers to traverse the array from both ends to the center."
+    ],
+    "company": "National Instruments"
+  },
+  {
+    "question_id": "",
+    "title": "Snakes and Ladders",
+    "description": "You are given a board game that is represented by a 2D array where each cell contains either -1 (no ladder or snake) or the index of the cell where a snake/ladder leads to. Your task is to determine the minimum number of moves required to reach the end of the board starting from the first cell (0 index). If it is not possible to reach the end, return -1. You move by throwing a dice that gives you a number between 1 and 6, and you can move to the cell corresponding to the sum of your current position and the dice value.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Board Game"
+    ],
+    "input_format": "A 1D integer array `board` of length n where each element is either -1 or in range [0, n-1].",
+    "output_format": "An integer representing the minimum number of moves to reach the end of the board, or -1 if it is not possible.",
+    "constraints": [
+      "1 <= board.length <= 10^6",
+      "-1 <= board[i] <= board.length - 1"
+    ],
+    "examples": [
+      {
+        "input": "board = [-1,-1,3,-1,4,-1,-1]",
+        "output": "3",
+        "explanation": "To reach the last cell, one possible path is moving 1 (to cell 1), then 2 (to cell 3 which has a ladder to 4), and finally 6 (to the end)."
+      },
+      {
+        "input": "board = [1,2,-1,-1,5,-1,-1]",
+        "output": "3",
+        "explanation": "One way to reach the end is to go from cell 0 (to cell 1), then 2 (to 2), then 3 (to 5), and finally go to the end."
+      },
+      {
+        "input": "board = [-1,4,-1,2,3,6,-1,5,-1]",
+        "output": "3",
+        "explanation": "It's possible to reach the end in three moves through cells without any obstructions."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a queue to perform a BFS from the starting cell.",
+      "Store the number of moves taken to reach each cell.",
+      "Track visited cells to avoid cycles."
+    ],
+    "company": "National Instruments"
+  }
+]

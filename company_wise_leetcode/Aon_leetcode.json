@@ -1,0 +1,154 @@
+[
+  {
+    "question_id": "",
+    "title": "Construct the Minimum Bitwise Array II",
+    "description": "Given an integer n, you need to construct an array of size n such that the bitwise OR of all array elements is minimized and the array is composed of integers in the range from 0 to n-1. The array must contain exactly n integers, and the integers can be repeated. Your task is to return any valid array that meets these conditions.",
+    "topic": "Bit Manipulation",
+    "subtopic": "Bitwise Operations",
+    "tags": [
+      "Bit Manipulation",
+      "Array",
+      "Construction"
+    ],
+    "input_format": "An integer n (1 <= n <= 10^5).",
+    "output_format": "An array of integers of size n that satisfies the problem's conditions.",
+    "constraints": [
+      "1 <= n <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[0, 1, 2]",
+        "explanation": "The array [0, 1, 2] has a bitwise OR of 3, which is minimized for size 3."
+      },
+      {
+        "input": "n = 4",
+        "output": "[0, 1, 2, 3]",
+        "explanation": "The array [0, 1, 2, 3] has a bitwise OR of 3, which is minimized for size 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Start with zeros to minimize the bitwise OR.",
+      "Consider using distinct integers to build the array.",
+      "Think about how bitwise operations interact with number choices."
+    ],
+    "company": "Aon"
+  },
+  {
+    "question_id": "",
+    "title": "Construct the Minimum Bitwise Array I",
+    "description": "You are given an integer n (1 <= n <= 10^5). Your task is to construct a bitwise array of size n such that each element in the array is either 0 or 1, and the bitwise AND of all elements in the array is minimized. In a valid output, all arrays must also satisfy that the bitwise OR of all elements is maximized. Return the constructed array.",
+    "topic": "Array",
+    "subtopic": "Bitwise Operations",
+    "tags": [
+      "Array",
+      "Bitwise",
+      "Construct"
+    ],
+    "input_format": "A single integer n, the size of the bitwise array.",
+    "output_format": "An array of integers representing the constructed bitwise array.",
+    "constraints": [
+      "1 <= n <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "n = 5",
+        "output": "[0, 1, 0, 1, 0]",
+        "explanation": "The bitwise AND of the array is minimized to 0, while the OR is maximized to 1."
+      },
+      {
+        "input": "n = 1",
+        "output": "[0]",
+        "explanation": "With a single element, the only bitwise array possible is [0], achieving the minimum AND."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the properties of bitwise operations when constructing the array.",
+      "A bitwise AND of zero elements results in zero."
+    ],
+    "company": "Aon"
+  },
+  {
+    "question_id": "",
+    "title": "Classifying Triangles by Lengths",
+    "description": "Given the lengths of three sides of a triangle, determine the type of triangle formed by these sides. The types of triangles are: 'Equilateral' (all sides are equal), 'Isosceles' (two sides are equal), and 'Scalene' (all sides are different). If the lengths do not form a valid triangle, return 'Not a Triangle'.",
+    "topic": "Geometry",
+    "subtopic": "Triangle Classification",
+    "tags": [
+      "Geometry",
+      "Triangle",
+      "Classification"
+    ],
+    "input_format": "Three integers representing the lengths of the sides of a triangle.",
+    "output_format": "A string indicating the type of triangle: 'Equilateral', 'Isosceles', 'Scalene', or 'Not a Triangle'.",
+    "constraints": [
+      "1 <= a, b, c <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "a = 3, b = 3, c = 3",
+        "output": "'Equilateral'",
+        "explanation": "All sides are equal, so it is an Equilateral triangle."
+      },
+      {
+        "input": "a = 3, b = 4, c = 5",
+        "output": "'Scalene'",
+        "explanation": "All sides are different, so it is a Scalene triangle."
+      },
+      {
+        "input": "a = 2, b = 2, c = 3",
+        "output": "'Isosceles'",
+        "explanation": "Two sides are equal, so it is an Isosceles triangle."
+      },
+      {
+        "input": "a = 1, b = 2, c = 3",
+        "output": "'Not a Triangle'",
+        "explanation": "The lengths do not satisfy the triangle inequality rule, so they do not form a triangle."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check if the sum of the lengths of any two sides is greater than the length of the third side.",
+      "Use conditions to classify based on equality of sides."
+    ],
+    "company": "Aon"
+  },
+  {
+    "question_id": "",
+    "title": "Minimize OR of Remaining Elements Using Operations",
+    "description": "You are given an array of integers. You can perform operations on the elements of the array to minimize the OR of all remaining elements. In one operation, you can choose any element, remove it from the array, and continue this process. Your goal is to determine the minimum OR value that can be achieved after performing a series of such operations.",
+    "topic": "Array",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Array",
+      "Bit Manipulation",
+      "Optimization"
+    ],
+    "input_format": "An array of integers nums, where 1 <= nums.length <= 100.",
+    "output_format": "An integer representing the minimum OR value achievable.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 5, 1, 2]",
+        "output": "1",
+        "explanation": "Removing elements 3 and 5 results in an OR of 1 | 2 = 3. However, removing just 3 yields 1 | 2 = 3, which can be further minimized by removing elements strategically."
+      },
+      {
+        "input": "nums = [4, 1, 2]",
+        "output": "1",
+        "explanation": "Removing element 4 leaves 1 | 2, which gives the result of 3. However, removing element 2 first results in a minimum of 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the properties of the OR operation.",
+      "Try removing elements that contribute the most to the OR result."
+    ],
+    "company": "Aon"
+  }
+]

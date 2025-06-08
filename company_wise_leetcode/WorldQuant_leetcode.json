@@ -1,0 +1,148 @@
+[
+  {
+    "question_id": "",
+    "title": "Meeting Rooms II",
+    "description": "Given an array of meeting time intervals where intervals[i] = [start_i, end_i], determine the minimum number of conference rooms required to hold all the meetings.",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A 2D array of integers intervals, where intervals[i] = [start_i, end_i].",
+    "output_format": "An integer representing the minimum number of conference rooms required.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "0 <= start_i < end_i <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[0, 30], [5, 10], [15, 20]]",
+        "output": "2",
+        "explanation": "Meeting [0, 30] and meeting [5, 10] can overlap, thus requiring two conference rooms."
+      },
+      {
+        "input": "intervals = [[2, 3], [2, 4], [3, 5]]",
+        "output": "2",
+        "explanation": "Meetings [2, 3] and [2, 4] overlap, requiring two rooms."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the intervals by their start times.",
+      "Use a min-heap to track the end times of meetings."
+    ],
+    "company": "WorldQuant"
+  },
+  {
+    "question_id": "",
+    "title": "Regular Expression Matching",
+    "description": "Implement a function to perform regular expression matching with support for '.' and '*' where:\n- '.' Matches any single character.\n- '*' Matches zero or more of the preceding element.\nThe matching should cover the entire input string (not partial).",
+    "topic": "String",
+    "subtopic": "Pattern Matching",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Recursion"
+    ],
+    "input_format": "A string s which represents the input text and a string p which represents the pattern.",
+    "output_format": "Return true if s matches the pattern p, otherwise return false.",
+    "constraints": [
+      "1 <= s.length <= 20",
+      "1 <= p.length <= 20",
+      "s and p consist of lowercase English letters, '.' and '*'."
+    ],
+    "examples": [
+      {
+        "input": "s = 'aab', p = 'c*a*b'",
+        "output": "true",
+        "explanation": "'c*' can be ignored, and 'aab' matches 'a*b'."
+      },
+      {
+        "input": "s = 'mississippi', p = 'mis*is*p*.",
+        "output": "false",
+        "explanation": "'mis*is*' does not match 'mississippi'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about using recursion to match the patterns.",
+      "Consider how to handle the '*' character effectively."
+    ],
+    "company": "WorldQuant"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Visited Cells in a Grid",
+    "description": "You are given a 2D grid of size m x n, where each cell contains a positive integer that represents the cost to enter that cell. Your task is to find the minimum number of cells you need to visit to reach from the top-left cell (0,0) to the bottom-right cell (m-1,n-1). You can only move either down or to the right at any point in time. If you reach the destination cell, return the minimum number of visited cells. If there is no way to reach the destination cell, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Shortest Path"
+    ],
+    "input_format": "A 2D array grid where grid[i][j] represents the cost to enter the cell (i, j).",
+    "output_format": "An integer representing the minimum number of cells to be visited to reach the target cell, or -1 if it is not possible.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "1 <= grid[i][j] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,3,1],[1,5,1],[4,2,1]]",
+        "output": "3",
+        "explanation": "The minimum path with the least cells visited is (0,0) -> (1,0) -> (2,0) -> (2,1) -> (2,2)."
+      },
+      {
+        "input": "grid = [[1,2,3],[2,1,1],[3,1,1]]",
+        "output": "-1",
+        "explanation": "There is no valid path to reach the destination cell (2,2)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a priority queue to keep track of the cells to visit next.",
+      "Dynamic programming can help you to keep track of the minimum cells visited."
+    ],
+    "company": "WorldQuant"
+  },
+  {
+    "question_id": "",
+    "title": "Find Median from Data Stream",
+    "description": "The median is the middle value in a list of numbers. When the list has an odd number of observations, the median is the middle element. When it has an even number, it is the average of the two middle numbers. You need to implement a data structure that supports the following operations: adding a number from the data stream and finding the median of all numbers added so far.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Heap",
+      "Design",
+      "Median"
+    ],
+    "input_format": "An integer `num` representing the number to be added to the data stream.",
+    "output_format": "The current median as a floating point number after the number is added.",
+    "constraints": [
+      "-10^5 <= num <= 10^5",
+      "Each call to addNum is guaranteed to be a valid integer.",
+      "The total number of calls to addNum will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "addNum(1); addNum(2); addNum(3);",
+        "output": "2.0",
+        "explanation": "The numbers added are 1, 2, and 3. The median is 2."
+      },
+      {
+        "input": "addNum(1); addNum(2); addNum(3); addNum(4);",
+        "output": "2.5",
+        "explanation": "The numbers added are 1, 2, 3, and 4. The median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two heaps to manage the lower and upper halves of the numbers.",
+      "Ensure to balance the sizes of the two heaps to find the median efficiently."
+    ],
+    "company": "WorldQuant"
+  }
+]

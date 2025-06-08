@@ -1,0 +1,475 @@
+[
+  {
+    "question_id": "",
+    "title": "Longest Cycle in a Graph",
+    "description": "You are given a directed graph represented as an array of edges where each edge is a pair of nodes. Your task is to find the length of the longest cycle in the graph. If no cycle exists, return -1. A cycle is defined as a path that starts and ends at the same node without re-traversing any edges. The graph may contain multiple components, and you need to consider cycles in each component.",
+    "topic": "Graph",
+    "subtopic": "Cycle Detection",
+    "tags": [
+      "Graph",
+      "Depth-First Search",
+      "Cycle Detection"
+    ],
+    "input_format": "An integer n representing the number of nodes in the graph, and a list of edges where each edge is a list of two integers [u, v], indicating a directed edge from u to v.",
+    "output_format": "An integer representing the length of the longest cycle, or -1 if no cycle exists.",
+    "constraints": [
+      "1 <= n <= 10^4",
+      "0 <= edges.length <= 10^4",
+      "0 <= u, v < n"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, edges = [[0, 1], [1, 2], [2, 0], [3, 4]]",
+        "output": "3",
+        "explanation": "There is a cycle 0 -> 1 -> 2 -> 0 with length 3."
+      },
+      {
+        "input": "n = 5, edges = [[0, 1], [1, 2], [2, 3], [3, 4]]",
+        "output": "-1",
+        "explanation": "There are no cycles in the graph."
+      },
+      {
+        "input": "n = 4, edges = [[0, 1], [1, 2], [2, 1]]",
+        "output": "2",
+        "explanation": "There is a cycle 1 -> 2 -> 1 with length 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use Depth-First Search to explore nodes and track visited states.",
+      "Maintain a stack to help determine the cycle length once a node is revisited."
+    ],
+    "company": "Juspay"
+  },
+  {
+    "question_id": "",
+    "title": "Operations on Tree",
+    "description": "You are given a binary tree with n nodes. Your task is to implement the following operations: Insert a node, Delete a node, and Search for a node. The nodes in the binary tree can contain unique integer values. Implement these operations in a class `BinaryTree` that supports the operations simultaneously. Please ensure that the tree remains a valid binary search tree after any insertions or deletions.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "Binary Search",
+      "Data Structure"
+    ],
+    "input_format": "The operations will be provided in a list where each operation is defined as a tuple: (operation_type, `value`). `operation_type` can be 'insert', 'delete', or 'search'. For 'search', it will return a boolean indicating whether the value exists in the tree or not.",
+    "output_format": "For the 'search' operation, return a boolean value. For 'insert' and 'delete', return void.",
+    "constraints": [
+      "1 <= n <= 10^4",
+      "Each value in the tree is unique."
+    ],
+    "examples": [
+      {
+        "input": "operations = [('insert', 5), ('insert', 3), ('insert', 7), ('search', 3), ('delete', 3), ('search', 3)]",
+        "output": "[True, False]",
+        "explanation": "Initially, 5 is inserted, then 3 and 7. Searching for 3 returns True. After deleting 3, searching for 3 returns False."
+      },
+      {
+        "input": "operations = [('insert', 10), ('insert', 20), ('search', 10), ('delete', 20), ('search', 20)]",
+        "output": "[True, False]",
+        "explanation": "10 is inserted first, then 20. Searching for 10 returns True. After deleting 20, searching for 20 returns False."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of a binary search tree when inserting and deleting nodes.",
+      "Keep track of the parent node when deleting, as it may alter the tree structure."
+    ],
+    "company": "Juspay"
+  },
+  {
+    "question_id": "",
+    "title": "Find Closest Node to Given Two Nodes",
+    "description": "You are given a directed graph represented as an adjacency list and two nodes. Your task is to find the closest node to both the given nodes. The 'closest' node is defined as the node that has the minimum distance to both input nodes. If there are multiple closest nodes, return the one with the smallest index. If there are no connected nodes, return -1.",
+    "topic": "Graph",
+    "subtopic": "BFS/DFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "DFS"
+    ],
+    "input_format": "An integer n representing the number of nodes, followed by an adjacency list of the graph. Finally, two integers a and b, representing the two nodes.",
+    "output_format": "An integer representing the closest node to the two given nodes.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "0 <= a, b < n",
+      "The adjacency list has at most 10^4 edges."
+    ],
+    "examples": [
+      {
+        "input": "n = 5, edges = [[1, 2], [2, 3], [2, 4], [3, 4]], a = 1, b = 2",
+        "output": "2",
+        "explanation": "The closest node to both nodes 1 and 2 is node 2, as it is directly connected to node 1."
+      },
+      {
+        "input": "n = 5, edges = [[1, 0], [2, 0], [3, 1]], a = 3, b = 4",
+        "output": "-1",
+        "explanation": "There is no node connected to both nodes 3 and 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using BFS to explore the graph and track distances from the given nodes.",
+      "Maintain a set of reachable nodes from both starting nodes."
+    ],
+    "company": "Juspay"
+  },
+  {
+    "question_id": "",
+    "title": "Node With Highest Edge Score",
+    "description": "You are given a directed graph with n nodes numbered from 0 to n-1. Each node i has an edge that points to node edges[i], and the value associated with each node i is represented by scores[i]. The edge score from node i to node j is defined as the sum of the scores of all nodes that point to j. Your task is to find the node with the highest edge score. If there are multiple nodes with the same highest edge score, return the smallest node index.",
+    "topic": "Graph",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "Traversal",
+      "Score"
+    ],
+    "input_format": "An integer n representing the number of nodes, an array edges of length n where edges[i] is the node that node i points to, and an array scores of length n representing the scores of each node.",
+    "output_format": "An integer representing the index of the node with the highest edge score.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "0 <= edges[i] < n",
+      "0 <= scores[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, edges = [1, 0, 0, 1, 0], scores = [1, 2, 3, 4, 5]",
+        "output": "0",
+        "explanation": "Node 0 has edges from nodes 1, 2, 3, and 4. Their scores are 2, 3, 4, and 5. The total edge score for node 0 is 14. Node 1 has an edge score of 1 (just from node 0). The highest edge score is for node 0."
+      },
+      {
+        "input": "n = 4, edges = [1, 2, 3, 2], scores = [2, 2, 2, 2]",
+        "output": "2",
+        "explanation": "Node 2 receives edges from nodes 1 and 3, both with score 2, giving it an edge score of 4. Node 1 and node 3 have edge scores of 2. Node 2 has the highest score, hence the output is 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider maintaining an array to keep track of the edge scores for each node.",
+      "Iterate through the edges to accumulate edge scores, then determine the node with the maximum score."
+    ],
+    "company": "Juspay"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Subsequence With Decreasing Adjacent Difference",
+    "description": "Given an array of integers, return the length of the longest subsequence such that the absolute difference between each pair of adjacent elements is strictly decreasing. A subsequence is defined as a sequence that can be derived from the array by deleting some elements without changing the order of the remaining elements.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "Subsequence",
+      "Longest Subsequence"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest subsequence with decreasing adjacent difference.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 3, 1, 2, 6, 4]",
+        "output": "4",
+        "explanation": "The longest subsequence with decreasing adjacent difference is [5, 3, 1, 2]. The absolute differences are 2, 2, and 1, which are strictly decreasing."
+      },
+      {
+        "input": "nums = [9, 8, 7, 6, 5]",
+        "output": "5",
+        "explanation": "The entire array is already a valid subsequence with strictly decreasing differences (1 between each pair)."
+      },
+      {
+        "input": "nums = [1, 3, 2, 4, 5]",
+        "output": "3",
+        "explanation": "The longest valid subsequence can be [3, 2, 4] with differences 1, 2 respectively, which are strictly decreasing."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how you might track previous elements and their differences.",
+      "Dynamic programming may be useful to store previously calculated lengths."
+    ],
+    "company": "Juspay"
+  },
+  {
+    "question_id": "",
+    "title": "Set Matrix Zeroes",
+    "description": "Given a m x n integer matrix, if an element is 0, set its entire row and column to 0. You must do it in place. The solution should have a time complexity of O(m * n) and the space complexity should be O(1).",
+    "topic": "Matrix",
+    "subtopic": "In-place Array Modification",
+    "tags": [
+      "Matrix",
+      "In-place",
+      "Modification"
+    ],
+    "input_format": "A 2D array of integers representing the matrix.",
+    "output_format": "Modify the matrix in-place to set the corresponding rows and columns to zero based on the initial matrix.",
+    "constraints": [
+      "1 <= m, n <= 200",
+      "-231 <= matrix[i][j] <= 231 - 1"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]",
+        "output": "[[1, 0, 1], [0, 0, 0], [1, 0, 1]]",
+        "explanation": "The element at (1,1) is 0, so we set the whole row and column to 0."
+      },
+      {
+        "input": "matrix = [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]]",
+        "output": "[[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]]",
+        "explanation": "The element at (0,0) is 0, so we set the whole first row and first column to 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a set or two variables to track the rows and columns that need to be updated.",
+      "A two-pass approach can help to minimize space usage."
+    ],
+    "company": "Juspay"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Map"
+    ],
+    "input_format": "A single string s consisting of English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The answer is 'abc', with the length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The answer is 'b', with the length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The answer is 'wke', with the length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "Use a hash map to track the last index of each character."
+    ],
+    "company": "Juspay"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Color Value in a Directed Graph",
+    "description": "You are given a directed graph where each node has a color associated with it. Each directed edge indicates that one node can 'reach' another node. Your task is to find the largest color value in the graph. The color value of a node is defined as the maximum occurrence of the same color in all reachable nodes from that node (including itself). You need to return this value for each node in the graph.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Coloring"
+    ],
+    "input_format": "A list of edges `edges`, where each edge is represented as a tuple `(from_node, to_node)`, and a string `colors` of length `n`, representing the color of each node indexed from 0 to n-1.",
+    "output_format": "A list of integers representing the largest color value for each node.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "1 <= colors[i] <= 26 (for 26 colors)",
+      "The input graph can contain cycles."
+    ],
+    "examples": [
+      {
+        "input": {
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "colors": "aabc"
+        },
+        "output": [
+          2,
+          1,
+          1
+        ],
+        "explanation": "Node 0 can reach nodes 0, 1, and 2. The color 'a' occurs twice at node 0 and once at node 1, hence the largest color value is 2. Node 1 can reach node 1 and 2, 'a' occurs once. Node 2 can only reach itself and sees 'b' once, hence both have 1."
+      },
+      {
+        "input": {
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ]
+          ],
+          "colors": "abab"
+        },
+        "output": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "explanation": "All nodes can reach each other in a cycle, leading to the full color spread, both 'a' and 'b' occur twice for all nodes."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Utilize Depth-First Search (DFS) to explore reachable nodes.",
+      "Keep track of color counts in a hash map or array.",
+      "Consider using memoization to cache results for nodes already processed."
+    ],
+    "company": "Juspay"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Path in a Weighted Tree",
+    "description": "Given a weighted tree represented as an undirected graph, find the shortest path between two nodes. The tree is defined by its edges, where each edge has a weight associated with it. You need to return the total weight of the shortest path from a node A to a node B.",
+    "topic": "Graph",
+    "subtopic": "Tree Traversal",
+    "tags": [
+      "Graph",
+      "Tree",
+      "Dijkstra",
+      "Pathfinding"
+    ],
+    "input_format": "An integer n representing the number of nodes, followed by a list of edges, where each edge is represented by three integers (u, v, w) meaning there is an edge between node u and node v with weight w. Two integers A and B representing the nodes to find the shortest path between.",
+    "output_format": "An integer representing the total weight of the shortest path from node A to node B.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "0 <= w <= 10^4",
+      "All nodes are numbered from 1 to n.",
+      "The graph is a tree, thus there are exactly n-1 edges."
+    ],
+    "examples": [
+      {
+        "input": "n = 5, edges = [[1, 2, 4], [1, 3, 1], [2, 4, 2], [2, 5, 3]], A = 4, B = 3",
+        "output": "7",
+        "explanation": "The shortest path from node 4 to node 3 is 4 -> 2 -> 1 -> 3, with a total weight of 2 + 4 + 1 = 7."
+      },
+      {
+        "input": "n = 3, edges = [[1, 2, 7], [1, 3, 9]], A = 2, B = 3",
+        "output": "16",
+        "explanation": "The shortest path from node 2 to node 3 is 2 -> 1 -> 3, with a total weight of 7 + 9 = 16."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using Dijkstra's algorithm for finding the shortest path in graphs with weighted edges.",
+      "Utilize a priority queue to efficiently select the next node to visit."
+    ],
+    "company": "Juspay"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an array of integers `nums` and an integer `k`, return the maximum sliding window of size `k` over the array. The maximum for each sliding window should be recorded in the output list. You must solve this problem in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Max"
+    ],
+    "input_format": "An array of integers `nums` and an integer `k` representing the size of the sliding window.",
+    "output_format": "An array of integers representing the maximum values in each sliding window of size `k`.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,3,-1,-3,5,3,6,7], k = 3",
+        "output": "[3, 3, 5, 5, 6, 7]",
+        "explanation": "The maximum values for each sliding window are [3, 3, 5, 5, 6, 7]."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Since the window size is 1, the maximum is the only element, which is 1."
+      },
+      {
+        "input": "nums = [1,-1], k = 1",
+        "output": "[1, -1]",
+        "explanation": "The maximums for each window of size 1 are the elements themselves: [1, -1]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a deque to maintain the indices of elements in the current window.",
+      "Ensure the maximum at the head of the deque is always valid."
+    ],
+    "company": "Juspay"
+  },
+  {
+    "question_id": "",
+    "title": "Word Ladder",
+    "description": "Given two words, beginWord and endWord, and a dictionary's word list, return the length of the shortest transformation sequence from beginWord to endWord, such that only one letter can be changed at a time and each transformed word must exist in the word list. Note that beginWord is not a part of the word list. If there is no such transformation sequence, return 0.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Word Problem"
+    ],
+    "input_format": "A string beginWord, a string endWord, and a list of strings wordList.",
+    "output_format": "An integer representing the length of the shortest transformation sequence.",
+    "constraints": [
+      "1 <= beginWord.length <= 10",
+      "1 <= endWord.length <= 10",
+      "1 <= wordList.length <= 5000",
+      "beginWord and endWord consist of lowercase alphabetic characters.",
+      "All the words in wordList are of the same length as beginWord."
+    ],
+    "examples": [
+      {
+        "input": "beginWord = 'hit', endWord = 'cog', wordList = ['hot', 'dot', 'dog', 'lot', 'log', 'cog']",
+        "output": "5",
+        "explanation": "The shortest transformation sequence is 'hit' -> 'hot' -> 'dot' -> 'dog' -> 'cog', which is 5 words long."
+      },
+      {
+        "input": "beginWord = 'hit', endWord = 'cog', wordList = ['hot', 'dot', 'dog', 'lot', 'log']",
+        "output": "0",
+        "explanation": "The endWord 'cog' is not in the word list, thus no transformation sequence exists."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a queue to explore each transformation level by level.",
+      "Generate potential candidates by changing one letter at a time."
+    ],
+    "company": "Juspay"
+  }
+]

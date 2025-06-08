@@ -1,0 +1,562 @@
+[
+  {
+    "question_id": "",
+    "title": "Meeting Rooms II",
+    "description": "Given an array of meeting time intervals consisting of start and end times, find the minimum number of conference rooms required to hold all the meetings. Each interval is represented as a pair [start_time, end_time]. A conference room can only be used for one meeting at a time. If a meeting ends at the same time as another meeting starts, the room can be reused.",
+    "topic": "Greedy Algorithm",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Intervals",
+      "Sorting"
+    ],
+    "input_format": "An array of intervals, where each interval is represented as a pair of integers [start_time, end_time].",
+    "output_format": "An integer representing the minimum number of conference rooms required.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "0 <= intervals[i][0] < intervals[i][1] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[0, 30], [5, 10], [15, 20]]",
+        "output": "2",
+        "explanation": "We need two rooms; Room 1 is allocated for [0, 30] and Room 2 is allocated for [5, 10]."
+      },
+      {
+        "input": "intervals = [[7, 10], [2, 4]]",
+        "output": "1",
+        "explanation": "We only need one room for both meetings as they don't overlap."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on start times.",
+      "Use a priority queue to manage the end times of meetings."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Anagrams"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of lists of strings, where each list contains grouped anagrams.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The grouping of anagrams can be in any order; the output shows a possible grouping."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "There is only one string which is an empty string, hence it forms a group by itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "The single character 'a' forms its own group."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the characters of each string.",
+      "Use a hashmap to group the sorted strings."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Distinct Islands",
+    "description": "Given a 2D grid of '1's (land) and '0's (water), you need to count the number of distinct islands. An island is formed by connecting adjacent lands horizontally or vertically. Two islands are considered distinct if they do not share the same shape, regardless of their position in the grid.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Grid",
+      "DFS",
+      "Union-Find"
+    ],
+    "input_format": "A 2D grid represented as a list of lists containing '1's and '0's.",
+    "output_format": "An integer representing the number of distinct islands.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 300",
+      "grid[i][j] is either '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,1,0,0,0],[1,0,0,1,1],[0,0,0,1,0],[0,0,1,0,1]]",
+        "output": "3",
+        "explanation": "The distinct islands are: one formed by (0,0) and (0,1), another by (1,3) and (1,4), and the last one by (2,2) and (3,2)."
+      },
+      {
+        "input": "grid = [[1,1,0,0],[0,0,1,1]]",
+        "output": "2",
+        "explanation": "There are two distinct islands, one formed by (0,0) and (0,1), and another by (1,2) and (1,3)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using DFS or BFS to explore the islands.",
+      "Track the shape of each island as you traverse to identify distinct shapes."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Increasing Subsequence",
+    "description": "Given an unsorted integer array, return the length of the longest increasing subsequence. A subsequence is defined as a sequence that can be derived from another sequence by deleting some elements without changing the order of the remaining elements.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Binary Search"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest increasing subsequence.",
+    "constraints": [
+      "1 <= nums.length <= 2500",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 9, 2, 5, 3, 7, 101, 18]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [2, 3, 7, 101], which has a length of 4."
+      },
+      {
+        "input": "nums = [0, 1, 0, 3, 2, 3]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [0, 1, 2, 3], which has a length of 4."
+      },
+      {
+        "input": "nums = [7, 7, 7, 7, 7, 7, 7]",
+        "output": "1",
+        "explanation": "The longest increasing subsequence is [7], which has a length of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to build your solution.",
+      "Try to keep track of the lengths of increasing subsequences ending at each index."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "Find Median from Data Stream",
+    "description": "Design a data structure that supports the following two operations: addNum and findMedian.  \n\n - addNum(int num): Adds the integer num from the data stream to the data structure.  \n - findMedian(): Returns the median of all elements so far. The median is the middle value in an ordered list of numbers. If there is an even number of numbers, the median is the average of the two middle numbers.",
+    "topic": "Data Structures",
+    "subtopic": "Heap",
+    "tags": [
+      "Heap",
+      "Design",
+      "Data Stream"
+    ],
+    "input_format": "The input consists of multiple calls to addNum(num) and findMedian().",
+    "output_format": "The output of findMedian() is a double representing the median.",
+    "constraints": [
+      "1 <= num <= 10^5",
+      "There will be at most 10^4 calls to addNum and findMedian."
+    ],
+    "examples": [
+      {
+        "input": "addNum(1); addNum(2); findMedian();",
+        "output": "1.5",
+        "explanation": "The numbers added are 1 and 2. The median is (1 + 2) / 2 = 1.5."
+      },
+      {
+        "input": "addNum(3); findMedian();",
+        "output": "2.0",
+        "explanation": "The numbers added are 1, 2, and 3. The median is 2."
+      },
+      {
+        "input": "addNum(4); addNum(5); findMedian();",
+        "output": "3.0",
+        "explanation": "The numbers added are 1, 2, 3, 4, and 5. The median is 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a max heap and a min heap to keep the two halves of the data.",
+      "Balance the heaps to find the median efficiently."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "description": "Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value. If target is not found in the array, return [-1, -1]. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Binary Search",
+    "subtopic": "Searching in Sorted Array",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array with two integers representing the starting and ending position of target.",
+    "constraints": [
+      "0 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "nums is sorted in non-decreasing order."
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 8",
+        "output": "[3, 4]",
+        "explanation": "The target 8 appears starting at index 3 and ending at index 4."
+      },
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 6",
+        "output": "[-1, -1]",
+        "explanation": "The target 6 is not present in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to find the first occurrence.",
+      "Once the first position is found, continue searching for the last position."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "Decode String",
+    "description": "Given an encoded string, return its decoded string. The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. You may assume that the input string is always valid. No extra white spaces, square brackets are well-formed, etc.",
+    "topic": "String",
+    "subtopic": "Decoding",
+    "tags": [
+      "String",
+      "Decoding",
+      "Stack"
+    ],
+    "input_format": "A single string s, representing the encoded string.",
+    "output_format": "A string representing the decoded result.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of lowercase English letters, digits, and square brackets."
+    ],
+    "examples": [
+      {
+        "input": "s = \"3[a2[c]]\"",
+        "output": "accaccacc",
+        "explanation": "The decoded string is 'a2[c]' = 'acc', which is repeated 3 times."
+      },
+      {
+        "input": "s = \"2[abc]3[cd]ef\"",
+        "output": "abcabccdcdcdef",
+        "explanation": "The decoded string is 'abc' repeated 2 times followed by 'cd' repeated 3 times and then 'ef'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of numbers and strings.",
+      "When encountering ']', pop from the stack until finding '['."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "Koko Eating Bananas",
+    "description": "Koko loves bananas and wants to eat them all in a given amount of time. Koko has a pile of bananas and can eat at a fixed rate, but this rate can vary. Given a pile of bananas, a certain number of hours, and varying eating speeds, your goal is to find the minimum speed (in bananas per hour) at which Koko can eat all the bananas within the given hours. If it's impossible to finish within the time, return -1.",
+    "topic": "Binary Search",
+    "subtopic": "Searching",
+    "tags": [
+      "Binary Search",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array piles where piles[i] is the number of bananas in the i-th pile, and an integer h representing the number of hours allowed.",
+    "output_format": "An integer representing the minimum eating speed in bananas per hour, or -1 if impossible.",
+    "constraints": [
+      "1 <= piles.length <= 10^4",
+      "1 <= piles[i] <= 10^9",
+      "1 <= h <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "piles = [3, 6, 7, 11], h = 8",
+        "output": "4",
+        "explanation": "Koko can eat at speed 4: 3 bananas in the first hour, 4 in the second hour, 4 in the third, 4 in the fourth, thus finishing all within 8 hours."
+      },
+      {
+        "input": "piles = [30, 11, 23, 4, 20], h = 5",
+        "output": "30",
+        "explanation": "To finish all piles in 5 hours, the minimum speed must be 30; otherwise, Koko won't be able to finish on time."
+      },
+      {
+        "input": "piles = [30, 11, 23, 4, 20], h = 6",
+        "output": "23",
+        "explanation": "At speed 23, Koko can eat all bananas in 6 hours."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to determine the minimum speed.",
+      "Calculate how many hours it would take for a given speed."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "Meeting Rooms",
+    "description": "Given an array of meeting time intervals where intervals[i] = [starti, endi], determine if a person could attend all meetings. You can assume the intervals are represented in minutes, and they are inclusive on the start time and exclusive on the end time.",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Interval",
+      "Sorting"
+    ],
+    "input_format": "An array of intervals where each interval is represented by a start and end time in the format [[start1, end1], [start2, end2], ...].",
+    "output_format": "A boolean value: return true if the person can attend all meetings, otherwise return false.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "0 <= starti < endi <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[0, 30], [5, 10], [15, 20]]",
+        "output": "false",
+        "explanation": "The meeting intervals overlap. The first and second intervals cannot be attended simultaneously."
+      },
+      {
+        "input": "intervals = [[7, 10], [2, 4]]",
+        "output": "true",
+        "explanation": "The intervals do not overlap, so the person can attend all meetings."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Sort the intervals by their start time.",
+      "Check if the current meeting starts before the last one ends."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a Least Recently Used (LRU) Cache. It should support the following operations: get and put. The get operation retrieves the value of the key if the key exists in the cache, otherwise it returns -1. The put operation will update the value of the key if the key exists, and if it does not exist, it will add the key-value pair to the cache. If the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structure",
+    "subtopic": "Design",
+    "tags": [
+      "Cache",
+      "Data Structure",
+      "Design"
+    ],
+    "input_format": "The cache is initialized with a positive capacity. The put and get operations take an integer key and an integer value.",
+    "output_format": "Return the value corresponding to the key if it exists, or -1 if it does not exist.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^4",
+      "The function get and put will be called at most 10^4 times."
+    ],
+    "examples": [
+      {
+        "input": "cache = new LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1, -1, 3, 4]",
+        "explanation": "After the put operations, the cache stores (1,1), (2,2). When we call get(1), it returns 1. Then we put (3,3) which invalidates (2,2) because the cache capacity is 2. Thus, get(2) returns -1. Then put(4,4) invalidates (1,1), and we get 1, 3, and 4 accordingly."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hash map and a doubly linked list for efficient LRU cache implementation.",
+      "Keep track of the order of usage of the entries."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "Design Browser History",
+    "description": "You are tasked with designing a simple browser history system. The system should allow the user to visit a website, go back to the previous websites visited, and go forward to the websites after going back. Implement the BrowserHistory class with the following methods:\n\n1. `BrowserHistory(string homepage)` initializes the object with the homepage of the browser.\n2. `void visit(string url)` visits the given `url`, and the current page will be updated to this new `url`. This will clear any websites that are forward in the history.\n3. `string back(int steps)` moves back `steps` pages in the history. If there are fewer than `steps` pages in the history, move back only to the oldest page.\n4. `string forward(int steps)` moves forward `steps` pages in the history. If there are fewer than `steps` pages forward, move forward only to the most recent page.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "History"
+    ],
+    "input_format": "A string representing the homepage and a series of method calls with parameters as described.",
+    "output_format": "The string output of the back or forward operations.",
+    "constraints": [
+      "1 <= homepage.length <= 100",
+      "1 <= url.length <= 100",
+      "0 <= steps <= 100"
+    ],
+    "examples": [
+      {
+        "input": "BrowserHistory('leetcode.com');\nBrowserHistory.visit('google.com');\nBrowserHistory.visit('facebook.com');\nBrowserHistory.back(1);\nBrowserHistory.back(1);\nBrowserHistory.forward(1);",
+        "output": "'google.com'",
+        "explanation": "After visiting leetcode.com, google.com, and facebook.com, going back two steps goes from facebook.com to google.com, and then forward one step returns to facebook.com."
+      },
+      {
+        "input": "BrowserHistory('leetcode.com');\nBrowserHistory.visit('google.com');\nBrowserHistory.back(2);",
+        "output": "'leetcode.com'",
+        "explanation": "Going back two steps from google.com goes back to the homepage leetcode.com."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to store the history of visited websites.",
+      "Keep track of two pointers for current position, past and future."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the height of bars in a histogram, calculate how much water can be trapped after raining. The width of each bar is 1. You need to return the total amount of water that can be trapped between the bars.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers representing the height of the bars.",
+    "output_format": "An integer representing the total units of water that can be trapped.",
+    "constraints": [
+      "0 <= height.length <= 2 * 10^4",
+      "0 <= height[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water can be trapped in the valleys formed by the heights. The total trapped water is 6 units."
+      },
+      {
+        "input": "height = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "Water can be trapped in the valleys between the heights: Total is 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two pointers to track the left and right bounds.",
+      "Use an array or two variables to keep track of the max height seen from both sides."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Height Trees",
+    "description": "Given a connected undirected graph with n nodes labeled from 0 to n-1, you are tasked with finding all the Minimum Height Trees (MHTs). A Minimum Height Tree is a tree such that when its root is chosen, the height of the tree is minimized. The height of a tree is defined as the number of edges in the longest path from the root to any leaf. Return a list of the root labels of all possible MHTs. If the graph is empty, return an empty list.",
+    "topic": "Graph",
+    "subtopic": "Tree",
+    "tags": [
+      "Graph",
+      "Tree",
+      "BFS"
+    ],
+    "input_format": "An integer n (the number of nodes) and a list of edges where each edge is represented as a pair of integers denoting a connection between two nodes.",
+    "output_format": "A list of integers representing the nodes that can serve as roots of Minimum Height Trees.",
+    "constraints": [
+      "1 <= n <= 20000",
+      "0 <= edges.length <= 20000",
+      "edges[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, edges = [[1, 0], [1, 2], [1, 3]]",
+        "output": "[1]",
+        "explanation": "The vertex 1 is the center of the tree and provides the minimum height."
+      },
+      {
+        "input": "n = 6, edges = [[3, 0], [3, 1], [3, 2], [5, 4]]",
+        "output": "[3, 4]",
+        "explanation": "Vertices 3 and 4 are the centroids of the tree, yielding the minimum height."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider which nodes would be left after trimming leaves.",
+      "The number of centers in a tree can be one or two."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "Min Stack",
+    "description": "Design a stack that supports push, pop, top, and retrieving the minimum element in constant time. Implement the MinStack class: \n\n- MinStack() initializes the stack object. \n- void push(int val) pushes the element val onto the stack. \n- void pop() removes the element on the top of the stack. \n- int top() gets the top element of the stack. \n- int getMin() retrieves the minimum element in the stack. \n\nYou must implement the operations in constant time.",
+    "topic": "Stack",
+    "subtopic": "Design",
+    "tags": [
+      "Stack",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "Operations can consist of 'push', 'pop', 'top', and 'getMin'. Each operation is followed by an optional integer for 'push'.",
+    "output_format": "The output is the result of 'top' and 'getMin' operations only, while 'push' and 'pop' do not return any value.",
+    "constraints": [
+      "The number of operations will be in the range [1, 1000].",
+      "All operations are valid, and 'getMin' and 'top' will be called only if the stack is not empty."
+    ],
+    "examples": [
+      {
+        "input": "MinStack minStack; minStack.push(-2); minStack.push(0); minStack.push(-3); minStack.getMin(); minStack.pop(); minStack.top(); minStack.getMin();",
+        "output": "-3, 0, -2",
+        "explanation": "The minimum value after pushing -2, 0, and -3 is -3. After popping -3, the top is 0 and the minimum becomes -2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use an auxiliary stack to keep track of the minimum values.",
+      "You might need to update the minimum value every time you push or pop."
+    ],
+    "company": "Splunk"
+  },
+  {
+    "question_id": "",
+    "title": "Find All Anagrams in a String",
+    "description": "Given a string `s` and a string `p`, return all the start indices of `p`'s anagrams in `s`. You may return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once. For instance, 'abc' is an anagram of 'bca'.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Map"
+    ],
+    "input_format": "Two strings `s` and `p`, where 1 <= s.length <= 10^4 and 1 <= p.length <= s.length.",
+    "output_format": "An array of integers representing the starting indices of anagrams of `p` in `s`.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "1 <= p.length <= 100",
+      "s consists of lowercase English letters only.",
+      "p consists of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "s = \"cbaebabacd\", p = \"abc\"",
+        "output": "[0, 6]",
+        "explanation": "The substring with start index 0 is \"cba\", which is an anagram of \"abc\". The substring starting at index 6 is \"bac\", which is also an anagram of \"abc\"."
+      },
+      {
+        "input": "s = \"abcdefg\", p = \"fg\"",
+        "output": "[5]",
+        "explanation": "The substring starting at index 5 is \"fg\", which is an anagram of \"fg\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a frequency count for the letters in p.",
+      "Sliding window technique can help optimize the search.",
+      "Check the frequency of characters in the current window against that of p."
+    ],
+    "company": "Splunk"
+  }
+]

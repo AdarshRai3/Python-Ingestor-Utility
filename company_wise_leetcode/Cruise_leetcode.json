@@ -1,0 +1,235 @@
+[
+  {
+    "question_id": "",
+    "title": "Synonymous Sentences",
+    "description": "Given a sentence and a list of synonym pairs, return all possible sentences that can be formed by replacing the words in the original sentence with their synonyms. Words in the input sentence are separated by spaces, and the synonyms are provided as pairs in a 2D array.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Backtracking",
+      "Combinatorics"
+    ],
+    "input_format": "The first input is a string representing the original sentence. The second input is a list of pairs of strings, where each pair contains two synonyms.",
+    "output_format": "A list of strings representing all possible sentences formed from the original sentence using the synonyms.",
+    "constraints": [
+      "1 <= sentence.length <= 1000",
+      "1 <= synonyms.length <= 100",
+      "Each synonym pair consists of two words of length up to 50."
+    ],
+    "examples": [
+      {
+        "input": {
+          "sentence": "I love programming",
+          "synonyms": [
+            [
+              "love",
+              "adore"
+            ],
+            [
+              "programming",
+              "coding"
+            ]
+          ]
+        },
+        "output": [
+          "I love programming",
+          "I love coding",
+          "I adore programming",
+          "I adore coding"
+        ],
+        "explanation": "The words 'love' and 'programming' can be replaced with their synonyms to form the new sentences."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a dictionary to map each word to its synonyms.",
+      "Consider using backtracking to generate all possible combinations."
+    ],
+    "company": "Cruise"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+    "topic": "Intervals",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Intervals",
+      "Sorting",
+      "Array"
+    ],
+    "input_format": "A list of lists intervals, where each sublist has two integers representing the start and end of an interval.",
+    "output_format": "A list of lists representing the merged non-overlapping intervals.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= starti <= endi <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "Since intervals [1,3] and [2,6] overlap, they are merged into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] touch at 4, so they are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the start time.",
+      "Use a variable to track the end of the last merged interval."
+    ],
+    "company": "Cruise"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Paths II",
+    "description": "A robot is located at the top-left corner of an m x n grid. The robot wants to move to the bottom-right corner of the grid. The robot can only move either down or right at any point in time. Some grid cells are obstacles that the robot cannot enter. Determine how many unique paths the robot can take to reach the bottom-right corner.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Path Counting"
+    ],
+    "input_format": "A 2D array grid where grid[i][j] is 0 (empty) or 1 (obstacle).",
+    "output_format": "An integer representing the number of unique paths from the top-left to the bottom-right cell.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 100",
+      "grid[i][j] is 0 or 1",
+      "The starting cell grid[0][0] and the ending cell grid[m-1][n-1] are guaranteed to be 0."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0,0,0],[0,1,0],[0,0,0]]",
+        "output": "2",
+        "explanation": "There are two ways to reach the bottom-right corner: (0,0) -> (0,1) -> (0,2) -> (1,2) -> (2,2) and (0,0) -> (1,0) -> (2,0) -> (2,1) -> (2,2)."
+      },
+      {
+        "input": "grid = [[0,1],[0,0]]",
+        "output": "1",
+        "explanation": "There is only one way to reach the bottom-right corner: (0,0) -> (1,0) -> (1,1)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to count paths.",
+      "Use a 2D array to store the number of unique paths to each cell."
+    ],
+    "company": "Cruise"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Paths III",
+    "description": "You are given a grid with some cells marked as empty, obstacles, and one starting point. The goal is to find the number of unique paths from the starting point to the ending point while visiting all non-obstacle empty cells exactly once. A path can move in four directions: up, down, left, and right. You cannot go through obstacles or out of bounds. Your task is to implement a function that calculates the number of unique paths that meet these criteria.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Backtracking",
+    "tags": [
+      "Grid",
+      "Backtracking",
+      "Dynamic Programming"
+    ],
+    "input_format": "A 2D grid representing the board where 0 is an empty cell, -1 is an obstacle, and 1 is the starting point. The ending point is represented by 2.",
+    "output_format": "An integer representing the number of unique paths from the starting point to the ending point visiting all empty cells exactly once.",
+    "constraints": [
+      "1 <= grid.length <= 20",
+      "1 <= grid[0].length <= 20",
+      "There is exactly one starting point (1) and one ending point (2) in the grid."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,0,0,0],[0,0,0,0],[0,0,2,-1]]",
+        "output": "2",
+        "explanation": "There are two unique paths to reach the ending point while visiting all empty cells exactly once."
+      },
+      {
+        "input": "grid = [[1,0,0],[0,0,0],[0,-1,2]]",
+        "output": "4",
+        "explanation": "There are four unique paths to reach the ending point from the starting point."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using backtracking to explore all potential paths.",
+      "Track the number of visited cells to ensure you visit all empty cells.",
+      "Use depth-first search to navigate through the grid."
+    ],
+    "company": "Cruise"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Implement a data structure that supports the Least Recently Used (LRU) caching mechanism. It should support the following operations: get and put. The 'get' operation retrieves the value of the key if the key exists in the cache. If the key does not exist, return -1. The 'put' operation will add a new key-value pair to the cache. If the cache reaches its capacity, it should invalidate the least recently used item before inserting the new item.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Cache",
+      "Linked List",
+      "Hash Map"
+    ],
+    "input_format": "Two methods: 'get' (key: int) and 'put' (key: int, value: int). The cache is initialized with a maximum capacity.",
+    "output_format": "Return the value for 'get' operation, and there is no output for 'put' operation.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key, value <= 10^4",
+      "The operations 'put' and 'get' are called at most 10^4 times."
+    ],
+    "examples": [
+      {
+        "input": "cache = LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1, -1, 3, 4]",
+        "explanation": "After the operations, the cache will have keys 3 and 4. Key 1 is removed (least recently used) when key 3 is added."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hash map and a linked list for efficient retrieval and storage.",
+      "Keep track of the order of usage to determine the least recently used item."
+    ],
+    "company": "Cruise"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given a total of n courses labeled from 0 to n-1. Some courses may have prerequisites, which means you must take one course before the next. Given the prerequisites as a pair of courses [[a, b], meaning to take course a you must first take course b]. Determine if you can finish all courses. Return true if you can finish all courses; otherwise, return false.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS"
+    ],
+    "input_format": "An integer n representing the number of courses and a list of prerequisite pairs where each pair [a, b] indicates that course b is a prerequisite for course a.",
+    "output_format": "A boolean value indicating whether it is possible to finish all courses.",
+    "constraints": [
+      "1 <= n <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "n = 2, prerequisites = [[1, 0]]",
+        "output": "true",
+        "explanation": "You can take course 0 first, then take course 1."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1, 0], [0, 1]]",
+        "output": "false",
+        "explanation": "There is a circular dependency where both courses require each other."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using graph representation to model the courses and prerequisites.",
+      "Look for cycles in the graph to determine if all courses can be finished."
+    ],
+    "company": "Cruise"
+  }
+]

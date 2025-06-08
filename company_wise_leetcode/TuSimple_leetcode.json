@@ -1,0 +1,159 @@
+[
+  {
+    "question_id": "",
+    "title": "Number of Ways to Earn Points",
+    "description": "You are given a list of integers representing scores. Each score can be either added or subtracted from your total score. Your goal is to determine the number of different ways to earn a specific target score by choosing from the given scores. The order of scores matters, and you must use all the scores exactly once.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combination Sum",
+    "tags": [
+      "Dynamic Programming",
+      "Recursion",
+      "Backtracking"
+    ],
+    "input_format": "An array of integers scores and an integer target.",
+    "output_format": "An integer representing the total number of ways to combine the scores to reach the target.",
+    "constraints": [
+      "1 <= scores.length <= 20",
+      "-1000 <= scores[i] <= 1000",
+      "-1000 <= target <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "scores = [1, 2, 3], target = 4",
+        "output": "7",
+        "explanation": "The different ways to achieve a score of 4 are: (1+1+1+1), (1+1+2), (1+2+1), (2+1+1), (2+2), (1+3), (3+1)."
+      },
+      {
+        "input": "scores = [2, 3], target = 6",
+        "output": "4",
+        "explanation": "Ways to get 6 are: (2+2+2), (2+2+3-1), (3+3-1)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using recursion with memoization.",
+      "Think about how to manage the signs of scores."
+    ],
+    "company": "TuSimple"
+  },
+  {
+    "question_id": "",
+    "title": "Count the Number of Good Subsequences",
+    "description": "You are given an array of integers. A subsequence is considered 'good' if it contains at least one even number and at least one odd number. Your task is to count the total number of good subsequences that can be formed from the array. A subsequence can be formed by deleting some elements from the original array without changing the order of the remaining elements. For example, if the given array is [1, 2, 3], the good subsequences are: [1, 2], [1, 3], [2, 3], and [1, 2, 3]. Return the count of such good subsequences.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subsequence Count",
+    "tags": [
+      "Dynamic Programming",
+      "Subsequences",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums of length n.",
+    "output_format": "An integer representing the total number of good subsequences.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "7",
+        "explanation": "The good subsequences are: [1, 2], [1, 3], [2, 3], [1, 2, 3]. There are 2^3 (8) total subsequences, but we exclude the empty subsequence and those with only odds or only evens (1, 3). So, 8 - 1 - 2 = 7."
+      },
+      {
+        "input": "nums = [2, 4, 6]",
+        "output": "0",
+        "explanation": "All subsequences contain only even numbers, so there are no good subsequences."
+      },
+      {
+        "input": "nums = [1, 3, 5, 7]",
+        "output": "0",
+        "explanation": "All subsequences contain only odd numbers, so there are no good subsequences."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count the occurrences of even and odd numbers separately.",
+      "Consider using the formula for combinations to count potential subsequences.",
+      "Remember to account for the empty subsequence."
+    ],
+    "company": "TuSimple"
+  },
+  {
+    "question_id": "",
+    "title": "Intervals Between Identical Elements",
+    "description": "Given an array of integers, you need to find the maximum interval length between two identical elements. An interval is defined as the distance between the first occurrence of an element and its last occurrence. If an element appears only once, its interval length is 0.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Interval"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum interval length between identical elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1, 2, 3, 1]",
+        "output": "6",
+        "explanation": "The maximum interval between the first and last occurrences of '1' is 6 (from index 0 to index 6)."
+      },
+      {
+        "input": "nums = [5, 5, 5, 5]",
+        "output": "3",
+        "explanation": "The maximum interval between the first and last occurrences of '5' is 3 (from index 0 to index 3)."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "0",
+        "explanation": "No elements are repeated in the array, so the maximum interval is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to record the first and last index of each element.",
+      "The interval for an element can be calculated as last_index - first_index."
+    ],
+    "company": "TuSimple"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Good People Based on Statements",
+    "description": "In a group of people, each person can make statements about themselves or others. A person is considered 'good' if all their statements are true, and at least one statement about themselves is true. The goal is to determine the maximum number of good people in the group based on their statements. You are given an n x n matrix where matrix[i][j] is true if person i claims that person j is good, otherwise false. Each person can also make a claim about themselves, represented in the diagonal of the matrix.",
+    "topic": "Graph",
+    "subtopic": "Matrix Representation",
+    "tags": [
+      "Graph",
+      "Matrix",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "A boolean n x n matrix where matrix[i][j] indicates whether person i claims person j is good.",
+    "output_format": "An integer representing the maximum number of good people.",
+    "constraints": [
+      "1 <= n <= 100",
+      "The matrix[i][j] is true or false."
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[true, false], [true, true]]",
+        "output": "2",
+        "explanation": "Both persons claim that they are good, so both can be considered good."
+      },
+      {
+        "input": "matrix = [[true, false], [false, true]]",
+        "output": "1",
+        "explanation": "Only one person can be good at a time because their claims contradict each other."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how the claims form a directed graph.",
+      "Use DFS or BFS to explore the claims."
+    ],
+    "company": "TuSimple"
+  }
+]

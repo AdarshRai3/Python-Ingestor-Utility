@@ -1,0 +1,165 @@
+[
+  {
+    "question_id": "",
+    "title": "Reformat Phone Number",
+    "description": "Given a string of digits and spaces, reformat the phone number so that it meets a specific formatting requirement. The phone number should be grouped into blocks of 3 digits, with the last block containing 2 or 3 digits if necessary. Spaces or separators should not be included in the final string format.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Phone Number"
+    ],
+    "input_format": "A string s representing the raw phone number containing digits and spaces.",
+    "output_format": "A single string representing the reformatted phone number.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of digits and spaces only.",
+      "The input will have at least one digit."
+    ],
+    "examples": [
+      {
+        "input": "1 2 3 4 5 6 7 8 9 0",
+        "output": "123-456-7890",
+        "explanation": "The digits are grouped into blocks of three, except for the last block which contains two digits."
+      },
+      {
+        "input": "9 8 7 6 5",
+        "output": "987-65",
+        "explanation": "The first three digits are grouped as '987' followed by '65' as the last block."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider removing spaces first before processing the digits.",
+      "Use string concatenation to build the final result."
+    ],
+    "company": "Activision"
+  },
+  {
+    "question_id": "",
+    "title": "Design Browser History",
+    "description": "You are tasked with designing a simple browser history manager. The browser has a simple way of storing URLs visited in a session. You need to implement the BrowserHistory class that has the following methods: \n\n- BrowserHistory(string homepage): Initializes the object with the homepage URL. \n- void visit(string url): Visits the specified url and saves it in the history. \n- string back(int steps): Moves back 'steps' in the history. If there are fewer than 'steps' to go back, it navigates to the oldest URL. \n- string forward(int steps): Moves forward 'steps' in the history. If there are fewer than 'steps' to go forward, it navigates to the latest URL.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Stack"
+    ],
+    "input_format": "The input is a list of mixed method calls as described in the methods above.",
+    "output_format": "For each call to the method back or forward, return the resulting URL as a string.",
+    "constraints": [
+      "1 <= homepage.length <= 100",
+      "1 <= url.length <= 100",
+      "1 <= steps <= 10^4",
+      "The given homepage will always be a valid URL."
+    ],
+    "examples": [
+      {
+        "input": [
+          "BrowserHistory",
+          "visit",
+          "visit",
+          "back",
+          "back",
+          "forward",
+          "visit",
+          "forward",
+          "back"
+        ],
+        "output": [
+          null,
+          null,
+          null,
+          "google.com",
+          "leetcode.com",
+          "leetcode.com",
+          null,
+          "google.com",
+          "leetcode.com"
+        ],
+        "explanation": "In this example, after visiting 'leetcode.com' and 'google.com', going back two steps brings us back to 'google.com'. Going forward one step brings us back to 'leetcode.com'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to manage back and forward movements.",
+      "You may need two pointers to keep track of the current position in history."
+    ],
+    "company": "Activision"
+  },
+  {
+    "question_id": "",
+    "title": "Decode String",
+    "description": "Given an encoded string, return its decoded string. The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. You need to implement a function to decode such strings and return the complete decoded string. For instance, the string '3[a2[c]]' would be decoded as 'accaccacc'.",
+    "topic": "String",
+    "subtopic": "Decoding",
+    "tags": [
+      "String",
+      "Decoding",
+      "Stack"
+    ],
+    "input_format": "A string s, representing the encoded string. The string will only contain digits and lowercase letters, with brackets for encoding.",
+    "output_format": "A string representing the fully decoded version of the input string.",
+    "constraints": [
+      "1 <= s.length <= 30",
+      "s consists of digits and lowercase English letters, with balanced parentheses."
+    ],
+    "examples": [
+      {
+        "input": "s = '3[a2[c]]'",
+        "output": "accaccacc",
+        "explanation": "The encoded string has 'a2[c]'; thus, 'c' is repeated 2 times to form 'cc', and 'acc' is then repeated 3 times."
+      },
+      {
+        "input": "s = '2[abc]3[cd]ef'",
+        "output": "abcabccdcdcdef",
+        "explanation": "'abc' is repeated 2 times and 'cd' is repeated 3 times, resulting in 'abcabccdcdcdef'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of numbers and strings.",
+      "Handle digit parsing and string construction carefully."
+    ],
+    "company": "Activision"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Divisible Triplet Sums",
+    "description": "Given an array of integers, determine the number of distinct triplet indices (i, j, k) such that i < j < k and the sum of the elements at these indices is divisible by a given integer 'd'.",
+    "topic": "Array",
+    "subtopic": "Combination Sum",
+    "tags": [
+      "Array",
+      "Combinations",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums and an integer d.",
+    "output_format": "An integer representing the number of distinct triplets whose sum is divisible by d.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "-10^5 <= nums[i] <= 10^5",
+      "1 <= d <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], d = 3",
+        "output": "1",
+        "explanation": "The only valid triplet is (1, 2, 4) which sums to 7. 7 is not divisible by 3."
+      },
+      {
+        "input": "nums = [3, 6, 9, 12], d = 6",
+        "output": "4",
+        "explanation": "Valid triplets include (3, 6, 9), (3, 6, 12), (3, 9, 12), and (6, 9, 12), all of which sum to a multiple of 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a nested loop to explore combinations of triplet indices.",
+      "Use modulo operation to check divisibility."
+    ],
+    "company": "Activision"
+  }
+]

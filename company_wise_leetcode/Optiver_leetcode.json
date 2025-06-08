@@ -1,0 +1,104 @@
+[
+  {
+    "question_id": "",
+    "title": "Number of Days Between Two Dates",
+    "description": "Given two dates in the format YYYY-MM-DD, calculate the number of days between them. The two dates can be in any order. Consider leap years, and ensure your implementation can handle dates ranging from the year 1900 to 2100.",
+    "topic": "Date and Time",
+    "subtopic": "Date Calculation",
+    "tags": [
+      "Date",
+      "Time",
+      "Calculation"
+    ],
+    "input_format": "Two strings representing the dates in the format 'YYYY-MM-DD'.",
+    "output_format": "An integer representing the absolute number of days between the two dates.",
+    "constraints": [
+      "The input dates are valid and are between 1900-01-01 and 2100-12-31."
+    ],
+    "examples": [
+      {
+        "input": "date1 = '2022-01-01', date2 = '2022-12-31'",
+        "output": "364",
+        "explanation": "There are 364 days between January 1, 2022, and December 31, 2022."
+      },
+      {
+        "input": "date1 = '2020-02-29', date2 = '2021-02-28'",
+        "output": "365",
+        "explanation": "2020 is a leap year, therefore February has an extra day. There are 365 days from February 29, 2020, to February 28, 2021."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a built-in date library to handle date calculations.",
+      "Don't forget to account for leap years."
+    ],
+    "company": "Optiver"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for Least Recently Used (LRU) Cache. It should support the following operations: get and put.\n\nget(key): Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.\n\nput(key, value): Set or insert the value if the key is not already present. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structures",
+    "subtopic": "Cache",
+    "tags": [
+      "Cache",
+      "Linked List",
+      "Design"
+    ],
+    "input_format": "The input consists of multiple operations consisting of 'get' and 'put' with associated key-value pairs.",
+    "output_format": "Return the result of get operations, or return nothing for put operations.",
+    "constraints": [
+      "Capacity of the cache is defined as a positive integer.",
+      "The key and value of the cache operations lie within the integer range."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache(2), cache.put(1, 1), cache.put(2, 2), cache.get(1), cache.put(3, 3), cache.get(2), cache.put(4, 4), cache.get(1), cache.get(3), cache.get(4)",
+        "output": "1, -1, 3, 4",
+        "explanation": "The cache has a capacity of 2. After inserting (1,1) and (2,2), (1) is accessed.\nThen (3,3) is added, evicting (2) since it is the least recently used.\n(2) returns -1 since it's been evicted. Then (4,4) is added, evicting (1). The gets return values accordingly."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hash map and a doubly linked list.",
+      "The most recently used item should be moved to the front."
+    ],
+    "company": "Optiver"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the stock prices.",
+    "output_format": "An integer representing the maximum profit achievable.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Iterate through the prices while keeping track of the minimum price seen so far.",
+      "Calculate potential profit at each step, and update the maximum profit accordingly."
+    ],
+    "company": "Optiver"
+  }
+]

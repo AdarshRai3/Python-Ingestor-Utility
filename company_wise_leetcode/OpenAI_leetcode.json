@@ -1,0 +1,437 @@
+[
+  {
+    "question_id": "",
+    "title": "Design SQL for User Activity",
+    "description": "You are tasked with designing a SQL query that retrieves user activity data from a database. Given two tables, 'Users' and 'Activities', your goal is to return a list of users who have performed activities in the last 30 days, along with the count of activities each user has performed during that period.",
+    "topic": "Database",
+    "subtopic": "SQL Querying",
+    "tags": [
+      "SQL",
+      "Databases",
+      "Querying"
+    ],
+    "input_format": "Two tables: 'Users' (user_id INTEGER, user_name TEXT) and 'Activities' (activity_id INTEGER, user_id INTEGER, activity_date DATE).",
+    "output_format": "A result set with columns: user_id (INTEGER), user_name (TEXT), and activity_count (INTEGER).",
+    "constraints": [
+      "The tables may contain up to 10^6 entries.",
+      "All activity_date entries are within a valid date range."
+    ],
+    "examples": [
+      {
+        "input": "Users: [(1, 'Alice'), (2, 'Bob'), (3, 'Charlie')], Activities: [(101, 1, '2023-09-01'), (102, 1, '2023-09-05'), (103, 2, '2023-10-01')]",
+        "output": "[(1, 'Alice', 2), (2, 'Bob', 1)]",
+        "explanation": "Alice has performed 2 activities and Bob has performed 1 activity in the last 30 days."
+      },
+      {
+        "input": "Users: [(4, 'Dave'), (5, 'Eve')], Activities: []",
+        "output": "[]",
+        "explanation": "No activities were recorded in the last 30 days."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a JOIN to combine the Users and Activities tables.",
+      "Consider using a WHERE clause to filter activities within the last 30 days.",
+      "Group results by user_id to count the activities."
+    ],
+    "company": "OpenAI"
+  },
+  {
+    "question_id": "",
+    "title": "Flatten Nested List Iterator",
+    "description": "You are given a nested list of integers. Each element is either an integer or a list of integers. Implement an iterator that flattens this nested list into a single list of integers. The iterator should implement the following methods: `next()` which returns the next integer in the flattened list, and `hasNext()` which returns whether there are more integers in the flattened list.",
+    "topic": "Design",
+    "subtopic": "Iterator",
+    "tags": [
+      "Iterator",
+      "Design",
+      "Nested List"
+    ],
+    "input_format": "A nested list of integers.",
+    "output_format": "An integer when calling next() and a boolean when calling hasNext().",
+    "constraints": [
+      "The nested list may contain at most 10^4 integers.",
+      "The depth of the nested list is at most 10."
+    ],
+    "examples": [
+      {
+        "input": "[1, [2, [3, 4], 5], 6]",
+        "output": "6",
+        "explanation": "The flattened list is [1, 2, 3, 4, 5, 6]. The last element is 6."
+      },
+      {
+        "input": "[[1, 1], 2, [1, 1]]",
+        "output": "2",
+        "explanation": "The flattened list is [1, 1, 2, 1, 1]. The second element is 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to help manage the nested structure.",
+      "You may need to recurse through lists when flattening."
+    ],
+    "company": "OpenAI"
+  },
+  {
+    "question_id": "",
+    "title": "Design Excel Sum Formula",
+    "description": "You are tasked with designing a formula to compute the sum of a range of cells in an Excel-like spreadsheet. Each cell can contain a number or a formula that references other cells. Your goal is to evaluate a given cell's formula to calculate its sum, considering all the referenced cells and their respective values. If a cell references a range of cells (e.g., 'A1:A3'), you must compute the sum of all the values in that range.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Memoization",
+    "tags": [
+      "Excel",
+      "Dynamic Programming",
+      "Memoization"
+    ],
+    "input_format": "A string representing the formula of a specific cell, where the formula may reference other cells and ranges.",
+    "output_format": "An integer representing the evaluated sum of the given cell's formula.",
+    "constraints": [
+      "1 <= number of cells <= 1000",
+      "Cell references are in the format 'A1' to 'Z26', and ranges are represented as 'A1:A3'.",
+      "The formula will always be valid."
+    ],
+    "examples": [
+      {
+        "input": "A1 = 5, A2 = A1 + 10, A3 = A2 + A1, A4 = SUM(A1:A3)",
+        "output": "30",
+        "explanation": "A1 = 5, A2 = 5 + 10 = 15, A3 = 15 + 5 = 20, thus A4 = SUM(5, 15, 20) = 30."
+      },
+      {
+        "input": "B1 = 1, B2 = 2, B3 = B1 + B2 + 3, B4 = SUM(B1:B3)",
+        "output": "9",
+        "explanation": "B1 = 1, B2 = 2, B3 = 1 + 2 + 3 = 6, thus B4 = SUM(1, 2, 6) = 9."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a memoization technique to cache the results of previously computed formulas.",
+      "Pay attention to the range references and sum them accordingly."
+    ],
+    "company": "OpenAI"
+  },
+  {
+    "question_id": "",
+    "title": "Web Crawler Multithreaded",
+    "description": "Design a web crawler that can crawl multiple web pages simultaneously using multithreading. The crawler should start from a given URL and explore all reachable links up to a certain depth. It should keep track of visited URLs to prevent cycles and repeat visits. The result should be a list of unique URLs scraped by the crawler.",
+    "topic": "Concurrency",
+    "subtopic": "Multithreading",
+    "tags": [
+      "Concurrency",
+      "Multithreading",
+      "Web Crawling"
+    ],
+    "input_format": "A string representing the starting URL and an integer representing the maximum depth for crawling.",
+    "output_format": "A list of unique strings representing the URLs that were crawled.",
+    "constraints": [
+      "The starting URL will be a valid URL.",
+      "1 <= depth <= 10",
+      "The total number of URLs that can be crawled is limited to 10^4."
+    ],
+    "examples": [
+      {
+        "input": "start_url = 'http://example.com', depth = 2",
+        "output": "[ 'http://example.com', 'http://example.com/about', 'http://example.com/contact']",
+        "explanation": "Starting from 'http://example.com', the crawler finds two links 'about' and 'contact' within two levels of depth."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a queue for managing threads.",
+      "Use a set to store visited URLs."
+    ],
+    "company": "OpenAI"
+  },
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value store that supports 'set' and 'get' operations. The 'set' operation will associate a key with a value and a timestamp. The 'get' operation should return the value associated with the key at the most recent timestamp before or equal to a given timestamp. If no such value exists, return an empty string.",
+    "topic": "Hash Map",
+    "subtopic": "Design",
+    "tags": [
+      "Hash Map",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "The 'set' operation takes a string key, a string value, and an integer timestamp. The 'get' operation takes a string key and an integer timestamp.",
+    "output_format": "For the 'get' operation, return a string value associated with the key at the most recent timestamp or an empty string if no such value exists.",
+    "constraints": [
+      "The number of calls to 'set' and 'get' will not exceed 10^4.",
+      "The key and value strings have lengths between 1 and 100.",
+      "The timestamp will be a non-negative integer."
+    ],
+    "examples": [
+      {
+        "input": [
+          "obj = TimeMap()",
+          "obj.set('foo', 'bar', 1)",
+          "obj.get('foo', 1)",
+          "obj.get('foo', 3)",
+          "obj.set('foo', 'bar2', 4)",
+          "obj.get('foo', 4)",
+          "obj.get('foo', 5)"
+        ],
+        "output": [
+          "null",
+          "bar",
+          "bar",
+          "bar2",
+          "bar2"
+        ],
+        "explanation": "At timestamp 1, the value for key 'foo' is 'bar'. For timestamp 3, it returns 'bar' since it's the latest before or equal to 3. After setting 'bar2' at timestamp 4, both timestamps 4 and 5 return 'bar2'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a dictionary to map keys to a list of (timestamp, value) pairs.",
+      "Utilize binary search to efficiently find the most recent timestamp during the 'get' operation."
+    ],
+    "company": "OpenAI"
+  },
+  {
+    "question_id": "",
+    "title": "Simplify Path",
+    "description": "Given a string representing an absolute path for a file, you need to simplify it. In the path, '.' refers to the current directory and '..' refers to the parent directory. You may assume that the given path will always be valid, and you need to return the simplified canonical path.",
+    "topic": "String",
+    "subtopic": "Path Manipulation",
+    "tags": [
+      "String",
+      "Path",
+      "Manipulation"
+    ],
+    "input_format": "A string representing the absolute path.",
+    "output_format": "A string representing the simplified canonical path.",
+    "constraints": [
+      "1 <= path.length <= 3000",
+      "path consists of English letters, digits, '/', '.', and '..'.",
+      "The input path is guaranteed to be a valid absolute path."
+    ],
+    "examples": [
+      {
+        "input": "path = '/a/./b/../../c/'",
+        "output": "/c",
+        "explanation": "The path goes to directory 'a', then stays in it (.), goes back two directories (..), and finally goes to 'c'."
+      },
+      {
+        "input": "path = '/home//user/../' ",
+        "output": "/home/",
+        "explanation": "The path goes to 'home', ignores the double '/', and goes back to 'user', then returns to 'home'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the directories.",
+      "Pop directories for each '..' encountered."
+    ],
+    "company": "OpenAI"
+  },
+  {
+    "question_id": "",
+    "title": "Flood Fill",
+    "description": "Given an image represented by an 'm x n' integer grid 'image' where 'image[i][j]' represents the pixel value of the image, and a starting pixel located at (sr, sc), you need to perform a flood fill operation. This means you should replace the pixel value of the pixel connected 4-directionally to the starting pixel with a new color 'newColor' provided, and all the previously colored pixels with the original color of the pixel. Refer to the example for a better understanding of the operation.",
+    "topic": "Depth-First Search",
+    "subtopic": "Flood Fill Algorithm",
+    "tags": [
+      "DFS",
+      "Recursion",
+      "Grid"
+    ],
+    "input_format": "The input consists of an 'm x n' grid of integers 'image', two integers 'sr', 'sc' representing the starting pixel coordinates, and an integer 'newColor' representing the new color to fill.",
+    "output_format": "Return the modified image after performing the flood fill operation.",
+    "constraints": [
+      "1 <= m, n <= 50",
+      "0 <= image[i][j] < 2^16",
+      "0 <= sr < m",
+      "0 <= sc < n",
+      "0 <= newColor < 2^16",
+      "image[sr][sc] != newColor"
+    ],
+    "examples": [
+      {
+        "input": "image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, newColor = 2",
+        "output": "[[2,2,2],[2,2,0],[2,0,1]]",
+        "explanation": "The original color is 1. We change all connected pixels of the same color to 2."
+      },
+      {
+        "input": "image = [[0,0,0],[0,0,0]], sr = 0, sc = 0, newColor = 2",
+        "output": "[[2,2,2],[2,2,2]]",
+        "explanation": "All pixels are connected and have the same color, thus all are filled with 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using Depth-First Search to explore the connected pixels.",
+      "Be careful to only change pixels that are connected and have the same color initially."
+    ],
+    "company": "OpenAI"
+  },
+  {
+    "question_id": "",
+    "title": "Encode and Decode Strings",
+    "description": "Design a method to encode a list of strings to a single string. The encoded string will be stored on the server, and to retrieve and decode the list of strings, a corresponding decoder must be used. Implement a class Codec with the following methods: \n\n- `encode(strs: List[str]) -> str`: Encodes a list of strings to a single string. \n- `decode(s: str) -> List[str]`: Decodes a single string back to a list of strings. \n\nTo ensure that the encode-decode mechanism works flawlessly, consider using a delimiting character that will not appear in the original strings.",
+    "topic": "String",
+    "subtopic": "Encoding/Decoding",
+    "tags": [
+      "String",
+      "Encoding",
+      "Decoding"
+    ],
+    "input_format": "A list of strings, strs, to be encoded.",
+    "output_format": "A single encoded string when using encode method, or a list of decoded strings when using decode method.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "strs = ['Hello', 'World']",
+        "output": "'5#Hello5#World'",
+        "explanation": "The encoded string is formed by adding the length of each string followed by '#' to separate them."
+      },
+      {
+        "input": "s = '5#Hello5#World'",
+        "output": "['Hello', 'World']",
+        "explanation": "The decoder splits the encoded string by the '#' character and retrieves the original strings based on the lengths encoded."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a delimiter that won't appear in the strings.",
+      "Consider the lengths of the strings for precise decoding."
+    ],
+    "company": "OpenAI"
+  },
+  {
+    "question_id": "",
+    "title": "Design Memory Allocator",
+    "description": "You need to design a memory allocator that can allocate and free memory blocks. Your allocator should support two operations: allocate(size) and free(pointer). The allocate(size) function will allocate a block of memory and return a pointer to the beginning of the block. If there is not enough memory available, it should return null. The free(pointer) function will release the allocated memory block pointed to by the pointer. Implement your memory allocator in a class called MemoryAllocator.",
+    "topic": "Design",
+    "subtopic": "Memory Management",
+    "tags": [
+      "Design",
+      "Memory",
+      "Allocator"
+    ],
+    "input_format": "A series of operations represented as a list of strings, where each operation is either 'allocate(size)' or 'free(pointer)'.",
+    "output_format": "Return a list containing the result of each allocate operation (pointer or null).",
+    "constraints": [
+      "1 <= operations.length <= 10^4",
+      "1 <= size <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": [
+          "allocate(100)",
+          "allocate(200)",
+          "free(0)",
+          "allocate(50)"
+        ],
+        "output": [
+          "0",
+          "100",
+          "null",
+          "0"
+        ],
+        "explanation": "The first allocate operation returns pointer 0, then pointer 100 is allocated. When we free pointer 0, we can allocate a new block of size 50 at the same pointer."
+      },
+      {
+        "input": [
+          "allocate(300)",
+          "allocate(400)",
+          "free(0)",
+          "allocate(500)"
+        ],
+        "output": [
+          "0",
+          "300",
+          "null",
+          "null"
+        ],
+        "explanation": "The first two allocate operations succeed. After freeing pointer 0, there isn't enough space to allocate 500, hence it returns null."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of allocated and freed memory blocks.",
+      "Consider using a data structure to manage free blocks."
+    ],
+    "company": "OpenAI"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Local Values in a Matrix",
+    "description": "You are given a 2D grid of integers. Your task is to find the largest local value in a 3x3 grid sliding window over this matrix. Specifically, for each position (i, j) where 1 <= i < n-1 and 1 <= j < m-1 (n is the number of rows and m is the number of columns), you will compute the maximum value of the 3x3 submatrix centered at (i, j). Return a 2D array representing the largest values for each valid center position.",
+    "topic": "Matrix",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Matrix",
+      "Sliding Window",
+      "2D Array"
+    ],
+    "input_format": "A 2D list of integers representing the matrix.",
+    "output_format": "A 2D list of integers representing the largest local values.",
+    "constraints": [
+      "1 <= n, m <= 100",
+      "-1000 <= grid[i][j] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[[5]]",
+        "explanation": "The only 3x3 area is covered by the entire grid, and the maximum value is 9."
+      },
+      {
+        "input": "grid = [[1, 10, 5], [2, 6, 8], [3, 4, 9]]",
+        "output": "[[10]]",
+        "explanation": "The center of the valid 3x3 area has the maximum value of 10."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the boundaries of the matrix when accessing neighbors.",
+      "Use nested loops to traverse the matrix for valid center points."
+    ],
+    "company": "OpenAI"
+  },
+  {
+    "question_id": "",
+    "title": "Asteroid Collision",
+    "description": "We have an array of integers representing asteroids in a row. For each asteroid, the absolute value represents its size, and the sign represents its direction (positive for right and negative for left). Asteroids move at the same speed. When two asteroids collide, the larger one will destroy the smaller one. If they are of the same size, both will be destroyed. Find out which asteroids will remain after all collisions have been processed.",
+    "topic": "Stack",
+    "subtopic": "Collision Simulation",
+    "tags": [
+      "Stack",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array asteroids representing the asteroids.",
+    "output_format": "An array of integers representing the asteroids that survive after all collisions.",
+    "constraints": [
+      "1 <= asteroids.length <= 10^4",
+      "-1000 <= asteroids[i] <= 1000",
+      "Asteroids moving to the left are represented by negative integers and those moving to the right by positive integers."
+    ],
+    "examples": [
+      {
+        "input": "asteroids = [5, 10, -5]",
+        "output": "[5, 10]",
+        "explanation": "The -5 asteroid collides with the 10 asteroid, and the 10 asteroid survives."
+      },
+      {
+        "input": "asteroids = [8, -8]",
+        "output": "[]",
+        "explanation": "Both asteroids collide and destroy each other."
+      },
+      {
+        "input": "asteroids = [10, 2, -5]",
+        "output": "[10]",
+        "explanation": "The -5 asteroid collides with the 2 asteroid and destroys it, then collides with 10 and is also destroyed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the surviving asteroids.",
+      "Consider the directions of the asteroids to determine collisions."
+    ],
+    "company": "OpenAI"
+  }
+]

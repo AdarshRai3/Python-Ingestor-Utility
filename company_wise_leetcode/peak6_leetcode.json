@@ -1,0 +1,104 @@
+[
+  {
+    "question_id": "",
+    "title": "Maximum Profit of Operating a Centennial Wheel",
+    "description": "A city amusement park operates a Centennial Wheel with a limited number of cabins. Each cabin can hold a certain number of passengers, and the wheel has specific operating hours. Given the profit made for each hour of operation with a maximum number of passengers and costs associated with running the wheel, your task is to calculate the maximum profit that can be achieved in a day. You can choose to run the wheel for any number of hours but must adhere to the constraints on passenger capacity and operating cost.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Knapsack",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Knapsack"
+    ],
+    "input_format": "An integer array profits where profits[i] represents the profit made when the wheel is operated for i+1 hours, an integer array capacities where capacities[i] represents the passenger capacity of the wheel when operated for i+1 hours, and an integer cost which represents the fixed cost of operating the wheel for any duration.",
+    "output_format": "An integer representing the maximum profit achievable in a day.",
+    "constraints": [
+      "1 <= profits.length <= 24",
+      "1 <= capacities[i] <= 100",
+      "1 <= cost <= 500"
+    ],
+    "examples": [
+      {
+        "input": {
+          "profits": [
+            100,
+            200,
+            300,
+            400
+          ],
+          "capacities": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "cost": 150
+        },
+        "output": 550,
+        "explanation": "Operate the wheel for 3 hours with a capacity of 3 and earn 300, then for another hour with a capacity of 1 for a profit of 100. The total profit is 400 - 150 + 100 = 550."
+      },
+      {
+        "input": {
+          "profits": [
+            50,
+            100,
+            150
+          ],
+          "capacities": [
+            2,
+            3,
+            5
+          ],
+          "cost": 80
+        },
+        "output": 220,
+        "explanation": "Operate the wheel for each of the first two durations. The total profit earned is 50 + 100 = 150; accounting for the operation cost yields 150 - 80 + 150 = 220."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider dynamic programming to solve the profit maximization problem.",
+      "Iterate through each hour and check the maximum profit you can achieve given the operating cost.",
+      "Evaluate different combinations of hours to achieve the best result."
+    ],
+    "company": "peak6"
+  },
+  {
+    "question_id": "",
+    "title": "Coordinate With Maximum Network Quality",
+    "description": "You are given a network represented as a 2D grid of integers. Each cell (i, j) represents the quality of the connection at that coordinate. Your task is to find the coordinate that has the highest network quality sum in a given KxK sub-grid. If there are multiple coordinates with the same maximum quality, return the coordinates with the smallest x value. If there are still ties, return the coordinate with the smallest y value.",
+    "topic": "Matrix",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Matrix",
+      "Sliding Window",
+      "Priority Queue"
+    ],
+    "input_format": "An integer matrix grid of size m x n (1 <= m, n <= 100) followed by an integer K (1 <= K <= min(m, n)).",
+    "output_format": "A list of two integers [x, y] representing the coordinate with the maximum network quality.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "1 <= grid[i][j] <= 100",
+      "1 <= K <= min(m, n)"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]], K = 2",
+        "output": "[1, 1]",
+        "explanation": "The maximum sum is achieved with the sub-grid [[5, 6], [8, 9]] which sums to 28."
+      },
+      {
+        "input": "grid = [[5, 1, 2], [1, 4, 6], [7, 3, 2]], K = 1",
+        "output": "[2, 0]",
+        "explanation": "The maximum quality is at coordinate (2, 0) with a quality of 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window approach to sum the quality in the KxK regions efficiently.",
+      "Keep track of the maximum sum and its coordinates.",
+      "Consider edge cases where K equals the size of the matrix."
+    ],
+    "company": "peak6"
+  }
+]

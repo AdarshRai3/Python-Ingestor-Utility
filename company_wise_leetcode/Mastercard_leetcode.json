@@ -1,0 +1,498 @@
+[
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Note that an empty string is also considered valid.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Parentheses"
+    ],
+    "input_format": "A string s consisting of the characters '(', ')', '{', '}', '[' and ']'.",
+    "output_format": "A boolean value indicating whether the input string is valid.",
+    "constraints": [
+      "0 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are correctly matched and closed."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "All types of brackets are correctly matched and closed."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The parentheses are not correctly matched."
+      },
+      {
+        "input": "s = '([)]'",
+        "output": "false",
+        "explanation": "The parentheses are not in the correct order."
+      },
+      {
+        "input": "s = '{[]}'",
+        "output": "true",
+        "explanation": "The brackets are correctly matched and closed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to track opening parentheses.",
+      "Check if the top of the stack matches the closing parentheses."
+    ],
+    "company": "Mastercard"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers, return the indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers that add up to target.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "target is an integer."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "Because nums[1] + nums[2] == 6, we return [1, 2]."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "Because nums[0] + nums[1] == 6, we return [0, 1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the difference between target and each element."
+    ],
+    "company": "Mastercard"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, return true if t is an anagram of s and false otherwise. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hash Table",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Anagram"
+    ],
+    "input_format": "Two strings s and t with lengths ranging from 1 to 5 * 10^4 characters.",
+    "output_format": "A boolean value indicating whether t is an anagram of s.",
+    "constraints": [
+      "1 <= s.length, t.length <= 5 * 10^4",
+      "s and t consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"anagram\", t = \"nagaram\"",
+        "output": "true",
+        "explanation": "Both strings have the same characters with the same frequency."
+      },
+      {
+        "input": "s = \"rat\", t = \"car\"",
+        "output": "false",
+        "explanation": "The strings have different characters; thus, t is not an anagram of s."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hash table to count the occurrences of each character.",
+      "If the counts of characters in both strings match, then one is an anagram of the other."
+    ],
+    "company": "Mastercard"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices, where 1 <= prices.length <= 10^5 and 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit possible.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price encountered so far.",
+      "Calculate profit as the current price minus the minimum price."
+    ],
+    "company": "Mastercard"
+  },
+  {
+    "question_id": "",
+    "title": "Subsets",
+    "description": "Given a set of distinct integers, return all possible subsets (the power set). The solution set must not contain duplicate subsets. You may return the answer in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Generation",
+    "tags": [
+      "Backtracking",
+      "Subsets",
+      "Combinatorial"
+    ],
+    "input_format": "An array of distinct integers nums.",
+    "output_format": "A list of lists representing all possible subsets.",
+    "constraints": [
+      "0 <= nums.length <= 10",
+      "-10 <= nums[i] <= 10"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,2,3]",
+        "output": "[[], [1], [2], [3], [1,2], [1,3], [2,3], [1,2,3]]",
+        "explanation": "The subsets of [1,2,3] are all combinations of these numbers including the empty subset."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[[], [0]]",
+        "explanation": "The subsets of [0] are the empty subset and the subset containing 0 itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to build subsets incrementally.",
+      "You can use backtracking to explore all combinations."
+    ],
+    "company": "Mastercard"
+  },
+  {
+    "question_id": "",
+    "title": "Fizz Buzz",
+    "description": "Write a program that prints the numbers from 1 to n. But for multiples of three print 'Fizz' instead of the number and for the multiples of five print 'Buzz'. For numbers which are multiples of both three and five print 'FizzBuzz'.",
+    "topic": "Mathematics",
+    "subtopic": "Conditionals",
+    "tags": [
+      "Math",
+      "Conditionals",
+      "String Manipulation"
+    ],
+    "input_format": "An integer n, the upper limit of the range.",
+    "output_format": "A list of strings representing the Fizz Buzz sequence.",
+    "constraints": [
+      "1 <= n <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "n = 15",
+        "output": "[1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz']",
+        "explanation": "For numbers from 1 to 15, the multiples of 3 are replaced by 'Fizz', multiples of 5 by 'Buzz', and multiples of both by 'FizzBuzz'."
+      },
+      {
+        "input": "n = 5",
+        "output": "[1, 2, 'Fizz', 4, 'Buzz']",
+        "explanation": "From 1 to 5, only the number 3 is a multiple of 3 and is replaced by 'Fizz', while 5 is a multiple of 5 and is replaced by 'Buzz'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a loop to iterate from 1 to n.",
+      "Check for multiples of 3 and 5 using the modulus operator."
+    ],
+    "company": "Mastercard"
+  },
+  {
+    "question_id": "",
+    "title": "Container With Most Water",
+    "description": "Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with the x-axis forms a container, such that the container contains the most water. Note that you may not slant the container.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Greedy"
+    ],
+    "input_format": "An array of non-negative integers height, where height[i] represents the height of the line at index i.",
+    "output_format": "An integer representing the maximum area of water that can be contained.",
+    "constraints": [
+      "2 <= height.length <= 10^5",
+      "0 <= height[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "height = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The lines at index 1 and 8 (height = 8 and 7) form a container of width 7 and height 7, thus the maximum area is 7 * 7 = 49."
+      },
+      {
+        "input": "height = [1,1]",
+        "output": "1",
+        "explanation": "The only two lines are both of height 1. The area formed is 1 * 1 = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two pointers to find the maximum area efficiently.",
+      "Think about how the area is calculated and how it changes with different pairs of lines."
+    ],
+    "company": "Mastercard"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Image",
+    "description": "You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees clockwise. You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. Do not allocate another 2D matrix to do the rotation.",
+    "topic": "Matrix",
+    "subtopic": "In-Place Operations",
+    "tags": [
+      "Matrix",
+      "In-Place",
+      "Array"
+    ],
+    "input_format": "An n x n 2D list of integers representing the image.",
+    "output_format": "The same 2D list of integers after rotating it by 90 degrees clockwise.",
+    "constraints": [
+      "1 <= n <= 20",
+      "-1000 <= matrix[i][j] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[[7, 4, 1], [8, 5, 2], [9, 6, 3]]",
+        "explanation": "The matrix is rotated 90 degrees clockwise resulting in a new layout."
+      },
+      {
+        "input": "matrix = [[1]]",
+        "output": "[[1]]",
+        "explanation": "A 1x1 matrix remains unchanged after rotation."
+      },
+      {
+        "input": "matrix = [[1, 2], [3, 4]]",
+        "output": "[[3, 1], [4, 2]]",
+        "explanation": "Rotating the 2x2 matrix gives the new layout."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to swap elements in layers.",
+      "You can do a two-step process: transpose and then reverse."
+    ],
+    "company": "Mastercard"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A string is considered a palindrome if it reads the same forward and backward. You may assume that the input string has at least one character.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s consisting of lowercase and uppercase letters.",
+    "output_format": "A string representing the longest palindromic substring of s.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consist of only digits and English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"babad\"",
+        "output": "\"bab\"",
+        "explanation": "Both \"bab\" and \"aba\" are valid palindromic substrings, but \"bab\" is the longest."
+      },
+      {
+        "input": "s = \"cbbd\"",
+        "output": "\"bb\"",
+        "explanation": "\"bb\" is the longest palindromic substring in \"cbbd\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around the center of potential palindromes.",
+      "Track the maximum length and starting index of the palindrome found."
+    ],
+    "company": "Mastercard"
+  },
+  {
+    "question_id": "",
+    "title": "Candy Distribution",
+    "description": "There are n children standing in a line. Each child has a certain number of candies. You need to distribute candies to these children such that each child receives at least one candy. Additionally, if a child has more candies than their adjacent neighbors, they must receive more candies than those neighbors. Your task is to find the minimum number of candies needed to distribute to all children while satisfying these conditions.",
+    "topic": "Greedy",
+    "subtopic": "Candy Distribution",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers, candies, where candies[i] represents the number of candies that the i-th child has.",
+    "output_format": "An integer representing the minimum number of candies required.",
+    "constraints": [
+      "1 <= candies.length <= 2 * 10^4",
+      "1 <= candies[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "candies = [1, 0, 2]",
+        "output": "5",
+        "explanation": "We distribute candies as follows: [2, 1, 2]. The total is 5."
+      },
+      {
+        "input": "candies = [1, 2, 2]",
+        "output": "4",
+        "explanation": "We distribute candies as follows: [1, 2, 1]. The total is 4, which satisfies the condition."
+      },
+      {
+        "input": "candies = [1, 3, 4, 5, 2]",
+        "output": "11",
+        "explanation": "We distribute candies as follows: [1, 2, 3, 4, 1]. The total is 11."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider a two-pass algorithm: one pass from left to right and another from right to left.",
+      "Maintain an array to keep track of the number of candies each child should receive.",
+      "Make sure to adjust the counts based on the conditions for neighbors."
+    ],
+    "company": "Mastercard"
+  },
+  {
+    "question_id": "",
+    "title": "Gas Station",
+    "description": "There are n gas stations along a circular route, where the amount of gas at the i-th gas station is gas[i]. The cost of gas to travel from the i-th gas station to the (i+1)-th gas station is cost[i]. You need to determine the starting gas station's index if you can travel around the circuit once without running out of gas. If there is no solution, return -1.",
+    "topic": "Greedy",
+    "subtopic": "Circular Array",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Simulation"
+    ],
+    "input_format": "Two arrays gas and cost of length n, where gas[i] is the amount of gas available at the i-th station and cost[i] is the cost of gas to travel from i to (i + 1).",
+    "output_format": "An integer representing the starting gas station's index or -1 if it's not possible to complete the circuit.",
+    "constraints": [
+      "1 <= gas.length == cost.length <= 10^4",
+      "0 <= gas[i], cost[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": {
+          "gas": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "cost": [
+            3,
+            4,
+            5,
+            1,
+            2
+          ]
+        },
+        "output": "3",
+        "explanation": "Starting from station 3, we can complete the circuit: 4->5->1->2->3."
+      },
+      {
+        "input": {
+          "gas": [
+            2,
+            3,
+            4
+          ],
+          "cost": [
+            3,
+            4,
+            3
+          ]
+        },
+        "output": "-1",
+        "explanation": "It is not possible to travel around the circuit."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the total gas and total cost to identify feasibility.",
+      "Try to find the starting point where your gas balance becomes non-negative.",
+      "Keep track of your gas balance as you iterate through the stations."
+    ],
+    "company": "Mastercard"
+  },
+  {
+    "question_id": "",
+    "title": "Coin Change",
+    "description": "Given an array of integers representing coin denominations and an integer amount representing a total amount of money, return the fewest number of coins needed to make up that amount. If that amount cannot be made up by any combination of the coins, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Coin Change Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array coins representing the available coin denominations and an integer amount representing the desired total amount.",
+    "output_format": "An integer representing the minimum number of coins needed to make up the amount, or -1 if it is not possible.",
+    "constraints": [
+      "1 <= coins.length <= 12",
+      "1 <= coins[i] <= 2 * 10^4",
+      "0 <= amount <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "coins = [1, 2, 5], amount = 11",
+        "output": "3",
+        "explanation": "The coins 5, 5, and 1 can be used to make 11, so the fewest number of coins is 3."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "-1",
+        "explanation": "It's not possible to make 3 with only denomination of 2."
+      },
+      {
+        "input": "coins = [1], amount = 0",
+        "output": "0",
+        "explanation": "Zero coins are needed to form the amount 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to solve this problem.",
+      "Think about how you can build solutions for smaller amounts.",
+      "Try to optimize the space complexity of your solution."
+    ],
+    "company": "Mastercard"
+  }
+]

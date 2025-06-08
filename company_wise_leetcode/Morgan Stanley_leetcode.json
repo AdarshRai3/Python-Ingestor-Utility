@@ -1,0 +1,1976 @@
+[
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing stock prices.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), the profit is 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transaction is done, i.e., max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far while iterating.",
+      "Calculate the profit at each step and update the maximum profit."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Cost to Move Chips to The Same Position",
+    "description": "You are given an array of integers chips, where chips[i] is the position of the i-th chip. You can change the position of the chips by moving them to adjacent positions. The cost of moving a chip from position x to position y is |x - y|. You need to find the minimum cost to move all the chips to the same position.",
+    "topic": "Greedy",
+    "subtopic": "Minimum Cost",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Minimum Cost"
+    ],
+    "input_format": "An array of integers chips, representing the positions of the chips.",
+    "output_format": "An integer representing the minimum cost to move all chips to the same position.",
+    "constraints": [
+      "1 <= chips.length <= 100",
+      "0 <= chips[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "chips = [1, 2, 3]",
+        "output": "1",
+        "explanation": "Moving chip at position 1 to position 2 or 3 costs 1. Minimum cost is 1."
+      },
+      {
+        "input": "chips = [2, 2, 2, 3, 3]",
+        "output": "2",
+        "explanation": "Moving all chips at position 3 to position 2 costs 2. Minimum cost is 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Analyze the parity (even or odd) of the chip positions.",
+      "Consider how many chips are on even vs odd positions."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Find The Original Array of Prefix Xor",
+    "description": "Given an array representing the prefix XOR of some array, find the original array. The prefix XOR of an array is defined as follows: the ith element in the prefix XOR array is the XOR of all elements from the 0th index to the ith index of the original array. You need to reconstruct the original array from the provided prefix XOR array.",
+    "topic": "Array",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Array",
+      "Bit Manipulation",
+      "XOR"
+    ],
+    "input_format": "An array of integers `prefix` of length n, where `prefix[i]` is the XOR of the original array up to index i.",
+    "output_format": "An array of integers representing the original array.",
+    "constraints": [
+      "1 <= prefix.length <= 10^5",
+      "0 <= prefix[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "prefix = [5, 2, 0, 3, 1]",
+        "output": "[5, 7, 2, 3, 2]",
+        "explanation": "The original array can be reconstructed as follows: The first element is 5. The second element is 5 XOR 2 = 7. The third element is 7 XOR 0 = 7. The fourth element is 2 XOR 3 = 3. The fifth element is 3 XOR 1 = 2."
+      },
+      {
+        "input": "prefix = [0, 1, 1, 0]",
+        "output": "[0, 1, 0, 0]",
+        "explanation": "The original array can be derived as follows. The first element is 0. The second element is 0 XOR 1 = 1. The third element is 1 XOR 1 = 0. The fourth element is 0 XOR 0 = 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the property of XOR: a XOR a = 0 and a XOR 0 = a.",
+      "The original array can be derived using prefix xor values."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Best Team With No Conflicts",
+    "description": "You are given a list of pairs representing conflicts between players, where each pair consists of two player indices. Your task is to find the maximum number of players that can be selected such that no two players in the selected team have a conflict. A player can be chosen only if all conflicts involving that player are ignored. Return the maximum size of such a team.",
+    "topic": "Graph",
+    "subtopic": "Maximum Independent Set",
+    "tags": [
+      "Graph",
+      "Backtracking",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer n representing the number of players, and a list of pairs conflicts where each pair (i, j) indicates that player i and player j conflict.",
+    "output_format": "An integer representing the maximum size of a team with no conflicts.",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= conflicts.length <= (n * (n - 1)) / 2",
+      "conflicts[i][0] != conflicts[i][1]"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, conflicts = [[0, 1], [1, 2], [2, 3]]",
+        "output": "2",
+        "explanation": "You can select players [0, 3] or [0, 2] or [1, 3], all of which form a team with no conflicts."
+      },
+      {
+        "input": "n = 5, conflicts = [[0, 1], [0, 2], [1, 3], [2, 4]]",
+        "output": "3",
+        "explanation": "You can select players [1, 2, 4] which have no conflicts."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a backtracking approach to explore all possible combinations of players.",
+      "Utilize a graph representation to capture conflicts between players."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "The Employee That Worked on the Longest Task",
+    "description": "You are given a list of employees along with the times they worked on various tasks. Each employee is represented by an identifier (an integer) and a time spent on a task (an integer). Your task is to determine which employee worked the longest on a specific task and return their identifier. If multiple employees worked the longest time on the same task, return the smallest employee identifier.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Employee"
+    ],
+    "input_format": "A list of tuples where each tuple contains an integer representing the employee ID and an integer representing the time they worked on the task.",
+    "output_format": "An integer representing the ID of the employee who worked the longest time on the task.",
+    "constraints": [
+      "1 <= tasks.length <= 10^4",
+      "1 <= tasks[i][0] <= 10^5",
+      "1 <= tasks[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[[1, 5], [2, 3], [1, 8], [3, 2], [2, 9]]",
+        "output": "2",
+        "explanation": "Employee 2 worked 9 hours and is the longest worker. Even though employee 1 worked 13 hours (5 + 8), employee 2's longest task (9) is considered for the output."
+      },
+      {
+        "input": "[[1, 4], [2, 5], [2, 5], [3, 5]]",
+        "output": "2",
+        "explanation": "Employee 2 has worked the longest in total on the single longest task (5 hours) compared to others."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the total time each employee worked.",
+      "Use a hash map to store employee IDs and their corresponding times."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Find Subarrays With Equal Sum",
+    "description": "Given an array of integers, you need to find all distinct subarrays whose sums are equal. Return the total number of such subarrays.",
+    "topic": "Array",
+    "subtopic": "Subarray Sum",
+    "tags": [
+      "Array",
+      "Subarray",
+      "Sum"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the total number of distinct subarrays with equal sum.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "-1000 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, -2, -1, 1, 2]",
+        "output": "6",
+        "explanation": "The distinct subarrays with equal sum are: [1, 2], [2, 3, -2], [3, -2, -1], [-2, -1, 1, 2], [1, 2, -2, -1, 1], and [2, -2]."
+      },
+      {
+        "input": "nums = [0, 0, 0]",
+        "output": "3",
+        "explanation": "The subarrays [0], [0, 0], and [0, 0, 0] all yield a sum of 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hashmap to store the sum of elements up to each index.",
+      "Check for previously seen sums to identify equal sum subarrays."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Lines to Cover Points",
+    "description": "You are given a list of points in a 2D plane, where each point is represented by its coordinates (x, y). The goal is to determine the minimum number of straight lines required to cover all given points. A straight line can cover multiple points if they lie on the same line. Each line can be represented by the equation y = mx + b, where m is the slope and b is the y-intercept. Your task is to find the least number of lines needed to cover all the points.",
+    "topic": "Geometry",
+    "subtopic": "Line Coverage",
+    "tags": [
+      "Geometry",
+      "Line",
+      "Minimum Lines"
+    ],
+    "input_format": "A list of points, where each point is represented as a tuple (x, y).",
+    "output_format": "An integer representing the minimum number of lines needed to cover all points.",
+    "constraints": [
+      "1 <= points.length <= 1000",
+      "-10^4 <= points[i][0], points[i][1] <= 10^4",
+      "All points are distinct."
+    ],
+    "examples": [
+      {
+        "input": "points = [[1, 1], [2, 2], [3, 3], [4, 1], [5, 0]]",
+        "output": "2",
+        "explanation": "Two lines can be drawn: one covering points (1,1), (2,2), and (3,3); the other covering (4,1) and (5,0)."
+      },
+      {
+        "input": "points = [[1, 2], [2, 3], [3, 4], [4, 5]]",
+        "output": "1",
+        "explanation": "All points can be covered by a single line."
+      },
+      {
+        "input": "points = [[1, 1], [2, 2], [3, 3], [1, 2], [2, 1]]",
+        "output": "3",
+        "explanation": "Three lines are needed: one for (1,1), (2,2), (3,3); another for (1,2), and another for (2,1)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the slope between points to determine if they are on the same line.",
+      "Use a set to track unique slopes and intercepts.",
+      "Sort points to simplify the process of line detection."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Longest Valid Obstacle Course at Each Position",
+    "description": "Given an integer array obstacles, you need to return an array answer where answer[i] is the length of the longest valid obstacle course that ends at index i. A valid obstacle course is defined as a sequence that is strictly increasing up to a certain point, and then can have elements equal to the last element from that point onward. Each element in obstacles represents a height of an obstacle, and you can only move to a higher element or to an equal height from the last position you stepped on.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Longest Increasing Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "Binary Search",
+      "Array"
+    ],
+    "input_format": "An array of integers obstacles (1 <= obstacles.length <= 10^5, 1 <= obstacles[i] <= 10^7).",
+    "output_format": "An array of integers representing the longest valid obstacle course length at each position.",
+    "constraints": [
+      "1 <= obstacles.length <= 10^5",
+      "1 <= obstacles[i] <= 10^7"
+    ],
+    "examples": [
+      {
+        "input": "obstacles = [1, 2, 3, 2, 1, 5]",
+        "output": "[1, 2, 3, 3, 3, 4]",
+        "explanation": "The longest valid obstacle course lengths at each index are calculated based on the rules defined. The answer array represents the length of the longest valid course ending at each position."
+      },
+      {
+        "input": "obstacles = [1, 5, 3, 5, 2, 5]",
+        "output": "[1, 2, 2, 3, 2, 4]",
+        "explanation": "This example shows some obstacles can be skipped for a longer valid obstacle course, as seen with the 5's allowing multiple options."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using binary search to optimize the search for valid lengths.",
+      "Track the current longest sequence dynamically."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Count Subarrays With Fixed Bounds",
+    "description": "Given an integer array nums and two integers minK and maxK, return the number of non-empty subarrays such that the minimum element in the subarray is equal to minK and the maximum element is equal to maxK.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Count"
+    ],
+    "input_format": "An array of integers nums, and two integers minK and maxK.",
+    "output_format": "An integer representing the count of valid subarrays.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= minK <= maxK <= 10^6",
+      "1 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 5, 2, 7, 5], minK = 3, maxK = 5",
+        "output": "5",
+        "explanation": "The valid subarrays are: [3, 5], [3, 5, 2], [3, 5, 2, 7], [5], [5, 2]."
+      },
+      {
+        "input": "nums = [1, 1, 1, 1], minK = 1, maxK = 1",
+        "output": "10",
+        "explanation": "Any subarray has the minimum and maximum both equal to 1, thus count is 10."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the last positions of minK and maxK in the array.",
+      "Utilize a sliding window approach to efficiently count the valid ranges."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers 'nums' and an integer 'target', return the indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two-pointer"
+    ],
+    "input_format": "An array of integers 'nums' and an integer 'target'.",
+    "output_format": "An array of two integers representing the indices of the two numbers that add up to 'target'.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "The solution will always exist."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 3 + 3 = 6."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Utilize a hash map to store indices of elements as you iterate through the array.",
+      "Check if the complement (target - current number) exists in the hash map."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals and return a new list of non-overlapping intervals that cover all the intervals in the input.",
+    "topic": "Sorting",
+    "subtopic": "Intervals",
+    "tags": [
+      "Sorting",
+      "Intervals",
+      "Array"
+    ],
+    "input_format": "A list of intervals, where each interval is represented as a pair of integers [start, end].",
+    "output_format": "A list of merged intervals.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]",
+        "output": "[[1, 6], [8, 10], [15, 18]]",
+        "explanation": "Intervals [1, 3] and [2, 6] overlap, merging them gives [1, 6]. The other intervals do not overlap."
+      },
+      {
+        "input": "intervals = [[1, 4], [4, 5]]",
+        "output": "[[1, 5]]",
+        "explanation": "Intervals [1, 4] and [4, 5] overlap, merging them gives [1, 5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the start time.",
+      "Use a list to keep track of merged intervals."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. Your solution should use an efficient algorithm to traverse the characters in the string while maintaining the uniqueness of the characters within a substring.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A string s consisting of English letters, digits, symbols and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'abc', whose length is 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is 'b', whose length is 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'wke', whose length is 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window technique to track the longest substring.",
+      "Utilize a HashMap to store characters and their indices for quick lookup."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) Cache. Implement the LRUCache class with the following methods:\n\n- `LRUCache(int capacity)`: Initializes the LRU cache with a positive size `capacity`.\n- `int get(int key)`: Returns the value of the key if the key exists, otherwise return -1. Also, mark this key as recently used.\n- `void put(int key, int value)`: Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the `capacity`, evict the least recently used key.\n\nThe functions should have an average time complexity of O(1).",
+    "topic": "Design",
+    "subtopic": "Cache",
+    "tags": [
+      "Cache",
+      "Design",
+      "Linked List",
+      "Hash Map"
+    ],
+    "input_format": "The commands to manipulate the LRU Cache will be given as a list, where 'get' is followed by a key and 'put' is followed by a key-value pair.",
+    "output_format": "For each 'get' command, output the value retrieved. For 'put', no output is required.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key, value <= 10^4",
+      "At most 10^4 calls will be made to get and put."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1, -1, 3, 4]",
+        "explanation": "Initially, the cache is empty. It first adds (1,1) and (2,2). 'get(1)' returns 1. Then it adds (3,3), evicting (2,2). 'get(2)' returns -1 since it was evicted. Adding (4,4) evicts (1,1). The final gets return 1 (evicted), 3, and 4 respectively."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a doubly linked list to keep track of the order of use.",
+      "Use a hash map to access the nodes in O(1) time."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "First Missing Positive",
+    "description": "Given an unsorted integer array nums, find the smallest missing positive integer. You must implement an algorithm that runs in O(n) time and uses constant extra space.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Positive Integer"
+    ],
+    "input_format": "An unsorted array of integers nums.",
+    "output_format": "An integer representing the smallest missing positive integer.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, -1, 1]",
+        "output": "2",
+        "explanation": "The numbers 1 and 4 are present, but the smallest missing positive is 2."
+      },
+      {
+        "input": "nums = [1, 2, 0]",
+        "output": "3",
+        "explanation": "The numbers 1 and 2 are present, thus the smallest missing positive is 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider placing each number in its right position if possible.",
+      "Check the range of numbers to optimize for the smallest positive."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Largest Element in an Array",
+    "description": "Given an integer array nums and an integer k, return the kth largest element in the array. Note that it is the kth largest element in the sorted order, not the kth distinct element.",
+    "topic": "Array",
+    "subtopic": "Sorting and Searching",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Searching"
+    ],
+    "input_format": "An integer array nums followed by an integer k.",
+    "output_format": "An integer representing the kth largest element in nums.",
+    "constraints": [
+      "1 <= k <= nums.length",
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 1, 5, 6, 4], k = 2",
+        "output": "5",
+        "explanation": "The second largest element in the sorted array [1, 2, 3, 4, 5, 6] is 5."
+      },
+      {
+        "input": "nums = [3, 2, 3], k = 1",
+        "output": "3",
+        "explanation": "The largest element in the sorted array [2, 3, 3] is 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a max heap for efficient retrieval of the kth largest element.",
+      "You can also sort the array and access the kth element directly."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, with nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Hashing"
+    ],
+    "input_format": "An integer array nums.",
+    "output_format": "A list of unique triplets that sum up to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "There are no triplets in an empty array."
+      },
+      {
+        "input": "nums = [0, 0, 0]",
+        "output": "[[0, 0, 0]]",
+        "explanation": "The only triplet is [0, 0, 0]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array to facilitate finding triplets.",
+      "Use a loop to fix one number and apply the two-pointer technique for the other two."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Anagram"
+    ],
+    "input_format": "An array of strings `strs`.",
+    "output_format": "A list of lists of strings, where each list contains words that are anagrams of each other.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "1 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"eat\",\"tea\",\"ate\"],[\"tan\",\"nat\"],[\"bat\"]]",
+        "explanation": "The words \"eat\", \"tea\", and \"ate\" are anagrams of each other. The words \"tan\" and \"nat\" are also anagrams, while \"bat\" stands alone."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "The input consists of an empty string, which is considered an anagram of itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "The input is a single character, which is trivially an anagram of itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to group the words by sorted characters.",
+      "Each group can be formed by sorting the characters of the words."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Make K-Subarray Sums Equal",
+    "description": "Given an array of integers and an integer K, determine if it is possible to partition the array into K non-empty subarrays such that the sums of the elements in each subarray are equal. If it is possible, return true; otherwise, return false.",
+    "topic": "Array",
+    "subtopic": "Partitioning",
+    "tags": [
+      "Array",
+      "Partitioning",
+      "Sum"
+    ],
+    "input_format": "An array of integers nums and an integer K.",
+    "output_format": "A boolean value indicating whether the partitioning is possible.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "1 <= K <= nums.length",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], K = 5",
+        "output": "true",
+        "explanation": "Each element can be its own subarray, hence the sums are equal (1 = 1, 2 = 2, 3 = 3, etc.)."
+      },
+      {
+        "input": "nums = [7, 3, 2, 1, 4, 6], K = 3",
+        "output": "false",
+        "explanation": "It is impossible to partition the array into 3 subarrays with equal sums."
+      },
+      {
+        "input": "nums = [3, 3, 3, 3], K = 2",
+        "output": "true",
+        "explanation": "We can form two subarrays [3, 3] and [3, 3], both of which sum to 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Calculate the total sum and check if it can be divided by K.",
+      "Keep track of the running sum as you iterate and adjust the subarray boundaries.",
+      "Consider using backtracking for potential partitioning."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Contiguous Array",
+    "description": "Given a binary array nums, return the maximum length of a contiguous subarray with an equal number of 0 and 1.",
+    "topic": "Array",
+    "subtopic": "Subarray",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Prefix Sum"
+    ],
+    "input_format": "A binary array nums of length n.",
+    "output_format": "An integer representing the length of the longest contiguous subarray with equal number of 0s and 1s.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "nums[i] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 1, 0, 1, 0, 1]",
+        "output": "6",
+        "explanation": "The entire array has an equal number of 0s and 1s."
+      },
+      {
+        "input": "nums = [0, 1, 1, 0, 0, 1]",
+        "output": "4",
+        "explanation": "The longest contiguous subarray for this input is [1, 1, 0, 0], which has equal numbers of 0s and 1s."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using a hash map to store the counts of 0s and 1s.",
+      "Convert 0s to -1s to simplify the problem using prefix sums."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Refueling Stops",
+    "description": "You are driving a car that can travel at most `target` miles on a full tank. There are `n` gas stations along the way where the `i-th` gas station is located `stations[i]` miles from the starting point, and has `fuel[i]` gallons of fuel available. Given the locations of the gas stations and the amount of fuel available at each station, return the minimum number of refueling stops you need to make to reach your destination. If it's not possible to reach the destination, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer 'target' representing the destination distance, an integer 'startFuel' indicating the initial amount of fuel, an integer array 'stations' representing the distances of gas stations, and an integer array 'fuel' representing the amount of fuel available at each station.",
+    "output_format": "An integer representing the minimum number of refueling stops to reach the destination, or -1 if impossible.",
+    "constraints": [
+      "1 <= target <= 10^9",
+      "1 <= startFuel <= 10^9",
+      "0 <= stations.length <= 100",
+      "0 <= stations[i] <= target",
+      "1 <= fuel[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "target = 100, startFuel = 1, stations = [10, 20, 30], fuel = [10, 10, 10]",
+        "output": "3",
+        "explanation": "You need to stop at all the stations to reach the target."
+      },
+      {
+        "input": "target = 100, startFuel = 10, stations = [10, 20, 30], fuel = [10, 5, 10]",
+        "output": "2",
+        "explanation": "You can reach station 1 with 10 fuel, refuel 10 at station 1, and then reach the target."
+      },
+      {
+        "input": "target = 100, startFuel = 50, stations = [25, 50, 75], fuel = [25, 25, 25]",
+        "output": "0",
+        "explanation": "You can reach the target without refueling."
+      },
+      {
+        "input": "target = 100, startFuel = 1, stations = [1, 2, 3], fuel = [1, 2, 3]",
+        "output": "-1",
+        "explanation": "It's impossible to reach the target."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a priority queue to manage the fuels available at the stations you can reach.",
+      "Greedily choose the station with the maximum fuel when needed.",
+      "If you cannot reach further stations with the available fuel, you will need to stop."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Copy List with Random Pointer",
+    "description": "A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null. You are to create a deep copy of this list. The deep copy should consist of exactly the same nodes as the original list. The pointers should point to the same nodes in the copied list as they do in the original list. Return the head of the copied list.",
+    "topic": "Linked List",
+    "subtopic": "Deep Copy",
+    "tags": [
+      "LinkedList",
+      "Graph",
+      "Depth-First Search"
+    ],
+    "input_format": "A linked list where each node has a value and a random pointer.",
+    "output_format": "The head of the new linked list that is a deep copy of the original list.",
+    "constraints": [
+      "0 <= Node.val <= 100",
+      "The number of nodes in the list is in the range [0, 100]."
+    ],
+    "examples": [
+      {
+        "input": "head = [[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "output": "[[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "explanation": "Each node in the original list corresponds to a node in the copied list, and random pointers match their original nodes."
+      },
+      {
+        "input": "head = [[1,1],[2,1]]",
+        "output": "[[1,1],[2,1]]",
+        "explanation": "The copied list has the same structure as the original list where random pointers for both nodes point to the first node."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to keep track of the original nodes and their corresponding copied nodes.",
+      "You might need to iterate through the list to connect the random pointers correctly."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse String",
+    "description": "Write a function that takes a string as input and returns the string reversed. The input string will consist of English letters, digits, symbols, and spaces.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Reversal"
+    ],
+    "input_format": "A single string s, where 1 <= s.length <= 10^5.",
+    "output_format": "A string that represents the reversed input string.",
+    "constraints": [
+      "1 <= s.length <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "s = 'hello'",
+        "output": "'olleh'",
+        "explanation": "Reversing the string 'hello' gives 'olleh'."
+      },
+      {
+        "input": "s = 'LeetCode'",
+        "output": "'edoCteeL'",
+        "explanation": "Reversing the string 'LeetCode' gives 'edoCteeL'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers, one at the start and one at the end of the string.",
+      "You can use built-in functions to simplify your solution."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game",
+    "description": "You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position. Write a function to determine if you can reach the last index. You can assume that you can always reach the end if you start at a valid position.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers nums representing the jump lengths.",
+    "output_format": "A boolean value indicating whether you can reach the last index.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "true",
+        "explanation": "You can jump to index 1 with a jump of length 2, then jump to the last index with a jump of length 3."
+      },
+      {
+        "input": "nums = [3, 2, 1, 0, 4]",
+        "output": "false",
+        "explanation": "You will always land at index 3, and you cannot jump anywhere from there."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to keep track of the farthest position you can reach.",
+      "If you reach an index that is unreachable, return false."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search",
+    "description": "Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.",
+    "topic": "Backtracking",
+    "subtopic": "Search",
+    "tags": [
+      "Backtracking",
+      "Matrix",
+      "Search"
+    ],
+    "input_format": "A 2D array of characters 'board' and a string 'word'.",
+    "output_format": "A boolean indicating whether the word exists in the grid.",
+    "constraints": [
+      "1 <= board.length, board[i].length <= 200",
+      "board[i][j] is a lowercase English letter.",
+      "1 <= word.length <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCCED"
+        },
+        "output": "true",
+        "explanation": "The word 'ABCCED' can be formed by the following path: A -> B -> C -> C -> E -> D."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "SEE"
+        },
+        "output": "true",
+        "explanation": "The word 'SEE' can be formed by the following path: S -> E -> E."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCB"
+        },
+        "output": "false",
+        "explanation": "The word 'ABCB' cannot be formed in the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using depth-first search (DFS).",
+      "Keep track of visited cells to avoid revisiting."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from 2 to 9 inclusive, return all possible letter combinations that the number could represent. A mapping of digit to letters is as follows: 2 -> 'abc', 3 -> 'def', 4 -> 'ghi', 5 -> 'jkl', 6 -> 'mno', 7 -> 'pqrs', 8 -> 'tuv', 9 -> 'wxyz'. Return the combinations in any order. If the input is an empty string, return an empty list.",
+    "topic": "Backtracking",
+    "subtopic": "Combination Generation",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "String"
+    ],
+    "input_format": "A string digits representing the input digits.",
+    "output_format": "A list of strings representing all possible letter combinations.",
+    "constraints": [
+      "0 <= digits.length <= 4",
+      "digits[i] is a digit in the range ['2', '9']"
+    ],
+    "examples": [
+      {
+        "input": "digits = \"23\"",
+        "output": "[\"ad\", \"ae\", \"af\", \"bd\", \"be\", \"bf\", \"cd\", \"ce\", \"cf\"]",
+        "explanation": "The digit '2' maps to 'abc' and '3' maps to 'def'. Therefore, the combinations are: 'ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', and 'cf'."
+      },
+      {
+        "input": "digits = \"\"",
+        "output": "[]",
+        "explanation": "An empty input results in an empty list of combinations."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a backtracking approach to explore all combinations.",
+      "Consider a mapping of numbers to letters.",
+      "Iterate through each digit and combine the letters."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Min Stack",
+    "description": "Design a stack that supports the following operations: push, pop, top, and retrieving the minimum element in constant time. Implement a min stack that provides these functionalities efficiently.",
+    "topic": "Stack",
+    "subtopic": "Data Structure Design",
+    "tags": [
+      "Stack",
+      "Data Structure",
+      "Design"
+    ],
+    "input_format": "A list of operations, where each operation is either 'push', 'pop', 'top', or 'getMin', accompanied by an integer for 'push'.",
+    "output_format": "For each operation, output the result of 'top' and 'getMin' operations. 'pop' operations will not return a value.",
+    "constraints": [
+      "The number of operations will be at most 1000.",
+      "The value of each element pushed to the stack will be in the range [-10^5, 10^5]."
+    ],
+    "examples": [
+      {
+        "input": "[\"push\", \"push\", \"push\", \"getMin\", \"pop\", \"top\", \"getMin\"]",
+        "output": "[1, 1, 2]",
+        "explanation": "Pushing 1, 2, and 3 onto the stack results in the minimum value being 1. After popping the top element (3), topping the stack gives 2 and the minimum remains 1."
+      },
+      {
+        "input": "[\"push\", \"push\", \"getMin\", \"pop\", \"getMin\"]",
+        "output": "[0, -1]",
+        "explanation": "Pushing 0 and -1 results in -1 being the minimum. After popping -1, the minimum brings us back to 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using an auxiliary stack to keep track of the minimum values.",
+      "Maintaining the minimum in constant time can help optimize the getMin operation."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Linked List",
+    "description": "Given the head of a singly linked list, determine if it is a palindrome. A linked list is a palindrome if it reads the same backward as forward.",
+    "topic": "Linked List",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Linked List",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "A singly linked list represented by the head node.",
+    "output_format": "A boolean value indicating whether the linked list is a palindrome.",
+    "constraints": [
+      "The number of nodes in the list is in the range [1, 10^5].",
+      "Node values are within the range [-10^5, 10^5]."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 2, 1]",
+        "output": "true",
+        "explanation": "The linked list is [1, 2, 2, 1], which is the same when reversed."
+      },
+      {
+        "input": "head = [1, 2]",
+        "output": "false",
+        "explanation": "The linked list is [1, 2], which is not the same when reversed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a fast and slow pointer to find the middle of the linked list.",
+      "After finding the middle, reverse the second half of the list and compare it with the first half."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. A subarray is a contiguous part of an array.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum sum of the contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The subarray [4,-1,2,1] has the largest sum = 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The only subarray is [1], which has a sum of 1."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The subarray [5,4,-1,7,8] has the largest sum = 23."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a variable to keep track of the maximum sum seen so far.",
+      "Look for a way to keep a running total of the current subarray's sum."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Coin Change II",
+    "description": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. You want to determine the number of combinations that make up that amount. You may assume that you have an infinite number of each kind of coin. Return the number of combinations that make up that amount. Since the answer may be very large, return it modulo 109 + 7.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorial Counting",
+    "tags": [
+      "Dynamic Programming",
+      "Combinatorial",
+      "Coin Change"
+    ],
+    "input_format": "An integer array coins and an integer amount.",
+    "output_format": "An integer representing the number of combinations to make the amount using the coins.",
+    "constraints": [
+      "1 <= coins.length <= 300",
+      "1 <= coins[i] <= 5000",
+      "0 <= amount <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "coins = [1, 2, 5], amount = 5",
+        "output": "4",
+        "explanation": "The four ways to make up the amount are: 5, 2+2+1, 2+1+1+1, and 1+1+1+1+1."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "0",
+        "explanation": "No combination of coins can make up the amount of 3."
+      },
+      {
+        "input": "coins = [10], amount = 10",
+        "output": "1",
+        "explanation": "Only one way to make up the amount, which is using one coin of 10."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how this problem can be broken down into smaller subproblems.",
+      "Consider using a dynamic programming approach to count combinations."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Missing Positive Number",
+    "description": "Given an array of positive integers arr and an integer k, find the k-th missing positive integer from the sequence of positive integers. The array is not necessarily sorted. For example, if arr = [2, 3, 4, 7, 11] and k = 5, the positive integers missing from arr are [1, 5, 6, 8, 9, 10], the fifth missing positive integer is 9.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Missing Numbers"
+    ],
+    "input_format": "An array of positive integers arr and an integer k.",
+    "output_format": "An integer representing the k-th missing positive integer.",
+    "constraints": [
+      "1 <= arr.length <= 1000",
+      "1 <= arr[i] <= 1000",
+      "1 <= k <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "arr = [2, 3, 4, 7, 11], k = 5",
+        "output": "9",
+        "explanation": "The first five missing positive integers are 1, 5, 6, 8, and 9. Therefore, the 5th missing positive integer is 9."
+      },
+      {
+        "input": "arr = [1, 2, 3, 4], k = 2",
+        "output": "6",
+        "explanation": "The first two missing positive integers are 5 and 6. Therefore, the 2nd missing positive integer is 6."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a set to track the elements in arr for efficient look-up.",
+      "Iterate through the positive integers, counting how many are missing."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses. For example, for n = 3, the output should be: ['((()))', '(()())', '(())()', '()(())', '()()()'].",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Generation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Recursion"
+    ],
+    "input_format": "An integer n representing the number of pairs of parentheses.",
+    "output_format": "A list of strings representing all combinations of well-formed parentheses.",
+    "constraints": [
+      "0 <= n <= 8"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "['((()))', '(()())', '(())()', '()(())', '()()()']",
+        "explanation": "The combinations consist of three pairs of parentheses, and all arrangements are well-formed."
+      },
+      {
+        "input": "n = 1",
+        "output": "['()']",
+        "explanation": "With one pair, the only combination is a single pair of parentheses."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using recursion to construct the parentheses step by step.",
+      "Keep track of the number of opening and closing parentheses used."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Stamping The Sequence",
+    "description": "Given two strings, `stamp` and `os`, you need to determine if it is possible to form the string `os` by stamping the `stamp` string. A stamp operation can replace any substring of `os` with the `stamp` string, provided the letters match. You can perform multiple stamp operations, but you cannot change the order of the letters. Your goal is to return the minimum number of stamp operations required to form `os` from `stamp`. If it's impossible, return -1.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Greedy"
+    ],
+    "input_format": "Two strings `stamp` and `os`, where 1 <= stamp.length, os.length <= 10^6.",
+    "output_format": "An integer representing the minimum number of stamp operations, or -1 if impossible.",
+    "constraints": [
+      "1 <= stamp.length, os.length <= 10^6",
+      "stamp and os consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "stamp = \"abc\", os = \"ababc\"",
+        "output": "2",
+        "explanation": "We can perform 2 stamp operations: first apply 'abc' to replace 'ab' in 'ababc' resulting in 'abc', then apply 'abc' on 'abc' to fully form 'os'."
+      },
+      {
+        "input": "stamp = \"ab\", os = \"ba\"",
+        "output": "-1",
+        "explanation": "It's impossible to form 'os' from 'stamp' as letters cannot be reordered."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the last characters of `os` and how they can be replaced.",
+      "Think about how you can progressively match parts of `os` with `stamp`."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicates from Sorted Array",
+    "description": "Given a sorted array of integers, you need to remove the duplicates in-place such that each element appears only once and returns the new length of the array. Do not use extra space for another array. The relative order of the elements should be kept the same. You must do this with O(1) extra space.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-place"
+    ],
+    "input_format": "An array of integers, nums[], sorted in non-decreasing order.",
+    "output_format": "An integer representing the new length of the array after removing duplicates.",
+    "constraints": [
+      "0 <= nums.length <= 3 * 10^4",
+      "-100 <= nums[i] <= 100",
+      "nums is sorted in non-decreasing order."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2]",
+        "output": "2",
+        "explanation": "After removing duplicates, the array is [1, 2], with the new length being 2."
+      },
+      {
+        "input": "nums = [0, 0, 1, 1, 2, 2, 3, 4]",
+        "output": "5",
+        "explanation": "After removing duplicates, the array is [0, 1, 2, 3, 4], with the new length being 5."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to traverse the array.",
+      "Only update the element when you find a new unique number."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Subarrays with K Different Integers",
+    "description": "Given an array of integers nums and an integer k, return the number of unique subarrays that contain exactly k different integers. A subarray is defined as a contiguous part of the array. Your solution should be efficient in terms of time complexity.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Counting"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the number of unique subarrays with exactly k different integers.",
+    "constraints": [
+      "1 <= nums.length <= 20000",
+      "1 <= nums[i] <= 1000",
+      "1 <= k <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 1, 2, 3], k = 2",
+        "output": "7",
+        "explanation": "The unique subarrays are: [1,2], [2,1], [1,2,1], [2,1,2], [1,2,3], [2,3], and [1,2,1,2]."
+      },
+      {
+        "input": "nums = [1, 2, 1, 3, 4], k = 3",
+        "output": "3",
+        "explanation": "The unique subarrays are: [1,2,1,3], [2,1,3], and [1,3,4]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using the sliding window technique.",
+      "Keep track of the counts of different integers in the current window.",
+      "Use two pointers to manage the window size."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of parentheses.",
+    "output_format": "Return true if the string is valid, otherwise return false.",
+    "constraints": [
+      "0 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are correctly matched."
+      },
+      {
+        "input": "s = '(]')",
+        "output": "false",
+        "explanation": "The parentheses are not correctly matched."
+      },
+      {
+        "input": "s = '{[()]}')",
+        "output": "true",
+        "explanation": "All brackets are correctly matched."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to help with matching parentheses.",
+      "Check for balancing of opening and closing brackets."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Valid Parentheses",
+    "description": "Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Stack"
+    ],
+    "input_format": "A single string s consisting of characters '(' and ')'.",
+    "output_format": "An integer representing the length of the longest valid parentheses substring.",
+    "constraints": [
+      "0 <= s.length <= 3 * 10^4",
+      "s[i] is either '(' or ')'."
+    ],
+    "examples": [
+      {
+        "input": "s = '(()')",
+        "output": "2",
+        "explanation": "The longest valid substring is '()', which has length 2."
+      },
+      {
+        "input": "s = ')()())'",
+        "output": "4",
+        "explanation": "The longest valid substring is '()()', which has length 4."
+      },
+      {
+        "input": "s = '()(()'",
+        "output": "2",
+        "explanation": "The longest valid substring is '()', which has length 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to keep track of indices.",
+      "Keep a variable to store the last index of a valid substring found."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Steps to Make Array Non-decreasing",
+    "description": "You are given an integer array nums. In one step, you can increase the value of any element by 1. Your task is to determine the minimum number of steps required to make the array non-decreasing. An array is non-decreasing if for every i, nums[i] <= nums[i + 1].",
+    "topic": "Array",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the minimum number of steps to make the array non-decreasing.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 4, 1]",
+        "output": "5",
+        "explanation": "By increasing 2 by 1 to 3, 1 to 4, the final result becomes [3, 3, 4, 4]. Total steps are 1 + 3 = 4."
+      },
+      {
+        "input": "nums = [1, 5, 2, 4, 3]",
+        "output": "5",
+        "explanation": "To make the array non-decreasing, we need to increase the values: [1, 5, 5, 5, 5]. Total steps are 3 + 0 + 2 + 1 = 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Focus on finding where the array decreases.",
+      "Count the total increments needed to fix those decreases."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Meeting Rooms II",
+    "description": "Given an array of meeting time intervals where intervals[i] = [start_i, end_i] represents the start and end time of the ith meeting, return the minimum number of conference rooms required to host all meetings. An interval is considered to overlap with another if the start time of one meeting is less than the end time of the other meeting.",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Interval",
+      "Sorting"
+    ],
+    "input_format": "A list of intervals where each interval is represented as an array of two integers [start, end].",
+    "output_format": "An integer representing the minimum number of conference rooms required.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "0 <= start_i < end_i <= 10^6 for each interval"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[0, 30], [5, 10], [15, 20]]",
+        "output": "2",
+        "explanation": "The first meeting [0, 30] overlaps with the second meeting [5, 10] and the third meeting [15, 20]. Thus, we need two conference rooms."
+      },
+      {
+        "input": "intervals = [[7, 10], [2, 4]]",
+        "output": "1",
+        "explanation": "The meetings do not overlap, so only one room is needed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a priority queue to keep track of end times of meetings.",
+      "Sort the intervals by start time."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Count of Range Sum",
+    "description": "Given an integer array nums and an integer lower and upper, return the number of range sums that lie in the inclusive range [lower, upper]. A range sum is defined as the sum of elements between indices i and j (inclusive), where i <= j. You may assume that the array has at least one element.",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "Prefix Sum",
+      "Counting"
+    ],
+    "input_format": "An integer array nums, and two integers lower and upper.",
+    "output_format": "An integer representing the count of range sums in the inclusive range [lower, upper].",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5",
+      "-10^5 <= lower <= upper <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2, 5, -1], lower = -2, upper = 2",
+        "output": "3",
+        "explanation": "The three range sums are: -2 (from index 0 to 0), 3 (from index 0 to 1), and 2 (from index 0 to 2), which all lie within the range [-2, 2]."
+      },
+      {
+        "input": "nums = [0], lower = 0, upper = 0",
+        "output": "1",
+        "explanation": "The only range sum is 0 (from index 0 to 0), which lies within the range [0, 0]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a prefix sum array to help count sums efficiently.",
+      "Utilize a data structure that allows you to efficiently count elements in a sorted order."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate List",
+    "description": "Given a linked list, rotate the list to the right by k places, where k is non-negative. This means that the last k nodes will be moved to the front of the list.",
+    "topic": "Linked List",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Linked List",
+      "Rotation",
+      "Pointer"
+    ],
+    "input_format": "The head of a singly linked list and a non-negative integer k.",
+    "output_format": "The head of the rotated linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000].",
+      "0 <= k <= 2 * 10^9.",
+      "The value of each node is in the range [-100, 100]."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[4, 5, 1, 2, 3]",
+        "explanation": "After rotating the list to the right by 2 places, the resulting list will be [4, 5, 1, 2, 3]."
+      },
+      {
+        "input": "head = [0, 1, 2], k = 4",
+        "output": "[2, 0, 1]",
+        "explanation": "Rotating the list by 4 is equivalent to rotating it by 1 (4 % 3 = 1), resulting in [2, 0, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the length of the linked list.",
+      "Use a circular list approach."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Colors",
+    "description": "Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue. Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively. You must solve this problem without using the library's sort function and come up with a one-pass algorithm.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums consisting of 0s, 1s, and 2s.",
+    "output_format": "The sorted array in-place, with all 0s first, followed by all 1s, and all 2s.",
+    "constraints": [
+      "n == nums.length",
+      "1 <= n <= 300",
+      "nums[i] is either 0, 1, or 2"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2,0,2,1,1,0]",
+        "output": "[0,0,1,1,2,2]",
+        "explanation": "After sorting, the array will group all 0s first, followed by the 1s and then the 2s."
+      },
+      {
+        "input": "nums = [2,0,1]",
+        "output": "[0,1,2]",
+        "explanation": "After sorting, the array will rearrange to have all 0s, followed by 1s, and then 2s."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a three-pointer technique.",
+      "Keep track of the position for 0s, 1s, and 2s."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Next Greater Element I",
+    "description": "You are given two integer arrays, nums1 and nums2, where nums1 is a subset of nums2. For each element in nums1, find the next greater element in nums2. If there is no next greater element, return -1. The next greater element for an element x in nums1 is the first greater element to its right in nums2.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Stack"
+    ],
+    "input_format": "Two integer arrays, nums1 and nums2.",
+    "output_format": "An array of integers representing the next greater element for each element in nums1.",
+    "constraints": [
+      "1 <= nums1.length <= 1000",
+      "1 <= nums2.length <= 1000",
+      "0 <= nums1[i], nums2[i] <= 104",
+      "nums1 is a subset of nums2."
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [4, 1, 2], nums2 = [1, 3, 4, 2]",
+        "output": "[-1, 3, -1]",
+        "explanation": "For 4, there is no greater element in nums2, so the output is -1. For 1, the next greater element is 3. For 2, there is no greater element, so the output is -1."
+      },
+      {
+        "input": "nums1 = [2, 4], nums2 = [1, 2, 3, 4]",
+        "output": "[3, -1]",
+        "explanation": "For 2, the next greater element is 3. For 4, there is no next greater element, so the output is -1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of the elements.",
+      "Iterate through nums2 and maintain a mapping of next greater elements."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Count of Integers",
+    "description": "Given an array of integers, your task is to count the number of distinct integers in the array. An integer is considered distinct if it appears at least once in the array. The function should return this count.",
+    "topic": "Array",
+    "subtopic": "Set Operations",
+    "tags": [
+      "Array",
+      "HashSet",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the count of distinct integers in the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3, 4, 4, 5]",
+        "output": "5",
+        "explanation": "The distinct integers are 1, 2, 3, 4, and 5. Their count is 5."
+      },
+      {
+        "input": "nums = [5, 5, 5, 5]",
+        "output": "1",
+        "explanation": "The only distinct integer is 5. Its count is 1."
+      },
+      {
+        "input": "nums = [1, -1, 0, 0, 1]",
+        "output": "3",
+        "explanation": "The distinct integers are 1, -1, and 0. Their count is 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a data structure that can help with uniqueness, like a set.",
+      "Iterate through the array and add elements to the set."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Decode Ways",
+    "description": "A message containing letters from A-Z can be encoded into numbers using the mapping A = 1, B = 2, ..., Z = 26. Given a string s consisting of digits, return the total number of ways to decode it. For example, '12' can be decoded as 'AB' (1 2) or 'L' (12).",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Decoding",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Decoding"
+    ],
+    "input_format": "A string s of digits.",
+    "output_format": "An integer representing the total number of ways to decode the string.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s does not contain leading zeroes."
+    ],
+    "examples": [
+      {
+        "input": "s = '12'",
+        "output": "2",
+        "explanation": "'12' can be decoded as 'AB' or 'L'."
+      },
+      {
+        "input": "s = '226'",
+        "output": "3",
+        "explanation": "'226' can be decoded as 'BBF' (2 2 6), 'BZ' (2 26), or 'VF' (22 6)."
+      },
+      {
+        "input": "s = '06'",
+        "output": "0",
+        "explanation": "'06' cannot be decoded because it has a leading 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming.",
+      "Think about how to break down the problem into subproblems.",
+      "Examine the possible digits in 's' that can lead to each letter."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Subarray Sum Equals K",
+    "description": "Given an integer array nums and an integer k, return the total number of continuous subarrays whose sum equal to k.",
+    "topic": "Array",
+    "subtopic": "Subarray",
+    "tags": [
+      "Array",
+      "Subarray",
+      "Hash Table"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the total number of continuous subarrays whose sum equals k.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "-10^4 <= nums[i] <= 10^4",
+      "-10^7 <= k <= 10^7"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 1], k = 2",
+        "output": "2",
+        "explanation": "The subarrays are [1, 1] (from index 0 to 1) and [1, 1] (from index 1 to 2) that sum to 2."
+      },
+      {
+        "input": "nums = [1, 2, 3], k = 3",
+        "output": "2",
+        "explanation": "The subarrays are [3] (from index 2) and [1, 2] (from index 0 to 1) that sum to 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to store the cumulative sum and its frequency.",
+      "A cumulative sum indicates the sum of all elements from the start to a current index.",
+      "The difference between two cumulative sums gives the subarray sum."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Count Binary Substrings",
+    "description": "Given a string containing only '0's and '1's, count the number of substrings that have the same number of '0's and '1's. A substring can be any continuous sequence of characters in the string.",
+    "topic": "String",
+    "subtopic": "Counting Substrings",
+    "tags": [
+      "String",
+      "Counting",
+      "Binary"
+    ],
+    "input_format": "A string s of length n (1 <= n <= 10000) consisting of characters '0' and '1'.",
+    "output_format": "An integer representing the number of substrings with an equal number of '0's and '1's.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of '0' and '1' only."
+    ],
+    "examples": [
+      {
+        "input": "s = '00110011'",
+        "output": "6",
+        "explanation": "The substrings are '0011', '01', '10', '1100', '1001', '0011'."
+      },
+      {
+        "input": "s = '1010'",
+        "output": "4",
+        "explanation": "The substrings are '10', '01', '10', '01'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Utilize the concept of grouping consecutive characters.",
+      "You can maintain a count of substrings as you iterate through the groups."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Words in a String",
+    "description": "Given an input string, reverse the order of the words in the string while preserving the whitespace and initial formatting. A word is defined as a sequence of non-space characters. The output should not contain any leading or trailing spaces, and there should be a single space between each pair of adjacent words in the reversed string.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Reverse"
+    ],
+    "input_format": "A string s containing words and spaces.",
+    "output_format": "A string representing the words in reverse order.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of English letters, digits, and spaces.",
+      "There may be leading or trailing spaces in the input string."
+    ],
+    "examples": [
+      {
+        "input": "s = '  Hello World  '",
+        "output": "'World Hello'",
+        "explanation": "When we reverse the words in the string, we get 'World Hello', removing extra spaces."
+      },
+      {
+        "input": "s = 'LeetCode  is   awesome'",
+        "output": "'awesome is LeetCode'",
+        "explanation": "Reversing the words gives 'awesome is LeetCode', compacting all the spaces between words."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using split and join methods to manipulate the words.",
+      "Keep in mind how to handle multiple spaces."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Subtree of Another Tree",
+    "description": "Given the roots of two binary trees, root1 and root2, return true if root2 is a subtree of root1, or false otherwise. A subtree of a tree is a tree that consists of a node in the tree and all of this node's descendants. The subtree can also be considered as a tree itself without any reference to the parent node.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Subtree"
+    ],
+    "input_format": "Two binary trees represented by their root nodes, root1 and root2.",
+    "output_format": "A boolean value indicating if root2 is a subtree of root1.",
+    "constraints": [
+      "The number of nodes in the trees is in the range [0, 2000].",
+      "Node values are in the range [-10^4, 10^4]."
+    ],
+    "examples": [
+      {
+        "input": "root1 = [3, 4, 5, 1, 2], root2 = [4, 1, 2]",
+        "output": "true",
+        "explanation": "The tree represented by root2 is a subtree of the tree represented by root1."
+      },
+      {
+        "input": "root1 = [3, 4, 5, 1, 2], root2 = [4, 1, 3]",
+        "output": "false",
+        "explanation": "The tree represented by root2 is not a subtree of the tree represented by root1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check if root2 is identical to any subtree of root1.",
+      "Use a recursive function to compare tree structures."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected. If two adjacent houses were broken into on the same night, the security system will automatically contact the police. Given an integer array `nums` representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.",
+    "topic": "Dynamic Programming",
+    "subtopic": "1D Dynamic Programming",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers nums where nums[i] represents the amount of money at the i-th house.",
+    "output_format": "An integer representing the maximum amount of money that can be robbed without triggering the alarms.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 400"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Rob house 1 (money = 1) and then rob house 3 (money = 3). Total amount robbed = 1 + 3 = 4."
+      },
+      {
+        "input": "nums = [2, 7, 9, 3, 1]",
+        "output": "12",
+        "explanation": "Rob house 1 (money = 2), rob house 3 (money = 9), and skip house 2. Total amount robbed = 2 + 9 + 1 = 12."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about a recurrence relation to define the maximum rob amount.",
+      "Consider using dynamic programming to store previous results."
+    ],
+    "company": "Morgan Stanley"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Operations to Reduce X to Zero",
+    "description": "You are given an integer array nums and an integer x. The goal is to reduce x to exactly zero by performing a series of operations. In one operation, you can either remove an element from the front of the array or remove an element from the back of the array. You want to find the minimum number of operations required to reduce x to zero. If it is not possible to reduce x to zero, return -1.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sliding Window"
+    ],
+    "input_format": "An integer array nums and an integer x.",
+    "output_format": "An integer representing the minimum number of operations to reduce x to zero, or -1 if it's not possible.",
+    "constraints": [
+      "1 <= nums.length <= 20000",
+      "1 <= nums[i] <= 1000",
+      "0 <= x <= sum(nums)"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 4, 2, 3], x = 5",
+        "output": "2",
+        "explanation": "Remove 1 from the front and 4 from the back. The sum is 5."
+      },
+      {
+        "input": "nums = [5, 2, 3, 1, 4], x = 6",
+        "output": "3",
+        "explanation": "Remove 1 from the front, then 2, then 3 from the back. The sum is 6."
+      },
+      {
+        "input": "nums = [1, 2, 3], x = 7",
+        "output": "-1",
+        "explanation": "It's not possible to reduce x to zero, since the sum of the array is 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use two pointers to explore both ends of the array.",
+      "Consider the prefix sums and how they relate to x.",
+      "Try to find the maximum subarray that sums up to total - x."
+    ],
+    "company": "Morgan Stanley"
+  }
+]

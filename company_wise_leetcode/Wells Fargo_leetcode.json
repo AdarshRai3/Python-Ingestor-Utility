@@ -1,0 +1,592 @@
+[
+  {
+    "question_id": "",
+    "title": "Shortest and Lexicographically Smallest Beautiful String",
+    "description": "Given an integer n and a string s consisting of lowercase letters, your task is to construct the shortest beautiful string of length n. A beautiful string is defined as a string that contains at least one occurrence of each character from 'a' to 'z' at least once in lexicographically smallest order. If it is impossible to form such a string of length n, return an empty string.",
+    "topic": "String",
+    "subtopic": "Constructing Strings",
+    "tags": [
+      "String",
+      "Construction",
+      "Lexicographical Order"
+    ],
+    "input_format": "An integer n (1 <= n <= 26) and a string s consisting of lowercase letters. The length of s is between 1 and 100.",
+    "output_format": "A string representing the shortest beautiful string of length n, or an empty string if it's impossible.",
+    "constraints": [
+      "1 <= n <= 26",
+      "1 <= s.length <= 100",
+      "s consists of only lowercase letters"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, s = 'abc'",
+        "output": "abcde",
+        "explanation": "The shortest beautiful string with 'abc' is 'abcde'."
+      },
+      {
+        "input": "n = 3, s = 'xyz'",
+        "output": "xyz",
+        "explanation": "The string 'xyz' is already of length 3 and contains the characters 'x', 'y', 'z'."
+      },
+      {
+        "input": "n = 1, s = 'a'",
+        "output": "a",
+        "explanation": "The string 'a' can be a beautiful string of length 1."
+      },
+      {
+        "input": "n = 26, s = 'a'",
+        "output": "",
+        "explanation": "It's impossible to create a beautiful string of length 26 as we have only one character from 'a' to 'z'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider what characters are present in s and how they can be used.",
+      "Remember that the output should be lexicographically smallest.",
+      "If n is less than the number of unique characters in s, it's impossible."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "Verbal Arithmetic Puzzle",
+    "description": "You are given a verbal arithmetic puzzle where each letter represents a unique digit. The goal is to determine the digits corresponding to the letters such that the sum of certain words results in a valid equation. For example, in the equation SEND + MORE = MONEY, each letter stands for a different digit. Your task is to write a function that checks if there exists a valid mapping of letters to digits that satisfies the equation, returning true if such a mapping exists, and false otherwise.",
+    "topic": "Backtracking",
+    "subtopic": "Constraint Satisfaction",
+    "tags": [
+      "String",
+      "Backtracking",
+      "Mathematics"
+    ],
+    "input_format": "A list of strings representing the words in the equation and a target string representing the result.",
+    "output_format": "A boolean value indicating whether a valid mapping of letters to digits exists.",
+    "constraints": [
+      "1 <= number of words <= 10",
+      "Each word contains at least 1 letter and at most 10 letters.",
+      "There are no duplicate letters across the words."
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "SEND",
+            "MORE"
+          ],
+          "target": "MONEY"
+        },
+        "output": "true",
+        "explanation": "The letters can be mapped to digits as follows: S=9, E=5, N=6, D=7, M=1, O=0, R=8, Y=2. Hence, 9567 + 1085 = 10652."
+      },
+      {
+        "input": {
+          "words": [
+            "LEET",
+            "CODE"
+          ],
+          "target": "POINT"
+        },
+        "output": "false",
+        "explanation": "No mapping of the letters can result in a valid equation for the given words."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Try using backtracking to explore possible letter-to-digit mappings.",
+      "Ensure that each letter corresponds to a unique digit.",
+      "Mind the leading zeros: no number can start with zero."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Safest Path in a Grid",
+    "description": "Given a grid of integers where each cell represents the threat level of that cell, find the path from the top-left corner to the bottom-right corner of the grid that has the minimum maximum threat level. You can only move down or right at any point in time. The path can be represented as a series of coordinates starting from (0,0) to (m-1,n-1).",
+    "topic": "Dynamic Programming",
+    "subtopic": "Pathfinding",
+    "tags": [
+      "Grid",
+      "Dynamic Programming",
+      "Pathfinding"
+    ],
+    "input_format": "A 2D array `grid` where `grid[i][j]` represents the threat level of the cell at row `i` and column `j`.",
+    "output_format": "An integer representing the minimum maximum threat level along the safest path.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "0 <= grid[i][j] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1, 3, 1], [3, 5, 1], [2, 1, 1]]",
+        "output": "3",
+        "explanation": "The path (0,0) -> (1,0) -> (2,0) -> (2,1) -> (2,2) has maximum threat level 3."
+      },
+      {
+        "input": "grid = [[5, 1, 2], [6, 9, 3], [4, 7, 8]]",
+        "output": "6",
+        "explanation": "The path (0,0) -> (1,0) -> (2,0) -> (2,1) -> (2,2) has maximum threat level 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a priority queue to explore paths based on threat levels.",
+      "Keep track of the maximum threat level encountered so far on each path."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "Minimizing Array After Replacing Pairs With Their Product",
+    "description": "You are given an array of integers. In one operation, you can choose any two adjacent elements in the array and replace them with their product. Your goal is to minimize the array by performing a series of such operations. Write a function to determine the minimum possible value of the array after all possible operations have been performed.",
+    "topic": "Array",
+    "subtopic": "Transformation",
+    "tags": [
+      "Array",
+      "Transformation",
+      "Greedy"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the minimum value of the array after performing the operations.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 4]",
+        "output": "24",
+        "explanation": "Replacing 2 and 4 gives 8, and then replacing 3 and 8 gives 24."
+      },
+      {
+        "input": "nums = [1, 5, 2]",
+        "output": "10",
+        "explanation": "Replacing 1 and 5 gives 5, and then replacing 5 and 2 gives 10."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the order in which pairs are multiplied.",
+      "Greedily choose pairs that minimize the next multiplication result."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Weeks for Which You Can Work",
+    "description": "You are given two integers, n and p. The integer n represents the number of weeks in a given period, and p represents the number of work weeks required to reach a target without exceeding the number of total weeks. You can work at most one week in any given two-week span. Your task is to determine the maximum number of weeks in which you can work without exceeding the limits.",
+    "topic": "Greedy Algorithms",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Dynamic Programming",
+      "Interval Scheduling"
+    ],
+    "input_format": "Two integers n (the number of weeks) and p (the number of required work weeks).",
+    "output_format": "An integer representing the maximum number of weeks you can work.",
+    "constraints": [
+      "1 <= n <= 100",
+      "1 <= p <= n"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, p = 3",
+        "output": "3",
+        "explanation": "You can work week 1, week 3, and week 5. This allows you to work for a maximum of 3 weeks."
+      },
+      {
+        "input": "n = 10, p = 6",
+        "output": "6",
+        "explanation": "You can work week 1, week 3, week 5, week 7, week 9, and week 10. This achieves exactly 6 work weeks."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a greedy approach to maximize the number of work weeks.",
+      "Think about how to alternate weeks to avoid exceeding limits."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "Count and Say",
+    "description": "The 'Count and Say' sequence is a sequence of digit strings defined by the recursive formula: countAndSay(n) is the n-th term of the count-and-say sequence. To generate the n-th term, each term is derived by describing the previous term. For example, the first few terms are as follows: 1, 11, 21, 1211, 111221, and so on. The first term is '1'. The second term describes '1' as 'one 1' or '11'. The third term describes '11' as 'two 1s' or '21'. Given an integer n, generate and return the n-th term of the count-and-say sequence.",
+    "topic": "String",
+    "subtopic": "Sequence Generation",
+    "tags": [
+      "String",
+      "Recursion",
+      "Sequence"
+    ],
+    "input_format": "An integer n (1 <= n <= 30) representing the term of the sequence to generate.",
+    "output_format": "A string representing the n-th term of the Count and Say sequence.",
+    "constraints": [
+      "1 <= n <= 30"
+    ],
+    "examples": [
+      {
+        "input": "n = 1",
+        "output": "1",
+        "explanation": "The first term of the sequence is simply '1'."
+      },
+      {
+        "input": "n = 4",
+        "output": "1211",
+        "explanation": "The sequence progresses as follows: 1 -> 11 -> 21 -> 1211. Thus, the fourth term is '1211'."
+      },
+      {
+        "input": "n = 5",
+        "output": "111221",
+        "explanation": "Following the sequence from 1211: it can be described as 'one 1, one 2, and two 1s', leading to '111221'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to describe the previous term.",
+      "You can generate the sequence iteratively."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock II",
+    "description": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you can make as many transactions as you like (i.e., you can buy and sell multiple times). Note that you must sell the stock before you buy again. Return the maximum profit you can achieve.",
+    "topic": "Greedy",
+    "subtopic": "Transactions",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer array prices where 0 <= prices.length <= 3 * 10^4 and 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "0 <= prices.length <= 3 * 10^4",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 3 (price = 5) for a profit of 5 - 1 = 4. Then buy on day 4 (price = 3) and sell on day 5 (price = 6) for a profit of 6 - 3 = 3. Total profit is 4 + 3 = 7."
+      },
+      {
+        "input": "prices = [1, 2, 3, 4, 5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5). Total profit = 5 - 1 = 4."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "You can make multiple transactions.",
+      "Consider the rise in prices to determine when to buy and sell.",
+      "Keep track of the profit during each increase."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "Water and Jug Problem",
+    "description": "You have two jugs, one with a capacity of a liters and the other with a capacity of b liters. You need to measure exactly c liters of water using these two jugs. You can fill a jug completely, empty a jug, or pour water from one jug to the other until one jug is either full or empty. Determine whether it is possible to measure exactly c liters using these jugs. Return true if possible, otherwise return false.",
+    "topic": "Mathematics",
+    "subtopic": "Geometry",
+    "tags": [
+      "Mathematics",
+      "Geometry",
+      "Water Jug Problem"
+    ],
+    "input_format": "Three integers a, b, c.",
+    "output_format": "A boolean indicating whether it is possible to measure exactly c liters.",
+    "constraints": [
+      "0 <= a, b, c <= 10^6",
+      "a + b >= c"
+    ],
+    "examples": [
+      {
+        "input": "a = 3, b = 5, c = 4",
+        "output": "true",
+        "explanation": "You can fill the 5-liter jug and then pour water into the 3-liter jug until it's full, leaving you with exactly 4 liters in the 5-liter jug."
+      },
+      {
+        "input": "a = 2, b = 6, c = 5",
+        "output": "false",
+        "explanation": "It is not possible to measure 5 liters with the given jug capacities."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the greatest common divisor (GCD) of a and b.",
+      "Check if c is a multiple of GCD(a, b).",
+      "Consider the maximum capacity of the jugs."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "Product of Array Except Self",
+    "description": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i]. The problem should be solved without using division and in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Product Calculation",
+    "tags": [
+      "Array",
+      "Product",
+      "Prefix-Suffix"
+    ],
+    "input_format": "An integer array nums of length n.",
+    "output_format": "An integer array answer of length n.",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-30 <= nums[i] <= 30"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "[24, 12, 8, 6]",
+        "explanation": "For the given array, the products are calculated as follows: answer[0] = 2*3*4 = 24, answer[1] = 1*3*4 = 12, answer[2] = 1*2*4 = 8, and answer[3] = 1*2*3 = 6."
+      },
+      {
+        "input": "nums = [-1, 1, 0, -3, 3]",
+        "output": "[0, 0, 9, 0, 0]",
+        "explanation": "The products except for each index lead to zeros since there's a zero in the original array which contributes to all multiplicative results for the other indices."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two passes: one for the left side products and one for the right side products.",
+      "You can use an extra array to store the products temporarily."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate String",
+    "description": "Given two strings, A and B, determine if string A can be obtained by rotating string B. A rotation of a string involves moving characters from the beginning of the string to the end while maintaining their order. For example, 'abcde' can be rotated to become 'cdeab' or 'deabc'.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Rotation"
+    ],
+    "input_format": "Two strings A and B, where A and B have the same length.",
+    "output_format": "A boolean value indicating whether string A can be obtained by rotating string B.",
+    "constraints": [
+      "1 <= A.length, B.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "A = 'abcde', B = 'deabc'",
+        "output": "true",
+        "explanation": "String A can be obtained by rotating string B: 'deabc' \u2192 'abcde'."
+      },
+      {
+        "input": "A = 'abc', B = 'cab'",
+        "output": "true",
+        "explanation": "String A can be obtained by rotating string B: 'cab' \u2192 'abc'."
+      },
+      {
+        "input": "A = 'abc', B = 'def'",
+        "output": "false",
+        "explanation": "String A cannot be obtained by rotating string B since they are of different characters."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider concatenating string B with itself.",
+      "Check if string A is a substring of the concatenated string B."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Strings Alternately",
+    "description": "You are given two strings, word1 and word2. You need to merge them alternately, starting with the first character of word1, followed by the first character of word2, and so on. If either word runs out of characters, append the remainder of the other word to the merged string. Return the resulting merged string.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Merge"
+    ],
+    "input_format": "Two strings word1 and word2, where 0 <= word1.length, word2.length <= 100.",
+    "output_format": "A string that contains the characters of word1 and word2 merged alternately.",
+    "constraints": [
+      "0 <= word1.length, word2.length <= 100",
+      "word1 and word2 consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "word1 = 'abc', word2 = 'pqr'",
+        "output": "apbqcr",
+        "explanation": "Merging alternately: a + p = ap, b + q = bq, c + r = cr."
+      },
+      {
+        "input": "word1 = 'ab', word2 = 'pqrs'",
+        "output": "apbqrs",
+        "explanation": "Merging alternately: a + p = ap, b + q = bq. Then, append the remainder 'rs' to get 'apbqrs'."
+      },
+      {
+        "input": "word1 = 'abcdef', word2 = 'pq'",
+        "output": "apbqdef",
+        "explanation": "Merging alternately: a + p = ap, b + q = bq. Then, append the remainder 'def' to get 'apbqdef'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a loop to iterate through both strings.",
+      "Check the lengths of both strings to determine when to append the remaining part."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Largest Element in a Stream",
+    "description": "Design a class that simulates the behavior of a stream where integers can be added and gives the Kth largest element of the stream at any point. You should be able to add integers to the stream and retrieve the Kth largest element efficiently.",
+    "topic": "Design",
+    "subtopic": "Data Stream",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Heap"
+    ],
+    "input_format": "You will be using the class `KthLargest` with the following methods: `KthLargest(int k, int[] nums)` initializes the object with the integer k and the stream of integers nums. `add(int val)` adds the integer val to the stream and returns the Kth largest element in the stream.",
+    "output_format": "Returns the Kth largest element after each addition.",
+    "constraints": [
+      "1 <= k <= 10^4",
+      "0 <= nums.length <= 10^4",
+      "-10^4 <= nums[i] <= 10^4",
+      "-10^4 <= val <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "kthLargest = new KthLargest(3, [4, 5, 8, 2]); kthLargest.add(3); kthLargest.add(5); kthLargest.add(10); kthLargest.add(9); kthLargest.add(4);",
+        "output": "4",
+        "explanation": "The 3rd largest element after adding 3, 5, 10, 9, and 4 is 4."
+      },
+      {
+        "input": "kthLargest = new KthLargest(1, []); kthLargest.add(-3); kthLargest.add(-2); kthLargest.add(-4); kthLargest.add(0); kthLargest.add(4);",
+        "output": "4",
+        "explanation": "The 1st largest element after adding -3, -2, -4, 0, and 4 is 4."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a min-heap to maintain the k largest elements.",
+      "The smallest element in the min-heap will be the Kth largest element."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order. You need to traverse the matrix and collect the numbers starting from the top left corner, moving to the right, then down, then to the left, and finally upwards, continuing until all elements are traversed.",
+    "topic": "Matrix",
+    "subtopic": "Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Spiral"
+    ],
+    "input_format": "An m x n matrix, where 1 <= m, n <= 10^4 and the total number of elements does not exceed 10^4.",
+    "output_format": "A list of integers representing the elements of the matrix in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "The total number of elements in the matrix does not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "[[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The spiral order traversal starts from 1, goes right to 3, down to 6, across to 9, left to 7, and finally up to cover the remaining elements, yielding [1, 2, 3, 6, 9, 8, 7, 4, 5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about the boundaries of the spiral as you traverse each direction.",
+      "You can use four variables to keep track of the boundaries."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an array of integers, return all the unique triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Implement a solution that avoids duplicates in the output.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers",
+      "Hash Table"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of unique triplets that sum to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "No triplets can be formed from an empty array."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "No triplets can be formed which sum to zero."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array to facilitate the two-pointer technique.",
+      "Use a set to avoid duplicate triplet outputs."
+    ],
+    "company": "Wells Fargo"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Common Prefix",
+    "description": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\". Note that all given inputs are in lowercase letters a-z.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A string representing the longest common prefix.",
+    "constraints": [
+      "0 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "All characters in strs[i] are lowercase letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\", \"flow\", \"flight\"]",
+        "output": "\"fl\"",
+        "explanation": "The longest common prefix is 'fl'."
+      },
+      {
+        "input": "strs = [\"dog\", \"racecar\", \"car\"]",
+        "output": "\"\"",
+        "explanation": "There is no common prefix among the strings."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider comparing characters of the first string with characters of others.",
+      "You can use the minimum length of strings to avoid index out of range."
+    ],
+    "company": "Wells Fargo"
+  }
+]

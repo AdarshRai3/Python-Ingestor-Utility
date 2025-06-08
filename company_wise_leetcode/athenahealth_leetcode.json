@@ -1,0 +1,441 @@
+[
+  {
+    "question_id": "",
+    "title": "The Number of Rich Customers",
+    "description": "You are given a list of customers, where each customer is represented by an integer balance. A rich customer is defined as one who has a balance greater than or equal to a specified threshold. Your task is to count how many customers are considered rich based on this definition.",
+    "topic": "Array",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Array",
+      "Counting",
+      "Rich Customers"
+    ],
+    "input_format": "A list of integers balances followed by an integer threshold.",
+    "output_format": "An integer representing the number of rich customers.",
+    "constraints": [
+      "1 <= balances.length <= 10^5",
+      "-10^6 <= balances[i] <= 10^6",
+      "0 <= threshold <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "balances = [100, 200, 300, 400, 500], threshold = 300",
+        "output": "3",
+        "explanation": "The rich customers have balances 300, 400, and 500, therefore the count is 3."
+      },
+      {
+        "input": "balances = [50, 75, 100, 20], threshold = 100",
+        "output": "1",
+        "explanation": "Only the customer with a balance of 100 is rich."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a simple loop to count the number of balances meeting the threshold."
+    ],
+    "company": "athenahealth"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where each element represents the price of a stock on a given day. You want to maximize your profit by choosing a single day to buy one stock and a different day in the future to sell that stock. Write a function that returns the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers where each integer represents the price of the stock on that day.",
+    "output_format": "An integer representing the maximum profit achievable.",
+    "constraints": [
+      "0 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price encountered so far.",
+      "Calculate potential profit at each price and update the maximum profit."
+    ],
+    "company": "athenahealth"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings strs, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Grouping"
+    ],
+    "input_format": "An array of strings strs, where 1 <= strs.length <= 10^4 and 1 <= strs[i].length <= 100.",
+    "output_format": "A list of lists of strings, where each sublist contains grouped anagrams.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "1 <= strs[i].length <= 100",
+      "All inputs are lowercase letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]",
+        "output": "[[\"ate\",\"eat\",\"tea\"],[\"nat\",\"tan\"],[\"bat\"]]",
+        "explanation": "The three strings \"eat\", \"tea\", and \"ate\" are anagrams of each other. Similarly, \"nat\" and \"tan\" are anagrams."
+      },
+      {
+        "input": "strs = [\"anagram\",\"nagaram\"]",
+        "output": "[[\"anagram\",\"nagaram\"]]",
+        "explanation": "The strings \"anagram\" and \"nagaram\" are anagrams of each other."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how you can simplify a string to identify anagrams.",
+      "Using a hash map may help in grouping the strings.",
+      "Sorting the strings can be a potential solution."
+    ],
+    "company": "athenahealth"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to the target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums, followed by an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i], target <= 10^9",
+      "Each input will have exactly one solution."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9, hence indices 0 and 1."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6, hence indices 1 and 2."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 3 + 3 = 6, hence indices 0 and 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash table to store the indices of the elements.",
+      "Check if the needed value (target - current value) exists in the hash table."
+    ],
+    "company": "athenahealth"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Paths II",
+    "description": "A robot is positioned at the top-left corner of a m x n grid. The robot can only move down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid. Now some obstacles are planted in the grid. You need to determine how many unique paths the robot can take to reach the destination. Obstacles are represented by 1 and empty cells are represented by 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Paths",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Depth-First Search"
+    ],
+    "input_format": "A 2D array grid of size m x n, where grid[i][j] is either 0 (empty cell) or 1 (obstacle).",
+    "output_format": "An integer representing the number of unique paths from the top-left corner to the bottom-right corner.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "grid[i][j] is either 0 or 1.",
+      "grid[0][0] is guaranteed to be 0 (the starting point).",
+      "grid[m-1][n-1] is guaranteed to be 0 (the destination)."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0,0,0],[0,1,0],[0,0,0]]",
+        "output": "2",
+        "explanation": "There are two unique paths to the destination: Right -> Down -> Down and Down -> Right -> Down."
+      },
+      {
+        "input": "grid = [[0,1],[0,0]]",
+        "output": "1",
+        "explanation": "There is only one unique path to the destination: Down -> Right."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using dynamic programming to store the number of paths to each cell.",
+      "Remember to account for obstacles when calculating paths."
+    ],
+    "company": "athenahealth"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "You are given two sorted integer arrays nums1 and nums2, where nums1 has a size of m + n, and the first m elements denote the elements that are to be merged, while the last n elements are set to 0 and should be ignored. nums2 has a size of n. This function should merge nums2 into nums1 in a single step, resulting in a single sorted array.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Sorting",
+      "In-place"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2, with nums1 having a size of m + n and containing the first m elements followed by n zeros.",
+    "output_format": "The merged sorted array stored in nums1.",
+    "constraints": [
+      "0 <= m, n <= 200",
+      "1 <= m + n <= 200",
+      "-10^9 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [2, 5, 6], n = 3",
+        "output": "[1, 2, 2, 3, 5, 6]",
+        "explanation": "After merging, nums1 contains [1,2,2,3,5,6] which is sorted."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "Since nums2 is empty, nums1 remains unchanged."
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "explanation": "The nums1 array initially has no actual elements, so it takes nums2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to track the elements in nums1 and nums2.",
+      "Start merging from the end of nums1.",
+      "Take care of the case when one array is exhausted before another."
+    ],
+    "company": "athenahealth"
+  },
+  {
+    "question_id": "",
+    "title": "First Missing Positive",
+    "description": "Given an unsorted integer array nums, return the smallest missing positive integer. You must implement an algorithm that runs in O(n) time and uses constant extra space.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Positive Integers",
+      "Searching"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the first missing positive integer.",
+    "constraints": [
+      "0 <= nums.length <= 300",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, -1, 1]",
+        "output": "2",
+        "explanation": "The numbers 1 and 2 are missing, but 2 is the smallest positive integer missing."
+      },
+      {
+        "input": "nums = [1, 2, 0]",
+        "output": "3",
+        "explanation": "The numbers 3 is missing as the array contains positive integers 1 and 2."
+      },
+      {
+        "input": "nums = [7, 8, 9, 11, 12]",
+        "output": "1",
+        "explanation": "The smallest positive integer missing is 1 since the array does not contain it."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a swapping technique to place each number in its correct index."
+    ],
+    "company": "athenahealth"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within a string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A string s consisting of lowercase letters, uppercase letters, digits, and symbols.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'abc', which has a length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is 'b', which has a length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'wke', which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window technique to track the substring.",
+      "Utilize a HashMap to store the last indices of characters."
+    ],
+    "company": "athenahealth"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A substring is a contiguous sequence of characters within a string. A palindromic string is a string that reads the same forward and backward.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Dynamic Programming"
+    ],
+    "input_format": "A single string s (1 <= s.length <= 1000).",
+    "output_format": "A string representing the longest palindromic substring.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consist only of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'babad'",
+        "output": "'bab' or 'aba'",
+        "explanation": "Both 'bab' and 'aba' are valid palindromic substrings."
+      },
+      {
+        "input": "s = 'cbbd'",
+        "output": "'bb'",
+        "explanation": "'bb' is the longest palindromic substring in this case."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around each character in the string.",
+      "Track the longest palindrome found during the search."
+    ],
+    "company": "athenahealth"
+  },
+  {
+    "question_id": "",
+    "title": "Exclusive Time of Functions",
+    "description": "You are given a list of function logs where each log is in the form of 'function_id:start_time' or 'function_id:end_time'. Your task is to calculate the exclusive time of each function. The exclusive time of a function is defined as the total time spent on that function excluding the time spent on any child functions. A function is considered to be running if it was started but not yet ended. Additionally, the start and end times of functions are given in a non-overlapping fashion, meaning that once a function starts, it will not overlap with another function until it ends.",
+    "topic": "Stack",
+    "subtopic": "Function Call Stack",
+    "tags": [
+      "Stack",
+      "Function",
+      "Timing",
+      "Algorithm"
+    ],
+    "input_format": "A list of strings representing the function logs.",
+    "output_format": "A list of integers representing the exclusive time for each function in the order of their IDs.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "0 <= start_time, end_time <= 10^9",
+      "Each function ID is unique and represents a non-negative integer."
+    ],
+    "examples": [
+      {
+        "input": [
+          "0:start:0",
+          "1:start:2",
+          "1:end:3",
+          "0:end:4"
+        ],
+        "output": [
+          3,
+          1
+        ],
+        "explanation": "Function 0 runs from time 0 to 4 but has a child function 1 that takes 1 time unit from 2 to 3. Thus, exclusive time for function 0 is 4 - 1 = 3, and exclusive time for function 1 is simply 1."
+      },
+      {
+        "input": [
+          "0:start:0",
+          "0:end:1"
+        ],
+        "output": [
+          1
+        ],
+        "explanation": "Function 0 runs from time 0 to 1 and there are no child functions, so exclusive time is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to manage function calls.",
+      "Track the current time spent on functions.",
+      "Ensure to account for nested function calls appropriately."
+    ],
+    "company": "athenahealth"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, if the intervals are [[1,3],[2,6],[8,10],[15,18]], you should return [[1,6],[8,10],[15,18]]. The intervals should be merged if they overlap, and the resulting collection should be sorted in ascending order based on the start of each interval.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Merge"
+    ],
+    "input_format": "A list of intervals, where each interval is represented as a list of two integers [start, end].",
+    "output_format": "A list of merged intervals, each represented as a list of two integers [start, end].",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they get merged to [1,6]. The other intervals do not overlap and remain the same."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] touch at the endpoint 4, hence they should be considered overlapping and merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals by the starting element.",
+      "Use a list to keep track of merged intervals."
+    ],
+    "company": "athenahealth"
+  }
+]

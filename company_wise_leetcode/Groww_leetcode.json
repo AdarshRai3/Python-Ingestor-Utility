@@ -1,0 +1,302 @@
+[
+  {
+    "question_id": "",
+    "title": "Minimum Number of Operations to Make X and Y Equal",
+    "description": "You are given two integers, X and Y. Your task is to make both integers equal using the minimum number of operations. In one operation, you can either increment or decrement X or Y by 1. Determine the minimum number of operations required to make X equal to Y.",
+    "topic": "Math",
+    "subtopic": "Number Manipulation",
+    "tags": [
+      "Math",
+      "Number Manipulation",
+      "Operations"
+    ],
+    "input_format": "Two integers X and Y.",
+    "output_format": "An integer representing the minimum number of operations required to make X equal to Y.",
+    "constraints": [
+      "-10^9 <= X, Y <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "X = 5, Y = 10",
+        "output": "5",
+        "explanation": "You can increment X by 1 five times to make it equal to Y."
+      },
+      {
+        "input": "X = -2, Y = 3",
+        "output": "5",
+        "explanation": "You can increment X by 1 five times to reach 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "The absolute difference between X and Y gives the number of operations needed."
+    ],
+    "company": "Groww"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the stock prices on different days.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transaction is done, as the prices are in decreasing order."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate the profit at each step by subtracting the minimum price from the current price."
+    ],
+    "company": "Groww"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) cache. It should support the following operations: get and put.\n\n- get(key): Retrieve the value of the key if the key exists in the cache, otherwise return -1.\n- put(key, value): Update or insert the value if the key is not already present. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structure",
+    "subtopic": "Cache Implementation",
+    "tags": [
+      "Cache",
+      "Design",
+      "LinkedList",
+      "HashMap"
+    ],
+    "input_format": "The input consists of a capacity for the cache and a series of operations (either 'get' or 'put').",
+    "output_format": "Return the value for a get operation, or return nothing for a put operation.",
+    "constraints": [
+      "The maximum capacity of the cache is 1000.",
+      "All keys are positive integers.",
+      "The operations get and put will be called at most 10000 times."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1,-1,3,4]",
+        "explanation": "The sequence of operations retrieves the value for key 1 (which is 1), then tries to get the value for key 2 (which is no longer valid because it was evicted). Finally, it retrieves the values for keys 3 and 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hash map and a doubly linked list.",
+      "Maintaining the order of the keys is essential."
+    ],
+    "company": "Groww"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the height of bars in a histogram, compute how much water it can trap after raining. It can be shown that the water trapped above a bar is determined by the height of the tallest bars on its left and right sides.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer array heights where heights[i] represents the height of the ith bar.",
+    "output_format": "An integer representing the total amount of water trapped.",
+    "constraints": [
+      "0 <= heights.length <= 2 * 10^4",
+      "0 <= heights[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water can be trapped between the bars at indices 1 and 3, accounting for a total of 6 units."
+      },
+      {
+        "input": "heights = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water can be trapped above indices 1, 2, and 3, accounting for a total of 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the heights of the tallest bars on both sides for each bar.",
+      "Use two pointers to calculate water trapped efficiently.",
+      "Think about how to keep track of the maximum height on both sides."
+    ],
+    "company": "Groww"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Good Subarray Sum",
+    "description": "Given an integer array nums of length n, where each element can either be a 'good' number (greater than 0) or 'bad' number (less than or equal to 0), find the maximum possible sum of a continuous subarray that contains only 'good' numbers. If there are no 'good' numbers, return 0.",
+    "topic": "Array",
+    "subtopic": "Prefix Sums",
+    "tags": [
+      "Array",
+      "Subarray",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum sum of a continuous subarray of 'good' numbers.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, -2, 3, 4, -1, 2, 1]",
+        "output": "7",
+        "explanation": "The maximum subarray with 'good' numbers is [3, 4, -1, 2, 1] which equals 3 + 4 + 2 + 1 = 10."
+      },
+      {
+        "input": "nums = [-1, -2, -3, -4]",
+        "output": "0",
+        "explanation": "There are no 'good' numbers, so the result is 0."
+      },
+      {
+        "input": "nums = [5, 3, -2, 6, 8, -5, 4]",
+        "output": "22",
+        "explanation": "The maximum subarray is [5, 3, -2, 6, 8] which equals 5 + 3 + 6 + 8 = 22."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Kadane's algorithm to solve for the maximum subarray sum efficiently.",
+      "Keep track of the current subarray sum and update the maximum sum when needed."
+    ],
+    "company": "Groww"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock II",
+    "description": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you may make as many transactions as you like (i.e., you can buy the stock and sell it multiple times). Note that you cannot hold more than one share of the stock at any time (you must sell the stock before you can buy again). Return the maximum profit you can achieve.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers prices where 0 <= prices.length <= 3 * 10^4.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "0 <= prices.length <= 3 * 10^4",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5. Then buy on day 4 (price = 3) and sell on day 5 (price = 4), profit = 4 - 3 = 1. Total profit = 5 + 1 = 6."
+      },
+      {
+        "input": "prices = [1, 2, 3, 4, 5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5 - 1 = 4."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "No transactions are done, profit = 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the scenario where you can buy and sell multiple times.",
+      "What happens if you buy and sell on all the days that prices increase?"
+    ],
+    "company": "Groww"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock III",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by following these rules: You may complete at most two transactions. You must sell the stock before you buy again. Return the maximum profit you can achieve. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Stock Trading",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers, prices, representing the stock prices on each day.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "prices = [3,2,6,5,0,3]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 2) and sell on day 3 (price = 6), profit = 6 - 2 = 4. Then buy on day 5 (price = 0) and sell on day 6 (price = 3), profit = 3 - 0 = 3. Total profit = 4 + 3 = 7."
+      },
+      {
+        "input": "prices = [1,2,3,4,5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5). Total profit = 5 - 1 = 4."
+      },
+      {
+        "input": "prices = [7,6,4,3,1]",
+        "output": "0",
+        "explanation": "No transactions are done since prices are in descending order."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the state transitions for buying and selling.",
+      "You may want to use dynamic programming to track profits."
+    ],
+    "company": "Groww"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Colors",
+    "description": "Given an array of n objects representing colors, with values 0, 1, and 2 representing the colors red, white, and blue, respectively, sort the colors in-place so that objects of the same color are adjacent, with the red objects first, the white objects second, and the blue objects last. You must do this without using the library's sort function.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An array nums of length n consisting of integers (0, 1, or 2).",
+    "output_format": "The input array sorted such that the colors are in the order 0, 1, 2.",
+    "constraints": [
+      "n == nums.length",
+      "1 <= n <= 300",
+      "nums[i] is either 0, 1, or 2"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 0, 2, 1, 1, 0]",
+        "output": "[0, 0, 1, 1, 2, 2]",
+        "explanation": "After sorting, the array should be adjusted to [0, 0, 1, 1, 2, 2]."
+      },
+      {
+        "input": "nums = [2, 0, 1]",
+        "output": "[0, 1, 2]",
+        "explanation": "The sorted order would be [0, 1, 2] after adjusting the positions."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the Dutch National Flag problem approach.",
+      "Use three pointers to track the boundaries of the colors."
+    ],
+    "company": "Groww"
+  }
+]

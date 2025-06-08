@@ -1,0 +1,1029 @@
+[
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums followed by an integer target.",
+    "output_format": "An array containing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9",
+      "Only one valid answer exists. "
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "Because nums[1] + nums[2] == 6, we return [1, 2]."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "Because nums[0] + nums[1] == 6, we return [0, 1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the numbers and their indices."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Integer",
+    "description": "Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-2^31, 2^31 - 1], then return 0. Assume the environment does not allow you to store 64-bit integers.",
+    "topic": "Math",
+    "subtopic": "Integer Manipulation",
+    "tags": [
+      "Math",
+      "Integer",
+      "String Manipulation"
+    ],
+    "input_format": "A single integer x representing the number to be reversed.",
+    "output_format": "An integer representing the reversed number, or 0 if it falls outside the 32-bit signed integer range.",
+    "constraints": [
+      "-2^31 <= x <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "x = 123",
+        "output": "321",
+        "explanation": "The reverse of 123 is 321."
+      },
+      {
+        "input": "x = -123",
+        "output": "-321",
+        "explanation": "The reverse of -123 is -321."
+      },
+      {
+        "input": "x = 120",
+        "output": "21",
+        "explanation": "The reverse of 120 is 21, as leading zeros are dropped."
+      },
+      {
+        "input": "x = 0",
+        "output": "0",
+        "explanation": "The reverse of 0 is 0."
+      },
+      {
+        "input": "x = 1534236469",
+        "output": "0",
+        "explanation": "Reversing causes overflow, hence the output is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using string manipulation for easier digit reversal.",
+      "Be mindful of the sign of the integer.",
+      "Check for integer overflow before returning the result."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Second Highest Salary",
+    "description": "Write a SQL query to find the second highest salary from the Employee table. If there is no second highest salary, the query should return null.",
+    "topic": "SQL",
+    "subtopic": "Basic Queries",
+    "tags": [
+      "SQL",
+      "Query",
+      "Database"
+    ],
+    "input_format": "An Employee table with columns 'id', 'name', and 'salary'.",
+    "output_format": "A single integer representing the second highest salary, or null if it does not exist.",
+    "constraints": [
+      "The Employee table has at least one row and at most 10^5 rows.",
+      "The salary field is a non-negative integer."
+    ],
+    "examples": [
+      {
+        "input": "SELECT salary FROM Employee ORDER BY salary DESC LIMIT 1 OFFSET 1;",
+        "output": "2000",
+        "explanation": "The Employee table contains salaries [1000, 2000, 3000]. The second highest salary is 2000."
+      },
+      {
+        "input": "SELECT salary FROM Employee ORDER BY salary DESC LIMIT 1 OFFSET 1;",
+        "output": "null",
+        "explanation": "If all employees have the same salary, there is no second highest salary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use ORDER BY to sort the salary in descending order.",
+      "Consider using LIMIT and OFFSET in SQL to fetch the second highest salary."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays nums1 and nums2 of sizes m and n respectively, return the median of the two sorted arrays. The overall run time complexity should be O(log (min(m,n))). You may assume nums1 and nums2 cannot be both empty.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Median"
+    ],
+    "input_format": "Two sorted arrays of integers nums1 and nums2.",
+    "output_format": "A single number representing the median of the two sorted arrays.",
+    "constraints": [
+      "0 <= nums1.length <= 1000",
+      "0 <= nums2.length <= 1000",
+      "1 <= m + n <= 2000",
+      "-10^6 <= nums1[i], nums2[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 3], nums2 = [2]",
+        "output": "2.0",
+        "explanation": "The combined sorted array is [1, 2, 3], and the median is 2."
+      },
+      {
+        "input": "nums1 = [1, 2], nums2 = [3, 4]",
+        "output": "2.5",
+        "explanation": "The combined sorted array is [1, 2, 3, 4], and the median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider binary search on the smaller array.",
+      "Partition both arrays to find the median."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicates from Sorted Array",
+    "description": "Given a sorted array of integers, you need to remove the duplicated elements in place such that each element appears only once and returns the new length of the array. Do not use additional space for another array. You've to do this with O(1) extra space complexity.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-place"
+    ],
+    "input_format": "A sorted array of integers nums.",
+    "output_format": "An integer representing the new length of the array after removing duplicates.",
+    "constraints": [
+      "0 <= nums.length <= 3 * 10^4",
+      "-10^4 <= nums[i] <= 10^4",
+      "The input array is already sorted."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2]",
+        "output": "2",
+        "explanation": "After removing duplicates, the array will be [1, 2] with a new length of 2."
+      },
+      {
+        "input": "nums = [0,0,1,1,1,2,2,3,3,4]",
+        "output": "5",
+        "explanation": "After removing duplicates, the array will be [0, 1, 2, 3, 4] with a new length of 5."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to keep track of unique elements.",
+      "Only move the first pointer when you find a new unique element."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Count Primes",
+    "description": "Given an integer n, return the number of prime numbers that are strictly less than n. A prime number is a natural number greater than 1 that cannot be formed by multiplying two smaller natural numbers.",
+    "topic": "Mathematics",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Prime",
+      "Counting",
+      "Mathematics"
+    ],
+    "input_format": "An integer n (2 <= n <= 10^6).",
+    "output_format": "An integer representing the number of prime numbers less than n.",
+    "constraints": [
+      "2 <= n <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "n = 10",
+        "output": "4",
+        "explanation": "The prime numbers less than 10 are 2, 3, 5, and 7. Thus, the output is 4."
+      },
+      {
+        "input": "n = 20",
+        "output": "8",
+        "explanation": "The prime numbers less than 20 are 2, 3, 5, 7, 11, 13, 17, and 19. Thus, the output is 8."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the Sieve of Eratosthenes algorithm to efficiently count primes."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, return true if t is an anagram of s and false otherwise. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, using all the original letters exactly once. Your solution should consider case sensitivity and ignore spaces.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Anagram",
+      "Sorting"
+    ],
+    "input_format": "Two strings s and t.",
+    "output_format": "A boolean value indicating whether t is an anagram of s.",
+    "constraints": [
+      "1 <= s.length, t.length <= 5 * 10^4",
+      "s and t consist of lowercase English letters, uppercase English letters, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = 'anagram', t = 'nagaram'",
+        "output": "true",
+        "explanation": "'nagaram' is a rearrangement of 'anagram'."
+      },
+      {
+        "input": "s = 'rat', t = 'car'",
+        "output": "false",
+        "explanation": "'car' cannot be formed by rearranging the letters of 'rat'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check if the lengths of the strings are identical.",
+      "Count the frequency of each character in both strings and compare."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Largest Element in an Array",
+    "description": "Given an integer array nums and an integer k, return the kth largest element in the array. Note that it is the kth largest element in the sorted order, not the kth distinct element. You must solve this problem in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Sorting and Selection",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Selection",
+      "Heap"
+    ],
+    "input_format": "An array of integers nums followed by an integer k.",
+    "output_format": "An integer representing the kth largest element in the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 1, 5, 6, 4], k = 2",
+        "output": "5",
+        "explanation": "The second largest element in the array is 5."
+      },
+      {
+        "input": "nums = [3, 2, 3, 1, 2, 4, 5, 5, 6], k = 4",
+        "output": "4",
+        "explanation": "The fourth largest element in the array is 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a min-heap to find the kth largest element.",
+      "You can also sort the array and then select the element by index."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within a string. This problem requires you to identify the maximum length of such substrings by utilizing various string-manipulation techniques.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A string s, where 1 <= s.length <= 5 * 10^4 and s consists of English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "1 <= s.length <= 5 * 10^4",
+      "s consists of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The answer is \"abc\", with the length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The answer is \"b\", with the length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The answer is \"wke\", with the length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window approach to maintain a substring.",
+      "Track the index of characters using a HashMap.",
+      "Expand the window as far as possible without repeating characters."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Array",
+    "description": "Given an array of integers and a number k, rotate the array to the right by k steps, where k is non-negative. The rotation is performed in-place, which means you must modify the input array directly. After the operation, the elements of the array should be shifted to the right, and the elements at the end should wrap around to the beginning of the array.",
+    "topic": "Array",
+    "subtopic": "In-place Modification",
+    "tags": [
+      "Array",
+      "Rotation",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "The modified array after rotation.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= k <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], k = 2",
+        "output": "[4, 5, 1, 2, 3]",
+        "explanation": "After rotating the array by 2 steps to the right, the last two elements (4 and 5) come to the front."
+      },
+      {
+        "input": "nums = [-1, -100, 3, 99], k = 2",
+        "output": "[3, 99, -1, -100]",
+        "explanation": "After rotating the array by 2 steps to the right, the elements wrap around to the start."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the effective number of rotations: k % nums.length.",
+      "Try to reverse parts of the array to achieve the rotation."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Palindrome",
+    "description": "Given a string s, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases. A string is a palindrome if it reads the same backward as forward. For instance, 'A man, a plan, a canal: Panama' is a palindrome, while 'race a car' is not.",
+    "topic": "String",
+    "subtopic": "Palindrome",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "A single string s, where 0 <= s.length <= 2 * 10^5.",
+    "output_format": "A boolean value indicating if the string s is a palindrome.",
+    "constraints": [
+      "The input string consists only of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"A man, a plan, a canal: Panama\"",
+        "output": "true",
+        "explanation": "After processing, the string becomes 'amanaplanacanalpanama', which is a palindrome."
+      },
+      {
+        "input": "s = \"race a car\"",
+        "output": "false",
+        "explanation": "After processing, the string becomes 'raceacar', which is not a palindrome."
+      },
+      {
+        "input": "s = \" \"",
+        "output": "true",
+        "explanation": "An empty string is considered a palindrome."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to compare characters from both ends of the string.",
+      "Ignore non-alphanumeric characters and consider case insensitivity."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. The following rules apply: 1. Open brackets must be closed by the same type of brackets. 2. Open brackets must be closed in the correct order.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Parentheses"
+    ],
+    "input_format": "A string s consisting of parentheses characters.",
+    "output_format": "A boolean value indicating whether the string is valid.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses characters only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are closed in the correct order."
+      },
+      {
+        "input": "s = '(]}'",
+        "output": "false",
+        "explanation": "Different types of brackets are incorrectly closed."
+      },
+      {
+        "input": "s = '([])'",
+        "output": "true",
+        "explanation": "The brackets are correctly matched and closed."
+      },
+      {
+        "input": "s = '((()))'",
+        "output": "true",
+        "explanation": "All open brackets are closed in the correct order."
+      },
+      {
+        "input": "s = '([)]'",
+        "output": "false",
+        "explanation": "The brackets are not closed in the correct order."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Check if the stack is empty at the end."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Number",
+    "description": "Given an integer x, return true if x is a palindrome, and false otherwise. An integer is a palindrome when it reads the same backward as forward. For example, 121 is a palindrome while 123 is not.",
+    "topic": "Mathematics",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Palindrome",
+      "Mathematics",
+      "Integer"
+    ],
+    "input_format": "An integer x.",
+    "output_format": "A boolean indicating whether x is a palindrome.",
+    "constraints": [
+      "-2^31 <= x <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "x = 121",
+        "output": "true",
+        "explanation": "121 reads the same backward as forward, so it is a palindrome."
+      },
+      {
+        "input": "x = -121",
+        "output": "false",
+        "explanation": "-121 reads as 121- backwards, which is not the same."
+      },
+      {
+        "input": "x = 10",
+        "output": "false",
+        "explanation": "10 reads as 01 backwards, which is not the same."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how to reverse the digits of the number."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Majority Element",
+    "description": "Given an array of size n, find the majority element. The majority element is the element that appears more than n/2 times in the array. You may assume that the majority element always exists in the array.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the majority element.",
+    "constraints": [
+      "1 <= nums.length <= 5 * 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 3]",
+        "output": "3",
+        "explanation": "The number 3 appears more than 3/2 = 1.5 times."
+      },
+      {
+        "input": "nums = [2, 2, 1, 1, 1, 2, 2]",
+        "output": "2",
+        "explanation": "The number 2 appears more than 7/2 = 3.5 times."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think about how many times each element appears.",
+      "Using a counting technique might help identify the majority element."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Linked List Cycle",
+    "description": "Given a linked list, determine if it has a cycle in it. A cycle is defined as a situation where a node's next pointer points back to a previous node in the list. You must implement an algorithm that uses O(1) space. Return true if the linked list has a cycle, otherwise return false.",
+    "topic": "Linked List",
+    "subtopic": "Cycle Detection",
+    "tags": [
+      "Linked List",
+      "Cycle",
+      "Two Pointers"
+    ],
+    "input_format": "The input consists of a head of a singly linked list.",
+    "output_format": "A boolean value indicating whether the linked list has a cycle.",
+    "constraints": [
+      "The number of nodes in the linked list is in the range [0, 10^4].",
+      "The value of each node is in the range [-10^5, 10^5]."
+    ],
+    "examples": [
+      {
+        "input": "head = [3,2,0,-4], pos = 1",
+        "output": "true",
+        "explanation": "The linked list has a cycle since the node with value 2 points back to the node with value 3."
+      },
+      {
+        "input": "head = [1,2], pos = 0",
+        "output": "true",
+        "explanation": "The linked list has a cycle since the node with value 2 points back to the node with value 1."
+      },
+      {
+        "input": "head = [1], pos = -1",
+        "output": "false",
+        "explanation": "The linked list has no cycle as it only contains one node and does not point back to itself."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers moving at different speeds.",
+      "If there is a cycle, the fast pointer will eventually meet the slow pointer."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. The function should modify nums1 in-place to contain the merged result. The initial part of nums1 is filled with m elements from the first array, and the rest of the array is filled with zeros. nums2 has n elements. The merged array should be sorted.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Sorting",
+      "In-place"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2, where nums1 has a size of m + n, with the first m elements being filled, and the last n elements being zeros.",
+    "output_format": "The merged and sorted array nums1, modified in-place.",
+    "constraints": [
+      "0 <= m, n <= 200",
+      "1 <= m + n <= 200",
+      "nums1.length == m + n",
+      "0 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [2, 5, 6], n = 3",
+        "output": "[1, 2, 2, 3, 5, 6]",
+        "explanation": "After merging nums2 into nums1, the sorted array is [1, 2, 2, 3, 5, 6]."
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "explanation": "As nums1 is empty, after merging, nums1 becomes [1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to track the current position in each array.",
+      "You can fill nums1 from the end to avoid overwriting elements."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Article Views I",
+    "description": "You are given a list of articles and their corresponding view counts. Each article is represented as an integer indicating its ID, and a separate list shows the number of views each article received. Your task is to identify the top 'k' articles with the highest view counts. If there are ties in the view counts, the article with the smaller ID should come first. Return a list of the IDs of the top 'k' articles in descending order of views.",
+    "topic": "Sorting",
+    "subtopic": "Heap & Priority Queue",
+    "tags": [
+      "Sorting",
+      "Heap",
+      "Priority Queue"
+    ],
+    "input_format": "Two lists: a list of integers articles where 1 <= articles.length <= 10^5, and a list of integers views where views[i] represents the number of views for articles[i]. A positive integer k, where 1 <= k <= articles.length.",
+    "output_format": "A list of integers representing the IDs of the top 'k' articles sorted by views in descending order.",
+    "constraints": [
+      "1 <= articles.length <= 10^5",
+      "1 <= views[i] <= 10^6",
+      "1 <= k <= articles.length"
+    ],
+    "examples": [
+      {
+        "input": {
+          "articles": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "views": [
+            100,
+            200,
+            200,
+            300,
+            100
+          ],
+          "k": 3
+        },
+        "output": [
+          4,
+          2,
+          3
+        ],
+        "explanation": "The views are: 1->100, 2->200, 3->200, 4->300, 5->100. The top 3 articles by views are article 4, article 2 and article 3."
+      },
+      {
+        "input": {
+          "articles": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "views": [
+            50,
+            70,
+            70,
+            60
+          ],
+          "k": 2
+        },
+        "output": [
+          2,
+          3
+        ],
+        "explanation": "Articles 2 and 3 both have 70 views, and should be returned in ascending order of their IDs."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a max-heap to efficiently extract the top 'k' articles.",
+      "You can use a combination of sorting and data structures to optimize your solution."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Search",
+    "description": "Implement a function that performs binary search on a sorted array of integers. The function should return the index of the target value if it is present in the array, or -1 if it is not found.",
+    "topic": "Searching",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Binary Search",
+      "Array",
+      "Searching"
+    ],
+    "input_format": "A sorted array of integers 'nums' and an integer 'target'.",
+    "output_format": "An integer representing the index of 'target' in 'nums', or -1 if 'target' is not found.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5",
+      "nums is sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], target = 3",
+        "output": "2",
+        "explanation": "The target value 3 is present at index 2 in the array."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5], target = 6",
+        "output": "-1",
+        "explanation": "The target value 6 is not present in the array, so the output is -1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the properties of a sorted array.",
+      "Use two pointers to narrow down your search range."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Write a function to determine if you are able to reach the last index. You start at the first index and you can jump to any index within your maximum jump length from the current index.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "DP"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "Return true if you can reach the last index, otherwise return false.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "true",
+        "explanation": "Jump 1 step from index 0 to 1, then jump 2 steps to reach the last index."
+      },
+      {
+        "input": "nums = [3, 2, 1, 0, 4]",
+        "output": "false",
+        "explanation": "You will always arrive at index 3, which has a value of 0 and cannot move further."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how far you can jump at each index.",
+      "Keep track of the farthest index you can reach."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Roman to Integer",
+    "description": "Given a string representing a Roman numeral, convert it to an integer. The input string is guaranteed to be within the range from 1 to 3999. Roman numerals are represented by seven different symbols: I, V, X, L, C, D, and M.",
+    "topic": "String",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Parsing",
+      "Conversion"
+    ],
+    "input_format": "A string roman representing the Roman numeral.",
+    "output_format": "An integer representing the converted value.",
+    "constraints": [
+      "1 <= roman.length <= 15",
+      "The Roman numeral is guaranteed to be a valid numeral within the range from 1 to 3999."
+    ],
+    "examples": [
+      {
+        "input": "roman = 'III'",
+        "output": "3",
+        "explanation": "The Roman numeral 'III' corresponds to the integer 3."
+      },
+      {
+        "input": "roman = 'IV'",
+        "output": "4",
+        "explanation": "The Roman numeral 'IV' corresponds to the integer 4, as 'I' before 'V' means you subtract 1."
+      },
+      {
+        "input": "roman = 'IX'",
+        "output": "9",
+        "explanation": "The Roman numeral 'IX' corresponds to the integer 9, as 'I' before 'X' means you subtract 1."
+      },
+      {
+        "input": "roman = 'LVIII'",
+        "output": "58",
+        "explanation": "The Roman numeral 'LVIII' corresponds to the integer 58, calculated as L (50) + V (5) + III (3) = 58."
+      },
+      {
+        "input": "roman = 'MCMXCIV'",
+        "output": "1994",
+        "explanation": "The Roman numeral 'MCMXCIV' corresponds to the integer 1994, calculated as M (1000) + CM (900) + XC (90) + IV (4) = 1994."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Understand the value of each Roman numeral.",
+      "Consider the cases where a smaller numeral appears before a larger numeral.",
+      "You can use a map to store the values of each Roman numeral."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Climbing Stairs",
+    "description": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "topic": "Dynamic Programming",
+    "subtopic": "Fibonacci Sequence",
+    "tags": [
+      "Dynamic Programming",
+      "Mathematics",
+      "Recursion"
+    ],
+    "input_format": "An integer n, representing the number of steps.",
+    "output_format": "An integer representing the number of distinct ways to climb to the top.",
+    "constraints": [
+      "1 <= n <= 45"
+    ],
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "There are two ways to climb to the top: (1 step + 1 step) or (2 steps)."
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "explanation": "There are three ways to climb to the top: (1 + 1 + 1), (1 + 2), and (2 + 1)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the number of ways to reach the current step based on the previous two steps."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Characters By Frequency",
+    "description": "Given a string s, return a string that is the result of sorting the characters of s by their frequency in descending order. If two characters have the same frequency, they should be sorted by their lexicographical order.",
+    "topic": "String",
+    "subtopic": "Sorting",
+    "tags": [
+      "String",
+      "Sorting",
+      "Frequency"
+    ],
+    "input_format": "A string s consisting of lowercase and uppercase letters, digits, and symbols.",
+    "output_format": "A string representing the sorted characters by frequency.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of characters from ASCII.",
+      "Output string should be in the range of 1 to 10^5 characters."
+    ],
+    "examples": [
+      {
+        "input": "tree",
+        "output": "eert",
+        "explanation": "The character 'e' appears 1 time, 'r' appears 1 time, and 't' appears 1 time. Since they all have the same frequency, they are sorted in lexicographical order."
+      },
+      {
+        "input": "cccaaa",
+        "output": "aaaccc",
+        "explanation": "The character 'a' appears 3 times and 'c' appears 3 times. They are sorted in lexicographical order."
+      },
+      {
+        "input": "Aabb",
+        "output": "bbAa",
+        "explanation": "The character 'b' appears 2 times and 'A' and 'a' appear once each. 'b' is sorted before 'A' and 'a' on the basis of frequency."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a frequency counter to count occurrences of each character.",
+      "Consider using a sorting method that accommodates frequency and lexicographical order."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Create Hello World Function",
+    "description": "Implement a function that returns the string 'Hello, World!'. This function should not take any parameters and should return the desired string when called.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Function",
+      "Output"
+    ],
+    "input_format": "No input parameters are required.",
+    "output_format": "A string 'Hello, World!'",
+    "constraints": [
+      "The function must return exactly 'Hello, World!' with correct capitalization and punctuation."
+    ],
+    "examples": [
+      {
+        "input": "create_hello_world()",
+        "output": "'Hello, World!'",
+        "explanation": "The function create_hello_world returns the string 'Hello, World!'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Remember to use the correct syntax for defining a function."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Power of Two",
+    "description": "Given an integer n, determine if it is a power of two. An integer n is a power of two if there exists an integer x such that n == 2^x.",
+    "topic": "Math",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Math",
+      "Bit Manipulation",
+      "Power of Two"
+    ],
+    "input_format": "An integer n.",
+    "output_format": "A boolean value indicating whether n is a power of two.",
+    "constraints": [
+      "-2^31 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 16",
+        "output": "true",
+        "explanation": "16 is 2^4, thus it is a power of two."
+      },
+      {
+        "input": "n = 3",
+        "output": "false",
+        "explanation": "3 is not a power of two."
+      },
+      {
+        "input": "n = 1",
+        "output": "true",
+        "explanation": "1 is 2^0, thus it is a power of two."
+      },
+      {
+        "input": "n = 0",
+        "output": "false",
+        "explanation": "0 is not a power of two."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "A power of two has only one bit set in binary representation.",
+      "Use the property that n > 0 and (n & (n - 1)) == 0."
+    ],
+    "company": "Wipro"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase that is formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Anagrams"
+    ],
+    "input_format": "An array of strings 'strs'.",
+    "output_format": "A list of lists, where each inner list contains strings that are anagrams of each other.",
+    "constraints": [
+      "1 <= strs.length <= 1000",
+      "0 <= strs[i].length <= 100",
+      "All inputs are in lowercase."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The words 'eat', 'tea', and 'ate' are anagrams of each other. Similarly, 'nat' and 'tan' are anagrams."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "A single empty string is considered an anagram of itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "A single character is also an anagram of itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to group the anagrams.",
+      "The key for the hash map can be the sorted version of the string."
+    ],
+    "company": "Wipro"
+  }
+]
