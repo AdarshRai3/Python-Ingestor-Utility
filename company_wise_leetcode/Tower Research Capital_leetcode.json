@@ -1,0 +1,142 @@
+[
+  {
+    "question_id": "",
+    "title": "Unique Binary Search Trees",
+    "description": "Given an integer n, how many structurally unique BST's (binary search trees) can be constructed using the values 1 to n? A unique BST is defined as a tree that can be formed by inserting values from 1 to n in different possible sequences. For instance, the following are two unique BST's formed with n = 3: 1     3      2        3  2    1      1  2   (node values). Return the count of these unique BST's.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorial DP",
+    "tags": [
+      "Tree",
+      "Dynamic Programming",
+      "Combinatorics"
+    ],
+    "input_format": "An integer n (1 <= n <= 19).",
+    "output_format": "An integer representing the number of unique BST's that can be formed using values from 1 to n.",
+    "constraints": [
+      "1 <= n <= 19"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "5",
+        "explanation": "There are 5 unique BST's that can be formed using values 1, 2, and 3."
+      },
+      {
+        "input": "n = 1",
+        "output": "1",
+        "explanation": "There is only one unique BST that can be formed using the single value 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the Catalan number formula to calculate the number of unique BST's.",
+      "Think about how you can recursively divide the problem into smaller trees."
+    ],
+    "company": "Tower Research Capital"
+  },
+  {
+    "question_id": "",
+    "title": "Bricks Falling When Hit",
+    "description": "You are given a grid representing a wall of bricks, where each cell contains either a brick or is empty. When a brick is hit, it might fall due to gravity. Determine how many bricks fall after a given series of hits on specific coordinates (x, y). A brick falls if it has no support from below and if it is connected to the top of the wall or to another brick that is still standing. Return an array representing the number of bricks that fall after each hit.",
+    "topic": "Matrix",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Matrix",
+      "DFS",
+      "Union Find"
+    ],
+    "input_format": "A 2D grid of integers representing the wall and a list of hit coordinates.",
+    "output_format": "An array of integers representing the number of bricks that fell after each hit.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 200",
+      "grid[i][j] is either 0 (empty) or 1 (brick)",
+      "0 <= hits.length <= 1000",
+      "0 <= hits[i][0] < grid.length, 0 <= hits[i][1] < grid[i].length"
+    ],
+    "examples": [
+      {
+        "input": {
+          "grid": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "hits": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "output": [
+          2,
+          1
+        ],
+        "explanation": "After the first hit at (1, 0), two bricks fall. After the second hit at (0, 0), one additional brick falls."
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "hits": [
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              1
+            ]
+          ]
+        },
+        "output": [
+          0,
+          0,
+          0
+        ],
+        "explanation": "No bricks fall after each of the hits."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using DFS or BFS to explore connected components.",
+      "Bricks need to be connected to the top of the wall to remain standing."
+    ],
+    "company": "Tower Research Capital"
+  }
+]

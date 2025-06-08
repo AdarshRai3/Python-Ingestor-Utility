@@ -1,0 +1,152 @@
+[
+  {
+    "question_id": "",
+    "title": "Minimum Window Substring",
+    "description": "Given two strings s and t, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string. The answer is guaranteed to be unique and in the order of appearance.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Table"
+    ],
+    "input_format": "Two strings s and t where 1 <= s.length <= 10^5 and 1 <= t.length <= 10^5.",
+    "output_format": "The minimum window substring of s that contains all characters of t or an empty string if such substring doesn't exist.",
+    "constraints": [
+      "s and t consist of English letters, digits, or symbols.",
+      "1 <= s.length <= 10^5",
+      "1 <= t.length <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "s = 'ADOBECODEBANC', t = 'ABC'",
+        "output": "'BANC'",
+        "explanation": "The minimum window substring containing 'A', 'B', and 'C' is 'BANC'."
+      },
+      {
+        "input": "s = 'a', t = 'aa'",
+        "output": "''",
+        "explanation": "There is no valid window as 'a' does not contain two 'a's."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a hashmap to track the counts of characters in t.",
+      "Use two pointers to represent the current window."
+    ],
+    "company": "Fastenal"
+  },
+  {
+    "question_id": "",
+    "title": "Sum of Beauty of All Substrings",
+    "description": "Given a string s, the beauty of a substring is defined as the absolute difference between the maximum and minimum frequency of any character in that substring. Your task is to find the sum of the beauty of all substrings in the given string.",
+    "topic": "String",
+    "subtopic": "Substring Manipulation",
+    "tags": [
+      "String",
+      "Substring",
+      "Frequency"
+    ],
+    "input_format": "A string s of length n (1 <= n <= 1000) consisting of lowercase English letters.",
+    "output_format": "An integer representing the sum of the beauty of all substrings.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "abc",
+        "output": "5",
+        "explanation": "The substrings are 'a', 'b', 'c', 'ab', 'bc', 'abc'. Their beauties are 0, 0, 0, 1, 1, 2. The total sum is 0 + 0 + 0 + 1 + 1 + 2 = 5."
+      },
+      {
+        "input": "aab",
+        "output": "8",
+        "explanation": "The substrings are 'a', 'a', 'b', 'aa', 'ab', 'aab'. Their beauties are 0, 0, 0, 1, 1, 1. The total sum is 0 + 0 + 0 + 1 + 1 + 1 = 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to maintain a frequency count of characters in the current substring.",
+      "Consider how to efficiently calculate the max and min frequencies as you expand the substring."
+    ],
+    "company": "Fastenal"
+  },
+  {
+    "question_id": "",
+    "title": "Last Substring in Lexicographical Order",
+    "description": "Given a string s, find the last substring in lexicographical order. We will define the lexicographical order by comparing the characters in the string based on their ASCII values. The substring must be continuous and you should return the substring that is the largest when considering the lexicographical order. For example, 'abc' < 'ac' because 'b' is less than 'c'.",
+    "topic": "String",
+    "subtopic": "Substring",
+    "tags": [
+      "String",
+      "Substring",
+      "Lexicographical Order"
+    ],
+    "input_format": "A single string s (1 <= s.length <= 10^5).",
+    "output_format": "A string representing the last substring in lexicographical order.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abab'",
+        "output": "bab",
+        "explanation": "The substrings in lexicographical order are 'a', 'ab', 'abab', 'b', 'ba', 'bab'. The largest is 'bab'."
+      },
+      {
+        "input": "s = 'leetcode'",
+        "output": "tcode",
+        "explanation": "The last substring in lexicographical order is 'tcode'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider scanning the string from the end to manage the lexicographical order efficiently.",
+      "Keep track of the last maximum character found while scanning."
+    ],
+    "company": "Fastenal"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Atoms",
+    "description": "You are given a string representation of a chemical formula, and you need to determine the total number of atoms for each element in that formula. The formula can include elements with one or two letters, and can also contain parentheses indicating groups of elements that may have multipliers. For example, 'H2O' represents 2 hydrogen atoms and 1 oxygen atom, while 'Mg(OH)2' represents 1 magnesium atom, 2 oxygen atoms, and 2 hydrogen atoms. Your task is to count the number of atoms for each unique element and return the result as a dictionary.",
+    "topic": "String Manipulation",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Parsing",
+      "Count"
+    ],
+    "input_format": "A string representing the chemical formula.",
+    "output_format": "A dictionary where the keys are element symbols and the values are the counts of each element.",
+    "constraints": [
+      "1 <= formula.length <= 100",
+      "The formula will contain only valid characters: uppercase letters, lowercase letters, digits, '(', and ')'."
+    ],
+    "examples": [
+      {
+        "input": "H2O",
+        "output": "{'H': 2, 'O': 1}",
+        "explanation": "The formula H2O contains 2 hydrogen atoms and 1 oxygen atom."
+      },
+      {
+        "input": "Mg(OH)2",
+        "output": "{'Mg': 1, 'O': 2, 'H': 2}",
+        "explanation": "In Mg(OH)2, there is 1 magnesium atom, 2 oxygen atoms, and 2 hydrogen atoms due to the multiplier 2 applied to the OH group."
+      },
+      {
+        "input": "K4(ON(SO3)2)2",
+        "output": "{'K': 4, 'O': 14, 'N': 2, 'S': 4}",
+        "explanation": "In K4(ON(SO3)2)2 there are 4 potassium atoms, 14 oxygen atoms, 2 nitrogen atoms, and 4 sulfur atoms."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a stack to handle nested parentheses efficiently.",
+      "Keep track of current counts using a dictionary."
+    ],
+    "company": "Fastenal"
+  }
+]

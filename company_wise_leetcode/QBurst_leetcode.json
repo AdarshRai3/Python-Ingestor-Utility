@@ -1,0 +1,110 @@
+[
+  {
+    "question_id": "",
+    "title": "Container With Most Water",
+    "description": "Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with the x-axis forms a container, such that the container contains the most water. Note that you may not slant the container.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Geometry"
+    ],
+    "input_format": "An array of non-negative integers heights representing the height of each line.",
+    "output_format": "An integer representing the maximum amount of water the container can hold.",
+    "constraints": [
+      "2 <= heights.length <= 10^5",
+      "0 <= heights[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "heights = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The maximum area is between lines at index 1 and index 8, with height 7 and width 7, resulting in an area of 49."
+      },
+      {
+        "input": "heights = [1,1]",
+        "output": "1",
+        "explanation": "The only container formed by the two lines both of height 1 produces a maximum area of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Start with a two-pointer approach at both ends of the array.",
+      "Calculate area and move the pointer pointing to the shorter line."
+    ],
+    "company": "QBurst"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices, where 1 <= prices.length <= 10^5 and 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 4 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price so far.",
+      "Calculate the potential profit at each price."
+    ],
+    "company": "QBurst"
+  },
+  {
+    "question_id": "",
+    "title": "Burst Balloons",
+    "description": "You are given n balloons, indexed from 0 to n - 1. Each balloon is painted with a number on it represented by an array nums. You are asked to burst all the balloons. If you burst balloon i, you will gain nums[left] * nums[i] * nums[right] coins. Here left and right are adjacent indices of the balloon i. After bursting a balloon, you cannot burst the left or right balloon directly. However, you can think of this process as a dynamic programming problem where you need to find the optimal order to maximize coins collected.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Interval DP",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers nums where 1 <= nums.length <= 300 and 0 <= nums[i] <= 100.",
+    "output_format": "An integer representing the maximum coins you can collect by bursting all the balloons.",
+    "constraints": [
+      "1 <= nums.length <= 300",
+      "0 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 1, 5, 8]",
+        "output": "167",
+        "explanation": "Optimal bursting order is to first burst balloon at index 1, then burst balloon at index 0, followed by index 2 and finally index 3. The total coins collected equals 3 * 1 * 5 + 1 * 5 * 8 + 5 * 8 * 0 + 1 * 0 * 0 = 167."
+      },
+      {
+        "input": "nums = [1, 5]",
+        "output": "10",
+        "explanation": "The only valid bursting order is to burst balloon at index 0 first, then index 1, earning 1 * 1 * 5 + 1 * 0 * 0 = 10."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider adding dummy balloons with value 1 at both ends of the array.",
+      "Use dynamic programming to store results of already solved subproblems."
+    ],
+    "company": "QBurst"
+  }
+]

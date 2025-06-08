@@ -1,0 +1,425 @@
+[
+  {
+    "question_id": "",
+    "title": "Count Vowel Substrings of a String",
+    "description": "Given a string s, return the number of substrings that only contain vowels. A substring is defined as a contiguous sequence of characters. Each substring is counted only if it consists of one or more vowels. The vowels under consideration are 'a', 'e', 'i', 'o', and 'u'.",
+    "topic": "String",
+    "subtopic": "Substring Count",
+    "tags": [
+      "String",
+      "Substring",
+      "Counting"
+    ],
+    "input_format": "A single string s consisting of lowercase letters.",
+    "output_format": "An integer representing the number of substrings that consist only of vowels.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters"
+    ],
+    "examples": [
+      {
+        "input": "aeiou",
+        "output": "15",
+        "explanation": "The substrings are: 'a', 'e', 'i', 'o', 'u', 'ae', 'ai', 'ao', 'au', 'ei', 'eo', 'eu', 'io', 'iu', 'ou', 'aei', etc. Counting all the valid substrings results in 15."
+      },
+      {
+        "input": "xyz",
+        "output": "0",
+        "explanation": "There are no vowels in the string, hence no valid substrings."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider looping through the string and checking for vowels.",
+      "Use two pointers or a sliding window to find contiguous vowel sequences."
+    ],
+    "company": "Commvault"
+  },
+  {
+    "question_id": "",
+    "title": "Decode Ways",
+    "description": "A message containing letters from A-Z can be encoded into numbers using the following mapping: 'A' -> 1, 'B' -> 2, ..., 'Z' -> 26. Given a string s consisting of digits, return the total number of ways to decode it. For example, valid encodings include '1' -> 'A', '2' -> 'B', but also '12' -> 'L' since it can be decoded as 'AB' or 'L'. However, '0' does not correspond to any letter. Your task is to determine how many different ways the given input string can be decoded.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Decoding",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Decoding"
+    ],
+    "input_format": "A string s consisting of digits (1-9) and may contain '0'.",
+    "output_format": "An integer representing the total number of ways to decode the string.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s[i] != '0'"
+    ],
+    "examples": [
+      {
+        "input": "s = '12'",
+        "output": "2",
+        "explanation": "'12' can be decoded as 'AB' (1, 2) or 'L' (12)."
+      },
+      {
+        "input": "s = '226'",
+        "output": "3",
+        "explanation": "'226' can be decoded as 'BBF' (2, 2, 6), 'BZ' (2, 26), or 'VF' (22, 6)."
+      },
+      {
+        "input": "s = '06'",
+        "output": "0",
+        "explanation": "'06' cannot be decoded as it contains a leading zero."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider dynamic programming to keep track of the number of decoding ways.",
+      "Use a dp array where dp[i] represents the number of ways to decode s up to the ith character.",
+      "Be cautious with two-digit combinations when checking for valid encodings."
+    ],
+    "company": "Commvault"
+  },
+  {
+    "question_id": "",
+    "title": "Reach a Number",
+    "description": "You are standing at position 0 on a number line. Your goal is to reach a specific integer target. Each move can be a step forward or backward, but the distance of your step increases by 1 after each move. For instance, on the first move, you can step 1 unit, on the second move, you can step 2 units, and so on. Given a target integer, return the minimum number of moves required to reach the target position.",
+    "topic": "Math",
+    "subtopic": "Number Line",
+    "tags": [
+      "Math",
+      "Greedy",
+      "Simulation"
+    ],
+    "input_format": "An integer target representing the position you want to reach.",
+    "output_format": "An integer representing the minimum number of moves required to reach the target.",
+    "constraints": [
+      "-10^9 <= target <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "target = 3",
+        "output": "2",
+        "explanation": "You can move 1 unit to 1, then 2 units to reach 3."
+      },
+      {
+        "input": "target = 2",
+        "output": "3",
+        "explanation": "You can move 1 unit to 1, then -1 unit to 0, then 2 units to reach 2."
+      },
+      {
+        "input": "target = 1",
+        "output": "1",
+        "explanation": "You can directly move 1 unit to reach 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the sum of the first n natural numbers.",
+      "Think about the parity of the sum compared to the target.",
+      "You might need to overshoot the target."
+    ],
+    "company": "Commvault"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Increasing Subsequence",
+    "description": "Given an integer array nums, return the length of the longest strictly increasing subsequence. A subsequence is a sequence that can be derived from another sequence by deleting some elements without changing the order of the remaining elements.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Longest Increasing Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Binary Search"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest increasing subsequence.",
+    "constraints": [
+      "1 <= nums.length <= 2500",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 9, 2, 5, 3, 7, 101, 18]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [2, 3, 7, 101], so its length is 4."
+      },
+      {
+        "input": "nums = [0, 1, 0, 3, 2, 3]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [0, 1, 2, 3], so its length is 4."
+      },
+      {
+        "input": "nums = [7, 7, 7, 7, 7, 7, 7]",
+        "output": "1",
+        "explanation": "There is only one increasing subsequence, hence the length is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming or binary search for an efficient solution.",
+      "Keep track of the lengths of increasing subsequences as you iterate through the array."
+    ],
+    "company": "Commvault"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Longest Increasing Subsequence",
+    "description": "Given an integer array nums, return the number of longest increasing subsequences.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Longest Increasing Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Count"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the number of longest increasing subsequences.",
+    "constraints": [
+      "1 <= nums.length <= 2000",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 9, 2, 5, 3, 7, 101, 18]",
+        "output": "4",
+        "explanation": "The longest increasing subsequences are [2], [3], [7], and [101]. Hence, there are 4."
+      },
+      {
+        "input": "nums = [3, 3, 3, 3, 3]",
+        "output": "5",
+        "explanation": "Any single 3 is an increasing subsequence of length 1, and there are 5 of them."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider both the length and the count of subsequences at each step.",
+      "Use dynamic programming to store the lengths and counts of subsequences."
+    ],
+    "company": "Commvault"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given a linked list, reverse the nodes of a linked list k at a time and return its modified list. k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as they are. You may not alter the values in the nodes, only nodes themselves may be changed.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Two Pointers"
+    ],
+    "input_format": "The head of the linked list and an integer k.",
+    "output_format": "The head of the modified linked list after reversing nodes in k-group.",
+    "constraints": [
+      "The number of nodes in the linked list is in the range [0, 5000].",
+      "1 <= k <= 5000."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[2, 1, 4, 3, 5]",
+        "explanation": "The first two nodes are reversed to become [2, 1], the next two nodes are reversed to become [4, 3], and the last node remains as 5."
+      },
+      {
+        "input": "head = [1, 2, 3], k = 3",
+        "output": "[3, 2, 1]",
+        "explanation": "All three nodes are reversed to become [3, 2, 1]."
+      },
+      {
+        "input": "head = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Only one node present, so no reversal happens."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a dummy node to simplify edge cases.",
+      "You may need to maintain a reference to the next group during reversal.",
+      "Think about how to connect the reversed groups with their subsequent groups."
+    ],
+    "company": "Commvault"
+  },
+  {
+    "question_id": "",
+    "title": "Count Unreachable Pairs of Nodes in an Undirected Graph",
+    "description": "You are given an undirected graph consisting of n nodes numbered from 0 to n-1 and a list of edges. A pair of nodes (u, v) is considered unreachable if there is no path between them in the graph. Your task is to count the number of unreachable pairs of nodes in the given graph.",
+    "topic": "Graph",
+    "subtopic": "Connected Components",
+    "tags": [
+      "Graph",
+      "Depth-First Search",
+      "Union Find"
+    ],
+    "input_format": "An integer n representing the number of nodes, followed by a list of edges where each edge is represented as a pair of integers [u, v].",
+    "output_format": "An integer representing the total count of unreachable pairs of nodes.",
+    "constraints": [
+      "1 <= n <= 10^4",
+      "0 <= edges.length <= 10^4",
+      "edges[i].length == 2",
+      "0 <= edges[i][0], edges[i][1] < n",
+      "edges[i][0] != edges[i][1]"
+    ],
+    "examples": [
+      {
+        "input": "n = 7, edges = [[0, 1], [0, 2], [1, 2], [3, 4]]",
+        "output": "14",
+        "explanation": "Node groups are {0, 1, 2} and {3, 4}. Nodes 5 and 6 are isolated. Count of unreachable pairs = (3 * 4) + (3 * 2) + (3 * 1) + (2 * 1) + (2 * 0) + (1 * 0) = 14."
+      },
+      {
+        "input": "n = 3, edges = [[0, 1]]",
+        "output": "0",
+        "explanation": "All nodes are reachable from each other. Thus, there are no unreachable pairs."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using DFS or BFS to find connected components.",
+      "Once you have the sizes of the components, you can compute the unreachable pairs using combinatorial counting."
+    ],
+    "company": "Commvault"
+  },
+  {
+    "question_id": "",
+    "title": "Rotating the Box",
+    "description": "You are given a 2D grid representing a box of stones where each cell can be either an empty space ('.') or a stone ('#'). The goal is to simulate the rotation of the box such that the stones fall down to the bottom of the box, and empty spaces move up. The rotation is done column by column. Write a function that takes the grid and returns the resulting grid after the stones have fallen.",
+    "topic": "Matrix",
+    "subtopic": "Simulating Movement",
+    "tags": [
+      "Matrix",
+      "Simulation",
+      "Fall"
+    ],
+    "input_format": "A 2D list of strings representing the grid.",
+    "output_format": "A 2D list of strings representing the grid after stones have fallen.",
+    "constraints": [
+      "1 <= grid.length <= 100",
+      "1 <= grid[i].length <= 100",
+      "grid[i][j] is either '.' or '#'."
+    ],
+    "examples": [
+      {
+        "input": "[['#', '.', '#'], ['#', '#', ''] , ['#', '.', '.']]",
+        "output": "[['.', '.', '.'], ['#', '#', '#'], ['#', '.', '.']]",
+        "explanation": "After rotating the box, all stones fall downwards."
+      },
+      {
+        "input": "[['#', '#', ''], ['#', '.', ''], ['.', '#', '#']]",
+        "output": "[['.', '.', '.'], ['#', '#', '#'], ['#', '.', '.']]",
+        "explanation": "Stones fall to the bottom, occupying the lowest available cells."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Process each column independently.",
+      "Count the stones in each column and fill from bottom to top."
+    ],
+    "company": "Commvault"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string 's', find the longest substring that is a palindrome. A palindrome is a string that reads the same backward as forward. Return the longest palindromic substring. If multiple substrings are found, return the first one you encounter.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Dynamic Programming"
+    ],
+    "input_format": "A string s where 1 <= s.length <= 1000.",
+    "output_format": "A string representing the longest palindromic substring.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "babad",
+        "output": "bab",
+        "explanation": "Both 'bab' and 'aba' are valid palindromic substrings, but 'bab' appears first."
+      },
+      {
+        "input": "cbbd",
+        "output": "bb",
+        "explanation": "'bb' is the longest palindromic substring in the input."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around center points.",
+      "Check for both odd-length and even-length palindromes."
+    ],
+    "company": "Commvault"
+  },
+  {
+    "question_id": "",
+    "title": "Find Peak Element",
+    "description": "A peak element in an array is an element that is greater than its neighbors. Given an integer array nums, you need to find a peak element, and return its index. You may assume that the input array is non-empty and that there will always be a peak element available. The problem can have multiple valid outputs, as any peak element can be accepted.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Divide and Conquer"
+    ],
+    "input_format": "An array of integers nums, where 1 <= nums.length <= 10000 and -10^5 <= nums[i] <= 10^5.",
+    "output_format": "An integer representing the index of a peak element.",
+    "constraints": [
+      "1 <= nums.length <= 10000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "2",
+        "explanation": "The peak element is 3 at index 2."
+      },
+      {
+        "input": "nums = [1, 2, 1, 3, 5, 6, 4]",
+        "output": "5",
+        "explanation": "There are multiple peak elements: 2 at index 1 and 6 at index 5. Both are valid outputs."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to find a peak element.",
+      "If nums[mid] < nums[mid + 1], then a peak must exist in the right half."
+    ],
+    "company": "Commvault"
+  },
+  {
+    "question_id": "",
+    "title": "Add Two Numbers",
+    "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return it as a linked list.\n\nYou may assume the two numbers do not contain any leading zeros, except the number 0 itself.",
+    "topic": "Linked List",
+    "subtopic": "Mathematical Operations",
+    "tags": [
+      "Linked List",
+      "Math",
+      "Simulation"
+    ],
+    "input_format": "Two linked lists l1 and l2 representing the two numbers.",
+    "output_format": "A linked list representing the sum of the two numbers.",
+    "constraints": [
+      "The number of nodes in each linked list is in the range [1, 100].",
+      "0 <= Node.val <= 9",
+      "It is guaranteed that the result will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "l1 = [2, 4, 3], l2 = [5, 6, 4]",
+        "output": "[7, 0, 8]",
+        "explanation": "The numbers are 342 (from l1) and 465 (from l2). Their sum is 807, represented as [7, 0, 8]."
+      },
+      {
+        "input": "l1 = [0], l2 = [0]",
+        "output": "[0]",
+        "explanation": "The sum is 0, which is represented as [0]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dummy head to simplify the list creation.",
+      "Think about how to handle the carry when the sum exceeds 9."
+    ],
+    "company": "Commvault"
+  }
+]

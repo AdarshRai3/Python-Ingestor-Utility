@@ -1,0 +1,203 @@
+[
+  {
+    "question_id": "",
+    "title": "Total Distance Traveled",
+    "description": "You are given an integer array distance where distance[i] represents the distance traveled by a vehicle in the ith hour. Your task is to calculate the total distance traveled by the vehicle after n hours. The total distance is the sum of all distances traveled in each hour up to n hours.",
+    "topic": "Array",
+    "subtopic": "Summation",
+    "tags": [
+      "Array",
+      "Summation",
+      "Mathematics"
+    ],
+    "input_format": "An integer array distance containing n elements, where each element represents the distance traveled in each hour.",
+    "output_format": "An integer representing the total distance traveled in n hours.",
+    "constraints": [
+      "1 <= distance.length <= 10^4",
+      "1 <= distance[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "distance = [10, 20, 30]",
+        "output": "60",
+        "explanation": "The total distance is 10 + 20 + 30 = 60."
+      },
+      {
+        "input": "distance = [5, 15, 25, 35]",
+        "output": "80",
+        "explanation": "The total distance is 5 + 15 + 25 + 35 = 80."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use the built-in sum function to get the total distance.",
+      "Iterate through the array to accumulate the sum."
+    ],
+    "company": "Compass"
+  },
+  {
+    "question_id": "",
+    "title": "Camelcase Matching",
+    "description": "Given a list of queries and a string target, return a list of booleans where each boolean indicates whether the corresponding query can be matched with the target string based on camelcase matching rules. A query can match the target if, after removing some characters from target, the remaining characters match the query, and the remaining characters maintain the original order.",
+    "topic": "String",
+    "subtopic": "Pattern Matching",
+    "tags": [
+      "String",
+      "Matching",
+      "Camelcase"
+    ],
+    "input_format": "A string target followed by a list of strings queries.",
+    "output_format": "A list of booleans indicating whether each query matches the target.",
+    "constraints": [
+      "1 <= target.length <= 100",
+      "1 <= queries.length <= 100",
+      "1 <= queries[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "target = 'CamelCase', queries = ['C', 'a', 'Camel', 'c', 'Cae']",
+        "output": "[true, false, true, false, false]",
+        "explanation": "'C' matches first character, 'a' does not match case, 'Camel' matches the whole, 'c' does not match case, 'Cae' does not match."
+      },
+      {
+        "input": "target = 'MoveFast', queries = ['m', 'M', 'MF', 'MFt']",
+        "output": "[false, true, true, false]",
+        "explanation": "'m' does not match case, 'M' matches, 'MF' matches initial characters, 'MFt' does not match because 'Fast' is not fully represented."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two pointers to track characters in target and query.",
+      "Camelcase matching only cares about the order and capitalization of letters."
+    ],
+    "company": "Compass"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Grouping",
+    "tags": [
+      "String",
+      "Anagrams",
+      "Hashing"
+    ],
+    "input_format": "An array of strings 'strs'.",
+    "output_format": "A list of lists of strings, where each inner list contains strings that are anagrams of each other.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lower-case English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"eat\", \"tea\", \"ate\"], [\"tan\", \"nat\"], [\"bat\"]]",
+        "explanation": "The words 'eat', 'tea', and 'ate' are anagrams of each other. Similarly, 'tan' and 'nat' are anagrams, while 'bat' has no anagrams in this list."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "The input consists of a single empty string, which is its own anagram."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "The input consists of a single character string, which is its own anagram."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to group words by their sorted character strings.",
+      "Think about how to represent anagrams consistently."
+    ],
+    "company": "Compass"
+  },
+  {
+    "question_id": "",
+    "title": "Subtree of Another Tree",
+    "description": "Given two binary trees, root and subRoot, return true if there is a subtree of root with the same structure and node values as subRoot. A subtree of a tree is a tree that consists of a node in tree and all of this node's descendants. The tree could also be considered as a subtree of itself.",
+    "topic": "Tree",
+    "subtopic": "Tree Traversal",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Subtree",
+      "Traversal"
+    ],
+    "input_format": "Two binary tree roots: root and subRoot, represented as TreeNode.",
+    "output_format": "A boolean value indicating whether subRoot is a subtree of root.",
+    "constraints": [
+      "The number of nodes in the tree will be in the range [0, 2000].",
+      "-10^4 <= Node.val <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "root = [3,4,5,1,2], subRoot = [4,1,2]",
+        "output": "true",
+        "explanation": "The tree starting from node 4 in `root` matches exactly with `subRoot`."
+      },
+      {
+        "input": "root = [3,4,5,1,2,null,null,null,null,0], subRoot = [4,1,1]",
+        "output": "false",
+        "explanation": "The tree starting from node 4 in `root` does not match `subRoot`."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a recursive function to check if two trees are identical.",
+      "You can utilize pre-order traversal for comparing the nodes."
+    ],
+    "company": "Compass"
+  },
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value data structure that can store multiple values for each key at different timestamps. Implement the following methods: \n\n1. `set(key: str, value: str, timestamp: int)`: Store the key-value pair along with the timestamp.\n2. `get(key: str, timestamp: int)`: Retrieve the value of the key at a specific timestamp. If there are multiple values for the key at the given timestamp, return the value with the largest timestamp less than or equal to the given timestamp. If the key doesn't exist, return an empty string.",
+    "topic": "Data Structures",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Hash Table",
+      "Design",
+      "Binary Search"
+    ],
+    "input_format": "The input consists of multiple method calls, with `set` and `get` implementations. The `timestamp` will always be a positive integer.",
+    "output_format": "The output will consist of the return values of the `get` method calls.",
+    "constraints": [
+      "1 <= key.length <= 100",
+      "1 <= value.length <= 100",
+      "1 <= timestamp <= 10^7",
+      "The `set` method will be called at most 1000 times.",
+      "The `get` method will be called at most 1000 times."
+    ],
+    "examples": [
+      {
+        "input": "set('foo', 'bar', 1)\nget('foo', 1)",
+        "output": "'bar'",
+        "explanation": "At timestamp 1, the key 'foo' has the value 'bar'."
+      },
+      {
+        "input": "set('foo', 'bar', 1)\nset('foo', 'baz', 2)\nget('foo', 1)",
+        "output": "'bar'",
+        "explanation": "The value of 'foo' at timestamp 1 is 'bar'."
+      },
+      {
+        "input": "set('foo', 'bar', 1)\nset('foo', 'baz', 2)\nget('foo', 3)",
+        "output": "'baz'",
+        "explanation": "At timestamp 3, the most recent value set at or before is 'baz'."
+      },
+      {
+        "input": "get('foo', 1)",
+        "output": "''",
+        "explanation": "Key 'foo' does not exist at timestamp 1, so the output is an empty string."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a dictionary to map keys to a list of values and timestamps.",
+      "Binary search can help in efficiently finding the closest timestamp."
+    ],
+    "company": "Compass"
+  }
+]

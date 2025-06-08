@@ -1,0 +1,370 @@
+[
+  {
+    "question_id": "",
+    "title": "Remove All Adjacent Duplicates in String II",
+    "description": "Given a string s, you need to remove all adjacent duplicates from it 'k' times. A duplicate is defined as a sequence of the same character appearing consecutively. After 'k' removals, return the final string. If there are no characters left, return an empty string.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Stack",
+      "Two Pointers"
+    ],
+    "input_format": "A string s and an integer k, where s is the input string and k is the number of times to remove adjacent duplicates.",
+    "output_format": "A string representing the final result after removing all adjacent duplicates k times.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "1 <= k <= 10"
+    ],
+    "examples": [
+      {
+        "input": "s = \"deeedbbcccbdaa\", k = 3",
+        "output": "aa",
+        "explanation": "First remove 'eee' and 'bbb', then we are left with 'dcccd', which becomes 'aa' after removing 'ccc'."
+      },
+      {
+        "input": "s = \"pbbcggttciiippooaais\", k = 2",
+        "output": "ps",
+        "explanation": "Removing 'bb', 'gg', and 'tt', the remaining string is 'ps'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to keep track of characters and their frequencies.",
+      "You can use a loop to traverse the string and process it as you encounter adjacent duplicates."
+    ],
+    "company": "Attentive"
+  },
+  {
+    "question_id": "",
+    "title": "Parse Lisp Expression",
+    "description": "You are given a string representing a Lisp expression. Your task is to evaluate the expression and return the resulting integer. The expression may contain nested lists and the following operators: '+', '-', '*', and '/'. Spaces can appear anywhere in the expression. The division operator should perform integer division, truncating towards zero (instead of simply truncating towards negative infinity).",
+    "topic": "Math",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "Lisp",
+      "Expression Parsing",
+      "Math Operations"
+    ],
+    "input_format": "A single string representing a Lisp expression.",
+    "output_format": "An integer representing the evaluation result of the expression.",
+    "constraints": [
+      "The expression string is guaranteed to be valid and correctly formatted.",
+      "The result of the expression will fit in a 32-bit signed integer."
+    ],
+    "examples": [
+      {
+        "input": "(+ 1 2)",
+        "output": "3",
+        "explanation": "The expression adds 1 and 2 together."
+      },
+      {
+        "input": "(* (+ 1 2) 3)",
+        "output": "9",
+        "explanation": "The inner expression sums 1 and 2 to get 3, then multiplies by 3 to get 9."
+      },
+      {
+        "input": "(- 7 (+ 1 2))",
+        "output": "4",
+        "explanation": "The expression evaluates to 7 - (1 + 2) = 7 - 3 = 4."
+      },
+      {
+        "input": "(/ (- 15 5) 2)",
+        "output": "5",
+        "explanation": "Evaluating to (15 - 5) / 2 results in 10 / 2 = 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack for managing nested expressions.",
+      "Handle spaces uniformly while parsing.",
+      "Remember to correctly implement integer division."
+    ],
+    "company": "Attentive"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Palindrome II",
+    "description": "Given a string s, determine if it can be a palindrome after deleting at most one character. A palindrome is a string that reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "String",
+      "Two Pointers",
+      "Palindrome"
+    ],
+    "input_format": "A string s of lowercase letters with length up to 1000.",
+    "output_format": "A boolean value indicating whether the string can be a palindrome after at most one deletion.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abca'",
+        "output": "true",
+        "explanation": "Removing 'b' or 'c' makes the string a palindrome."
+      },
+      {
+        "input": "s = 'racecar'",
+        "output": "true",
+        "explanation": "The string is already a palindrome."
+      },
+      {
+        "input": "s = 'abc'",
+        "output": "false",
+        "explanation": "Removing any character will not form a palindrome."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers starting from the beginning and end of the string.",
+      "Check for mismatches and validate with one deletion."
+    ],
+    "company": "Attentive"
+  },
+  {
+    "question_id": "",
+    "title": "Find Pivot Index",
+    "description": "Given an array of integers nums, find the pivot index of this array. The pivot index is the index where the sum of the numbers to the left of the index is equal to the sum of the numbers to the right of the index. If no such index exists, return -1. If there are multiple pivot indexes, return the leftmost one.",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "Prefix Sum",
+      "Index"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the pivot index or -1 if it does not exist.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 7, 3, 6, 5, 6]",
+        "output": "3",
+        "explanation": "At index 3, the left sum is 1 + 7 + 3 = 11 and the right sum is 5 + 6 = 11."
+      },
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "-1",
+        "explanation": "There is no index where the left sum equals the right sum."
+      },
+      {
+        "input": "nums = [2, 1, -1]",
+        "output": "0",
+        "explanation": "At index 0, the left sum is 0 and the right sum is 1 - 1 = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a prefix sum approach."
+    ],
+    "company": "Attentive"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules: 1) Each row must contain the digits 1-9 without repetition, 2) Each column must contain the digits 1-9 without repetition, and 3) Each of the nine 3x3 sub-boxes must contain the digits 1-9 without repetition. Empty cells are represented by the character '.'",
+    "topic": "Backtracking",
+    "subtopic": "Validating Board State",
+    "tags": [
+      "Backtracking",
+      "Grid",
+      "Validation"
+    ],
+    "input_format": "A 2D array representing the Sudoku board, where each element is a character ('.' for empty cells and '1'-'9' for filled cells).",
+    "output_format": "Return a boolean indicating whether the Sudoku board is valid.",
+    "constraints": [
+      "The board is a 9x9 grid.",
+      "Each character in the board is either '.' or a digit from '1' to '9'."
+    ],
+    "examples": [
+      {
+        "input": "[['5','3','.','.','7','.','.','.','.'], ['6','.','.','1','9','5','.','.','.'], ['.','9','8','.','.','.','.','6','.'], ['8','.','.','.','6','.','.','.','3'], ['4','.','.','8','.','3','.','.','1'], ['7','.','.','.','2','.','.','.','6'], ['.','6','.','.','.','.','2','8','.'], ['.','.','.','4','1','9','.','.','5'], ['.','.','.','.','8','.','.','7','9']]",
+        "output": "true",
+        "explanation": "The provided Sudoku board is valid according to the defined rules."
+      },
+      {
+        "input": "[['8','3','.','.','7','.','.','.','.'], ['6','.','.','1','9','5','.','.','.'], ['.','9','8','.','.','.','.','6','.'], ['8','.','.','.','6','.','.','.','3'], ['4','.','.','8','.','3','.','.','1'], ['7','.','.','.','2','.','.','.','6'], ['.','6','.','.','.','.','2','8','.'], ['.','.','.','4','1','9','.','.','5'], ['.','.','.','.','8','.','.','7','9']]",
+        "output": "false",
+        "explanation": "The provided Sudoku board is invalid due to a repeat of the number '8' in the first column."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use sets to track seen numbers for rows, columns, and squares.",
+      "Remember to validate each 3x3 sub-box separately.",
+      "Check one region at a time: row, then column, then sub-box."
+    ],
+    "company": "Attentive"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to English Words",
+    "description": "Convert a non-negative integer to its English words representation. The integer range is between 0 and 2^31 - 1 (inclusive). Implement a function that takes an integer as input and returns its corresponding English words string. Note that the output does not contain 'and' before tens or hundred.",
+    "topic": "Math",
+    "subtopic": "Number Conversion",
+    "tags": [
+      "Math",
+      "String",
+      "Conversion"
+    ],
+    "input_format": "A single integer num (0 <= num <= 2^31 - 1).",
+    "output_format": "A string representing the English words of the given integer.",
+    "constraints": [
+      "0 <= num <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "num = 123",
+        "output": "One Hundred Twenty Three",
+        "explanation": "The number 123 is broken down into 'One Hundred', 'Twenty', and 'Three'."
+      },
+      {
+        "input": "num = 1000",
+        "output": "One Thousand",
+        "explanation": "The number 1000 is 'One Thousand'."
+      },
+      {
+        "input": "num = 12345",
+        "output": "Twelve Thousand Three Hundred Forty Five",
+        "explanation": "The number 12345 is broken down into 'Twelve Thousand', 'Three Hundred', 'Forty', and 'Five'."
+      },
+      {
+        "input": "num = 0",
+        "output": "Zero",
+        "explanation": "The number 0 is represented as 'Zero'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider dividing the number into segments of thousands.",
+      "Use recursion or iterative processes to handle segments.",
+      "Prepare mappings for numbers below twenty, tens, and hundreds."
+    ],
+    "company": "Attentive"
+  },
+  {
+    "question_id": "",
+    "title": "Evaluate Reverse Polish Notation",
+    "description": "You are given an array of strings tokens that represents an expression in Reverse Polish Notation (RPN). Evaluate the expression and return an integer that represents the result of the evaluation. The valid operators are '+', '-', '*', and '/'. Each operation is carried out using two operands from the top of the stack, and the result is pushed back to the stack. It's guaranteed that the input is always valid, and the answer will fit in a 32-bit integer.",
+    "topic": "Stack",
+    "subtopic": "Evaluating Expression",
+    "tags": [
+      "Stack",
+      "Expression Parsing",
+      "Mathematics"
+    ],
+    "input_format": "An array of strings tokens representing the Reverse Polish Notation expression.",
+    "output_format": "An integer representing the result of the evaluated expression.",
+    "constraints": [
+      "1 <= tokens.length <= 104",
+      "tokens[i] is either a number between -1000 and 1000 or an operator ('+', '-', '*', '/')"
+    ],
+    "examples": [
+      {
+        "input": "tokens = [\"2\", \"1\", \"+\", \"3\", \"*\"]",
+        "output": "9",
+        "explanation": "The expression is evaluated as (2 + 1) * 3 = 3 * 3 = 9."
+      },
+      {
+        "input": "tokens = [\"4\", \"13\", \"5\", \"/\", \"+\"]",
+        "output": "6",
+        "explanation": "The expression is evaluated as 4 + (13 / 5) = 4 + 2 = 6."
+      },
+      {
+        "input": "tokens = [\"10\", \"6\", \"9\", \"3\", \"/\", \"+\", \"-11\", \"*\", \"/\", \"*\", \"17\", \"+\", \"5\", \"/\"]",
+        "output": "22",
+        "explanation": "Step-by-step evaluation leads to the final result of 22."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to evaluate the expression.",
+      "Pop two operands from the stack for each operator."
+    ],
+    "company": "Attentive"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Words",
+    "description": "Given a list of strings words and an integer k, return the k most frequent strings. Return the answer in any order. It is guaranteed that the answer is unique. The strings are case-sensitive, and the ordering of strings with the same frequency can be arbitrary.",
+    "topic": "Hash Table",
+    "subtopic": "Counting Frequencies",
+    "tags": [
+      "Hash Table",
+      "Sorting",
+      "String"
+    ],
+    "input_format": "A list of strings words and an integer k.",
+    "output_format": "A list of strings representing the k most frequent words.",
+    "constraints": [
+      "1 <= words.length <= 10000",
+      "k is in the range [1, the number of unique words in words]",
+      "1 <= words[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "words = [\"i\", \"love\", \"leetcode\", \"i\", \"love\", \"coding\"], k = 2",
+        "output": "[\"i\", \"love\"]",
+        "explanation": "Both 'i' and 'love' appear 2 times, which is more than any other words."
+      },
+      {
+        "input": "words = [\"the\", \"day\", \"is\", \"sunny\", \"the\", \"the\", \"the\", \"sunny\", \"is\", \"is\"], k = 4",
+        "output": "[\"the\", \"is\", \"sunny\", \"day\"]",
+        "explanation": "'the' appears 4 times, 'is' appears 3 times, 'sunny' appears 2 times, and 'day' appears once."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to count the frequency of each word.",
+      "Consider using a min-heap to keep track of the top k frequent elements."
+    ],
+    "company": "Attentive"
+  },
+  {
+    "question_id": "",
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "description": "Given an array of integers that is sorted in ascending order, find the starting and ending position of a given target value. If the target is not found in the array, return [-1, -1]. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the first and last position of the target in nums.",
+    "constraints": [
+      "The array is sorted in ascending order.",
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "You may assume that all elements in the array are unique."
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 8",
+        "output": "[3, 4]",
+        "explanation": "The target 8 appears at indices 3 and 4."
+      },
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 6",
+        "output": "[-1, -1]",
+        "explanation": "The target 6 is not present in the array."
+      },
+      {
+        "input": "nums = [], target = 0",
+        "output": "[-1, -1]",
+        "explanation": "The target 0 cannot be found in an empty array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use binary search to find the leftmost index of the target.",
+      "Use binary search again to find the rightmost index of the target."
+    ],
+    "company": "Attentive"
+  }
+]

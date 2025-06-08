@@ -1,0 +1,870 @@
+[
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value store that supports the following operations: set, get, and getLatest. The `set` operation allows you to store a key-value pair with a timestamp. The `get` operation retrieves the value of a specified key at the given timestamp. The `getLatest` operation retrieves the latest value of a specified key. If the timestamp is less than or equal to the timestamp of the most recent value for the key, return the latest value available for that key before or at the specified timestamp.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "HashMap"
+    ],
+    "input_format": "The input will consist of a series of commands for the operations `set`, `get`, and `getLatest` along with their parameters.",
+    "output_format": "For `get` and `getLatest`, return the value corresponding to the key at the given timestamp or a message indicating that it does not exist.",
+    "constraints": [
+      "All timestamps are positive integers.",
+      "The number of operations to process will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "set('foo', 'bar', 1), get('foo', 1), get('foo', 2), set('foo', 'baz', 3), getLatest('foo')",
+        "output": "bar\nbar\nbaz",
+        "explanation": "At timestamp 1, set 'foo' to 'bar'. At timestamp 1, the value is 'bar'. At timestamp 2, the value is still 'bar'. At timestamp 3, set 'foo' to 'baz'. The latest value for 'foo' is 'baz'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to store key-value pairs.",
+      "You may need to store the timestamps along with the values."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Check if Every Row and Column Contains All Numbers",
+    "description": "You are given a 2D grid of integers representing a board where each integer is between 1 and n, inclusive. Your task is to determine if every row and every column contains all the integers from 1 to n exactly once. If the board is valid, return true; otherwise, return false.",
+    "topic": "Matrix",
+    "subtopic": "Validation",
+    "tags": [
+      "Matrix",
+      "Validation",
+      "Set"
+    ],
+    "input_format": "A 2D list of integers, representing the n x n grid.",
+    "output_format": "A boolean value, true if the grid is valid, false otherwise.",
+    "constraints": [
+      "1 <= n <= 9",
+      "1 <= grid[i][j] <= n"
+    ],
+    "examples": [
+      {
+        "input": "[[1, 2, 3], [3, 1, 2], [2, 3, 1]]",
+        "output": "true",
+        "explanation": "Each row and column contains all numbers from 1 to 3 exactly once."
+      },
+      {
+        "input": "[[1, 2, 3], [3, 1, 1], [2, 3, 1]]",
+        "output": "false",
+        "explanation": "The second row contains a duplicate '1', making the grid invalid."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a set to track occurrences of numbers in each row and column.",
+      "Consider using nested loops to iterate through rows and columns."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "description": "Given an array of integers sorted in ascending order, find the starting and ending position of a given target value. If the target is not found in the array, return [-1, -1]. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Binary Search",
+    "subtopic": "Searching in Sorted Array",
+    "tags": [
+      "Binary Search",
+      "Array",
+      "Searching"
+    ],
+    "input_format": "An array of integers 'nums' sorted in ascending order and an integer 'target'.",
+    "output_format": "An array of two integers representing the starting and ending position of 'target'.",
+    "constraints": [
+      "0 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "nums is a non-decreasing array"
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 8",
+        "output": "[3, 4]",
+        "explanation": "The target '8' appears at indices 3 and 4."
+      },
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 6",
+        "output": "[-1, -1]",
+        "explanation": "The target '6' is not present in the array."
+      },
+      {
+        "input": "nums = [], target = 0",
+        "output": "[-1, -1]",
+        "explanation": "The array is empty, so the target cannot be found."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use binary search to find the leftmost index of the target.",
+      "Use binary search to find the rightmost index of the target."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Squares of a Sorted Array",
+    "description": "Given a non-decreasing array of integers nums, return an array of the squares of each number sorted in non-decreasing order.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums where 1 <= nums.length <= 10^4 and -10^4 <= nums[i] <= 10^4.",
+    "output_format": "An array of integers representing the squares of each number in sorted order.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-4, -1, 0, 3, 10]",
+        "output": "[0, 1, 9, 16, 100]",
+        "explanation": "The squares are [16, 1, 0, 9, 100], and the sorted order is [0, 1, 9, 16, 100]."
+      },
+      {
+        "input": "nums = [-7, -3, 2, 3, 11]",
+        "output": "[4, 9, 9, 49, 121]",
+        "explanation": "The squares are [49, 9, 4, 9, 121], and the sorted order is [4, 9, 9, 49, 121]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to track the position of the smallest squares.",
+      "Remember that squaring a negative number results in a positive number."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Wildcard Matching",
+    "description": "Implement a function that checks if a given input string matches a given pattern string containing wildcards. The pattern can include the '*' character, which matches any sequence of characters (including an empty sequence), and the '?' character, which matches any single character. Your goal is to determine if the input string matches the pattern string or not.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Matching",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Matching"
+    ],
+    "input_format": "Two strings, `s` representing the input string and `p` representing the pattern string.",
+    "output_format": "Return true if the input string matches the pattern string, otherwise return false.",
+    "constraints": [
+      "1 <= s.length, p.length <= 200",
+      "Both strings consist of only lowercase English letters, '?' and '*'."
+    ],
+    "examples": [
+      {
+        "input": "s = \"aa\", p = \"a\"",
+        "output": "false",
+        "explanation": "Pattern 'a' does not match string 'aa'."
+      },
+      {
+        "input": "s = \"aa\", p = \"*\"",
+        "output": "true",
+        "explanation": "Pattern '*' matches any sequence, including 'aa'."
+      },
+      {
+        "input": "s = \"cb\", p = \"?a\"",
+        "output": "false",
+        "explanation": "Pattern '?a' can only match a single character followed by 'a'."
+      },
+      {
+        "input": "s = \"adceb\", p = \"*a*b\"",
+        "output": "true",
+        "explanation": "Pattern '*a*b' matches 'adceb' as '*' can represent 'dce'."
+      },
+      {
+        "input": "s = \"acdcb\", p = \"a*c?b\"",
+        "output": "false",
+        "explanation": "Pattern 'a*c?b' does not match 'acdcb'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the implications of the '*' wildcard.",
+      "You might want to use a dynamic programming approach to solve this problem.",
+      "Think about how to handle characters that can't be matched."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Number",
+    "description": "Implement a function that determines if a given string is a valid number. A valid number can be an integer or a floating-point number, which may include a decimal point. It can be positive or negative. Scientific notation can also be used, but only in the correct format. Your task is to return true if the string represents a valid number, otherwise return false.",
+    "topic": "String",
+    "subtopic": "Validation",
+    "tags": [
+      "String",
+      "Validation",
+      "Number"
+    ],
+    "input_format": "A string input representing the number.",
+    "output_format": "A boolean indicating whether the string is a valid number.",
+    "constraints": [
+      "The input string length will be between 1 and 20."
+    ],
+    "examples": [
+      {
+        "input": "\"-123.45e+6\"",
+        "output": "true",
+        "explanation": "The input is in valid scientific notation (negative number)."
+      },
+      {
+        "input": "\"abc\"",
+        "output": "false",
+        "explanation": "The input contains alphabetical characters which do not represent a number."
+      },
+      {
+        "input": "\"1.0\"",
+        "output": "true",
+        "explanation": "The input is a valid floating-point number."
+      },
+      {
+        "input": "\"12e34.5\"",
+        "output": "false",
+        "explanation": "The input has an invalid format for scientific notation; only one decimal is allowed."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using regular expressions for validation.",
+      "Think about the structure of valid numbers and scientific notation."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Arrows to Burst Balloons",
+    "description": "There are 'n' balloons on the 2D plane, where the ith balloon is positioned at (x[i], y[i]). A balloon can be burst by shooting an arrow at its horizontal coordinate (x). An arrow can burst multiple balloons if they overlap on the same horizontal coordinate. Determine the minimum number of arrows required to burst all the balloons.",
+    "topic": "Greedy",
+    "subtopic": "Interval Overlapping",
+    "tags": [
+      "Greedy",
+      "Sorting",
+      "Interval"
+    ],
+    "input_format": "An array of points, where each point is represented as an integer array of two integers, x[i][0] and x[i][1], representing the start and end of the ith balloon's range.",
+    "output_format": "An integer representing the minimum number of arrows needed to burst all balloons.",
+    "constraints": [
+      "1 <= x.length <= 10^5",
+      "-10^5 <= x[i][0] < x[i][1] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "points = [[10,16],[2,8],[1,6],[7,12]]",
+        "output": "2",
+        "explanation": "Two arrows are needed to burst all the balloons. One arrow can burst balloons with ranges [10,16] and [7,12], and another one can burst [2,8] and [1,6]."
+      },
+      {
+        "input": "points = [[1,2],[3,4],[5,6],[7,8]]",
+        "output": "4",
+        "explanation": "Each balloon is separate and requires an individual arrow, so four arrows are needed."
+      },
+      {
+        "input": "points = [[1,2],[2,3],[3,4],[4,5]]",
+        "output": "2",
+        "explanation": "One arrow can burst balloons [1,2] and [2,3], and another one can burst [3,4] and [4,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the balloons based on their end points.",
+      "Use a greedy approach to minimize the number of arrows needed."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Events That Can Be Attended",
+    "description": "You are given a list of events, where each event is represented by a start and end time. Your task is to find the maximum number of events that a person can attend given that each event takes a specific amount of time, and a person can only attend non-overlapping events. You can attend an event as long as you are free at the start time and leave immediately after the event ends.",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Interval",
+      "Scheduling"
+    ],
+    "input_format": "A list of events, where each event is represented as a pair of integers [start, end].",
+    "output_format": "An integer representing the maximum number of non-overlapping events that can be attended.",
+    "constraints": [
+      "1 <= events.length <= 10^4",
+      "0 <= start < end <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "[[1, 3], [2, 4], [3, 5]]",
+        "output": "2",
+        "explanation": "A person can attend events [1, 3] and [3, 5], so the maximum number of events is 2."
+      },
+      {
+        "input": "[[1, 2], [3, 4], [4, 5], [5, 6]]",
+        "output": "4",
+        "explanation": "All events are non-overlapping and can be attended, resulting in a maximum of 4 events."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the events by their end time.",
+      "Use a greedy approach to select the next available event."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. It should support the following operations: get and put. The get operation retrieves the value of the key if the key exists in the cache. The put operation will add a new key-value pair to the cache. If the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Cache",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "The LRUCache constructor accepts a capacity parameter. The get and put operations will have arguments based on the method called.",
+    "output_format": "The output for the 'get' operation should return the value associated with the key or -1 if the key does not exist.",
+    "constraints": [
+      "The capacity of the cache is at least 1 and at most 3000.",
+      "All keys are guaranteed to be unique.",
+      "The operations get and put will always be called with valid keys."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache obj = new LRUCache(2); obj.put(1, 1); obj.put(2, 2); obj.get(1); obj.put(3, 3); obj.get(2); obj.put(4, 4); obj.get(1); obj.get(3); obj.get(4);",
+        "output": "[1,-1,3,4]",
+        "explanation": "The sequence of operations leads to the cache containing keys 1, 3, and 4 after the operations. The second 'get(2)' returns -1 since 2 was evicted."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a combination of a hashmap and a doubly linked list.",
+      "The hashmap allows for O(1) access to the cache entries."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where 0 <= prices.length <= 10^5.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "0 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price encountered so far.",
+      "The maximum profit can be calculated by comparing the current price with the lowest price seen."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Search Insert Position",
+    "description": "Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Searching"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An integer representing the index of the target or the index where it would be inserted.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^6",
+      "nums is sorted in ascending order.",
+      "The integers in nums are distinct."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 5, 6], target = 5",
+        "output": "2",
+        "explanation": "Target 5 is found at index 2."
+      },
+      {
+        "input": "nums = [1, 3, 5, 6], target = 2",
+        "output": "1",
+        "explanation": "Target 2 would be inserted at index 1."
+      },
+      {
+        "input": "nums = [1, 3, 5, 6], target = 7",
+        "output": "4",
+        "explanation": "Target 7 would be inserted at the end, index 4."
+      },
+      {
+        "input": "nums = [1, 3, 5, 6], target = 0",
+        "output": "0",
+        "explanation": "Target 0 would be inserted at the beginning, index 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using binary search for an efficient solution.",
+      "If the target is not in the array, think about where it could fit."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine if a 9x9 Sudoku board is valid according to the rules of Sudoku. A Sudoku board is valid if: Each row contains the digits 1-9 without repetition. Each column contains the digits 1-9 without repetition. Each of the nine 3x3 sub-boxes of the grid contains the digits 1-9 without repetition. The board may contain empty cells represented by the character '.' which does not affect the validity of the board.",
+    "topic": "Grid",
+    "subtopic": "Validation",
+    "tags": [
+      "Grid",
+      "Validation",
+      "Backtracking"
+    ],
+    "input_format": "A 2D character array representing the Sudoku board with '.' as empty cells.",
+    "output_format": "Return true if the Sudoku board is valid, otherwise return false.",
+    "constraints": [
+      "The board is a 9x9 2D array.",
+      "Each cell contains either a digit ('1'-'9') or '.'"
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "5",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "true",
+        "explanation": "The given board follows all Sudoku rules."
+      },
+      {
+        "input": [
+          [
+            "8",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "false",
+        "explanation": "The number '8' appears twice in the first column, violating Sudoku rules."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use sets to track seen numbers for rows, columns, and boxes.",
+      "Check each cell and update respective sets for validation."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Non-overlapping Intervals",
+    "description": "Given a collection of intervals, find the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping. An interval is represented as a pair of integers [start, end].",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A list of intervals, where each interval is represented as a list of two integers [start, end].",
+    "output_format": "An integer representing the minimum number of intervals that need to be removed.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "-10^4 <= intervals[i][0] < intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,2],[2,3],[3,4],[1,3]]",
+        "output": "1",
+        "explanation": "Removing the interval [1,3] makes the rest of the intervals non-overlapping."
+      },
+      {
+        "input": "intervals = [[1,2],[1,2],[1,2]]",
+        "output": "2",
+        "explanation": "You need to remove 2 intervals to have just one [1,2] remaining."
+      },
+      {
+        "input": "intervals = [[1,2],[2,3]]",
+        "output": "0",
+        "explanation": "The intervals are already non-overlapping."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on their ending times.",
+      "Use a greedy approach to keep track of the last added interval."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock with Cooldown",
+    "description": "You have an array where the ith element is the price of a given stock on day i. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you also have to abide by a cooldown period after selling, during which you cannot buy any stock. In other words, after you sell your stock, you cannot buy stock on the next day. Return the maximum profit you can achieve from this transaction.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Stock Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Stock",
+      "Greedy"
+    ],
+    "input_format": "An integer array prices where prices[i] represents the price of a given stock on the ith day.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 5000",
+      "0 <= prices[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "prices = [1, 2, 3, 0, 2]",
+        "output": "3",
+        "explanation": "You can buy at prices[0] = 1 and sell at prices[2] = 3. Then, you can't buy on prices[3], so you wait and buy at prices[4] = 2 and sell it. Profit is (3-1) + (2-1) = 3."
+      },
+      {
+        "input": "prices = [1]",
+        "output": "0",
+        "explanation": "There is no opportunity to buy and sell in one day."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming for optimal results.",
+      "Think about the different states you can be in (holding stock vs not holding)."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, if the input intervals are [[1,3],[2,6],[8,10],[15,18]], the merged intervals should be [[1,6],[8,10],[15,18]]. The intervals are represented by a pair of integers where each integer represents the start and end of the interval. Your task is to write a function that returns the merged intervals in a sorted order.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A list of lists, where each inner list contains two integers representing the start and end of an interval.",
+    "output_format": "A list of lists containing merged intervals, sorted by the start time.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they are merged into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] touch each other, hence they are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the starting time.",
+      "Use a list to keep track of the merged intervals."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock II",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you can buy and sell the stock multiple times, meaning you can complete as many transactions as you like. You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again). Determine the maximum profit you can achieve.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Profit Maximization"
+    ],
+    "input_format": "An array of integers prices where prices[i] (0-indexed) represents the price of a stock on the ith day.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 3 * 10^4",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5. Then buy on day 4 (price = 3) and sell on day 5 (price = 4). Profit = 4 - 3 = 1. Total profit = 5 + 1 = 6."
+      },
+      {
+        "input": "prices = [1, 2, 3, 4, 5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5). Profit = 5 - 1 = 4."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done since prices are in a descending order."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider every local minimum and local maximum in the price array.",
+      "You can accumulate profits whenever there is a price increase."
+    ],
+    "company": "Instacart"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search II",
+    "description": "Given a 2D board and a list of words, find all words in the board. Each word must be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once in a word. Return all words found on the board.",
+    "topic": "Backtracking",
+    "subtopic": "Trie, Depth-First Search",
+    "tags": [
+      "Backtracking",
+      "Trie",
+      "Depth-First Search"
+    ],
+    "input_format": "A 2D board of characters and a list of strings representing the words to search.",
+    "output_format": "A list of strings representing the words found in the board.",
+    "constraints": [
+      "1 <= board.length <= 12",
+      "1 <= board[i].length <= 12",
+      "board[i][j] is a lowercase English letter",
+      "1 <= words.length <= 3 * 10^4",
+      "1 <= words[i].length <= 10"
+    ],
+    "examples": [
+      {
+        "input": "board = [ ['o','a','a','n'], ['e','t','a','e'], ['i','h','k','r'], ['i','f','l','v'] ], words = [ 'oath', 'pea', 'eat', 'rain' ]",
+        "output": "['eat', 'oath']",
+        "explanation": "The words 'eat' and 'oath' can be found in the board using sequentially adjacent cells."
+      },
+      {
+        "input": "board = [ ['a','b'], ['c','d'] ], words = [ 'ab', 'cb', 'ad', 'bd' ]",
+        "output": "['ab', 'ad']",
+        "explanation": "The words 'ab' and 'ad' can be constructed from the board."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a Trie to improve search efficiency.",
+      "Remember to mark cells as visited during the search.",
+      "Utilize backtracking to explore all possibilities."
+    ],
+    "company": "Instacart"
+  }
+]

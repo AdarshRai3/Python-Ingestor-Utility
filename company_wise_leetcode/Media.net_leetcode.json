@@ -1,0 +1,1656 @@
+[
+  {
+    "question_id": "",
+    "title": "Count the Number of Square-Free Subsets",
+    "description": "A square-free subset is defined as a subset of integers where no integer in the subset is divisible by the square of any prime number. Given an array of positive integers, calculate the number of distinct square-free subsets. Two subsets are considered different if they contain a different number of elements, even if they contain the same integers. The result should be returned modulo 1,000,000,007.",
+    "topic": "Mathematics",
+    "subtopic": "Combinatorics",
+    "tags": [
+      "Mathematics",
+      "Combinatorics",
+      "Subset"
+    ],
+    "input_format": "An array of positive integers representing the input set.",
+    "output_format": "An integer representing the number of distinct square-free subsets modulo 1,000,000,007.",
+    "constraints": [
+      "1 <= nums.length <= 20",
+      "1 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "8",
+        "explanation": "The square-free subsets are: [], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]."
+      },
+      {
+        "input": "nums = [4, 6, 8]",
+        "output": "2",
+        "explanation": "Only the empty set and [6] are square-free subsets."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using bit manipulation to generate all possible subsets.",
+      "Check if a number is square-free by testing divisibility by squares of primes."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Genetic Difference Query",
+    "description": "You are given an array of integers representing the genetic values of individuals. Your task is to answer multiple queries, each asking for the maximum genetic difference between any two individuals in a specified range of indices. The genetic difference between two individuals is defined as the absolute difference of their genetic values. Implement a function that efficiently handles multiple queries on the array.",
+    "topic": "Array",
+    "subtopic": "Range Queries",
+    "tags": [
+      "Array",
+      "Range Queries",
+      "Difference"
+    ],
+    "input_format": "An array of integers genome followed by an integer q representing the number of queries, and then q lines each containing two integers l and r.",
+    "output_format": "For each query, return an integer representing the maximum genetic difference in the specified range.",
+    "constraints": [
+      "1 <= genome.length <= 10^5",
+      "-10^9 <= genome[i] <= 10^9",
+      "1 <= q <= 10^5",
+      "0 <= l < r < genome.length"
+    ],
+    "examples": [
+      {
+        "input": "genome = [1, 5, 3, 8, 6], q = 2\n0 2\n1 4",
+        "output": "4\n7",
+        "explanation": "For the first query (0, 2), the maximum difference is |1 - 5| = 4. For the second query (1, 4), the maximum difference is |5 - 8| = 7."
+      },
+      {
+        "input": "genome = [10, 20, 30, 40], q = 1\n0 3",
+        "output": "30",
+        "explanation": "For the query (0, 3), the maximum difference is |10 - 40| = 30."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider preprocessing the data to answer queries efficiently.",
+      "Look into data structures that support range maximum and minimum queries."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Scramble String",
+    "description": "Given two strings s1 and s2, write a function to determine if s2 is a scrambled string of s1. A string is considered a scrambled string if it can be formed by recursively swapping non-empty substrings of s1. For example, if you swap the substrings 'ab' and 'ba' in the string 'abcde', you can create new strings, and by performing these operations repeatedly, you can reach the desired string.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Recursion"
+    ],
+    "input_format": "Two strings s1 and s2 with lengths up to 30 characters.",
+    "output_format": "A boolean value indicating whether s2 is a scrambled string of s1.",
+    "constraints": [
+      "1 <= s1.length == s2.length <= 30",
+      "s1 and s2 consist of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "s1 = 'great', s2 = 'rgeat'",
+        "output": "true",
+        "explanation": "'rgeat' is a scrambled string of 'great'."
+      },
+      {
+        "input": "s1 = 'abcde', s2 = 'caebd'",
+        "output": "false",
+        "explanation": "'caebd' is not a scrambled string of 'abcde'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider character frequency.",
+      "Think about recursive substring swapping.",
+      "Use memoization to optimize."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Time Visiting All Points",
+    "description": "You are given an array points where points[i] = [xi, yi] represents a point on the 2D plane. You start at the point points[0] and you want to visit all the points. You can move to adjacent points in a single movement, which takes 't_time' time. The time taken to move from the point [xi, yi] to [xj, yj] is the maximum of the absolute differences of their x-coordinates and y-coordinates, i.e., max(|xi - xj|, |yi - yj|). Return the minimum time it takes to visit all points in the order they are given.",
+    "topic": "Geometry",
+    "subtopic": "Distance Calculation",
+    "tags": [
+      "Array",
+      "Geometry",
+      "Distance"
+    ],
+    "input_format": "A 2D array of integers points where points[i] = [xi, yi].",
+    "output_format": "An integer representing the minimum time required to visit all points.",
+    "constraints": [
+      "1 <= points.length <= 100",
+      "-1000 <= points[i][0], points[i][1] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "points = [[1,1],[3,4],[-1,0]]",
+        "output": "7",
+        "explanation": "The movements are: (1,1) to (3,4) takes max(|1-3|, |1-4|) = max(2, 3) = 3 seconds, and then (3,4) to (-1,0) takes max(|3-(-1)|, |4-0|) = max(4, 4) = 4 seconds. Total time = 3 + 4 = 7 seconds."
+      },
+      {
+        "input": "points = [[0,0],[2,2],[3,5]]",
+        "output": "8",
+        "explanation": "The movements are: (0,0) to (2,2) takes max(|0-2|, |0-2|) = 2 seconds, and then (2,2) to (3,5) takes max(|2-3|, |2-5|) = 3 seconds. Total time = 2 + 3 = 5."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the properties of max and absolute differences."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Difference Between Maximum and Minimum Price Sum",
+    "description": "You are given a list of prices of different products. Your task is to calculate the difference between the sum of prices of the most expensive and the least expensive products. More formally, you need to find the maximum sum obtained from selecting products, and subtract the minimum sum obtained similarly. You can choose to include one or more products in your selection. If all prices are equal, return zero.",
+    "topic": "Array",
+    "subtopic": "Searching and Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Mathematics"
+    ],
+    "input_format": "An integer array prices where each element represents the price of a product.",
+    "output_format": "An integer representing the difference between the maximum and minimum price sums.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "prices = [100, 200, 300, 400, 500]",
+        "output": "400",
+        "explanation": "Maximum sum is 500 (only including the highest price), minimum sum is 100 (only including the lowest price). Difference is 500 - 100 = 400."
+      },
+      {
+        "input": "prices = [5, 5, 5, 5]",
+        "output": "0",
+        "explanation": "All prices are equal. Thus, maximum sum and minimum sum are both 5. Difference is 5 - 5 = 0."
+      },
+      {
+        "input": "prices = [1, 2, 3, 1, 2, 3]",
+        "output": "2",
+        "explanation": "Maximum sum is 6 (3 + 3), minimum sum is 2 (1 + 1). Difference is 6 - 2 = 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how you can effectively find maximum and minimum sums from the array.",
+      "Sorting the array may help you identify the highest and lowest prices quickly."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Queens That Can Attack the King",
+    "description": "Given the positions of the 'Q' queens and the 'K' king on an 8x8 chessboard, return the list of queens that can attack the king. A queen can attack another piece if it is located in the same row, column, or diagonal. The positions of the queens and the king are given in the form of a list of coordinates, where each coordinate is a pair of integers representing the row and column of each piece.",
+    "topic": "Backtracking",
+    "subtopic": "Enumeration",
+    "tags": [
+      "Chess",
+      "Backtracking",
+      "Enumeration"
+    ],
+    "input_format": "A list of strings representing the positions of the queens and a string representing the position of the king, in the format ['Q1', 'Q2', ..., 'Qn', 'K']. Each string is of the format 'row,col'.",
+    "output_format": "A list of strings representing the positions of the queens that can attack the king, in the format ['Q1', 'Q2', ...].",
+    "constraints": [
+      "The positions of the queens and the king are valid.",
+      "There will be at most 8 queens."
+    ],
+    "examples": [
+      {
+        "input": "['0,0', '1,1', '2,2', '3,4', '4,4', '5,5', '6,6', '7,7', '6,0', 'K:3,3']",
+        "output": "['3,4', '6,6']",
+        "explanation": "Queens at positions (3,4) and (6,6) can attack the king at (3,3)."
+      },
+      {
+        "input": "['0,1', '1,0', '1,2', '2,1', 'K:0,0']",
+        "output": "['0,1', '1,0', '1,2']",
+        "explanation": "Queens at positions (0,1), (1,0), and (1,2) can attack the king at (0,0)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Check rows, columns, and diagonals for attacks.",
+      "You can use vector directions to simplify your checks."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Furthest Building You Can Reach",
+    "description": "You are given an array heights where heights[i] is the height of the ith building. You are also given an integer bricks and an integer ladders. You can use a ladder to climb a building of any height. However, if you decide to use bricks, you will need to use exactly (heights[i] - heights[i-1]) bricks to climb from the ith building to the (i+1)th building if heights[i] > heights[i-1]. Return the furthest building index that you can reach.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Binary Search"
+    ],
+    "input_format": "An array of integers heights, an integer bricks, and an integer ladders.",
+    "output_format": "An integer representing the furthest building index that can be reached.",
+    "constraints": [
+      "1 <= heights.length <= 10^5",
+      "1 <= heights[i] <= 10^9",
+      "0 <= bricks <= 10^9",
+      "0 <= ladders <= heights.length"
+    ],
+    "examples": [
+      {
+        "input": "heights = [4, 2, 7, 6, 9], bricks = 5, ladders = 1",
+        "output": "4",
+        "explanation": "You can reach building 4, using 1 ladder to climb from 2 to 7 and using 5 bricks to climb from 7 to 9."
+      },
+      {
+        "input": "heights = [14, 3, 19, 3], bricks = 17, ladders = 0",
+        "output": "3",
+        "explanation": "You can only use bricks and can reach building 3."
+      },
+      {
+        "input": "heights = [1, 5, 3, 6, 7], bricks = 0, ladders = 2",
+        "output": "4",
+        "explanation": "You can use ladders to climb from 1 to 5 and from 5 to 6, reaching building 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider a greedy strategy for using bricks and ladders.",
+      "Keep track of the number of ladders used and the cost of using bricks efficiently."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum XOR Sum of Two Arrays",
+    "description": "Given two arrays of integers, you need to find the minimum possible XOR sum of the two arrays after performing any permutation of their elements. The XOR sum is calculated by taking each element from the first array and performing XOR with a corresponding element from the second array. Your task is to return the minimum XOR sum that can be achieved by rearranging one or both arrays.",
+    "topic": "Array",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Array",
+      "Bit Manipulation",
+      "Dynamic Programming"
+    ],
+    "input_format": "Two arrays of integers, nums1 and nums2.",
+    "output_format": "An integer representing the minimum XOR sum of the two arrays.",
+    "constraints": [
+      "1 <= nums1.length, nums2.length <= 15",
+      "-10^4 <= nums1[i], nums2[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 3], nums2 = [3, 2, 1]",
+        "output": "0",
+        "explanation": "The minimum XOR sum can be achieved by pairing elements as follows: (1, 1), (2, 2), (3, 3). All pairs give an XOR of 0."
+      },
+      {
+        "input": "nums1 = [1, 1, 2], nums2 = [2, 2, 1]",
+        "output": "1",
+        "explanation": "We can achieve a minimum XOR sum by pairing the elements: (1, 2), (1, 2), (2, 1), leading to the XOR sum of 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to explore all permutations efficiently.",
+      "Focus on how to calculate the XOR sum for different pairings."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Make the XOR of All Segments Equal to Zero",
+    "description": "Given an array of integers, determine if it is possible to divide the array into contiguous segments such that the XOR of each segment is zero. A segment is defined as a non-empty subarray of the original array. Your task is to return true if such a segmentation exists, and false otherwise.",
+    "topic": "Array",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Array",
+      "Bit Manipulation",
+      "XOR"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A boolean indicating whether the array can be segmented into segments with XOR equal to zero.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5, 6]",
+        "output": "false",
+        "explanation": "There is no way to segment the array such that the XOR of all segments is zero."
+      },
+      {
+        "input": "nums = [0, 0, 0]",
+        "output": "true",
+        "explanation": "The entire array can be one segment with XOR equals to 0."
+      },
+      {
+        "input": "nums = [2, 2, 2, 2]",
+        "output": "true",
+        "explanation": "You can segment it as [2, 2] and [2, 2], both segments have an XOR of 0."
+      },
+      {
+        "input": "nums = [1, 1, 1, 1]",
+        "output": "false",
+        "explanation": "No segmentation can achieve XOR of 0 for all segments."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider properties of XOR and how they relate to segments.",
+      "Keep track of cumulative XOR as you iterate through the array.",
+      "Use a set to store XOR values and check for duplicates."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Value of an Ordered Triplet II",
+    "description": "You are given a list of integers representing values. Your task is to find the maximum sum of an ordered triplet (i, j, k) where i < j < k. A triplet is considered valid if the values at the three indices are distinct integers. Return the maximum sum of such a triplet. If no valid triplet exists, return -1.",
+    "topic": "Array",
+    "subtopic": "Triplet Sum",
+    "tags": [
+      "Array",
+      "Triplet",
+      "Sum"
+    ],
+    "input_format": "An array of integers values.",
+    "output_format": "An integer representing the maximum sum of a valid triplet.",
+    "constraints": [
+      "3 <= values.length <= 1000",
+      "-10^4 <= values[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "values = [1, 2, 3, 4, 5]",
+        "output": "12",
+        "explanation": "The maximum ordered triplet is (3, 4, 5) which gives a sum of 3 + 4 + 5 = 12."
+      },
+      {
+        "input": "values = [5, 1, 2, 3, 1]",
+        "output": "7",
+        "explanation": "The maximum ordered triplet is (1, 2, 5) which gives a sum of 1 + 2 + 5 = 8."
+      },
+      {
+        "input": "values = [1, 1, 1]",
+        "output": "-1",
+        "explanation": "No valid triplet exists since all values are the same."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array and look for triplets to maximize the sum.",
+      "Consider using a set to track distinct values."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Sum of Remoteness of All Cells",
+    "description": "Given a 2D grid of integers where each cell represents a location with a specific value, calculate the sum of remoteness for all cells in the grid. The remoteness of a cell is defined as the sum of distances to all other cells in the grid weighted by the value of those cells. The distance between two cells (i1, j1) and (i2, j2) is defined as |i1 - i2| + |j1 - j2|.",
+    "topic": "Matrix",
+    "subtopic": "Distance Calculation",
+    "tags": [
+      "Matrix",
+      "Distance",
+      "Weighted Sum"
+    ],
+    "input_format": "A 2D integer array grid where grid[i][j] represents the value at cell (i, j).",
+    "output_format": "An integer representing the sum of remoteness of all cells.",
+    "constraints": [
+      "1 <= grid.length <= 100",
+      "1 <= grid[i].length <= 100",
+      "0 <= grid[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,2],[3,4]]",
+        "output": "20",
+        "explanation": "The remoteness of cell (0,0) is 1*(|0-0|+|0-1| + |0-0|+|0-1| + |0-1| + |0-1|) + 2*(|0-0|+|0-1| + |0-0|+|1-1| + |1-0| + |1-1|)... = 20."
+      },
+      {
+        "input": "grid = [[2]]",
+        "output": "0",
+        "explanation": "There is only one cell, and the remoteness is 0 since there are no other cells."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the contribution of each cell to the remoteness.",
+      "Use double loops to calculate distances for each cell.",
+      "Optimize by storing intermediate results."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Value of an Ordered Triplet I",
+    "description": "Given an array of integers, you need to find the maximum product of an ordered triplet (i.e., three different elements in an array such that their indices are in increasing order). Return the maximum product found, or return -1 if no valid triplet exists.",
+    "topic": "Array",
+    "subtopic": "Triplet Validation",
+    "tags": [
+      "Array",
+      "Triplet",
+      "Maximum Product"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum product of an ordered triplet, or -1 if no triplet exists.",
+    "constraints": [
+      "3 <= nums.length <= 1000",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "24",
+        "explanation": "The ordered triplet (2, 3, 4) gives the maximum product 2 * 3 * 4 = 24."
+      },
+      {
+        "input": "nums = [5, 1, 2, 3]",
+        "output": "30",
+        "explanation": "The ordered triplet (5, 2, 3) gives the maximum product 5 * 2 * 3 = 30."
+      },
+      {
+        "input": "nums = [1, 1, 1]",
+        "output": "1",
+        "explanation": "The only valid triplet (1, 1, 1) gives the product 1 * 1 * 1 = 1."
+      },
+      {
+        "input": "nums = [3, 2]",
+        "output": "-1",
+        "explanation": "No valid triplet exists since there are less than 3 numbers."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider all combinations of elements to calculate the products.",
+      "Remember to check for distinct indices."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum XOR of Two Non-Overlapping Subtrees",
+    "description": "Given a binary tree, find the maximum XOR of the sums of two non-overlapping subtrees. Non-overlapping is defined as two subtrees that do not share any nodes in common. A subtree is defined as any node in the tree along with all of its descendants. The XOR operation will be applied to the sums of these two subtrees.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "XOR"
+    ],
+    "input_format": "The root node of a binary tree as a TreeNode object.",
+    "output_format": "An integer representing the maximum XOR of the sums of two non-overlapping subtrees.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 2 * 10^4].",
+      "Each node's value is in the range [-10^5, 10^5]."
+    ],
+    "examples": [
+      {
+        "input": "[1,3,2,6,5]",
+        "output": "10",
+        "explanation": "The two non-overlapping subtrees can be [3,6] and [2,5]. Their sums are 9 and 5. The XOR of 9 and 5 is 10."
+      },
+      {
+        "input": "[4,1,2,3,5]",
+        "output": "7",
+        "explanation": "The two non-overlapping subtrees can be [1,3] and [2,5]. Their sums are 4 and 7. The XOR of 4 and 7 is 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the properties of the XOR operation.",
+      "Try to find the sum of each subtree and store them cleverly.",
+      "Use a depth-first search to calculate the sums of subtrees efficiently."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Cost to Buy Apples",
+    "description": "You are given a list of integers representing the cost of apples at different stores. You can buy any number of apples, but only from one store at a time. Your task is to find the minimum cost to buy exactly 'k' apples. Additionally, you can buy at most 'n' apples from any single store. Return the minimum cost required to buy 'k' apples, or -1 if it is not possible to buy exactly 'k' apples.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Optimization",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Optimization"
+    ],
+    "input_format": "An integer array 'costs' where costs[i] represents the cost of apples in store i, and integers 'k' (number of apples to buy) and 'n' (maximum apples per store).",
+    "output_format": "An integer representing the minimum cost to buy exactly 'k' apples or -1 if it's not possible.",
+    "constraints": [
+      "1 <= costs.length <= 100",
+      "1 <= costs[i] <= 1000",
+      "1 <= k <= 1000",
+      "1 <= n <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "costs = [2, 5, 3], k = 4, n = 2",
+        "output": "8",
+        "explanation": "Buy 2 apples from store 0 (cost 2 each) and 2 apples from store 2 (cost 3 each). Total = 2*2 + 2*3 = 4 + 6 = 8."
+      },
+      {
+        "input": "costs = [1, 2, 3], k = 5, n = 2",
+        "output": "Cannot be achieved",
+        "explanation": "You can buy at most 6 apples (2 from each store), but you need exactly 5. Hence, it's not possible."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider combinations of apples from different stores.",
+      "Use dynamic programming to keep track of cost at each step."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Total Space Wasted With K Resizing Operations",
+    "description": "You have a single-row array containing the sizes of boxes. You are allowed to perform K resizing operations to minimize the total space wasted when arranging the boxes. Space is wasted if the sum of the size of the boxes is less than the maximum size of boxes chosen in that segment. Your task is to find the minimum total space wasted when the operations are optimally used.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Segmenting Array",
+    "tags": [
+      "Dynamic Programming",
+      "Minimization",
+      "Array"
+    ],
+    "input_format": "An array of integers sizes representing the sizes of boxes, and an integer K representing the number of allowed resizing operations.",
+    "output_format": "An integer representing the minimum total space wasted after resizing operations.",
+    "constraints": [
+      "1 <= sizes.length <= 200",
+      "1 <= sizes[i] <= 10^4",
+      "0 <= K <= sizes.length - 1"
+    ],
+    "examples": [
+      {
+        "input": "sizes = [2, 4, 3, 5, 1], K = 2",
+        "output": "2",
+        "explanation": "By resizing box sizes [1, 2] to the size of 4, total wasted space is (4-2) + (4-1) = 2."
+      },
+      {
+        "input": "sizes = [1, 3, 2], K = 1",
+        "output": "1",
+        "explanation": "With one resize operation, we can turn [1, 2] into [2, 2] and waste 1 space."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to keep track of the minimum wasted space.",
+      "Look for patterns in how resizing affects the wasted space.",
+      "Try to optimize segments of the array separately."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where prices[i] represents the price of a stock on the ith day.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "No transactions are done, profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try to keep track of the minimum price seen so far.",
+      "Calculate profit based on the difference between the current price and the minimum price.",
+      "Iterate through the prices only once."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Flatten Binary Tree to Linked List",
+    "description": "Given the root of a binary tree, flatten the tree into a linked list in-place. The linked list should be in the same order as a pre-order traversal of the binary tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Linked List"
+    ],
+    "input_format": "The root node of the binary tree.",
+    "output_format": "The same tree, flattened to a linked list in-place.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 2000].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "[1, 2, 5, 3, 4, null, 6]",
+        "output": "[1,null,2,null,3,null,4,null,5,null,6]",
+        "explanation": "The resulting linked list will represent the order of nodes visited in a pre-order traversal."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of nodes in pre-order.",
+      "Modify the pointers of the nodes to create a linked list."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Substring with Concatenation of All Words",
+    "description": "You are given a string s and an array of strings words. Each word in words has the same length. You need to find all starting indices of substrings in s that are a concatenation of each word in words exactly once and without any intervening characters. Return the indices in increasing order.",
+    "topic": "String",
+    "subtopic": "Substring Search",
+    "tags": [
+      "String",
+      "Substring",
+      "Hash Table"
+    ],
+    "input_format": "A string s and an array of strings words, where each word has the same length.",
+    "output_format": "An array of integers representing the starting indices of the substrings.",
+    "constraints": [
+      "1 <= s.length <= 10000",
+      "1 <= words.length <= 100",
+      "1 <= words[i].length <= 100",
+      "All words.length are the same."
+    ],
+    "examples": [
+      {
+        "input": {
+          "s": "barfoothefoobarman",
+          "words": [
+            "foo",
+            "bar"
+          ]
+        },
+        "output": [
+          0,
+          9
+        ],
+        "explanation": "The substring starting at index 0 is 'barfoo' and the substring starting at index 9 is 'foobar'."
+      },
+      {
+        "input": {
+          "s": "wordgoodgoodgoodbestword",
+          "words": [
+            "word",
+            "good",
+            "best",
+            "word"
+          ]
+        },
+        "output": [],
+        "explanation": "There are no substrings that are a concatenation of all the given words."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "You might want to use a hash map to track frequencies of words.",
+      "Pay attention to the length of each word and the total window size."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Sorted Lists",
+    "description": "You are given the heads of two sorted linked lists, list1 and list2. Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists. Return the head of the merged linked list.",
+    "topic": "Linked List",
+    "subtopic": "Merging",
+    "tags": [
+      "Linked List",
+      "Merge",
+      "Sorting"
+    ],
+    "input_format": "The input consists of two linked lists represented by their head nodes, list1 and list2.",
+    "output_format": "Return the head of the merged sorted linked list.",
+    "constraints": [
+      "The number of nodes in both lists is in the range [0, 50].",
+      "-100 <= Node.val <= 100",
+      "Both list1 and list2 are sorted in non-decreasing order."
+    ],
+    "examples": [
+      {
+        "input": "list1 = [1, 2, 4], list2 = [1, 3, 4]",
+        "output": "[1, 1, 2, 3, 4, 4]",
+        "explanation": "The merged list is 1 -> 1 -> 2 -> 3 -> 4 -> 4."
+      },
+      {
+        "input": "list1 = [], list2 = [0]",
+        "output": "[0]",
+        "explanation": "The merged list is simply the single node from list2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a dummy node to simplify the merging process.",
+      "Iterate through both lists and compare the current nodes to build the merged list."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Painting the Walls",
+    "description": "You are tasked with painting the walls of a room. The room has a rectangular layout that can be divided into smaller rectangular sections where each section has a specific height. Given an array of heights representing the heights of each wall section, the challenge is to determine the minimum amount of paint needed to paint all walls, considering that one can only paint a wall segment of height 1 during each operation. You can only operate on a contiguous segment of walls. Calculate the minimum number of operations required to paint all segments.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Interval DP",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Interval Manipulation"
+    ],
+    "input_format": "An array of integers heights representing the heights of each rectangular wall section.",
+    "output_format": "An integer representing the minimum number of operations required to paint all wall segments.",
+    "constraints": [
+      "1 <= heights.length <= 10^5",
+      "1 <= heights[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "heights = [1, 2, 2, 3, 2, 1]",
+        "output": "3",
+        "explanation": "The painting operations can be performed in 3 steps: paint section 1 (height 1), then paint section 2 and 3 (height 2), and finally paint section 4 (height 3)."
+      },
+      {
+        "input": "heights = [4, 3, 2, 2, 3, 4]",
+        "output": "2",
+        "explanation": "The first operation can paint from height 4 to height 2 (reducing 4 to 2). The second operation will then paint the height 3 sections."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to group contiguous segments for optimal painting.",
+      "Dynamic programming could be helpful for overlapping subproblems."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents the maximum jump length at that position. Your goal is to determine if you can reach the last index starting from the first index. You can assume that you can always reach the last index if you are able to make a jump that gets you there or further.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers nums, where nums[i] represents the maximum jump length from that position.",
+    "output_format": "A boolean value indicating whether it is possible to reach the last index.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "true",
+        "explanation": "Jump 1 step from index 0 to 1, then 2 steps to the last index."
+      },
+      {
+        "input": "nums = [3, 2, 1, 0, 4]",
+        "output": "false",
+        "explanation": "No matter how you jump, you will not reach the last index."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how far you can reach at each index.",
+      "Keep track of the farthest index you can reach at all times."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Fizz Buzz",
+    "description": "Write a program that prints the numbers from 1 to n. But for multiples of three print 'Fizz' instead of the number and for the multiples of five print 'Buzz'. For numbers which are multiples of both three and five print 'FizzBuzz'.",
+    "topic": "Math",
+    "subtopic": "Looping",
+    "tags": [
+      "Math",
+      "Loops",
+      "String Manipulation"
+    ],
+    "input_format": "An integer n (1 <= n <= 10^4).",
+    "output_format": "A list of strings where each string is the result of the Fizz Buzz game.",
+    "constraints": [
+      "1 <= n <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "n = 15",
+        "output": [
+          "1",
+          "2",
+          "Fizz",
+          "4",
+          "Buzz",
+          "Fizz",
+          "7",
+          "8",
+          "Fizz",
+          "Buzz",
+          "11",
+          "Fizz",
+          "13",
+          "14",
+          "FizzBuzz"
+        ],
+        "explanation": "The output represents the Fizz Buzz game played up to number 15."
+      },
+      {
+        "input": "n = 5",
+        "output": [
+          "1",
+          "2",
+          "Fizz",
+          "4",
+          "Buzz"
+        ],
+        "explanation": "The numbers 3 is the only multiple of 3, so it's replaced by 'Fizz'; 5 is replaced by 'Buzz'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of numbers divisible by 3 and 5.",
+      "Use a loop to iterate from 1 to n."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine if a 9x9 Sudoku board is valid according to the rules of Sudoku. The board is represented by a 2D array of characters where the empty cells are represented by '.', and the rest are digits from '1' to '9'. A valid Sudoku board must satisfy the following conditions: each row must contain no repeated digits, each column must contain no repeated digits, and each of the 9 3x3 sub-boxes must contain no repeated digits.",
+    "topic": "Array",
+    "subtopic": "2D Array",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Backtracking"
+    ],
+    "input_format": "A 2D array of characters representing the Sudoku board.",
+    "output_format": "A boolean value indicating whether the Sudoku board is valid.",
+    "constraints": [
+      "board.length == 9",
+      "board[i].length == 9",
+      "board[i][j] is either a digit '1' to '9' or '.'"
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "5",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "true",
+        "explanation": "The given board complies with all the rules of Sudoku."
+      },
+      {
+        "input": [
+          [
+            "8",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "false",
+        "explanation": "The 8 in the first column and the first 3x3 sub-box violates the Sudoku rules."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use sets to track the used digits in rows, columns, and boxes.",
+      "Check each of the 3 constraints for every filled cell."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) Cache. It should support the following operations: get and put. The get operation retrieves an item from the cache, while the put operation adds or updates an item in the cache. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structure",
+    "subtopic": "Cache Mechanism",
+    "tags": [
+      "Cache",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "The cache will be initialized with a positive capacity. Subsequent calls will be made to get(key) and put(key, value) methods.",
+    "output_format": "The output of the get method should return the value if the key exists in the cache, otherwise it should return -1.",
+    "constraints": [
+      "The number of calls to get and put will not exceed 2 * 10^4.",
+      "The capacity of the cache is in the range [1, 3000].",
+      "The key and value of each put operation are guaranteed to be non-negative."
+    ],
+    "examples": [
+      {
+        "input": "cache = LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1,-1,3,4]",
+        "explanation": "After putting (1,1) and (2,2), get(1) returns 1. Putting (3,3) evicts (2,2). get(2) returns -1. Putting (4,4) evicts (1,1). get(1) returns -1, get(3) returns 3, and get(4) returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a combination of a hashmap and a doubly linked list.",
+      "The most recently used items should be moved to the front of the list."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "The Number of Good Subsets",
+    "description": "You are given an integer array nums consisting of numbers from 1 to 30. A subset is defined as 'good' if it contains no duplicate elements, and the greatest common divisor (GCD) of any two integers in the subset is equal to 1. Your task is to return the total number of good subsets of the array, including the empty subset.",
+    "topic": "Mathematics",
+    "subtopic": "Combinatorial Number Theory",
+    "tags": [
+      "Subset",
+      "GCD",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums, where 1 <= nums.length <= 30.",
+    "output_format": "An integer representing the number of good subsets.",
+    "constraints": [
+      "1 <= nums.length <= 30",
+      "1 <= nums[i] <= 30",
+      "All elements in nums are unique."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "7",
+        "explanation": "The good subsets are: {}, {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}. There are 7 good subsets."
+      },
+      {
+        "input": "nums = [2, 4, 6]",
+        "output": "1",
+        "explanation": "The only good subset is the empty set {} since all numbers share a common factor of 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the properties of GCD and how it impacts subset selection.",
+      "Find a way to filter subsets based on the GCD condition."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Search Tree Iterator",
+    "description": "Implement an iterator over a binary search tree (BST). Your iterator should be initialized with the root node of the BST, and it should support the following operations: \n\n - `next()`: Retrieve the next smallest number in the BST. \n - `hasNext()`: Return whether there are still numbers in the BST to be iterated over. \n\n You may assume that `next()` is always called when `hasNext()` is true.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "BST",
+      "Iterator"
+    ],
+    "input_format": "A reference to the root of the binary search tree.",
+    "output_format": "The next smallest integer for the `next()` call and a boolean value for the `hasNext()` call.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^5].",
+      "The values of the nodes are unique."
+    ],
+    "examples": [
+      {
+        "input": "root = [7, 3, 15, null, null, 9, 20]",
+        "output": [
+          {
+            "next": 3,
+            "hasNext": true
+          },
+          {
+            "next": 7,
+            "hasNext": true
+          },
+          {
+            "next": 9,
+            "hasNext": true
+          },
+          {
+            "next": 15,
+            "hasNext": true
+          },
+          {
+            "next": 20,
+            "hasNext": false
+          }
+        ],
+        "explanation": "Calling `next()` returns the nodes in ascending order: 3, 7, 9, 15, 20. After the last call, `hasNext()` returns false."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the nodes.",
+      "Inorder traversal provides the nodes in a sorted order."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Phone Numbers",
+    "description": "You are tasked with validating a list of phone numbers. A valid phone number should match the format 'XXX-XXX-XXXX', where 'X' is a digit from 0 to 9. Your function should return a list of boolean values corresponding to the validity of each phone number in the input list. The phone number is considered valid only if it has exactly 10 digits and follows the pattern described. Any other format is considered invalid.",
+    "topic": "String",
+    "subtopic": "Regular Expressions",
+    "tags": [
+      "String",
+      "Regular Expressions",
+      "Validation"
+    ],
+    "input_format": "A list of strings, where each string is a phone number.",
+    "output_format": "A list of boolean values indicating whether each phone number is valid.",
+    "constraints": [
+      "1 <= phone_numbers.length <= 10^4",
+      "Each phone number is a string of length up to 15 characters."
+    ],
+    "examples": [
+      {
+        "input": "phone_numbers = ['123-456-7890', '123-45-6789', '1234567890', '123-4567-890']",
+        "output": "[true, false, false, false]",
+        "explanation": "Only '123-456-7890' is in the valid format."
+      },
+      {
+        "input": "phone_numbers = ['987-654-3210', '555-5555-555', '00-11-22-33']",
+        "output": "[true, false, false]",
+        "explanation": "'987-654-3210' is valid; the other two do not match the required format."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using regular expressions for pattern matching."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock II",
+    "description": "You are given an integer array `prices` where `prices[i]` is the price of a given stock on the `i-th` day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you can make as many transactions as you like (i.e., you can buy and sell multiple times). Notice that you cannot sell a stock before you buy one. Return the maximum profit you can achieve.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers `prices` where `1 <= prices.length <= 3 * 10^4`.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 3 * 10^4",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5. Then buy on day 3 (price = 3) and sell on day 4 (price = 4). Profit = 4 - 3 = 1. Total profit is 5 + 1 = 6."
+      },
+      {
+        "input": "prices = [1, 2, 3, 4, 5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5). Total profit is 5 - 1 = 4."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how many times you can make a profit with consecutive increases in stock prices.",
+      "You can think of each increase in price as an opportunity to make a profit.",
+      "Focus on accumulating profits day by day."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, if the input is [[1,3],[2,6],[8,10],[15,18]], the merged intervals would be [[1,6],[8,10],[15,18]]. An interval [a,b] is considered overlapping with an interval [c,d] if the intervals share at least one point, meaning a <= d and c <= b.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Interval",
+      "Sorting"
+    ],
+    "input_format": "A list of intervals, where each interval is represented as a list of two integers [start, end].",
+    "output_format": "A list of merged intervals after combining the overlapping ones.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "The start and end of each interval are integers in the range [-10^4, 10^4].",
+      "The start of an interval is always less than or equal to its end."
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The first two intervals overlap, so we merge them into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] overlap at 4, so they merge to [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the start time.",
+      "Use a loop to compare adjacent intervals for overlaps.",
+      "Maintain a list to store merged intervals."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "All O`one Data Structure",
+    "description": "Design a data structure that supports the following operations: insert, remove, and get_max_frequency. The data structure should be able to insert or remove elements, with each element having a frequency (the number of times it has been inserted). The get_max_frequency method should return the maximum frequency any element has in the data structure. If no elements exist, return -1. It should be efficient enough to handle up to 10^5 operations.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Frequency",
+      "Hash Table"
+    ],
+    "input_format": "The data structure will receive commands through method calls as described below: insert(value), remove(value), get_max_frequency().",
+    "output_format": "Each call to get_max_frequency() should return an integer representing the maximum frequency, or -1 if no elements exist.",
+    "constraints": [
+      "1 <= value <= 10^5",
+      "The number of operations will not exceed 10^5."
+    ],
+    "examples": [
+      {
+        "input": "obj = AllOne(); obj.insert(1); obj.insert(2); obj.insert(2); obj.get_max_frequency();",
+        "output": "2",
+        "explanation": "The number 2 has a frequency of 2, which is the maximum frequency."
+      },
+      {
+        "input": "obj = AllOne(); obj.insert(1); obj.remove(1); obj.get_max_frequency();",
+        "output": "-1",
+        "explanation": "After removing the only element, no elements exist in the data structure."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a combination of a hash map and a frequency list for efficient access.",
+      "Use a doubly linked list to maintain the order of frequency."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest substring of s that is a palindrome. A palindrome is a string that reads the same forward and backward. If there are multiple longest palindromic substrings, return any one of them.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Dynamic Programming"
+    ],
+    "input_format": "A single string s, where 1 <= s.length <= 1000.",
+    "output_format": "A string representing the longest palindromic substring of s.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "babad",
+        "output": "bab",
+        "explanation": "Both 'bab' and 'aba' are valid longest palindromic substrings."
+      },
+      {
+        "input": "cbbd",
+        "output": "bb",
+        "explanation": "'bb' is the longest palindromic substring."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around potential center points in the string.",
+      "Track the longest palindromic substring found during the search."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Sum of Distances in Tree",
+    "description": "Given a tree represented by edges, calculate the sum of distances between each pair of nodes. The distance between two nodes is the number of edges in the shortest path connecting them. You must return the result modulo 10^9 + 7.",
+    "topic": "Graph",
+    "subtopic": "Tree",
+    "tags": [
+      "Tree",
+      "Graph",
+      "Distance"
+    ],
+    "input_format": "A list of edges representing an undirected tree, where each edge is a pair of integers [u, v] indicating an edge between nodes u and v.",
+    "output_format": "An integer representing the sum of distances between all pairs of nodes, modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= n <= 3000",
+      "edges.length == n - 1"
+    ],
+    "examples": [
+      {
+        "input": "[[0, 1], [0, 2], [1, 3], [1, 4]]",
+        "output": "8",
+        "explanation": "The tree can be visualized as follows: 0 is the root, connected to 1 and 2. 1 is connected to 3 and 4. The distances between pairs are: (0-1, 0-2, 1-3, 1-4...) which sum to 8."
+      },
+      {
+        "input": "[[1, 2], [1, 3], [2, 4]]",
+        "output": "8",
+        "explanation": "The distances for the nodes (1-2, 1-3, 2-4...) give a total distance sum of 8."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the tree properties and how to calculate distances efficiently.",
+      "Depth-first search (DFS) might be a helpful approach.",
+      "Think about dynamic programming on trees."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Majority Element",
+    "description": "Given an array of integers 'nums', find the majority element. The majority element is the element that appears more than n/2 times in the array, where n is the size of the array. You may assume that a majority element exists in the array.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Majority"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the majority element.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 3]",
+        "output": "3",
+        "explanation": "The number 3 appears 2 times, which is more than n/2 (3/2 = 1.5)."
+      },
+      {
+        "input": "nums = [2, 2, 1, 1, 1, 2, 2]",
+        "output": "2",
+        "explanation": "The number 2 appears 4 times, which is more than n/2 (7/2 = 3.5)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You can use a hash map to count occurrences.",
+      "Consider the Boyer-Moore Voting Algorithm for optimal space efficiency."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Submatrices That Sum to Target",
+    "description": "Given a matrix of integers and a target integer, count the number of submatrices that sum to the target. A submatrix is defined by its top-left and bottom-right corner coordinates. The sum of a submatrix can be computed using the sum of its elements.",
+    "topic": "Matrix",
+    "subtopic": "Submatrix Sum",
+    "tags": [
+      "Matrix",
+      "Submatrix",
+      "Prefix Sum"
+    ],
+    "input_format": "A 2D matrix of integers and an integer target value.",
+    "output_format": "An integer representing the number of submatrices that sum to the target.",
+    "constraints": [
+      "1 <= matrix.length, matrix[i].length <= 100",
+      "-1000 <= matrix[i][j] <= 1000",
+      "-10^4 <= target <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, -1], [-1, 1]], target = 0",
+        "output": "5",
+        "explanation": "The submatrices that sum to 0 are: [1, -1], [-1, 1], [[1, -1], [-1, 1]], [[-1]], [[1]]"
+      },
+      {
+        "input": "matrix = [[0]], target = 0",
+        "output": "1",
+        "explanation": "The only submatrix is [[0]], which sums to 0."
+      },
+      {
+        "input": "matrix = [[1,2,3],[4,5,6],[7,8,9]], target = 15",
+        "output": "2",
+        "explanation": "The submatrices that sum to 15 are: [[4,5,6]], and [[5]]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a prefix sum to efficiently calculate sums of submatrices.",
+      "The problem may benefit from hash maps to store cumulative sums."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of integers representing the height of bars in a histogram, compute how much rainwater can be trapped after it rains. The width of each bar is 1. You need to find the total amount of water that can be trapped after a heavy rain.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer array heights representing the height of each bar.",
+    "output_format": "An integer representing the total water trapped.",
+    "constraints": [
+      "0 <= heights.length <= 2 * 10^4",
+      "0 <= heights[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water trapped between the bars can be calculated as 1 unit between the first two 0's, 2 units between 1 and 2, 1 unit between 2's, 3 units above the 1's. The total is 6."
+      },
+      {
+        "input": "heights = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water trapped is 1 unit above each of the two bars at heights 2, and 5 units above the bar at height 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two pointers to keep track of boundaries.",
+      "Calculate the amount of water trapped by looking at the minimum of the left and right walls."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "You are given an integer array 'nums' sorted in ascending order, which is then rotated at some pivot unknown to you beforehand. You are also given an integer 'target'. Write a function to search for 'target' in 'nums'. If found, return its index. Otherwise, return -1. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Binary Search",
+    "subtopic": "Searching in Rotated Arrays",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An array of integers 'nums' and an integer 'target'.",
+    "output_format": "An integer representing the index of 'target' in 'nums' or -1 if 'target' is not found.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "-10^4 <= nums[i] <= 10^4",
+      "nums is guaranteed to be rotated at some pivot."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4, 5, 6, 7, 0, 1, 2], target = 0",
+        "output": "4",
+        "explanation": "The target 0 is found at index 4."
+      },
+      {
+        "input": "nums = [4, 5, 6, 7, 0, 1, 2], target = 3",
+        "output": "-1",
+        "explanation": "The target 3 is not found in the array, so -1 is returned."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how the array behaves before and after the pivot.",
+      "Use binary search concepts to narrow down the search space based on the pivot."
+    ],
+    "company": "Media.net"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an integer array nums and an integer k, return the maximum sliding window of k consecutive elements in nums. You must solve it in O(n) time complexity. The sliding window moves one element to the right after every iteration.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Deque",
+      "Maximum"
+    ],
+    "input_format": "An integer array nums and an integer k (1 <= k <= nums.length).",
+    "output_format": "An array of integers representing the maximums of each sliding window.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,3,-1,-3,5,3,6,7], k = 3",
+        "output": "[3,3,5,5,6,7]",
+        "explanation": "The sliding windows are [1,3,-1], [3,-1,-3], [-1,3,5], [3,5,3], [5,3,6], and [3,6,7]. The maximums are 3, 3, 5, 5, 6, and 7."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "There is only one element, which is the maximum in the only sliding window."
+      },
+      {
+        "input": "nums = [1,-1], k = 1",
+        "output": "[1,-1]",
+        "explanation": "The sliding windows are [1] and [-1]. The maximums are 1 and -1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a deque to store indices of elements in the current sliding window.",
+      "Maintain the order of elements in the deque such that the maximum is always at the front."
+    ],
+    "company": "Media.net"
+  }
+]

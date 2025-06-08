@@ -1,0 +1,123 @@
+[
+  {
+    "question_id": "",
+    "title": "Boundary of Binary Tree",
+    "description": "Given the root of a binary tree, return the values of its boundary in anti-clockwise order starting from the root. The boundary consists of the root, the left boundary, leaf nodes, and the right boundary in that order. Nodes should not be duplicated. Leaf nodes are those without any children.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Traversal"
+    ],
+    "input_format": "A binary tree node representing the root of the tree.",
+    "output_format": "A list of integers representing the boundary nodes in anti-clockwise order.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 10^4].",
+      "Node values are unique.",
+      "-10^6 <= Node.val <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4, 5, null, 6]",
+        "output": "[1, 2, 4, 5, 6, 3]",
+        "explanation": "The left boundary is 2 -> 4. The leaf nodes are 4, 5, and 6. The right boundary is 3. Moving anti-clockwise gives us 1 -> 2 -> 4 -> 5 -> 6 -> 3."
+      },
+      {
+        "input": "root = [1]",
+        "output": "[1]",
+        "explanation": "There is only one node, which is itself the boundary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to traverse the left and right subtrees separately.",
+      "Keep track of leaf nodes during traversal.",
+      "Use a depth-first search approach for better control."
+    ],
+    "company": "Juniper Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Coin Change",
+    "description": "Given an integer array 'coins' representing coins of different denominations and an integer 'amount' representing a total amount of money, return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Coin Change Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array coins and an integer amount.",
+    "output_format": "An integer representing the fewest number of coins needed to make the amount.",
+    "constraints": [
+      "1 <= coins.length <= 12",
+      "1 <= coins[i] <= 2^31 - 1",
+      "0 <= amount <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "coins = [1, 2, 5], amount = 11",
+        "output": "3",
+        "explanation": "11 can be made up by using two 5s and one 1: 5 + 5 + 1 = 11."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "-1",
+        "explanation": "The amount 3 cannot be made up using only a coin of denomination 2."
+      },
+      {
+        "input": "coins = [1], amount = 0",
+        "output": "0",
+        "explanation": "No coins are needed to make the amount 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using dynamic programming to keep track of the minimum number of coins needed for each amount.",
+      "Try to build up from the amount of 0 to the target amount."
+    ],
+    "company": "Juniper Networks"
+  },
+  {
+    "question_id": "",
+    "title": "Add Two Numbers II",
+    "description": "You are given two non-negative integers represented as two linked lists. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return it as a linked list. The result should be in the same reverse-order format.",
+    "topic": "Linked List",
+    "subtopic": "Addition",
+    "tags": [
+      "Linked List",
+      "Addition",
+      "Simulation"
+    ],
+    "input_format": "Two linked lists representing non-negative integers.",
+    "output_format": "A linked list representing the sum of the two integers.",
+    "constraints": [
+      "The numbers represented by the linked lists can be very large.",
+      "Each linked list has at least one node."
+    ],
+    "examples": [
+      {
+        "input": "l1 = [2, 4, 3], l2 = [5, 6, 4]",
+        "output": "[7, 0, 8]",
+        "explanation": "The two numbers are 342 (from l1) and 465 (from l2). Their sum is 807, which is represented as [7, 0, 8]."
+      },
+      {
+        "input": "l1 = [0], l2 = [0]",
+        "output": "[0]",
+        "explanation": "The sum of 0 and 0 is 0."
+      },
+      {
+        "input": "l1 = [9, 9, 9, 9, 9, 9, 9], l2 = [9, 9, 9, 9]",
+        "output": "[8, 9, 9, 9, 0, 0, 1]",
+        "explanation": "The two numbers are 9999999 and 9999. Their sum is 10009998, which is represented as [8, 9, 9, 9, 0, 0, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to reverse the linked list.",
+      "You may want to keep track of the carry when summing digits."
+    ],
+    "company": "Juniper Networks"
+  }
+]

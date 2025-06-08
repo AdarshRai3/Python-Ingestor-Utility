@@ -1,0 +1,230 @@
+[
+  {
+    "question_id": "",
+    "title": "String Without AAA or BBB",
+    "description": "Given a string s, you need to determine if it is possible to construct a new string by removing some characters from s, such that the new string does not contain the substring 'AAA' or 'BBB'. You can remove any characters from the string but you cannot rearrange them. Return true if it is possible, otherwise return false.",
+    "topic": "String",
+    "subtopic": "Substrings",
+    "tags": [
+      "String",
+      "Substrings",
+      "Greedy"
+    ],
+    "input_format": "A single string s with length n.",
+    "output_format": "A boolean value indicating whether the new string can be formed without 'AAA' or 'BBB'.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of only uppercase letters A and B."
+    ],
+    "examples": [
+      {
+        "input": "ABB",
+        "output": "true",
+        "explanation": "By removing one 'B', we can have the string 'AB', which does not contain 'AAA' or 'BBB'."
+      },
+      {
+        "input": "AABAA",
+        "output": "true",
+        "explanation": "We can form the string 'A' by removing all other characters, which does not contain 'AAA' or 'BBB'."
+      },
+      {
+        "input": "AAABBB",
+        "output": "false",
+        "explanation": "Any attempt to construct a string will lead to 'AAA' or 'BBB'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider keeping track of the counts of consecutive 'A's and 'B's.",
+      "Try to build the valid string while checking for the forbidden substrings."
+    ],
+    "company": "Zalando"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) Cache. It should support the following operations: get and put. The get operation retrieves the value of the key if the key exists in the cache, otherwise returns -1. The put operation updates the value of the key if the key exists, or adds the key-value pair if the key does not exist. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Design",
+    "subtopic": "Cache",
+    "tags": [
+      "Design",
+      "Cache",
+      "Data Structure"
+    ],
+    "input_format": "The input consists of several operations (get and put) involving an integer key and value if applicable.",
+    "output_format": "Return the result of the get operations as an array of integers.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10000",
+      "0 <= value <= 10000",
+      "All keys are unique."
+    ],
+    "examples": [
+      {
+        "input": "operations = [\"LRUCache\", \"put\", \"put\", \"get\", \"put\", \"get\", \"put\", \"get\", \"get\", \"get\"], parameters = [[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]",
+        "output": "[null,null,null,1,null,-1,null,4,3,4]",
+        "explanation": "After the operations, the cache is full, and the least recently used key is invalidated when the capacity is exceeded."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a combination of a hash map and a doubly linked list."
+    ],
+    "company": "Zalando"
+  },
+  {
+    "question_id": "",
+    "title": "Lemonade Change",
+    "description": "At a lemonade stand, a customer can buy a lemonade for $5. You have a register with unlimited $5, $10, and $20 bills. Initially, you start with an empty register. As customers arrive, they may pay with either a $5 bill (no change needed), a $10 bill (need to provide $5 change), or a $20 bill (need to provide $15 change). Given a list of integers representing the bills each customer pays, return true if you can provide the required change to every customer, or false otherwise.",
+    "topic": "Greedy",
+    "subtopic": "Simulation",
+    "tags": [
+      "Greedy",
+      "Simulation",
+      "Array"
+    ],
+    "input_format": "An array of integers bills where bills[i] is the bill value received from the ith customer.",
+    "output_format": "A boolean value indicating whether you can provide change to every customer.",
+    "constraints": [
+      "1 <= bills.length <= 10000",
+      "bills[i] is one of [5, 10, 20]"
+    ],
+    "examples": [
+      {
+        "input": "bills = [5, 5, 10]",
+        "output": "true",
+        "explanation": "The first two customers pay with $5, and the third pays with $10. You can give the $5 change to the third customer."
+      },
+      {
+        "input": "bills = [5, 5, 10, 20]",
+        "output": "false",
+        "explanation": "The first two customers pay with $5, the third with $10, but now you cannot give change to the fourth customer who pays with $20."
+      },
+      {
+        "input": "bills = [5, 5, 10, 5, 20]",
+        "output": "true",
+        "explanation": "You can provide change to all customers: the first two pay with $5, the third with $10 (give $5), and the fourth pays with $5 (no change), finally the fifth with $20 (give $15 using a $10 and a $5)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Track the number of $5 and $10 bills you have.",
+      "Prioritize giving $10 bills as change for $20 if available."
+    ],
+    "company": "Zalando"
+  },
+  {
+    "question_id": "",
+    "title": "Construct the Longest New String",
+    "description": "Given two strings, str1 and str2, your task is to construct the longest string that can be formed by concatenating non-overlapping substrings from str1 and str2. The substrings should be composed of the same characters and must maintain their order in the original strings. Return the longest string that can be constructed. If there are multiple longest strings, return any of them.",
+    "topic": "Strings",
+    "subtopic": "Substring",
+    "tags": [
+      "String",
+      "Substring",
+      "Concatenation"
+    ],
+    "input_format": "Two strings, str1 and str2.",
+    "output_format": "A string representing the longest new string constructed.",
+    "constraints": [
+      "1 <= str1.length, str2.length <= 10^5",
+      "str1 and str2 consist of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "str1 = 'abcde', str2 = 'cdefg'",
+        "output": "cde",
+        "explanation": "The common substring is 'cde'."
+      },
+      {
+        "input": "str1 = 'hello', str2 = 'world'",
+        "output": "lo",
+        "explanation": "The longest common substring is 'lo'."
+      },
+      {
+        "input": "str1 = 'aabbcc', str2 = 'baccd'",
+        "output": "bc",
+        "explanation": "The common substrings include 'b' and 'c', but the longest is 'bc'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to store results of substrings.",
+      "Check overlapping characters to build potential substrings."
+    ],
+    "company": "Zalando"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, if the input intervals are [[1,3],[2,6],[8,10],[15,18]], the merged intervals should be [[1,6],[8,10],[15,18]].",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Interval"
+    ],
+    "input_format": "A 2D array of integers intervals where intervals[i] = [start_i, end_i].",
+    "output_format": "A 2D array of merged intervals.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= start_i <= end_i <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "Intervals [1,3] and [2,6] overlap and are merged into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "Both intervals overlap and are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the start time.",
+      "Use a list to store merged intervals and iterate through the sorted intervals."
+    ],
+    "company": "Zalando"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Number",
+    "description": "Given a list of non-negative integers, rearrange them such that they form the largest possible number. You may assume that all integers in the input list are non-negative and can be treated as strings. The result must be returned as a string representing the largest concatenated number.",
+    "topic": "Greedy",
+    "subtopic": "Sorting",
+    "tags": [
+      "Greedy",
+      "Sorting",
+      "Strings"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "A string representing the largest number formed by concatenating the integers.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 2]",
+        "output": "210",
+        "explanation": "By combining the integers as '2' + '10', the largest number formed is '210'."
+      },
+      {
+        "input": "nums = [3, 30, 34, 5, 9]",
+        "output": "9534330",
+        "explanation": "By rearranging the integers as '9' + '5' + '34' + '3' + '30', the largest number formed is '9534330'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how numbers concatenate to form larger or smaller values.",
+      "Use custom sorting based on concatenated string comparison."
+    ],
+    "company": "Zalando"
+  }
+]

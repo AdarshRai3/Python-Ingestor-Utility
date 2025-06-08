@@ -1,0 +1,281 @@
+[
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price encountered so far.",
+      "Calculate the potential profit at each day and update the maximum profit."
+    ],
+    "company": "Bolt"
+  },
+  {
+    "question_id": "",
+    "title": "Check if All Characters Have Equal Number of Occurrences",
+    "description": "Given a string s, check if all characters in the string have the same number of occurrences. Return true if they do, and false otherwise.",
+    "topic": "String",
+    "subtopic": "Character Counting",
+    "tags": [
+      "String",
+      "Counting",
+      "Frequency"
+    ],
+    "input_format": "A string s, where 1 <= s.length <= 100.",
+    "output_format": "A boolean value indicating if all characters have equal occurrences.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abacbc\"",
+        "output": "true",
+        "explanation": "All characters in the string have equal occurrences: a appears 2 times, b appears 2 times, and c appears 2 times."
+      },
+      {
+        "input": "s = \"aabbccdd\"",
+        "output": "true",
+        "explanation": "All characters a, b, c, and d appear 2 times each."
+      },
+      {
+        "input": "s = \"abc\"",
+        "output": "true",
+        "explanation": "Each character occurs 1 time, which is equal."
+      },
+      {
+        "input": "s = \"aabbc\"",
+        "output": "false",
+        "explanation": "Character a and b occur 2 times while c occurs 1 time, which is not equal."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a frequency counter to track character occurrences.",
+      "All characters should have the same count."
+    ],
+    "company": "Bolt"
+  },
+  {
+    "question_id": "",
+    "title": "Find All Anagrams in a String",
+    "description": "Given two strings s and p, return an array of all the start indices of p's anagrams in s. You may return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Anagram"
+    ],
+    "input_format": "Two strings s and p where 1 <= s.length <= 50,000 and 1 <= p.length <= 30.",
+    "output_format": "An array of integers representing the starting indices of p's anagrams in s.",
+    "constraints": [
+      "1 <= s.length <= 50,000",
+      "1 <= p.length <= 30",
+      "s and p consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'cbaebabacd', p = 'abc'",
+        "output": "[0, 6]",
+        "explanation": "'abc' is an anagram of 'cba' at index 0 and index 6."
+      },
+      {
+        "input": "s = 'abab', p = 'ab'",
+        "output": "[0, 1, 2]",
+        "explanation": "'ab' is an anagram of 'ab' at indices 0, 1, and 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a frequency map to count characters.",
+      "Utilize the sliding window technique for efficiency."
+    ],
+    "company": "Bolt"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to the target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums followed by an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers that add up to target.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "target is a valid integer."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9, so we return the indices [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6, so we return the indices [1, 2]."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 3 + 3 = 6, so we return the indices [0, 1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash table to store the numbers and their indices.",
+      "Check for the complement of each number."
+    ],
+    "company": "Bolt"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock III",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you are allowed to make at most two transactions. In order to maximize profit, you can sell your stock only after you have bought it. Return the maximum profit you can achieve after making at most two transactions. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Stock Buy and Sell",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array prices of length n where 1 <= n <= 10^5 and 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [3,2,6,5,0,3]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 2) and sell on day 3 (price = 6) for a profit of 4. Then buy on day 5 (price = 0) and sell on day 6 (price = 3) for a profit of 3. Total profit = 4 + 3 = 7."
+      },
+      {
+        "input": "prices = [1,2,3,4,5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5) for a profit of 4."
+      },
+      {
+        "input": "prices = [7,6,4,3,1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Try to break the problem into subproblems to track profits up to day i.",
+      "Consider using a dynamic programming approach to keep track of the maximum profits."
+    ],
+    "company": "Bolt"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string s consisting of just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are matched correctly and all opened brackets are closed in the correct order.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting only of '(', ')', '{', '}', '[' and ']'.",
+    "output_format": "A boolean value indicating whether the input string is valid.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The brackets are matched correctly, hence the string is valid."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "All brackets are matched and closed in the correct order."
+      },
+      {
+        "input": "s = '(]{}'",
+        "output": "false",
+        "explanation": "The parentheses are not matched correctly."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "When encountering a closing bracket, check if it matches the last opened bracket."
+    ],
+    "company": "Bolt"
+  },
+  {
+    "question_id": "",
+    "title": "Climbing Stairs",
+    "description": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "topic": "Dynamic Programming",
+    "subtopic": "Fibonacci Sequence",
+    "tags": [
+      "Dynamic Programming",
+      "Recursion",
+      "Mathematics"
+    ],
+    "input_format": "An integer n, representing the number of steps in the staircase.",
+    "output_format": "An integer representing the number of distinct ways to climb to the top.",
+    "constraints": [
+      "1 <= n <= 45"
+    ],
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "There are two ways to climb to the top: (1, 1) and (2)."
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "explanation": "There are three ways to climb to the top: (1, 1, 1), (1, 2), and (2, 1)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how many ways you can reach the last step.",
+      "Use a recurrence relation to break down the problem.",
+      "Think of it as the Fibonacci sequence."
+    ],
+    "company": "Bolt"
+  }
+]

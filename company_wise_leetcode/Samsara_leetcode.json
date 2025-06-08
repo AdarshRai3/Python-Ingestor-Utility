@@ -1,0 +1,437 @@
+[
+  {
+    "question_id": "",
+    "title": "Alternating Groups I",
+    "description": "Given an integer array, partition it into groups where each group contains alternating odd and even numbers. The output should represent the groups as arrays of integers, maintaining the original order of numbers. If there are no odd or even numbers in the input, the respective groups should be empty.",
+    "topic": "Array",
+    "subtopic": "Partitioning",
+    "tags": [
+      "Array",
+      "Partitioning",
+      "Odd/Even"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of lists representing the grouped numbers.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5, 6]",
+        "output": "[[1, 3, 5], [2, 4, 6]]",
+        "explanation": "The odd numbers are grouped as [1, 3, 5] and the even numbers as [2, 4, 6]."
+      },
+      {
+        "input": "nums = [2, 4, 6]",
+        "output": "[[], [2, 4, 6]]",
+        "explanation": "There are no odd numbers, thus the first group is empty."
+      },
+      {
+        "input": "nums = [1, 3, 5]",
+        "output": "[[1, 3, 5], []]",
+        "explanation": "There are no even numbers, thus the second group is empty."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Iterate through the list and separate numbers based on their parity.",
+      "Use two lists to keep track of odd and even numbers."
+    ],
+    "company": "Samsara"
+  },
+  {
+    "question_id": "",
+    "title": "Alternating Groups II",
+    "description": "You are given a list of integers. Your task is to reorganize them into alternating groups, such that no two adjacent groups contain the same type of integer, and maximize the sizes of these groups. An integer is considered to be of the same type if they are equal. If it's impossible to form such alternating groups, return an empty list.",
+    "topic": "Array",
+    "subtopic": "Grouping",
+    "tags": [
+      "Array",
+      "Grouping",
+      "Greedy"
+    ],
+    "input_format": "A list of integers nums.",
+    "output_format": "A list of integers organized into alternating groups.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 1, 3, 2, 3]",
+        "output": "[1, 2, 1, 3, 2, 3]",
+        "explanation": "The input can be grouped as 1, 2, 1 and 3, 2, 3, which are alternating and maximum in size."
+      },
+      {
+        "input": "nums = [1, 1, 2, 2, 2, 3, 3]",
+        "output": "[1, 2, 1, 3, 2]",
+        "explanation": "To alternate, we can take one from each type until we can no longer maintain the alternating pattern."
+      },
+      {
+        "input": "nums = [1, 1, 1]",
+        "output": "[]",
+        "explanation": "It's impossible to create any alternating groups with all numbers being the same."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a frequency map to count occurrences.",
+      "Start by placing the most frequent integers in alternating slots.",
+      "Consider edge cases where all numbers are the same."
+    ],
+    "company": "Samsara"
+  },
+  {
+    "question_id": "",
+    "title": "Find Beautiful Indices in the Given Array I",
+    "description": "You are given an array of integers. An index i in this array is considered 'beautiful' if the sum of the elements to the left of i is equal to the sum of the elements to the right of i. Your task is to find all such beautiful indices and return them as an array. If no beautiful indices exist, return an empty array.",
+    "topic": "Array",
+    "subtopic": "Prefix Sums",
+    "tags": [
+      "Array",
+      "Prefix Sums",
+      "Indices"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing the beautiful indices.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 1, 2, 1]",
+        "output": "[3]",
+        "explanation": "At index 3, the sum of elements to the left (1 + 1 + 1) equals the sum of elements to the right (1), making index 3 beautiful."
+      },
+      {
+        "input": "nums = [0, 0, 0, 0]",
+        "output": "[1, 2]",
+        "explanation": "At indices 1 and 2, the left and right sums are both equal (0), making these indices beautiful."
+      },
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[]",
+        "explanation": "There are no indices where the left and right sums are equal."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using prefix sums to keep track of the left and right sums efficiently.",
+      "Iterate through the array while maintaining a running total."
+    ],
+    "company": "Samsara"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine if a 9x9 Sudoku board is valid according to the rules of Sudoku. The board is represented as a 2D array of characters, where each character can be a digit from '1' to '9' or a '.' representing an empty cell. A valid Sudoku board must satisfy the following conditions: Each row must contain the digits '1' to '9' without repetition; Each column must contain the digits '1' to '9' without repetition; Each of the nine 3x3 sub-boxes of the grid must also contain the digits '1' to '9' without repetition.",
+    "topic": "Array",
+    "subtopic": "Matrix",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Backtracking"
+    ],
+    "input_format": "A 2D array of characters representing the Sudoku board.",
+    "output_format": "A boolean value indicating whether the Sudoku board is valid.",
+    "constraints": [
+      "board.length == 9",
+      "board[i].length == 9",
+      "board[i][j] is a digit '1' to '9' or '.'"
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "5",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "true",
+        "explanation": "The given Sudoku board is valid."
+      },
+      {
+        "input": [
+          [
+            "8",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "false",
+        "explanation": "The row 0 has a duplicate '8', thus the board is invalid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use sets to track seen numbers in rows, columns, and boxes.",
+      "Ensure each cell is checked in its respective row, column, and 3x3 box."
+    ],
+    "company": "Samsara"
+  },
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a length maxWidth, format the text such that each line has exactly maxWidth characters and is fully justified. You should insert spaces between words so that each line has exactly maxWidth characters. Extra spaces on the right should be removed. If a line has fewer than maxWidth characters, you should insert spaces to make it exactly maxWidth. You can assume the last line is left-justified and does not require additional spaces.",
+    "topic": "String",
+    "subtopic": "Justification",
+    "tags": [
+      "String",
+      "Justification",
+      "Formatting"
+    ],
+    "input_format": "An array of strings words, followed by an integer maxWidth.",
+    "output_format": "An array of strings representing the justified text lines.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 100",
+      "1 <= maxWidth <= 100"
+    ],
+    "examples": [
+      {
+        "input": "words = [\"This\", \"is\", \"an\", \"example\", \"of\", \"text\", \"justification.\"], maxWidth = 16",
+        "output": "[\"This    is    an\", \"example  of text\", \"justification.  \"]",
+        "explanation": "The words in each line are justified to ensure each line has exactly 16 characters."
+      },
+      {
+        "input": "words = [\"What\", \"must\", \"be\", \"acknowledged\", \"shall\", \"be\", \"a\", \"delight.\"] , maxWidth = 16",
+        "output": "[\"What   must   be\", \"acknowledged  \", \"shall be a    \", \"delight.    \"]",
+        "explanation": "The last line is left-justified, while other lines fully justify as per maximum width."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to distribute spaces among the words in a line.",
+      "Handle the last line differently from the rest."
+    ],
+    "company": "Samsara"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Flowers in Full Bloom",
+    "description": "You are given a list of intervals representing the blooming time of flowers. Each interval consists of two integers start and end, where start is the time when the flower starts to bloom and end is the time when it stops blooming. Your task is to find the maximum number of flowers that are in full bloom at any given time.",
+    "topic": "Interval",
+    "subtopic": "Sweep Line",
+    "tags": [
+      "Interval",
+      "Sweep Line",
+      "Dynamic Programming"
+    ],
+    "input_format": "A list of intervals, where each interval is represented as an array of two integers [start, end].",
+    "output_format": "An integer representing the maximum number of flowers in full bloom at any time.",
+    "constraints": [
+      "1 <= intervals.length <= 10^5",
+      "0 <= intervals[i][0] < intervals[i][1] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1, 4], [2, 3], [4, 6]]",
+        "output": "2",
+        "explanation": "At time 2, flowers from intervals [1, 4] and [2, 3] are in bloom, making it a total of 2 flowers."
+      },
+      {
+        "input": "intervals = [[1, 5], [2, 3], [3, 7], [6, 8]]",
+        "output": "3",
+        "explanation": "At time 3, flowers from intervals [1, 5], [2, 3], and [3, 7] are in bloom, making it a total of 3 flowers."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider all the start and end points as events.",
+      "Use a sweep line technique to count the number of ongoing blooms.",
+      "Sort the events and then traverse them to calculate maximum overlaps."
+    ],
+    "company": "Samsara"
+  }
+]

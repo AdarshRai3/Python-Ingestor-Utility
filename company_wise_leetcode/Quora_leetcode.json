@@ -1,0 +1,768 @@
+[
+  {
+    "question_id": "",
+    "title": "Construct Target Array With Multiple Sums",
+    "description": "You are given an array 'num' and a target integer 'target'. Your goal is to determine if you can construct the target array by repeatedly summing elements from the array 'num'. You can choose any subset of the elements in 'num' to sum. Please write a function to check if the target can be constructed this way. Two constraints need to be satisfied; the sum must equal the target and the process should end up emptying the 'num' array.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum",
+    "tags": [
+      "Dynamic Programming",
+      "Subset Sum",
+      "Recursion"
+    ],
+    "input_format": "The input consists of an integer array 'num' and an integer 'target'.",
+    "output_format": "Return true if the target can be constructed by summing elements of 'num'; otherwise, return false.",
+    "constraints": [
+      "1 <= num.length <= 20",
+      "1 <= num[i] <= 1000",
+      "0 <= target <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": {
+          "num": [
+            1,
+            2,
+            3
+          ],
+          "target": 6
+        },
+        "output": true,
+        "explanation": "You can select all the elements: 1 + 2 + 3 = 6."
+      },
+      {
+        "input": {
+          "num": [
+            4,
+            5,
+            6
+          ],
+          "target": 14
+        },
+        "output": false,
+        "explanation": "No subset sums to 14."
+      },
+      {
+        "input": {
+          "num": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "target": 3
+        },
+        "output": true,
+        "explanation": "You can select three 1s: 1 + 1 + 1 = 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about dynamic programming solutions for subset sums.",
+      "Consider edge cases where the target is 0.",
+      "Explore the potential use of a backtracking approach."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Encode Number",
+    "description": "Given a non-negative integer num, return its encoded string representation based on the following encoding scheme: Each digit in the integer should be followed by a count of how many times that digit appears in sequence. For example, given the number 122333, the encoded string will be '112233'. You need to ensure that the output is in string format and handles integers up to 10^9.",
+    "topic": "String",
+    "subtopic": "Encoding",
+    "tags": [
+      "String",
+      "Encoding",
+      "Count"
+    ],
+    "input_format": "A non-negative integer num.",
+    "output_format": "A string representing the encoded format of the number.",
+    "constraints": [
+      "0 <= num <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "num = 122333",
+        "output": "112233",
+        "explanation": "The input number consists of: one '1', two '2's, and three '3's. Hence, the encoded string is '112233'."
+      },
+      {
+        "input": "num = 1001",
+        "output": "11001",
+        "explanation": "The input number consists of: one '1', one '0', and one '1'. Hence, the encoded string is '11001'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider converting the number to a string for easier manipulation.",
+      "Use a loop to traverse through the digits and count consecutive occurrences."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Find Numbers with Even Number of Digits",
+    "description": "Given an array of non-negative integers, return the count of numbers that have an even number of digits.",
+    "topic": "Array",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Array",
+      "Counting",
+      "Digits"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "An integer representing the count of numbers with an even number of digits.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [12, 345, 2, 6, 7896]",
+        "output": "2",
+        "explanation": "The numbers with an even number of digits are 12 and 7896."
+      },
+      {
+        "input": "nums = [1, 22, 333, 4444, 55555]",
+        "output": "2",
+        "explanation": "The numbers with an even number of digits are 22 and 4444."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Count the number of digits in each number.",
+      "A number has an even number of digits if its length is even."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Finding Pairs With a Certain Sum",
+    "description": "Given an array of integers and a target integer, return all unique pairs of integers from the array that sum up to the target. Each pair should be returned in the form of an array, and the output should not include duplicate pairs.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of arrays, where each inner array contains two integers that sum to the target.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5",
+      "The output pairs can be in any order but must be unique."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 2, 4, 3], target = 5",
+        "output": "[[2, 3], [1, 4]]",
+        "explanation": "The pairs that sum to 5 are (2, 3) and (1, 4)."
+      },
+      {
+        "input": "nums = [0, -1, 2, -3, 1], target = -2",
+        "output": "[[-1, -3]]",
+        "explanation": "The only pair that sums to -2 is (-1, -3)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a set to keep track of seen numbers.",
+      "You can sort the array and use two pointers."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Get Biggest Three Rhombus Sums in a Grid",
+    "description": "You have a 2D grid of integers. Your task is to find the three largest distinct sums of rhombus shapes in the grid. A rhombus shape is defined by its center point and extends outward in the following manner:\n\n - The center is at (i, j).\n - From the center, you can go up 1 step, down 1 step, left 1 step, and right 1 step to form the rhombus shape.\n - The full shape includes the center itself as well as points at a maximum distance of 2 in a diamond configuration. \n\nReturn the three largest distinct rhombus sums in descending order. If there are fewer than three distinct sums, return all unique sums in descending order.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Grid",
+      "Dynamic Programming",
+      "Sum",
+      "Sorting"
+    ],
+    "input_format": "A 2D grid of integers where each cell contains an integer value.",
+    "output_format": "A list of the three largest distinct rhombus sums in descending order.",
+    "constraints": [
+      "1 <= grid.length <= 100",
+      "1 <= grid[i].length <= 100",
+      "-1000 <= grid[i][j] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[45, 30, 20]",
+        "explanation": "The rhombus sums calculated are 45, 30, and 20, where 45 corresponds to the center (1,1) with the maximum configuration."
+      },
+      {
+        "input": "grid = [[1, 2], [3, 4]]",
+        "output": "[10, 6]",
+        "explanation": "Only two unique sums can be formed which are 10 and 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider all possible center points in the grid.",
+      "Keep track of distinct sums using a set to avoid duplicates.",
+      "Sort the sums in descending order before returning."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Substrings of Size Three with Distinct Characters",
+    "description": "Given a string s, return the number of substrings of size three that are made up of distinct characters. A substring is a contiguous sequence of characters within a string. For example, 'abc' is a valid substring, while 'aab' is not, as it contains duplicate characters.",
+    "topic": "Strings",
+    "subtopic": "Substring",
+    "tags": [
+      "String",
+      "Substring",
+      "Counting"
+    ],
+    "input_format": "A string s containing only lowercase English letters.",
+    "output_format": "An integer representing the number of valid substrings of size three with distinct characters.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabc'",
+        "output": "4",
+        "explanation": "The valid substrings of size three are 'abc', 'bca', 'cab', and 'abc', thus there are 4."
+      },
+      {
+        "input": "s = 'aaaaaaaaaaa'",
+        "output": "0",
+        "explanation": "There are no substrings of size three with distinct characters, as all characters are 'a'."
+      },
+      {
+        "input": "s = 'abc'",
+        "output": "1",
+        "explanation": "The only valid substring of size three is 'abc'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "Maintain a set to track distinct characters within the window."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum With Multiplicity",
+    "description": "Given an integer array nums, and an integer target, return the number of tuples (i, j, k) such that i < j < k and nums[i] + nums[j] + nums[k] == target. However, since the answer can be large, return it modulo 10^9 + 7.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Counting"
+    ],
+    "input_format": "An integer array nums and an integer target.",
+    "output_format": "An integer representing the number of tuples that satisfy the condition.",
+    "constraints": [
+      "1 <= nums.length <= 3000",
+      "-10^4 <= nums[i] <= 10^4",
+      "0 <= target <= 300"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2, 2, 3, 3, 4, 4, 5], target = 8",
+        "output": "20",
+        "explanation": "There are 20 different tuples that can form the target sum of 8."
+      },
+      {
+        "input": "nums = [0, 0, 0, 0], target = 0",
+        "output": "4",
+        "explanation": "There are 4 different tuples that can sum to 0 from the array of zeros."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the array first.",
+      "Use a hashmap to count occurrences of each number."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "1-bit and 2-bit Characters",
+    "description": "We have a binary array bit and we want to determine if the last character must be a one-bit character or not. A character is represented by either one bit or two bits: 0 for one-bit character and 10 or 11 for two-bit characters. You need to return true if the last character must be a one-bit character. The last character can only be a one-bit character if it is preceded by one-bit character itself or there are two one-bit characters preceding it.",
+    "topic": "Array",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Array",
+      "Bit Manipulation",
+      "Greedy"
+    ],
+    "input_format": "A binary array bits where each element is either 0 or 1.",
+    "output_format": "A boolean value indicating if the last character must be a one-bit character.",
+    "constraints": [
+      "1 <= bits.length <= 1000",
+      "bits[i] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "bits = [1, 0, 0]",
+        "output": "true",
+        "explanation": "The last character (0) is preceded by 1 bit character (0). Hence returns true."
+      },
+      {
+        "input": "bits = [1, 1, 1, 0]",
+        "output": "false",
+        "explanation": "The last character (0) is preceded by a two bit character (1, 1). Hence returns false."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check how many bits are needed to represent the last character.",
+      "Iterate backwards to determine how many bits are set to 1."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Find the K-Beauty of a Number",
+    "description": "A number's K-beauty is defined as the count of its digits that are divisors of the number itself. Given an integer n and an integer k, return the K-beauty of the number n. Note that each digit counts only once, even if it appears multiple times. If k is greater than the number of digits in n, the K-beauty is 0.",
+    "topic": "Math",
+    "subtopic": "Divisibility",
+    "tags": [
+      "Math",
+      "Divisibility",
+      "Digits"
+    ],
+    "input_format": "Two integers n and k, where n is the number to be evaluated and k is the limit on the number of digits to consider.",
+    "output_format": "An integer representing the K-beauty of the number n.",
+    "constraints": [
+      "1 <= n <= 10^9",
+      "1 <= k <= 10"
+    ],
+    "examples": [
+      {
+        "input": "n = 1012, k = 3",
+        "output": "3",
+        "explanation": "The digits are 1, 0, 1, 2. The digits that divide 1012 are 1 (1 divides 1012), and 2 (2 divides 1012), counting unique digits gives 1 and 2. The K-beauty is 2 since we only consider unique divisors up to 3 digits."
+      },
+      {
+        "input": "n = 100, k = 3",
+        "output": "1",
+        "explanation": "The digits are 1, 0, 0. The only digit that divides 100 is 1. The K-beauty is 1 since we only consider unique divisors."
+      },
+      {
+        "input": "n = 123456789, k = 10",
+        "output": "9",
+        "explanation": "All digits from 1 to 9 divide the number 123456789. The K-beauty is 9 as all digits are counted."
+      },
+      {
+        "input": "n = 30, k = 1",
+        "output": "1",
+        "explanation": "The digits are 3 and 0. Only 3 is a divisor of 30. The K-beauty is 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how to extract each digit from the number.",
+      "Check if a digit is a divisor only if it's non-zero."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Subtract the Product and Sum of Digits of an Integer",
+    "description": "Given an integer n, you need to subtract the sum of its digits from the product of its digits and return the result. For example, if n is 234, the product of its digits is 2 * 3 * 4 = 24, and the sum is 2 + 3 + 4 = 9. The final result would be 24 - 9 = 15.",
+    "topic": "Math",
+    "subtopic": "Digit Manipulation",
+    "tags": [
+      "Math",
+      "Digits",
+      "Arithmetic"
+    ],
+    "input_format": "An integer n (0 <= n <= 10^5).",
+    "output_format": "An integer representing the result of the subtraction of the sum of digits from the product of digits.",
+    "constraints": [
+      "0 <= n <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "n = 234",
+        "output": "15",
+        "explanation": "The product of digits is 2 * 3 * 4 = 24 and the sum of digits is 2 + 3 + 4 = 9. Therefore, 24 - 9 = 15."
+      },
+      {
+        "input": "n = 4421",
+        "output": "21",
+        "explanation": "The product of digits is 4 * 4 * 2 * 1 = 32 and the sum of digits is 4 + 4 + 2 + 1 = 11. Therefore, 32 - 11 = 21."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Extract digits using modulus and division.",
+      "Use two variables to keep track of product and sum."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Exam Room",
+    "description": "In a college exam, there are `n` seats available in a straight line. Each seat can either be occupied or empty. You have access to a data structure that allows you to perform the following operations: 'seat' and 'leave'. The objective is to maximize the distance between seated students. When a student selects a seat, they will choose the seat that maximizes their distance from the closest student. If there are multiple seats that yield the same distance, the student will choose the seat with the lowest index. Your task is to implement this data structure.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Greedy",
+      "Binary Search"
+    ],
+    "input_format": "An integer n representing the total number of seats.",
+    "output_format": "An integer representing the index of the seat chosen or freed.",
+    "constraints": [
+      "1 <= n <= 10^9",
+      "The number of seats chosen does not exceed n."
+    ],
+    "examples": [
+      {
+        "input": "n = 5\nseat()\nseat()\nleave(0)\nseat()",
+        "output": "0\n4\n1",
+        "explanation": "Initially available seats are [0, 1, 2, 3, 4]. The first student sits at seat 0. The second student sits at seat 4 (maximizing distance). When the first student leaves, seats are [1, 2, 3] and the next student will sit at seat 1."
+      },
+      {
+        "input": "n = 10\nseat()\nseat()\nseat()\nleave(1)\nseat()",
+        "output": "0\n9\n1",
+        "explanation": "The first student sits at seat 0, the second at seat 9, then the third at seat 1. After leaving seat 1, the next student will sit at seat 1 again."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to represent the available seats efficiently.",
+      "Which data structures allow you to maintain order while allowing quick access to the next best seat?"
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Range Frequency Queries",
+    "description": "You are given an array of integers and a series of queries. Each query will specify a range `[left, right]`, and your task is to find the frequency of the most common integer in that range. If there are multiple integers with the same highest frequency, return the smallest integer among them. Implement a function to efficiently process multiple queries against the same input array.",
+    "topic": "Array",
+    "subtopic": "Frequency Counting",
+    "tags": [
+      "Array",
+      "HashMap",
+      "Queries"
+    ],
+    "input_format": "An integer array nums followed by a list of queries, where each query is represented as a tuple of two integers [left, right].",
+    "output_format": "For each query, return the integer that appears most frequently in the specified range.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "1 <= queries.length <= 10^4",
+      "0 <= left <= right < nums.length"
+    ],
+    "examples": [
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            2,
+            3,
+            3,
+            3,
+            4
+          ],
+          "queries": [
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        "output": [
+          3,
+          2,
+          3
+        ],
+        "explanation": "In range [0, 6], 3 appears 3 times, which is the most. In range [1, 5], 2 appears 2 times, which is the most. In range [2, 4], again, 3 appears 3 times."
+      },
+      {
+        "input": {
+          "nums": [
+            5,
+            5,
+            1,
+            1,
+            1,
+            2
+          ],
+          "queries": [
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              5
+            ]
+          ]
+        },
+        "output": [
+          1,
+          5,
+          1
+        ],
+        "explanation": "In range [0, 5], 1 appears 3 times. In range [0, 3], 5 appears 2 times. In range [2, 5], 1 appears 3 times."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a HashMap to count the frequency of each number.",
+      "Preprocessing the array might help in answering queries faster."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Words You Can Type",
+    "description": "You are given a string keyboard representing a keyboard layout and a string text representing a sentence you want to type. Each character in the string keyboard appears exactly once, and you can type a character if it exists in the keyboard. Your goal is to find out the maximum number of words in the text that can be fully typed using the given keyboard layout. A word is considered fully typed if all characters of the word are present in the keyboard layout.",
+    "topic": "String",
+    "subtopic": "Character Inclusion",
+    "tags": [
+      "String",
+      "Keyboard",
+      "Character Inclusion"
+    ],
+    "input_format": "A string keyboard (1 <= keyboard.length <= 26) and a string text (1 <= text.length <= 10^5) where both strings consist of lowercase English letters.",
+    "output_format": "An integer representing the maximum number of words that can be fully typed using the keyboard.",
+    "constraints": [
+      "1 <= keyboard.length <= 26",
+      "1 <= text.length <= 10^5",
+      "keyboard consists of distinct lowercase letters."
+    ],
+    "examples": [
+      {
+        "input": "keyboard = 'qwertyuiop', text = 'hello world'",
+        "output": "1",
+        "explanation": "The only word that can be fully typed is 'hello', as 'world' contains characters not in the keyboard."
+      },
+      {
+        "input": "keyboard = 'abcdefghijklmnopqrstuvwxyz', text = 'abc def ghi jkl'",
+        "output": "4",
+        "explanation": "All words can be typed since all letters are present in the keyboard."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Create a set of characters from the keyboard for quick lookup.",
+      "Split the text into words and check each word against the keyboard set."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Sort the Matrix Diagonally",
+    "description": "Given an m x n matrix, sort each diagonal in ascending order. Diagonals are defined by their starting elements in the first row and the first column. You need to return a new matrix where each diagonal of the original matrix is sorted.",
+    "topic": "Matrix",
+    "subtopic": "Sorting",
+    "tags": [
+      "Matrix",
+      "Sorting",
+      "Diagonal"
+    ],
+    "input_format": "An m x n matrix of integers.",
+    "output_format": "An m x n matrix with each diagonal sorted in ascending order.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "-10^5 <= matrix[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[3, 2, 1], [1, 2, 3], [2, 1, 3]]",
+        "output": "[[1, 1, 2], [2, 2, 3], [3, 3, 3]]",
+        "explanation": "The diagonals of the given matrix are sorted: [3], [2,1], [1,2,3], resulting in a new matrix with sorted diagonals."
+      },
+      {
+        "input": "matrix = [[4, 3], [6, 5]]",
+        "output": "[[3, 4], [5, 6]]",
+        "explanation": "The diagonals are [4], [3, 6], [5], leading to sorted diagonals in the new matrix."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to extract diagonals from the matrix.",
+      "Use a mapping from diagonal index to their values for sorting.",
+      "Remember to place sorted values back into the original positions."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Subarrays with Bounded Maximum",
+    "description": "Given an integer array nums and two integers minK and maxK, return the number of subarrays in the array such that the maximum element in the subarray is between minK and maxK (inclusive).",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Subarray"
+    ],
+    "input_format": "An integer array nums followed by two integers minK and maxK.",
+    "output_format": "An integer representing the number of valid subarrays.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= minK <= maxK <= 10^9",
+      "0 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 5, 7, 9], minK = 3, maxK = 7",
+        "output": "7",
+        "explanation": "The valid subarrays are: [3], [3, 5], [3, 5, 7], [5], [5, 7], [7], [3, 5, 7]."
+      },
+      {
+        "input": "nums = [5, 7, 1, 3, 4], minK = 2, maxK = 5",
+        "output": "8",
+        "explanation": "The valid subarrays are: [5], [5, 7], [7], [1, 3, 4], [3], [3, 4], [4], [1, 3]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the conditions for valid subarrays with respect to minK and maxK.",
+      "Try using a sliding window approach to count valid subarrays efficiently."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Subarray Sum Equals K",
+    "description": "Given an integer array nums and an integer k, return the total number of continuous subarrays whose sum equals to k.",
+    "topic": "Array",
+    "subtopic": "Subarray",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Prefix Sum"
+    ],
+    "input_format": "Two inputs: an integer array nums and an integer k.",
+    "output_format": "An integer representing the total number of continuous subarrays whose sum equals to k.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "-1000 <= nums[i] <= 1000",
+      "-10^7 <= k <= 10^7"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 1], k = 2",
+        "output": "2",
+        "explanation": "The two continuous subarrays are [1, 1] (indices 0 to 1) and [1, 1] (indices 1 to 2)."
+      },
+      {
+        "input": "nums = [1, 2, 3], k = 3",
+        "output": "2",
+        "explanation": "The continuous subarrays that sum up to 3 are [3] (index 2) and [1, 2] (indices 0 to 1)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to store the cumulative sums.",
+      "Think about how you can reduce duplicate counting using prefix sums."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Cameras",
+    "description": "You are given the root of a binary tree. You need to install cameras on the tree nodes such that every node is monitored. A camera can monitor its parent, itself, and its immediate children. The goal is to minimize the number of cameras needed to monitor all nodes in the tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Greedy"
+    ],
+    "input_format": "The input is the root node of a binary tree where each node contains a value.",
+    "output_format": "Return the minimum number of cameras needed to monitor all nodes.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 1000].",
+      "0 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [0,0,null,0,0]",
+        "output": "1",
+        "explanation": "A single camera at the root can monitor the two children and the parent."
+      },
+      {
+        "input": "root = [0,0,0,null,null,0,null,null,0]",
+        "output": "2",
+        "explanation": "Two cameras are needed: one on the left child and another on the right child of the root."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider a post-order traversal to determine if a node needs a camera.",
+      "Track the state of each node: monitored, needs camera, or has camera."
+    ],
+    "company": "Quora"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. Implement the class RandomizedSet that supports these operations in average O(1) time complexity. The class should have the following methods: \n\n- `insert(val: int) -> bool`: Inserts an item val into the set if not already present. Returns true if the item was not present, false otherwise.\n- `remove(val: int) -> bool`: Removes an item val from the set if present. Returns true if the item was present, false otherwise.\n- `getRandom() -> int`: Returns a random element from the current set of elements. The length of the set should be non-zero, and each element must be equally likely to be returned.",
+    "topic": "Data Structure",
+    "subtopic": "Randomized Set",
+    "tags": [
+      "Set",
+      "Random",
+      "Data Structure"
+    ],
+    "input_format": "N/A - Utilize the methods defined in the RandomizedSet class.",
+    "output_format": "The output is the boolean value of insert or remove operations, and an integer from getRandom.",
+    "constraints": [
+      "-2^31 <= val <= 2^31 - 1",
+      "All operations are guaranteed to be valid (i.e., for insert, val will not already exist in the set; for remove, val will exist in the set).",
+      "The random output will always be from the existing elements."
+    ],
+    "examples": [
+      {
+        "input": [
+          "RandomizedSet",
+          "insert",
+          "insert",
+          "remove",
+          "insert",
+          "getRandom"
+        ],
+        "output": [
+          null,
+          true,
+          false,
+          true,
+          false,
+          2
+        ],
+        "explanation": "Insert 1 returns true since set was empty. Insert 2 returns true, insert 1 returns false as it already exists. Remove 1 returns true since 1 is removed. Insert 2 returns false since it's already present. getRandom may return either 1 or 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map for constant time access.",
+      "Maintain an array for storing the elements for random access."
+    ],
+    "company": "Quora"
+  }
+]

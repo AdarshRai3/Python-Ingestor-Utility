@@ -1,0 +1,200 @@
+[
+  {
+    "question_id": "",
+    "title": "Find Median from Data Stream",
+    "description": "Design a data structure that supports the following operations: addNum and findMedian. Implement the MedianFinder class: - MedianFinder() initializes the MedianFinder object. - void addNum(int num) adds the integer num from the data stream to the data structure. - double findMedian() returns the median of all elements so far. The median is the value separating the higher half from the lower half of the data stream. If there is an even number of elements, the median is the average of the two middle values.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Heap",
+      "Design",
+      "Streaming Data"
+    ],
+    "input_format": "A series of integers for addNum and a call to findMedian to retrieve the median.",
+    "output_format": "A double representing the median of the current data stream.",
+    "constraints": [
+      "1 <= num <= 10^5",
+      "There will be at least one element in the data structure before calling findMedian."
+    ],
+    "examples": [
+      {
+        "input": "MedianFinder m = new MedianFinder(); m.addNum(1); m.addNum(2); m.findMedian();",
+        "output": "1.50000",
+        "explanation": "The two numbers in the data stream are 1 and 2. The median is (1+2)/2 = 1.5."
+      },
+      {
+        "input": "MedianFinder m = new MedianFinder(); m.addNum(3); m.findMedian(); m.addNum(4); m.findMedian();",
+        "output": "3.50000",
+        "explanation": "After adding 3, the median is 3. After adding 4, the numbers are 3 and 4, so the median is (3+4)/2 = 3.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two heaps to maintain the lower and upper halves.",
+      "The median can be calculated differently based on whether the count of numbers is odd or even."
+    ],
+    "company": "StackAdapt"
+  },
+  {
+    "question_id": "",
+    "title": "Snapshot Array",
+    "description": "Design a data structure that allows for taking snapshots of an array and retrieving the value of elements at the time the snapshot was taken. A snapshot of an array 'arr' at a specific moment creates a copy of the array's elements. The snapshot can be accessed using a unique identifier, and you can also modify the original array without affecting the snapshots.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Array",
+      "Design",
+      "Data Structures"
+    ],
+    "input_format": "An integer `length` represents the size of the array that will be initialized. Two types of operations can be performed: 'set' and 'snap'. `set(index, val)` modifies the value at `index` to `val`, and `snap()` returns the snapshot id of the current state.",
+    "output_format": "The output for `snap()` is an integer representing the snapshot id. You can also retrieve values using `get(snapshot_id, index)` which returns the value at `index` for the given snapshot id.",
+    "constraints": [
+      "0 <= length <= 10^5",
+      "0 <= index < length",
+      "0 <= val <= 10^9",
+      "The number of operations will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "SnapshotArray snapshotArr = new SnapshotArray(3);\nsnapshotArr.set(0, 5);\nsnapshotArr.snap();\nsnapshotArr.set(0, 6);\nsnapshotArr.get(0, 0);",
+        "output": "5",
+        "explanation": "After performing a snapshot, the value at index 0 is 5. Even though we set index 0 to 6 after the snapshot, getting the value for snapshot 0 should return 5."
+      },
+      {
+        "input": "snapshotArr.set(1, 13);\nsnapshotArr.snap();\nsnapshotArr.set(0, 7);\nsnapshotArr.set(1, 11);\nsnapshotArr.snap();\nsnapshotArr.get(0, 0);",
+        "output": "7",
+        "explanation": "The first snapshot had `set(1, 13)`, but after setting index 0 to 7, it retrieves the current value of index 0 which is now 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to efficiently store snapshots and retrieve previously saved values.",
+      "Think about the implications of modifying the array after taking a snapshot."
+    ],
+    "company": "StackAdapt"
+  },
+  {
+    "question_id": "",
+    "title": "Contiguous Array",
+    "description": "Given a binary array nums, return the maximum length of a contiguous subarray that contains an equal number of 0s and 1s. A contiguous subarray is defined as a subarray that is composed of consecutive elements of the original array.",
+    "topic": "Array",
+    "subtopic": "Hashmap",
+    "tags": [
+      "Array",
+      "Hashmap",
+      "Subarray"
+    ],
+    "input_format": "An array of integers nums, where each integer is either 0 or 1.",
+    "output_format": "An integer representing the maximum length of a contiguous subarray with equal number of 0s and 1s.",
+    "constraints": [
+      "1 <= nums.length <= 50,000",
+      "nums[i] is either 0 or 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 1, 0, 1, 0, 1]",
+        "output": "6",
+        "explanation": "The entire array consists of equal numbers of 0s and 1s, thus the length is 6."
+      },
+      {
+        "input": "nums = [0, 1, 0, 0, 1, 1, 0, 1]",
+        "output": "6",
+        "explanation": "The longest contiguous subarray with equal 0s and 1s is [0, 0, 1, 1, 0, 1] which has a length of 6."
+      },
+      {
+        "input": "nums = [1, 1, 0, 0, 1]",
+        "output": "4",
+        "explanation": "The longest contiguous subarray with equal 0s and 1s is [1, 1, 0, 0] which has a length of 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to store the cumulative count.",
+      "Consider using a single pass approach to find the maximum length."
+    ],
+    "company": "StackAdapt"
+  },
+  {
+    "question_id": "",
+    "title": "Restore IP Addresses",
+    "description": "Given a string containing only digits, return all possible valid IP address combinations that can be formed by inserting dots into the string. A valid IP address consists of four numbers (each ranging from 0 to 255) separated by dots. Each number cannot exceed three digits and cannot have leading zeros (except for the number '0' itself).",
+    "topic": "Backtracking",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Depth-First Search"
+    ],
+    "input_format": "A string s of digits (1 <= s.length <= 20).",
+    "output_format": "A list of valid IP address strings.",
+    "constraints": [
+      "s consists of only digits.",
+      "1 <= s.length <= 20."
+    ],
+    "examples": [
+      {
+        "input": "s = '25525511135'",
+        "output": "['255.255.11.135', '255.255.111.35']",
+        "explanation": "The valid IP addresses formed are '255.255.11.135' and '255.255.111.35'."
+      },
+      {
+        "input": "s = '0000'",
+        "output": "['0.0.0.0']",
+        "explanation": "The only valid IP address is '0.0.0.0'."
+      },
+      {
+        "input": "s = '101023'",
+        "output": "['101.0.2.3', '101.0.23', '10.10.2.3', '10.102.3']",
+        "explanation": "The valid IP addresses formed are '101.0.2.3', '101.0.23', '10.10.2.3', and '10.102.3'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to explore all possible placements of dots.",
+      "Remember to check the validity of each segment of the IP address.",
+      "Keep track of how many segments you have formed."
+    ],
+    "company": "StackAdapt"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Dice Rolls With Target Sum",
+    "description": "You have a standard 6-sided dice. You roll the dice 'n' times, and you want to know how many different ways you can obtain a sum of 'target' from those rolls. Each roll results in a number between 1 and 6 (inclusive). Your task is to calculate the number of distinct combinations of dice rolls that can yield the target sum. Since the result can be large, return it modulo 10^9 + 7.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorial Problems",
+    "tags": [
+      "Dynamic Programming",
+      "Combinatorial",
+      "Modular Arithmetic"
+    ],
+    "input_format": "Two integers, n and target, where 1 <= n <= 30 and 1 <= target <= 1000.",
+    "output_format": "An integer representing the number of distinct ways to achieve the target sum via dice rolls, modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= n <= 30",
+      "1 <= target <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "n = 1, target = 3",
+        "output": "1",
+        "explanation": "There is only one way to roll a sum of 3 with one die, which is to roll a 3."
+      },
+      {
+        "input": "n = 2, target = 7",
+        "output": "6",
+        "explanation": "The possible combinations are (1, 6), (2, 5), (3, 4), (4, 3), (5, 2), (6, 1)."
+      },
+      {
+        "input": "n = 3, target = 8",
+        "output": "21",
+        "explanation": "Various combinations such as (2, 2, 4), (1, 3, 4), etc. total to 21 ways."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to build up to the target sum.",
+      "Keep track of the number of ways to achieve each possible sum after each roll."
+    ],
+    "company": "StackAdapt"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "question_id": "",
+    "title": "User Activity for the Past 30 Days",
+    "description": "You are given a list of user activities where each activity corresponds to a date and an activity type (like 'login', 'purchase', etc.). Your task is to determine the count of each activity type performed by the user in the last 30 days. The input will include a list of activities, each represented as a tuple containing the date and activity type. Ensure that you only consider activities that are valid and within the last 30 days from the current date.",
+    "topic": "Data Processing",
+    "subtopic": "Date Handling",
+    "tags": [
+      "Data Processing",
+      "Date Handling",
+      "Counting"
+    ],
+    "input_format": "A list of tuples, where each tuple contains a date string (YYYY-MM-DD) and an activity type string.",
+    "output_format": "A dictionary where keys are activity types and values are the counts of each activity type.",
+    "constraints": [
+      "1 <= activities.length <= 10^5",
+      "Each date is a valid date string in the format YYYY-MM-DD.",
+      "The activity type is a non-empty string."
+    ],
+    "examples": [
+      {
+        "input": "[('2023-09-01', 'login'), ('2023-09-05', 'purchase'), ('2023-09-01', 'login')]",
+        "output": "{'login': 2, 'purchase': 1}",
+        "explanation": "In the last 30 days, there are two 'login' activities and one 'purchase' activity."
+      },
+      {
+        "input": "[('2023-09-15', 'login'), ('2023-09-16', 'logout'), ('2023-09-20', 'purchase')]",
+        "output": "{'login': 1, 'logout': 1, 'purchase': 1}",
+        "explanation": "All activities are within the last 30 days, and each activity type has been performed once."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You can use Python's datetime library to handle date comparisons.",
+      "Use a dictionary to keep track of counts of each activity type."
+    ],
+    "company": "Zoom"
+  },
+  {
+    "question_id": "",
+    "title": "User Activity for the Past 30 Days II",
+    "description": "You are given a list of user activity logs where each log indicates the day number (from 1 to 30) that a user was active. Write a function to determine the total number of days the user was active, and identify if the user was active on a continuous streak of days. A continuous streak is defined as having consecutive days of activity.",
+    "topic": "Array",
+    "subtopic": "Counting and Streaks",
+    "tags": [
+      "Array",
+      "Counting",
+      "Streaks"
+    ],
+    "input_format": "An array of integers representing the days (1-30) that the user was active.",
+    "output_format": "An object containing the total number of active days and a boolean indicating if there was a continuous streak.",
+    "constraints": [
+      "1 <= activity.length <= 30",
+      "1 <= activity[i] <= 30",
+      "activity contains unique values"
+    ],
+    "examples": [
+      {
+        "input": "activity = [1, 2, 3, 5, 6, 8, 9]",
+        "output": "{total_days: 7, has_streak: true}",
+        "explanation": "The user was active for 7 days. The streak includes days 1, 2, and 3."
+      },
+      {
+        "input": "activity = [1, 3, 4, 5, 10, 11]",
+        "output": "{total_days: 6, has_streak: false}",
+        "explanation": "The user was active for 6 days. There\u2019s no continuous streak."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a Set for easy lookups.",
+      "Sort the array to determine streaks."
+    ],
+    "company": "Zoom"
+  },
+  {
+    "question_id": "",
+    "title": "Container With Most Water",
+    "description": "You are given an integer array height where height[i] represents the height of a vertical line at index i. Two lines form a container, and the amount of water it can hold is determined by the shorter line. Your goal is to find the maximum amount of water that can be contained between any two lines.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Geometry"
+    ],
+    "input_format": "An integer array height of length n.",
+    "output_format": "An integer representing the maximum area of water that can be contained.",
+    "constraints": [
+      "2 <= height.length <= 10^5",
+      "0 <= height[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "height = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The lines at index 1 and index 8 (height 8 and 7) form a container with a width of 7 and a height of 7. Area = 7 * 7 = 49."
+      },
+      {
+        "input": "height = [1,1]",
+        "output": "1",
+        "explanation": "The only container can be formed by the two lines at index 0 and index 1. The area is 1 * 1 = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two pointers to keep track of the left and right lines.",
+      "Move the pointer pointing to the shorter line towards the other pointer."
+    ],
+    "company": "Zoom"
+  }
+]

@@ -1,0 +1,1794 @@
+[
+  {
+    "question_id": "",
+    "title": "String Compression III",
+    "description": "You are given a string consisting of lowercase alphabetical characters. Your task is to compress the string in such a way that each character is followed by its count. If the compressed string is not shorter than the original string, return the original string. The final output should be the compressed string or the original string, depending on which is shorter.",
+    "topic": "String",
+    "subtopic": "Compression",
+    "tags": [
+      "String",
+      "Compression",
+      "Algorithm"
+    ],
+    "input_format": "A single string s consisting only of lowercase alphabetical characters.",
+    "output_format": "A string that represents the compressed version or the original string, depending on which is shorter.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "aabbcc",
+        "output": "a2b2c2",
+        "explanation": "The compressed version is 'a2b2c2', which is shorter than 'aabbcc'."
+      },
+      {
+        "input": "abc",
+        "output": "abc",
+        "explanation": "The compressed version 'a1b1c1' is not shorter than 'abc', so we return the original string."
+      },
+      {
+        "input": "aaabbbbcc",
+        "output": "a3b4c2",
+        "explanation": "The compressed version 'a3b4c2' is shorter than 'aaabbbbcc'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a loop to count consecutive characters.",
+      "Think about using a StringBuilder for efficient string concatenation."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Ones",
+    "description": "You are given a binary matrix of size m x n consisting of only 0s and 1s. Your task is to find the maximum number of 1s you can get in the matrix after performing a series of operations. An operation consists of flipping a row, which means converting all 0s in that row to 1s and all 1s to 0s. You can perform this operation on any row any number of times. Determine the maximum number of 1s that can be obtained in the matrix.",
+    "topic": "Matrix",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Matrix",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "A binary matrix represented as a list of lists, where each inner list contains integers 0 or 1.",
+    "output_format": "An integer representing the maximum number of 1s obtainable after any number of row flips.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "matrix[i][j] is either 0 or 1"
+    ],
+    "examples": [
+      {
+        "input": "[[0,0,1],[1,0,1],[0,1,0]]",
+        "output": "5",
+        "explanation": "Flipping the first and last rows will result in the matrix [[1,1,0],[1,0,1],[1,1,1]], which has a maximum of 5 ones."
+      },
+      {
+        "input": "[[1,0,0],[0,1,1],[0,0,1]]",
+        "output": "6",
+        "explanation": "Flipping the first row results in [[0,1,1],[0,1,1],[0,0,1]], leading to a maximum of 6 ones."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the impact of flipping each row on the overall count of ones.",
+      "Analyze the configuration of rows to identify overlapping values.",
+      "Use a greedy strategy to maximize the count after row transformations."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Linked List",
+    "description": "Given the head of a singly linked list, reverse the list and return the reversed list's head.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Pointers"
+    ],
+    "input_format": "A pointer to the head of the singly linked list.",
+    "output_format": "A pointer to the head of the reversed linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000].",
+      "-5000 <= Node.val <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5]",
+        "output": "[5, 4, 3, 2, 1]",
+        "explanation": "Reversing the list, 1 -> 2 -> 3 -> 4 -> 5 becomes 5 -> 4 -> 3 -> 2 -> 1."
+      },
+      {
+        "input": "head = [1, 2]",
+        "output": "[2, 1]",
+        "explanation": "Reversing the list, 1 -> 2 becomes 2 -> 1."
+      },
+      {
+        "input": "head = []",
+        "output": "[]",
+        "explanation": "An empty list remains empty when reversed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try using three pointers to reverse a linked list.",
+      "Think about how to iterate through the list while adjusting the pointers.",
+      "Consider what happens to the head pointer during the reversal."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Nth Node From End of List",
+    "description": "Given a linked list, remove the N-th node from the end of the list and return its head. The list can be modified in-place, and you must do it in a single pass.",
+    "topic": "Linked List",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Linked List",
+      "Two Pointers",
+      "In-place"
+    ],
+    "input_format": "A head node of a singly linked list and an integer N.",
+    "output_format": "The head node of the modified linked list.",
+    "constraints": [
+      "The number of nodes in the linked list is in the range [1, 30].",
+      "1 <= N <= the number of nodes in the list."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], N = 2",
+        "output": "[1, 2, 3, 5]",
+        "explanation": "The N-th node from the end is 4. After removing it, the list becomes [1, 2, 3, 5]."
+      },
+      {
+        "input": "head = [1], N = 1",
+        "output": "[]",
+        "explanation": "The only node is removed, resulting in an empty list."
+      },
+      {
+        "input": "head = [1, 2], N = 1",
+        "output": "[1]",
+        "explanation": "The last node (2) is removed, leaving the list as [1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use two pointers to find the N-th node from the end.",
+      "Consider edge cases where N is equal to the length of the list.",
+      "Adjust pointers carefully to maintain the list structure."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Bits",
+    "description": "Given a 32-bit unsigned integer, reverse its bits and return the resulting integer. For example, if the input is 00000010100101000001111010011100, the output should be 00111001011110000010100000000000, which corresponds to the integer 964176192.",
+    "topic": "Bit Manipulation",
+    "subtopic": "Reversing Bits",
+    "tags": [
+      "Bit Manipulation",
+      "Math",
+      "Integer"
+    ],
+    "input_format": "A single 32-bit unsigned integer n.",
+    "output_format": "A 32-bit unsigned integer representing the reversed bits.",
+    "constraints": [
+      "0 <= n <= 2^32 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 43261596",
+        "output": "964176192",
+        "explanation": "The binary representation of 43261596 is 00000010100101000001111010011100. Reversing the bits gives 00111001011110000010100000000000, which equals 964176192."
+      },
+      {
+        "input": "n = 4294967293",
+        "output": "3221225471",
+        "explanation": "The binary representation of 4294967293 is 11111111111111111111111111111101. Reversing the bits gives 10111111111111111111111111111111, which equals 3221225471."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how you can manipulate bits using bitwise operators.",
+      "You can reverse the bits by iterating and using shifts."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Middle of the Linked List",
+    "description": "Given the head of a singly linked list, return the middle node of the linked list. If there are two middle nodes, return the second middle node.",
+    "topic": "Linked List",
+    "subtopic": "Traversal",
+    "tags": [
+      "Linked List",
+      "Two Pointers",
+      "Single Pass"
+    ],
+    "input_format": "A singly linked list represented by the head node.",
+    "output_format": "The middle node of the linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [1, 100]",
+      "1 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5]",
+        "output": "[3, 4, 5]",
+        "explanation": "The middle node is 3, and the linked list from the middle node to the end is [3, 4, 5]."
+      },
+      {
+        "input": "head = [1, 2, 3, 4, 5, 6]",
+        "output": "[4, 5, 6]",
+        "explanation": "The middle nodes are 3 and 4. The second middle node is 4, and the linked list from this node is [4, 5, 6]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers: one moving twice as fast as the other.",
+      "When the fast pointer reaches the end, the slow pointer will be at the middle."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Number",
+    "description": "Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward. For example, 121 is a palindrome while 123 is not.",
+    "topic": "Math",
+    "subtopic": "Number Manipulation",
+    "tags": [
+      "Math",
+      "Palindrome",
+      "Integer"
+    ],
+    "input_format": "An integer x.",
+    "output_format": "Return true if x is a palindrome integer, otherwise return false.",
+    "constraints": [
+      "-2^31 <= x <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "121",
+        "output": "true",
+        "explanation": "121 reads the same backward as forward."
+      },
+      {
+        "input": "-121",
+        "output": "false",
+        "explanation": "-121 reads 121- which is not the same."
+      },
+      {
+        "input": "10",
+        "output": "false",
+        "explanation": "10 reads the same forward as backward."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider converting the integer to a string.",
+      "Think about how you can compare the start and end of the string."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Majority Element",
+    "description": "Given an array of size n, find the majority element. The majority element is the element that appears more than n/2 times. You may assume that the majority element always exists in the array.",
+    "topic": "Array",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the majority element.",
+    "constraints": [
+      "1 <= nums.length <= 5 * 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 3]",
+        "output": "3",
+        "explanation": "The element 3 appears 2 times which is more than 3/2 times."
+      },
+      {
+        "input": "nums = [2, 2, 1, 1, 1, 2, 2]",
+        "output": "2",
+        "explanation": "The element 2 appears 4 times which is more than 7/2 times."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hash map to count occurrences.",
+      "If an element is a majority, you should be able to find it via a counting technique."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a size of m + n, where m is the number of elements initialized in nums1 and n is the number of elements in nums2. Note that nums1 and nums2 are sorted in non-decreasing order.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Merge"
+    ],
+    "input_format": "Two arrays nums1 and nums2 where nums1 has a size of m + n and contains m initialized elements, and nums2 contains n initialized elements.",
+    "output_format": "The merged sorted array stored in nums1.",
+    "constraints": [
+      "0 <= m, n <= 200",
+      "1 <= m + n <= 200",
+      "-10^9 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [2, 5, 6], n = 3",
+        "output": "[1, 2, 2, 3, 5, 6]",
+        "explanation": "After merging nums2 into nums1, the sorted array is [1, 2, 2, 3, 5, 6]."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "Since nums2 is empty, nums1 remains the same: [1]."
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "explanation": "The elements of nums2 are merged into nums1, resulting in [1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to keep track of the positions in nums1 and nums2.",
+      "Start merging from the end of both arrays to avoid overwriting elements in nums1."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers, return the indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "A list of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9",
+      "Only one valid answer exists."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "Because nums[0] + nums[1] = 2 + 7 = 9, we return [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "Because nums[1] + nums[2] = 2 + 4 = 6, we return [1, 2]."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "Because nums[0] + nums[1] = 3 + 3 = 6, we return [0, 1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hash map to store the indices of the numbers you've seen."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is considered valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of parentheses.",
+    "output_format": "A boolean value indicating whether the parentheses are valid.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only '()[]{}'"
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are properly closed."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "All types of brackets are properly closed."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The brackets are not closed in the correct order."
+      },
+      {
+        "input": "s = '([)]'",
+        "output": "false",
+        "explanation": "The brackets are closed in the wrong order."
+      },
+      {
+        "input": "s = '{[]}'",
+        "output": "true",
+        "explanation": "The brackets are properly nested and closed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Pop off the stack when you encounter a closing bracket that matches the top of the stack.",
+      "At the end, check if the stack is empty."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "DFS/BFS",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid represented by a list of lists of characters where each character is '1' or '0'.",
+    "output_format": "An integer representing the number of islands in the grid.",
+    "constraints": [
+      "1 <= grid.length <= 300",
+      "1 <= grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [['1','1','1','1','0'], ['1','1','0','1','0'], ['1','1','0','0','0'], ['0','0','0','0','0']]",
+        "output": "1",
+        "explanation": "There is one island surrounded by water."
+      },
+      {
+        "input": "grid = [['1','1','0','0','0'], ['1','1','0','0','0'], ['0','0','1','0','0'], ['0','0','0','1','1']]",
+        "output": "3",
+        "explanation": "There are three islands in the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using DFS or BFS to traverse the grid.",
+      "Mark the visited land cells to avoid counting them multiple times.",
+      "Check adjacent cells to find connected lands."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Queue using Stacks",
+    "description": "Design a queue that supports all the following operations: push, pop, peek, and empty. Implement the queue using two stacks. Each stack can only support the operations of push and pop. The operations should be implemented such that they are efficient.",
+    "topic": "Data Structures",
+    "subtopic": "Stack and Queue",
+    "tags": [
+      "Stack",
+      "Queue",
+      "Data Structures"
+    ],
+    "input_format": "A series of operations represented by strings: 'push', 'pop', 'peek', and 'empty'.",
+    "output_format": "For 'pop' and 'peek', return the elements as integers. For 'empty', return a boolean.",
+    "constraints": [
+      "The number of operations is at most 10000.",
+      "Each 'push' operation will be followed by an integer to enqueue."
+    ],
+    "examples": [
+      {
+        "input": "['push', 1, 'push', 2, 'peek', 'pop', 'empty']",
+        "output": "[2, 2, false]",
+        "explanation": "First, we push 1 and 2 into the queue. Peek returns 2, pop removes it, and empty checks if the queue is empty."
+      },
+      {
+        "input": "['push', 3, 'push', 4, 'pop', 'empty', 'pop', 'empty']",
+        "output": "[3, false, 4, true]",
+        "explanation": "Push 3 and 4, pop returns 3, empty returns false, then pop returns 4, and finally, empty returns true."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two stacks to implement the queue operations.",
+      "Reverse the order of elements during the transfer process between stacks."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) Cache. It should support the following operations: get and put.\n\nThe get() method should return the value of the key if the key exists in the cache, otherwise return -1.\n\nThe put() method should insert or update the value of the key. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structure",
+    "subtopic": "Cache",
+    "tags": [
+      "Data Structure",
+      "Cache",
+      "Design"
+    ],
+    "input_format": "The constructor of the LRUCache class takes an integer capacity as an argument. The get method takes the key of the item to retrieve, and the put method takes a key and value argument.",
+    "output_format": "The output for get should be the value of the key, and for put, there is no output.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10000",
+      "0 <= value <= 10000",
+      "All keys will be unique."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache(2); lruCache.put(1, 1); lruCache.put(2, 2); lruCache.get(1); lruCache.put(3, 3); lruCache.get(2); lruCache.put(4, 4); lruCache.get(1); lruCache.get(3); lruCache.get(4);",
+        "output": "[1,-1,4,3]",
+        "explanation": "The sequence of operations demonstrates the use of the cache. The cache evicts the least recently used key when the capacity is reached."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a doubly linked list to keep track of the order of usage.",
+      "A hashmap can help you quickly access nodes in the doubly linked list."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Climbing Stairs",
+    "description": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "topic": "Dynamic Programming",
+    "subtopic": "Fibonacci Sequence",
+    "tags": [
+      "Dynamic Programming",
+      "Recursion",
+      "Fibonacci"
+    ],
+    "input_format": "An integer n, the total number of steps in the staircase.",
+    "output_format": "An integer representing the number of distinct ways to climb to the top.",
+    "constraints": [
+      "1 <= n <= 45"
+    ],
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "There are two ways to climb to the top: (1, 1) and (2)."
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "explanation": "There are three ways to climb to the top: (1, 1, 1), (1, 2), and (2, 1)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using the Fibonacci sequence to solve this problem.",
+      "You can break down the problem into smaller subproblems."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Image",
+    "description": "You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise) in-place. You need to do this without using any extra space, meaning you can only use a constant amount of extra space.",
+    "topic": "Matrix",
+    "subtopic": "In-place Transformation",
+    "tags": [
+      "Matrix",
+      "In-place",
+      "Transformation"
+    ],
+    "input_format": "A 2D array of integers representing the n x n matrix.",
+    "output_format": "The same matrix rotated 90 degrees clockwise.",
+    "constraints": [
+      "1 <= n <= 20",
+      "0 <= matrix[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1,2,3],[4,5,6],[7,8,9]]",
+        "output": "[[7,4,1],[8,5,2],[9,6,3]]",
+        "explanation": "The original matrix is: [[1,2,3],[4,5,6],[7,8,9]]. After rotating 90 degrees clockwise, the new matrix is: [[7,4,1],[8,5,2],[9,6,3]]."
+      },
+      {
+        "input": "matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]",
+        "output": "[[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]",
+        "explanation": "After rotating the matrix by 90 degrees clockwise, it transforms to: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to consider how to swap elements in layers.",
+      "Use matrix[i][j] positioning for mapping the new positions."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Swap Nodes in Pairs",
+    "description": "Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the nodes, only nodes themselves may be changed.",
+    "topic": "Linked List",
+    "subtopic": "Swapping Nodes",
+    "tags": [
+      "Linked List",
+      "Two Pointers",
+      "Recursion"
+    ],
+    "input_format": "The input consists of a singly linked list represented as the head node.",
+    "output_format": "Return the head of the modified linked list after swapping every two adjacent nodes.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 100].",
+      "0 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "head = 1 -> 2 -> 3 -> 4",
+        "output": "2 -> 1 -> 4 -> 3",
+        "explanation": "Swapping nodes in pairs gives us 2 -> 1 and 4 -> 3."
+      },
+      {
+        "input": "head = 1 -> 2 -> 3",
+        "output": "2 -> 1 -> 3",
+        "explanation": "The nodes 1 and 2 are swapped, the last node 3 remains as it is."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dummy node to simplify your code.",
+      "Make sure to keep track of the previous and current nodes."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Is Subsequence",
+    "description": "Given two strings s and t, determine if s is a subsequence of t. A string s is a subsequence of t if you can remove some characters from t such that the remaining characters are exactly the characters in s, in the same order. For example, if s = \"abc\" and t = \"ahbgdc\", you can remove the characters \"h\", \"g\", and \"d\" from t to get \"abc\".",
+    "topic": "String",
+    "subtopic": "Subsequence",
+    "tags": [
+      "String",
+      "Two Pointers",
+      "Subsequence"
+    ],
+    "input_format": "Two strings, s and t, where 0 <= s.length <= 100 and 0 <= t.length <= 10^4.",
+    "output_format": "A boolean value indicating whether s is a subsequence of t.",
+    "constraints": [
+      "0 <= s.length <= 100",
+      "0 <= t.length <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "s = \"abc\", t = \"ahbgdc\"",
+        "output": "true",
+        "explanation": "You can remove 'h', 'g', and 'd' from t to get 'abc'."
+      },
+      {
+        "input": "s = \"axc\", t = \"ahbgdc\"",
+        "output": "false",
+        "explanation": "It's impossible to remove characters from t to get 'axc'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to track the characters in s and t.",
+      "If you reach the end of s, then it is a subsequence."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Rectangle Overlap",
+    "description": "Given two axis-aligned rectangles, determine if they overlap. Each rectangle is defined by its bottom-left and top-right corners. A rectangle is represented by four integers (x1, y1, x2, y2), where (x1, y1) is the bottom-left corner and (x2, y2) is the top-right corner. If the rectangles overlap, return true; otherwise, return false.",
+    "topic": "Geometry",
+    "subtopic": "Rectangles",
+    "tags": [
+      "Geometry",
+      "Rectangle",
+      "Overlap"
+    ],
+    "input_format": "Two rectangles are provided as arrays, rect1 and rect2, where rect1 = [x1, y1, x2, y2] and rect2 = [x3, y3, x4, y4].",
+    "output_format": "A boolean value indicating whether the two rectangles overlap.",
+    "constraints": [
+      "-10^4 <= x1 < x2 <= 10^4",
+      "-10^4 <= y1 < y2 <= 10^4",
+      "-10^4 <= x3 < x4 <= 10^4",
+      "-10^4 <= y3 < y4 <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "rect1 = [0, 0, 2, 2], rect2 = [1, 1, 3, 3]",
+        "output": "true",
+        "explanation": "The two rectangles overlap."
+      },
+      {
+        "input": "rect1 = [0, 0, 1, 1], rect2 = [1, 0, 2, 1]",
+        "output": "false",
+        "explanation": "The two rectangles do not overlap."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "To check for overlap, compare the positions of the rectangles."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Permutations",
+    "description": "Given an array of distinct integers, return all possible permutations of the array. The order of the permutations does not matter, but each permutation should be unique. You can return the answer in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Permutations",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "Permutations"
+    ],
+    "input_format": "An integer array nums of distinct integers.",
+    "output_format": "A list of all possible permutations, where each permutation is represented as a list of integers.",
+    "constraints": [
+      "1 <= nums.length <= 6",
+      "-10 <= nums[i] <= 10",
+      "All integers in nums are distinct."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]",
+        "explanation": "The permutations of the array [1, 2, 3] are all possible ways to arrange the numbers."
+      },
+      {
+        "input": "nums = [0, 1]",
+        "output": "[[0,1],[1,0]]",
+        "explanation": "The only two permutations of the array [0, 1] are [[0, 1], [1, 0]]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use backtracking to explore all arrangements.",
+      "Keep track of which numbers are used to avoid repeats in the current permutation."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Power of Four",
+    "description": "Given an integer n, determine whether it is a power of four. An integer n is a power of four if there exists an integer x such that n == 4^x. An integer x is considered valid if it is a non-negative integer.",
+    "topic": "Math",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Math",
+      "Bit Manipulation",
+      "Power of Numbers"
+    ],
+    "input_format": "An integer n.",
+    "output_format": "A boolean value indicating whether n is a power of four.",
+    "constraints": [
+      "-2^31 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 16",
+        "output": "true",
+        "explanation": "16 is 4^2, so it is a power of four."
+      },
+      {
+        "input": "n = 5",
+        "output": "false",
+        "explanation": "5 is not a power of four."
+      },
+      {
+        "input": "n = 1",
+        "output": "true",
+        "explanation": "1 is 4^0, so it is a power of four."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check if n is greater than 0 and see if log base 4 of n yields an integer."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given a linked list, reverse the nodes of the list k at a time and return the modified list. If the number of nodes is not a multiple of k, then left-out nodes in the end should remain as they are. You may not alter the values in the nodes, only nodes themselves may be changed.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Two Pointers"
+    ],
+    "input_format": "The input consists of a linked list represented by its head and a positive integer k.",
+    "output_format": "The head of the new linked list after reversing the nodes in k-group.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000].",
+      "0 <= Node.val <= 1000",
+      "1 <= k <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[2, 1, 4, 3, 5]",
+        "explanation": "The first two nodes (1 and 2) are reversed, resulting in [2, 1]. The next two nodes (3 and 4) are also reversed, giving [4, 3], and since there is only one node left (5), it remains [5]."
+      },
+      {
+        "input": "head = [1, 2, 3], k = 3",
+        "output": "[3, 2, 1]",
+        "explanation": "All three nodes are reversed, resulting in [3, 2, 1]."
+      },
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 3",
+        "output": "[3, 2, 1, 4, 5]",
+        "explanation": "The first three nodes (1, 2, 3) are reversed, resulting in [3, 2, 1]. The remaining nodes (4 and 5) are left unchanged."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to connect the reversed parts to the rest of the list.",
+      "Use a dummy node to simplify the edge cases.",
+      "Think about how to manage the pointers to avoid losing references to nodes."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Find Winner on a Tic Tac Toe Game",
+    "description": "Design a function that determines the winner of a Tic Tac Toe game. The game is played on a 3x3 grid and can be won by either player 'X' or 'O'. If there is no winner, return 'Draw'. The inputs are the moves made by both players in the order they were played.",
+    "topic": "Game Theory",
+    "subtopic": "Tic Tac Toe",
+    "tags": [
+      "Game",
+      "Simulation",
+      "Tic Tac Toe"
+    ],
+    "input_format": "A list of strings representing the moves made by both players in the order they are played. The moves are of the form 'X' or 'O'.",
+    "output_format": "A string that indicates the winner of the game ('X', 'O', or 'Draw').",
+    "constraints": [
+      "The total number of moves will not exceed 9.",
+      "The moves will alternate between players, starting with 'X'.",
+      "Input will contain only 'X' and 'O'."
+    ],
+    "examples": [
+      {
+        "input": "moves = ['X', 'O', 'X', 'O', 'X']",
+        "output": "X",
+        "explanation": "Player X has placed three in a row vertically on the left column."
+      },
+      {
+        "input": "moves = ['X', 'O', 'X', 'O', 'O', 'O']",
+        "output": "O",
+        "explanation": "Player O has placed three in a row horizontally on the bottom row."
+      },
+      {
+        "input": "moves = ['X', 'O', 'X', 'O', 'X', 'O']",
+        "output": "Draw",
+        "explanation": "The grid is fully occupied without any winner."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check all winning combinations after each move.",
+      "Maintain a count of moves to detect a draw."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule II",
+    "description": "There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. Some courses may have prerequisites, which means you must take a particular course before you can take another. You have to find an order in which you can take all courses. If it is impossible to finish all courses, return an empty array. Your task is to implement the function `findOrder(numCourses: int, prerequisites: List[List[int]]) -> List[int]`, which returns the ordering of courses you should take.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "An integer numCourses and a list of prerequisite pairs.",
+    "output_format": "A list of integers representing the course order.",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2",
+      "0 <= prerequisites[i][0], prerequisites[i][1] < numCourses"
+    ],
+    "examples": [
+      {
+        "input": "numCourses = 4, prerequisites = [[2,0],[1,0],[3,1],[3,2]]",
+        "output": "[0,1,2,3]",
+        "explanation": "You can take courses in the order of 0 -> 1 -> 2 -> 3. Course 3 has prerequisites of courses 1 and 2."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "[]",
+        "explanation": "It is not possible to finish all courses due to circular dependency."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a graph to represent prerequisites and perform a topological sort.",
+      "Keep track of the number of prerequisites for each course.",
+      "Use a queue to manage courses with no remaining prerequisites."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A string s consisting of uppercase and lowercase letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of printable ASCII characters"
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The answer is \"abc\", with the length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The answer is \"b\", with the length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The answer is \"wke\", with the length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window approach to check for repeating characters.",
+      "A HashMap can help track the index of characters."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "First Unique Character in a String",
+    "description": "Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.",
+    "topic": "String",
+    "subtopic": "Character Counting",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Counting"
+    ],
+    "input_format": "A string s consisting of lowercase English letters.",
+    "output_format": "An integer representing the index of the first unique character, or -1 if it doesn't exist.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'leetcode'",
+        "output": "0",
+        "explanation": "The first non-repeating character is 'l', which is at index 0."
+      },
+      {
+        "input": "s = 'loveleetcode'",
+        "output": "2",
+        "explanation": "The first non-repeating character is 'v', which is at index 2."
+      },
+      {
+        "input": "s = 'aabb'",
+        "output": "-1",
+        "explanation": "There are no non-repeating characters."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash table to count the occurrences of each character.",
+      "Iterate through the string again to find the first character with a count of 1."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Design Circular Queue",
+    "description": "Implement a circular queue data structure that supports the following operations: enqueue, dequeue, front, rear, isEmpty, and isFull. Your implementation should be optimized for efficient time complexity.",
+    "topic": "Data Structure",
+    "subtopic": "Queue",
+    "tags": [
+      "Queue",
+      "Circular Queue",
+      "Data Structure"
+    ],
+    "input_format": "A predetermined size of the queue and a series of commands ('enqueue', 'dequeue', 'front', 'rear', 'isEmpty', 'isFull') with associated values for enqueue.",
+    "output_format": "The output should consist of the results of the commands executed in sequence, specifically for 'front', 'rear', 'isEmpty', and 'isFull'.",
+    "constraints": [
+      "1 <= size <= 1000",
+      "The commands will not exceed 10000 in total."
+    ],
+    "examples": [
+      {
+        "input": "size = 3, commands = [['enqueue', 1], ['enqueue', 2], ['enqueue', 3], ['dequeue'], ['front'], ['rear'], ['isEmpty'], ['isFull']]",
+        "output": "[2, 3, false, true]",
+        "explanation": "After enqueuing 1, 2, and 3, dequeuing removes 1. The front now shows 2 and the rear shows 3. The queue is not empty but is full."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a fixed-size array to implement the queue.",
+      "Keep track of the front and rear indices."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Single Number",
+    "description": "Given a non-empty array of integers, every element appears twice except for one. Find that single one.",
+    "topic": "Array",
+    "subtopic": "Unique Elements",
+    "tags": [
+      "Array",
+      "Bit Manipulation",
+      "Hash Map"
+    ],
+    "input_format": "An array of integers nums where each integer appears twice except for one.",
+    "output_format": "An integer that appears only once in the array.",
+    "constraints": [
+      "1 <= nums.length <= 3 * 10^4",
+      "-3 * 10^4 <= nums[i] <= 3 * 10^4",
+      "It is guaranteed that the result is unique."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 2, 1]",
+        "output": "1",
+        "explanation": "The number 1 appears once while 2 appears twice."
+      },
+      {
+        "input": "nums = [4, 1, 2, 1, 2]",
+        "output": "4",
+        "explanation": "The number 4 appears once while 1 and 2 appear twice."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using the XOR bitwise operator.",
+      "Each number that appears twice will cancel itself out."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Linked List Cycle",
+    "description": "Given a linked list, determine if it has a cycle in it. A cycle is defined as a situation where a node in the list points back to a previous node in the list. You must solve this problem using O(1) space complexity.",
+    "topic": "Linked List",
+    "subtopic": "Cycle Detection",
+    "tags": [
+      "Linked List",
+      "Cycle",
+      "Pointer"
+    ],
+    "input_format": "The input contains the head of a linked list.",
+    "output_format": "Return true if there is a cycle in the linked list; otherwise, return false.",
+    "constraints": [
+      "The number of nodes in the linked list is in the range [0, 10^4].",
+      "The values of the nodes can be any integer.",
+      "If there is a cycle, it occurs in the range of the list's nodes."
+    ],
+    "examples": [
+      {
+        "input": "head = [3,2,0,-4], pos = 1",
+        "output": "true",
+        "explanation": "The linked list has a cycle where node with value -4 points back to node with value 2."
+      },
+      {
+        "input": "head = [1,2], pos = 0",
+        "output": "true",
+        "explanation": "The linked list has a cycle where node with value 2 points back to node with value 1."
+      },
+      {
+        "input": "head = [1], pos = -1",
+        "output": "false",
+        "explanation": "The linked list has no cycle since it only contains one node."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to traverse the list: a slow pointer and a fast pointer."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "String to Integer (atoi)",
+    "description": "Implement the myAtoi(string s) function that converts a string to a 32-bit signed integer (similar to C/C++'s atoi function). The function should ignore any leading whitespace, handle optional leading '+' or '-' signs, and stop converting at the first non-digit character. If the resulting integer overflows, return 2^31 - 1 (for positive overflow) or -2^31 (for negative overflow).",
+    "topic": "String Manipulation",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Parsing",
+      "Integer Conversion"
+    ],
+    "input_format": "A string s that may contain leading whitespaces and numeric characters.",
+    "output_format": "An integer representing the converted value based on the rules specified.",
+    "constraints": [
+      "1 <= s.length <= 200",
+      "s consists of English letters, digits, and whitespace characters."
+    ],
+    "examples": [
+      {
+        "input": "s = '   -42'",
+        "output": "-42",
+        "explanation": "Ignoring leading whitespaces, the valid integer is -42."
+      },
+      {
+        "input": "s = '4193 with words'",
+        "output": "4193",
+        "explanation": "Ignoring everything after '4193', the valid integer is 4193."
+      },
+      {
+        "input": "s = 'words and 987'",
+        "output": "0",
+        "explanation": "No valid conversion can be performed, therefore the result is 0."
+      },
+      {
+        "input": "s = '-91283472332'",
+        "output": "-2147483648",
+        "explanation": "The value exceeds the range of a 32-bit signed integer, so return -2147483648."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sign variable to track '+' or '-' signs.",
+      "Keep an integer to accumulate the number as you parse the string.",
+      "Handle overflow by comparing against the limits for 32-bit signed integers."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Depth of Binary Tree",
+    "description": "Given a binary tree, find its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.",
+    "topic": "Tree",
+    "subtopic": "Depth-first Search",
+    "tags": [
+      "Binary Tree",
+      "Depth",
+      "DFS"
+    ],
+    "input_format": "The input consists of the root node of a binary tree.",
+    "output_format": "An integer representing the maximum depth of the binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "The value of each node is a unique integer."
+    ],
+    "examples": [
+      {
+        "input": "root = [3, 9, 20, null, null, 15, 7]",
+        "output": "3",
+        "explanation": "The longest path is from root node 3 to the leaf node 15 or 7, which has a total of 3 nodes."
+      },
+      {
+        "input": "root = [1, null, 2]",
+        "output": "2",
+        "explanation": "The longest path is from root node 1 to the leaf node 2, which has a total of 2 nodes."
+      },
+      {
+        "input": "root = []",
+        "output": "0",
+        "explanation": "An empty tree has a depth of 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a recursive or iterative approach to traverse the tree.",
+      "Consider edge cases such as an empty tree."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Integer",
+    "description": "Given a 32-bit signed integer, reverse the digits of the integer. If reversing the integer causes it to go outside the range of a 32-bit signed integer, return 0. The integer should not have leading zeros when it is reversed.",
+    "topic": "Math",
+    "subtopic": "Integer Manipulation",
+    "tags": [
+      "Math",
+      "Integer",
+      "String Manipulation"
+    ],
+    "input_format": "A single integer x within the range of [-2^31, 2^31 - 1].",
+    "output_format": "An integer representing the reversed number, or 0 if it overflows.",
+    "constraints": [
+      "-2^31 <= x <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "x = 123",
+        "output": "321",
+        "explanation": "Reversing 123 gives 321."
+      },
+      {
+        "input": "x = -123",
+        "output": "-321",
+        "explanation": "Reversing -123 gives -321."
+      },
+      {
+        "input": "x = 120",
+        "output": "21",
+        "explanation": "Reversing 120 gives 021, which is 21."
+      },
+      {
+        "input": "x = 1534236469",
+        "output": "0",
+        "explanation": "Reversing 1534236469 exceeds the 32-bit signed integer range."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using string manipulation for reversing.",
+      "Watch out for overflow issues after reversing.",
+      "Use integer division and modulo to extract digits."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Serialize and Deserialize Binary Tree",
+    "description": "Design an algorithm to serialize and deserialize a binary tree. A binary tree can be represented as an array and is traversable via pre-order traversal. We want to convert the tree to a string representation in a format that can be easily reconstructed back into the tree later. Implement two functions: `serialize(root)`, which encodes a tree to a string, and `deserialize(data)`, which decodes the encoded string back to the original tree structure.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Serialization",
+      "Deserialization"
+    ],
+    "input_format": "The input consists of a binary tree's root node.",
+    "output_format": "The output is a string representing the serialized binary tree or the root node of the deserialized tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "Node values are in the range [-10^5, 10^5]."
+    ],
+    "examples": [
+      {
+        "input": "root = [1,2,3,null,null,4,5]",
+        "output": "'1,2,3,null,null,4,5'",
+        "explanation": "The tree can be serialized in pre-order traversal resulting in the string '1,2,3,null,null,4,5'."
+      },
+      {
+        "input": "root = []",
+        "output": "'#'",
+        "explanation": "An empty tree is represented by a '#' symbol indicating no nodes."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a recursive approach for traversing the tree.",
+      "Use a delimiter to separate node values in the serialized string.",
+      "Handle null nodes appropriately in both serialization and deserialization."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum II - Input Array Is Sorted",
+    "description": "Given a 1-indexed array of integers 'numbers' that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Return the indices of the two numbers (1-indexed) in the form of a list. You may assume that each input would have exactly one solution and you may not use the same element twice.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Binary Search"
+    ],
+    "input_format": "An array of integers 'numbers' and an integer 'target'.",
+    "output_format": "A list of two integers representing the 1-indexed positions of the two numbers that add up to 'target'.",
+    "constraints": [
+      "2 <= numbers.length <= 3 * 10^4",
+      "-10^9 <= numbers[i] <= 10^9",
+      "numbers is sorted in non-decreasing order.",
+      "Target will always be achievable."
+    ],
+    "examples": [
+      {
+        "input": "numbers = [2, 7, 11, 15], target = 9",
+        "output": "[1, 2]",
+        "explanation": "The numbers 2 and 7 add up to the target 9. Their 1-indexed positions are 1 and 2."
+      },
+      {
+        "input": "numbers = [1, 2, 3, 4, 4, 9, 10], target = 8",
+        "output": "[4, 5]",
+        "explanation": "The numbers 4 and 4 add up to the target 8. Their 1-indexed positions are 4 and 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a two-pointer technique to optimize the search.",
+      "If the sum of the two pointers is less than the target, move the left pointer to the right.",
+      "If the sum is greater than the target, move the right pointer to the left."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Pow(x, n)",
+    "description": "Implement a function that calculates x raised to the power n (i.e., x^n). The function should handle different edge cases including negative exponents and zero.",
+    "topic": "Mathematics",
+    "subtopic": "Exponential",
+    "tags": [
+      "Mathematics",
+      "Exponentiation",
+      "Recursion"
+    ],
+    "input_format": "Two values, x (a floating-point number) and n (an integer).",
+    "output_format": "A floating-point number representing x raised to the power n.",
+    "constraints": [
+      "-100.0 <= x <= 100.0",
+      "-10^4 <= n <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "x = 2.0, n = 10",
+        "output": "1024.0",
+        "explanation": "2 raised to the power 10 is 1024."
+      },
+      {
+        "input": "x = 2.1, n = 3",
+        "output": "9.261000000000001",
+        "explanation": "2.1 raised to the power 3 is approximately 9.261."
+      },
+      {
+        "input": "x = 2.0, n = -2",
+        "output": "0.25",
+        "explanation": "2 raised to the power -2 is 1/(2^2) = 1/4 = 0.25."
+      },
+      {
+        "input": "x = 0.0, n = 5",
+        "output": "0.0",
+        "explanation": "0 raised to any positive power is 0."
+      },
+      {
+        "input": "x = 1.0, n = -10",
+        "output": "1.0",
+        "explanation": "1 raised to any power is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to handle negative powers.",
+      "What happens when x equals 0?"
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Design Tic-Tac-Toe",
+    "description": "You are tasked with implementing a Tic-Tac-Toe game that supports a 3x3 board. Your program should allow players to make moves, check for a winner, and return the current state of the board. The game should support two players taking turns to place 'X' and 'O' on the board. Implement the methods to make a move, check for a win, and reset the game.",
+    "topic": "Design",
+    "subtopic": "Game Design",
+    "tags": [
+      "Design",
+      "Game",
+      "Tic-Tac-Toe"
+    ],
+    "input_format": "A list of moves represented as tuples of (row, col) where row and col are 0-indexed positions on the board.",
+    "output_format": "Return 'X' if player X wins, 'O' if player O wins, 'Draw' if the game is drawn, or an empty string if the game is ongoing.",
+    "constraints": [
+      "The board is 3x3.",
+      "Players take turns making moves.",
+      "A player cannot make a move in a cell that is already occupied."
+    ],
+    "examples": [
+      {
+        "input": "moves = [(0, 0), (1, 1), (0, 1), (1, 0), (0, 2)]",
+        "output": "'X'",
+        "explanation": "Player X plays at (0,0), (0,1), and (0,2) making a row win."
+      },
+      {
+        "input": "moves = [(0, 0), (1, 1), (0, 1), (1, 0), (2, 0), (2, 2)]",
+        "output": "'O'",
+        "explanation": "Player O plays at (1,1) and (2,2) making a diagonal win."
+      },
+      {
+        "input": "moves = [(0, 0), (1, 1), (0, 1), (1, 0), (2, 2), (0, 2), (2, 0), (2, 1), (1, 2)]",
+        "output": "'Draw'",
+        "explanation": "The game is drawn as there are no empty cells left and no winner."
+      },
+      {
+        "input": "moves = [(0, 0), (1, 1)]",
+        "output": "''",
+        "explanation": "The game is ongoing as no player has won yet."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Check all rows, columns, and diagonals for a winning condition.",
+      "Maintain a state of the board to evaluate moves."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. A subarray is a contiguous part of an array.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Sum"
+    ],
+    "input_format": "An integer array nums.",
+    "output_format": "An integer representing the largest sum of the contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The subarray [4,-1,2,1] has the largest sum = 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The only subarray is [1], which has the largest sum = 1."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The subarray [5,4,-1,7,8] has the largest sum = 23."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to use Kadane's algorithm to solve this problem efficiently.",
+      "Keep track of the maximum sum and the current sum while iterating."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water II",
+    "description": "Given an m x n integer matrix heightMap representing the height of each unit cell in a 2D elevation map. Initially, rain water can be held in any unit cell, but it will overflow to neighboring cells if the neighboring cells are lower than the current cell's height. Return the total volume of rain water that can be trapped after raining.",
+    "topic": "Array",
+    "subtopic": "Two-dimensional Array",
+    "tags": [
+      "Array",
+      "Matrix",
+      " BFS",
+      "Heap"
+    ],
+    "input_format": "A 2D matrix of integers heightMap where heightMap[i][j] represents the height of the unit cell at position (i, j).",
+    "output_format": "An integer representing the total volume of trapped rain water.",
+    "constraints": [
+      "m == heightMap.length",
+      "n == heightMap[i].length",
+      "1 <= m, n <= 200",
+      "0 <= heightMap[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heightMap = [[1,4,3,1,3,2],[3,2,1,3,2,4],[2,3,3,2,3,5],[1,4,2,4,5,6],[2,3,3,2,3,5]]",
+        "output": "21",
+        "explanation": "The total volume of trapped rain water after raining is 21."
+      },
+      {
+        "input": "heightMap = [[3]]",
+        "output": "0",
+        "explanation": "No volume can be trapped since there's only one cell."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the boundary conditions for the water to be trapped.",
+      "Use priority queues to keep track of the lowest boundary cell.",
+      "Start from the edges and move towards the center."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicates from Sorted Array",
+    "description": "Given a sorted array of integers nums, you need to remove the duplicates in-place such that each element appears only once and returns the new length of the array. Do not allocate extra space for another array. The relative order of the elements should be kept the same.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-Place"
+    ],
+    "input_format": "A sorted array of integers nums.",
+    "output_format": "An integer representing the new length of the array after removing duplicates.",
+    "constraints": [
+      "0 <= nums.length <= 3 * 10^4",
+      "-10^4 <= nums[i] <= 10^4",
+      "nums is sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2]",
+        "output": "2",
+        "explanation": "After removing duplicates, the array will be [1, 2] and the new length is 2."
+      },
+      {
+        "input": "nums = [0, 0, 1, 1, 2, 2, 3, 3, 4]",
+        "output": "5",
+        "explanation": "After removing duplicates, the array will be [0, 1, 2, 3, 4] and the new length is 5."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to track the unique elements.",
+      "Consider the case when elements are the same."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Length of Last Word",
+    "description": "Given a string s consisting of words and spaces, return the length of the last word in the string. A word is defined as a maximal substring consisting of non-space characters only.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Length"
+    ],
+    "input_format": "A string s consisting of words separated by spaces.",
+    "output_format": "An integer representing the length of the last word.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of only printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'Hello World'",
+        "output": "5",
+        "explanation": "The last word is 'World', which has a length of 5."
+      },
+      {
+        "input": "s = '   fly me   to   the moon  '",
+        "output": "4",
+        "explanation": "The last word is 'moon', which has a length of 4."
+      },
+      {
+        "input": "s = 'singleWord'",
+        "output": "10",
+        "explanation": "There is only one word 'singleWord', which has a length of 10."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Trim the string to remove leading and trailing spaces.",
+      "Split the string by spaces and access the last element."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock II",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you can make as many transactions as you like (i.e., buy one and sell one share of the stock multiple times). Note that you cannot engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers prices representing the stock prices on different days.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 3 * 10^4",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5. Then buy on day 3 (price = 3) and sell on day 4 (price = 4). Profit = 4 - 3 = 1. Total profit = 5 + 1 = 6."
+      },
+      {
+        "input": "prices = [1, 2, 3, 4, 5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5). Profit = 5 - 1 = 4."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "No transactions are done since the prices are in decreasing order."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "You can make multiple transactions.",
+      "Calculate profit when prices rise."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Number of 1 Bits",
+    "description": "Write a function that takes an unsigned integer and returns the number of '1' bits it has (also known as the Hamming weight).",
+    "topic": "Bit Manipulation",
+    "subtopic": "Counting Bits",
+    "tags": [
+      "Bit Manipulation",
+      "Counting",
+      "Hamming Weight"
+    ],
+    "input_format": "An unsigned integer n.",
+    "output_format": "An integer representing the number of '1' bits in the binary representation of n.",
+    "constraints": [
+      "0 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 11",
+        "output": "3",
+        "explanation": "Binary representation of 11 is 1011, which has three '1' bits."
+      },
+      {
+        "input": "n = 128",
+        "output": "1",
+        "explanation": "Binary representation of 128 is 10000000, which has one '1' bit."
+      },
+      {
+        "input": "n = 7",
+        "output": "3",
+        "explanation": "Binary representation of 7 is 111, which has three '1' bits."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use bitwise operations to count the number of '1' bits.",
+      "You can shift bits and mask with 1 to check each bit."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Power of Two",
+    "description": "Given an integer n, write a function to determine if it is a power of two. An integer is a power of two if there exists an integer x such that n == 2^x. For example, 1 (2^0), 2 (2^1), and 4 (2^2) are powers of two. But 3 is not.",
+    "topic": "Mathematics",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Math",
+      "Bit Manipulation",
+      "Power of Two"
+    ],
+    "input_format": "An integer n.",
+    "output_format": "Return true if n is a power of two, otherwise return false.",
+    "constraints": [
+      "-2^31 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 16",
+        "output": "true",
+        "explanation": "16 is a power of two (2^4 = 16)."
+      },
+      {
+        "input": "n = 3",
+        "output": "false",
+        "explanation": "3 is not a power of two."
+      },
+      {
+        "input": "n = 1",
+        "output": "true",
+        "explanation": "1 is a power of two (2^0 = 1)."
+      },
+      {
+        "input": "n = 0",
+        "output": "false",
+        "explanation": "0 is not a power of two."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You can use bit manipulation to determine if a number is a power of two.",
+      "A number that is a power of two has exactly one bit set in its binary representation."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Design Memory Allocator",
+    "description": "You are tasked with designing a memory allocator that can allocate and free memory blocks of variable sizes. The allocator must support dynamic memory allocation, freeing memory, and tracking allocated memory blocks. Your implementation should include the following functions: `allocate(size: int) -> Pointer`, which allocates a block of memory of the specified size and returns a pointer to the start of the block; `free(ptr: Pointer)`, which frees the memory block pointed to by `ptr`; and `status() -> List[int]`, which returns a list of sizes of currently allocated memory blocks. Ensure that your allocator does not allocate more memory than requested and that it can handle fragmentation efficiently.",
+    "topic": "Memory Management",
+    "subtopic": "Dynamic Memory Allocation",
+    "tags": [
+      "Memory",
+      "Allocation",
+      "Dynamic"
+    ],
+    "input_format": "A series of operations: allocate(size), free(ptr), and status()",
+    "output_format": "For allocate, returns a pointer; for free, returns nothing; for status, returns a list of integers.",
+    "constraints": [
+      "1 <= size <= 10^6",
+      "The number of operations will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "allocate(50), allocate(30), status()",
+        "output": "[50, 30]",
+        "explanation": "After allocating 50 and 30 units of memory, two blocks of size 50 and 30 are allocated."
+      },
+      {
+        "input": "ptr1 = allocate(100), free(ptr1), status()",
+        "output": "[]",
+        "explanation": "After allocating 100 units and then freeing it, there are no allocated blocks."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a linked list or an array to manage the memory blocks.",
+      "Keep track of allocated sizes and free memory segments."
+    ],
+    "company": "Qualcomm"
+  },
+  {
+    "question_id": "",
+    "title": "Count the Number of Fair Pairs",
+    "description": "You are given an array of integers nums and an integer target. A pair of indices (i, j) is called a 'fair pair' if i < j and nums[i] + nums[j] == target. Your task is to count how many fair pairs exist in the array for the given target value.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Counting Pairs"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An integer representing the count of fair pairs.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5",
+      "-10^6 <= target <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], target = 5",
+        "output": "2",
+        "explanation": "The fair pairs are (1, 3) => 2 + 3 = 5 and (0, 4) => 1 + 4 = 5."
+      },
+      {
+        "input": "nums = [0, 0, 0, 0], target = 0",
+        "output": "6",
+        "explanation": "All pairs of indices form fair pairs: (0,1), (0,2), (0,3), (1,2), (1,3), (2,3)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to track occurrences of numbers.",
+      "Sort the array and use two pointers to find pairs.",
+      "Think about edge cases with duplicate numbers."
+    ],
+    "company": "Qualcomm"
+  }
+]

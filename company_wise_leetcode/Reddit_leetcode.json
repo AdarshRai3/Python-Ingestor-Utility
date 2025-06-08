@@ -1,0 +1,243 @@
+[
+  {
+    "question_id": "",
+    "title": "Word Ladder",
+    "description": "Given two words, beginWord and endWord, and a dictionary's word list, find the length of the shortest transformation sequence from beginWord to endWord, such that only one letter can be changed at a time and each transformed word must exist in the word list. Note that beginWord is not a part of the word list. If there is no such transformation sequence, return 0.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Word Ladder"
+    ],
+    "input_format": "Two strings beginWord and endWord, followed by a list of strings wordList.",
+    "output_format": "An integer representing the length of the shortest transformation sequence from beginWord to endWord.",
+    "constraints": [
+      "1 <= beginWord.length <= 10",
+      "1 <= endWord.length <= 10",
+      "1 <= wordList.length <= 5000",
+      "beginWord and endWord consist of only lowercase English letters.",
+      "All the words in the wordList are unique."
+    ],
+    "examples": [
+      {
+        "input": {
+          "beginWord": "hit",
+          "endWord": "cog",
+          "wordList": [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log",
+            "cog"
+          ]
+        },
+        "output": "5",
+        "explanation": "One shortest transformation sequence is 'hit' -> 'hot' -> 'dot' -> 'dog' -> 'cog', which has length 5."
+      },
+      {
+        "input": {
+          "beginWord": "hit",
+          "endWord": "cog",
+          "wordList": [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log"
+          ]
+        },
+        "output": "0",
+        "explanation": "There is no possible transformation sequence from 'hit' to 'cog' since 'cog' is not in the word list."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think of words as nodes in a graph.",
+      "Perform BFS to find the shortest path."
+    ],
+    "company": "Reddit"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Ways to Buy Pens and Pencils",
+    "description": "You have a budget of 'n' units and you want to buy pens and pencils. Each pen costs 'a' units, and each pencil costs 'b' units. Write a function to determine the number of distinct combinations of pens and pencils you can buy without exceeding the budget.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorial Counting",
+    "tags": [
+      "Dynamic Programming",
+      "Combinatorial",
+      "Budgeting"
+    ],
+    "input_format": "Three integers n, a, b, where n is the budget, a is the cost of a pen, and b is the cost of a pencil.",
+    "output_format": "An integer representing the number of distinct combinations of pens and pencils that can be bought within the budget.",
+    "constraints": [
+      "0 <= n <= 1000",
+      "1 <= a, b <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "n = 10, a = 2, b = 3",
+        "output": "12",
+        "explanation": "You can buy combinations like (0 pens, 0-3 pencils), (1 pen, 0-2 pencils), (2 pens, 0-1 pencil), (3 pens, 0 pencils) for a total of 12 distinct combinations."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dynamic programming approach to calculate the combinations.",
+      "Start by calculating how many pencils can be purchased for varying numbers of pens."
+    ],
+    "company": "Reddit"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure that follows the constraints of a Least Recently Used (LRU) cache. It should support the following operations: get and put. The get operation retrieves an item from the cache, while the put operation adds or updates an item in the cache. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structure",
+    "subtopic": "Cache",
+    "tags": [
+      "Cache",
+      "Data Structure",
+      "LRU"
+    ],
+    "input_format": "The LRU Cache will be initialized with a capacity. The put and get methods will receive integer keys and values.",
+    "output_format": "For the get method, return the value of the key if the key exists, otherwise return -1. The put method doesn't return anything.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key, value <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "LRUCache lruCache = new LRUCache(2);\nlruCache.put(1, 1);\nlruCache.put(2, 2);\nlruCache.get(1); // returns 1\nlruCache.put(3, 3); // evicts key 2\nlruCache.get(2); // returns -1 (not found)",
+        "output": "1, -1",
+        "explanation": "After inserting 1 and 2, key 1 is accessed. Setting capacity to 2 and adding key 3 will evict key 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a linked list and a hashmap to efficiently maintain the order of usage.",
+      "When an item is accessed, move it to the front of the list."
+    ],
+    "company": "Reddit"
+  },
+  {
+    "question_id": "",
+    "title": "Design Hit Counter",
+    "description": "Design a hit counter that counts how many times a user has accessed a particular website in the last five minutes. Implement the necessary functions to record hits and to retrieve the count of hits for the last five minutes.",
+    "topic": "Design",
+    "subtopic": "System Design",
+    "tags": [
+      "Design",
+      "System Design",
+      "Counters"
+    ],
+    "input_format": "Use a method hit(timestamp) where timestamp is the time (in seconds) of the user hitting the website and a method getHits(timestamp) where timestamp is the time for which you want to get the number of hits within the last 5 minutes.",
+    "output_format": "The getHits method should return an integer representing the count of hits in the last five minutes from the specified timestamp.",
+    "constraints": [
+      "1 <= timestamp <= 2 * 10^9",
+      "The difference between consecutive timestamps will be at least 1."
+    ],
+    "examples": [
+      {
+        "input": "hit(1)\nhit(2)\nhit(3)\ngetHits(4)",
+        "output": "3",
+        "explanation": "Three hits occurred within the last five minutes."
+      },
+      {
+        "input": "hit(300)\ngetHits(300)\nhit(300)\ngetHits(300)\nhit(600)\ngetHits(600)",
+        "output": "3\n3\n1",
+        "explanation": "At timestamp 300, there are three hits. At timestamp 600, there's only one hit within the last five minutes."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a queue to store the timestamps of hits.",
+      "You need to remove timestamps that are older than five minutes."
+    ],
+    "company": "Reddit"
+  },
+  {
+    "question_id": "",
+    "title": "Logger Rate Limiter",
+    "description": "Design a logger system that receives a stream of log messages. Each log message will be a pair of a message and a timestamp (in seconds). The logger should ignore any subsequent messages with the same content if they were received within a 10-second window. Implement a method to log a new message, returning true if the message should be logged, and false if it should be ignored.",
+    "topic": "Design",
+    "subtopic": "Rate Limiting",
+    "tags": [
+      "Design",
+      "Logging",
+      "Rate Limiter"
+    ],
+    "input_format": "A string representing the log message and an integer representing the timestamp in seconds.",
+    "output_format": "A boolean value indicating whether the log message was accepted or ignored.",
+    "constraints": [
+      "The log message will be a non-empty string of at most 100 characters.",
+      "The timestamp will be a non-negative integer."
+    ],
+    "examples": [
+      {
+        "input": "logMessage('foo', 1)",
+        "output": "true",
+        "explanation": "The message 'foo' is logged at timestamp 1."
+      },
+      {
+        "input": "logMessage('bar', 2)",
+        "output": "true",
+        "explanation": "The message 'bar' is logged at timestamp 2."
+      },
+      {
+        "input": "logMessage('foo', 3)",
+        "output": "false",
+        "explanation": "The message 'foo' is ignored because it was logged at timestamp 1 and it occurs within the 10-second window."
+      },
+      {
+        "input": "logMessage('foo', 11)",
+        "output": "true",
+        "explanation": "The message 'foo' is logged again at timestamp 11, which is outside the 10-second window."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hashmap to store the timestamps of the logged messages.",
+      "Check if the message is within the 10-second threshold before accepting it."
+    ],
+    "company": "Reddit"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Grid"
+    ],
+    "input_format": "A 2D grid represented as a list of lists, where each sublist contains '1' or '0'.",
+    "output_format": "An integer denoting the total number of islands in the grid.",
+    "constraints": [
+      "1 <= grid.length <= 300",
+      "1 <= grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "[['1', '1', '0', '0', '0'], ['1', '1', '0', '0', '0'], ['0', '0', '1', '0', '0'], ['0', '0', '0', '1', '1']]",
+        "output": "3",
+        "explanation": "The grid contains three islands. The first island is formed by the '1's in the top-left corner, the second island is in the middle, and the third island is located in the bottom-right corner."
+      },
+      {
+        "input": "[['0', '0', '0', '0'], ['0', '0', '0', '0'], ['0', '0', '0', '0']]",
+        "output": "0",
+        "explanation": "There are no islands in the grid as it is completely filled with '0's."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use Depth-First Search or Breadth-First Search to explore all connected lands.",
+      "Modify the grid in-place to mark visited land."
+    ],
+    "company": "Reddit"
+  }
+]

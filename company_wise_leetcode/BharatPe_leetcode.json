@@ -1,0 +1,77 @@
+[
+  {
+    "question_id": "",
+    "title": "Maximal Square",
+    "description": "Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Matrix",
+    "tags": [
+      "Dynamic Programming",
+      "Matrix",
+      "Square"
+    ],
+    "input_format": "A 2D binary matrix represented as a list of lists containing '0's and '1's.",
+    "output_format": "An integer representing the area of the largest square containing only 1's.",
+    "constraints": [
+      "1 <= matrix.length <= 300",
+      "1 <= matrix[i].length <= 300",
+      "matrix[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "matrix = [['1', '0', '1', '0', '0'], ['1', '0', '1', '1', '1'], ['1', '1', '1', '1', '1'], ['1', '0', '0', '1', '0']]",
+        "output": "4",
+        "explanation": "The largest square has a side length of 2, and its area is 2 * 2 = 4."
+      },
+      {
+        "input": "matrix = [['0', '0', '0', '0'], ['0', '0', '0', '0']]",
+        "output": "0",
+        "explanation": "There are no 1's in the matrix, so the area of the largest square is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use dynamic programming to track the side length of the square.",
+      "Consider the minimum of the left, top, and top-left squares."
+    ],
+    "company": "BharatPe"
+  },
+  {
+    "question_id": "",
+    "title": "Car Fleet",
+    "description": "There are n cars going to the same destination along a one-lane road. The cars are represented by an array position where position[i] is the position of the ith car. Each car moves at a constant speed given by the array speed, where speed[i] is the speed of the ith car. A car can catch up to another car if it is behind it and moves faster. When a car catches up to another, both cars drive together as a fleet, meaning they will reach the destination at the same time. You need to determine how many car fleets will arrive at the destination after starting from their initial positions. You can assume that the destination is at a position of target.",
+    "topic": "Greedy",
+    "subtopic": "Simulation",
+    "tags": [
+      "Greedy",
+      "Simulation",
+      "Array"
+    ],
+    "input_format": "An integer target representing the destination, an array position representing the positions of the cars, and an array speed representing the speeds of the cars.",
+    "output_format": "An integer representing the number of car fleets that will arrive at the destination.",
+    "constraints": [
+      "1 <= position.length == speed.length <= 10^5",
+      "0 <= position[i] < target",
+      "1 <= speed[i] <= 10^6",
+      "All positions are distinct."
+    ],
+    "examples": [
+      {
+        "input": "target = 12, position = [10, 8, 0, 5, 3], speed = [2, 4, 1, 1, 3]",
+        "output": "3",
+        "explanation": "Car 1 will reach the destination first, then Car 0 will catch up with Car 1, then Car 4 will reach independently. Hence, 3 fleets."
+      },
+      {
+        "input": "target = 10, position = [3], speed = [3]",
+        "output": "1",
+        "explanation": "Only one car exists, so it forms a fleet by itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about the time it takes for each car to reach the destination.",
+      "Use a stack or a similar data structure to keep track of car fleets."
+    ],
+    "company": "BharatPe"
+  }
+]

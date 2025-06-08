@@ -1,0 +1,2049 @@
+[
+  {
+    "question_id": "",
+    "title": "Reorganize String",
+    "description": "Given a string s, rearrange the characters of s so that no two adjacent characters are the same. If this rearrangement is not possible, return an empty string. Note that the string can contain uppercase and lowercase letters, and the frequency of each character can be different.",
+    "topic": "String",
+    "subtopic": "Rearrangement",
+    "tags": [
+      "String",
+      "Rearrangement",
+      "Greedy"
+    ],
+    "input_format": "A string s consisting of lowercase and uppercase letters.",
+    "output_format": "A rearranged string where no two adjacent characters are the same, or an empty string if no valid rearrangement exists.",
+    "constraints": [
+      "1 <= s.length <= 500",
+      "s consists of only letters."
+    ],
+    "examples": [
+      {
+        "input": "aabbcc",
+        "output": "abcabc",
+        "explanation": "The characters can be rearranged to ensure no two adjacent characters are the same."
+      },
+      {
+        "input": "aaab",
+        "output": "",
+        "explanation": "It is not possible to rearrange the string without adjacent 'a's."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the frequency of each character.",
+      "Use a max heap to store characters sorted by their frequency."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Design Browser History",
+    "description": "Implement a simple browser history management system. The system should support the following operations: navigating to a new URL, going back to the previous URL, and going forward to the next URL. Implement the BrowserHistory class with the following methods: \n\n- BrowserHistory(String homepage): Initializes the browser history with the given homepage. \n- void visit(String url): Visits the given url and makes it the current page. \n- String back(int steps): Moves back 'steps' pages in the history. If there are fewer than 'steps' pages in the history, go back to the homepage. \n- String forward(int steps): Moves forward 'steps' pages in the history. If there are fewer than 'steps' pages, go forward to the latest page in the history.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Browser"
+    ],
+    "input_format": "The constructor takes in a string representing the homepage. The visit method takes in a string representing a URL. The back and forward methods take an integer representing the number of steps to move in the history.",
+    "output_format": "The methods return the current page URL after performing the desired operation.",
+    "constraints": [
+      "1 <= homepage.length <= 100",
+      "1 <= url.length <= 100",
+      "1 <= steps <= 100",
+      "All URLs will not be empty and will not contain whitespace."
+    ],
+    "examples": [
+      {
+        "input": "BrowserHistory homepage = new BrowserHistory('leetcode.com'); homepage.visit('google.com'); homepage.visit('facebook.com'); homepage.back(1);",
+        "output": "'google.com'",
+        "explanation": "After visiting 'google.com', the current page is 'google.com'. Going back to the previous page takes us back to 'leetcode.com'."
+      },
+      {
+        "input": "homepage.forward(1);",
+        "output": "'google.com'",
+        "explanation": "There is no forward move from 'leetcode.com', so the output remains 'google.com'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to maintain the history.",
+      "Use two pointers to track the current position in history."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Task Scheduler",
+    "description": "You are given a list of tasks represented by uppercase English letters, where each letter represents a different task. You need to schedule these tasks such that the same tasks cannot be executed in the same 'cooldown' period. The cooldown period is represented by a positive integer 'n', which is the minimum number of intervals that must pass before the same task can be executed again. Determine the least number of intervals needed to complete all tasks given these constraints.",
+    "topic": "Greedy",
+    "subtopic": "Task Scheduling",
+    "tags": [
+      "Greedy",
+      "Scheduling",
+      "Heap"
+    ],
+    "input_format": "An array of characters tasks representing the tasks and an integer n representing the cooldown period.",
+    "output_format": "An integer representing the least number of intervals needed to complete all tasks.",
+    "constraints": [
+      "1 <= tasks.length <= 100",
+      "n >= 0",
+      "tasks[i] is an uppercase English letter"
+    ],
+    "examples": [
+      {
+        "input": "tasks = ['A', 'A', 'A', 'B', 'B', 'B'], n = 2",
+        "output": "8",
+        "explanation": "One possible schedule could be: A->B->idle->A->B->idle->A->B, which takes 8 intervals."
+      },
+      {
+        "input": "tasks = ['A', 'A', 'A', 'B', 'B', 'B'], n = 0",
+        "output": "6",
+        "explanation": "Since n = 0, all tasks can be completed back-to-back without any cooldown, resulting in 6 intervals."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about counting the frequency of each task.",
+      "Consider how to distribute tasks optimally to minimize intervals."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Design Hit Counter",
+    "description": "Design a hit counter that counts the number of hits received in the past 5 minutes. You need to implement a class HitCounter that supports the following methods: \n\n- `void hit(int timestamp)`: Records a hit at the given timestamp (in seconds granularity).\n- `int getHits(int timestamp)`: Returns the number of hits received in the past 5 minutes, including the current hit (timestamp is also in seconds granularity).\n\nThe method should handle multiple hits at the same timestamp correctly, and you can assume that the timestamps are strictly increasing.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Queue",
+      "Sliding Window"
+    ],
+    "input_format": "An integer timestamp, where 0 <= timestamp <= 2 * 10^9.",
+    "output_format": "An integer representing the number of hits in the past 5 minutes.",
+    "constraints": [
+      "Each call to hit and getHits is made with a timestamp that is at least 1 second after the last hit."
+    ],
+    "examples": [
+      {
+        "input": "HitCounter counter = new HitCounter();\ncounter.hit(1);\ncounter.hit(2);\ncounter.hit(3);\nint hits = counter.getHits(4);",
+        "output": "3",
+        "explanation": "All three hits are within the last 5 minutes, so the count is 3."
+      },
+      {
+        "input": "counter.hit(300);\nint hits = counter.getHits(300);\ncounter.hit(301);\nhits = counter.getHits(300);",
+        "output": "1",
+        "explanation": "After 300 seconds, only 1 hit was recorded within the last 5 minutes."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a queue to store the timestamps of hits.",
+      "Remove timestamps that are older than 5 minutes from the queue."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Maximize Distance to Closest Person",
+    "description": "You are given an array `seats` representing seats in a row, where `seats[i]` is equal to 1 if a seat is taken, and 0 if it is empty. Your task is to maximize the distance to the closest person. Return the maximum distance you can get from the closest seated person.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Greedy"
+    ],
+    "input_format": "An array of integers `seats` where 1 represents a taken seat and 0 an empty seat.",
+    "output_format": "An integer representing the maximum distance to the closest person.",
+    "constraints": [
+      "1 <= seats.length <= 2 * 10^4",
+      "seats[i] is 0 or 1",
+      "At least one seat is empty."
+    ],
+    "examples": [
+      {
+        "input": "seats = [1, 0, 0, 0, 1, 0, 1]",
+        "output": "2",
+        "explanation": "The maximum distance to the closest person can be achieved at index 3, where the distance is 2."
+      },
+      {
+        "input": "seats = [1, 0, 0, 0]",
+        "output": "3",
+        "explanation": "The maximum distance to the closest person is 3, at index 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the first and last seats specifically.",
+      "Look for patterns in distances between occupied seats."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. The intervals are represented as pairs of integers, where each pair consists of a start and end point. You should return a list of merged intervals thatdo not overlap.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Interval"
+    ],
+    "input_format": "A list of lists, where each inner list contains two integers representing the start and end of an interval.",
+    "output_format": "A list of merged intervals represented as lists of two integers.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "-10^4 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[[1, 3], [2, 6], [8, 10], [15, 18]]",
+        "output": "[[1, 6], [8, 10], [15, 18]]",
+        "explanation": "The intervals [1, 3] and [2, 6] overlap, so they are merged into [1, 6]. The other intervals do not overlap."
+      },
+      {
+        "input": "[[1, 4], [4, 5]]",
+        "output": "[[1, 5]]",
+        "explanation": "The intervals [1, 4] and [4, 5] touch at point 4, so they are merged into [1, 5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the start time.",
+      "Use a greedy approach to merge overlapping intervals."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a length maxWidth, format the text such that each line has exactly maxWidth characters and is fully justified. You should insert spaces between words so that each line has exactly maxWidth characters. The last line should be left-justified, and it should not be padded with extra spaces. Each word is guaranteed to fit in the line. The text should be justified according to the rules described, ensuring a neat appearance for the output.",
+    "topic": "String",
+    "subtopic": "Text Processing",
+    "tags": [
+      "String",
+      "Justification",
+      "Formatting"
+    ],
+    "input_format": "An array of strings words, and an integer maxWidth representing the line width.",
+    "output_format": "An array of strings, where each string represents a justified line of text.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 100",
+      "1 <= maxWidth <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "This",
+            "is",
+            "an",
+            "example",
+            "of",
+            "text",
+            "justification."
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "This    is    an",
+          "example  of text",
+          "justification.  "
+        ],
+        "explanation": "The first line is justified with extra spaces between 'This', 'is', and 'an' to reach the required maxWidth. Other lines are formatted similarly."
+      },
+      {
+        "input": {
+          "words": [
+            "What",
+            "must",
+            "be",
+            "acknowledgment",
+            "shall",
+            "be"
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "What   must   be",
+          "acknowledgment  ",
+          "shall be        "
+        ],
+        "explanation": "The first line distributes spaces evenly between words, while the last line is left-justified."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to distribute spaces fairly among words.",
+      "Handle the last line differently from the others."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Magnetic Force Between Two Balls",
+    "description": "You are given two balls positioned on a straight line at different distances from a point of reference. Each ball has a magnetic force determined by its position, and the strength of the force decreases with distance. The goal is to calculate the maximum magnetic force that can exist between any two pairs of balls given their positions on the line. You must design a function that efficiently computes this maximum force for a given set of balls represented by their positions.",
+    "topic": "Geometry",
+    "subtopic": "Distance Calculation",
+    "tags": [
+      "Geometry",
+      "Distance",
+      "Maximum"
+    ],
+    "input_format": "An array of integers representing the positions of the balls.",
+    "output_format": "An integer representing the maximum magnetic force between any two pairs of balls.",
+    "constraints": [
+      "2 <= positions.length <= 10^5",
+      "0 <= positions[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "positions = [1, 3, 6]",
+        "output": "5",
+        "explanation": "The maximum force is between the balls at positions 1 and 6, which gives a distance of 5."
+      },
+      {
+        "input": "positions = [10, 20, 30, 40]",
+        "output": "30",
+        "explanation": "The maximum force is between the balls at positions 10 and 40, yielding a distance of 30."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Focus on calculating distances efficiently.",
+      "Consider sorting the positions first to simplify distance calculations."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Occurrences of a Substring",
+    "description": "Given a string 's' and a substring 't', find the maximum number of occurrences of 't' in 's' that can be formed by deleting some characters from 's' without rearranging the remaining characters.",
+    "topic": "String",
+    "subtopic": "Substring Search",
+    "tags": [
+      "String",
+      "Substring",
+      "Counting",
+      "Two Pointers"
+    ],
+    "input_format": "A string 's' and a substring 't'.",
+    "output_format": "An integer representing the maximum number of occurrences of 't' in 's'.",
+    "constraints": [
+      "1 <= s.length, t.length <= 1000",
+      "s and t consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'ababc', t = 'ab'",
+        "output": "1",
+        "explanation": "The substring 'ab' appears once in 'ababc'."
+      },
+      {
+        "input": "s = 'ababab', t = 'ab'",
+        "output": "3",
+        "explanation": "By picking characters from 'ababab', we can select 'ab', 'ab', and another 'ab'."
+      },
+      {
+        "input": "s = 'abc', t = 'd'",
+        "output": "0",
+        "explanation": "The substring 'd' does not appear in 'abc'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a two-pointer approach.",
+      "Count occurrences while ensuring the order is preserved."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Group the People Given the Group Size They Belong To",
+    "description": "You are given an array of integers groupSizes where groupSizes[i] is the size of the group that person i is in. You need to group the people into groups of the specified sizes and return a 2D array representing the groups. Each group must contain exactly the number of people specified by the corresponding integer in the input array. The groups can be returned in any order.",
+    "topic": "Array",
+    "subtopic": "Grouping",
+    "tags": [
+      "Array",
+      "Grouping",
+      "Implementation"
+    ],
+    "input_format": "An array of integers groupSizes.",
+    "output_format": "A 2D array of integers representing the groups of people.",
+    "constraints": [
+      "1 <= groupSizes.length <= 500",
+      "1 <= groupSizes[i] <= 500"
+    ],
+    "examples": [
+      {
+        "input": "groupSizes = [3, 3, 3, 3, 3, 1, 3]",
+        "output": "[[0, 1, 2], [3, 4, 5], [6]]",
+        "explanation": "People 0, 1, and 2 form the first group of size 3; People 3 and 4 form the second group of size 3; Person 5 forms a group of size 1; and Person 6 completes the third group of size 3."
+      },
+      {
+        "input": "groupSizes = [2, 1, 3, 3, 2]",
+        "output": "[[0, 1], [2, 3], [4]]",
+        "explanation": "People 0 and 1 form a group of size 2; People 2 and 3 form another group of size 3; and Person 4 stands alone in a group of size 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of people while forming groups.",
+      "Utilize a hashmap to group people by their group sizes."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Count Number of Nice Subarrays",
+    "description": "Given an array of integers and an integer k, return the number of nice subarrays. A nice subarray is defined as a contiguous subarray that contains exactly k odd numbers.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Count"
+    ],
+    "input_format": "The first line contains an integer n (1 <= n <= 10^5) - the number of elements in the array. The second line contains n integers (0 <= nums[i] <= 10^5) - the elements of the array. The third line contains an integer k (1 <= k <= n) - the number of odd integers required in the subarray.",
+    "output_format": "An integer representing the number of nice subarrays.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "0 <= nums[i] <= 10^5",
+      "1 <= k <= n"
+    ],
+    "examples": [
+      {
+        "input": "5\n1 1 2 1 1\n3",
+        "output": "2",
+        "explanation": "The nice subarrays are [1, 1, 2, 1] and [1, 2, 1]."
+      },
+      {
+        "input": "7\n2 4 6 1 2 4 1\n2",
+        "output": "4",
+        "explanation": "The nice subarrays with exactly 2 odd numbers are: [1, 2, 4, 1], [2, 4, 1], [4, 1], and [1, 2, 4]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use two pointers to maintain a window.",
+      "Count odd numbers using a sliding window strategy.",
+      "Consider how to adjust the left pointer when the count of odd numbers exceeds k."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Subdomain Visit Count",
+    "description": "You are given a list of websites and the number of times each website was visited. Each website may have several subdomains. Your task is to count the visit frequencies for each subdomain. For example, if a website is 'discuss.leetcode.com', it should contribute to the counts for both 'leetcode.com' and 'com'. Return the aggregated count of visits for each subdomain in a specific format.",
+    "topic": "Hash Table",
+    "subtopic": "Counting Frequencies",
+    "tags": [
+      "Hash Table",
+      "String",
+      "Counting"
+    ],
+    "input_format": "A list of strings representing website visits, where each string is in the format '<count> <website>'.",
+    "output_format": "A list of strings in the format '<count> <subdomain>', sorted first by count in descending order and then lexically for ties.",
+    "constraints": [
+      "1 <= visits.length <= 1000",
+      "Each visit string is in the format '<count> <website>' where 1 <= count <= 10^4",
+      "Website consists of lowercase letters and '.'"
+    ],
+    "examples": [
+      {
+        "input": [
+          "9001 discuss.leetcode.com",
+          "9001 leetcode.com",
+          "9001 com"
+        ],
+        "output": [
+          "18002 leetcode.com",
+          "9001 discuss.leetcode.com",
+          "9001 com"
+        ],
+        "explanation": "The total visits for 'leetcode.com' are 9001 (from self) + 9001 (from subdomain) = 18002. The other counts remain the same."
+      },
+      {
+        "input": [
+          "50 yahoo.com",
+          "50 yahoo.co.uk",
+          "1 intel.mail.com",
+          "5 wiki.org"
+        ],
+        "output": [
+          "100 yahoo.com",
+          "50 yahoo.co.uk",
+          "5 wiki.org",
+          "1 intel.mail.com"
+        ],
+        "explanation": "The total visits for 'yahoo.com' are 50 from itself and 50 from its subdomain, contributing 100 total."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a map to store the counts of each subdomain.",
+      "Iterate through each visit and split the website by '.' to generate subdomains."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Convert Binary Number in a Linked List to Integer",
+    "description": "Given a singly linked list where each node contains a single binary digit (0 or 1), convert the binary number represented by the linked list to an integer. The most significant bit is at the head of the list and the least significant bit is at the tail.",
+    "topic": "Linked List",
+    "subtopic": "Conversion",
+    "tags": [
+      "Linked List",
+      "Binary",
+      "Conversion"
+    ],
+    "input_format": "The input is a singly linked list represented by its head node.",
+    "output_format": "An integer representing the decimal value of the binary number.",
+    "constraints": [
+      "The linked list has a length of at least 1.",
+      "Each node's value is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 0, 1]",
+        "output": "5",
+        "explanation": "The binary number represented is 101, which is equal to 5 in decimal."
+      },
+      {
+        "input": "head = [0]",
+        "output": "0",
+        "explanation": "The binary number represented is 0, which is equal to 0 in decimal."
+      },
+      {
+        "input": "head = [1, 1, 1, 1]",
+        "output": "15",
+        "explanation": "The binary number represented is 1111, which is equal to 15 in decimal."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Iterate through the linked list and build the binary number.",
+      "You can use bitwise operations to convert the binary number to decimal."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Trusted Contacts of a Customer",
+    "description": "Given a list of customers and their respective contacts, determine the number of trusted contacts for each customer. A trusted contact is defined as a contact that has been added to the customer's trusted list. Your task is to count how many contacts are trusted for each customer and return the count as a list.",
+    "topic": "Data Structure",
+    "subtopic": "Hash Map",
+    "tags": [
+      "Hash Map",
+      "Counting",
+      "Data Structure"
+    ],
+    "input_format": "A list of tuples, where each tuple contains a string and a list of strings. The first element of the tuple represents the customer name and the second element is the list of trusted contacts.",
+    "output_format": "A list of integers, where each integer represents the number of trusted contacts for the corresponding customer.",
+    "constraints": [
+      "1 <= number of customers <= 10^3",
+      "1 <= number of contacts per customer <= 100",
+      "Each contact name is a string of length at most 100"
+    ],
+    "examples": [
+      {
+        "input": "customers = [('Alice', ['Bob', 'Charlie']), ('Bob', ['Alice']), ('Charlie', ['Alice', 'Dave'])]",
+        "output": "[2, 1, 2]",
+        "explanation": "Alice has 2 trusted contacts: Bob and Charlie. Bob has 1 trusted contact: Alice. Charlie has 2 trusted contacts: Alice and Dave."
+      },
+      {
+        "input": "customers = [('Eve', []), ('Mallory', ['Eve'])]",
+        "output": "[0, 1]",
+        "explanation": "Eve has no trusted contacts, while Mallory has 1 trusted contact: Eve."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to track the counts.",
+      "Iterate through the list and update counts for each customer."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Students and Examinations",
+    "description": "You are given a list of student scores from an examination. Each student has a unique integer ID and a score. Your task is to determine how many students scored above a given threshold. Write a function that takes in a list of student score tuples and a threshold score, then returns the number of students who scored above that threshold.",
+    "topic": "Array",
+    "subtopic": "Filtering and Counting",
+    "tags": [
+      "Array",
+      "Counting",
+      "Filter"
+    ],
+    "input_format": "A list of tuples where each tuple contains an integer representing the student ID and an integer representing the student's score, followed by an integer representing the threshold score.",
+    "output_format": "An integer representing the number of students that scored above the threshold.",
+    "constraints": [
+      "1 <= scores.length <= 10^5",
+      "0 <= score <= 100",
+      "Each student ID is unique."
+    ],
+    "examples": [
+      {
+        "input": "scores = [(1, 85), (2, 90), (3, 75), (4, 95)], threshold = 80",
+        "output": "3",
+        "explanation": "Students with IDs 1, 2, and 4 scored above 80."
+      },
+      {
+        "input": "scores = [(1, 50), (2, 40), (3, 60), (4, 55)], threshold = 60",
+        "output": "1",
+        "explanation": "Only the student with ID 3 scored above 60."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You can use a simple loop to count the students above the threshold.",
+      "Consider using list comprehensions for a more concise solution."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to English Words",
+    "description": "Convert a non-negative integer to its English words representation. The problem should handle numbers from 0 to 2^31 - 1, inclusive. You need to convert the number to a string that represents its corresponding English words. For example, the number 123 should be converted to 'One Hundred Twenty Three'.",
+    "topic": "String",
+    "subtopic": "Number Conversion",
+    "tags": [
+      "String",
+      "Number Conversion",
+      "Integer to English"
+    ],
+    "input_format": "A single integer n, where 0 <= n <= 2^31 - 1.",
+    "output_format": "A string representing the English words corresponding to the input integer.",
+    "constraints": [
+      "0 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 123",
+        "output": "One Hundred Twenty Three",
+        "explanation": "The number 123 in words is 'One Hundred Twenty Three'."
+      },
+      {
+        "input": "n = 12345",
+        "output": "Twelve Thousand Three Hundred Forty Five",
+        "explanation": "The number 12345 in words is 'Twelve Thousand Three Hundred Forty Five'."
+      },
+      {
+        "input": "n = 1000000",
+        "output": "One Million",
+        "explanation": "The number 1000000 in words is 'One Million'."
+      },
+      {
+        "input": "n = 0",
+        "output": "Zero",
+        "explanation": "The number 0 in words is 'Zero'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Break down the number into groups of thousands.",
+      "Use a map for number-to-word conversion.",
+      "Handle special cases for numbers less than 20."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of parentheses.",
+    "output_format": "A boolean value - true if the string is valid, false otherwise.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are correctly opened and closed."
+      },
+      {
+        "input": "s = '(]}'",
+        "output": "false",
+        "explanation": "The brackets are mismatched; '(' is not closed by ')'."
+      },
+      {
+        "input": "s = '({[]})'",
+        "output": "true",
+        "explanation": "All brackets are correctly matched and nested."
+      },
+      {
+        "input": "s = '((()))'",
+        "output": "true",
+        "explanation": "The parentheses are opened and closed properly."
+      },
+      {
+        "input": "s = '((('",
+        "output": "false",
+        "explanation": "There are opening parentheses that are not closed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of the opening brackets.",
+      "Check for matching pairs when encountering closing brackets."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Trie (Prefix Tree)",
+    "description": "Your task is to implement a Trie (Prefix Tree) data structure. A Trie is a special kind of tree used to store associative data structures. A common application of a Trie is to store a predictive text or autocomplete dictionary. Implement the following operations in your Trie:\n\n- `insert(word: str)`: Inserts a word into the Trie.\n- `search(word: str)`: Returns true if the word is in the Trie (i.e., was inserted before).\n- `startsWith(prefix: str)`: Returns true if there is any word in the Trie that starts with the given prefix.",
+    "topic": "Data Structure",
+    "subtopic": "Trie",
+    "tags": [
+      "Trie",
+      "Data Structure",
+      "Design"
+    ],
+    "input_format": "The input consists of multiple commands: `insert`, `search`, and `startsWith`, each followed by a string parameter.",
+    "output_format": "For each `search` and `startsWith` command, return a boolean value indicating the result.",
+    "constraints": [
+      "1 <= word.length <= 200",
+      "word consists of lowercase English letters.",
+      "The number of calls to `insert`, `search`, and `startsWith` should be at most 10^4."
+    ],
+    "examples": [
+      {
+        "input": "commands = ['insert', 'search', 'search', 'startsWith', 'insert', 'search'], words = ['apple', 'apple', 'app', 'app', 'app'], expected_output = [null, true, false, true, null, true]",
+        "output": "[null, true, false, true, null, true]",
+        "explanation": "The word 'apple' is inserted. Searching for 'apple' returns true, searching for 'app' returns false as it was not inserted yet, 'startsWith('app')' returns true, inserting 'app' and searching for it returns true."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to structure your nodes for efficient searching.",
+      "Think about using a hashmap for children nodes."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Image",
+    "description": "You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise). You have to rotate the matrix in-place, which means you have to do it without using any additional space except for a few variables.",
+    "topic": "Matrix",
+    "subtopic": "In-place Manipulation",
+    "tags": [
+      "Matrix",
+      "In-place",
+      "Rotation"
+    ],
+    "input_format": "A 2D list of integers representing the n x n matrix.",
+    "output_format": "The same matrix, rotated 90 degrees clockwise.",
+    "constraints": [
+      "n == matrix.length",
+      "n == matrix[i].length",
+      "1 <= n <= 20",
+      "-1000 <= matrix[i][j] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1,2,3],[4,5,6],[7,8,9]]",
+        "output": "[[7,4,1],[8,5,2],[9,6,3]]",
+        "explanation": "Rotating the matrix by 90 degrees results in the output matrix."
+      },
+      {
+        "input": "matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]",
+        "output": "[[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]",
+        "explanation": "The matrix is rotated clockwise leading to the specified output."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the layers of the matrix: treat the outermost layer, then the inner layer.",
+      "You can swap the elements in place in a systematic way."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Rotating the Box",
+    "description": "You are given a 2D grid representing a box, and each cell can be either a stone ('#') or empty ('.'). The box can be rotated 90 degrees clockwise, and stones will fall downwards to occupy the lowest available cells in their respective columns while maintaining their relative order. Your task is to implement a function that rotates the box and returns the new arrangement of stones and empty spaces after the rotation.",
+    "topic": "Array",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Simulation"
+    ],
+    "input_format": "A 2D grid represented as a list of lists, where each inner list represents a row of the grid.",
+    "output_format": "A 2D grid in the same representation after performing the rotation and simulating the dropping of stones.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "grid[i][j] is either '#' or '.'"
+    ],
+    "examples": [
+      {
+        "input": "[['#', '.', '#'], ['#', '#', '.'], ['.', '#', '#']]",
+        "output": "[['.', '#', '#'], ['#', '#', '#'], ['#', '.', '.']]",
+        "explanation": "Rotating the grid results in [['.', '#', '#'], ['#', '#', '#'], ['#', '.', '.']] after stones fall."
+      },
+      {
+        "input": "[['#', '#', '.'], ['#', '.', '.'], ['.', '.', '.']]",
+        "output": "[['.', '#', '#'], ['#', '#', '.'], ['.', '.', '.']]",
+        "explanation": "Rotating the grid leads to [['.', '#', '#'], ['#', '#', '.'], ['.', '.', '.']] after stones fall."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to manipulate the rows and columns during rotation.",
+      "Consider using a temporary structure to arrange the stones before finalizing their positions."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Flowers in Full Bloom",
+    "description": "You are given an integer array blooms representing the blooming days of flowers. A flower blooms on the day represented by its value in the array. A flower is considered to be in full bloom if it has bloomed at least 'k' days. Given the blooming days and the integer 'k', write a function to determine the number of flowers that are in full bloom on day 'd'.",
+    "topic": "Array",
+    "subtopic": "Blooming Days",
+    "tags": [
+      "Array",
+      "Blooming",
+      "Counting"
+    ],
+    "input_format": "An integer array blooms and an integer d representing the current day and an integer k.",
+    "output_format": "An integer representing the number of flowers in full bloom on day d.",
+    "constraints": [
+      "1 <= blooms.length <= 10^5",
+      "1 <= blooms[i], d, k <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "blooms = [1, 4, 2, 3], d = 3, k = 2",
+        "output": "2",
+        "explanation": "On day 3, flowers blooming on days 1, 2, and 3 are in full bloom (1+2+3 = 3), with k = 2."
+      },
+      {
+        "input": "blooms = [2, 3, 1, 5], d = 5, k = 3",
+        "output": "1",
+        "explanation": "Only one flower has bloomed for at least 3 days or more by day 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Count the number of elements in 'blooms' that are less than or equal to d.",
+      "Check if the count meets the condition of being at least k."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Split Message Based on Limit",
+    "description": "You are tasked with splitting a message into multiple parts based on a given character limit. Each part must not exceed the specified limit and should avoid splitting words. If a word exceeds the limit, it should still be included in the part, but it will result in a message that cannot be split further. The aim is to create a list of parts that adhere to the limit while keeping the integrity of the words.",
+    "topic": "String Manipulation",
+    "subtopic": "Word Splitting",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Splitting"
+    ],
+    "input_format": "A string `message` representing the message to be split and an integer `limit` representing the maximum length of each part.",
+    "output_format": "A list of strings representing the split message parts.",
+    "constraints": [
+      "1 <= message.length <= 10^5",
+      "1 <= limit <= 10^5",
+      "message consists of printable ASCII characters"
+    ],
+    "examples": [
+      {
+        "input": {
+          "message": "The quick brown fox jumps over the lazy dog",
+          "limit": 10
+        },
+        "output": [
+          "The quick",
+          "brown fox",
+          "jumps over",
+          "the lazy",
+          "dog"
+        ],
+        "explanation": "Each part of the message is split at or before the limit of 10 characters, keeping whole words intact."
+      },
+      {
+        "input": {
+          "message": "Loremipsumdolorsitametconsecteturadipiscingelit",
+          "limit": 15
+        },
+        "output": [
+          "Loremipsumdolors",
+          "itametconsectet",
+          "uradipiscingelit"
+        ],
+        "explanation": "The words cannot be split, but the parts still respect the character limit."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to traverse the message string while keeping track of word boundaries.",
+      "You may need to use a list to accumulate parts of the message before appending them to the final result."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Block Placement Queries",
+    "description": "You are given a grid of size m x n initially filled with 0s. You need to perform a series of queries to place blocks in the grid. Each query consists of coordinates (x1, y1) and (x2, y2) representing the corners of a rectangle. When a block is placed, all cells in the specified rectangle are filled with 1. After each query, you must determine the total number of blocks currently placed in the grid. Implement a function that processes multiple such queries efficiently.",
+    "topic": "Grid",
+    "subtopic": "2D Arrays",
+    "tags": [
+      "Grid",
+      "2D Arrays",
+      "Prefix Sum"
+    ],
+    "input_format": "An integer m for the number of rows, an integer n for the number of columns, and a list of queries where each query is represented as a list of four integers [x1, y1, x2, y2].",
+    "output_format": "A list of integers where each integer represents the total number of blocks placed in the grid after each query.",
+    "constraints": [
+      "1 <= m, n <= 1000",
+      "1 <= queries.length <= 10^4",
+      "0 <= x1 <= x2 < m",
+      "0 <= y1 <= y2 < n"
+    ],
+    "examples": [
+      {
+        "input": "m = 3, n = 3, queries = [[0, 0, 1, 1], [1, 1, 2, 2], [0, 1, 2, 1]]",
+        "output": "[4, 5, 6]",
+        "explanation": "After the first query, 4 blocks are placed. After the second query, 5 blocks are placed (including overlapping). After the third query, the total increases to 6."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a 2D cumulative sum array to handle overlapping efficiently.",
+      "Updates to the grid should be efficient to meet the problem constraints."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order. You must traverse the matrix starting from the top-left corner, moving right, then down, then left, and finally up in a spiral until all elements have been visited.",
+    "topic": "Matrix",
+    "subtopic": "Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Spiral"
+    ],
+    "input_format": "A 2D list of integers, matrix, where matrix[i][j] represents the element at the ith row and jth column.",
+    "output_format": "A list of integers representing the elements of the matrix in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "m * n <= 10^4",
+      "-10^5 <= matrix[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The spiral order of this matrix is: 1, 2, 3, 6, 9, 8, 7, 4, 5."
+      },
+      {
+        "input": "matrix = [[1, 2], [3, 4]]",
+        "output": "[1, 2, 4, 3]",
+        "explanation": "The spiral order of this matrix is: 1, 2, 4, 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to manipulate the boundaries as you spiral inward.",
+      "Use four pointers to track the top, bottom, left, and right boundaries."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Length of the Longest Common Prefix",
+    "description": "Write a function to find the length of the longest common prefix string amongst an array of strings. If there is no common prefix, return 0. A common prefix is defined as a substring shared by all input strings starting from the first character.",
+    "topic": "Strings",
+    "subtopic": "Prefix",
+    "tags": [
+      "String",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings `strs`.",
+    "output_format": "An integer representing the length of the longest common prefix.",
+    "constraints": [
+      "0 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "All strings consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\", \"flow\", \"flight\"]",
+        "output": "2",
+        "explanation": "The longest common prefix is \"fl\", which has a length of 2."
+      },
+      {
+        "input": "strs = [\"dog\", \"racecar\", \"car\"]",
+        "output": "0",
+        "explanation": "There is no common prefix among these strings."
+      },
+      {
+        "input": "strs = []",
+        "output": "0",
+        "explanation": "An empty array returns a common prefix length of 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the first string as a base for comparison.",
+      "Use a loop to check the characters of each string against the base.",
+      "Stop when a mismatch is found."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Subarrays with K Different Integers",
+    "description": "Given an integer array nums and an integer k, return the number of good subarrays of nums. A good subarray is defined as a contiguous subarray that contains exactly k different integers.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Count Subarrays"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the number of good subarrays.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "0 <= nums[i] < 10^9",
+      "1 <= k <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 1, 2, 3], k = 2",
+        "output": "7",
+        "explanation": "The good subarrays are [1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], and [1,2,3]."
+      },
+      {
+        "input": "nums = [1, 2, 1, 3, 4], k = 3",
+        "output": "4",
+        "explanation": "The good subarrays are [1,2,1], [2,1,3], [1,3,4], and [1,2,1,3]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a sliding window approach with two pointers.",
+      "Count the number of distinct integers in the current window.",
+      "Keep track of the count of subarrays that meet the criteria."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Adjacent Elements With the Same Color",
+    "description": "Given an array of integers representing colors, return the number of pairs of adjacent elements that have the same color. Each color is represented by a unique integer. Your goal is to count how many pairs of adjacent elements in the array have the same integer value.",
+    "topic": "Array",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Array",
+      "Counting",
+      "Adjacent"
+    ],
+    "input_format": "An array of integers colors, where each integer represents a color.",
+    "output_format": "An integer representing the number of adjacent elements with the same color.",
+    "constraints": [
+      "1 <= colors.length <= 10^5",
+      "1 <= colors[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "colors = [1, 1, 2, 2, 3, 1, 1]",
+        "output": "4",
+        "explanation": "The pairs of adjacent elements with the same color are (1, 1), (2, 2), (1, 1) for a total of 4 pairs."
+      },
+      {
+        "input": "colors = [1, 2, 3, 4, 5]",
+        "output": "0",
+        "explanation": "There are no adjacent elements with the same color."
+      },
+      {
+        "input": "colors = [2, 2, 2, 3, 3, 2, 2]",
+        "output": "5",
+        "explanation": "The pairs of adjacent elements are (2, 2), (2, 2), (3, 3), (2, 2) which gives a total of 5 pairs."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Iterate through the array and count pairs as you compare each element with its next neighbor."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Rectangle in Histogram",
+    "description": "Given an array of integers representing the heights of bars in a histogram, return the area of the largest rectangle that can be formed within the boundaries of the histogram.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Monotonic Stack",
+    "tags": [
+      "Dynamic Programming",
+      "Stack",
+      "Array"
+    ],
+    "input_format": "An array of integers heights where heights[i] represents the height of the ith bar.",
+    "output_format": "An integer representing the area of the largest rectangle that can be formed in the histogram.",
+    "constraints": [
+      "1 <= heights.length <= 10^5",
+      "0 <= heights[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "heights = [2, 1, 5, 6, 2, 3]",
+        "output": "10",
+        "explanation": "The largest rectangle has a height of 5 and a width of 2, thus the area is 5 * 2 = 10."
+      },
+      {
+        "input": "heights = [2, 4]",
+        "output": "4",
+        "explanation": "The largest rectangle has a height of 4 and a width of 1, thus the area is 4 * 1 = 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to keep track of the bars' indices.",
+      "When processing each bar, determine the width of the rectangles that can be formed with the heights of the bars in the stack."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of integers representing the height of walls, compute how much water it can trap after raining. The width of each wall is 1 unit.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers height where height[i] represents the height of the i-th wall.",
+    "output_format": "An integer representing the maximum volume of water that can be trapped.",
+    "constraints": [
+      "0 <= height.length <= 2 * 10^4",
+      "0 <= height[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The trapped water can be visualized between the walls at heights 2, 3, and 2 which sums to 6 units."
+      },
+      {
+        "input": "height = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The maximum water trapped is 9 units between the walls of heights 4, 3, and 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the height of walls to the left and right of each position.",
+      "Use two pointers to efficiently compute the trapped water."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Frogs Croaking",
+    "description": "You are given a string representing the croaking sounds of frogs. The string consists of characters 'c', 'r', 'o', 'a', 'k', which stand for the sounds that one frog makes while croaking. For example, a frog croaks in the order 'croak'. Frogs can croak concurrently. Your task is to find the minimum number of frogs that are croaking at the same time, given the string. If it's impossible for the frogs to croak in a valid sequence, return -1.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Greedy",
+      "Counting"
+    ],
+    "input_format": "A string croakOfFrogs of length n (1 <= n <= 10^5) where each character is either 'c', 'r', 'o', 'a', or 'k'.",
+    "output_format": "An integer representing the minimum number of frogs croaking simultaneously, or -1 if the sequence is invalid.",
+    "constraints": [
+      "1 <= croakOfFrogs.length <= 10^5",
+      "croakOfFrogs consists only of characters 'c', 'r', 'o', 'a', 'k'."
+    ],
+    "examples": [
+      {
+        "input": "croakOfFrogs = \"croakcroak\"",
+        "output": "1",
+        "explanation": "There is one frog that can croak twice, hence only one frog is needed."
+      },
+      {
+        "input": "croakOfFrogs = \"crcoakroak\"",
+        "output": "2",
+        "explanation": "Two frogs are required to satisfy the 'croak' sequence."
+      },
+      {
+        "input": "croakOfFrogs = \"croakcrook\"",
+        "output": "-1",
+        "explanation": "The sequence is invalid because 'k' appears before a complete 'croak'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the counts of 'c', 'r', 'o', 'a', 'k' as you traverse the string.",
+      "Each valid croak should have one 'c', followed by 'r', 'o', 'a', and 'k' in order."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Falling Path Sum II",
+    "description": "Given a 2D grid of integers, each grid cell represents a cost associated with that cell. You need to find the minimum cost to fall from the top to the bottom, following the falling path rules. A falling path starts at any element in the first row, and chooses one element from each row. The next row's chosen element must be from a column that is different from the column of the previous row's chosen element. Your task is to return the minimum sum of the values in the falling path.",
+    "topic": "Dynamic Programming",
+    "subtopic": "2D Dynamic Programming",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Matrix"
+    ],
+    "input_format": "A 2D list grid where grid[i][j] represents the cost of the cell in the ith row and jth column.",
+    "output_format": "An integer representing the minimum falling path sum.",
+    "constraints": [
+      "1 <= grid.length <= 100",
+      "1 <= grid[i].length <= 100",
+      "-100 <= grid[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[2,1,3],[6,5,4],[7,8,9]]",
+        "output": "13",
+        "explanation": "The minimum path is 1 -> 4 -> 8, which sums to 13."
+      },
+      {
+        "input": "grid = [[-19,57],[-40,-5]]",
+        "output": "-59",
+        "explanation": "The minimum path is -19 -> -40, which sums to -59."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to track the minimum sums.",
+      "Avoid choosing the same column in consecutive rows."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "First Missing Positive",
+    "description": "Given an unsorted integer array, find the smallest missing positive integer. You must implement a solution that runs in O(n) time and uses constant extra space.",
+    "topic": "Array",
+    "subtopic": "Finding Missing Number",
+    "tags": [
+      "Array",
+      "Searching",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the first missing positive integer.",
+    "constraints": [
+      "0 <= nums.length <= 300",
+      "-2^31 <= nums[i] <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, -1, 1]",
+        "output": "2",
+        "explanation": "The smallest missing positive integer is 2."
+      },
+      {
+        "input": "nums = [1, 2, 0]",
+        "output": "3",
+        "explanation": "The smallest missing positive integer is 3."
+      },
+      {
+        "input": "nums = [7, 8, 9, 11, 12]",
+        "output": "1",
+        "explanation": "The smallest missing positive integer is 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using the index of the array to mark the presence of numbers.",
+      "Only consider positive numbers within the range of the array length."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Common Prefix",
+    "description": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\". A common prefix is a substring that appears at the start of each string in the array.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings strs, where 1 <= strs.length <= 200 and 0 <= strs[i].length <= 200.",
+    "output_format": "A string representing the longest common prefix, or an empty string if there is no common prefix.",
+    "constraints": [
+      "1 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200"
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\", \"flow\", \"flight\"]",
+        "output": "\"fl\"",
+        "explanation": "The longest common prefix is \"fl\"."
+      },
+      {
+        "input": "strs = [\"dog\", \"racecar\", \"car\"]",
+        "output": "\"\"",
+        "explanation": "There is no common prefix among the strings."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Compare the characters one by one.",
+      "If the prefix matches an entire string, check the next string.",
+      "If characters don't match, stop and return the common prefix found so far."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is any contiguous sequence of characters in a string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Map"
+    ],
+    "input_format": "A single string s of length n, where 1 <= n <= 10^5.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of English letters, digits, symbols and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is \"abc\", which has a length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is \"b\", which has a length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is \"wke\", which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to use a sliding window technique.",
+      "Use a hash map to track characters and their indices."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Candy Crush",
+    "description": "In a 2D grid, you have candies represented by numbers. When three or more candies of the same type are adjacent either horizontally or vertically, they crush and disappear. Instead of returning the grid after each crush, return the final state of the grid after all possible crushes have been completed. You need to implement a function to perform these crush operations until no more candies can be crushed.",
+    "topic": "Array",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Simulation"
+    ],
+    "input_format": "A 2D list of integers representing the grid of candies.",
+    "output_format": "A 2D list of integers representing the final state of the grid after all crush operations have been performed.",
+    "constraints": [
+      "1 <= grid.length <= 50",
+      "1 <= grid[i].length <= 50",
+      "0 <= grid[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "[[1,1,1,0],[0,0,1,2],[3,3,2,2],[3,0,0,0]]",
+        "output": "[[3,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]",
+        "explanation": "The three '1's in the first row crush and disappear, then the '2's in the second row crush as well."
+      },
+      {
+        "input": "[[1,2,2],[2,1,2],[1,1,1]]",
+        "output": "[[0,0,0],[0,0,0],[0,0,0]]",
+        "explanation": "All candies will eventually be crushed as they form groups of three or more."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Look for groups of candies to crush iteratively.",
+      "Keep track of the cells that need to be cleared after each iteration.",
+      "Utilize a queue or stack to process crush operations effectively."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Paths",
+    "description": "A robot is located at the top-left corner of an m x n grid and needs to reach the bottom-right corner. The robot can only move either down or right at any point in time. Given the dimensions of the grid, m and n, write a function to calculate the number of unique paths the robot can take to reach the bottom-right corner.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorial",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Combinatorics"
+    ],
+    "input_format": "Two integers m and n, representing the dimensions of the grid.",
+    "output_format": "An integer representing the number of unique paths.",
+    "constraints": [
+      "1 <= m, n <= 100"
+    ],
+    "examples": [
+      {
+        "input": "m = 3, n = 7",
+        "output": "28",
+        "explanation": "There are 28 unique paths from the top-left corner to the bottom-right corner."
+      },
+      {
+        "input": "m = 3, n = 2",
+        "output": "3",
+        "explanation": "There are 3 unique paths from the top-left corner to the bottom-right corner."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to store the number of ways to reach each cell.",
+      "You can use combinatorial math to calculate unique paths without iteration."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Colored Pieces if Both Neighbors are the Same Color",
+    "description": "You are given a string 'pieces' consisting of colored pieces represented by the characters 'R', 'G', and 'B'. In one move, you can remove a piece if both its neighboring pieces are of the same color as each other. Your task is to determine the final configuration of the string after making all possible moves. Return this final string.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Simulation",
+      "Greedy"
+    ],
+    "input_format": "A string pieces consisting of characters 'R', 'G', and 'B'.",
+    "output_format": "A string representing the final configuration of the pieces after all possible removals.",
+    "constraints": [
+      "1 <= pieces.length <= 100",
+      "pieces consists of 'R', 'G', and 'B' only."
+    ],
+    "examples": [
+      {
+        "input": "pieces = 'RRGGBB'",
+        "output": "RRGGBB",
+        "explanation": "No neighboring pieces that can be removed."
+      },
+      {
+        "input": "pieces = 'RRGGGBBB'",
+        "output": "R",
+        "explanation": "Remove the first 'G' with 'R' on either side, then remove 'B's with neighboring 'G's."
+      },
+      {
+        "input": "pieces = 'RGBRGB'",
+        "output": "RGBRGB",
+        "explanation": "No neighboring pieces to remove."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to keep track of the current configuration.",
+      "Check neighbors before removing pieces."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Diagonal Traverse",
+    "description": "Given a 2D matrix of integers, traverse the matrix diagonally from the top-left corner to the bottom-right corner. Return the elements in the order they are visited as a list. The traversal should switch direction at the boundaries of the matrix. When moving up-right, if you reach the last column or the first row, you change direction to down-left; and vice versa.",
+    "topic": "Array",
+    "subtopic": "Matrix Traversal",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Traversal"
+    ],
+    "input_format": "A 2D array of integers matrix.",
+    "output_format": "A list of integers representing the diagonal traversal of the matrix.",
+    "constraints": [
+      "1 <= matrix.length <= 100",
+      "1 <= matrix[i].length <= 100",
+      "-10^5 <= matrix[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 4, 7, 5, 3, 6, 8, 9]",
+        "explanation": "The diagonal traversal goes: 1 (top-left) -> 2 -> 4 -> 7 (bottom-left) -> 5 -> 3 -> 6 -> 8 -> 9 (bottom-right)."
+      },
+      {
+        "input": "matrix = [[1, 2], [3, 4]]",
+        "output": "[1, 2, 4, 3]",
+        "explanation": "The diagonal traversal goes: 1 (top-left) -> 2 (top-right) -> 4 (bottom-right) -> 3 (bottom-left)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of current position and direction.",
+      "Change direction when reaching the boundary of the matrix."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game II",
+    "description": "You are given an array of non-negative integers, where each element represents your maximum jump length at that position. Your goal is to reach the last index in the minimum number of jumps. Write a function that returns the minimum number of jumps to reach the last index.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of non-negative integers where nums[i] represents the maximum jump length at position i.",
+    "output_format": "An integer representing the minimum number of jumps to reach the last index.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "2",
+        "explanation": "Starting from index 0, you can jump to index 1 (value 3) and then reach the last index (value 4) in 2 jumps."
+      },
+      {
+        "input": "nums = [2, 3, 0, 1, 4]",
+        "output": "2",
+        "explanation": "Jump from index 0 to index 1 (value 3) and then to the last index (value 4) in 2 jumps."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "0",
+        "explanation": "You are already at the last index, so no jumps are needed."
+      },
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "2",
+        "explanation": "Jump from index 0 to 1 and then to the last index in 2 jumps."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about the farthest point you can reach with each jump.",
+      "You might want to keep track of the current end of the jump range."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Consecutive Sequence",
+    "description": "Given an unsorted array of integers, find the length of the longest consecutive elements sequence. Your algorithm should run in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest consecutive sequence.",
+    "constraints": [
+      "0 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [100, 4, 200, 1, 3, 2]",
+        "output": "4",
+        "explanation": "The longest consecutive sequence is [1, 2, 3, 4] which has a length of 4."
+      },
+      {
+        "input": "nums = [0, 0, 1, 1, 2, 2, 3]",
+        "output": "4",
+        "explanation": "The longest consecutive sequence is [0, 1, 2, 3] which has a length of 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a set to store the elements.",
+      "Iterate over the array and check for consecutive sequences.",
+      "For each number, check if it's the start of a sequence."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Image Smoother",
+    "description": "Given a 2D integer matrix representing the pixel values of an image, smooth the image using the following rules: For each pixel value, the new value is the average of all the pixel values in the 3x3 square centered on that pixel. Pixels outside the image border should not be counted in the average, and the result should be rounded down to the nearest integer.",
+    "topic": "Matrix",
+    "subtopic": "Image Processing",
+    "tags": [
+      "Matrix",
+      "Image Processing",
+      "Average"
+    ],
+    "input_format": "A 2D integer matrix of size m x n where 1 <= m, n <= 100.",
+    "output_format": "A 2D integer matrix containing the smoothed values.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "0 <= matrix[i][j] <= 255"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[[4, 4, 5], [5, 5, 6], [6, 6, 7]]",
+        "explanation": "Each pixel's new value is the average of its surrounding pixels, including itself."
+      },
+      {
+        "input": "matrix = [[100]], [[200]]",
+        "output": "[[100]]",
+        "explanation": "With a single pixel, the value remains the same."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider boundary conditions when accessing the 3x3 region.",
+      "Use a nested loop to traverse each pixel in the matrix."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where prices[i] is the price of a given stock on the i-th day.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Track the minimum price seen so far.",
+      "Calculate profit as the difference between the current price and the minimum price."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix II",
+    "description": "Given a positive integer n, generate an n x n matrix filled with elements from 1 to n^2 in spiral order. The matrix should be filled in clockwise direction starting from the top-left corner.",
+    "topic": "Matrix",
+    "subtopic": "Matrix Traversal",
+    "tags": [
+      "Matrix",
+      "Spiral Traversal",
+      "2D Array"
+    ],
+    "input_format": "A single integer n (1 <= n <= 20), representing the size of the matrix.",
+    "output_format": "An n x n 2D list (array) representing the matrix filled in spiral order.",
+    "constraints": [
+      "1 <= n <= 20"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[[1, 2, 3], [8, 9, 4], [7, 6, 5]]",
+        "explanation": "The matrix is filled as follows: 1, 2, 3 in the first row, 4, 5, 6 in the last row, then 7, 8, 9 in the middle row."
+      },
+      {
+        "input": "n = 1",
+        "output": "[[1]]",
+        "explanation": "The matrix is simply [[1]] for n = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to change direction after filling each row or column.",
+      "Use a boundaries approach to limit the filling area.",
+      "Track the current position and direction to fill the matrix accordingly."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Accounts Merge",
+    "description": "Given a list of accounts where each account consists of a name and a list of emails, your goal is to merge accounts that belong to the same person. Two accounts are considered to be the same if they have at least one email in common. The resulting accounts should be formatted as a list of lists, where each inner list contains the name followed by the sorted list of merged emails. If there are multiple accounts for the same person, concatenate them by email while ensuring each email is unique.",
+    "topic": "Graph",
+    "subtopic": "Union Find",
+    "tags": [
+      "Graph",
+      "Union Find",
+      "String"
+    ],
+    "input_format": "A list of accounts, where each account is a list consisting of a name (string) followed by one or more email addresses (strings).",
+    "output_format": "A list of merged accounts, where each account is a list that starts with the name followed by the sorted email addresses.",
+    "constraints": [
+      "1 <= accounts.length <= 1000",
+      "1 <= accounts[i].length <= 100",
+      "The name and email addresses are all non-empty strings.",
+      "Each account has a unique name."
+    ],
+    "examples": [
+      {
+        "input": "[['John', 'johnsmith@mail.com', 'john00@mail.com'], ['John', 'johnnybravo@mail.com'], ['John', 'johnsmith@mail.com', 'john_newyork@mail.com']]",
+        "output": "[['John', 'john00@mail.com', 'john_newyork@mail.com', 'johnsmith@mail.com', 'johnnybravo@mail.com']]",
+        "explanation": "The first and third accounts for John have the email 'johnsmith@mail.com' in common, so they are merged with 'john00@mail.com' and 'john_newyork@mail.com'. The second account is independent."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a Union-Find data structure to group accounts by email.",
+      "Sort the emails for each merged account before returning."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Brightest Position on Street",
+    "description": "You are given an array of integers where each integer represents the brightness at a certain position on a street. The elements in the array follow a specific distribution where a negative value indicates a streetlight being turned off, and positive values indicate brightness levels from streetlights that are turned on. Your task is to find the position on the street that has the maximum brightness. If there are multiple positions with the same maximum brightness, return the smallest position index.",
+    "topic": "Array",
+    "subtopic": "Maximum Value",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Maximum"
+    ],
+    "input_format": "An array of integers brightness where -10^4 <= brightness[i] <= 10^4.",
+    "output_format": "An integer representing the position with the maximum brightness.",
+    "constraints": [
+      "1 <= brightness.length <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "brightness = [0, 3, -1, 2, 3, 1, -2]",
+        "output": "1",
+        "explanation": "The maximum brightness is 3, which occurs at index 1 and 4, but the smallest index is 1."
+      },
+      {
+        "input": "brightness = [-5, -1, -3, -1, -5]",
+        "output": "1",
+        "explanation": "The brightness levels are all negative; the least negative value is -1 at index 1 and 3, and the smallest index is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a loop to track the maximum brightness and its index."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Rotting Oranges",
+    "description": "In a given grid of oranges, some oranges are fresh, some are rotten, and some are empty. Your task is to determine the minimum time required for all fresh oranges to become rotten. Every minute, any fresh orange that is adjacent (up, down, left, or right) to a rotten orange becomes rotten. If there are still fresh oranges that cannot rot, return -1.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid represented as a list of lists containing integers: 0 for empty cells, 1 for fresh oranges, and 2 for rotten oranges.",
+    "output_format": "An integer representing the minimum time required for all fresh oranges to rot, or -1 if not all can be rotten.",
+    "constraints": [
+      "The grid must have at least 1 row and at most 300 rows.",
+      "The grid must have at least 1 column and at most 300 columns.",
+      "Each cell in the grid can only contain 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "[[2,1,1],[1,1,0],[0,1,2]]",
+        "output": "4",
+        "explanation": "Initially, the rotten oranges (2s) can spread to adjacent fresh oranges (1s) over time. After 4 minutes, all fresh oranges rot."
+      },
+      {
+        "input": "[[2,0,0],[0,1,1],[1,0,2]]",
+        "output": "-1",
+        "explanation": "Fresh oranges are isolated and cannot rot."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use breadth-first search (BFS) to simulate the rotting process.",
+      "Keep track of the time taken for the spread of rot."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Employee Free Time",
+    "description": "You are given a list of schedules for various employees. Each schedule contains a list of time intervals where the employee is busy. Your goal is to find the time intervals that are free for all employees. The result should be a list of non-overlapping intervals representing the common free time for all employees.",
+    "topic": "Interval",
+    "subtopic": "Merge Intervals",
+    "tags": [
+      "Intervals",
+      "Merge",
+      "Scheduling"
+    ],
+    "input_format": "A list of list of intervals, where each interval is represented as [start, end] and represents the busy hours of an employee.",
+    "output_format": "A list of intervals representing the common free time for all employees.",
+    "constraints": [
+      "1 <= schedules.length <= 50",
+      "0 <= schedules[i].length <= 10",
+      "0 <= schedules[i][j][0] < schedules[i][j][1] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "[[[1, 2], [5, 6]], [[1, 3]], [[2, 3], [4, 10]]]",
+        "output": "[[3, 4]]",
+        "explanation": "From all the employees, the common free time is from 3 to 4."
+      },
+      {
+        "input": "[[[1, 3]], [[2, 4]], [[3, 5]]]",
+        "output": "[[4, 5]]",
+        "explanation": "The only free time among the employees is from 4 to 5."
+      },
+      {
+        "input": "[[[1, 2], [3, 4]], [[5, 6]]]",
+        "output": "[[2, 3], [4, 5]]",
+        "explanation": "There are gaps between the busy schedules: from 2 to 3 and from 4 to 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider merging the busy intervals of each employee first.",
+      "Use sorting to handle overlaps between intervals effectively.",
+      "Look for gaps between merged intervals to identify free time."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers 'nums' and an integer 'target', return the indices of the two numbers such that they add up to 'target'. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9",
+      "Only one valid answer exists."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "Because nums[1] + nums[2] == 6, we return [1, 2]."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "Because nums[0] + nums[1] == 6, we return [0, 1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the numbers and their indices.",
+      "Check if the complement (target - num) exists in the hash map."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search II",
+    "description": "Given a 2D board of characters and a list of strings words, return all words on the board. A word has a starting position on the board and can be constructed by a sequence of adjacent (horizontally or vertically neighboring) characters. You can assume all characters in the board are lowercase letters, and the words in the list are also lowercase. If the same word appears in the words list multiple times, you only need to return it once.",
+    "topic": "Backtracking",
+    "subtopic": "Trie",
+    "tags": [
+      "Backtracking",
+      "Trie",
+      "Search"
+    ],
+    "input_format": "A 2D array of characters board and a list of strings words.",
+    "output_format": "A list of strings that represent all the words found on the board.",
+    "constraints": [
+      "1 <= board.length <= 12",
+      "1 <= board[i].length <= 12",
+      "1 <= words.length <= 3 * 10^4",
+      "1 <= words[i].length <= 10"
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "o",
+              "a",
+              "a",
+              "n"
+            ],
+            [
+              "e",
+              "t",
+              "a",
+              "e"
+            ],
+            [
+              "i",
+              "h",
+              "k",
+              "r"
+            ],
+            [
+              "i",
+              "f",
+              "l",
+              "v"
+            ]
+          ],
+          "words": [
+            "oath",
+            "pea",
+            "eat",
+            "rain"
+          ]
+        },
+        "output": [
+          "oath",
+          "eat"
+        ],
+        "explanation": "The words 'oath' and 'eat' can be found in the board. 'oath' starts at (0,0) and goes down to (0,1) and so on. 'eat' can be formed starting from (1,1)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a Trie to store the words.",
+      "Use backtracking to explore all possible paths in the board."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Absolute Difference Between Elements With Constraint",
+    "description": "Given an array of integers and a constraint value k, find the minimum absolute difference between any two elements in the array such that the elements' difference is greater than or equal to k. If no such pair exists, return -1.",
+    "topic": "Array",
+    "subtopic": "Sorting and Searching",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Searching",
+      "Minimum Difference"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the minimum absolute difference between any two elements meeting the constraint, or -1 if no such pair exists.",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "0 <= k <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [4, 2, 1, 3], k = 1",
+        "output": "1",
+        "explanation": "The pairs (4, 3) have a difference of 1, which meets the constraint."
+      },
+      {
+        "input": "nums = [1, 5, 9, 12], k = 5",
+        "output": "3",
+        "explanation": "The pairs (5, 9) have a difference of 3, which is the minimum absolute difference greater than or equal to 5."
+      },
+      {
+        "input": "nums = [1, 3, 6], k = 4",
+        "output": "-1",
+        "explanation": "No pairs have an absolute difference larger than or equal to 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array to efficiently find pairs.",
+      "Consider two pointers or binary search for optimal solutions."
+    ],
+    "company": "Roblox"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator IV",
+    "description": "Design a basic calculator that evaluates a string expression containing non-negative integers, '+', '-', '*', '/' operators, and parentheses. The input string is guaranteed to be a valid expression without any leading or trailing spaces. The calculator should return the result of the evaluated expression as an integer. It should handle the precedence of operators correctly, meaning multiplication and division should be performed before addition and subtraction. You need to implement support for the addition of unary operators '+' or '-' at the beginning of the expression.",
+    "topic": "Math",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "Stack",
+      "Mathematics",
+      "Expression Evaluation",
+      "Parsing"
+    ],
+    "input_format": "A string expression 's' representing the mathematical expression.",
+    "output_format": "An integer representing the result of evaluating the expression.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of digits, '+', '-', '*', '/' and '(', ')'.",
+      "All tokens in the expression are separated by a single space."
+    ],
+    "examples": [
+      {
+        "input": "s = \"3 + 5\"",
+        "output": "8",
+        "explanation": "The expression is evaluated as 3 + 5 = 8."
+      },
+      {
+        "input": "s = \" 2-1 + 2 \"",
+        "output": "3",
+        "explanation": "The expression is evaluated as 2 - 1 + 2 = 3."
+      },
+      {
+        "input": "s = \"(1+(4+5+2)-3)+(6+8)\"",
+        "output": "23",
+        "explanation": "The expression is evaluated step by step: 1 + (4 + 5 + 2) - 3 + (6 + 8) = 23."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a stack to handle the precedence of the operators.",
+      "Consider using a two-pass algorithm; the first pass to handle '*' and '/' and the second for '+' and '-'."
+    ],
+    "company": "Roblox"
+  }
+]

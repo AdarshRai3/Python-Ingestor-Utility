@@ -1,0 +1,222 @@
+[
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports all following operations in average O(1) time. Implement the RandomizedSet class with the following methods: \n\n- insert(val): Inserts an item val into the set if not present. Returns true if the item was not present and was added successfully, false otherwise.\n- remove(val): Removes an item val from the set if present. Returns true if the item was present and removed successfully, false otherwise.\n- getRandom(): Returns a random element from the current set of elements (it's guaranteed that at least one element exists when this method is called). Each element must have the same probability of being returned.\n\nYou must implement this in a way that ensures the three operations run in average O(1) time.",
+    "topic": "Data Structure",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Design",
+      "Hash Table",
+      "Randomization"
+    ],
+    "input_format": "You will be given a series of operations represented as a list of strings, where each string is either 'insert', 'remove', or 'getRandom', followed by the integer value for 'insert' and 'remove' operations.",
+    "output_format": "The output of getRandom should be an integer that represents a random element of the set.",
+    "constraints": [
+      "1 <= val <= 10^5",
+      "Insert and remove operations can be called at most 10^4 times."
+    ],
+    "examples": [
+      {
+        "input": [
+          "RandomizedSet",
+          "insert",
+          "remove",
+          "insert",
+          "getRandom"
+        ],
+        "output": [
+          null,
+          true,
+          true,
+          true,
+          2
+        ],
+        "explanation": "The set initially is empty. After inserting 1, it returns true. Removing 1 returns true. Inserting 2 returns true. getRandom may return 2 as it is the only element in the set."
+      },
+      {
+        "input": [
+          "RandomizedSet",
+          "insert",
+          "insert",
+          "getRandom",
+          "remove",
+          "getRandom"
+        ],
+        "output": [
+          null,
+          true,
+          true,
+          1,
+          true,
+          2
+        ],
+        "explanation": "Initially, the set is empty. Inserting 1 and 2 returns true for both. getRandom could return either 1 or 2, then removing 1 returns true. Finally, getRandom will return 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to store the elements and their indices.",
+      "To get a random element, you might need to maintain a list of elements.",
+      "When removing an element, ensure you handle the index shift properly."
+    ],
+    "company": "AppFolio"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Path in a Grid with Obstacles Elimination",
+    "description": "You are given a grid of dimensions m x n where each cell can have a value of 0 or 1. 0 represents an empty cell, and 1 represents an obstacle. You can move up, down, left, or right from a cell. You start at the top-left corner of the grid (0,0) and want to reach the bottom-right corner of the grid (m-1, n-1). However, you are allowed to eliminate at most k obstacles. Return the minimum number of steps required to reach the bottom-right corner of the grid. If it is not possible to reach the bottom-right corner, return -1.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Shortest Path",
+      "Grid"
+    ],
+    "input_format": "A 2D grid represented as a list of lists of integers and an integer k.",
+    "output_format": "An integer representing the minimum steps required to reach the bottom-right corner, or -1 if unreachable.",
+    "constraints": [
+      "1 <= m, n <= 40",
+      "0 <= k <= m * n",
+      "grid[i][j] is 0 or 1"
+    ],
+    "examples": [
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "k": 1
+        },
+        "output": 4,
+        "explanation": "The path is (0,0) -> (0,1) -> (0,2) -> (1,2) -> (2,2) with 1 obstacle eliminated."
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "k": 1
+        },
+        "output": -1,
+        "explanation": "There is no way to reach the bottom-right corner without eliminating more than 1 obstacle."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a BFS approach to explore paths.",
+      "Track the number of obstacles eliminated.",
+      "Use a priority queue to explore paths with fewer steps first."
+    ],
+    "company": "AppFolio"
+  },
+  {
+    "question_id": "",
+    "title": "Logger Rate Limiter",
+    "description": "Design a logger system that receives a message and timestamp. Each message should be printed if it hasn't been printed in the last 10 seconds. If the same message is received again within a 10-second window, it should not be printed. Implement the Logger class with a method log(message: str, timestamp: int) that returns True if the message should be printed in the given timestamp, otherwise returns False.",
+    "topic": "Design",
+    "subtopic": "Rate Limiter",
+    "tags": [
+      "Design",
+      "Rate Limiter",
+      "HashMap"
+    ],
+    "input_format": "A string 'message' and an integer 'timestamp'.",
+    "output_format": "A boolean indicating if the message should be printed.",
+    "constraints": [
+      "1 <= timestamp <= 10^9",
+      "1 <= message.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "log(\"foo\", 1)",
+        "output": "true",
+        "explanation": "Message 'foo' is logged for the first time."
+      },
+      {
+        "input": "log(\"bar\", 2)",
+        "output": "true",
+        "explanation": "Message 'bar' is logged for the first time."
+      },
+      {
+        "input": "log(\"foo\", 3)",
+        "output": "false",
+        "explanation": "Message 'foo' was logged within the 10-second window."
+      },
+      {
+        "input": "log(\"bar\", 11)",
+        "output": "true",
+        "explanation": "Message 'bar' can be logged again since it was last logged at timestamp 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a dictionary to track the last logged time of each message.",
+      "Check if the difference between current and last timestamp exceeds 10 seconds."
+    ],
+    "company": "AppFolio"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. Implement the LRUCache class with the following methods:\n\n- LRUCache(int capacity): Initialize the LRU cache with positive size capacity.\n- int get(int key): Return the value of the key if the key exists, otherwise return -1.\n- void put(int key, int value): Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity, evict the least recently used key.\n\nThe functions should operate in O(1) average time complexity.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Cache",
+      "Design",
+      "Data Structure",
+      "Linked List",
+      "Hash Map"
+    ],
+    "input_format": "The input consists of a list of operations where each operation is either 'get' or 'put' with its corresponding parameters.",
+    "output_format": "For each 'get' operation, return the value associated with the key or -1 if not found. The 'put' operation does not return a value.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key, value <= 10^4",
+      "The operations will be in the format ['put', 'get'] with an appropriate number of parameters."
+    ],
+    "examples": [
+      {
+        "input": "operations = [['LRUCache', 2], ['put', 1, 1], ['put', 2, 2], ['get', 1], ['put', 3, 3], ['get', 2], ['put', 4, 4], ['get', 1], ['get', 3], ['get', 4]]",
+        "output": "[null,null,null,1,null,-1,null, -1,3,4]",
+        "explanation": "1 is returned from the cache. 2 is evicted when 3 is inserted. 4 is also evicted replacing 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hashmap and a doubly linked list to efficiently manage the cache.",
+      "The doubly linked list will help in tracking the least recently used items."
+    ],
+    "company": "AppFolio"
+  }
+]

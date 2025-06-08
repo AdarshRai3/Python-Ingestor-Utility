@@ -1,0 +1,152 @@
+[
+  {
+    "question_id": "",
+    "title": "Smallest Range Covering Elements from K Lists",
+    "description": "You have k lists of sorted integers. Each list is sorted in ascending order. You need to find the smallest range that includes at least one number from each of the k lists. The range is defined as [min, max] where min is the minimum number within the range and max is the maximum number within the range. If there are multiple smallest ranges, return any of them.",
+    "topic": "Sorting",
+    "subtopic": "Heap",
+    "tags": [
+      "Heap",
+      "Sorting",
+      "Interval"
+    ],
+    "input_format": "A list of k lists, where each list contains sorted integers.",
+    "output_format": "An array of two integers representing the smallest range [min, max].",
+    "constraints": [
+      "1 <= k <= 100",
+      "1 <= lists[i].length <= 1000",
+      "-10^5 <= lists[i][j] <= 10^5",
+      "Each list contains unique integers."
+    ],
+    "examples": [
+      {
+        "input": "lists = [[1, 2, 3], [2, 3, 4], [3, 4, 5]]",
+        "output": "[2, 3]",
+        "explanation": "The smallest range that includes at least one number from each list is [2, 3]."
+      },
+      {
+        "input": "lists = [[10, 20, 30], [5, 15, 25], [12, 18, 22]]",
+        "output": "[12, 15]",
+        "explanation": "The smallest range that includes numbers from all three lists is [12, 15]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a min-heap to keep track of the current smallest elements.",
+      "Consider the maximum element across the k lists to manage the range."
+    ],
+    "company": "WinZO"
+  },
+  {
+    "question_id": "",
+    "title": "Regular Expression Matching",
+    "description": "Implement a function that takes two strings, `s` and `p`, where `s` is the input string and `p` is a pattern string with support for '.' and '*' characters. The '.' character matches any single character, while the '*' character matches zero or more occurrences of the preceding element. Determine if the string `s` matches the pattern `p`.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Matching",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Recursion"
+    ],
+    "input_format": "Two strings, s (the input string) and p (the pattern string).",
+    "output_format": "A boolean value indicating whether the string matches the pattern.",
+    "constraints": [
+      "1 <= s.length <= 20",
+      "1 <= p.length <= 20",
+      "s and p consist of lowercase English letters, '.' and '*' characters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"aab\", p = \"c*a*b\"",
+        "output": "true",
+        "explanation": "The pattern matches the string: 'c' can be ignored, 'a' matches 'a', 'a' matches 'a', and 'b' matches 'b'."
+      },
+      {
+        "input": "s = \"missippi\", p = \"mis*is*p*.\"",
+        "output": "false",
+        "explanation": "The pattern does not match the string."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to keep track of matches.",
+      "Think about how '*' can affect the matching process.",
+      "Check base cases for empty strings in s and p."
+    ],
+    "company": "WinZO"
+  },
+  {
+    "question_id": "",
+    "title": "Domino and Tromino Tiling",
+    "description": "Given a 2 x n board, your goal is to cover the entire board by using two types of tiles: dominoes (1 x 2) and trominoes (L-shaped tiles). You need to determine the total number of ways to tile the board. The output should return the number of distinct ways to tile the board, modulo 10^9 + 7.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Tile Tiling",
+    "tags": [
+      "Dynamic Programming",
+      "Tiling",
+      "Combinatorics"
+    ],
+    "input_format": "An integer n (1 <= n <= 1000) representing the length of the board.",
+    "output_format": "An integer representing the total number of distinct ways to tile the board, modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= n <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "5",
+        "explanation": "There are five ways to tile a 2 x 3 board: 3 dominoes vertically, 2 dominoes horizontally and 1 tromino, or three trominoes."
+      },
+      {
+        "input": "n = 4",
+        "output": "11",
+        "explanation": "There are eleven ways to tile a 2 x 4 board, including arrangements with various configurations of dominoes and trominoes."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to build solutions incrementally.",
+      "The number of ways to tile the board can be expressed in terms of previous solutions."
+    ],
+    "company": "WinZO"
+  },
+  {
+    "question_id": "",
+    "title": "Initial Public Offering (IPO)",
+    "description": "Suppose you are the owner of a startup company that is preparing for an IPO. You have a list of projects, each with a potential profit and a duration to complete. You want to maximize the total profit from the projects you choose to work on within a given time limit. Your task is to determine the maximum profit possible by selecting projects whose total duration does not exceed the given time limit. Each project can be selected at most once. Additionally, you can only consider projects that can be initiated in a given time frame.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Knapsack Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Knapsack"
+    ],
+    "input_format": "An integer timeLimit representing the maximum time limit, and a list of projects, where each project is represented by a tuple (profit, duration).",
+    "output_format": "An integer representing the maximum profit achievable within the time limit.",
+    "constraints": [
+      "1 <= timeLimit <= 10^4",
+      "1 <= projects.length <= 100",
+      "1 <= projects[i][0] <= 10^6",
+      "1 <= projects[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "timeLimit = 10, projects = [(5, 2), (10, 3), (15, 5), (7, 4)]",
+        "output": "22",
+        "explanation": "Choosing projects (10, 3) and (15, 5) provides the maximum profit of 10 + 15 = 25 without exceeding the time limit."
+      },
+      {
+        "input": "timeLimit = 5, projects = [(1, 1), (2, 2), (3, 3)]",
+        "output": "3",
+        "explanation": "The optimal choice is to select the project (3, 3) which gives the maximum profit of 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a dynamic programming approach similar to the 0/1 Knapsack problem.",
+      "Think about maintaining a DP array where dp[j] denotes the maximum profit for time j.",
+      "You can iterate through the projects and update the DP table in reverse order."
+    ],
+    "company": "WinZO"
+  }
+]

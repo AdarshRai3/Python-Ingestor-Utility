@@ -1,0 +1,287 @@
+[
+  {
+    "question_id": "",
+    "title": "Count Number of Ways to Place Houses",
+    "description": "You are given a row of land represented as a binary array where each cell can be either empty (0) or occupied by a house (1). You want to place houses on empty cells following the rule that no two houses can be placed on adjacent cells. Return the number of ways to arrange the houses on this land such that no two houses are adjacent. The result should be returned modulo 10^9 + 7.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorial Counting",
+    "tags": [
+      "Dynamic Programming",
+      "Counting",
+      "Combinatorics"
+    ],
+    "input_format": "A binary array land of length n where land[i] is either 0 (empty) or 1 (house).",
+    "output_format": "An integer representing the number of ways to arrange the houses modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= land.length <= 10^5",
+      "land[i] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "land = [0, 0, 0, 0]",
+        "output": "5",
+        "explanation": "The valid arrangements are: 0000, 1000, 0100, 0010, and 0001. Thus, there are 5 ways."
+      },
+      {
+        "input": "land = [1, 0, 0, 0, 1]",
+        "output": "1",
+        "explanation": "Only one arrangement is valid: [1, 0, 0, 0, 1], as the houses are already placed."
+      },
+      {
+        "input": "land = [0, 1, 0, 0, 0, 1]",
+        "output": "3",
+        "explanation": "The valid arrangements are: [1, 1, 0, 0, 0, 1], [0, 1, 1, 0, 0, 1], and [0, 1, 0, 1, 0, 1]. There are 3 ways."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the state of each cell individually.",
+      "Use dynamic programming to keep track of valid placements.",
+      "Think about how blank (0) cells influence the placements."
+    ],
+    "company": "Nagarro"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within the string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Map"
+    ],
+    "input_format": "A string s consisting of English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The answer is \"abc\", with the length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The answer is \"b\", with the length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The answer is \"wke\", with the length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "Use a set to keep track of the characters in the current substring.",
+      "Expand the window until you find a repeating character."
+    ],
+    "company": "Nagarro"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9",
+      "Only one valid answer exists."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] == 2 + 7 == 9, so the indices [0, 1] are returned."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] == 2 + 4 == 6, so the indices [1, 2] are returned."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] == 3 + 3 == 6, so the indices [0, 1] are returned."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the indices of the elements you have seen."
+    ],
+    "company": "Nagarro"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if: Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Valid Parentheses"
+    ],
+    "input_format": "A string s consisting of parentheses characters.",
+    "output_format": "Return true if the string is valid, otherwise return false.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only '()[]{}'"
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are correctly nested and matched."
+      },
+      {
+        "input": "s = '([{}])'",
+        "output": "true",
+        "explanation": "All types of brackets are correctly matched and nested."
+      },
+      {
+        "input": "s = '(]')",
+        "output": "false",
+        "explanation": "The brackets are not matched correctly."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Check if the closing bracket matches the top of the stack."
+    ],
+    "company": "Nagarro"
+  },
+  {
+    "question_id": "",
+    "title": "Contains Duplicate",
+    "description": "Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Searching"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A boolean value indicating whether any value appears at least twice.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "true",
+        "explanation": "The number 1 appears twice in the array."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "false",
+        "explanation": "All numbers appear only once."
+      },
+      {
+        "input": "nums = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]",
+        "output": "true",
+        "explanation": "The numbers 1 and 3 are repeated."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash set to track seen numbers."
+    ],
+    "company": "Nagarro"
+  },
+  {
+    "question_id": "",
+    "title": "Subarray Sum Equals K",
+    "description": "Given an integer array nums and an integer k, return the total number of continuous subarrays whose sum equals to k.",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "HashMap",
+      "Prefix Sum"
+    ],
+    "input_format": "An integer array nums followed by an integer k.",
+    "output_format": "An integer representing the number of continuous subarrays that sum up to k.",
+    "constraints": [
+      "1 <= nums.length <= 20,000",
+      "-1000 <= nums[i] <= 1000",
+      "-10^7 <= k <= 10^7"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 1], k = 2",
+        "output": "2",
+        "explanation": "The subarrays [1, 1] (from indices 0 to 1) and [1, 1] (from indices 1 to 2) both sum to 2."
+      },
+      {
+        "input": "nums = [1, 2, 3], k = 3",
+        "output": "2",
+        "explanation": "The subarrays [3] (from index 2) and [1, 2] (from indices 0 to 1) both sum to 3."
+      },
+      {
+        "input": "nums = [1, 2, 3, -1, -2], k = 1",
+        "output": "5",
+        "explanation": "The valid subarrays that sum to 1 are [1], [1, 2, -2], [2, -1], [3, -2], and [1, -1, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using a hashmap to store the cumulative sums.",
+      "How can you check if a previous subarray sum exists to meet the requirement?"
+    ],
+    "company": "Nagarro"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, return true if t is an anagram of s and false otherwise. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Character Counting",
+    "tags": [
+      "String",
+      "Anagram",
+      "Counting"
+    ],
+    "input_format": "Two strings s and t, where 1 <= s.length, t.length <= 5 * 10^4.",
+    "output_format": "A boolean value indicating whether t is an anagram of s.",
+    "constraints": [
+      "1 <= s.length, t.length <= 5 * 10^4",
+      "s and t consist of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "s = 'anagram', t = 'nagaram'",
+        "output": "true",
+        "explanation": "'nagaram' is an anagram of 'anagram'."
+      },
+      {
+        "input": "s = 'rat', t = 'car'",
+        "output": "false",
+        "explanation": "'car' is not an anagram of 'rat'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a frequency counter for the characters.",
+      "Check if the character counts for both strings are the same."
+    ],
+    "company": "Nagarro"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "question_id": "",
+    "title": "Strange Printer",
+    "description": "You are given a string s consisting of lowercase English letters. A strange printer can only print the following characters in a predefined order: 'a', 'b', 'c', ... 'z'. The printer cannot print two consecutive characters that are the same. Given the string s, find the minimum number of turns needed to print it. A turn is defined as printing a character until another character is printed or the string ends.",
+    "topic": "Dynamic Programming",
+    "subtopic": "State Compression",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Minimum Turns"
+    ],
+    "input_format": "A string s of length n (1 \u2264 n \u2264 100).",
+    "output_format": "An integer representing the minimum number of turns needed to print the string.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"aaabbb\"",
+        "output": "2",
+        "explanation": "The printer turns 1: prints 'aaa' and turns 2: prints 'bbb'."
+      },
+      {
+        "input": "s = \"aba\"",
+        "output": "2",
+        "explanation": "The printer turns 1: prints 'a', turns 2: prints 'b', then turns 1 again: prints 'a'."
+      },
+      {
+        "input": "s = \"abc\"",
+        "output": "3",
+        "explanation": "Each character is different, so the printer turns must print 'a', 'b', and 'c' separately."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to store results of subproblems.",
+      "Think about how previous states can influence the current turn count."
+    ],
+    "company": "NetEase"
+  },
+  {
+    "question_id": "",
+    "title": "Most Profit Assigning Work",
+    "description": "You are given a list of jobs, each with a profit and a deadline. Your goal is to maximize the total profit while ensuring that each job is completed before its deadline. You can only complete one job at a time. Implement a function to return the maximum profit you can achieve by selecting jobs that fit within their deadlines.",
+    "topic": "Greedy",
+    "subtopic": "Job Scheduling",
+    "tags": [
+      "Greedy",
+      "Job Scheduling",
+      "Maximization",
+      "Sorting"
+    ],
+    "input_format": "An array of jobs where each job is represented as a tuple (profit, deadline).",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= jobs.length <= 10^4",
+      "1 <= profit, deadline <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "jobs = [(100, 2), (19, 1), (27, 2), (25, 1), (15, 3)]",
+        "output": "142",
+        "explanation": "Selecting jobs with highest profits for deadlines results in a maximum profit of 100 + 25 + 15 + 2 = 142."
+      },
+      {
+        "input": "jobs = [(20, 1), (10, 2), (40, 5), (30, 3)]",
+        "output": "60",
+        "explanation": "Choosing the jobs with profits 20 and 40 results in maximum profit of 60 before deadlines 1 and 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting jobs based on profit in descending order.",
+      "Use a priority queue or an array to track the deadlines."
+    ],
+    "company": "NetEase"
+  }
+]

@@ -1,0 +1,285 @@
+[
+  {
+    "question_id": "",
+    "title": "Pow(x, n)",
+    "description": "Implement a function that calculates x raised to the power of n (x^n). This function should handle both positive and negative values for n, as well as cases where x is zero.",
+    "topic": "Mathematics",
+    "subtopic": "Exponentiation",
+    "tags": [
+      "Math",
+      "Recursion",
+      "Exponentiation"
+    ],
+    "input_format": "Two floating-point numbers x and n, where x is the base and n is the exponent.",
+    "output_format": "A floating-point number representing the result of x raised to the power of n.",
+    "constraints": [
+      "-10^4 <= x <= 10^4",
+      "-10^4 <= n <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "x = 2.0, n = 10",
+        "output": "1024.0",
+        "explanation": "2 raised to the power of 10 is 1024."
+      },
+      {
+        "input": "x = 2.1, n = 3",
+        "output": "9.261",
+        "explanation": "2.1 raised to the power of 3 is approximately 9.261."
+      },
+      {
+        "input": "x = 2.0, n = -2",
+        "output": "0.25",
+        "explanation": "2 raised to the power of -2 is 1/(2^2) = 1/4 = 0.25."
+      },
+      {
+        "input": "x = 0, n = 5",
+        "output": "0.0",
+        "explanation": "0 raised to any positive power is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of powers when n is negative.",
+      "You can use recursion to simplify the problem."
+    ],
+    "company": "Millennium"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Smallest Divisor Given a Threshold",
+    "description": "Given an array of positive integers nums and an integer threshold, you need to find the smallest divisor x such that the sum of the division of each number in nums by x is less than or equal to threshold. The division should be done using ceiling division. You can assume that the answer will always exist.",
+    "topic": "Binary Search",
+    "subtopic": "Searching",
+    "tags": [
+      "Binary Search",
+      "Math",
+      "Division"
+    ],
+    "input_format": "An integer array nums followed by an integer threshold.",
+    "output_format": "An integer representing the smallest divisor.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^6",
+      "1 <= threshold <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 5, 9], threshold = 6",
+        "output": "5",
+        "explanation": "For divisor x = 5, the sums are ceil(1/5) + ceil(2/5) + ceil(5/5) + ceil(9/5) = 1 + 1 + 1 + 2 = 5, which is less than 6."
+      },
+      {
+        "input": "nums = [44, 22, 33, 11, 1], threshold = 5",
+        "output": "44",
+        "explanation": "The smallest divisor 44 results in ceil(44/44) + ceil(22/44) + ceil(33/44) + ceil(11/44) + ceil(1/44) = 1 + 1 + 1 + 1 + 1 = 5."
+      },
+      {
+        "input": "nums = [4, 3, 9, 8], threshold = 10",
+        "output": "3",
+        "explanation": "For divisor x = 3, the sums are ceil(4/3) + ceil(3/3) + ceil(9/3) + ceil(8/3) = 2 + 1 + 3 + 3 = 9, which is less than 10."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of ceiling division.",
+      "Use binary search to find the smallest divisor efficiently."
+    ],
+    "company": "Millennium"
+  },
+  {
+    "question_id": "",
+    "title": "Broken Calculator",
+    "description": "You are given two integers, X and Y, representing the current value displayed on a broken calculator, and the target value, respectively. The calculator has two malfunctioning operations: multiply by 2 (which can only be applied on numbers greater than 1) and divide by 2 (which can only be applied on even numbers). You need to determine the minimum number of operations required to transform the current value X into the target value Y. If it is not possible, return -1.",
+    "topic": "Greedy",
+    "subtopic": "Simulations",
+    "tags": [
+      "Greedy",
+      "Simulation",
+      "Mathematics"
+    ],
+    "input_format": "Two integers, X and Y.",
+    "output_format": "An integer representing the minimum operations required to reach Y from X, or -1 if impossible.",
+    "constraints": [
+      "1 <= X, Y <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "X = 5, Y = 8",
+        "output": "2",
+        "explanation": "Multiply 5 by 2 to get 10, then divide by 2 to get 8. Total operations: 2."
+      },
+      {
+        "input": "X = 10, Y = 5",
+        "output": "1",
+        "explanation": "Divide 10 by 2 to get 5. Total operations: 1."
+      },
+      {
+        "input": "X = 3, Y = 10",
+        "output": "-1",
+        "explanation": "It's impossible to reach 10 from 3 using the given operations."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the operations you can perform based on the current value.",
+      "Work backward from Y to X to simplify the processes."
+    ],
+    "company": "Millennium"
+  },
+  {
+    "question_id": "",
+    "title": "Partition Array Into Two Arrays to Minimize Sum Difference",
+    "description": "You are given an array of integers. Your task is to partition this array into two subsets such that the difference between the sums of the two subsets is minimized. Return the minimum sum difference that can be obtained after performing the partition.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum",
+    "tags": [
+      "Dynamic Programming",
+      "Subset Sum",
+      "Array"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the minimum difference between the sums of the two subsets.",
+    "constraints": [
+      "1 <= nums.length <= 200",
+      "1 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 6, 11, 5]",
+        "output": "1",
+        "explanation": "One possible partition is [1, 5, 6] and [11]. The sums are 12 and 11, and their difference is 1."
+      },
+      {
+        "input": "nums = [3, 9, 7, 3]",
+        "output": "2",
+        "explanation": "One possible partition is [3, 9] and [7, 3]. The sums are 12 and 10, and their difference is 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to solve this problem.",
+      "Try to find subsets that have sums close to total/2."
+    ],
+    "company": "Millennium"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of characters '(', ')', '{', '}', '[' and ']'.",
+    "output_format": "Return true if the input string is valid, otherwise return false.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are closed in the correct order."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "All types of brackets are closed in the correct order."
+      },
+      {
+        "input": "s = '(]')",
+        "output": "false",
+        "explanation": "The brackets are not closed in the correct order."
+      },
+      {
+        "input": "s = '(['",
+        "output": "false",
+        "explanation": "The opening brackets have no corresponding closing brackets."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Pop from the stack when you encounter a closing bracket.",
+      "Check if the popped bracket matches the closing bracket."
+    ],
+    "company": "Millennium"
+  },
+  {
+    "question_id": "",
+    "title": "Palindromic Substrings",
+    "description": "Given a string 's', return the number of substrings that are palindromes. A substring is defined as a contiguous sequence of characters within the string. A string is considered a palindrome if it reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A string s, where 1 <= s.length <= 1000.",
+    "output_format": "An integer representing the number of palindromic substrings in s.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abc\"",
+        "output": "3",
+        "explanation": "The palindromic substrings are: \"a\", \"b\", and \"c\"."
+      },
+      {
+        "input": "s = \"aaa\"",
+        "output": "6",
+        "explanation": "The palindromic substrings are: \"a\", \"a\", \"a\", \"aa\", \"aa\", and \"aaa\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around the center for each character.",
+      "Remember to check both odd and even length palindromes."
+    ],
+    "company": "Millennium"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where prices[i] represents the price of the stock on the ith day.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Maximum profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price so far.",
+      "Calculate potential profit at each price and update the maximum profit."
+    ],
+    "company": "Millennium"
+  }
+]

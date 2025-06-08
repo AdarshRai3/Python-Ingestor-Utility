@@ -1,0 +1,196 @@
+[
+  {
+    "question_id": "",
+    "title": "Find the Length of the Longest Common Prefix",
+    "description": "Write a function to find the length of the longest common prefix string amongst an array of strings. If there is no common prefix, return 0.",
+    "topic": "String",
+    "subtopic": "Prefix",
+    "tags": [
+      "String",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings `strs`.",
+    "output_format": "An integer representing the length of the longest common prefix.",
+    "constraints": [
+      "0 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "All strings consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\",\"flow\",\"flight\"]",
+        "output": "2",
+        "explanation": "The longest common prefix is 'fl', which has a length of 2."
+      },
+      {
+        "input": "strs = [\"dog\",\"racecar\",\"car\"]",
+        "output": "0",
+        "explanation": "There is no common prefix among the strings."
+      },
+      {
+        "input": "strs = []",
+        "output": "0",
+        "explanation": "An empty array means there is no common prefix."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how you would compare the strings character by character.",
+      "You can find the shortest string in the array and compare prefixes up to that length."
+    ],
+    "company": "The Trade Desk"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) Cache. It should support the following operations: `get(key)` and `put(key, value)`: \n\n- `get(key)`: Retrieve the value of the key if the key exists in the cache. Otherwise, return -1. \n- `put(key, value)`: Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, it should invalidate the least recently used key before inserting the new key-value pair. \n\nThe cache should be initialized with a positive capacity.",
+    "topic": "Design",
+    "subtopic": "Caching",
+    "tags": [
+      "Design",
+      "Cache",
+      "Linked List",
+      "Hash Table"
+    ],
+    "input_format": "An integer representing the capacity of the cache on initialization. For each operation, a string indicating the operation ('get' or 'put') followed by the necessary parameters.",
+    "output_format": "For 'get', return the value or -1. For 'put', return nothing.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "All keys and values are non-negative integers.",
+      "The operations are called at most 10^4 times."
+    ],
+    "examples": [
+      {
+        "input": "cache = LRUCache(2) \ncache.put(1, 1) \ncache.put(2, 2) \ncache.get(1) \ncache.put(3, 3) \ncache.get(2) \ncache.put(4, 4) \ncache.get(1) \ncache.get(3) \ncache.get(4)",
+        "output": "[1, -1, 3, 4]",
+        "explanation": "Cache capacity is 2. After inserting keys 1 and 2, getting key 1 returns 1. Inserting key 3 evicts key 2. Key 2 returns -1, key 3 returns 3, and key 4 returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to keep track of key-value pairs.",
+      "Maintain the order of keys using a doubly linked list.",
+      "Implement methods to update the order of keys in the linked list."
+    ],
+    "company": "The Trade Desk"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the i-th day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "There is no transaction that can maximize profit."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate profit based on the difference from the current price to the minimum price."
+    ],
+    "company": "The Trade Desk"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator II",
+    "description": "Implement a basic calculator to evaluate a simple mathematical expression string containing non-negative integers, '+', '-', '*', and '/'. The expression should be evaluated according to the standard order of operations, without any parentheses. The result should be returned as an integer. Note that the integer division should truncate toward zero.",
+    "topic": "String",
+    "subtopic": "Parsing and Evaluating Expressions",
+    "tags": [
+      "String",
+      "Math",
+      "Evaluation"
+    ],
+    "input_format": "A string 's' representing the mathematical expression.",
+    "output_format": "An integer representing the evaluated result of the expression.",
+    "constraints": [
+      "1 <= s.length <= 3 * 10^5",
+      "s consists of non-negative integers and the operators '+', '-', '*', '/' separated by spaces.",
+      "The input expression is always valid."
+    ],
+    "examples": [
+      {
+        "input": "s = '3+2*2'",
+        "output": "7",
+        "explanation": "The multiplication is done first, so 2*2 = 4. Then, 3 + 4 = 7."
+      },
+      {
+        "input": "s = ' 3/2 '",
+        "output": "1",
+        "explanation": "Integer division of 3 by 2 gives 1."
+      },
+      {
+        "input": "s = ' 3+5 / 2 '",
+        "output": "5",
+        "explanation": "5/2 = 2 (integer division) and then 3 + 2 = 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to handle operations.",
+      "Pay attention to the order of operations."
+    ],
+    "company": "The Trade Desk"
+  },
+  {
+    "question_id": "",
+    "title": "Word Ladder",
+    "description": "Given two words, beginWord and endWord, and a dictionary's word list, return the length of the shortest transformation sequence from beginWord to endWord, such that only one letter can be changed at a time, and each transformed word must exist in the word list. Note that beginWord is not a part of the word list. If there is no such transformation sequence, return 0.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "String"
+    ],
+    "input_format": "A string beginWord, a string endWord, and an array of strings wordList.",
+    "output_format": "An integer representing the length of the shortest transformation sequence.",
+    "constraints": [
+      "1 <= beginWord.length <= 10",
+      "1 <= endWord.length <= 10",
+      "1 <= wordList.length <= 5000",
+      "beginWord and endWord consist of lowercase English letters.",
+      "All the words in wordList are of the same length as beginWord."
+    ],
+    "examples": [
+      {
+        "input": "beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"]",
+        "output": "5",
+        "explanation": "The sequence is: hit -> hot -> dot -> dog -> cog, which has length 5."
+      },
+      {
+        "input": "beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\"]",
+        "output": "0",
+        "explanation": "There is no possible transformation sequence to reach endWord from beginWord."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use BFS to explore all possible transformations.",
+      "Consider using a set for efficient word existence checks.",
+      "Think about how to generate possible candidates for each word."
+    ],
+    "company": "The Trade Desk"
+  }
+]

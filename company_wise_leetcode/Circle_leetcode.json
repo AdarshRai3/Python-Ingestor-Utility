@@ -1,0 +1,81 @@
+[
+  {
+    "question_id": "",
+    "title": "Simple Bank System",
+    "description": "You are tasked with implementing a simple banking system. The system should support the following operations: creating an account, depositing money, withdrawing money, and checking the balance. Each account should have a unique account ID and can hold a non-negative integer balance. If an operation is invalid, it should return 'Error'.",
+    "topic": "Design",
+    "subtopic": "System Design",
+    "tags": [
+      "Banking",
+      "System Design",
+      "Object-Oriented"
+    ],
+    "input_format": "A series of commands where each command is represented as a string with a specific format: 'create [account_id]', 'deposit [account_id] [amount]', 'withdraw [account_id] [amount]', 'balance [account_id]'.",
+    "output_format": "A string denoting the result of the operation, either the balance or 'Error' if an operation is invalid.",
+    "constraints": [
+      "1 <= account_id <= 10^6",
+      "0 <= amount <= 10^9",
+      "All operations are valid within the input commands, except in cases where it should return 'Error'."
+    ],
+    "examples": [
+      {
+        "input": "['create 1', 'deposit 1 100', 'balance 1', 'withdraw 1 50', 'balance 1']",
+        "output": "100\n50",
+        "explanation": "Initially, account 1 is created with $0, then $100 is deposited, checking balance shows $100, withdrawing $50 leaves a balance of $50."
+      },
+      {
+        "input": "['create 1', 'withdraw 1 50']",
+        "output": "Error",
+        "explanation": "Account 1 does not have enough balance to withdraw $50."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using a dictionary to store the account balances.",
+      "Make sure to validate each operation carefully."
+    ],
+    "company": "Circle"
+  },
+  {
+    "question_id": "",
+    "title": "Design In-Memory File System",
+    "description": "You are tasked with designing a simple in-memory file system. The file system should support creating, reading, and deleting files and directories. It should also allow for navigating through the directories. Each file and directory has a name and can contain a varying number of files or subdirectories. You need to implement the following methods: \n1. `create(path: str, content: str)`: Creates a file at the given path with the specified content. If the file already exists, it should overwrite its content. \n2. `read(path: str) -> str`: Reads the content of the specified file. If the file does not exist, return an empty string. \n3. `delete(path: str)`: Deletes the file or directory at the specified path. If the path is a directory, it should only be deleted if it is empty. \n4. `ls(path: str) -> List[str]`: Lists all files and directories at the specified path in lexicographical order. If the path is a file, it should return the file name as the only element in a list.",
+    "topic": "Design",
+    "subtopic": "File System",
+    "tags": [
+      "Design",
+      "File System",
+      "OOP"
+    ],
+    "input_format": "Multiple method calls as described above.",
+    "output_format": "The output of the read method, a list of strings from the ls method, or nothing for create and delete methods.",
+    "constraints": [
+      "All file and directory names have a length between 1 and 100.",
+      "The number of method calls will not exceed 1000.",
+      "Paths will be valid and in the format '/a/b/c'."
+    ],
+    "examples": [
+      {
+        "input": "fs.create('/a/b/c', 'hello')\nfs.read('/a/b/c')",
+        "output": "'hello'",
+        "explanation": "Creating a file at '/a/b/c' with content 'hello' and then reading it returns 'hello'."
+      },
+      {
+        "input": "fs.create('/a/b/c', 'hello')\nfs.ls('/a/b')",
+        "output": "['c']",
+        "explanation": "Creating file '/a/b/c' and listing contents of '/a/b' returns ['c']."
+      },
+      {
+        "input": "fs.create('/a/b/c', 'hello')\nfs.delete('/a/b/c')\nfs.read('/a/b/c')",
+        "output": "''",
+        "explanation": "After deleting the file '/a/b/c', reading it should return an empty string."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a tree-like structure to represent the file system.",
+      "Consider using a hashmap for quick access to directories."
+    ],
+    "company": "Circle"
+  }
+]

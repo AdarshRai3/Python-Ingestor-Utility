@@ -1,0 +1,76 @@
+[
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) Cache. It should support the following operations: get and put.\n\n- get(key): Returns the value of the key if the key exists in the cache, otherwise returns -1.\n- put(key, value): Updates or adds the value if the key is not already present. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structure",
+    "subtopic": "Cache Implementation",
+    "tags": [
+      "Hash Map",
+      "Doubly Linked List",
+      "Design"
+    ],
+    "input_format": "The operations will be provided as a list of tuples. The first element of the tuple will always be a string denoting the operation ('get' or 'put'), followed by the necessary arguments.",
+    "output_format": "A list of integers, where each integer corresponds to the result of the 'get' operation.",
+    "constraints": [
+      "The cache will be initialized with a positive capacity.",
+      "The key and value are guaranteed to be non-null.",
+      "The key to be deleted is guaranteed to exist in the cache when a 'put' operation is performed.",
+      "A 'get' operation will never be called with a key that does not exist in the cache."
+    ],
+    "examples": [
+      {
+        "input": "[('put', 1, 1), ('put', 2, 2), ('get', 1), ('put', 3, 3), ('get', 2), ('put', 4, 4), ('get', 1), ('get', 3), ('get', 4)]",
+        "output": "[1, -1, -1, 4]",
+        "explanation": "The operations are handled as follows: 'put(1,1)' stores key 1 with value 1. 'put(2,2)' stores key 2 with value 2. 'get(1)' returns 1. 'put(3,3)' stores key 3, evicting key 2 since it was the least recently used. 'get(2)' returns -1 as key 2 was evicted. 'put(4,4)' stores key 4, evicting key 1. 'get(1)' returns -1 as key 1 was evicted. 'get(3)' returns 3, 'get(4)' returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to maintain the order of items based on access.",
+      "Using a hash map might help in achieving average O(1) time complexity."
+    ],
+    "company": "Highspot"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator II",
+    "description": "Implement a basic calculator to evaluate a simple expression string containing non-negative integers, '+', '-', '*', and '/' operators. The expression string is evaluated using the standard order of operations (PEMDAS). Return the computed result as an integer. Note that the input expression is guaranteed to be valid.",
+    "topic": "Math",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "Math",
+      "String",
+      "Stack"
+    ],
+    "input_format": "A string expression containing non-negative integers and the operators '+', '-', '*', and '/'.",
+    "output_format": "An integer representing the result of the evaluated expression.",
+    "constraints": [
+      "The input expression is guaranteed to be valid.",
+      "1 <= input.length <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "s = \"3+2*2\"",
+        "output": "7",
+        "explanation": "According to the order of operations, 2*2 is evaluated first, then 3+4 = 7."
+      },
+      {
+        "input": "s = \" 3/2 \"",
+        "output": "1",
+        "explanation": "The division is calculated first, and since it's integer division, 3/2 results in 1."
+      },
+      {
+        "input": "s = \" 3+5 / 2 \"",
+        "output": "5",
+        "explanation": "Evaluate 5/2 (which gives 2), then add to 3, resulting in 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to handle the operations.",
+      "Pay attention to the order of operations when evaluating the expression."
+    ],
+    "company": "Highspot"
+  }
+]

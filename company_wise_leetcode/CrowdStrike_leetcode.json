@@ -1,0 +1,426 @@
+[
+  {
+    "question_id": "",
+    "title": "String Compression",
+    "description": "Given a string consisting of uppercase and lowercase letters, the task is to compress the string using the counts of consecutive repeated characters. For example, the string 'aabbcc' should be compressed to 'a2b2c2'. If the compressed string is not shorter than the original string, the original string should be returned. The compression should be done in a way that each character is followed by its count. You need to implement a function that takes the input string and returns the compressed string.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Compression",
+      "Manipulation"
+    ],
+    "input_format": "A single string s, consisting of uppercase and lowercase letters.",
+    "output_format": "A string representing the compressed version of the input string.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists only of uppercase and lowercase letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'aabbcc'",
+        "output": "a2b2c2",
+        "explanation": "The string has two consecutive 'a's, two 'b's, and two 'c's."
+      },
+      {
+        "input": "s = 'abc'",
+        "output": "abc",
+        "explanation": "The compressed string 'a1b1c1' is longer than the original, so we return 'abc'."
+      },
+      {
+        "input": "s = 'aabcccccaaa'",
+        "output": "a2b1c5a3",
+        "explanation": "The string contains two 'a's, one 'b', five 'c's, and three 'a's."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the current character and its count.",
+      "Use a StringBuilder for efficient string concatenation."
+    ],
+    "company": "CrowdStrike"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid of '1's and '0's representing the map of the land and water.",
+    "output_format": "An integer representing the number of islands.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [['1','1','1','1','0'],['1','1','0','1','0'],['1','1','0','0','0'],['0','0','0','0','0']]",
+        "output": "1",
+        "explanation": "There is one island connected vertically and horizontally."
+      },
+      {
+        "input": "grid = [['1','1','0','0','0'],['1','1','0','0','0'],['0','0','1','0','0'],['0','0','0','1','1']]",
+        "output": "3",
+        "explanation": "There are three islands, one at the top-left, one in the middle, and one at the bottom-right."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using Depth-First Search (DFS) to explore the islands.",
+      "Mark the visited land cells as water to avoid counting them again.",
+      "Consider edge cases with empty grids or grids full of water."
+    ],
+    "company": "CrowdStrike"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given an array of intervals where intervals[i] = [start_i, end_i], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "An array of intervals, where each interval is represented as an array of two integers [start, end].",
+    "output_format": "An array of merged intervals, where each interval is also represented as an array of two integers.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "-10^4 <= start_i <= end_i <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "Intervals [1,3] and [2,6] overlap, so they are merged into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "Intervals [1,4] and [4,5] touch at 4, so they are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals by their starting points.",
+      "Use a stack or a list to keep track of the merged intervals."
+    ],
+    "company": "CrowdStrike"
+  },
+  {
+    "question_id": "",
+    "title": "Encode and Decode Strings",
+    "description": "Design an algorithm to encode a list of strings to a single string and decode it back to the original list of strings. The encoding and decoding process should be reversible, meaning if you encode a list of strings and decode it, you should get the original list back.",
+    "topic": "String Manipulation",
+    "subtopic": "Encoding/Decoding",
+    "tags": [
+      "String",
+      "Encoding",
+      "Decoding"
+    ],
+    "input_format": "A list of strings to be encoded.",
+    "output_format": "A single encoded string and the decoded list of strings.",
+    "constraints": [
+      "1 <= input.length <= 20",
+      "1 <= input[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "input = [\"hello\", \"world\"]",
+        "output": "\"hello|world\"",
+        "explanation": "The strings are joined with a unique delimiter (|) that can later be used to separate them during decoding."
+      },
+      {
+        "input": "input = [\"Leet\", \"Code\"]",
+        "output": "\"Leet|Code\"",
+        "explanation": "The encoded string uses | as a delimiter to distinguish between encoded strings."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Choose a delimiter that does not appear in any of the strings.",
+      "Consider how to handle edge cases like empty strings."
+    ],
+    "company": "CrowdStrike"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the elevation map where the height at each index is represented by the integer value, calculate how much water it can trap after raining. The water trapped at a given index is determined by the minimum of the maximum height to the left and the maximum height to the right of that index, minus the height of the bar at that index.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers representing the elevation map.",
+    "output_format": "An integer representing the total amount of trapped rainwater.",
+    "constraints": [
+      "0 <= height.length <= 2 * 10^4",
+      "0 <= height[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water can be trapped between the bars of heights 1, 2, and 3. The total trapped water is 6."
+      },
+      {
+        "input": "height = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "Water can be trapped between the heights of 4 and 5, totaling 9."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two pointers to track the left and right boundaries.",
+      "Maintain two variables to keep track of the maximum height from the left and the right."
+    ],
+    "company": "CrowdStrike"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the price of a stock on each day.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a variable to track the minimum price so far.",
+      "Calculate potential profit for each day and update the max profit accordingly."
+    ],
+    "company": "CrowdStrike"
+  },
+  {
+    "question_id": "",
+    "title": "Move Zeroes",
+    "description": "Given an array of integers, you need to move all the zeroes in the array to the end while maintaining the relative order of the non-zero elements. This should be done in-place without using extra space for another array.",
+    "topic": "Array",
+    "subtopic": "In-Place Operations",
+    "tags": [
+      "Array",
+      "In-Place",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "The modified array with all zeroes moved to the end.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 1, 0, 3, 12]",
+        "output": "[1, 3, 12, 0, 0]",
+        "explanation": "After moving all the zeroes, the array becomes [1, 3, 12, 0, 0]."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[0]",
+        "explanation": "The array only contains one element which is zero, so the output remains the same."
+      },
+      {
+        "input": "nums = [1, 2, 0, 0, 3]",
+        "output": "[1, 2, 3, 0, 0]",
+        "explanation": "The zeroes are moved to the end of the array while maintaining the order of non-zero elements."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to assist with the in-place movement of non-zero elements.",
+      "Iterate through the array and swap zeroes with the next non-zero element."
+    ],
+    "company": "CrowdStrike"
+  },
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value data structure that supports the following operations: set, get, and getLatest. The data structure should be able to store multiple values for a key based on timestamp. When retrieving a value for a key, it should return the value that was set latest before or at the given timestamp. If there's no such value, return an empty string.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Hash Map"
+    ],
+    "input_format": "Three types of operations: 1. set(key: str, value: str, timestamp: int), 2. get(key: str, timestamp: int), 3. getLatest(key: str).",
+    "output_format": "For get and getLatest operations, return the corresponding value as a string. If not found, return an empty string.",
+    "constraints": [
+      "1 <= key.length, value.length <= 100",
+      "1 <= timestamp <= 10^9",
+      "There will be at most 10^4 operations."
+    ],
+    "examples": [
+      {
+        "input": "set('foo', 'bar', 1); set('foo', 'baz', 2); get('foo', 1); get('foo', 3); getLatest('foo');",
+        "output": [
+          "bar",
+          "baz",
+          "baz"
+        ],
+        "explanation": "At timestamp 1, 'foo' has the value 'bar'. At timestamp 3, the latest value for 'foo' at or before timestamp 3 is 'baz'."
+      },
+      {
+        "input": "set('foo', 'bar', 1); get('foo', 0); get('foo', 2);",
+        "output": [
+          "",
+          "bar"
+        ],
+        "explanation": "At timestamp 0, there's no value for 'foo'. At timestamp 2, the latest value is 'bar'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a nested dictionary to store keys and their corresponding timestamps.",
+      "You may need to manage the insertion order to efficiently fetch the latest value."
+    ],
+    "company": "CrowdStrike"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.",
+    "topic": "Matrix",
+    "subtopic": "Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Spiral"
+    ],
+    "input_format": "A 2D list of integers representing the matrix.",
+    "output_format": "A list of integers representing the elements of the matrix in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "m * n <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The elements of the matrix in spiral order are 1, 2, 3, 6, 9, 8, 7, 4, and 5."
+      },
+      {
+        "input": "matrix = [[1]]",
+        "output": "[1]",
+        "explanation": "The only element in the matrix is 1."
+      },
+      {
+        "input": "matrix = [[1, 2], [3, 4]]",
+        "output": "[1, 2, 4, 3]",
+        "explanation": "The elements in spiral order are 1, 2, 4, and 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about the order in which you can traverse the matrix.",
+      "Use four pointers to represent the boundaries of the spiral."
+    ],
+    "company": "CrowdStrike"
+  },
+  {
+    "question_id": "",
+    "title": "Squares of a Sorted Array",
+    "description": "Given a non-decreasing array of integers nums, return an array of the squares of each number, also in non-decreasing order.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums, where 1 <= nums.length <= 10^4 and -10^4 <= nums[i] <= 10^4.",
+    "output_format": "An array of integers representing the squares of each number in non-decreasing order.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-4, -1, 0, 3, 10]",
+        "output": "[0, 1, 9, 16, 100]",
+        "explanation": "The squares are [16, 1, 0, 9, 100]. In sorted order, they become [0, 1, 9, 16, 100]."
+      },
+      {
+        "input": "nums = [-7, -3, 2, 3, 11]",
+        "output": "[4, 9, 9, 49, 121]",
+        "explanation": "The squares are [49, 9, 4, 9, 121]. In sorted order, they become [4, 9, 9, 49, 121]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to efficiently manage the squaring and merging process.",
+      "Think about how the squares of negative and positive numbers influence sorting."
+    ],
+    "company": "CrowdStrike"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given a total of n courses you have to take, labeled from 0 to n - 1. Some courses may have prerequisites, which are represented as a pair of integers where the first integer is a course and the second integer is the course that needs to be taken before it. Your task is to determine if it is possible for you to finish all courses given the prerequisites. Return true if you can finish all courses, otherwise return false.",
+    "topic": "Graph",
+    "subtopic": "Topological Sort",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Topological Sorting"
+    ],
+    "input_format": "Two integers n (total number of courses) and a list of pairs prerequisites representing the prerequisite relationships.",
+    "output_format": "A boolean value indicating whether it is possible to finish all courses.",
+    "constraints": [
+      "1 <= n <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2",
+      "0 <= prerequisites[i][0], prerequisites[i][1] < n"
+    ],
+    "examples": [
+      {
+        "input": "n = 2, prerequisites = [[1, 0]]",
+        "output": "true",
+        "explanation": "There are two courses, and you can take course 0 before course 1."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1, 0], [0, 1]]",
+        "output": "false",
+        "explanation": "There is a circular dependency between the courses 0 and 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using depth-first search (DFS) or Kahn's algorithm for topological sorting.",
+      "Track visited nodes to avoid cycles.",
+      "Use a graph representation to efficiently manage the courses and their prerequisites."
+    ],
+    "company": "CrowdStrike"
+  }
+]

@@ -1,0 +1,380 @@
+[
+  {
+    "question_id": "",
+    "title": "Find the Safest Path in a Grid",
+    "description": "You are given a grid of size m x n where each cell contains a non-negative integer representing the danger level of moving through that cell. Your task is to determine the safest path from the top-left corner (0, 0) to the bottom-right corner (m-1, n-1) by minimizing the maximum danger level encountered along the path. You can only move down or to the right at any point in time. Return the maximum danger level of the safest path.",
+    "topic": "Graph",
+    "subtopic": "Pathfinding",
+    "tags": [
+      "Graph",
+      "Pathfinding",
+      "Grid",
+      "Dynamic Programming"
+    ],
+    "input_format": "A 2D array `grid` where grid[i][j] is the danger level of cell (i, j).",
+    "output_format": "An integer representing the maximum danger level of the safest path.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "0 <= grid[i][j] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,3,1],[3,5,1],[3,3,3]]",
+        "output": "3",
+        "explanation": "The safest path is (0,0) -> (1,0) -> (2,0) -> (2,1) -> (2,2) with a maximum danger level of 3."
+      },
+      {
+        "input": "grid = [[1,2,3],[4,5,6],[7,8,9]]",
+        "output": "5",
+        "explanation": "The safest path is (0,0) -> (0,1) -> (1,1) -> (2,1) -> (2,2) with a maximum danger level of 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a priority queue to traverse the grid based on danger levels.",
+      "Use BFS or Dijkstra's algorithm to track the minimum maximum danger."
+    ],
+    "company": "IMC"
+  },
+  {
+    "question_id": "",
+    "title": "Time Taken to Cross the Door",
+    "description": "You are standing at the entrance of a door that opens at varying intervals. Given an array of integers representing the time in seconds at which the door opens, determine the time taken for you to successfully cross through the door. If there are no intervals at which the door opens, return -1. You can only cross when the door is open.",
+    "topic": "Simulation",
+    "subtopic": "Interval Management",
+    "tags": [
+      "Simulation",
+      "Intervals",
+      "Timing"
+    ],
+    "input_format": "An integer array 'open_times' where each element represents the seconds at which the door opens.",
+    "output_format": "An integer representing the time taken to cross the door, or -1 if it's not possible.",
+    "constraints": [
+      "1 <= open_times.length <= 1000",
+      "0 <= open_times[i] <= 10^6",
+      "open_times must be in non-decreasing order"
+    ],
+    "examples": [
+      {
+        "input": "open_times = [1, 3, 5, 7]",
+        "output": "7",
+        "explanation": "The door opens continuously at 1, 3, 5, and 7 seconds. Therefore, the time taken to cross is exactly when it opens at 7 seconds."
+      },
+      {
+        "input": "open_times = [2, 4, 6]",
+        "output": "-1",
+        "explanation": "If you arrive at time 1 but the door only opens at 2, you won't be able to cross."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Check if you can identify the intervals where the door is open.",
+      "Consider using binary search for efficiency."
+    ],
+    "company": "IMC"
+  },
+  {
+    "question_id": "",
+    "title": "Asteroid Collision",
+    "description": "We have an array of integers `asteroids` where each integer represents the size of an asteroid. Positive integers represent asteroids moving to the right, and negative integers represent asteroids moving to the left. When two asteroids collide, the smaller one will be destroyed. If both are of the same size, both will be destroyed. Return the final state of the asteroids after all collisions have occurred.",
+    "topic": "Stack",
+    "subtopic": "Simulation",
+    "tags": [
+      "Stack",
+      "Array",
+      "Simulation"
+    ],
+    "input_format": "A list of integers `asteroids`.",
+    "output_format": "A list of integers representing the state of asteroids after all collisions.",
+    "constraints": [
+      "1 <= asteroids.length <= 10^4",
+      "-1000 <= asteroids[i] <= 1000",
+      "Asteroids moving in the same direction do not collide."
+    ],
+    "examples": [
+      {
+        "input": "asteroids = [5, 10, -5]",
+        "output": "[5, 10]",
+        "explanation": "The -5 asteroid collides with the 10 asteroid and is destroyed."
+      },
+      {
+        "input": "asteroids = [8, -8]",
+        "output": "[]",
+        "explanation": "Both asteroids collide and are destroyed."
+      },
+      {
+        "input": "asteroids = [10, 2, -5]",
+        "output": "[10]",
+        "explanation": "The 2 asteroid collides with -5 but is destroyed. The final asteroid is 10."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to simulate the collisions.",
+      "Handle different cases for collisions based on asteroid direction."
+    ],
+    "company": "IMC"
+  },
+  {
+    "question_id": "",
+    "title": "Design a Stack With Increment Operation",
+    "description": "Design a stack that supports push, pop, and an increment operation. The increment operation takes an integer k and increments the bottom k elements of the stack by a given value. Your stack should support these operations in O(1) time complexity. If the stack contains less than k elements, increment all the elements in the stack. Implement the stack using an array.",
+    "topic": "Data Structure",
+    "subtopic": "Stack",
+    "tags": [
+      "Stack",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "No input will be provided as direct method calls on stack operations.",
+    "output_format": "The operations will return the value of popped elements when pop is called.",
+    "constraints": [
+      "The stack can contain at most 1000 elements.",
+      "1 <= k <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "stack.push(1); stack.push(2); stack.increment(2, 100); stack.pop(); stack.pop();",
+        "output": "102",
+        "explanation": "The stack contains [1, 2] after the push operations. The increment operation adds 100 to both elements. Popping the stack gives 102 first (2 + 100). The next pop gives 1 + 100 = 101."
+      },
+      {
+        "input": "stack.push(1); stack.push(2); stack.increment(3, 100); stack.pop(); stack.pop();",
+        "output": "102",
+        "explanation": "Since there are only 2 elements, both are incremented by 100. Then popping gives 102 first and then 101."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider an array to store the stack elements.",
+      "Use an auxiliary array or variable to track increments."
+    ],
+    "company": "IMC"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Side Length of a Square with Sum Less than or Equal to Threshold",
+    "description": "Given a 2D grid of integers and a threshold, find the maximum side length of a square such that the sum of the numbers in the square is less than or equal to the given threshold. The side length of a square is defined as the number of cells on one of its sides.",
+    "topic": "Array",
+    "subtopic": "Matrix Summation",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Prefix Sum",
+      "Dynamic Programming"
+    ],
+    "input_format": "A 2D grid of integers and an integer threshold.",
+    "output_format": "An integer representing the maximum side length of the square.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "-10^4 <= grid[i][j] <= 10^4",
+      "0 <= threshold <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": {
+          "grid": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6
+            ],
+            [
+              7,
+              8,
+              9
+            ]
+          ],
+          "threshold": 20
+        },
+        "output": 2,
+        "explanation": "The square with top-left corner (0, 0) and side length 2 has a sum of 1 + 2 + 4 + 5 = 12, which is less than 20."
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "threshold": 8
+        },
+        "output": 2,
+        "explanation": "The maximum sum square of side length 2 has a sum of 4, which is less than 8."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a prefix sum array to calculate the sum of sub-squares efficiently.",
+      "Start with the largest possible square size and check if it meets the threshold."
+    ],
+    "company": "IMC"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Knight Moves",
+    "description": "In a chess game, a knight can move in an 'L' shape: it can move two squares in one direction and then one square perpendicular, or one square in one direction and then two squares perpendicular. Given a starting position on a chessboard and a target position, return the minimum number of moves the knight needs to reach the target position from the starting position.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Chess"
+    ],
+    "input_format": "Two tuples, start and end, each representing the (x, y) coordinates on a chessboard.",
+    "output_format": "An integer representing the minimum number of moves the knight needs to reach the target position.",
+    "constraints": [
+      "-2^31 <= start.x, start.y, end.x, end.y <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "start = (0, 0), end = (1, 2)",
+        "output": "1",
+        "explanation": "The knight can move from (0, 0) to (1, 2) in one move."
+      },
+      {
+        "input": "start = (0, 0), end = (2, 1)",
+        "output": "1",
+        "explanation": "The knight can move from (0, 0) to (2, 1) in one move."
+      },
+      {
+        "input": "start = (0, 0), end = (2, 2)",
+        "output": "2",
+        "explanation": "The knight can move from (0, 0) to (1, 2) and then to (2, 2) in two moves."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using breadth-first search (BFS) to explore all possible knight moves.",
+      "Keep track of visited positions to avoid cycles."
+    ],
+    "company": "IMC"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Path in a Grid with Obstacles Elimination",
+    "description": "You are given a m x n grid where each cell can either be empty (0) or contain an obstacle (1). You can traverse only through empty cells. Your goal is to find the shortest path from the top-left corner (0, 0) to the bottom-right corner (m-1, n-1). Each time you step onto an obstacle, you can remove it (i.e., change 1 to 0) but can only use this action k times. Return the length of the shortest path in the grid. If there is no such path, return -1.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Shortest Path",
+      "Dynamic Programming"
+    ],
+    "input_format": "A 2D grid represented as a list of lists and an integer k, the maximum number of obstacles you can eliminate.",
+    "output_format": "An integer representing the length of the shortest path from the top-left to the bottom-right corner of the grid.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 100",
+      "0 <= k <= min(m * n, 100)",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "k": 1
+        },
+        "output": 4,
+        "explanation": "The shortest path is from (0,0) to (0,1) to (0,2) to (1,2) to (2,2). One obstacle is eliminated at (1, 1)."
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "k": 1
+        },
+        "output": -1,
+        "explanation": "No path exists to reach the bottom-right corner even with one obstacle elimination."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using BFS to explore all possible paths.",
+      "Track the number of obstacles eliminated along your path.",
+      "Use a queue to expand the current position and maintain the distance."
+    ],
+    "company": "IMC"
+  },
+  {
+    "question_id": "",
+    "title": "Min Stack",
+    "description": "Design a stack that supports the following operations: push, pop, top, and retrieving the minimum element. All operations should be implemented in constant time. Implement the MinStack class with the following methods: \n- void push(int val): Pushes the element val onto the stack. \n- void pop(): Removes the element on the top of the stack. \n- int top(): Retrieves the top element of the stack. \n- int getMin(): Retrieves the minimum element in the stack.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Stack",
+      "Design",
+      "Data Structures"
+    ],
+    "input_format": "A sequence of operations on the MinStack object (i.e., push, pop, top, and getMin).",
+    "output_format": "Return the result of the top and getMin operations accordingly.",
+    "constraints": [
+      "All operations will be called on non-empty stacks.",
+      "The number of operations does not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "MinStack minStack = new MinStack();\nminStack.push(-2);\nminStack.push(0);\nminStack.push(-3);\nminStack.getMin(); // return -3\nminStack.pop();\nminStack.top(); // return 0\nminStack.getMin(); // return -2",
+        "output": "[-3, 0, -2]",
+        "explanation": "The minimum after pushing -2, 0, and -3 is -3. After popping -3, the top is 0 and the new minimum is -2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to keep track of the minimum element as new elements are added.",
+      "Consider using an auxiliary stack to hold the minimum values."
+    ],
+    "company": "IMC"
+  }
+]

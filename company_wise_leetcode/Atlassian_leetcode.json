@@ -1,0 +1,3000 @@
+[
+  {
+    "question_id": "",
+    "title": "Rank Teams by Votes",
+    "description": "In an election, each voter can vote for one or more teams. Given a list of votes represented as strings, where each string consists of team names separated by commas, your task is to rank the teams based on the number of votes they received. If two teams have the same number of votes, they should be ranked alphabetically. Return the ranked list of team names.",
+    "topic": "Sorting",
+    "subtopic": "Counting and Ranking",
+    "tags": [
+      "Sorting",
+      "Strings",
+      "Counting"
+    ],
+    "input_format": "A list of strings votes, where each string represents the teams voted for by a voter, separated by commas.",
+    "output_format": "A list of team names sorted by their rank.",
+    "constraints": [
+      "1 <= votes.length <= 10^4",
+      "1 <= votes[i].length <= 100",
+      "All team names consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "votes = [\"teamA,teamB\", \"teamB,teamC\", \"teamA\", \"teamC\"]",
+        "output": "[\"teamA\", \"teamB\", \"teamC\"]",
+        "explanation": "teamA received 2 votes, teamB received 2 votes, and teamC received 2 votes. Alphabetically sorted, the ranking is teamA, teamB, and then teamC."
+      },
+      {
+        "input": "votes = [\"a,b,c\", \"b,c\", \"c\", \"a\", \"a,b\"]",
+        "output": "[\"a\", \"b\", \"c\"]",
+        "explanation": "teamA received 3 votes, teamB 2 votes, and teamC 2 votes. Hence the ranking is a, b, c."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a dictionary to count the votes for each team.",
+      "Sort the teams first by the number of votes, then alphabetically if there is a tie."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Design Snake Game",
+    "description": "Implement a class `SnakeGame` that simulates a simple version of the classic Snake game. The game consists of a grid where the snake can move in four directions (up, down, left, right). The snake can grow when it eats food, which appears randomly on the grid. The game ends when the snake runs into itself or the wall of the grid. You need to implement the following methods in your `SnakeGame` class: 1. `move(direction: str) -> int`: Moves the snake in the specified direction and returns the score. If the snake eats food, the score increases by 1. If the snake collides with the wall or itself, return -1 to indicate game over. 2. `getScore() -> int`: Returns the current score of the game.",
+    "topic": "Design",
+    "subtopic": "Game Design",
+    "tags": [
+      "Design",
+      "Game",
+      "Simulation"
+    ],
+    "input_format": "The method `move` takes a string `direction` which can be 'U' (up), 'D' (down), 'L' (left), 'R' (right).",
+    "output_format": "The methods return an integer: the score or -1 for game over.",
+    "constraints": [
+      "Grid size is M x N, where 1 <= M, N <= 100.",
+      "The snake can have a maximum length of 30.",
+      "Food is represented by a grid cell that is randomly generated."
+    ],
+    "examples": [
+      {
+        "input": "game = SnakeGame(3, 3)\ngame.move('D')\ngame.move('D')\ngame.move('R')\ngame.move('U')\ngame.move('L')",
+        "output": "1",
+        "explanation": "Snake eats food and scores 1 point. Moves: Down -> Down (eats food) -> Right -> Up -> Left (valid moves without collision)."
+      },
+      {
+        "input": "game = SnakeGame(2, 2)\ngame.move('R')\ngame.move('D')\ngame.move('L')\ngame.move('U')",
+        "output": "-1",
+        "explanation": "The snake runs into the wall after moving Right and then Down."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a set to keep track of snake's body positions.",
+      "Consider using a queue to manage the snake's length."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Stock Price Fluctuation",
+    "description": "Given a list of stock prices where the i-th element represents the stock price on the i-th day, your task is to find the maximum price deviation in any continuous subarray of the list. The price deviation is defined as the difference between the maximum and minimum price in that subarray.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Maximum",
+      "Minimum"
+    ],
+    "input_format": "A list of integers prices representing stock prices.",
+    "output_format": "An integer representing the maximum price deviation.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "The maximum deviation occurs in the subarray [1, 5, 3, 6] where max is 6 and min is 1. The deviation is 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [1, 2, 3, 4]",
+        "output": "3",
+        "explanation": "The maximum deviation occurs in the entire array where max is 4 and min is 1. The deviation is 4 - 1 = 3."
+      },
+      {
+        "input": "prices = [10, 10, 10, 10]",
+        "output": "0",
+        "explanation": "Since all prices are the same, the deviation will always be 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window technique to maintain the current maximum and minimum values."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "All O`one Data Structure",
+    "description": "Design a data structure that supports the following operations in constant time: inserting a new key, deleting a key, and retrieving the maximum frequency character. The data structure should also support retrieving all keys with a given frequency.",
+    "topic": "Data Structure",
+    "subtopic": "Hash Map and Linked List",
+    "tags": [
+      "Data Structure",
+      "Hash Map",
+      "Linked List",
+      "Frequency"
+    ],
+    "input_format": "A series of operations to be performed on the data structure, where each operation is one of 'insert', 'delete', or 'getMaxFrequency'.",
+    "output_format": "For 'insert' and 'delete', return nothing. For 'getMaxFrequency', return the maximum frequency character(s) as a list or an empty list if there are no keys.",
+    "constraints": [
+      "The number of insertions and deletions will not exceed 10^6.",
+      "All keys are lowercase English letters.",
+      "The frequency of an individual character will not exceed 10^6."
+    ],
+    "examples": [
+      {
+        "input": "insert('a'), insert('b'), insert('a'), getMaxFrequency()",
+        "output": "['a']",
+        "explanation": "After inserting, 'a' has a frequency of 2, and 'b' has a frequency of 1. Maximum frequency character is 'a'."
+      },
+      {
+        "input": "insert('c'), insert('b'), delete('b'), getMaxFrequency()",
+        "output": "['a', 'c']",
+        "explanation": "After deleting 'b', both 'a' and 'c' have the same maximum frequency of 1."
+      },
+      {
+        "input": "delete('c'), delete('a'), getMaxFrequency()",
+        "output": "[]",
+        "explanation": "After deleting 'a' and 'c', there are no characters left."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a hash map to track frequencies.",
+      "Use a linked list for efficient insertion and deletion."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Logger Rate Limiter",
+    "description": "Design a logger system that restricts the number of log messages sent in a given time period. Implement a `Logger` class that has a method `shouldPrintMessage(timestamp: int, message: str) -> bool`. The method should return true if the message should be printed in the given timestamp and false otherwise. A message should be printed if it has not been printed in the last 10 seconds. The timestamps are non-decreasing, meaning that each subsequent call will have a timestamp greater than or equal to the prior call.",
+    "topic": "Design",
+    "subtopic": "Rate Limiting",
+    "tags": [
+      "Design",
+      "Rate Limiting",
+      "Data Structure"
+    ],
+    "input_format": "Two inputs: an integer timestamp (1 <= timestamp <= 10^9) and a string message (1 <= message.length <= 30).",
+    "output_format": "A boolean indicating whether the message should be printed or not.",
+    "constraints": [
+      "The number of calls to `shouldPrintMessage` will not exceed 10000."
+    ],
+    "examples": [
+      {
+        "input": "timestamp = 1, message = \"foo\"",
+        "output": "true",
+        "explanation": "At timestamp 1, the message 'foo' is printed."
+      },
+      {
+        "input": "timestamp = 2, message = \"bar\"",
+        "output": "true",
+        "explanation": "At timestamp 2, the message 'bar' is printed."
+      },
+      {
+        "input": "timestamp = 3, message = \"foo\"",
+        "output": "false",
+        "explanation": "At timestamp 3, the message 'foo' has already been printed within the last 10 seconds."
+      },
+      {
+        "input": "timestamp = 11, message = \"foo\"",
+        "output": "true",
+        "explanation": "At timestamp 11, more than 10 seconds has passed since 'foo' was last printed, so it can be printed again."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a data structure to keep track of the messages and their timestamps.",
+      "Consider using a dictionary to map messages to their last printed timestamp."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "High-Access Employees",
+    "description": "You are tasked with identifying employees who have access to critical company data. An employee is classified as a 'high-access' employee if they have access to at least 2 types of business-sensitive data. Each employee is represented by a list of integers where each integer represents a type of data they can access. Your goal is to return a list of high-access employee indices from the original list.",
+    "topic": "Array",
+    "subtopic": "Filtering",
+    "tags": [
+      "Array",
+      "Filtering",
+      "Data Access"
+    ],
+    "input_format": "A list of lists, where each sublist contains integers representing data types accessible to that employee.",
+    "output_format": "A list of integers representing the indices of high-access employees.",
+    "constraints": [
+      "1 <= employees.length <= 1000",
+      "1 <= employees[i].length <= 100",
+      "1 <= employees[i][j] <= 1000",
+      "Each data type access is unique within each employee's list."
+    ],
+    "examples": [
+      {
+        "input": "employees = [[1, 2], [1], [2, 3, 4], [5]]",
+        "output": "[0, 2]",
+        "explanation": "Employee 0 has access to 2 data types (1 and 2), and Employee 2 has access to 3 data types (2, 3, and 4). They are both classified as high-access employees."
+      },
+      {
+        "input": "employees = [[1], [1, 2], [1], [2], [3]]",
+        "output": "[1]",
+        "explanation": "Only Employee 1 has access to 2 data types (1 and 2), so they are the only high-access employee."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Iterate through each employee's data access list.",
+      "Count the number of data types each employee has access to."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given an array of intervals where intervals[i] = [start_i, end_i], merge all overlapping intervals and return a new array of non-overlapping intervals that cover all the intervals in the input.",
+    "topic": "Sorting",
+    "subtopic": "Interval Manipulation",
+    "tags": [
+      "Sorting",
+      "Intervals",
+      "Merge"
+    ],
+    "input_format": "An array of intervals, where each interval is represented as a pair of integers.",
+    "output_format": "An array of merged intervals, each represented as a pair of integers.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "0 <= start_i <= end_i <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "Intervals [1,3] and [2,6] overlap, so they can be merged into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "Intervals [1,4] and [4,5] touch but do not overlap, so they can be merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "First, sort the intervals based on the starting values.",
+      "Then, iterate through the sorted intervals and merge them as needed."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Possible Sets of Closing Branches",
+    "description": "Given a binary tree, you need to determine the number of distinct sets of branches that can be closed by cutting the tree at different points. A closing branch is defined as any subtree that can be isolated from the main tree by making a cut at its connection to the parent. You can choose to close as many branches as you want, but each branch must be closed entirely, meaning all nodes in that branch will no longer be part of the tree. If the tree is empty or consists only of leaf nodes, the output should be zero.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Recursion"
+    ],
+    "input_format": "The input consists of the root node of a binary tree.",
+    "output_format": "An integer representing the number of distinct sets of closing branches.",
+    "constraints": [
+      "The binary tree will not have more than 1000 nodes.",
+      "The values of the nodes will be between -10^4 to 10^4."
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4, 5]",
+        "output": "6",
+        "explanation": "The distinct closing sets are: {}, {1}, {2}, {3}, {4}, {5}."
+      },
+      {
+        "input": "root = []",
+        "output": "0",
+        "explanation": "An empty tree results in zero closing sets."
+      },
+      {
+        "input": "root = [1]",
+        "output": "1",
+        "explanation": "The only set is {1}."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using recursion to explore possible cuts.",
+      "Think of each subtree and how it can be closed independently.",
+      "Base case should handle leaf nodes and an empty tree."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Smallest Missing Non-negative Integer After Operations",
+    "description": "Given an array of non-negative integers and a series of operations, you need to determine the smallest non-negative integer that is not present in the modified array after the operations are performed. The operations will include adding integers to the array and removing integers from the array.",
+    "topic": "Array",
+    "subtopic": "Modification and Searching",
+    "tags": [
+      "Array",
+      "Search",
+      "Modification",
+      "Mathematics"
+    ],
+    "input_format": "An array of non-negative integers and a list of operations where each operation is either an addition or a removal of a non-negative integer.",
+    "output_format": "An integer representing the smallest non-negative integer that is missing from the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i], operation_value <= 10^6",
+      "Total number of operations will not exceed 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 1, 2], operations = [[1, 'remove'], [3, 'add']]",
+        "output": "1",
+        "explanation": "After removing 1, the array is [0, 2]. The smallest missing non-negative integer is 1. After adding 3, the missing integer remains the same as there are no operations to include 1."
+      },
+      {
+        "input": "nums = [0, 1, 3], operations = [[2, 'add'], [3, 'remove']]",
+        "output": "2",
+        "explanation": "After removing 3, the array is [0, 1]. The smallest missing non-negative integer is 2, which is added through the operation, but the next missing will be 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the current state of the array with dynamic operations.",
+      "Use a set for efficient membership checking."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Verbal Arithmetic Puzzle",
+    "description": "In this problem, you are given a cryptarithmic equation where each letter represents a unique digit. Your task is to determine if it is possible to assign digits to letters such that the equation holds true. Each letter must be assigned a digit from 0-9, and no two letters can represent the same digit. The leading letters of any number cannot be zero. You will be provided with the equation in a specific format. Return true if a valid assignment exists, otherwise return false.",
+    "topic": "Backtracking",
+    "subtopic": "Constraint Satisfaction Problems",
+    "tags": [
+      "Backtracking",
+      "Cryptarithm",
+      "Search"
+    ],
+    "input_format": "A string representing the cryptarithmic equation in the form 'SEND + MORE = MONEY'.",
+    "output_format": "A boolean value indicating whether a valid digit assignment exists or not.",
+    "constraints": [
+      "The total number of unique letters in the equation does not exceed 10.",
+      "The equation is always valid and will have at least one letter in each of the operands and the result."
+    ],
+    "examples": [
+      {
+        "input": "SEND + MORE = MONEY",
+        "output": "true",
+        "explanation": "One valid assignment is S=9, E=5, N=6, D=7, M=1, O=0, R=8, Y=2 which satisfies the equation."
+      },
+      {
+        "input": "LEET + CODE = LEETCODE",
+        "output": "false",
+        "explanation": "No assignment of digits to letters can satisfy this equation given the constraints."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using backtracking to explore all possible digit assignments.",
+      "Keep track of the letters and the numbers you have already used.",
+      "Ensure that leading letters are not assigned the digit zero."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Time to Visit a Cell In a Grid",
+    "description": "Given a grid represented by a 2D array of integers where each integer corresponds to the time taken to visit that cell, find the minimum time required to visit the cell at the bottom-right corner starting from the top-left corner. You can only move down or right at any point in time.",
+    "topic": "Graph",
+    "subtopic": "Shortest Path",
+    "tags": [
+      "Graph",
+      "Dynamic Programming",
+      "Grid",
+      "Shortest Path"
+    ],
+    "input_format": "A 2D integer array grid representing the time taken to visit each cell.",
+    "output_format": "An integer representing the minimum time required to reach the bottom-right corner cell.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "1 <= grid[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "[[1,3,1],[1,5,1],[4,2,1]]",
+        "output": "7",
+        "explanation": "The optimal path is to move right (1), down (5), down (1) leading to a total time of 1 + 5 + 1 = 7."
+      },
+      {
+        "input": "[[1,2,3],[4,5,6],[7,8,9]]",
+        "output": "21",
+        "explanation": "The best path is right-right-down-down with a total of 1 + 2 + 6 + 9 = 21."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a priority queue to explore the grid efficiently.",
+      "Use Dijkstra's algorithm to find the shortest time."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Cherry Pickup",
+    "description": "In a grid of size n x n, there are two robots starting at the top-left corner and the bottom-right corner respectively. Each robot can only move either down or right at any point in time. The grid contains integers representing cherries that can be collected. The goal is to determine the maximum number of cherries that can be collected by the two robots when they meet at the same cell. If both robots land on the same cell, they can only collect cherries from that cell once.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Path Finding",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Path Finding"
+    ],
+    "input_format": "A 2D grid of integers representing cherries, where the value at grid[i][j] indicates the number of cherries at cell (i, j).",
+    "output_format": "An integer representing the maximum number of cherries that can be collected by both robots.",
+    "constraints": [
+      "1 <= n <= 50",
+      "0 <= grid[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0, 1, 0], [1, 0, 1], [0, 1, 0]]",
+        "output": "3",
+        "explanation": "Both robots can collect cherries from cells (0, 1), (1, 0), and the meeting point, maximizing the total to 3 cherries."
+      },
+      {
+        "input": "grid = [[1, 1, 1], [0, 0, 0], [1, 1, 1]]",
+        "output": "5",
+        "explanation": "The robots can collect cherries from the entire grid traversing optimally."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about using dynamic programming to keep track of the maximum cherries collected at each point.",
+      "Consider states defined by the positions of the two robots."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Width of Columns of a Grid",
+    "description": "You are given a grid of characters where each column can have varying widths based on the characters it contains. Your task is to find the width of each column in the grid. The width of a column is defined as the maximum length of strings in that column across all rows. The grid will be represented as a list of strings where each string represents a row in the grid. Return a list of integers representing the widths of each column.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Grid",
+      "Column Width"
+    ],
+    "input_format": "A list of strings, where each string represents a row in the grid.",
+    "output_format": "A list of integers representing the widths of each column.",
+    "constraints": [
+      "1 <= grid.length <= 100",
+      "1 <= grid[i].length <= 100",
+      "grid[i] contains only printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "grid = [\"abc\", \"de\", \"f\"]",
+        "output": "[3, 2]",
+        "explanation": "The first column has maximum width 3 (from 'abc') and the second column has maximum width 2 (from 'de')."
+      },
+      {
+        "input": "grid = [\"a\", \"b\", \"c\"]",
+        "output": "[1]",
+        "explanation": "Each cell in the only column has width 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You need to iterate through each column and find the maximum length of strings in that column."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Good Subarray Sum",
+    "description": "Given an array of integers representing good and bad segments, where positive numbers indicate good segments and negative numbers indicate bad segments, find the maximum sum of a contiguous subarray that consists only of good segments. If there are no good segments, return 0.",
+    "topic": "Array",
+    "subtopic": "Kadane's Algorithm",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An array of integers nums, where each element represents either good (positive) or bad (negative) segments.",
+    "output_format": "An integer representing the maximum sum of a contiguous subarray of good segments.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, -2, 3, 4, -1, 5]",
+        "output": "12",
+        "explanation": "The maximum subarray with only good segments is [3, 4, -1, 5], which sums to 12."
+      },
+      {
+        "input": "nums = [-1, -2, -3, -4]",
+        "output": "0",
+        "explanation": "There are no good segments; hence, the return value is 0."
+      },
+      {
+        "input": "nums = [3, 2, -4, 6, -1, 5]",
+        "output": "12",
+        "explanation": "The maximum subarray is [3, 2, -4, 6] that sums to 12."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Apply Kadane's algorithm to find the maximum sum of a subarray.",
+      "Consider resetting the current sum to zero when encountering a bad segment."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Cost to Convert String II",
+    "description": "Given two strings 'source' and 'target', you need to convert 'source' to 'target' with minimum cost. You can perform the following operations: replace a character in 'source' with another character or delete a character from 'source'. Each operation has a defined cost in a given list of integers. You should return the minimum total cost to convert 'source' to 'target'.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Cost Calculation"
+    ],
+    "input_format": "Two strings 'source' and 'target', followed by a list of costs for the operations.",
+    "output_format": "An integer representing the minimum cost to convert 'source' to 'target'.",
+    "constraints": [
+      "1 <= source.length, target.length <= 100",
+      "1 <= costs.length <= 26",
+      "0 <= costs[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "source = 'abc', target = 'yab', costs = [1, 2, 3]",
+        "output": "3",
+        "explanation": "Replace 'a' with 'y' (cost 1) and replace 'c' with 'b' (cost 2) for a total cost of 3."
+      },
+      {
+        "input": "source = 'abcd', target = 'ab', costs = [1, 2, 3, 4]",
+        "output": "4",
+        "explanation": "Delete 'c' (cost 3) and 'd' (cost 4) results in a total cost of 7. The optimal solution is to keep 'ab' leading to a total cost of 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a dynamic programming table to keep track of minimum costs.",
+      "Think about how deleting characters can affect the conversion cost."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Cost to Convert String I",
+    "description": "Given two strings, `source` and `target`, you need to convert the `source` string into the `target` string. The cost of converting a character in the `source` string to another character is defined as the absolute difference of their ASCII values. Find the minimum total cost to convert the entire `source` string to the `target` string. If the lengths of `source` and `target` do not match, return -1.",
+    "topic": "String",
+    "subtopic": "Conversion",
+    "tags": [
+      "String",
+      "Conversion",
+      "Dynamic Programming"
+    ],
+    "input_format": "Two strings 'source' and 'target', both of length n (1 <= n <= 100).",
+    "output_format": "An integer representing the minimum total cost to convert 'source' to 'target', or -1 if lengths do not match.",
+    "constraints": [
+      "1 <= source.length, target.length <= 100",
+      "source and target only contain printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "source = 'abc', target = 'xyz'",
+        "output": "72",
+        "explanation": "The conversion cost is |'a' - 'x'| + |'b' - 'y'| + |'c' - 'z'| = 23 + 13 + 36 = 72."
+      },
+      {
+        "input": "source = 'hello', target = 'jello'",
+        "output": "2",
+        "explanation": "The conversion cost is |'h' - 'j'| = 2."
+      },
+      {
+        "input": "source = 'abc', target = 'ab'",
+        "output": "-1",
+        "explanation": "The lengths of source and target do not match, so the output is -1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a loop to iterate through the characters of both strings.",
+      "You can calculate the cost using ASCII values with the 'ord' function."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Make Lexicographically Smallest Array by Swapping Elements",
+    "description": "Given an array of integers, you can perform a swap between any two elements. Your task is to determine the lexicographically smallest array that can be created by performing zero or more swaps. Return the resulting smallest array.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Greedy"
+    ],
+    "input_format": "An array of integers arr, where 1 <= arr.length <= 10^5 and -10^5 <= arr[i] <= 10^5.",
+    "output_format": "An array of integers representing the lexicographically smallest array after performing swaps.",
+    "constraints": [
+      "1 <= arr.length <= 10^5",
+      "-10^5 <= arr[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "arr = [3, 1, 2]",
+        "output": "[1, 2, 3]",
+        "explanation": "We can swap 3 and 1 to get [1, 3, 2], then swap 3 and 2 to get [1, 2, 3]."
+      },
+      {
+        "input": "arr = [4, 3, 2, 1]",
+        "output": "[1, 2, 3, 4]",
+        "explanation": "Swapping the elements appropriately will yield the sorted order."
+      },
+      {
+        "input": "arr = [5, 5, 4, 2, 3]",
+        "output": "[2, 3, 4, 5, 5]",
+        "explanation": "We can swap 5 and 2, as well as 5 and 3, to achieve the lexicographically smallest array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the array to identify the smallest elements.",
+      "Swapping should only involve adjacent elements or specific targeted elements."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Area of Longest Diagonal Rectangle",
+    "description": "Given a list of coordinates defining the corners of several rectangles on a 2D plane, your task is to find the area of the rectangle that has the longest diagonal among them. Each rectangle is defined by its bottom-left and top-right corners. The area of a rectangle is given by the formula: Area = width * height, where width is the difference in x-coordinates and height is the difference in y-coordinates.",
+    "topic": "Geometry",
+    "subtopic": "Rectangle Area Calculation",
+    "tags": [
+      "Geometry",
+      "Rectangle",
+      "Area"
+    ],
+    "input_format": "A list of tuples, where each tuple contains four integers (x1, y1, x2, y2) representing the bottom-left and top-right corners of a rectangle.",
+    "output_format": "An integer representing the maximum area of the rectangle with the longest diagonal.",
+    "constraints": [
+      "1 <= rectangles.length <= 1000",
+      "-10^6 <= x1 < x2 <= 10^6",
+      "-10^6 <= y1 < y2 <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "rectangles = [(1, 1, 3, 2), (2, 2, 5, 4), (0, 0, 5, 5)]",
+        "output": "25",
+        "explanation": "The diagonal of the rectangle defined by (0, 0) and (5, 5) is the longest, giving an area of 5 * 5 = 25."
+      },
+      {
+        "input": "rectangles = [(0, 0, 1, 1), (0, 0, 2, 2), (3, 3, 6, 6)]",
+        "output": "9",
+        "explanation": "The diagonal of the rectangle defined by (3, 3) and (6, 6) is the longest, giving an area of 3 * 3 = 9."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Calculate the diagonal of each rectangle.",
+      "Use the formula to determine the area from width and height.",
+      "Keep track of the maximum area while iterating through the rectangles."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Square Area by Removing Fences From a Field",
+    "description": "You are given a rectangular field represented by a 2D grid of dimensions m x n, where each cell contains either '1' (part of the field) or '0' (fenced area that cannot be part of the square). Your task is to determine the maximum area of a square that can be formed by removing the fences (cells containing '0'). The square must only consist of '1's after removing the necessary '0's. Return the area of the largest square that can be formed.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "Matrix",
+      "Square Area"
+    ],
+    "input_format": "A 2D grid of integers, where grid[i][j] is either 0 or 1.",
+    "output_format": "An integer representing the area of the largest square that can be formed.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "grid[i][j] is either 0 or 1"
+    ],
+    "examples": [
+      {
+        "input": "[[1,0,1],[0,1,1],[1,1,0]]",
+        "output": "4",
+        "explanation": "By removing the fenced areas, the largest square of '1's that can be formed has a side length of 2, hence an area of 2*2 = 4."
+      },
+      {
+        "input": "[[0,0],[0,0]]",
+        "output": "0",
+        "explanation": "There are no '1's to form a square, so the area is 0."
+      },
+      {
+        "input": "[[1,1,1],[1,1,1],[1,1,1]]",
+        "output": "9",
+        "explanation": "The entire grid is '1's, so the maximum square has a side length of 3, leading to an area of 3*3 = 9."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider creating a dynamic programming table to track the largest square side ending at each cell.",
+      "You may need to account for cells that can be turned into '1's when removing '0's."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Longest String Chain",
+    "description": "Given a list of words, return the length of the longest possible string chain. A string chain is formed by linking words together such that each word in the chain is a predecessor of the following word. A word is a predecessor of another if by adding one letter anywhere in the word, you can get the other word.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Chain"
+    ],
+    "input_format": "A list of strings words.",
+    "output_format": "An integer representing the length of the longest string chain.",
+    "constraints": [
+      "1 <= words.length <= 1000",
+      "1 <= words[i].length <= 16"
+    ],
+    "examples": [
+      {
+        "input": "words = [\"a\", \"b\", \"ba\", \"bca\"]",
+        "output": "2",
+        "explanation": "The longest chain is 'a' -> 'ba', which has a length of 2."
+      },
+      {
+        "input": "words = [\"x\", \"xy\", \"xyz\", \"xyza\"]",
+        "output": "4",
+        "explanation": "The longest chain is 'x' -> 'xy' -> 'xyz' -> 'xyza', which has a length of 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider maintaining a map from word length to their index.",
+      "Use a dynamic programming approach to keep track of the longest chain ending at each word."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Design File System",
+    "description": "Implement a file system that supports the following operations: create, add content, and read content. The file system should allow users to create files and directories, where files can hold content and directories can hold both files and other directories.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "File System",
+      "Data Structures"
+    ],
+    "input_format": "Operations as method calls to the FileSystem class.",
+    "output_format": "Results from read operations, or nothing for create/add operations.",
+    "constraints": [
+      "The maximum number of operations is 1000.",
+      "The length of file/directory names is between 1 and 30 characters.",
+      "Content size is limited to 10^4 characters."
+    ],
+    "examples": [
+      {
+        "input": "fs.create('/a/b/c')\nfs.addContentToFile('/a/b/c', 'hello')\nfs.readContentFromFile('/a/b/c')",
+        "output": "'hello'",
+        "explanation": "File '/a/b/c' is created first, then content 'hello' is added, and when read, it returns 'hello'."
+      },
+      {
+        "input": "fs.create('/d/e')\nfs.addContentToFile('/d/e', 'world')\nfs.readContentFromFile('/d/e')",
+        "output": "'world'",
+        "explanation": "File '/d/e' is created, 'world' is added, and reading it returns 'world'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using a trie or a nested map to represent the file system.",
+      "Consider how to efficiently manage paths for directories and files."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a length maxWidth, format the text such that each line has exactly maxWidth characters and is fully justified. You should pack the words together on each line, leaving a single space between words. Each line should also be as far left as possible, except for the last line. If a line has only one word, it should be left-justified. The last line of text should be fully justified to the left. This means that any extra spaces at the end of the line should be distributed as evenly as possible.",
+    "topic": "String Manipulation",
+    "subtopic": "Text Formatting",
+    "tags": [
+      "String",
+      "Justification",
+      "Formatting"
+    ],
+    "input_format": "An array of strings words and an integer maxWidth.",
+    "output_format": "A list of strings representing the fully justified text.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 20",
+      "words[i] consists of only English letters and spaces.",
+      "The sum of words[i].length will not exceed maxWidth."
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "This",
+            "is",
+            "an",
+            "example",
+            "of",
+            "text",
+            "justification."
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "This    is    an",
+          "example  of text",
+          "justification.  "
+        ],
+        "explanation": "The first line contains 4 words, has leading spaces to fill maxWidth, etc."
+      },
+      {
+        "input": {
+          "words": [
+            "What",
+            "must",
+            "be",
+            "acknowledgment",
+            "shall",
+            "be"
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "What   must   be",
+          "acknowledgment  ",
+          "shall be        "
+        ],
+        "explanation": "The justification works according to the rules given, maintaining maxWidth."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider counting the number of characters in the line before adding spaces.",
+      "Distribute extra spaces from left to right between words."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Anagram"
+    ],
+    "input_format": "An array of strings 'strs'.",
+    "output_format": "A list of lists, where each inner list contains strings that are anagrams of each other.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The words 'eat', 'tea', and 'ate' are anagrams. 'nat' and 'tan' are also anagrams."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "The only word is an empty string, which is an anagram of itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "The only word is 'a', which is an anagram of itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to group the anagrams.",
+      "Sort each word and use the sorted word as a key."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Increasing Subsequence",
+    "description": "Given an integer array nums, return the length of the longest strictly increasing subsequence.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Longest Increasing Subsequence",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "LIS"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest increasing subsequence.",
+    "constraints": [
+      "1 <= nums.length <= 2500",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 9, 2, 5, 3, 7, 101, 18]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [2, 3, 7, 101], so the length is 4."
+      },
+      {
+        "input": "nums = [0, 1, 0, 3, 2, 3]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [0, 1, 2, 3], so the length is 4."
+      },
+      {
+        "input": "nums = [7, 7, 7, 7, 7, 7, 7]",
+        "output": "1",
+        "explanation": "All elements are the same, so the longest increasing subsequence has length 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use dynamic programming to build a solution.",
+      "Consider maintaining an array to track the longest subsequence.",
+      "A binary search can be useful to find positions efficiently."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Lowest Common Ancestor of a Binary Tree",
+    "description": "Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree. The lowest common ancestor is defined between two nodes p and q as the lowest node that has both p and q as descendants (where we allow a node to be a descendant of itself).",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "LCA"
+    ],
+    "input_format": "The root of the binary tree and the two nodes p and q.",
+    "output_format": "The lowest common ancestor of the two nodes as a reference to the node.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [2, 10^5].",
+      "All node values are unique.",
+      "p and q are different and both values will exist in the binary tree."
+    ],
+    "examples": [
+      {
+        "input": "root = [3, 5, 1, 6, 2, 0, 8, null, null, 7, 4], p = 5, q = 1",
+        "output": "3",
+        "explanation": "The lowest common ancestor of nodes 5 and 1 is node 3."
+      },
+      {
+        "input": "root = [5, 3, 8, 2, 4, null, 9], p = 2, q = 4",
+        "output": "3",
+        "explanation": "The lowest common ancestor of nodes 2 and 4 is node 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of a binary tree.",
+      "Use recursion to traverse the tree.",
+      "Think about how to check if both nodes are in the left or right subtree."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Majority Element II",
+    "description": "Given an integer array of size n, find all the elements that appear more than n/3 times. The algorithm should have a linear runtime complexity and use constant space to store the results. Your task is to return a list of the majority elements. Note that the elements in the result should be unique and returned in any order.",
+    "topic": "Array",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Majority Element"
+    ],
+    "input_format": "An integer array nums of size n.",
+    "output_format": "A list of integers representing the majority elements.",
+    "constraints": [
+      "1 <= n <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 3]",
+        "output": "[3]",
+        "explanation": "The element 3 appears more than n/3 times (n = 3)."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1, 1, 2, 2]",
+        "output": "[1, 2]",
+        "explanation": "Both 1 and 2 appear more than n/3 times (n = 7)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to count occurrences.",
+      "Only two elements can be candidates for majority elements."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Meeting Rooms II",
+    "description": "Given an array of meeting time intervals where intervals[i] = [start_i, end_i], return the minimum number of meeting rooms required to accommodate all meetings. A meeting room can be used for multiple meetings as long as their times do not overlap.",
+    "topic": "Greedy",
+    "subtopic": "Intervals",
+    "tags": [
+      "Greedy",
+      "Intervals",
+      "Sorting"
+    ],
+    "input_format": "An array of intervals, where each interval is represented as an array of two integers [start, end].",
+    "output_format": "An integer representing the minimum number of meeting rooms required.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "0 <= start_i < end_i <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[0, 30], [5, 10], [15, 20]]",
+        "output": "2",
+        "explanation": "The two meetings [0,30] and [5,10] overlap, requiring two rooms."
+      },
+      {
+        "input": "intervals = [[7, 10], [2, 4]]",
+        "output": "1",
+        "explanation": "The meetings do not overlap, so only one room is necessary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the intervals by start time.",
+      "Use a priority queue to keep track of end times."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Koko Eating Bananas",
+    "description": "Koko loves to eat bananas. There are n piles of bananas, where the ith pile contains bananas[i] bananas. Koko can decide her eating speed k (in bananas per hour). Each hour, she chooses some pile of bananas and eats k bananas from that pile. If the pile has less than k bananas, she eats all of them instead. Koko wants to finish eating all the bananas in the minimum amount of hours. Return the minimum integer k such that Koko can eat all the bananas within h hours.",
+    "topic": "Binary Search",
+    "subtopic": "Search",
+    "tags": [
+      "Binary Search",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "Two integers n and h followed by an array of integers bananas representing the piles.",
+    "output_format": "An integer representing the minimum eating speed k.",
+    "constraints": [
+      "1 <= n <= 10^7",
+      "1 <= bananas[i] <= 10^9",
+      "1 <= h <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "piles = [3, 6, 7, 11], h = 8",
+        "output": "4",
+        "explanation": "With speed 4, Koko can eat 4, 4, 3, 3 bananas respectively from the piles in 8 hours."
+      },
+      {
+        "input": "piles = [30, 11, 23, 4, 20], h = 5",
+        "output": "30",
+        "explanation": "With speed 30, Koko can finish all the bananas in 5 hours."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider binary search to find the optimal speed k.",
+      "Check if a given speed can allow Koko to finish within h hours."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers prices where prices[i] is the price of the stock on the ith day.",
+    "output_format": "An integer representing the maximum profit.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "The maximum profit can be calculated by subtracting the minimum price from the current price."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Can Place Flowers",
+    "description": "You have a flowerbed represented as a list of integers. Each integer can be either 0 (empty) or 1 (occupied). You want to place a new flower in the flowerbed without violating the no-adjacent-flowers policy. You can place a flower in an empty plot if and only if the plot is empty and the adjacent plots (left and right) are also empty. Given the flowerbed and a number n, return true if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Simulation"
+    ],
+    "input_format": "An integer array flowerbed denoting the current state of the flowerbed and an integer n denoting the number of flowers to be planted.",
+    "output_format": "Return a boolean value indicating whether n flowers can be planted.",
+    "constraints": [
+      "1 <= flowerbed.length <= 2 * 10^4",
+      "flowerbed[i] is 0 or 1",
+      "0 <= n <= flowerbed.length"
+    ],
+    "examples": [
+      {
+        "input": "flowerbed = [1,0,0,0,1], n = 1",
+        "output": "true",
+        "explanation": "You can plant a flower in the middle empty plot, [1,0,1,0,1]."
+      },
+      {
+        "input": "flowerbed = [1,0,0,0,1], n = 2",
+        "output": "false",
+        "explanation": "It is not possible to place 2 flowers in the flowerbed without violating the no-adjacent-flowers policy."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider checking if the adjacent plots are empty before placing a flower.",
+      "Simulate the placement of flowers while iterating through the flowerbed."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "String Transformation",
+    "description": "Given a string, transform it by modifying its characters according to specific rules. Each lowercase letter must be surrounded by a pair of '#' symbols, while each uppercase letter must be replaced by its ASCII value formatted as a string. For example, 'a' would become '#a#' and 'A' would become '65'. The transformed string should preserve the order of characters from the original string.",
+    "topic": "String",
+    "subtopic": "Transformation",
+    "tags": [
+      "String",
+      "Transformation",
+      "ASCII"
+    ],
+    "input_format": "A single string s consisting of uppercase and lowercase letters.",
+    "output_format": "A transformed string according to the specified rules.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists only of uppercase and lowercase letters."
+    ],
+    "examples": [
+      {
+        "input": "HelloWorld",
+        "output": "72#h#101#l#108#111#87#o#114#108#100",
+        "explanation": "Each uppercase letter is replaced by its ASCII value, while lowercase letters are surrounded by '#'. 'H' -> 72, 'e' -> '#e#', 'l' -> '#l#', 'o' -> '#o#', and so on."
+      },
+      {
+        "input": "abcABC",
+        "output": "#a##b##c#65#66#67",
+        "explanation": "Lowercase letters 'a', 'b', and 'c' are transformed into '#a#', '#b#', and '#c#'; Uppercase letters 'A', 'B', and 'C' are replaced with 65, 66, and 67."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use string concatenation to build the transformed string.",
+      "Check the character case using 'isupper()' or 'islower()'."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "The Time When the Network Becomes Idle",
+    "description": "You are given an array `tasks` where tasks[i] is the time required to complete the i-th task. A worker can complete one task at a time, and each task must be completed in the order it is given. The worker can only complete one task from the list and then take a break of a given duration `n` seconds before they can start the next task. Return the least amount of time that the network will be idle, i.e., the total time taken to complete all the tasks including breaks.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Simulation"
+    ],
+    "input_format": "Two inputs: an array of integers `tasks` representing the time to complete each task, and an integer `n` representing the break time after each task.",
+    "output_format": "An integer that represents the least time the network becomes idle.",
+    "constraints": [
+      "1 <= tasks.length <= 100",
+      "1 <= tasks[i] <= 10^4",
+      "0 <= n <= 100"
+    ],
+    "examples": [
+      {
+        "input": "tasks = [1, 2, 3], n = 2",
+        "output": "7",
+        "explanation": "Completion times: 1 + break (2) + 2 + break (2) + 3 = 7."
+      },
+      {
+        "input": "tasks = [1, 2, 3, 1], n = 3",
+        "output": "9",
+        "explanation": "Completion times: 1 + break (3) + 2 + break (3) + 3 + break (3) + 1 = 9."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Calculate the total time spent on tasks.",
+      "Account for breaks only when necessary."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Online Election",
+    "description": "You are given a list representing the votes cast in an online election. Each vote is represented by the ID of the candidate. Your task is to determine which candidate received the most votes. If there is a tie, return the candidate with the smallest ID. Candidates are identified by IDs ranging from 1 to n, where n is the number of candidates. You must return the candidate ID of the winner.",
+    "topic": "Hash Table",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Hash Table",
+      "Counting",
+      "Voting"
+    ],
+    "input_format": "An integer array votes where each element represents a candidate ID. The length of votes will be between 1 and 10^5.",
+    "output_format": "An integer representing the ID of the candidate who received the most votes.",
+    "constraints": [
+      "1 <= votes.length <= 10^5",
+      "1 <= votes[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "votes = [1, 2, 3, 2, 1, 1]",
+        "output": "1",
+        "explanation": "Candidate 1 received 3 votes, which is more than any other candidate."
+      },
+      {
+        "input": "votes = [2, 2, 1, 1]",
+        "output": "1",
+        "explanation": "Candidates 1 and 2 both received 2 votes, but candidate 1 has the smaller ID."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash table to count the votes for each candidate.",
+      "Iterate through the hash table to find the candidate with the maximum votes.",
+      "In case of a tie, compare the IDs."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Elements",
+    "description": "Given a non-empty array of integers, return the k most frequent elements. You may return the answer in any order. For example, given the input [1,1,1,2,2,3] and k = 2, you should return [1,2].",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Frequency Count"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "A list of the k most frequent elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "k is in the range [1, the number of unique elements in the array]"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,1,1,2,2,3], k = 2",
+        "output": "[1, 2]",
+        "explanation": "The number 1 appears 3 times, while 2 appears twice. Therefore, the two most frequent elements are 1 and 2."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Since there's only one element, it is the most frequent by default."
+      },
+      {
+        "input": "nums = [1,2,3,4,5,6,7,8,9,10], k = 10",
+        "output": "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]",
+        "explanation": "All elements are unique, so all of them are the most frequent."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to count the frequency of each element.",
+      "You can use a min-heap to keep track of the top k elements."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Russian Doll Envelopes",
+    "description": "You have a number of envelopes with different dimensions. Each envelope is represented by a pair of integers (w, h) where w is the width and h is the height of the envelope. One envelope can fit into another if and only if both the width and height are strictly greater than the other. Your goal is to find the maximum number of envelopes that can be nested inside each other. An envelope (a1, h1) can fit into (a2, h2) only if a1 < a2 and h1 < h2. Return this maximum number of envelopes you can nest.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Dynamic Programming",
+      "Binary Search",
+      "Greedy"
+    ],
+    "input_format": "A list of envelopes, where each envelope is represented as a tuple of integers [width, height].",
+    "output_format": "An integer representing the maximum number of envelopes that can be nested.",
+    "constraints": [
+      "1 <= envelopes.length <= 10^5",
+      "envelopes[i].length == 2",
+      "1 <= envelopes[i][0], envelopes[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[[5,4],[6,4],[6,7],[2,3]]",
+        "output": "3",
+        "explanation": "The maximum envelopes that can be nested are [[2,3], [5,4], [6,7]]."
+      },
+      {
+        "input": "[[1,1],[1,1],[1,1]]",
+        "output": "1",
+        "explanation": "All envelopes are the same size, so only one can be chosen."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Sort the envelopes based on width and height.",
+      "Use a dynamic programming approach or binary search for optimization."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Consecutive Sequence",
+    "description": "Given an unsorted array of integers, find the length of the longest consecutive elements sequence. Your algorithm should run in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest consecutive elements sequence.",
+    "constraints": [
+      "0 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [100, 4, 200, 1, 3, 2]",
+        "output": "4",
+        "explanation": "The longest consecutive sequence is [1, 2, 3, 4], which has a length of 4."
+      },
+      {
+        "input": "nums = [0, -1]",
+        "output": "2",
+        "explanation": "The longest consecutive sequence is [-1, 0], which has a length of 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash set to store the elements.",
+      "Check for the start of a sequence."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers, return the indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers such that they add up to the target.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9, therefore the indices are 0 and 1."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6, therefore the indices are 1 and 2."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 3 + 3 = 6, therefore the indices are 0 and 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash table to store the numbers and their indices.",
+      "Check if the complement of the current number exists in the hash table."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search",
+    "description": "Given an m x n board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where 'adjacent' cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.",
+    "topic": "Backtracking",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Backtracking",
+      "Depth-First Search",
+      "Matrix"
+    ],
+    "input_format": "A 2D character array board containing lowercase English letters, and a string word.",
+    "output_format": "A boolean value indicating whether the word exists in the grid.",
+    "constraints": [
+      "1 <= board.length <= 200",
+      "1 <= board[i].length <= 200",
+      "board[i][j] is a lowercase English letter.",
+      "1 <= word.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "board = [['A','B','C','E'],['S','F','C','S'],['A','D','E','E']], word = 'ABCCED'",
+        "output": "true",
+        "explanation": "The word 'ABCCED' can be constructed by moving through the cells in the order 'A' -> 'B' -> 'C' -> 'C' -> 'E' -> 'D'."
+      },
+      {
+        "input": "board = [['A','B','C','E'],['S','F','C','S'],['A','D','E','E']], word = 'SEE'",
+        "output": "true",
+        "explanation": "The word 'SEE' can be constructed by moving through the cells in the order 'S' -> 'E' -> 'E'."
+      },
+      {
+        "input": "board = [['A','B','C','E'],['S','F','C','S'],['A','D','E','E']], word = 'ABCB'",
+        "output": "false",
+        "explanation": "The word 'ABCB' cannot be constructed without revisiting the letter 'B'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a depth-first search (DFS) to explore potential paths.",
+      "Track the visited cells to avoid revisiting them during the search.",
+      "Use backtracking to retract your steps if the current path doesn't lead to a solution."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. For example, with the input 'abcabcbb', the longest substring is 'abc', which has a length of 3.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A single string s consisting of ASCII characters.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of English letters, digits, symbols and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'abc', which has a length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is 'b', which has a length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'wke', which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window to keep track of the current substring.",
+      "Utilize a hashmap to store the last index of each character."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Nth Highest Salary",
+    "description": "Write a SQL query to report the Nth highest salary from the Employee table. If there is no Nth highest salary, the query should report null. The Employee table will have two columns: id (int) and salary (int).",
+    "topic": "Database",
+    "subtopic": "Queries",
+    "tags": [
+      "SQL",
+      "Database",
+      "Ranking"
+    ],
+    "input_format": "A table named Employee with columns id and salary.",
+    "output_format": "A single value representing the Nth highest salary or null.",
+    "constraints": [
+      "0 <= N <= 1000",
+      "The number of records in the Employee table will be between 1 and 100."
+    ],
+    "examples": [
+      {
+        "input": "N = 2; Employee = [[1, 100], [2, 200], [3, 300]]",
+        "output": "200",
+        "explanation": "The 2nd highest salary is 200."
+      },
+      {
+        "input": "N = 4; Employee = [[1, 100], [2, 200], [3, 300]]",
+        "output": "null",
+        "explanation": "There is no 4th highest salary because there are only 3 distinct salaries."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the DISTINCT clause to eliminate duplicate salaries.",
+      "You may want to use window functions to rank the salaries."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Boats to Save People",
+    "description": "You are given an array of positive integers `people` representing the weights of people in a boat. The limit of the boat is an integer `limit`. Each boat can carry at most two people at a time, and they cannot exceed the weight limit. Your task is to return the minimum number of boats required to carry all the people across the river.",
+    "topic": "Greedy",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Greedy",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "An array of integers `people` and an integer `limit`.",
+    "output_format": "An integer representing the minimum number of boats required.",
+    "constraints": [
+      "1 <= people.length <= 5 * 10^4",
+      "1 <= people[i] <= limit <= 3 * 10^4"
+    ],
+    "examples": [
+      {
+        "input": "people = [1, 2, 3, 4], limit = 4",
+        "output": "3",
+        "explanation": "The first boat can take 1 and 3 (total 4), second boat takes 2 (alone), and the third boat takes 4 (alone)."
+      },
+      {
+        "input": "people = [3, 2, 2, 1], limit = 3",
+        "output": "3",
+        "explanation": "The first boat takes 1 and 2 (total 3), the second takes 2 (alone), and the third takes 3 (alone)."
+      },
+      {
+        "input": "people = [5, 1, 4, 2], limit = 6",
+        "output": "2",
+        "explanation": "The first boat can take 2 and 4 (total 6), and the second boat takes 5 and 1 (total 6)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try sorting the array first.",
+      "Use two pointers to find the optimal pairs."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to Roman",
+    "description": "Convert an integer to its corresponding Roman numeral representation. Roman numerals are represented by seven symbols: I, V, X, L, C, D, and M, each with a fixed value. For example, the number 3 is represented as 'III', and 4 is 'IV'. The conversion should be done for any integer from 1 to 3999.",
+    "topic": "Math",
+    "subtopic": "Number Conversion",
+    "tags": [
+      "Math",
+      "Strings",
+      "Conversion"
+    ],
+    "input_format": "An integer num (1 <= num <= 3999).",
+    "output_format": "A string representing the Roman numeral equivalent of the input integer.",
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "examples": [
+      {
+        "input": "num = 3",
+        "output": "III",
+        "explanation": "The integer 3 is represented as 'III' in Roman numerals."
+      },
+      {
+        "input": "num = 58",
+        "output": "LVIII",
+        "explanation": "The integer 58 is represented as 'LVIII', which is made up of symbols L (50), V (5), and III (3)."
+      },
+      {
+        "input": "num = 1994",
+        "output": "MCMXCIV",
+        "explanation": "The integer 1994 is represented as 'MCMXCIV', which combines M (1000), CM (900), XC (90), and IV (4)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap or array to store numeral values and their corresponding symbols.",
+      "Consider subtractive notation for values like 4 and 9."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "You are given two sorted integer arrays nums1 and nums2. Your task is to merge nums2 into nums1 as one sorted array. The elements of nums1 are in the first part, followed by enough space to hold additional elements from nums2. You must merge the arrays in place and do not return anything from your function.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Merging",
+      "In-Place"
+    ],
+    "input_format": "Two arrays of integers nums1 and nums2 where nums1 has enough space to hold nums2.",
+    "output_format": "You should modify nums1 in place to be the merged sorted array.",
+    "constraints": [
+      "1 <= nums1.length + nums2.length <= 2 * 10^4",
+      "nums1.length >= m",
+      "nums2.length >= n",
+      "0 <= m, n <= nums1.length",
+      "-10^9 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [2, 5, 6], n = 3",
+        "output": "[1, 2, 2, 3, 5, 6]",
+        "explanation": "After merging nums2 into nums1, the sorted array will be [1, 2, 2, 3, 5, 6]."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "Since nums2 is empty, nums1 remains unchanged."
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "explanation": "We populate nums1 with elements from nums2 since m is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how to use two pointers to traverse both arrays.",
+      "You can start merging from the end of both arrays."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Pairs of Songs With Total Durations Divisible by 60",
+    "description": "You are given a list of songs, where each song has a duration in seconds. Your task is to determine the number of pairs of songs that have a total duration that is divisible by 60 seconds. A pair is defined as two distinct songs. For example, if you have songs with durations [30, 20, 150, 100, 40], the following pairs can be formed: (30, 150), (20, 100), and (40, 150). Your goal is to count the total number of such valid pairs.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Math"
+    ],
+    "input_format": "A list of integers durations, where 1 <= durations.length <= 10^4.",
+    "output_format": "An integer representing the number of valid pairs of songs.",
+    "constraints": [
+      "1 <= durations.length <= 10^4",
+      "0 <= durations[i] <= 10^8"
+    ],
+    "examples": [
+      {
+        "input": "durations = [30, 20, 150, 100, 40]",
+        "output": "3",
+        "explanation": "The valid pairs are: (30, 150), (20, 100), and (30, 100), giving a total of 3 pairs."
+      },
+      {
+        "input": "durations = [60, 60, 60]",
+        "output": "3",
+        "explanation": "The pairs are (60, 60) and (60, 60). Since we can pair each song with the others, it results in 3 pairs."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to store the remainder when each duration is divided by 60.",
+      "Count how many durations fall into each remainder category."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game II",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Your goal is to reach the last index in the minimum number of jumps. You can assume you can always reach the last index.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "An integer representing the minimum number of jumps to reach the last index.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then 2 steps to reach the last index."
+      },
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then jump 1 step to reach the last index."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the farthest point you can reach in each jump.",
+      "Use a greedy approach to minimize the number of jumps."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Design Tic-Tac-Toe",
+    "description": "Design a Tic-Tac-Toe game that allows two players to play the game on a 3x3 board. The game should support the following functionalities: adding a move, checking the current state of the board, determining the winner, and resetting the board for a new game. Players take turns placing their marks ('X' or 'O') on the grid. The game ends when one player has three marks in a row (horizontally, vertically, or diagonally) or when the board is full without a winner, resulting in a draw.",
+    "topic": "Game Theory",
+    "subtopic": "Implementation",
+    "tags": [
+      "Tic-Tac-Toe",
+      "Game Theory",
+      "Design"
+    ],
+    "input_format": "Operations in the form of strings: 'move (player, row, col)', 'check', or 'reset'.",
+    "output_format": "Current board state after each move and a message indicating the game result (win, draw, or ongoing).",
+    "constraints": [
+      "Player can only place a mark on an empty cell.",
+      "Row and column indices are 0-based.",
+      "Each player alternates turns."
+    ],
+    "examples": [
+      {
+        "input": "move('X', 0, 0); move('O', 0, 1); move('X', 1, 0); move('O', 0, 2); move('X', 2, 0);",
+        "output": "X wins",
+        "explanation": "Player X completes the first column with three 'X's."
+      },
+      {
+        "input": "move('X', 0, 0); move('O', 0, 1); move('X', 1, 0); move('O', 1, 1); move('X', 2, 0); move('O', 2, 2); move('X', 1, 2);",
+        "output": "Draw",
+        "explanation": "All cells are filled with no winner."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a 2D array to represent the board.",
+      "Check rows, columns, and diagonals to determine the winner."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Crawler Log Folder",
+    "description": "You are given a list of log entries from a web crawler. Each log entry is a string representing either a folder or a file. The format is specified as follows: a folder ends with a '/', while a file does not. Your task is to determine the number of unique folders containing files. A folder is considered unique if it has at least one file. Note that a folder can contain other folders or files, and folders are treated as unique based on their paths.",
+    "topic": "String",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Parsing",
+      "Set"
+    ],
+    "input_format": "A list of strings logs, where each string is either a file or folder path.",
+    "output_format": "An integer representing the number of unique folders containing files.",
+    "constraints": [
+      "1 <= logs.length <= 1000",
+      "1 <= logs[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "logs = [\"a/\", \"a/b/\", \"a/b/c.txt\", \"a/c.txt\"]",
+        "output": "2",
+        "explanation": "The folders 'a/' and 'a/b/' contain files 'c.txt' and 'c.txt' respectively."
+      },
+      {
+        "input": "logs = [\"d/\", \"d/e/\", \"d/e/f.txt\", \"d/h/\", \"d/h/i.txt\"]",
+        "output": "3",
+        "explanation": "The folders 'd/', 'd/e/', and 'd/h/' each contain at least one file."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think about using a set to store unique folders.",
+      "You can check if a log entry ends with '/' to distinguish between folders and files."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Occurrences of a Substring",
+    "description": "Given a string 'text' and a substring 'substring', return the maximum number of times the substring occurs in 'text'. The substring can overlap with itself, and you should consider all possible occurrences. The function should return 0 if the substring does not exist in the input string.",
+    "topic": "String",
+    "subtopic": "Substring Search",
+    "tags": [
+      "String",
+      "Substring",
+      "Count"
+    ],
+    "input_format": "A string 'text' and a string 'substring'.",
+    "output_format": "An integer representing the maximum occurrences of 'substring' in 'text'.",
+    "constraints": [
+      "1 <= text.length <= 10^5",
+      "1 <= substring.length <= 100",
+      "substring must be a non-empty string"
+    ],
+    "examples": [
+      {
+        "input": "text = \"ababcabc\", substring = \"abc\"",
+        "output": "2",
+        "explanation": "The substring 'abc' occurs twice in 'ababcabc': first at index 1 and then at index 3."
+      },
+      {
+        "input": "text = \"aaaaaa\", substring = \"aa\"",
+        "output": "5",
+        "explanation": "The substring 'aa' overlaps in 'aaaaaa' at indices (0, 1), (1, 2), (2, 3), (3, 4), and (4, 5)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "Think about how to handle overlapping occurrences."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Count Vowel Permutations",
+    "description": "Given an integer n, you need to count how many distinct strings of length n can be formed using the vowels 'a', 'e', 'i', 'o', and 'u', such that no two vowels are the same in adjacent positions. Return the count modulo 10^9 + 7.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Counting Strings",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Counting"
+    ],
+    "input_format": "An integer n (1 <= n <= 1000) representing the length of the string.",
+    "output_format": "An integer representing the count of distinct strings of length n under the given constraints, modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= n <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "n = 1",
+        "output": "5",
+        "explanation": "The possible strings are 'a', 'e', 'i', 'o', and 'u'."
+      },
+      {
+        "input": "n = 2",
+        "output": "20",
+        "explanation": "For length 2, we can pick any vowel in the first position (5 choices) and any of the remaining 4 vowels for the second position (4 choices). So, 5 * 4 = 20."
+      },
+      {
+        "input": "n = 5",
+        "output": "6800",
+        "explanation": "The total number of distinct strings of length 5 that follow the given constraint is calculated using dynamic programming."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to build solutions for smaller lengths.",
+      "Define a state that represents the number of valid strings for a given length and the last vowel used."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Design Add and Search Words Data Structure",
+    "description": "Implement a data structure that supports adding a word and finding if a string matches any previously added word. A word may contain '.' which can represent any letter. Implement the following methods: \n\n- `addWord(word: String)`: Adds a word into the data structure. \n- `search(word: String)`: Returns true if the word is in the data structure. A word could contain the dot character '.' to represent any one letter. \n\nFor example, adding 'bad' and searching for 'pad' should return false, but searching for 'bad' should return true. Searching for 'b..' should return true as it matches 'bad'.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Trie",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "Two methods: `addWord` which takes a string as input and `search` which takes a string with '.' characters.",
+    "output_format": "A boolean value indicating if the searched word exists in the structure.",
+    "constraints": [
+      "1 <= word.length <= 20",
+      "The input consists of lowercase English letters and '.' characters.",
+      "Add and search operations should be optimized for time complexity."
+    ],
+    "examples": [
+      {
+        "input": "addWord('bad'); search('bad')",
+        "output": "true",
+        "explanation": "The word 'bad' has been added, so searching for 'bad' returns true."
+      },
+      {
+        "input": "addWord('bad'); search('pad')",
+        "output": "false",
+        "explanation": "The word 'pad' has not been added."
+      },
+      {
+        "input": "addWord('bad'); search('b..')",
+        "output": "true",
+        "explanation": "The pattern 'b..' matches 'bad'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a Trie for efficient word storage.",
+      "Remember to account for the '.' character during search."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Count Vowel Strings in Ranges",
+    "description": "Given a list of strings and a list of ranges, count the number of strings in each range that consist only of vowels (a, e, i, o, u). A string is considered a vowel string if it contains only the vowels, including an empty string. The ranges are inclusive, and you should return an array of counts corresponding to each range.",
+    "topic": "Strings",
+    "subtopic": "Counting",
+    "tags": [
+      "Strings",
+      "Counting",
+      "Vowels"
+    ],
+    "input_format": "Two lists: a list of strings 'words' (1 <= words.length <= 10^5) and a list of ranges 'ranges' (1 <= ranges.length <= 10^4), where each range is represented as a tuple of two integers.",
+    "output_format": "An array of integers representing the counts of vowel strings for each range.",
+    "constraints": [
+      "1 <= words.length <= 10^5",
+      "1 <= ranges.length <= 10^4",
+      "0 <= ranges[i][0] <= ranges[i][1] < words.length"
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "aeiou",
+            "hello",
+            "xyz",
+            "",
+            "ee",
+            "oo"
+          ],
+          "ranges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        "output": [
+          1,
+          4,
+          1
+        ],
+        "explanation": "In the first range [0, 1], only 'aeiou' is a vowel string. In the second range [0, 5], 'aeiou', '', 'ee', and 'oo' are vowel strings. In the third range [2, 3], only '' is a vowel string."
+      },
+      {
+        "input": {
+          "words": [
+            "",
+            "i",
+            "o",
+            "u",
+            "abc",
+            "def"
+          ],
+          "ranges": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              4
+            ]
+          ]
+        },
+        "output": [
+          3,
+          2
+        ],
+        "explanation": "For the first range, the vowel strings are '', 'i', and 'o'. For the second range, the vowel strings are 'i' and 'o'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider checking each string if it only contains vowels.",
+      "You may want to use a prefix sum array for efficient range queries."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Find Words That Can Be Formed by Characters",
+    "description": "Given an array of strings 'words' and a string 'chars', return the sum of the lengths of all strings in 'words' that can be formed using the characters in 'chars'. Each character in 'chars' can only be used once. If a word can be formed, it can be matched with the characters available, disregarding the order.",
+    "topic": "Strings",
+    "subtopic": "Character Counting",
+    "tags": [
+      "Strings",
+      "Counting",
+      "Characters"
+    ],
+    "input_format": "An array of strings 'words' and a string 'chars'.",
+    "output_format": "An integer representing the sum of the lengths of all valid words.",
+    "constraints": [
+      "1 <= words.length <= 100",
+      "1 <= words[i].length, chars.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "cat",
+            "bt",
+            "hat",
+            "tree"
+          ],
+          "chars": "atach"
+        },
+        "output": "6",
+        "explanation": "The words 'cat' and 'hat' can be formed from 'chars'. Their lengths are 3 + 3 = 6."
+      },
+      {
+        "input": {
+          "words": [
+            "hello",
+            "world",
+            "leetcode"
+          ],
+          "chars": "welldonehoneyr"
+        },
+        "output": "10",
+        "explanation": "The word 'hello' can be formed using 'chars'. Its length is 5. The word 'world' can be formed, its length is 5. The result is 5 + 5 = 10."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Count the characters in 'chars'.",
+      "Check each word to see if it can be formed with available characters."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "description": "Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value. If target is not found in the array, return [-1, -1]. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the starting and ending position of the target.",
+    "constraints": [
+      "0 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "nums is a non-decreasing array"
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 8",
+        "output": "[3, 4]",
+        "explanation": "The target value 8 appears from index 3 to 4."
+      },
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 6",
+        "output": "[-1, -1]",
+        "explanation": "The target value 6 is not present in the array."
+      },
+      {
+        "input": "nums = [], target = 0",
+        "output": "[-1, -1]",
+        "explanation": "The array is empty, so the target cannot be found."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use binary search to find the first occurrence of the target.",
+      "After finding the first occurrence, continue searching for the last occurrence."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Lowest Common Ancestor of a Binary Tree III",
+    "description": "Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree. The lowest common ancestor is defined as the lowest node in the tree that has both nodes as descendants. A node can be a descendant of itself.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "LCA"
+    ],
+    "input_format": "The function receives two nodes, p and q, from the binary tree.",
+    "output_format": "Return the lowest common ancestor of nodes p and q.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [2, 10^5].",
+      "All node values are unique.",
+      "p and q are distinct nodes, and both nodes will exist in the tree."
+    ],
+    "examples": [
+      {
+        "input": "p = 5, q = 1",
+        "output": "3",
+        "explanation": "Node 3 is the lowest common ancestor of nodes 5 and 1."
+      },
+      {
+        "input": "p = 6, q = 2",
+        "output": "1",
+        "explanation": "Node 1 is the lowest common ancestor of nodes 6 and 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a depth-first search to traverse the tree.",
+      "Keep track of the parent of each node."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum sum of a contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The subarray [4,-1,2,1] has the largest sum 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The only subarray is [1], with a sum of 1."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The subarray [5,4,-1,7,8] has the largest sum 23."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a variable to keep track of the maximum sum found so far.",
+      "You may want to reset the sum whenever it goes below zero."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Assign Cookies",
+    "description": "Given an integer array `g` where `g[i]` is the greed factor of the `i-th` child and an integer array `s` where `s[j]` is the size of the `j-th` cookie. Your goal is to maximize the number of content children by finding the maximum number of children who can be assigned a cookie. A child `i` is content if `g[i]` <= `s[j]` where `s[j]` is the size of the cookie that is assigned to child `i`. Each cookie can only be used once.",
+    "topic": "Greedy",
+    "subtopic": "Sorting",
+    "tags": [
+      "Greedy",
+      "Sorting",
+      "Array"
+    ],
+    "input_format": "Two integer arrays `g` and `s`.",
+    "output_format": "An integer representing the maximum number of content children.",
+    "constraints": [
+      "1 <= g.length, s.length <= 3 * 10^4",
+      "0 <= g[i], s[j] <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "g = [1, 2, 3]\ns = [1, 1]",
+        "output": "1",
+        "explanation": "Only the first child can be content with one cookie."
+      },
+      {
+        "input": "g = [1, 2]\ns = [1, 2, 3]",
+        "output": "2",
+        "explanation": "Both children can be content since there are cookies of size 1 and 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Sort both arrays to use a greedy approach.",
+      "Try to fit the smallest available cookie to each child where possible."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Find K Closest Elements",
+    "description": "Given a sorted array of integers and a target value, return the K closest integers to the target value in the array. The result should be returned in sorted order. If there are two closest numbers, choose the smaller one.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Sorting"
+    ],
+    "input_format": "A sorted array of integers nums, an integer target, and an integer k.",
+    "output_format": "A list of k integers representing the closest numbers to target in sorted order.",
+    "constraints": [
+      "1 <= k <= nums.length",
+      "0 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], target = 3, k = 2",
+        "output": "[2, 3]",
+        "explanation": "The closest two numbers to 3 are 2 and 3."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5], target = 4.1, k = 3",
+        "output": "[3, 4, 5]",
+        "explanation": "The closest three numbers to 4.1 are 3, 4, and 5."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5], target = 0, k = 1",
+        "output": "[1]",
+        "explanation": "The closest number to 0 is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use binary search to find the position of the target.",
+      "Consider the elements before and after the target to find the closest numbers."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, return true if t is an anagram of s and false otherwise. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Sorting",
+    "tags": [
+      "String",
+      "Sorting",
+      "Hash Table"
+    ],
+    "input_format": "Two strings s and t, where 1 <= s.length, t.length <= 5 * 10^4.",
+    "output_format": "A boolean value indicating whether t is an anagram of s.",
+    "constraints": [
+      "1 <= s.length, t.length <= 5 * 10^4",
+      "s and t consist of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "s = 'anagram', t = 'nagaram'",
+        "output": "true",
+        "explanation": "'nagaram' is an anagram of 'anagram' because the letters can be rearranged to form 'anagram'."
+      },
+      {
+        "input": "s = 'rat', t = 'car'",
+        "output": "false",
+        "explanation": "'car' is not an anagram of 'rat' as the letters do not match."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check if the character counts of both strings are equal.",
+      "Consider using a hash map to store character frequencies."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Container With Most Water",
+    "description": "Given n non-negative integers a1, a2, ..., an where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of the line i is at (i, ai) and (i, 0). Find two lines, which together with the x-axis forms a container, such that the container contains the most water. Note that you may not slant the container.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Geometry"
+    ],
+    "input_format": "An integer array heights representing the heights of the vertical lines.",
+    "output_format": "An integer representing the maximum area of water that can be held between two lines.",
+    "constraints": [
+      "2 <= heights.length <= 10^5",
+      "0 <= heights[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "heights = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The lines at index 1 and index 8 (heights = 8 and 7) form the container with the maximum area: (8-1) * min(8, 7) = 49."
+      },
+      {
+        "input": "heights = [1,1]",
+        "output": "1",
+        "explanation": "The only two lines form a container with area 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the two-pointer technique to optimize."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Note that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Hashing"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of unique triplets that sum to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "There are no numbers, hence no triplets."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "No triplets sum to zero."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the array first to easily manage duplicates.",
+      "Use two pointers to find pairs that sum to the negative of the current element."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the height of walls, compute how much water it can trap after raining. The water trapped is determined by the heights of the walls and the width between them.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers, heights, where heights[i] represents the height of the wall at index i.",
+    "output_format": "An integer representing the total amount of water that can be trapped.",
+    "constraints": [
+      "1 <= heights.length <= 2 * 10^4",
+      "0 <= heights[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water can be trapped in the valleys formed by the walls. Six units of water can be trapped."
+      },
+      {
+        "input": "heights = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The height of walls allows for 9 units of water to be trapped between them."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the water level at each index depends on the height of the walls to its left and right.",
+      "Try using a two-pointer technique to efficiently calculate the trapped water."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Paths II",
+    "description": "A robot is located at the top-left corner of a m x n grid (marked 'Start' in the grid) and aims to reach the bottom-right corner (marked 'Finish' in the grid). The robot can only move either down or right at any point in time. Some cells are obstacles that the robot cannot step on. Given a grid represented by a 2D array, determine how many unique paths exist for the robot to reach the bottom-right corner.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Path Counting"
+    ],
+    "input_format": "A 2D array grid where grid[i][j] is either 0 (empty cell) or 1 (obstacle).",
+    "output_format": "An integer representing the number of unique paths from the top-left to the bottom-right corner.",
+    "constraints": [
+      "m == grid.length, n == grid[i].length",
+      "1 <= m, n <= 100",
+      "grid[i][j] is 0 or 1",
+      "The starting cell grid[0][0] and the ending cell grid[m-1][n-1] will not be obstructed."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0,0,0],[0,1,0],[0,0,0]]",
+        "output": "2",
+        "explanation": "There are two unique paths to the bottom-right corner: right -> down -> down and down -> right -> down."
+      },
+      {
+        "input": "grid = [[0,1],[0,0]]",
+        "output": "1",
+        "explanation": "There is only one path available, which goes down then right."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use dynamic programming to keep track of unique paths.",
+      "Consider how obstacles affect the path counts."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Path Quality of a Graph",
+    "description": "You are given an undirected graph represented as a list of edges and a special starting node. Each edge has an associated quality value. Your task is to find the maximum quality of any path starting from the given starting node and traversing through the graph, without revisiting any node. The quality of a path is defined as the sum of the quality values of the edges used in that path. If no path exists, return 0.",
+    "topic": "Graph",
+    "subtopic": "Path Finding",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Path",
+      "Quality"
+    ],
+    "input_format": "A list of edges where each edge is represented as a tuple (u, v, quality), and an integer start_node representing the starting node.",
+    "output_format": "An integer representing the maximum path quality from the start_node.",
+    "constraints": [
+      "1 <= edges.length <= 10^5",
+      "1 <= u, v <= 10^5",
+      "-10^5 <= quality <= 10^5",
+      "start_node must be a valid node in the graph."
+    ],
+    "examples": [
+      {
+        "input": "edges = [(1, 2, 10), (1, 3, 20), (2, 4, 25)], start_node = 1",
+        "output": "35",
+        "explanation": "The best path is 1 -> 2 -> 4 with a total quality of 10 + 25 = 35."
+      },
+      {
+        "input": "edges = [(1, 2, 5), (2, 3, 15), (3, 4, 10)], start_node = 1",
+        "output": "20",
+        "explanation": "The best path is 1 -> 2 -> 3 with a total quality of 5 + 15 = 20."
+      },
+      {
+        "input": "edges = [(1, 2, 3)], start_node = 3",
+        "output": "0",
+        "explanation": "Since the start_node is not connected to any edge, the result is 0."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using Depth First Search (DFS) to explore all paths.",
+      "Keep track of visited nodes to avoid cycles.",
+      "Maximize the quality value while traversing."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator",
+    "description": "Implement a basic calculator to evaluate a simple expression string containing non-negative integers, '+', '-', '(', ')', and/or spaces. The expression should be evaluated according to the operator precedence and the parentheses; for example, '1 + 1' should return 2, and '2 - (3 + 1)' should return -2.",
+    "topic": "Mathematics",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "Calculator",
+      "Math",
+      "Stack"
+    ],
+    "input_format": "A string s representing the expression to evaluate.",
+    "output_format": "An integer which is the result of the evaluated expression.",
+    "constraints": [
+      "The input expression contains no leading/trailing spaces.",
+      "1 <= s.length <= 3 * 10^5",
+      "The expression is guaranteed to be valid.",
+      "The expression will not contain any division or multiplication operators."
+    ],
+    "examples": [
+      {
+        "input": "s = \"1 + 1\"",
+        "output": "2",
+        "explanation": "The expression '1 + 1' evaluates to 2."
+      },
+      {
+        "input": "s = \" 2-1 + 2 \"",
+        "output": "3",
+        "explanation": "The expression '2 - 1 + 2' evaluates to 3."
+      },
+      {
+        "input": "s = \"(1+(4+5+2)-3)+(6+8)\"",
+        "output": "23",
+        "explanation": "The expression evaluates to 23 by following the order of operations."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to handle the parentheses and operator precedence.",
+      "Keep track of the current sign while traversing the string.",
+      "Space handling is crucial, make sure to ignore any spaces during the evaluation."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Digit One",
+    "description": "Given an integer n, count how many times digit '1' appears in all non-negative integers less than or equal to n. For example, if n = 13, the digit '1' occurs in the numbers 1, 10, 11, 12, and 13, which gives a total of 6 occurrences.",
+    "topic": "Mathematics",
+    "subtopic": "Counting",
+    "tags": [
+      "Mathematics",
+      "Counting",
+      "Digit"
+    ],
+    "input_format": "An integer n (0 <= n <= 2 * 10^9).",
+    "output_format": "An integer representing the total number of times digit '1' appears in all integers from 0 to n.",
+    "constraints": [
+      "0 <= n <= 2 * 10^9"
+    ],
+    "examples": [
+      {
+        "input": "n = 13",
+        "output": "6",
+        "explanation": "The digit '1' appears in the following numbers: 1, 10, 11, 12, 13, summing to a total of 6 occurrences."
+      },
+      {
+        "input": "n = 0",
+        "output": "0",
+        "explanation": "There are no non-negative integers less than or equal to 0 that contain the digit '1'."
+      },
+      {
+        "input": "n = 100",
+        "output": "21",
+        "explanation": "The digit '1' appears in the following numbers: 1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 31, 41, 51, 61, 71, 81, 91, 100, giving a total of 21 occurrences."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider each digit of the number n and how it contributes to counts of '1'.",
+      "Think about breaking the problem down based on the place values (units, tens, hundreds, etc.)."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Coin Change",
+    "description": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. You want to compute the number of combinations that make up that amount. If that amount cannot be made up by any combination of the coins, return 0. Note that you can use each coin an unlimited number of times.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combination Sum",
+    "tags": [
+      "Dynamic Programming",
+      "Backtracking",
+      "Combination Sum"
+    ],
+    "input_format": "Two inputs: an array coins of integers, and an integer amount.",
+    "output_format": "An integer representing the number of different combinations that add up to amount.",
+    "constraints": [
+      "1 <= coins.length <= 300",
+      "1 <= coins[i] <= 5000",
+      "0 <= amount <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "coins = [1, 2, 5], amount = 5",
+        "output": "4",
+        "explanation": "There are four ways to make up amount 5 using coins 1, 2, and 5: 5, 2+2+1, 2+1+1+1, and 1+1+1+1+1."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "0",
+        "explanation": "It is not possible to make amount 3 with only coin of value 2."
+      },
+      {
+        "input": "coins = [10], amount = 10",
+        "output": "1",
+        "explanation": "Only one way to make the amount 10 with coin of value 10."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to break the problem down into smaller subproblems.",
+      "Consider using a dynamic programming array to store the number of combinations."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Add Two Integers",
+    "description": "Write a function that takes two integers as input and returns their sum. The function should handle both positive and negative integers.",
+    "topic": "Math",
+    "subtopic": "Basic Operations",
+    "tags": [
+      "Math",
+      "Addition",
+      "Integer",
+      "Basic Operations"
+    ],
+    "input_format": "Two integers a and b, where -10^9 <= a, b <= 10^9.",
+    "output_format": "An integer representing the sum of a and b.",
+    "constraints": [
+      "-10^9 <= a, b <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "a = 3, b = 5",
+        "output": "8",
+        "explanation": "The sum of 3 and 5 is 8."
+      },
+      {
+        "input": "a = -4, b = 2",
+        "output": "-2",
+        "explanation": "The sum of -4 and 2 is -2."
+      },
+      {
+        "input": "a = 0, b = 0",
+        "output": "0",
+        "explanation": "The sum of 0 and 0 is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider edge cases such as if one or both integers are negative.",
+      "You can use the built-in addition operator to sum the two integers."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Split Array Largest Sum",
+    "description": "You are given an integer array nums and an integer k. Your task is to split the array into k non-empty continuous subarrays. The goal is to minimize the largest sum of these subarrays. Return the minimized largest sum after splitting the array.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Binary Search"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the minimized largest sum after the split.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 < k <= nums.length",
+      "0 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [7, 2, 5, 10, 8], k = 2",
+        "output": "18",
+        "explanation": "The optimal way to split is [7, 2, 5] and [10, 8]. The largest sum in this case is 18."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5], k = 2",
+        "output": "9",
+        "explanation": "The optimal split is [1, 2, 3] and [4, 5]. The largest sum is 9."
+      },
+      {
+        "input": "nums = [1, 4, 4], k = 3",
+        "output": "4",
+        "explanation": "Each number can be its own subarray. The largest sum is 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Try using binary search to find the minimum largest sum.",
+      "The largest sum cannot be less than the maximum single element in nums.",
+      "Check how many subarrays can be made with a given largest sum."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Largest Element in a Stream",
+    "description": "Design a data structure that supports the following two operations: addNum and findKthLargest. The addNum method adds an integer to the data structure, and the findKthLargest method returns the k-th largest element in the current data structure. Implement these operations efficiently.",
+    "topic": "Data Structures",
+    "subtopic": "Heap",
+    "tags": [
+      "Heap",
+      "Design",
+      "Data Structures"
+    ],
+    "input_format": "An integer num to be added in the addNum method followed by an integer k in the findKthLargest method.",
+    "output_format": "An integer representing the k-th largest element in the data structure.",
+    "constraints": [
+      "1 <= k <= number of elements in the data structure",
+      "1 <= num <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "addNum(3), addNum(1), addNum(5), addNum(12), addNum(2), findKthLargest(3)",
+        "output": "5",
+        "explanation": "The current elements are [3, 1, 5, 12, 2]. The 3rd largest element is 5."
+      },
+      {
+        "input": "addNum(4), addNum(3), addNum(7), addNum(5), findKthLargest(2)",
+        "output": "5",
+        "explanation": "The current elements are [4, 3, 7, 5]. The 2nd largest element is 5."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a min-heap to efficiently find the k-th largest element."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Tallest Billboard",
+    "description": "You are given two arrays of integers, light and dark, where light[i] is the height of the light-colored sections and dark[i] is the height of the dark-colored sections at position i. You want to construct the tallest billboard possible using these sections such that the heights on both sides of the billboard match. Return the maximum height of the billboard you can construct.",
+    "topic": "Dynamic Programming",
+    "subtopic": "State Management",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "Two arrays of integers light and dark with the same length.",
+    "output_format": "An integer representing the maximum height of the tallest billboard.",
+    "constraints": [
+      "1 <= light.length, dark.length <= 20",
+      "0 <= light[i], dark[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "light = [1, 2, 3], dark = [3, 2, 1]",
+        "output": "6",
+        "explanation": "By using sections at index 0 and 2, the heights match and we get 1 + 3 + 2 = 6."
+      },
+      {
+        "input": "light = [1, 2, 3], dark = [1, 2, 3]",
+        "output": "6",
+        "explanation": "Using all sections, the heights match on both sides, resulting in 1 + 2 + 3 = 6."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to track possible heights.",
+      "Explore the differences between light and dark sections carefully."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Search Suggestions System",
+    "description": "Design a system that suggests search terms based on a given input string. When a user types in a query, the system should return a list of suggested terms ranked in alphabetical order based on the given input string. The suggestions should only include terms that start with the same characters as the input string.",
+    "topic": "String",
+    "subtopic": "Trie",
+    "tags": [
+      "String",
+      "Trie",
+      "Sorting"
+    ],
+    "input_format": "A list of strings representing the search terms, and a string 'searchWord' representing the user input.",
+    "output_format": "A list of lists of strings, where each inner list contains suggestions for each prefix of 'searchWord'.",
+    "constraints": [
+      "1 <= words.length <= 1000",
+      "1 <= words[i].length <= 100",
+      "The input strings consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "mobile",
+            "mouse",
+            "moneypot",
+            "monitor",
+            "mousepad"
+          ],
+          "searchWord": "mouse"
+        },
+        "output": [
+          [
+            "mobile",
+            "moneypot",
+            "monitor",
+            "mouse",
+            "mousepad"
+          ],
+          [
+            "mobile",
+            "moneypot",
+            "monitor",
+            "mouse",
+            "mousepad"
+          ],
+          [
+            "moneypot",
+            "monitor",
+            "mouse",
+            "mousepad"
+          ],
+          [
+            "monitor",
+            "mouse",
+            "mousepad"
+          ],
+          [
+            "mouse",
+            "mousepad"
+          ]
+        ],
+        "explanation": "For each prefix of 'mouse', the corresponding suggestions are returned, ordered alphabetically."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a Trie to efficiently manage prefix searches.",
+      "Sort the list of words for consistent output.",
+      "Iterate through the searchWord and collect suggestions for each prefix."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Design Hit Counter",
+    "description": "Design a hit counter class that counts the number of hits received in the past 5 minutes. Each time a hit is registered, it will be recorded with the timestamp of when the hit occurred. The class should have two methods: hit(timestamp) that records a hit at the given timestamp (in seconds) and getHits(timestamp) that returns the number of hits counted in the past 5 minutes (300 seconds) from the given timestamp. Note that the timestamp is guaranteed to be non-decreasing.",
+    "topic": "Design",
+    "subtopic": "System Design",
+    "tags": [
+      "Design",
+      "System Design",
+      "Queue"
+    ],
+    "input_format": "A sequence of timestamps for each hit, passed to the hit() method.",
+    "output_format": "An integer representing the number of hits in the last 5 minutes after calling getHits() with a given timestamp.",
+    "constraints": [
+      "Each timestamp is a positive integer and is strictly increasing.",
+      "The number of hit() calls will not exceed 10000 in a single call to getHits()."
+    ],
+    "examples": [
+      {
+        "input": "Counter counter = new Counter(); counter.hit(1); counter.hit(2); counter.hit(3); int result = counter.getHits(4);",
+        "output": "3",
+        "explanation": "At timestamp 4, three hits have been recorded in the past 5 minutes."
+      },
+      {
+        "input": "Counter counter = new Counter(); counter.hit(1); counter.hit(2); counter.hit(3); counter.hit(300); int result = counter.getHits(300);",
+        "output": "4",
+        "explanation": "At timestamp 300, four hits have been recorded (timestamps are 1,2,3,300)."
+      },
+      {
+        "input": "Counter counter = new Counter(); counter.hit(1); counter.hit(2); counter.hit(3); int result = counter.getHits(301);",
+        "output": "3",
+        "explanation": "At timestamp 301, only the hits at timestamps 1, 2, and 3 are counted."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a queue or list to store the timestamps of hits.",
+      "Remove timestamps that are older than 300 seconds from the current timestamp when querying."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Single Element in a Sorted Array",
+    "description": "You are given a sorted array of integers where every element appears exactly twice, except for one element which appears only once. Your task is to find the single element that appears only once in the sorted array.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Searching"
+    ],
+    "input_format": "A sorted array of integers nums.",
+    "output_format": "An integer representing the single element in the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "nums[i] must be an integer in the range [-10^5, 10^5]",
+      "The array is sorted and contains exactly one element that appears only once."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2, 2, 3, 3, 4, 4, 5]",
+        "output": "5",
+        "explanation": "All numbers appear twice except for the number 5, which appears once."
+      },
+      {
+        "input": "nums = [0, 1, 1, 2, 2, 3, 3, 4, 4]",
+        "output": "0",
+        "explanation": "All numbers appear twice except for the number 0, which appears once."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to optimize your solution.",
+      "Pay attention to the indices and their relationships to determine the uniqueness."
+    ],
+    "company": "Atlassian"
+  },
+  {
+    "question_id": "",
+    "title": "Design a Food Rating System",
+    "description": "Design a food rating system where users can rate various food items. Each food item has a unique identifier, a name, and a list of ratings provided by users. Users can add ratings, retrieve the average rating of a food item, and get the highest-rated food item in the system. Ensure the system maintains the correct average rating after each addition.",
+    "topic": "Design",
+    "subtopic": "System Design",
+    "tags": [
+      "Design",
+      "System",
+      "Rating"
+    ],
+    "input_format": "A series of commands. Each command can be one of the following: 'add_rating(food_id, rating)', 'get_average(food_id)', 'get_highest_rated()'.",
+    "output_format": "For 'get_average(food_id)', return the average rating as a float. For 'get_highest_rated()', return the food_id of the highest-rated food item.",
+    "constraints": [
+      "1 <= food_id <= 10^6",
+      "1 <= rating <= 5",
+      "The number of commands will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "add_rating(1, 5); add_rating(1, 4); get_average(1); get_highest_rated();",
+        "output": "4.5\n1",
+        "explanation": "The average rating of food item 1 is (5 + 4) / 2 = 4.5. It is also the highest-rated item."
+      },
+      {
+        "input": "add_rating(2, 3); add_rating(2, 5); get_average(2); get_highest_rated();",
+        "output": "4.0\n1",
+        "explanation": "The average rating of food item 2 is (3 + 5) / 2 = 4.0. Food item 1 is still the highest-rated."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to store food ratings.",
+      "Maintain a running total and count of ratings for calculating averages.",
+      "A data structure that allows for quick retrieval of the highest rating could be beneficial."
+    ],
+    "company": "Atlassian"
+  }
+]

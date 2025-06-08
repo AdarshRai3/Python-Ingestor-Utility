@@ -1,0 +1,297 @@
+[
+  {
+    "question_id": "",
+    "title": "Longest Harmonious Subsequence",
+    "description": "Given an integer array nums, return the length of the longest harmonious subsequence. A harmonious subsequence is defined as a subsequence where the maximum value and the minimum value differ by exactly 1. For example, for a subsequence to be harmonious, it must consist of integers 'x' and 'x+1'.",
+    "topic": "Array",
+    "subtopic": "Subsequence",
+    "tags": [
+      "Array",
+      "Subsequence",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest harmonious subsequence.",
+    "constraints": [
+      "1 <= nums.length <= 10^2",
+      "0 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 2, 2, 5, 4, 4, 2, 3]",
+        "output": "5",
+        "explanation": "The longest harmonious subsequence is [3, 2, 2, 2, 3] or [2, 3, 3, 2, 2] which has length 5."
+      },
+      {
+        "input": "nums = [1, 1, 1, 1]",
+        "output": "0",
+        "explanation": "No elements differ by exactly 1, so the length is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a frequency map to count occurrences of each number.",
+      "Calculate the harmonious sequence length using adjacent numbers in the frequency map."
+    ],
+    "company": "ZS Associates"
+  },
+  {
+    "question_id": "",
+    "title": "Distribute Candies Among Children II",
+    "description": "You are given an integer array candies where candies[i] represents the number of candies awarded to the ith child. Your goal is to distribute these candies among the children such that each child receives at least one candy. Additionally, every child with more candies than their neighbor(s) must receive more candies than those neighbors. Return the minimum number of candies you need to distribute.",
+    "topic": "Greedy",
+    "subtopic": "Distribution",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Candy Distribution"
+    ],
+    "input_format": "An integer array candies representing the number of candies for each child.",
+    "output_format": "An integer representing the minimum number of candies required for distribution.",
+    "constraints": [
+      "1 <= candies.length <= 2 * 10^4",
+      "0 <= candies[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "candies = [1, 0, 2]",
+        "output": "5",
+        "explanation": "You can distribute candies as follows: 2 candies to the first child, 1 candy to the second child, and 2 candies to the third child. Total = 2 + 1 + 2 = 5."
+      },
+      {
+        "input": "candies = [1, 2, 2]",
+        "output": "4",
+        "explanation": "You can distribute candies as follows: 1 candy to the first child, 2 candies to the second child, and 1 candy to the third child. Total = 1 + 2 + 1 = 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the greedy approach to allocate candies.",
+      "Pass through the array multiple times to ensure both left and right conditions are satisfied."
+    ],
+    "company": "ZS Associates"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Unequal Adjacent Groups Subsequence I",
+    "description": "Given an array of integers, find the length of the longest subsequence such that no two adjacent elements in the subsequence are equal. You need to identify the maximum number of elements you can select from the array while ensuring that selected elements do not contain any two adjacent elements with the same value.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subsequence Problems",
+    "tags": [
+      "Dynamic Programming",
+      "Subsequence",
+      "Array"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest unequal adjacent groups subsequence.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3, 3, 4, 5]",
+        "output": "5",
+        "explanation": "The longest subsequence is [1, 2, 3, 4, 5], which does not have adjacent equal elements."
+      },
+      {
+        "input": "nums = [2, 2, 3, 3, 3, 5]",
+        "output": "4",
+        "explanation": "The longest subsequence is [2, 3, 5], which does not have adjacent equal elements."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the previous number in the subsequence.",
+      "Use a set to ensure uniqueness."
+    ],
+    "company": "ZS Associates"
+  },
+  {
+    "question_id": "",
+    "title": "Largest 1-Bordered Square",
+    "description": "Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Matrix",
+      "Dynamic Programming",
+      "Geometry"
+    ],
+    "input_format": "A 2D binary matrix grid where grid[i][j] is either 0 or 1.",
+    "output_format": "An integer representing the area of the largest square of 1's.",
+    "constraints": [
+      "1 <= grid.length <= 300",
+      "1 <= grid[i].length <= 300",
+      "grid[i][j] is either '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "[[1,0,1],[1,1,1],[1,0,0]]",
+        "output": "4",
+        "explanation": "The largest square has a side length of 2, so the area is 2 * 2 = 4."
+      },
+      {
+        "input": "[[0,1],[1,1]]",
+        "output": "1",
+        "explanation": "The largest square has a side length of 1, so the area is 1 * 1 = 1."
+      },
+      {
+        "input": "[[1]]",
+        "output": "1",
+        "explanation": "The largest square has a side length of 1, so the area is 1 * 1 = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a dynamic programming approach to keep track of the size of the largest square ending at each cell.",
+      "Check the minimum of three adjacent squares to determine the size of the square at each cell."
+    ],
+    "company": "ZS Associates"
+  },
+  {
+    "question_id": "",
+    "title": "Crawler Log Folder",
+    "description": "You are given a list of strings that represent the logs of a web crawler. Each log entry is either a directory or a file. The logs may contain nested directories and files, and your task is to determine how many distinct files the crawler has accessed. Each file is represented by a string in the format 'filename.ext', while directories are represented by strings that do not have a file extension. The logs are in hierarchical order that reflects the structure of directories and files, starting from the root directory. Input the logs as a list of strings, and output the count of distinct files accessed by the crawler.",
+    "topic": "Hash Table",
+    "subtopic": "Set Operations",
+    "tags": [
+      "Hash Table",
+      "String",
+      "Set"
+    ],
+    "input_format": "A list of strings representing the crawler's logs.",
+    "output_format": "An integer representing the count of distinct files accessed.",
+    "constraints": [
+      "1 <= logs.length <= 10^4",
+      "Each log entry is a non-empty string containing at most 255 characters."
+    ],
+    "examples": [
+      {
+        "input": "logs = [\"dir1\", \"dir2\", \"dir1/file1.txt\", \"dir1/file2.txt\", \"dir2/file1.txt\"]",
+        "output": "3",
+        "explanation": "The distinct files are 'file1.txt' and 'file2.txt', leading to a total of 3 unique files accessed."
+      },
+      {
+        "input": "logs = [\"dir1\", \"dir2\", \"dir2/file1.txt\", \"dir1\", \"dir1/file1.txt\"]",
+        "output": "2",
+        "explanation": "The distinct files accessed are 'file1.txt' and the other instance of 'file1.txt' is not counted again."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a set to collect distinct file names.",
+      "Check if an entry has a file extension to identify files."
+    ],
+    "company": "ZS Associates"
+  },
+  {
+    "question_id": "",
+    "title": "Managers with at Least 5 Direct Reports",
+    "description": "Given a list of employees represented as pairs (employee_id, manager_id), determine the number of managers who have at least 5 direct reports. An employee is considered a direct report of a manager if the employee's manager_id matches the manager's employee_id.",
+    "topic": "Graph",
+    "subtopic": "Tree Traversal",
+    "tags": [
+      "Graph",
+      "Tree",
+      "Counting"
+    ],
+    "input_format": "A list of tuples where each tuple contains two integers (employee_id, manager_id).",
+    "output_format": "An integer representing the number of managers with at least 5 direct reports.",
+    "constraints": [
+      "1 <= employees.length <= 10^5",
+      "1 <= employee_id, manager_id <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "employees = [(1, 2), (2, 3), (3, 2), (4, 5), (5, 2), (6, 2), (7, 2), (8, 2)]",
+        "output": "1",
+        "explanation": "Manager 2 has 5 direct reports: 1, 3, 4, 5, 6."
+      },
+      {
+        "input": "employees = [(1, 2), (2, 3), (3, 2)]",
+        "output": "0",
+        "explanation": "No manager has 5 direct reports."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to count direct reports for each manager.",
+      "Iterate through the list of employees just once for efficiency."
+    ],
+    "company": "ZS Associates"
+  },
+  {
+    "question_id": "",
+    "title": "The Number of Employees Which Report to Each Employee",
+    "description": "You are given a list of employee relations where each relation consists of two integers, `employee_id` and `manager_id`. The `manager_id` indicates the employee's direct manager. Your task is to return a list where each index represents an employee's ID and the value at that index is the count of direct reports that employee has. If an employee does not manage any other employees, their count should be 0.",
+    "topic": "Tree",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Tree",
+      "Graph",
+      "Counting"
+    ],
+    "input_format": "A list of pairs, where each pair contains two integers: `[employee_id, manager_id]`. The employee ID is unique.",
+    "output_format": "A list of integers where the index represents the employee ID and the integer at that index represents the number of direct reports.",
+    "constraints": [
+      "1 <= employee_id, manager_id <= 10^5",
+      "1 <= relations.length <= 10^4",
+      "Each employee_id is guaranteed to be unique."
+    ],
+    "examples": [
+      {
+        "input": "[[1, 3], [2, 3], [3, 5], [4, 5]]",
+        "output": "[0, 0, 2, 0, 2, 0]",
+        "explanation": "Employee 3 manages employees 1 and 2, employee 5 manages employees 3 and 4."
+      },
+      {
+        "input": "[[1, 2], [2, 3], [3, 2]]",
+        "output": "[0, 1, 2, 0]",
+        "explanation": "Employee 2 manages employees 1 and 3, employee 3 has no reports."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a dictionary to keep track of the count of direct reports.",
+      "Iterate through the relations to populate the count."
+    ],
+    "company": "ZS Associates"
+  },
+  {
+    "question_id": "",
+    "title": "Nth Highest Salary",
+    "description": "SQL Problem: Write a query to find the nth highest salary from the Employee table. If there is no nth highest salary, the query should return null.",
+    "topic": "Database",
+    "subtopic": "SQL Query",
+    "tags": [
+      "SQL",
+      "Database",
+      "Ranking"
+    ],
+    "input_format": "An Employee table with at least 'id' and 'salary' columns.",
+    "output_format": "The nth highest salary or null if not available.",
+    "constraints": [
+      "The Employee table contains at least 1 row and at most 10^5 rows.",
+      "0 <= salary <= 10^7"
+    ],
+    "examples": [
+      {
+        "input": "Input: Employee table: | id | salary |\n                | 1  | 100   |\n                | 2  | 200   |\n                | 3  | 300   |  n = 2",
+        "output": "200",
+        "explanation": "The salaries are 100, 200, and 300. The 2nd highest salary is 200."
+      },
+      {
+        "input": "Input: Employee table: | id | salary |\n                | 1  | 100   |\n                | 2  | 100   |\n                | 3  | 200   |  n = 3",
+        "output": "null",
+        "explanation": "There are only two distinct salaries (100 and 200), so the 3rd highest does not exist."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DISTINCT to filter out duplicate salaries.",
+      "You may need to use LIMIT and OFFSET to find the nth value."
+    ],
+    "company": "ZS Associates"
+  }
+]

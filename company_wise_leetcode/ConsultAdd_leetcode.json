@@ -1,0 +1,426 @@
+[
+  {
+    "question_id": "",
+    "title": "Zigzag Conversion",
+    "description": "The string 'PAYPALISHIRING' is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)\n\nP   A   H   N\nA P L S I I G\nY   I   R\n\nAnd then read line by line: 'PAHNAPLSIIGYIR'. Write the code that will take a string and rearrange it into this zigzag pattern given a certain number of rows. Convert the string back to the original form by reading line by line.",
+    "topic": "String",
+    "subtopic": "Zigzag Conversion",
+    "tags": [
+      "String",
+      "Zigzag",
+      "Manipulation"
+    ],
+    "input_format": "A string s that needs to be converted and an integer numRows indicating the number of rows.",
+    "output_format": "A single string representing the characters written in zigzag order.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= numRows <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "s = 'PAYPALISHIRING', numRows = 3",
+        "output": "PAHNAPLSIIGYIR",
+        "explanation": "When arranged in zigzag, the characters read as 'PAHNAPLSIIGYIR' when read line by line."
+      },
+      {
+        "input": "s = 'AB', numRows = 1",
+        "output": "AB",
+        "explanation": "With 1 row, the output is the same as the input."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how the characters are positioned in each row.",
+      "Use a loop to place characters in their respective positions."
+    ],
+    "company": "ConsultAdd"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Image",
+    "description": "You are given an n x n 2D image matrix representing the pixels of an image. Rotate the image by 90 degrees (clockwise) in place. You have to perform this operation in constant space complexity.",
+    "topic": "Array",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Array",
+      "Matrix",
+      "In-place"
+    ],
+    "input_format": "A 2D list of integers representing the image matrix.",
+    "output_format": "The image matrix rotated by 90 degrees clockwise, in place.",
+    "constraints": [
+      "1 <= n <= 20",
+      "-1000 <= matrix[i][j] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[[7, 4, 1], [8, 5, 2], [9, 6, 3]]",
+        "explanation": "After rotating the matrix by 90 degrees clockwise, the first row becomes the last column, and so on."
+      },
+      {
+        "input": "matrix = [[5]]",
+        "output": "[[5]]",
+        "explanation": "A single element matrix remains unchanged after rotation."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Rotate layers of the matrix from outermost to innermost.",
+      "Consider the first row as the new first column after rotation."
+    ],
+    "company": "ConsultAdd"
+  },
+  {
+    "question_id": "",
+    "title": "Coin Change",
+    "description": "Given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money, return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Minimum Coins",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array coins and an integer amount.",
+    "output_format": "An integer representing the fewest number of coins that make up the amount, or -1 if not possible.",
+    "constraints": [
+      "1 <= coins.length <= 12",
+      "1 <= coins[i] <= 2^31 - 1",
+      "0 <= amount <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "coins = [1, 2, 5], amount = 11",
+        "output": "3",
+        "explanation": "The optimal way is to use two 5's and one 1, totaling 11."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "-1",
+        "explanation": "It's not possible to make amount 3 with just coin of value 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to build up solutions for smaller amounts.",
+      "Use an array to store the minimum coins needed for all amounts up to the target."
+    ],
+    "company": "ConsultAdd"
+  },
+  {
+    "question_id": "",
+    "title": "Candy Distribution",
+    "description": "There are n children standing in a line, each child is assigned a rating value. You need to distribute candies to these children such that each child must receive at least one candy. Children with a higher rating than their neighbors must receive more candies than their neighbors. The goal is to minimize the total number of candies distributed.",
+    "topic": "Greedy",
+    "subtopic": "Candy Distribution",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer array ratings of length n, representing the ratings of the children.",
+    "output_format": "An integer representing the minimum number of candies that must be distributed.",
+    "constraints": [
+      "1 <= ratings.length <= 2 * 10^4",
+      "0 <= ratings[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "ratings = [1, 0, 2]",
+        "output": "5",
+        "explanation": "One possible distribution is [2, 1, 2]. Total candies = 2 + 1 + 2 = 5."
+      },
+      {
+        "input": "ratings = [1, 2, 2]",
+        "output": "4",
+        "explanation": "One possible distribution is [1, 2, 1]. Total candies = 1 + 2 + 1 = 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider two passes through the ratings array to set the candy counts.",
+      "Use a greedy approach to ensure each child with a higher rating than their neighbors gets more candies."
+    ],
+    "company": "ConsultAdd"
+  },
+  {
+    "question_id": "",
+    "title": "Transpose Matrix",
+    "description": "Given a 2D matrix 'matrix', your task is to transpose the matrix. The transposed matrix is obtained by swapping the rows and columns. Specifically, the element at position (i, j) in the original matrix becomes the element at position (j, i) in the transposed matrix.",
+    "topic": "Array",
+    "subtopic": "Matrix",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Transposition"
+    ],
+    "input_format": "A 2D matrix representing the original matrix, where the matrix[i][j] is the element at the ith row and jth column.",
+    "output_format": "A 2D matrix representing the transposed matrix.",
+    "constraints": [
+      "1 <= matrix.length <= 1000",
+      "1 <= matrix[i].length <= 1000",
+      "matrix[i].length == matrix[j].length for all valid i, j"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[[1, 4, 7], [2, 5, 8], [3, 6, 9]]",
+        "explanation": "After transposing, the first row becomes the first column, and so on."
+      },
+      {
+        "input": "matrix = [[1, 2], [3, 4]]",
+        "output": "[[1, 3], [2, 4]]",
+        "explanation": "The rows and columns are swapped, giving the resulting transposed matrix."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a nested loop to iterate through the matrix.",
+      "You may need to create a new matrix to store the transposed version."
+    ],
+    "company": "ConsultAdd"
+  },
+  {
+    "question_id": "",
+    "title": "Count and Say",
+    "description": "The 'Count and Say' sequence is a sequence of digit strings defined by the recursive formula: count and say the previous term. Starting with the first term '1', each subsequent term is generated by describing the previous term's digits. For example, the second term is '11' (one '1'), the third term is '21' (two '1's), the fourth term is '1211' (one '2' followed by one '1'), and so on. Given an integer n, generate the nth term of the 'Count and Say' sequence.",
+    "topic": "Mathematics",
+    "subtopic": "Recursion & String Manipulation",
+    "tags": [
+      "String",
+      "Recursion",
+      "Mathematics"
+    ],
+    "input_format": "An integer n (1 <= n <= 30).",
+    "output_format": "A string representing the nth term of the 'Count and Say' sequence.",
+    "constraints": [
+      "1 <= n <= 30"
+    ],
+    "examples": [
+      {
+        "input": "n = 1",
+        "output": "1",
+        "explanation": "The first term is simply '1'."
+      },
+      {
+        "input": "n = 4",
+        "output": "1211",
+        "explanation": "The sequence goes: 1 \u2192 11 \u2192 21 \u2192 1211."
+      },
+      {
+        "input": "n = 5",
+        "output": "111221",
+        "explanation": "The sequence goes: 1 \u2192 11 \u2192 21 \u2192 1211 \u2192 111221."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to 'count' the digits in the previous term.",
+      "Consider using a loop to construct the next term from the previous one."
+    ],
+    "company": "ConsultAdd"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Deletions to Make Character Frequencies Unique",
+    "description": "Given a string s, you need to delete the minimum number of characters from the string so that no two characters have the same frequency. The frequency of a character is the number of times it appears in the string. Return the minimum number of deletions required to achieve this.",
+    "topic": "String",
+    "subtopic": "Frequency Counting",
+    "tags": [
+      "String",
+      "Frequency",
+      "Greedy"
+    ],
+    "input_format": "A single string s consisting of lowercase English letters.",
+    "output_format": "An integer representing the minimum number of deletions needed.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "aabbccd",
+        "output": "2",
+        "explanation": "We can delete one 'a' and one 'b' to achieve frequencies: a:1, b:1, c:2, d:1."
+      },
+      {
+        "input": "aaabbbcc",
+        "output": "2",
+        "explanation": "We can delete one 'a' and one 'b' to achieve frequencies: a:2, b:2, c:2."
+      },
+      {
+        "input": "abc",
+        "output": "0",
+        "explanation": "All characters are unique, so no deletions are needed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a frequency map to count character occurrences.",
+      "Sort the frequencies to easily manage duplicates.",
+      "If the frequency of a character exceeds the previous frequency, it needs to be adjusted."
+    ],
+    "company": "ConsultAdd"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game II",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Your goal is to determine the minimum number of jumps needed to reach the last index starting from the first index. You can assume that you will always be able to reach the last index.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "An integer representing the minimum number of jumps to reach the last index.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then 1 jump to the last index."
+      },
+      {
+        "input": "nums = [2, 3, 0, 1, 4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then 1 jump to the last index."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "0",
+        "explanation": "Already at the last index, no jumps are needed."
+      },
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "2",
+        "explanation": "Jump from index 0 to 1, then from index 1 to the last index."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Greedily choose the furthest reachable index at each step.",
+      "Keep track of the range you can reach in the current jump."
+    ],
+    "company": "ConsultAdd"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "Hash Table",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Hash Table",
+      "String",
+      "Anagrams"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of lists of strings, where each inner list contains the grouped anagrams.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"eat\",\"tea\",\"ate\"],[\"tan\",\"nat\"],[\"bat\"]]",
+        "explanation": "The strings 'eat', 'tea', and 'ate' are anagrams. The strings 'tan' and 'nat' are anagrams. 'bat' does not have any anagrams."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "There is only one string, which is an anagram of itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "There is only one string, which is an anagram of itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to group strings by their sorted character forms.",
+      "Consider using a tuple of character counts as keys in your hash map."
+    ],
+    "company": "ConsultAdd"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals and return the merged intervals in ascending order. Each interval is represented as a pair of integers [start, end], where start is less than or equal to end.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A list of intervals, where each interval is a list of two integers [start, end].",
+    "output_format": "A list of merged intervals, where each merged interval is a list of two integers [start, end].",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "Intervals [1,3] and [2,6] overlap and can be merged into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "Intervals [1,4] and [4,5] overlap and can be merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals by the starting times.",
+      "Use a loop to compare and merge intervals when overlapping."
+    ],
+    "company": "ConsultAdd"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, return true if t is an anagram of s and false otherwise. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Character Count",
+    "tags": [
+      "String",
+      "Anagram",
+      "Character Count"
+    ],
+    "input_format": "Two strings s and t, where 0 <= s.length, t.length <= 5 * 10^4.",
+    "output_format": "A boolean value indicating whether t is an anagram of s.",
+    "constraints": [
+      "Both strings include only lowercase English letters.",
+      "The lengths of the strings s and t can be different."
+    ],
+    "examples": [
+      {
+        "input": "s = 'anagram', t = 'nagaram'",
+        "output": "true",
+        "explanation": "The letters in 'anagram' can be rearranged to form 'nagaram'."
+      },
+      {
+        "input": "s = 'rat', t = 'car'",
+        "output": "false",
+        "explanation": "'rat' and 'car' do not contain the same letters."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try using a frequency count of each character."
+    ],
+    "company": "ConsultAdd"
+  }
+]

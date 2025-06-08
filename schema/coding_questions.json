@@ -1,0 +1,24 @@
+{
+  "schema_name": "public",
+  "table_name": "coding_questions",
+  "store_full_record_column": "question_payload",
+  "columns": [
+    {
+      "name": "id",
+      "type": "UUID",
+      "primary_key": true,
+      "default": "gen_random_uuid()"
+    },
+    { "name": "company_name", "type": "TEXT", "json_path": "company",  "index": true },
+    { "name": "topic",        "type": "TEXT", "json_path": "topic",    "index": true },
+    { "name": "subtopic",     "type": "TEXT", "json_path": "subtopic", "index": true },
+    { "name": "difficulty",   "type": "TEXT", "json_path": "difficulty","index": true },
+    {
+      "name": "status",
+      "type": "TEXT",
+      "json_path": "status",
+      "default": "'active'",
+      "check": "status IN ('active','expire')"
+    }
+  ]
+}

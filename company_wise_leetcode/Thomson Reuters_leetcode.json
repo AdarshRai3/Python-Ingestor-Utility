@@ -1,0 +1,174 @@
+[
+  {
+    "question_id": "",
+    "title": "Longest Substring Of All Vowels in Order",
+    "description": "Given a string s, find the length of the longest substring containing all the vowels 'a', 'e', 'i', 'o', 'u' in the order they appear in the string. The vowels must not be interrupted by any consonants. If there are no substrings that contain all the vowels in order, return 0.",
+    "topic": "String",
+    "subtopic": "Substring",
+    "tags": [
+      "String",
+      "Substring",
+      "Vowels"
+    ],
+    "input_format": "A string s consisting of uppercase and lowercase English letters.",
+    "output_format": "An integer representing the length of the longest valid substring.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of English letters only"
+    ],
+    "examples": [
+      {
+        "input": "aeioubcde",
+        "output": "6",
+        "explanation": "The longest substring is 'aeiou', which has a length of 5."
+      },
+      {
+        "input": "aeoibcdu",
+        "output": "4",
+        "explanation": "The longest substring 'aeoi' has a length of 4, since it contains all vowels in order."
+      },
+      {
+        "input": "bcdueaoi",
+        "output": "0",
+        "explanation": "There are no valid substrings that contain 'a', 'e', 'i', 'o', 'u' in order."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Iterate through the string while keeping track of vowels.",
+      "Use a sliding window approach to find valid substrings."
+    ],
+    "company": "Thomson Reuters"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Time to Type Word Using Special Typewriter",
+    "description": "You have a special typewriter that can only type certain characters. The typewriter types characters at a fixed time cost per character, but if you switch between characters that are not adjacent on the keyboard layout, it incurs an additional penalty time. Your task is to calculate the minimum time needed to type a given word using the special typewriter. The keyboard layout is predefined and is represented by a string containing unique characters. The time taken to type each character is given, as well as the penalty incurred for switching characters.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Time Complexity"
+    ],
+    "input_format": "A string representing the keyboard layout, an array of integers for typing time for each character, and a string representing the target word.",
+    "output_format": "An integer representing the minimum time required to type the word.",
+    "constraints": [
+      "1 <= keyboard.length <= 100",
+      "1 <= time[i] <= 100",
+      "1 <= word.length <= 1000"
+    ],
+    "examples": [
+      {
+        "input": {
+          "keyboard": "abcdefghijklmnopqrstuvwxyz",
+          "time": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "word": "abc"
+        },
+        "output": "3",
+        "explanation": "Typing 'abc' takes 1 time each for 'a', 'b', and 'c', resulting in a total of 3."
+      },
+      {
+        "input": {
+          "keyboard": "abcdefg",
+          "time": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "word": "bad"
+        },
+        "output": "9",
+        "explanation": "Typing 'b' takes 2, typing 'a' takes 1 (adjacent to 'b' hence no penalty), but typing 'd' (non-adjacent) adds a penalty. Total = 2 + 1 + (4 + penalty) = 9."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a map to track the indexes of characters.",
+      "Calculate the time in a loop, keeping track of the previous character's index."
+    ],
+    "company": "Thomson Reuters"
+  },
+  {
+    "question_id": "",
+    "title": "Roman to Integer",
+    "description": "Given a string representing a Roman numeral, convert it to an integer. The Roman numerals include the following symbols with their corresponding values: I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000. Roman numerals are typically written from largest to smallest from left to right, but certain pairs of characters represent special subtractive combinations. For instance, IV represents 4, and IX represents 9.",
+    "topic": "String",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Parsing",
+      "Conversion"
+    ],
+    "input_format": "A string s representing the Roman numeral.",
+    "output_format": "An integer representing the equivalent integer value of the Roman numeral.",
+    "constraints": [
+      "1 <= s.length <= 15",
+      "s consists of valid Roman numeral characters: I, V, X, L, C, D, M."
+    ],
+    "examples": [
+      {
+        "input": "s = 'III'",
+        "output": "3",
+        "explanation": "The Roman numeral 'III' is the sum of 1 + 1 + 1 = 3."
+      },
+      {
+        "input": "s = 'IV'",
+        "output": "4",
+        "explanation": "The Roman numeral 'IV' represents 4 as 5 - 1."
+      },
+      {
+        "input": "s = 'IX'",
+        "output": "9",
+        "explanation": "The Roman numeral 'IX' represents 9 as 10 - 1."
+      },
+      {
+        "input": "s = 'LVIII'",
+        "output": "58",
+        "explanation": "The Roman numeral 'LVIII' is the sum of 50 + 5 + 3 = 58."
+      },
+      {
+        "input": "s = 'MCMXCIV'",
+        "output": "1994",
+        "explanation": "The Roman numeral 'MCMXCIV' is 1000 + (1000 - 100) + (100 - 10) + 5 = 1994."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try to map the Roman numeral characters to their integer values.",
+      "Consider how to handle subtractive combinations."
+    ],
+    "company": "Thomson Reuters"
+  }
+]

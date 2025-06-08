@@ -1,0 +1,111 @@
+[
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. All operations should be done in average O(1) time complexity. You must implement a class named RandomizedSet that supports these operations.",
+    "topic": "Data Structure",
+    "subtopic": "Randomized Collection",
+    "tags": [
+      "Data Structure",
+      "Random",
+      "Insertion",
+      "Deletion"
+    ],
+    "input_format": "The input consists of operations where 'insert(val)' adds an item val to the set, 'remove(val)' removes an item val from the set, and 'getRandom()' returns a random element from the set.",
+    "output_format": "The output should be the result of 'getRandom()' which returns an integer from the set.",
+    "constraints": [
+      "-2^31 <= val <= 2^31 - 1",
+      "Each 'insert' and 'remove' operation is guaranteed to be valid."
+    ],
+    "examples": [
+      {
+        "input": "RandomizedSet randomizedSet = new RandomizedSet();\nrandomizedSet.insert(1);\nrandomizedSet.remove(2);\nrandomizedSet.insert(2);\nrandomizedSet.getRandom();",
+        "output": "1 or 2",
+        "explanation": "After inserting 1 and 2, the set contains [1, 2]. getRandom() can return either 1 or 2."
+      },
+      {
+        "input": "randomizedSet.remove(1);\nrandomizedSet.insert(2);\nrandomizedSet.getRandom();",
+        "output": "2",
+        "explanation": "After removing 1, the set contains [2]. getRandom() will return 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash table to store the elements.",
+      "Use an array to keep track of the elements for random access."
+    ],
+    "company": "Miro"
+  },
+  {
+    "question_id": "",
+    "title": "Meeting Rooms II",
+    "description": "Given an array of meeting time intervals where each interval is represented as a pair of integers [start, end], return the minimum number of conference rooms required to hold all the meetings simultaneously. Meeting times are inclusive of the start time and exclusive of the end time. Thus, a meeting scheduled from time 1 to time 3 will occupy room(s) in the time range [1, 3).",
+    "topic": "Interval Scheduling",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Interval",
+      "Greedy",
+      "Scheduling"
+    ],
+    "input_format": "An array of intervals, where each interval is an array of two integers [start, end].",
+    "output_format": "An integer representing the minimum number of conference rooms required.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "0 <= intervals[i][0] < intervals[i][1] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[0, 30], [5, 10], [15, 20]]",
+        "output": "2",
+        "explanation": "The first meeting (0,30) overlaps with the second meeting (5,10), so at least two rooms are needed."
+      },
+      {
+        "input": "intervals = [[7, 10], [2, 4]]",
+        "output": "1",
+        "explanation": "Both meetings do not overlap, so only one room is needed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a min-heap (priority queue) to track the end times of meetings.",
+      "Sort the intervals by their start times."
+    ],
+    "company": "Miro"
+  },
+  {
+    "question_id": "",
+    "title": "Container With Most Water",
+    "description": "Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of the line i is at (i, ai) and (i, 0). Find two lines, which together with the x-axis forms a container, such that the container contains the most water. Note that the width of the container is determined by the distance between the two lines, and the height is the minimum of the two lines. Calculate the maximum area of water that can be contained.",
+    "topic": "Array",
+    "subtopic": "Two Pointer Technique",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Geometry"
+    ],
+    "input_format": "An array of integers heights representing the heights of the lines.",
+    "output_format": "An integer representing the maximum area of water that can be contained.",
+    "constraints": [
+      "2 <= heights.length <= 10^5",
+      "0 <= heights[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "heights = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The lines at positions 1 and 8 have heights 8 and 7, respectively, forming a container that holds the most water."
+      },
+      {
+        "input": "heights = [1,1]",
+        "output": "1",
+        "explanation": "The container formed by the two lines at both ends, which both have a height of 1, holds an area of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider starting from both ends and moving towards the center.",
+      "The area is determined by the shorter line, so maximize width while trying to find a taller line."
+    ],
+    "company": "Miro"
+  }
+]

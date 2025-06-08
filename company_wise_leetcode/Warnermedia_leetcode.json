@@ -1,0 +1,400 @@
+[
+  {
+    "question_id": "",
+    "title": "Integer to English Words",
+    "description": "Convert a non-negative integer to its English words representation. The integer is guaranteed to be less than 2^31 - 1. For example, the number '123' should be converted to 'One Hundred Twenty Three'.",
+    "topic": "String Manipulation",
+    "subtopic": "Number Conversion",
+    "tags": [
+      "String",
+      "Conversion",
+      "Number to Words"
+    ],
+    "input_format": "An integer n where 0 <= n < 2^31.",
+    "output_format": "A string representing the English words of the integer.",
+    "constraints": [
+      "0 <= n < 2^31"
+    ],
+    "examples": [
+      {
+        "input": "n = 123",
+        "output": "One Hundred Twenty Three",
+        "explanation": "The number 123 converts to 'One Hundred Twenty Three'."
+      },
+      {
+        "input": "n = 1000000",
+        "output": "One Million",
+        "explanation": "The number 1,000,000 converts to 'One Million'."
+      },
+      {
+        "input": "n = 12345",
+        "output": "Twelve Thousand Three Hundred Forty Five",
+        "explanation": "The number 12,345 converts to 'Twelve Thousand Three Hundred Forty Five'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Break down the number into segments like thousands, hundreds, and tens.",
+      "Use helper functions to convert individual segments to words."
+    ],
+    "company": "Warnermedia"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Accounts That Did Not Stream",
+    "description": "You are given a list of user accounts and their streaming activity for the past month. Each account is represented by a string and a corresponding boolean value indicating whether the account streamed any content during the month. Your task is to determine the number of accounts that did not stream any content. An account is considered to have not streamed if its corresponding boolean value is false. Return the count of such accounts.",
+    "topic": "Array",
+    "subtopic": "Counting",
+    "tags": [
+      "Array",
+      "Counting",
+      "Boolean"
+    ],
+    "input_format": "A list of tuples, where each tuple contains a string (account name) and a boolean (streaming activity).",
+    "output_format": "An integer representing the number of accounts that did not stream.",
+    "constraints": [
+      "1 <= len(accounts) <= 10^5",
+      "account name is a non-empty string of length at most 100"
+    ],
+    "examples": [
+      {
+        "input": "[('User1', false), ('User2', true), ('User3', false)]",
+        "output": "2",
+        "explanation": "User1 and User3 did not stream, hence the count is 2."
+      },
+      {
+        "input": "[('UserA', true), ('UserB', true), ('UserC', false), ('UserD', false)]",
+        "output": "2",
+        "explanation": "Only UserC and UserD did not stream, therefore the count is 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Iterate through the list and count how many accounts have a boolean value of false.",
+      "Consider using a simple loop or a filter function for counting."
+    ],
+    "company": "Warnermedia"
+  },
+  {
+    "question_id": "",
+    "title": "Game of Life",
+    "description": "The Game of Life is a cellular automaton devised by the mathematician John Conway. It consists of a grid of cells that can be either alive or dead. The next state of the grid is determined by the current state based on the following rules: 1) Any live cell with fewer than two live neighbors dies (underpopulation). 2) Any live cell with two or three live neighbors lives on to the next generation. 3) Any live cell with more than three live neighbors dies (overpopulation). 4) Any dead cell with exactly three live neighbors becomes a live cell (reproduction). You are given a 2D grid representing the current state of the game and you need to update it to reflect the next state according to the rules mentioned. Modify the grid in place.",
+    "topic": "Simulation",
+    "subtopic": "2D Grid",
+    "tags": [
+      "Array",
+      "Simulation",
+      "In-Place"
+    ],
+    "input_format": "A 2D grid represented as a list of lists of integers, where 0 represents a dead cell and 1 represents a live cell.",
+    "output_format": "The original grid updated to the next state after applying the Game of Life rules.",
+    "constraints": [
+      "The grid must be non-empty and have dimensions m x n where 1 <= m, n <= 25.",
+      "Each cell in the grid can only be 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "board = [[0, 1, 0], [0, 0, 1], [1, 1, 1], [0, 0, 0]]",
+        "output": "[[0, 0, 0], [1, 0, 1], [0, 1, 1], [0, 1, 0]]",
+        "explanation": "The cells evolve according to the rules. In the next state, the cells update based on their live neighbors."
+      },
+      {
+        "input": "board = [[1, 1], [1, 0]]",
+        "output": "[[1, 1], [1, 1]]",
+        "explanation": "The live cells all have 2 or 3 live neighbors, remaining alive in the next generation."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a temporary state representation to avoid modifying the grid while processing."
+    ],
+    "company": "Warnermedia"
+  },
+  {
+    "question_id": "",
+    "title": "Product of Array Except Self",
+    "description": "Given an integer array nums, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i]. You must solve it without using division and in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Product Array",
+    "tags": [
+      "Array",
+      "Product",
+      "Prefix-Suffix"
+    ],
+    "input_format": "An array of integers nums of length n.",
+    "output_format": "An array of integers representing the product of all elements except the current one.",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-30 <= nums[i] <= 30"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "[24, 12, 8, 6]",
+        "explanation": "The output is calculated as follows: output[0] = 2 * 3 * 4 = 24, output[1] = 1 * 3 * 4 = 12, output[2] = 1 * 2 * 4 = 8, output[3] = 1 * 2 * 3 = 6."
+      },
+      {
+        "input": "nums = [-1, 1, 0, -3, 3]",
+        "output": "[0, 0, 9, 0, 0]",
+        "explanation": "The output is calculated as follows: output[0] = 1 * 0 * -3 * 3 = 0, output[1] = -1 * 0 * -3 * 3 = 0, output[2] = -1 * 1 * -3 * 3 = 9, output[3] = -1 * 1 * 0 * 3 = 0, output[4] = -1 * 1 * 0 * -3 = 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the use of prefix and suffix products.",
+      "You can store the running product while iterating."
+    ],
+    "company": "Warnermedia"
+  },
+  {
+    "question_id": "",
+    "title": "Merge k Sorted Lists",
+    "description": "You are given an array of k linked lists, where each linked list is sorted in ascending order. Your task is to merge all the linked lists into one sorted linked list and return it. The merged linked list should also be in ascending order.",
+    "topic": "Linked List",
+    "subtopic": "Merge",
+    "tags": [
+      "Linked List",
+      "Sorting",
+      "Heap"
+    ],
+    "input_format": "An array of k linked lists, where each list is represented as the head node of a linked list.",
+    "output_format": "The head node of the merged sorted linked list.",
+    "constraints": [
+      "0 <= k <= 10^4",
+      "0 <= N <= 500, where N is the total number of nodes across all k linked lists."
+    ],
+    "examples": [
+      {
+        "input": "[1 -> 4 -> 5, 1 -> 3 -> 4, 2 -> 6]",
+        "output": "1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6",
+        "explanation": "Merging the three linked lists results in a single sorted linked list."
+      },
+      {
+        "input": "[]",
+        "output": "",
+        "explanation": "An empty input results in an empty merged list."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a priority queue to efficiently merge the lists.",
+      "Simultaneously iterate through the lists to find the smallest current element."
+    ],
+    "company": "Warnermedia"
+  },
+  {
+    "question_id": "",
+    "title": "Missing Number",
+    "description": "Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one number that is missing from the array.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums of size n, where 0 <= nums[i] <= n.",
+    "output_format": "An integer representing the missing number.",
+    "constraints": [
+      "n == nums.length",
+      "1 <= n <= 10^4",
+      "0 <= nums[i] <= n",
+      "All the numbers in nums are unique."
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 0, 1]",
+        "output": "2",
+        "explanation": "The numbers in the range 0 to 3 are 0, 1, 2, 3. The missing number is 2."
+      },
+      {
+        "input": "nums = [0, 1]",
+        "output": "2",
+        "explanation": "The numbers in the range 0 to 2 are 0, 1, 2. The missing number is 2."
+      },
+      {
+        "input": "nums = [9,6,4,2,3,5,7,0,1]",
+        "output": "8",
+        "explanation": "The numbers in the range 0 to 9 are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. The missing number is 8."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the sum of the first n natural numbers.",
+      "Use the formula n * (n + 1) / 2 to find the expected sum.",
+      "The missing number is the difference between the expected sum and the actual sum."
+    ],
+    "company": "Warnermedia"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Index of the First Occurrence in a String",
+    "description": "Given two strings 'haystack' and 'needle', return the index of the first occurrence of 'needle' in 'haystack', or -1 if 'needle' is not part of 'haystack'. You must implement this function using O(n) time complexity.",
+    "topic": "String",
+    "subtopic": "Searching",
+    "tags": [
+      "String",
+      "Searching",
+      "Two Pointers"
+    ],
+    "input_format": "Two strings, haystack and needle.",
+    "output_format": "An integer representing the index of the first occurrence of needle in haystack.",
+    "constraints": [
+      "1 <= haystack.length <= 10^4",
+      "0 <= needle.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "haystack = 'hello', needle = 'll'",
+        "output": "2",
+        "explanation": "'ll' is found at index 2 in 'hello'."
+      },
+      {
+        "input": "haystack = 'aaaaa', needle = 'bba'",
+        "output": "-1",
+        "explanation": "'bba' is not found in 'aaaaa'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using Python's built-in string methods.",
+      "You may want to iterate through haystack and compare substrings."
+    ],
+    "company": "Warnermedia"
+  },
+  {
+    "question_id": "",
+    "title": "Flatten Nested List Iterator",
+    "description": "Implement an iterator to flatten a nested list. The input is a nested list of integers where each integer can either be a single integer or a list of integers. Your task is to implement a method that returns the next integer from the nested structure as if it were a flat list.",
+    "topic": "Design",
+    "subtopic": "Iterator",
+    "tags": [
+      "Iterator",
+      "Design",
+      "Depth-First Search"
+    ],
+    "input_format": "A nested list of integers where each integer can be an integer or a list of integers.",
+    "output_format": "An integer representing the next element in the flattened list.",
+    "constraints": [
+      "1 <= nestedList.length <= 100",
+      "1 <= nestedList[i].size <= 100",
+      "The integers in the list can range from -10^6 to 10^6."
+    ],
+    "examples": [
+      {
+        "input": "[1, [2, [3]], 4]",
+        "output": "1",
+        "explanation": "The flattened list is [1, 2, 3, 4]. The first output is 1."
+      },
+      {
+        "input": "[[1, 1], 2, [1, 1]]",
+        "output": "1",
+        "explanation": "The flattened list is [1, 1, 2, 1, 1]. The first output is 1."
+      },
+      {
+        "input": "[1, [], [2, 3]]",
+        "output": "1",
+        "explanation": "The flattened list is [1, 2, 3]. The first output is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to help in flattening the list.",
+      "Consider using a generator for lazy evaluation."
+    ],
+    "company": "Warnermedia"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an array of integers, find all unique triplets (a, b, c) in the array such that a + b + c = 0. The solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of lists containing the unique triplets.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "The input array is empty, so there are no triplets."
+      },
+      {
+        "input": "nums = [0, 0, 0]",
+        "output": "[[0, 0, 0]]",
+        "explanation": "The only triplet is [0, 0, 0]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array to make it easier to skip duplicates.",
+      "Use a loop to fix one number and then use two pointers to find the other two numbers.",
+      "If you find a triplet, ensure to skip duplicates to avoid duplicate triplets."
+    ],
+    "company": "Warnermedia"
+  },
+  {
+    "question_id": "",
+    "title": "Roman to Integer",
+    "description": "Implement a function that converts a given Roman numeral string to its integer equivalent. The input string is guaranteed to be a valid Roman numeral within the range from 1 to 3999.",
+    "topic": "String",
+    "subtopic": "Conversion",
+    "tags": [
+      "String",
+      "Conversion",
+      "Roman Numerals"
+    ],
+    "input_format": "A string representing a Roman numeral.",
+    "output_format": "An integer representing the integer value of the Roman numeral.",
+    "constraints": [
+      "1 <= s.length <= 15",
+      "The input string s is a valid Roman numeral."
+    ],
+    "examples": [
+      {
+        "input": "III",
+        "output": "3",
+        "explanation": "The Roman numeral 'III' corresponds to the integer 3."
+      },
+      {
+        "input": "IV",
+        "output": "4",
+        "explanation": "The Roman numeral 'IV' corresponds to the integer 4."
+      },
+      {
+        "input": "IX",
+        "output": "9",
+        "explanation": "The Roman numeral 'IX' corresponds to the integer 9."
+      },
+      {
+        "input": "LVIII",
+        "output": "58",
+        "explanation": "The Roman numeral 'LVIII' corresponds to the integer 58."
+      },
+      {
+        "input": "MCMXCIV",
+        "output": "1994",
+        "explanation": "The Roman numeral 'MCMXCIV' corresponds to the integer 1994."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Create a mapping between Roman numerals and their integer values.",
+      "Consider cases where a smaller numeral precedes a larger numeral."
+    ],
+    "company": "Warnermedia"
+  }
+]

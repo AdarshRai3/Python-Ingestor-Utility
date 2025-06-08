@@ -1,0 +1,1099 @@
+[
+  {
+    "question_id": "",
+    "title": "Peaks in Array",
+    "description": "You are given an array of integers. A peak in the array is an element that is greater than its neighbors. An element at index i is a peak if nums[i] > nums[i - 1] and nums[i] > nums[i + 1]. For the first and last elements in the array, you only need to compare with one neighbor (the first with the second, and the last with the second to last). Your task is to find all the peak elements in the array and return them as a list.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Peaks"
+    ],
+    "input_format": "An array of integers nums of length n.",
+    "output_format": "A list of integers representing the peak elements.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 20, 4, 1, 0, 6, 5]",
+        "output": "[20, 6]",
+        "explanation": "20 is greater than its neighbors (3 and 4) and 6 is greater than its neighbors (5 and out of bounds)."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5]",
+        "output": "[5]",
+        "explanation": "5 is the only peak as it is greater than its only neighbor 4."
+      },
+      {
+        "input": "nums = [5, 4, 3, 2, 1]",
+        "output": "[5]",
+        "explanation": "5 is the only peak as it is greater than its only neighbor 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider edge cases when dealing with the first and last elements.",
+      "You may use a simple loop to check neighboring values."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Minimized Maximum of Products Distributed to Any Store",
+    "description": "In a certain city, there are N products that need to be distributed to K stores. Each product has a certain quantity available. The goal is to minimize the maximum number of products any single store receives. You need to determine the minimized maximum that can be allocated to any store after distributing all products optimally.",
+    "topic": "Binary Search",
+    "subtopic": "Distribution Problem",
+    "tags": [
+      "Binary Search",
+      "Greedy",
+      "Distribution"
+    ],
+    "input_format": "An array of integers representing the quantities of each product, and an integer K representing the number of stores.",
+    "output_format": "An integer representing the minimized maximum number of products distributed to any store.",
+    "constraints": [
+      "1 <= quantities.length <= 10^5",
+      "1 <= quantities[i] <= 10^9",
+      "1 <= K <= quantities.length"
+    ],
+    "examples": [
+      {
+        "input": "quantities = [1, 2, 3, 4, 5], K = 2",
+        "output": "7",
+        "explanation": "Distributing the products as [1, 2, 4] to Store 1 and [3, 5] to Store 2, the maximum for Store 1 is 7."
+      },
+      {
+        "input": "quantities = [5, 10, 15], K = 3",
+        "output": "15",
+        "explanation": "Each store can receive one product, so the maximum is the largest quantity: 15."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider binary searching on the possible maximum values.",
+      "Use a greedy approach to check if a proposed maximum can work."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid 'grid' of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Depth-First Search",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "DFS",
+      "Graph",
+      "Matrix"
+    ],
+    "input_format": "A 2D list `grid` where each element is either '1' (land) or '0' (water).",
+    "output_format": "An integer representing the number of islands in the grid.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [['1','1','0','0','0'],['1','1','0','0','0'],['0','0','1','0','0'],['0','0','0','1','1']]",
+        "output": "3",
+        "explanation": "The grid has three islands: one encompassing grid[0][0] and grid[0][1], another at grid[2][2], and another at grid[3][3] and grid[3][4]."
+      },
+      {
+        "input": "grid = [['0','0','0','0','0'],['0','0','0','0','0'],['0','0','0','0','0']]",
+        "output": "0",
+        "explanation": "There are no islands in the grid as it is entirely filled with water."
+      },
+      {
+        "input": "grid = [['1']]",
+        "output": "1",
+        "explanation": "There is one island represented by a single cell."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use Depth-First Search to explore the grid.",
+      "You can transform connected '1's into '0's to mark them as visited."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type, and brackets must be closed in the correct order.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of the characters '(', ')', '{', '}', '[' and ']'",
+    "output_format": "Return true if the input string is valid, otherwise return false.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are correctly nested."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "The parentheses are correctly nested."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The parentheses are not correctly nested."
+      },
+      {
+        "input": "s = '([)]'",
+        "output": "false",
+        "explanation": "The parentheses are not correctly nested."
+      },
+      {
+        "input": "s = '{[]}'",
+        "output": "true",
+        "explanation": "The parentheses are correctly nested."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "For each closing bracket, check if it matches the top of the stack.",
+      "An empty stack means all brackets were closed properly."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. The intervals are described as an array of pairs, where each pair represents the start and end times of an interval. You must return a new array consisting of the merged intervals.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A 2D array of integers where each sub-array contains two integers representing the start and end of an interval.",
+    "output_format": "A 2D array of integers representing the merged intervals.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "Intervals [1,3] and [2,6] overlap, so they can be merged into [1,6]. The other intervals do not overlap."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] are considered overlapping because they share an endpoint."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the start time.",
+      "Use a loop to compare current interval with the last one in the merged list."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Sorted Lists",
+    "description": "You are given the heads of two sorted linked lists, list1 and list2. Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists. Return the head of the new list.",
+    "topic": "Linked List",
+    "subtopic": "Merging Lists",
+    "tags": [
+      "Linked List",
+      "Merge",
+      "Sorting"
+    ],
+    "input_format": "The function takes two parameters, list1 and list2, which are the heads of the two sorted linked lists.",
+    "output_format": "The function returns the head of the new sorted linked list.",
+    "constraints": [
+      "The number of nodes in both lists is in the range [0, 50].",
+      "-100 <= Node.val <= 100",
+      "Both list1 and list2 are sorted in non-decreasing order."
+    ],
+    "examples": [
+      {
+        "input": "list1 = [1, 2, 4], list2 = [1, 3, 4]",
+        "output": "[1, 1, 2, 3, 4, 4]",
+        "explanation": "The merged list is 1 -> 1 -> 2 -> 3 -> 4 -> 4."
+      },
+      {
+        "input": "list1 = [], list2 = [0]",
+        "output": "[0]",
+        "explanation": "The merged list is just the second list, 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a dummy node to simplify the merging process.",
+      "You can traverse both lists simultaneously to build the new list."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where 0 <= prices.length <= 10^4.",
+    "output_format": "An integer representing the maximum profit.",
+    "constraints": [
+      "0 <= prices.length <= 10^4",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price encountered so far.",
+      "Calculate profit by subtracting the minimum price from the current price."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. A mapping of digit to letters (just like on the telephone buttons) is given as follows: 2 -> 'abc', 3 -> 'def', 4 -> 'ghi', 5 -> 'jkl', 6 -> 'mno', 7 -> 'pqrs', 8 -> 'tuv', 9 -> 'wxyz'. You may return the answer in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Generation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Combinatorics"
+    ],
+    "input_format": "A string digits representing the input number.",
+    "output_format": "A list of strings representing the possible letter combinations.",
+    "constraints": [
+      "0 <= digits.length <= 4",
+      "digits[i] is a digit in the range ['2', '9']"
+    ],
+    "examples": [
+      {
+        "input": "digits = \"23\"",
+        "output": "[\"ad\", \"ae\", \"af\", \"bd\", \"be\", \"bf\", \"cd\", \"ce\", \"cf\"]",
+        "explanation": "The digit '2' maps to 'abc' and '3' maps to 'def'. Therefore, we can form combinations like 'ad', 'ae', etc."
+      },
+      {
+        "input": "digits = \"\"",
+        "output": "[]",
+        "explanation": "An empty input string returns an empty list."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use backtracking to generate combinations.",
+      "Think of the problem as a tree structure."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Linked List",
+    "description": "Given the head of a singly linked list, reverse the list and return the reversed list.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Algorithm"
+    ],
+    "input_format": "The head of a singly linked list, represented by a ListNode.",
+    "output_format": "The head of the reversed singly linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000]",
+      "-5000 <= Node.val <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5]",
+        "output": "[5, 4, 3, 2, 1]",
+        "explanation": "Reversing the linked list [1, 2, 3, 4, 5] results in [5, 4, 3, 2, 1]."
+      },
+      {
+        "input": "head = []",
+        "output": "[]",
+        "explanation": "An empty list remains empty after reversing."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try iterating through the list while adjusting pointers.",
+      "Use three pointers: previous, current, and next."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "LFU Cache",
+    "description": "Design and implement a data structure for a Least Frequently Used (LFU) cache. It should support the following operations: get and put. The get operation retrieves the value of the key if the key exists in the cache, otherwise returns -1. The put operation will insert or update the value if the key is less than or equal to capacity. When the cache reaches its capacity, it should invalidate the least frequently used key before inserting a new key.",
+    "topic": "Cache",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Cache",
+      "Data Structures",
+      "Design"
+    ],
+    "input_format": "The cache will be initialized with a positive capacity. The operations will follow in the form of pairs representing the operation and key-value pairs.",
+    "output_format": "Return the value associated with the given key in case of get operation, and nothing for the put operation.",
+    "constraints": [
+      "1 <= capacity <= 10^4",
+      "0 <= key <= 10^5",
+      "0 <= value <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "cache = LFUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.get(3); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1, -1, 3, 4]",
+        "explanation": "After putting (1, 1) and (2, 2), get(1) returns 1. Then, (3, 3) causes (2, 2) to be evicted. Next, (4, 4) causes (1, 1) to be evicted."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a hash map for storage and a frequency map for tracking frequency.",
+      "Pair caching with a linked list for maintaining order of usage."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Contains Duplicate",
+    "description": "Given an integer array nums, determine if any value appears at least twice in the array. Your solution should run in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Duplicate"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A boolean value indicating whether there are duplicate integers in the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "true",
+        "explanation": "The number 1 appears twice in the array."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "false",
+        "explanation": "There are no duplicates in the array."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5, 1]",
+        "output": "true",
+        "explanation": "The number 1 appears twice in the array."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a set to track seen numbers.",
+      "Consider the properties of a hash table for efficient lookup."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Add to Make Parentheses Valid",
+    "description": "Given a string s consisting of parentheses, your task is to determine the minimum number of parentheses that must be added to make the string valid. A string of parentheses is considered valid if every opening parenthesis has a corresponding closing parenthesis and the parentheses are closed in the correct order.",
+    "topic": "String",
+    "subtopic": "Parentheses Validation",
+    "tags": [
+      "String",
+      "Parentheses",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of characters '(' and ')'.",
+    "output_format": "An integer representing the minimum number of parentheses needed to make the string valid.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists only of '(' and ')'."
+    ],
+    "examples": [
+      {
+        "input": "s = '())'",
+        "output": "1",
+        "explanation": "One '(' needs to be added at the beginning to make the string valid: '(())."
+      },
+      {
+        "input": "s = '((('",
+        "output": "3",
+        "explanation": "Three ')' need to be added at the end to balance the three '('."
+      },
+      {
+        "input": "s = ')))'",
+        "output": "3",
+        "explanation": "Three '(' need to be added at the beginning to balance the three ')'."
+      },
+      {
+        "input": "s = '()()'",
+        "output": "0",
+        "explanation": "The string is already valid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count unmatched opening and closing parentheses.",
+      "The result is the sum of unmatched opening and closing parentheses."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "The Skyline Problem",
+    "description": "Given a list of buildings represented by their left and right x-coordinates and their heights, return the coordinates of the buildings' skyline. The skyline is the outer contour of the set of buildings and can be described as a list of key points where the height changes. Each key point is represented by a tuple of x-coordinate and height.",
+    "topic": "Geometry",
+    "subtopic": "Line Sweep",
+    "tags": [
+      "Geometry",
+      "Line Sweep",
+      "Sorting"
+    ],
+    "input_format": "A list of tuples, where each tuple contains three integers (left, right, height) representing the left, right coordinates, and height of a building.",
+    "output_format": "A list of tuples representing the key points of the skyline, where each tuple contains two integers (x-coordinate, height).",
+    "constraints": [
+      "1 <= buildings.length <= 10^4",
+      "0 <= left < right <= 10^7",
+      "1 <= height <= 10^7"
+    ],
+    "examples": [
+      {
+        "input": "buildings = [[2, 9, 10], [3, 7, 15], [5, 12, 12], [15, 20, 10], [19, 24, 8]]",
+        "output": "[(2, 10), (3, 15), (7, 12), (12, 0), (15, 10), (20, 8), (24, 0)]",
+        "explanation": "The skyline consists of the points where the height changes, resulting in the output above."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a max-heap to keep track of building heights.",
+      "Use a sweep line algorithm to process the start and end of buildings."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings strs, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Anagrams"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of lists, where each sublist contains strings that are anagrams of each other.",
+    "constraints": [
+      "1 <= strs.length <= 1000",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The anagrams are grouped together. 'eat', 'tea', and 'ate' are anagrams, as well as 'nat' and 'tan'. 'bat' is not an anagram of others."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "Group contains only one string which is an empty string."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "Group contains only one string which is 'a'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to group by sorted string.",
+      "Think about how to represent the anagrams using their sorted characters as keys."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, return true if t is an anagram of s and false otherwise. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Sorting and Comparison",
+    "tags": [
+      "String",
+      "Anagram",
+      "Sorting"
+    ],
+    "input_format": "Two strings s and t, where 1 <= s.length, t.length <= 5 * 10^4.",
+    "output_format": "A boolean value representing whether t is an anagram of s.",
+    "constraints": [
+      "s and t consist of lowercase English letters.",
+      "The lengths of s and t are the same."
+    ],
+    "examples": [
+      {
+        "input": "s = \"anagram\", t = \"nagaram\"",
+        "output": "true",
+        "explanation": "Both strings contain the same letters in different orders."
+      },
+      {
+        "input": "s = \"rat\", t = \"car\"",
+        "output": "false",
+        "explanation": "The string 'car' cannot be formed from the letters of 'rat'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Count the occurrences of each character in both strings.",
+      "Two strings are anagrams if their sorted versions are equal."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicates from Sorted Array",
+    "description": "Given a sorted array of integers, you need to remove the duplicates in-place such that each unique element appears only once and returns the new length of the array. Do not allocate extra space for another array. Instead, you must do this by modifying the input array in-place.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-place"
+    ],
+    "input_format": "A sorted array of integers nums.",
+    "output_format": "An integer representing the new length of the array after removing duplicates.",
+    "constraints": [
+      "0 <= nums.length <= 3 * 10^4",
+      "-10^4 <= nums[i] <= 10^4",
+      "The input array is sorted."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2]",
+        "output": "2",
+        "explanation": "The array after removing duplicates is [1, 2]. The length of the new array is 2."
+      },
+      {
+        "input": "nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]",
+        "output": "5",
+        "explanation": "The array after removing duplicates is [0, 1, 2, 3, 4]. The length of the new array is 5."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to track unique elements.",
+      "Move the second pointer while checking for duplicates."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Angle Between Hands of a Clock",
+    "description": "Given a time in the form of a string HH:MM, calculate the angle between the hour and minute hands of a clock. The hour hand moves 30 degrees for each hour and 0.5 degrees for each minute. The minute hand moves 6 degrees for each minute. The resulting angle should be the smaller angle between the two hands.",
+    "topic": "Mathematics",
+    "subtopic": "Geometry",
+    "tags": [
+      "Math",
+      "Clock",
+      "Angles"
+    ],
+    "input_format": "A string time in the format 'HH:MM'.",
+    "output_format": "A float representing the smaller angle between the hour and minute hands, rounded to two decimal places.",
+    "constraints": [
+      "00 <= HH <= 23",
+      "00 <= MM <= 59"
+    ],
+    "examples": [
+      {
+        "input": "HH:MM = '03:30'",
+        "output": "15.00",
+        "explanation": "The hour hand is at 105 degrees (3 hours * 30 + 30 minutes * 0.5), and the minute hand is at 180 degrees (30 minutes * 6). The smaller angle is |180 - 105| = 75 degrees."
+      },
+      {
+        "input": "HH:MM = '12:00'",
+        "output": "0.00",
+        "explanation": "Both hands are at 0 degrees, so the angle is 0 degrees."
+      },
+      {
+        "input": "HH:MM = '21:45'",
+        "output": "157.50",
+        "explanation": "The hour hand is at 292.5 degrees (21 hours * 30 + 45 minutes * 0.5), and the minute hand is at 270 degrees (45 minutes * 6). The smaller angle is |292.5 - 270| = 22.5 degrees."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Calculate the position of the hour and minute hands separately.",
+      "Use the formula: angle = abs(hour_angle - minute_angle)."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Product of Three Numbers",
+    "description": "Given an integer array nums, you need to determine the maximum product that can be obtained by multiplying any three distinct elements from the array. The result should be returned as an integer.",
+    "topic": "Array",
+    "subtopic": "Finding Maximum Product",
+    "tags": [
+      "Array",
+      "Math",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum product of any three distinct elements in the array.",
+    "constraints": [
+      "3 <= nums.length <= 1000",
+      "-1000 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "6",
+        "explanation": "The product of the three numbers 1, 2, and 3 is 1 * 2 * 3 = 6."
+      },
+      {
+        "input": "nums = [-10, -10, 1, 3, 2]",
+        "output": "300",
+        "explanation": "The maximum product can be obtained by multiplying the two negative numbers -10, -10 and the positive number 3: -10 * -10 * 3 = 300."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider both the largest positive numbers and the smallest negative numbers for the maximum product."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Linked List",
+    "description": "Given the head of a singly linked list, determine if it is a palindrome. A linked list is said to be a palindrome if it reads the same backward as forward.",
+    "topic": "Linked List",
+    "subtopic": "Palindrome Check",
+    "tags": [
+      "LinkedList",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "The head of a singly linked list where each node contains an integer value.",
+    "output_format": "A boolean value indicating whether the linked list is a palindrome.",
+    "constraints": [
+      "The number of nodes in the list is in the range [1, 10^5]",
+      "-10^5 <= Node.val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 2, 1]",
+        "output": "true",
+        "explanation": "The elements read the same backward (1 -> 2 -> 2 -> 1)."
+      },
+      {
+        "input": "head = [1, 2]",
+        "output": "false",
+        "explanation": "The elements do not read the same backward (1 -> 2 is not equal to 2 -> 1)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a two-pointer technique to find the middle of the list.",
+      "Reverse the second half of the list and compare it with the first half."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers that add up to target.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "Assume there is exactly one solution."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "Because nums[1] + nums[2] == 6, we return [1, 2]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a dictionary to keep track of the indices of the numbers.",
+      "Check if the complement (target - nums[i]) exists in the dictionary."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate List",
+    "description": "Given a linked list, rotate the list to the right by k places, where k is non-negative. The rotation operation is to move the last element of the list to the front. For example, if the linked list is 1->2->3->4->5 and k = 2, the list should be rotated to 4->5->1->2->3.",
+    "topic": "Linked List",
+    "subtopic": "List Manipulation",
+    "tags": [
+      "Linked List",
+      "Rotation",
+      "Two Pointers"
+    ],
+    "input_format": "The head of a singly linked list and an integer k.",
+    "output_format": "The head of the rotated linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 500].",
+      "-100 <= Node.val <= 100",
+      "0 <= k <= 2 * 10^9"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[4, 5, 1, 2, 3]",
+        "explanation": "After rotating the list by 2 places, the list becomes 4->5->1->2->3."
+      },
+      {
+        "input": "head = [0, 1, 2], k = 4",
+        "output": "[2, 0, 1]",
+        "explanation": "After rotating the list by 4 places (which is equivalent to 1 place for a list of length 3), the list becomes 2->0->1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the length of the list before rotating.",
+      "Use modular arithmetic with k to avoid unnecessary rotations.",
+      "Think about what happens when k is larger than the length of the list."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of unique triplets that sum up to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum up to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "There are no elements in the input array, hence no triplets can be formed."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "The only triplet possible does not sum to zero."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the array first to simplify finding triplets.",
+      "Use a two-pointer approach to find pairs that complement each other."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Subarray With Maximum Bitwise AND",
+    "description": "Given an integer array nums, find the length of the longest contiguous subarray where the bitwise AND of all the elements is equal to the maximum bitwise AND of any contiguous subarray in the array. The bitwise AND of a set of numbers is the result of performing the bitwise AND operation on all numbers in the set. Return the length of this longest subarray.",
+    "topic": "Array",
+    "subtopic": "Bitwise Operations",
+    "tags": [
+      "Array",
+      "Bitwise",
+      "Sliding Window"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest subarray with the maximum bitwise AND.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 8, 8, 4]",
+        "output": "2",
+        "explanation": "The maximum bitwise AND in the array is 8, which occurs in the subarrays [8] and [8, 4]. The longest contiguous subarray with maximum AND is [8, 4] which has a length of 2."
+      },
+      {
+        "input": "nums = [3, 1, 5, 2, 5]",
+        "output": "1",
+        "explanation": "The maximum bitwise AND is 5, which occurs in individual elements [5]. The longest contiguous subarray with maximum AND is [5] which has a length of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Focus on finding the maximum bitwise AND first.",
+      "Use a sliding window or two pointers technique to find the longest subarray."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Number",
+    "description": "Given a list of non-negative integers, you are tasked with arranging them to form the largest possible number. The resulting number should be returned as a string. It is important to note that the leading zeros need to be removed if they are present in the final output.",
+    "topic": "String",
+    "subtopic": "Sorting",
+    "tags": [
+      "String",
+      "Sorting",
+      "Greedy"
+    ],
+    "input_format": "A list of non-negative integers represented as strings.",
+    "output_format": "A string that represents the largest possible number formed by the input integers.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 2]",
+        "output": "210",
+        "explanation": "By concatenating '2' and '10', we get '210', which is the largest number possible."
+      },
+      {
+        "input": "nums = [3, 30, 34, 5, 9]",
+        "output": "9534330",
+        "explanation": "The largest number is formed by arranging the numbers in this order: 9, 5, 34, 3, and 30."
+      },
+      {
+        "input": "nums = [0, 0]",
+        "output": "0",
+        "explanation": "Both numbers are zero, so the final output should just be '0'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to compare concatenated strings.",
+      "Use a custom comparator for sorting the numbers.",
+      "Think about edge cases, like leading zeros."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Elements",
+    "description": "Given an integer array `nums` and an integer `k`, return the `k` most frequent elements. You may return the answer in any order. It is guaranteed that the answer is unique, and you must not modify the input array.",
+    "topic": "Hash Table",
+    "subtopic": "Frequency Count",
+    "tags": [
+      "Hash Table",
+      "Sorting",
+      "Frequency Count"
+    ],
+    "input_format": "A list of integers nums and an integer k.",
+    "output_format": "A list of the k most frequent integers from the input array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^4",
+      "k is valid, 1 <= k <= number of unique elements in nums"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 1, 2, 2, 3], k = 2",
+        "output": "[1, 2]",
+        "explanation": "The element 1 appears 3 times and the element 2 appears 2 times. The two most frequent elements are 1 and 2."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "There is only one element, which is 1."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5, 6, 7, 8, 4, 4, 5, 5, 2, 2], k = 3",
+        "output": "[2, 4, 5]",
+        "explanation": "The elements 2, 4, and 5 are the three most frequent elements."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to count frequencies.",
+      "You might need to use a heap or sorting to find the top k elements."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game II",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Your goal is to determine the minimum number of jumps needed to reach the last index of the array. If it is not possible to reach the last index, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Greedy",
+      "Dynamic Programming",
+      "Array"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "An integer representing the minimum number of jumps to reach the last index, or -1 if it is not possible.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "2",
+        "explanation": "Jump from index 0 to 1 (2), then jump to the last index 4 (3)."
+      },
+      {
+        "input": "nums = [2, 3, 0, 1, 4]",
+        "output": "2",
+        "explanation": "Jump from index 0 to 1, then jump to the last index 4."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "0",
+        "explanation": "You are already at the last index."
+      },
+      {
+        "input": "nums = [1, 2, 0, 1, 4]",
+        "output": "-1",
+        "explanation": "It's not possible to reach the last index."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a greedy approach to find the optimal jumps.",
+      "Keep track of the furthest index that can be reached.",
+      "Use a variable to count the number of jumps."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "First Missing Positive",
+    "description": "Given an unsorted integer array nums, return the smallest missing positive integer. You must implement an algorithm that runs in O(n) time and uses O(1) extra space.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the smallest missing positive integer.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, -1, 1]",
+        "output": "2",
+        "explanation": "The smallest missing positive integer is 2."
+      },
+      {
+        "input": "nums = [1, 2, 0]",
+        "output": "3",
+        "explanation": "The smallest missing positive integer is 3."
+      },
+      {
+        "input": "nums = [7, 8, 9, 11, 12]",
+        "output": "1",
+        "explanation": "The smallest missing positive integer is 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Try to place each number at its corresponding index.",
+      "Consider the range of 1 to n instead of all integers.",
+      "Negate values at corresponding indices to mark presence."
+    ],
+    "company": "Siemens"
+  },
+  {
+    "question_id": "",
+    "title": "Seat Reservation Manager",
+    "description": "Design a Seat Reservation Manager for a theater. The theater has a fixed number of seats, and you need to implement functionality to reserve a seat, cancel a reservation, and check if a seat is available. The system should ensure that no two reservations overlap.",
+    "topic": "Design",
+    "subtopic": "Object-Oriented Design",
+    "tags": [
+      "Design",
+      "OOP",
+      "Reservation"
+    ],
+    "input_format": "You need to implement the SeatReservationManager class with the methods: reserve_seat(seat_number: int) -> bool, cancel_reservation(seat_number: int) -> bool, and is_seat_available(seat_number: int) -> bool. The seat_number will be a 1-indexed integer representing the seat in the theater.",
+    "output_format": "The methods return a boolean value indicating the success or failure of the operations.",
+    "constraints": [
+      "1 <= seat_number <= 1000",
+      "The number of operations will not exceed 10^4"
+    ],
+    "examples": [
+      {
+        "input": "manager = SeatReservationManager()\nmanager.reserve_seat(1)\nmanager.reserve_seat(2)\nmanager.is_seat_available(1)",
+        "output": "False",
+        "explanation": "Seat 1 is reserved, so it is not available."
+      },
+      {
+        "input": "manager.cancel_reservation(1)\nmanager.is_seat_available(1)",
+        "output": "True",
+        "explanation": "After canceling the reservation for seat 1, it is now available."
+      },
+      {
+        "input": "manager.reserve_seat(2)",
+        "output": "False",
+        "explanation": "Seat 2 is already reserved, so it cannot be reserved again."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a data structure to store reserved seats.",
+      "Think about how to efficiently check occupancy."
+    ],
+    "company": "Siemens"
+  }
+]

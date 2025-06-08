@@ -1,0 +1,597 @@
+[
+  {
+    "question_id": "",
+    "title": "Decode String",
+    "description": "Given an encoded string, return its decoded string. The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. You may assume that the input string is always valid; no extra white spaces, square brackets are well-formed, etc.",
+    "topic": "String",
+    "subtopic": "Decoding String",
+    "tags": [
+      "String",
+      "Decoding",
+      "Stack"
+    ],
+    "input_format": "A single encoded string s, which consists of digits and lowercase English letters.",
+    "output_format": "A single decoded string.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of digits, lowercase English letters, and square brackets.",
+      "The input string is guaranteed to be well-formed."
+    ],
+    "examples": [
+      {
+        "input": "s = \"3[a2[c]]\"",
+        "output": "accaccacc",
+        "explanation": "The decoded string is 'acc' repeated 3 times."
+      },
+      {
+        "input": "s = \"2[abc]3[cd]ef\"",
+        "output": "abcabccdcdcdef",
+        "explanation": "The decoded string is 'abc' twice and 'cd' three times followed by 'ef'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to manage the characters and the numbers.",
+      "Keep track of the current number for repeat counts while iterating through the string."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Boxes",
+    "description": "You are given an array of integers, where each integer represents a box. Each box has a color represented by an integer, and you can remove boxes in the following way: if you remove a box of color `c`, you also remove all boxes of color `c` that are adjacent to it. Your task is to determine the maximum score possible by removing these boxes, where the score is calculated as follows: When you remove a box of color `c`, you earn `k*k` points, where `k` is the number of boxes of color `c` that you removed (including the ones that were adjacent). A box can only be removed if it is adjacent to at least one other box of the same color. Return the maximum score that can be achieved by strategically removing the boxes.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Memoization",
+    "tags": [
+      "Dynamic Programming",
+      "Memoization",
+      "Greedy"
+    ],
+    "input_format": "An array of integers boxes representing the colors of the boxes.",
+    "output_format": "An integer representing the maximum score possible by removing boxes.",
+    "constraints": [
+      "1 <= boxes.length <= 100",
+      "1 <= boxes[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "boxes = [1, 3, 2, 2, 2, 3, 4, 3, 1]",
+        "output": "23",
+        "explanation": "You can remove boxes in such a way that maximizes the score to 23."
+      },
+      {
+        "input": "boxes = [1, 1, 1]",
+        "output": "9",
+        "explanation": "Removing all boxes in one go gives the maximum score of 3*3 = 9."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to keep track of scores.",
+      "Cache results of subproblems to improve performance."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Factorization",
+    "description": "Given a positive integer n, you need to return the smallest positive integer whose factorization equals n. If no such integer exists, return 0. A factorization of an integer is defined as an expression that can be obtained by multiplying one or more positive integers together. The returned integer must be less than or equal to 2^31 - 1, otherwise, return 0.",
+    "topic": "Mathematics",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Mathematics",
+      "Factorization",
+      "Greedy"
+    ],
+    "input_format": "A single integer n (1 <= n <= 10^8).",
+    "output_format": "An integer representing the smallest factorization, or 0 if it cannot be expressed as such.",
+    "constraints": [
+      "1 <= n <= 10^8"
+    ],
+    "examples": [
+      {
+        "input": "n = 48",
+        "output": "68",
+        "explanation": "The factorization of 48 is 6 * 8, thus the smallest integer is 68."
+      },
+      {
+        "input": "n = 15",
+        "output": "35",
+        "explanation": "The factorization of 15 is 3 * 5, thus the smallest integer is 35."
+      },
+      {
+        "input": "n = 99",
+        "output": "0",
+        "explanation": "99 cannot be factorized to produce a valid integer under the conditions, so the output is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Start factorizing n from the largest digit (9) down to 2.",
+      "If you can form a number using these factors, ensure it's less than 2^31 - 1."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Candy Distribution",
+    "description": "There are n children standing in a line, and each child has a certain number of candies. You need to distribute candies to these children under the following rules: Each child must have at least one candy. Children with a higher number of candies than their neighbors must have more candies than those neighbors. Given an integer array ratings where ratings[i] is the rating of the ith child, return the minimum number of candies you need to buy.",
+    "topic": "Greedy",
+    "subtopic": "Distribution",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer array ratings where 1 <= ratings.length <= 2 * 10^4 and 1 <= ratings[i] <= 10^5.",
+    "output_format": "An integer representing the minimum number of candies required.",
+    "constraints": [
+      "1 <= ratings.length <= 20000",
+      "1 <= ratings[i] <= 100000"
+    ],
+    "examples": [
+      {
+        "input": "ratings = [1, 0, 2]",
+        "output": "5",
+        "explanation": "You can distribute candies as follows: [2, 1, 2]. Thus, the minimum candies required is 2 + 1 + 2 = 5."
+      },
+      {
+        "input": "ratings = [1, 2, 2]",
+        "output": "4",
+        "explanation": "You can distribute candies as follows: [1, 2, 1]. Thus, the minimum candies required is 1 + 2 + 1 = 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a two-pass algorithm to ensure conditions are met for all children."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Rand10() Using Rand7()",
+    "description": "Given a function Rand7() which generates a uniform random integer in the range of 1 to 7, implement a function Rand10() that generates a uniform random integer in the range of 1 to 10. You can only call Rand7() a limited number of times. You need to ensure that your implementation of Rand10() is efficient and does not rely on any external libraries for random number generation.",
+    "topic": "Random",
+    "subtopic": "Random Number Generation",
+    "tags": [
+      "Random",
+      "Probability",
+      "Math"
+    ],
+    "input_format": "No input parameters are needed for Rand10() and Rand7() functions.",
+    "output_format": "Return an integer between 1 and 10, inclusive.",
+    "constraints": [
+      "The function Rand7() can be called multiple times to achieve the desired output for Rand10().",
+      "The output of Rand10() must be uniformly distributed."
+    ],
+    "examples": [
+      {
+        "input": "",
+        "output": "A randomly-generated integer between 1 and 10, inclusive.",
+        "explanation": "Output can vary. Example outputs can be: 3, 7, 1, 10, and so on."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to map the outputs of Rand7() to the desired range.",
+      "You may need to discard some outputs to achieve a uniform distribution.",
+      "Combination of multiple calls to Rand7() can help achieve a range that can be transformed into 1-10."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Immediate Food Delivery II",
+    "description": "You are responsible for managing food delivery requests for a restaurant. Given a list of orders where each order consists of a delivery time and an order ID, determine if each order can be delivered within a specified time limit. Your task is to return a list of order IDs that can be delivered on time. An order is considered on time if it is delivered no later than the specified limit from the time it was made.",
+    "topic": "Sorting",
+    "subtopic": "Greedy",
+    "tags": [
+      "Sorting",
+      "Greedy",
+      "Time Management"
+    ],
+    "input_format": "A list of tuples where each tuple contains an integer (delivery_time) and an integer (order_id), and a single integer (time_limit).",
+    "output_format": "A list of order IDs that can be delivered on time sorted in ascending order.",
+    "constraints": [
+      "1 <= len(orders) <= 1000",
+      "0 <= delivery_time <= 10^6",
+      "1 <= order_id <= 10^4",
+      "0 <= time_limit <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "orders = [(1, 101), (3, 102), (5, 103)], time_limit = 4",
+        "output": "[101, 102]",
+        "explanation": "Order 101 is delivered at time 1, which is within the time limit of 4. Order 102 is delivered at time 3, which is also within the time limit. Order 103 cannot be delivered on time as it is 5."
+      },
+      {
+        "input": "orders = [(2, 201), (4, 202), (6, 203)], time_limit = 5",
+        "output": "[201, 202]",
+        "explanation": "Order 201 is delivered at time 2 and within the limit. Order 202 is delivered at time 4 and is also within the limit. Order 203 is not on time as it is delivered at time 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sorting method to evaluate delivery times efficiently.",
+      "Focus on filtering and returning order IDs based on delivery constraints."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Alien Dictionary",
+    "description": "Given a list of words sorted lexicographically by the rules of an alien language, construct a dictionary that can represent the correct order of letters in that language. You need to derive the order of characters from the given words and return a string representing the characters in their correct order. If no valid ordering exists, return an empty string.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sorting",
+      "String"
+    ],
+    "input_format": "An array of strings `words` where each string consists of lowercase English letters.",
+    "output_format": "A string representing the characters in their order based on the alien language, or an empty string if no valid order exists.",
+    "constraints": [
+      "1 <= words.length <= 100",
+      "1 <= words[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "words = [\"wrt\", \"wrf\", \"er\", \"ett\", \"rftt\"]",
+        "output": "wertf",
+        "explanation": "The order can be inferred as 'w' < 'e' < 'r' < 't' < 'f'."
+      },
+      {
+        "input": "words = [\"z\", \"x\"]",
+        "output": "zx",
+        "explanation": "The order can be directly seen as 'z' < 'x'."
+      },
+      {
+        "input": "words = [\"z\", \"x\", \"z\"]",
+        "output": "",
+        "explanation": "There is no valid ordering as 'z' cannot come before itself."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Construct a directed graph based on the input words.",
+      "Use topological sorting to determine the order of the characters.",
+      "Pay attention to edge cases like cycles in the graph."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and put.\n\nget(key) - Get the value of the key if the key exists in the cache, otherwise return -1.\n\nput(key, value) - Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity, invalidate the least recently used key.\n\nThe cache should be initialized with a positive capacity.\n",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Cache",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "The constructor of the cache will accept a positive capacity.",
+    "output_format": "Return the value of the key if it exists in the cache. Return -1 if it does not exist.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key, value <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "LRUCache cache = new LRUCache(2);\ncache.put(1, 1);\ncache.put(2, 2);\ncache.get(1);\ncache.put(3, 3);\ncache.get(2);\ncache.put(4, 4);\ncache.get(1);\ncache.get(3);\ncache.get(4);",
+        "output": "[1,-1,3,4]",
+        "explanation": "The sequence of operations results in 1 being present in the cache, but 2 being removed when 3 is added. 1, 3, and 4 are the values retrieved."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hash map and a doubly linked list.",
+      "Maintain the order of elements to efficiently track the least recently used item."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicates from Sorted List II",
+    "description": "Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list. Return the linked list sorted as well.",
+    "topic": "Linked List",
+    "subtopic": "Linked List Manipulation",
+    "tags": [
+      "Linked List",
+      "Duplicates",
+      "Two Pointers"
+    ],
+    "input_format": "The input consists of a head node of a sorted linked list.",
+    "output_format": "Return the head of the modified linked list.",
+    "constraints": [
+      "The linked list has at most 100 nodes.",
+      "Node values are in the range [-100, 100]."
+    ],
+    "examples": [
+      {
+        "input": "head = [1,2,3,3,4,4,5]",
+        "output": "[1,2,5]",
+        "explanation": "Nodes with values 3 and 4 are duplicates and should be removed."
+      },
+      {
+        "input": "head = [1,1,1,2,3]",
+        "output": "[2,3]",
+        "explanation": "All nodes with value 1 are duplicates and should be removed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a dummy node to simplify the removal process.",
+      "Track the previous node and avoid adding duplicates to your result."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order and for every opening bracket, there is a corresponding closing bracket that matches it.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of characters '(', ')', '{', '}', '[' and ']'.",
+    "output_format": "A boolean value: true if the input string is valid, false otherwise.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "All brackets are closed in the correct order."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The parentheses do not match."
+      },
+      {
+        "input": "s = '{[()]}')",
+        "output": "false",
+        "explanation": "Extra closing parenthesis at the end."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to track the opening brackets.",
+      "Check matching pairs for brackets while traversing the string."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Your goal is to determine if you are able to reach the last index starting from the first index. Implement a function that returns true if you can reach the last index, otherwise return false.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "A boolean value indicating whether you can reach the last index.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "true",
+        "explanation": "You can jump 2 steps to reach index 1, then jump 2 steps to reach index 4."
+      },
+      {
+        "input": "nums = [3, 2, 1, 0, 4]",
+        "output": "false",
+        "explanation": "Even though you start at index 0, you cannot jump to the last index (4) as the maximum jump at index 1 will not lead you."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how far you can jump from each position.",
+      "Keep track of the furthest index you can reach."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Remove to Make Valid Parentheses",
+    "description": "Given a string s that contains parentheses and lowercase letters, remove the minimum number of invalid parentheses to make the input string valid. Return all possible results. A valid parentheses string is one that is either empty or can be constructed by concatenating two valid strings, or by adding parentheses around a valid string.",
+    "topic": "String",
+    "subtopic": "Backtracking",
+    "tags": [
+      "String",
+      "Backtracking",
+      "Recursion"
+    ],
+    "input_format": "A string s containing only lowercase letters and parentheses.",
+    "output_format": "A list of strings representing all possible results of valid parentheses.",
+    "constraints": [
+      "1 <= s.length <= 25",
+      "s consists of lowercase English letters and the characters '(' and ')'."
+    ],
+    "examples": [
+      {
+        "input": "s = \"()())()\"",
+        "output": "[\"()()()\", \"(())()\"]",
+        "explanation": "Removing one parentheses at index 4 or 5 results in valid strings."
+      },
+      {
+        "input": "s = \")(\"",
+        "output": "[\"\"]",
+        "explanation": "Removing both parentheses results in an empty valid string."
+      },
+      {
+        "input": "s = \"(a)())()\"",
+        "output": "[\"(a)()\", \"(a())()\"]",
+        "explanation": "Removing one parentheses at index 4 or 5 results in valid strings."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a breadth-first search approach to explore all possible states.",
+      "Keep track of the balance of parentheses as you build valid strings.",
+      "Validate your results to ensure they are well-formed."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Department Highest Salary",
+    "description": "You are given a table 'Employees' that contains three columns: 'Id', 'Name', and 'Salary'. Write a SQL query to find the name of the department that has the highest salary. If there are multiple departments with the highest salary, return them all in alphabetical order.",
+    "topic": "Database",
+    "subtopic": "SQL Queries",
+    "tags": [
+      "SQL",
+      "Database",
+      "Aggregation"
+    ],
+    "input_format": "A table 'Employees' with columns: Id (int), Name (varchar), Salary (int).",
+    "output_format": "A string representing the names of the departments with the highest salary, ordered alphabetically, separated by commas.",
+    "constraints": [
+      "1 <= Id <= 10^6",
+      "1 <= Salary <= 10^5",
+      "Name is unique"
+    ],
+    "examples": [
+      {
+        "input": "Employees = [[1, 'John', 70000], [2, 'Jane', 80000], [3, 'Doe', 80000]]",
+        "output": "Jane,Doe",
+        "explanation": "Both Jane and Doe have the highest salary of 80000."
+      },
+      {
+        "input": "Employees = [[1, 'Alice', 120000], [2, 'Bob', 115000], [3, 'Charlie', 120000]]",
+        "output": "Alice,Charlie",
+        "explanation": "Alice and Charlie share the highest salary of 120000."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use GROUP BY to categorize rows by department and then find the max salary.",
+      "Consider using a subquery to first find the highest salary."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Next Greater Element I",
+    "description": "Given two arrays, nums1 and nums2, the task is to find the next greater element for each element in nums1 in the array nums2. The next greater element for an element x in nums1 is the first greater element on the right side of x in nums2. If there is no greater element, return -1 for that element.",
+    "topic": "Array",
+    "subtopic": "Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Next Greater Element"
+    ],
+    "input_format": "Two arrays of integers nums1 and nums2.",
+    "output_format": "An array of integers representing the next greater elements for each element in nums1.",
+    "constraints": [
+      "1 <= nums1.length <= 1000",
+      "1 <= nums2.length <= 1000",
+      "-10^4 <= nums1[i], nums2[i] <= 10^4",
+      "All elements in nums1 are unique."
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [4, 1, 2], nums2 = [1, 3, 4, 2]",
+        "output": "-1, 3, -1",
+        "explanation": "For 4, there is no greater element, for 1 it is 3, and for 2 it is -1."
+      },
+      {
+        "input": "nums1 = [2, 4], nums2 = [1, 2, 3, 4]",
+        "output": "3, -1",
+        "explanation": "For 2 it is 3, and for 4 there is no greater element."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a stack to keep track of the previous elements.",
+      "Iterate through nums2 and manage the stack to find the next greater elements.",
+      "Use a hashmap to store the result for quick access."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Debounce",
+    "description": "In programming, debouncing is a technique used to ensure that a function is not called too frequently. Implement a function that simulates a debouncer. The function takes two parameters: a callback function and a delay time in milliseconds. The function should return a new function that, when invoked, will delay the call to the callback function until after the specified delay time has elapsed since the last time the returned function was invoked.",
+    "topic": "Function",
+    "subtopic": "Callback Functions",
+    "tags": [
+      "Function",
+      "Callback",
+      "Debounce"
+    ],
+    "input_format": "A function callback and a number delay representing the debounce duration in milliseconds.",
+    "output_format": "A debounced function that delays invoking the callback until after the specified delay time.",
+    "constraints": [
+      "The delay time will be a non-negative integer.",
+      "The callback function will not be called more than once during the debounce period."
+    ],
+    "examples": [
+      {
+        "input": "debouncedFn = debounce(() => console.log('Hello'), 200);\n  debouncedFn();\n  debouncedFn();\n  // Wait 250 ms and call again\n  debouncedFn();",
+        "output": "Hello",
+        "explanation": "The callback is called only once after 250 ms, as the first two calls are within the 200 ms delay."
+      },
+      {
+        "input": "debouncedFn = debounce(() => console.log('Action'), 100);\n  debouncedFn();\n  // Wait 50 ms and call again\n  debouncedFn();\n  // Wait 150 ms to trigger and call",
+        "output": "Action",
+        "explanation": "Here, the callback is not executed until 150 ms after the last call because the second call was within the 100 ms delay."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a timer to manage the delay.",
+      "Clear the timer if the function is invoked before the delay time ends."
+    ],
+    "company": "Tencent"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+    "topic": "Array",
+    "subtopic": "Sorting & Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Interval"
+    ],
+    "input_format": "An array of intervals, where each interval is represented as an array of two integers [start, end].",
+    "output_format": "An array of merged intervals, each represented as an array of two integers.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "Intervals [1,3] and [2,6] overlap, so they are merged into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "Intervals [1,4] and [4,5] touch at 4 and should be merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on their start values.",
+      "If the current interval overlaps with the previous one, merge them."
+    ],
+    "company": "Tencent"
+  }
+]

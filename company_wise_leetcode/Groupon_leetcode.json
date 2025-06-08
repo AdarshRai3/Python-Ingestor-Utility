@@ -1,0 +1,159 @@
+[
+  {
+    "question_id": "",
+    "title": "Sell Diminishing-Valued Colored Balls",
+    "description": "You are given an integer array `inventory` where `inventory[i]` represents the number of colored balls of type `i`. You want to sell these colored balls in such a way that maximizes your profit. When you sell a ball, the price may decrease for the subsequent sales of that color. Specifically, you can sell the first ball of type `i` for `inventory[i]` dollars, the second for `inventory[i] - 1` dollars, and so forth until you can no longer sell a ball of that type. You can sell up to `orders` total balls across all colors. Determine the maximum profit you can achieve by selling these colored balls.",
+    "topic": "Greedy",
+    "subtopic": "Maximizing Profit",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Max Profit"
+    ],
+    "input_format": "An integer array `inventory` and an integer `orders`.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= inventory.length <= 10^5",
+      "1 <= inventory[i] <= 10^9",
+      "1 <= orders <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "inventory = [2, 5], orders = 4",
+        "output": "14",
+        "explanation": "Sell 2 balls of type 1 for 2 and 1 (total 3) and 2 balls of type 2 for 5 and 4 (total 9). The total profit is 3 + 9 = 12."
+      },
+      {
+        "input": "inventory = [3, 5, 1], orders = 6",
+        "output": "18",
+        "explanation": "Sell all colored balls: 3 from type 1 (3 + 2 + 1) = 6, 5 from type 2 (5 + 4 + 3 + 2) = 14, and 1 from type 3 (1). Total profit is 6 + 14 + 1 = 21."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider selling the balls starting from the highest inventory.",
+      "Use a max heap to keep track of the current maximum value of a ball type.",
+      "Calculate profit while decrementing the inventory appropriately."
+    ],
+    "company": "Groupon"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game II",
+    "description": "You are given an array of non-negative integers, where each element represents the maximum jump length at that position. Your goal is to determine the minimum number of jumps you need to take in order to reach the last index starting from the first index. If it's not possible to reach the last index, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of non-negative integers nums, where nums[i] indicates the maximum jump length from that position.",
+    "output_format": "An integer representing the minimum number of jumps needed to reach the end of the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "2",
+        "explanation": "The minimum jumps are 2. Start at index 0, jump to index 1, and then jump to the last index."
+      },
+      {
+        "input": "nums = [2, 3, 0, 1, 4]",
+        "output": "2",
+        "explanation": "The minimum jumps are 2. From index 0, jump to index 1, then jump from index 1 to the last index."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "0",
+        "explanation": "No jumps are needed since we are already at the last index."
+      },
+      {
+        "input": "nums = [1, 0, 0, 0]",
+        "output": "-1",
+        "explanation": "It's not possible to reach the last index due to the zero jumps beyond the first index."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a greedy approach to keep track of the maximum reachable index.",
+      "Track the end of the current jump range and increment your jump count as needed.",
+      "If at any point you reach or exceed the last index, record the number of jumps taken."
+    ],
+    "company": "Groupon"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations in average O(1) time complexity:\n\n1. Insert a value - Inserts a value to the collection. Returns true if the collection did not already contain the specified element.\n2. Remove a value - Removes a value from the collection. Returns true if the collection contained the specified element.\n3. GetRandom - Retrieves a random element from the collection. Each element must have the same probability of being returned.\n\nYou must implement the methods in a way that both insertion and deletion maintain the O(1) average time complexity.",
+    "topic": "Data Structure",
+    "subtopic": "Randomized Collection",
+    "tags": [
+      "Data Structure",
+      "Random",
+      "Collection"
+    ],
+    "input_format": "Operations will be a list of strings representing the method calls, and the values will be integers associated with those calls.",
+    "output_format": "For 'GetRandom' operation, return the randomly retrieved element.",
+    "constraints": [
+      "The number of operations will be at most 2 * 10^4.",
+      "Each operation is guaranteed to be valid and should not attempt to remove an element that is not present in the collection."
+    ],
+    "examples": [
+      {
+        "input": "operations = [\"insert\", \"insert\", \"remove\", \"getRandom\"]\nvalues = [1, 2, 1]",
+        "output": "2",
+        "explanation": "After inserting 1 and 2, removing 1 will leave only 2 in the collection. Thus, GetRandom returns 2."
+      },
+      {
+        "input": "operations = [\"insert\", \"insert\", \"getRandom\", \"remove\", \"getRandom\"]\nvalues = [1, 1, null, 1, null]",
+        "output": "1",
+        "explanation": "Both insertions are of 1. After removing one 1, the other 1 remains, and GetRandom will return 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to store values and their indices.",
+      "Use a list to keep track of the elements for random access."
+    ],
+    "company": "Groupon"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Winner of the Circular Game",
+    "description": "In a circular game, players are arranged in a circle and are eliminated in a certain sequence. Given the number of players and the step count for elimination, you need to find out which player will be the last remaining. Players are numbered from 1 to n, and counting starts from player 1. Each elimination moves forward k-1 players in the circle, and the k-th player is eliminated. The game continues until only one player remains. Your task is to determine the number of the last remaining player.",
+    "topic": "Mathematics",
+    "subtopic": "Simulation",
+    "tags": [
+      "Circular",
+      "Simulation",
+      "Mathematics"
+    ],
+    "input_format": "Two integers n and k, representing the number of players and the elimination step count.",
+    "output_format": "An integer representing the winner of the game.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "1 <= k <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, k = 2",
+        "output": "3",
+        "explanation": "The elimination sequence is: 2, 4, 1, 5. The last remaining player is 3."
+      },
+      {
+        "input": "n = 10, k = 3",
+        "output": "4",
+        "explanation": "The elimination sequence will eliminate players in the order of 3, 6, 9, 2, 5, 1, 8, 10, leaving the last player 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a mathematical approach instead of simulating the entire process.",
+      "Think about how to derive the position of the next player to eliminate."
+    ],
+    "company": "Groupon"
+  }
+]

@@ -1,0 +1,1028 @@
+[
+  {
+    "question_id": "",
+    "title": "Minimum Operations to Reduce an Integer to 0",
+    "description": "You are given a positive integer n. You can perform the following operations to reduce n to 0: 1. Subtract 1 from n. 2. If n is even, divide n by 2. 3. If n is divisible by 3, divide n by 3. Return the minimum number of operations required to reduce n to 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "State Transition",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Math"
+    ],
+    "input_format": "A single integer n (1 <= n <= 10^6).",
+    "output_format": "An integer representing the minimum number of operations to reduce n to 0.",
+    "constraints": [
+      "1 <= n <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "n = 10",
+        "output": "4",
+        "explanation": "10 -> 9 (subtract 1), 9 -> 3 (divide by 3), 3 -> 0 (divide by 3). Total operations: 3."
+      },
+      {
+        "input": "n = 15",
+        "output": "5",
+        "explanation": "15 -> 14 (subtract 1), 14 -> 7 (divide by 2), 7 -> 6 (subtract 1), 6 -> 2 (divide by 3), 2 -> 0 (divide by 2). Total operations: 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the effect of each operation on n and the resulting states.",
+      "Use dynamic programming to memorize results for already computed integers.",
+      "Think about reducing n in the most optimal way to minimize operations."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Provinces",
+    "description": "You are given a 2D array isConnected where isConnected[i][j] = 1 if the ith and jth cities are directly connected, and isConnected[i][j] = 0 otherwise. A province is defined as a group of directly or indirectly connected cities. Return the total number of provinces.",
+    "topic": "Graph",
+    "subtopic": "Union Find",
+    "tags": [
+      "Graph",
+      "Depth-First Search",
+      "Union Find"
+    ],
+    "input_format": "A 2D integer array isConnected where isConnected.length == n.",
+    "output_format": "An integer representing the total number of provinces.",
+    "constraints": [
+      "1 <= n <= 200",
+      "isConnected[i][j] is 0 or 1.",
+      "isConnected[i][i] == 1"
+    ],
+    "examples": [
+      {
+        "input": "isConnected = [[1,1,0],[1,1,0],[0,0,1]]",
+        "output": "2",
+        "explanation": "City 0 and City 1 are connected, forming one province. City 2 is separate, forming another province."
+      },
+      {
+        "input": "isConnected = [[1,0,0],[0,1,0],[0,0,1]]",
+        "output": "3",
+        "explanation": "Each city is separate, resulting in three provinces."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a DFS or Union-Find approach to explore connected components.",
+      "If two cities are connected, they belong to the same province."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Random Pick with Weight",
+    "description": "You are given an array of positive integers w where w[i] represents the weight of the ith index. Write a function that randomly picks an index i, with probability proportional to its weight, and returns it. This means that the higher the weight, the more likely it is to be picked. The function should be O(1) for picking an index after the weights are set.",
+    "topic": "Random",
+    "subtopic": "Weighted Random Selection",
+    "tags": [
+      "Random",
+      "Probability",
+      "Array"
+    ],
+    "input_format": "An integer array w (length n), where 1 <= n <= 10^4 and 1 <= w[i] <= 10^6.",
+    "output_format": "An integer representing the randomly chosen index according to the weights.",
+    "constraints": [
+      "1 <= w.length <= 10^4",
+      "1 <= w[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "w = [1, 3]",
+        "output": "1",
+        "explanation": "Index 1 is picked with probability 3/4, and index 0 with probability 1/4."
+      },
+      {
+        "input": "w = [1, 4, 2]",
+        "output": "1",
+        "explanation": "The probabilities are 1/7 for index 0, 4/7 for index 1, and 2/7 for index 2. So index 1 is the most likely to be picked."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using prefix sums to manage the probabilities.",
+      "You can use a binary search to efficiently pick an index."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray Sum with One Deletion",
+    "description": "Given an integer array nums, you can delete at most one element from the array. The goal is to find the maximum subarray sum after the deletion. If no elements are deleted, the maximum subarray sum is simply the maximum sum of a contiguous subarray in nums.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Maximum Subarray",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum subarray sum after deleting at most one element.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, -2, 0, 3]",
+        "output": "4",
+        "explanation": "The maximum subarray sum without deletion is 4 (subarray [1, -2, 0, 3]). Deleting -2 results in the sum 4 (subarray [1, 0, 3])."
+      },
+      {
+        "input": "nums = [1, -2, -2, 3]",
+        "output": "3",
+        "explanation": "The maximum subarray is [3] without any deletion or [1, -2, -2, 3] with deletion of -2."
+      },
+      {
+        "input": "nums = [-1, -1, -1, -1]",
+        "output": -1,
+        "explanation": "The maximum subarray is [-1] with or without any deletion."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a modified version of Kadane's Algorithm.",
+      "Keep track of maximum sums with and without deletion."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Multiply Strings",
+    "description": "Given two non-negative integers represented as string, return the product of these two numbers, also represented as a string. Do not use any built-in BigInteger library or directly convert the input to integers.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Multiplication",
+      "BigInteger"
+    ],
+    "input_format": "Two non-negative integers in string format.",
+    "output_format": "A string representing the product of the two input numbers.",
+    "constraints": [
+      "1 <= |num1|, |num2| <= 200",
+      "num1 and num2 consist of digits only and do not have leading zeros."
+    ],
+    "examples": [
+      {
+        "input": "num1 = \"123\", num2 = \"456\"",
+        "output": "56088",
+        "explanation": "123 * 456 = 56088."
+      },
+      {
+        "input": "num1 = \"2\", num2 = \"3\"",
+        "output": "6",
+        "explanation": "2 * 3 = 6."
+      },
+      {
+        "input": "num1 = \"0\", num2 = \"1234\"",
+        "output": "0",
+        "explanation": "Any number multiplied by 0 is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how multiplication is done manually with digit by digit operations.",
+      "Use an array to store intermediate results."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Wildcard Matching",
+    "description": "Implement wildcard pattern matching with support for '?' and '*'. The '?' wildcard matches any single character, while '*' matches any sequence of characters (including the empty sequence). Given a string s and a wildcard pattern p, return true if s matches p, otherwise return false.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Matching",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Matching"
+    ],
+    "input_format": "A string s and a string p where 1 <= s.length, p.length <= 100.",
+    "output_format": "A boolean value indicating whether the string matches the given wildcard pattern.",
+    "constraints": [
+      "1 <= s.length, p.length <= 100",
+      "s consists of only lowercase English letters.",
+      "p consists of lowercase English letters, '?' or '*'."
+    ],
+    "examples": [
+      {
+        "input": "s = 'aa', p = 'a'",
+        "output": "false",
+        "explanation": "'a' does not match 'aa'."
+      },
+      {
+        "input": "s = 'aa', p = '*'",
+        "output": "true",
+        "explanation": "'*' matches any sequence, including 'aa'."
+      },
+      {
+        "input": "s = 'cb', p = '?a'",
+        "output": "false",
+        "explanation": "'?a' does not match 'cb' as the first character must match 'c'."
+      },
+      {
+        "input": "s = 'adceb', p = '*a*b'",
+        "output": "true",
+        "explanation": "'*a*b' matches 'adceb' as '*' can represent 'dce'."
+      },
+      {
+        "input": "s = 'acdcb', p = 'a*c?b'",
+        "output": "false",
+        "explanation": "'a*c?b' does not match 'acdcb' as the '?' must be 'd', but it is followed by 'b'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to solve subproblems.",
+      "Use a 2D array to keep track of matches based on s and p."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Longest String Chain",
+    "description": "You are given an array of words. A word 'x' is said to be a predecessor of another word 'y' if and only if 'y' can be obtained by adding exactly one letter anywhere in 'x'. For example, 'abc' is a predecessor of 'abct' and 'a' is a predecessor of 'ab'. Your task is to find the length of the longest possible string chain that can be formed from the words in the given array.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Longest Chain"
+    ],
+    "input_format": "An array of strings words containing the words to form chains.",
+    "output_format": "An integer representing the length of the longest string chain.",
+    "constraints": [
+      "1 <= words.length <= 1000",
+      "1 <= words[i].length <= 16",
+      "All words consist of lowercase letters only."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"a\", \"b\", \"ba\", \"bca\", \"bda\", \"bdca\"]",
+        "output": "5",
+        "explanation": "The longest chain is 'a' -> 'ba' -> 'bda' -> 'bdca' which has length 4. Adding 'bca' provides the longest overall chain of length 5."
+      },
+      {
+        "input": "words = [\"x\", \"xy\", \"xyz\", \"xyzd\"]",
+        "output": "4",
+        "explanation": "The longest chain is 'x' -> 'xy' -> 'xyz' -> 'xyzd' which has length 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the words based on their lengths.",
+      "Use a hash map to store the longest chain length ending with each word."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Game of Life",
+    "description": "The 'Game of Life' is a cellular automaton devised by the British mathematician John Horton Conway. It consists of a grid of cells that can be either alive or dead. Each cell interacts with its eight neighbors (horizontal, vertical, diagonal) using the following four rules (assuming a cell is live denoted by 1 and dead denoted by 0):\n\n1. Any live cell with fewer than two live neighbors dies as if caused by under-population.\n2. Any live cell with two or three live neighbors lives on to the next generation.\n3. Any live cell with more than three live neighbors dies, as if by over-population.\n4. Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.\n\nGiven an m x n grid board containing 0 (dead) and 1 (alive), you need to update the board in place according to the rules described above. You must not return a new board, instead modify the input board in place.",
+    "topic": "Matrix",
+    "subtopic": "Game Simulation",
+    "tags": [
+      "Matrix",
+      "Simulation",
+      "In-Place"
+    ],
+    "input_format": "An m x n 2D array of integers (0s and 1s).",
+    "output_format": "The same 2D array should be modified in place to represent the next state of the game.",
+    "constraints": [
+      "1 <= m, n <= 25",
+      "board[i][j] is 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]\nupdate_board(board)",
+        "output": "[[0,0,0],[1,0,1],[0,1,1],[0,1,0]]",
+        "explanation": "Next state of the board based on the rules of the Game of Life."
+      },
+      {
+        "input": "board = [[1,1],[1,0]]\nupdate_board(board)",
+        "output": "[[0,1],[1,1]]",
+        "explanation": "Same rules applied, resulting in the next state of the board."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the neighbor counts for dead and live cells to determine future states.",
+      "Use a temporary state to avoid overwriting unchanged cells."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Power of Four",
+    "description": "Given an integer n, determine if it is a power of four. An integer n is a power of four if there exists an integer x such that n == 4^x. For example, 16 is a power of four (4^2), while 20 is not.",
+    "topic": "Math",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Math",
+      "Bit Manipulation",
+      "Power"
+    ],
+    "input_format": "An integer n.",
+    "output_format": "Return true if n is a power of four, otherwise return false.",
+    "constraints": [
+      "n is a 32-bit signed integer.",
+      "-2^31 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 16",
+        "output": "true",
+        "explanation": "16 is 4 raised to the power of 2 (4^2)."
+      },
+      {
+        "input": "n = 5",
+        "output": "false",
+        "explanation": "5 is not a power of four."
+      },
+      {
+        "input": "n = 1",
+        "output": "true",
+        "explanation": "1 is 4 raised to the power of 0 (4^0)."
+      },
+      {
+        "input": "n = 0",
+        "output": "false",
+        "explanation": "0 is not a power of four."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check if n is not less than 1 first.",
+      "Use logarithms or bit manipulation to determine the power."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Intersection of Two Arrays",
+    "description": "Given two arrays, return an array that contains the intersection of elements present in both arrays. Each element in the result must be unique and should appear only once, regardless of how many times it appears in the input arrays.",
+    "topic": "Array",
+    "subtopic": "Set Operations",
+    "tags": [
+      "Array",
+      "Set",
+      "Intersection"
+    ],
+    "input_format": "Two arrays of integers nums1 and nums2.",
+    "output_format": "An array of integers that represents the unique intersection of nums1 and nums2.",
+    "constraints": [
+      "1 <= nums1.length, nums2.length <= 10^4",
+      "-10^9 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 2, 1], nums2 = [2, 2]",
+        "output": "[2]",
+        "explanation": "The only common element between the two arrays is 2."
+      },
+      {
+        "input": "nums1 = [4, 9, 5], nums2 = [9, 4, 9, 8, 4]",
+        "output": "[4, 9]",
+        "explanation": "The unique common elements are 4 and 9."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a set to handle uniqueness.",
+      "You can use built-in functions to simplify the intersection operation."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Sum Circular Subarray",
+    "description": "Given an integer array nums, find the maximum sum of a circular subarray. A circular subarray means that the subarray can wrap around to the beginning of the array. You may assume that the given array is non-empty.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An array of integers nums, where 1 <= nums.length <= 3 * 10^4 and -10^5 <= nums[i] <= 10^5.",
+    "output_format": "An integer representing the maximum sum of a circular subarray.",
+    "constraints": [
+      "1 <= nums.length <= 3 * 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, -2, 3, -2]",
+        "output": "3",
+        "explanation": "The maximum sum circular subarray is [3], which has a sum of 3."
+      },
+      {
+        "input": "nums = [5, -3, 5]",
+        "output": "10",
+        "explanation": "The maximum sum circular subarray is [5, -3, 5], which has a sum of 10."
+      },
+      {
+        "input": "nums = [-3, -2, -3]",
+        "output": "-2",
+        "explanation": "The maximum sum circular subarray is [-2], which has a sum of -2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider both the maximum subarray sum using Kadane's and the minimum subarray sum.",
+      "The maximum circular subarray sum can be derived from the total sum - minimum subarray sum."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search II",
+    "description": "Given a 2D board and a list of words, find all the words in the board. Each word can be constructed from letters of sequentially adjacent cells, where 'adjacent' cells are horizontally or vertically neighboring. The same letter cell may not be used more than once in a word. Return all distinct words from the given list that can be found in the board.",
+    "topic": "Trie",
+    "subtopic": "Backtracking",
+    "tags": [
+      "Trie",
+      "Backtracking",
+      "Board"
+    ],
+    "input_format": "A 2D board of characters, and a list of strings representing the words to search for.",
+    "output_format": "A list of distinct words found on the board.",
+    "constraints": [
+      "1 <= board.length, board[i].length <= 12",
+      "1 <= words.length <= 10^4",
+      "1 <= words[i].length <= 10"
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "o",
+              "a",
+              "a",
+              "n"
+            ],
+            [
+              "e",
+              "t",
+              "a",
+              "e"
+            ],
+            [
+              "i",
+              "h",
+              "k",
+              "r"
+            ],
+            [
+              "i",
+              "f",
+              "l",
+              "v"
+            ]
+          ],
+          "words": [
+            "oath",
+            "pea",
+            "eat",
+            "rain"
+          ]
+        },
+        "output": [
+          "eat",
+          "oath"
+        ],
+        "explanation": "The words 'eat' and 'oath' can be found in the board."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "c",
+              "d"
+            ]
+          ],
+          "words": [
+            "abcd"
+          ]
+        },
+        "output": [],
+        "explanation": "The word 'abcd' cannot be formed in the board."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a Trie for efficient searching.",
+      "Use backtracking to explore all possible paths on the board."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Merge k Sorted Lists",
+    "description": "You are given an array of k linked-lists, each linked-list is sorted in ascending order. Merge all the linked-lists into one sorted linked-list and return it. The linked-lists should be merged in such a way that the order is maintained, enabling efficient retrieval of the smallest elements.",
+    "topic": "Linked List",
+    "subtopic": "Merge Intervals",
+    "tags": [
+      "Linked List",
+      "Merge",
+      "Sorting"
+    ],
+    "input_format": "An array of k linked-lists, where each linked-list node contains an integer value and a pointer to the next node.",
+    "output_format": "A single merged linked-list that maintains the sorted order.",
+    "constraints": [
+      "0 <= k <= 10^4",
+      "0 <= length of each linked-list <= 500",
+      "-10^4 <= value of linked-list nodes <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "lists = [[1,4,5],[1,3,4],[2,6]]",
+        "output": "[1,1,2,3,4,4,5,6]",
+        "explanation": "The merged linked-list is 1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6."
+      },
+      {
+        "input": "lists = []",
+        "output": "[]",
+        "explanation": "Empty input results in an empty linked-list."
+      },
+      {
+        "input": "lists = [[-1, 5, 11], [2, 6]]",
+        "output": "[-1, 2, 5, 6, 11]",
+        "explanation": "The merged linked-list is -1 -> 2 -> 5 -> 6 -> 11."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a min-heap to efficiently fetch the smallest head across linked-lists.",
+      "Consider edge cases such as empty lists."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Parallel Courses III",
+    "description": "You are given an integer n representing the number of courses and a 2D integer array prerequisites where prerequisites[i] = [a_i, b_i] indicates that to take course a_i you have to first take course b_i. Return the minimum number of semesters needed to take all courses. You may take at most k courses in a semester. If it is impossible to finish all courses, return -1.",
+    "topic": "Graph",
+    "subtopic": "Topological Sort",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer n, a 2D list prerequisites, and an integer k.",
+    "output_format": "An integer representing the minimum number of semesters needed to finish all courses, or -1 if it's impossible.",
+    "constraints": [
+      "1 <= n <= 15",
+      "0 <= prerequisites.length <= n * (n - 1) / 2",
+      "1 <= k <= n",
+      "prerequisites[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, prerequisites = [[2,1],[3,1],[1,0]], k = 2",
+        "output": "3",
+        "explanation": "In the first semester, we can take courses 0 and 1. In the second semester, we can take course 2. In the third semester, we can take course 3."
+      },
+      {
+        "input": "n = 5, prerequisites = [[0,1],[0,2],[1,3],[2,3],[3,4]], k = 2",
+        "output": "4",
+        "explanation": "In the first semester, take courses 1 and 2. In the second semester, take course 0. In the third semester, take course 3. In the fourth semester, take course 4."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1,0]], k = 1",
+        "output": "2",
+        "explanation": "Take course 0 in the first semester and course 1 in the second semester."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using BFS or topological sort.",
+      "Try to manage the courses you can take based on prerequisites.",
+      "Think about breaking down the problem into smaller parts."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Design Memory Allocator",
+    "description": "Implement a memory allocator that can allocate and deallocate blocks of memory of varying sizes. The allocator should support the following operations: 'allocate(size)' which allocates a block of memory of the requested size and returns a pointer to the start of the block, and 'deallocate(pointer)' which deallocates the memory previously allocated at the given pointer. Ensure that your implementation can handle fragmentation and optimize for memory usage.",
+    "topic": "Design",
+    "subtopic": "Memory Management",
+    "tags": [
+      "Design",
+      "Memory",
+      "Allocator"
+    ],
+    "input_format": "You will implement a class with methods allocate(size: int) -> Pointer and deallocate(pointer: Pointer) -> None.",
+    "output_format": "The allocate method returns a pointer to the allocated memory block and deallocate returns nothing.",
+    "constraints": [
+      "1 <= size <= 10^5",
+      "The total memory allocated at any time should not exceed 10^6 bytes."
+    ],
+    "examples": [
+      {
+        "input": "allocator = MemoryAllocator(100);\nptr1 = allocator.allocate(50);\nptr2 = allocator.allocate(30);\nallocator.deallocate(ptr1);\nptr3 = allocator.allocate(20);",
+        "output": "ptr1, ptr2, ptr3",
+        "explanation": "First, a block of 100 bytes is created. Allocating 50 bytes and 30 bytes succeeds and assigns ptr1 and ptr2. Deallocating ptr1 frees up that space, allowing ptr3 to allocate 20 bytes successfully."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a data structure to keep track of allocated and free blocks.",
+      "Consider using a free list to manage fragmentation."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Space Wasted From Packaging",
+    "description": "You have a list of boxes with different volumes and a list of packages with their respective volumes. Your task is to minimize the wasted space when packing the packages into the boxes. For each package of volume 'v', you can only use a box with a volume 'V' where V >= v. The wasted space for each packed box is defined as the volume of the box minus the total volume of the packages packed inside it. Optimize the packing to achieve the minimum total wasted space across all boxes.",
+    "topic": "Greedy",
+    "subtopic": "Sorting & Packing",
+    "tags": [
+      "Greedy",
+      "Sorting",
+      "Array",
+      "Binary Search"
+    ],
+    "input_format": "Two arrays of integers: boxes and packages, where boxes[i] represents the volume of the ith box and packages[j] represents the volume of the jth package.",
+    "output_format": "An integer representing the minimum total wasted space. Return -1 if it is impossible to pack all packages in the given boxes.",
+    "constraints": [
+      "1 <= boxes.length, packages.length <= 10^5",
+      "1 <= boxes[i], packages[j] <= 10^9",
+      "boxes[] is sorted in strictly increasing order."
+    ],
+    "examples": [
+      {
+        "input": "boxes = [1, 2, 3], packages = [1, 2]",
+        "output": "0",
+        "explanation": "We can pack both packages in the box of volume 2 and 1 respectively, wasting no space."
+      },
+      {
+        "input": "boxes = [2, 3, 4], packages = [4, 5, 6]",
+        "output": "-1",
+        "explanation": "All packages cannot fit into any of the boxes, so the output is -1."
+      },
+      {
+        "input": "boxes = [5, 10, 2, 8], packages = [1, 2, 3, 4]",
+        "output": "6",
+        "explanation": "Optimal packing gives boxes of 8 (packing 4) and 10 (packing 3, 2, 1) which leaves wasted space as 4 + 0 = 6."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Try sorting both lists to facilitate packing.",
+      "Consider using a greedy approach to maximize packing efficiency.",
+      "Use binary search to efficiently find the right box for each package."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Design HashMap",
+    "description": "Implement a HashMap without using built-in hash table libraries. Your HashMap should support the following operations: put(key, value), get(key), and remove(key). Implement your own hash function to manage collisions using chaining (linked lists). Provide a way to resize the HashMap when the load factor exceeds a specified threshold.",
+    "topic": "Data Structures",
+    "subtopic": "Hash Table",
+    "tags": [
+      "HashMap",
+      "Data Structures",
+      "Design"
+    ],
+    "input_format": "The HashMap will have three operations: put(key: int, value: int), get(key: int), and remove(key: int). Each operation will be provided as a command with its parameters.",
+    "output_format": "For the get function, return the value associated with the key, or -1 if the key is not found. The put and remove functions do not return anything.",
+    "constraints": [
+      "The number of calls to put, get, and remove functions will not exceed 10000.",
+      "Key and value are integers in the range [-10^6, 10^6]."
+    ],
+    "examples": [
+      {
+        "input": "hashMap = new HashMap(); hashMap.put(1, 1); hashMap.put(2, 2); hashMap.get(1); hashMap.get(3); hashMap.put(2, 1); hashMap.get(2); hashMap.remove(2); hashMap.get(2);",
+        "output": "1, -1, 1, -1",
+        "explanation": "The first call to get(1) returns 1. The second call to get(3) returns -1 since key 3 is not present. After updating key 2 to 1, get(2) returns 1. The removal of key 2, followed by another get(2), returns -1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how to handle collisions in your hash table.",
+      "Think about resizing the array when the load factor is exceeded."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Search Suggestions System",
+    "description": "Design a system that suggests search terms based on a given input string. You are given a list of keywords and an input query string. For each prefix of the input string, return the top three suggested keywords that start with that prefix. If there are fewer than three suggestions, return all of them in alphabetical order. The suggestion list should dynamically change as the input is updated character by character.",
+    "topic": "Tree",
+    "subtopic": "Prefix Tree (Trie)",
+    "tags": [
+      "Trie",
+      "Search",
+      "Prefix"
+    ],
+    "input_format": "A list of strings keywords and a string query.",
+    "output_format": "A list of lists, where each list contains suggested keywords for the corresponding prefix of the input query.",
+    "constraints": [
+      "1 <= keywords.length <= 1000",
+      "1 <= keywords[i].length <= 100",
+      "1 <= query.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "keywords": [
+            "mobile",
+            "mouse",
+            "moneypot",
+            "monitor",
+            "mousepad"
+          ],
+          "query": "mo"
+        },
+        "output": [
+          [
+            "mobile",
+            "moneypot",
+            "monitor"
+          ],
+          [
+            "mobile",
+            "moneypot",
+            "monitor"
+          ]
+        ],
+        "explanation": "For the prefix 'm', suggestions are 'mobile', 'moneypot', and 'monitor'. For 'mo', it remains the same."
+      },
+      {
+        "input": {
+          "keywords": [
+            "apple",
+            "app",
+            "apricot",
+            "banana",
+            "berry"
+          ],
+          "query": "ap"
+        },
+        "output": [
+          [
+            "app",
+            "apple",
+            "apricot"
+          ],
+          [
+            "app",
+            "apple",
+            "apricot"
+          ]
+        ],
+        "explanation": "For the prefix 'a', suggestions are 'app', 'apple', and 'apricot'. For 'ap', they are the same."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a prefix tree (Trie) to store keywords efficiently.",
+      "Consider a way to retrieve suggestions in sorted order."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Design Tic-Tac-Toe",
+    "description": "Implement a Tic-Tac-Toe game that supports a 3x3 grid. The game should allow two players to take turns placing their respective markers ('X' and 'O') on the grid. Implement the following functions: playMove(row, col) to place a marker, and checkWinner() to determine if there is a winner after each move. A player wins if they have three of their markers in a row either horizontally, vertically, or diagonally. If the grid is full and no player has won, the game is a draw.",
+    "topic": "Design",
+    "subtopic": "Game Theory",
+    "tags": [
+      "Design",
+      "Game",
+      "Two Pointers"
+    ],
+    "input_format": "Two integer inputs, row and col, representing the grid coordinates where the marker is placed.",
+    "output_format": "Returns 'X' if player X wins, 'O' if player O wins, 'DRAW' if the game ends in a draw, or 'CONTINUE' if the game is still ongoing.",
+    "constraints": [
+      "1 <= row, col <= 3",
+      "Each player will place their marker in an empty cell.",
+      "The game starts with an empty grid."
+    ],
+    "examples": [
+      {
+        "input": "playMove(0, 0); playMove(0, 1); playMove(1, 1); playMove(0, 2); playMove(2, 2); checkWinner();",
+        "output": "'X'",
+        "explanation": "Player X wins with a horizontal line in the first row."
+      },
+      {
+        "input": "playMove(0, 0); playMove(0, 1); playMove(1, 0); playMove(1, 1); playMove(2, 2); checkWinner();",
+        "output": "'CONTINUE'",
+        "explanation": "The game is still ongoing."
+      },
+      {
+        "input": "playMove(0, 0); playMove(0, 1); playMove(0, 2); playMove(1, 0); playMove(1, 1); playMove(1, 2); playMove(2, 0); playMove(2, 1); playMove(2, 2); checkWinner();",
+        "output": "'DRAW'",
+        "explanation": "The grid is full and no player has won."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to check for wins after each move.",
+      "Use a 2D array to represent the game board.",
+      "Remember to handle turns between the two players."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Robot Room Cleaner",
+    "description": "Design an algorithm to clean a room using a robot. The robot can move in four directions (up, down, left, right) and can be directed to clean a tile it is currently on. The robot starts at a specific location in the grid and can only clean tiles that it has access to. Implement a function that simulates the movement and cleaning of the robot until it has traversed all accessible tiles. The robot can clean a tile only once.",
+    "topic": "Backtracking",
+    "subtopic": "Depth First Search",
+    "tags": [
+      "Backtracking",
+      "DFS",
+      "Simulation"
+    ],
+    "input_format": "A grid representing the room, where '1' indicates a cleanable tile and '0' indicates an obstacle. The initial position of the robot is given as a pair of coordinates (x, y).",
+    "output_format": "An integer representing the total number of tiles the robot has cleaned.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "grid[i][j] is either 0 or 1.",
+      "The robot's initial position will always be on a cleanable tile (1)."
+    ],
+    "examples": [
+      {
+        "input": {
+          "grid": [
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "start": [
+            0,
+            0
+          ]
+        },
+        "output": "4",
+        "explanation": "The robot can access 4 cleanable tiles starting from (0, 0)."
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "start": [
+            1,
+            1
+          ]
+        },
+        "output": "3",
+        "explanation": "Starting from (1, 1), the robot can clean all three adjacent cleanable tiles."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use backtracking to explore all paths the robot can take.",
+      "Keep track of cleaned tiles to avoid revisiting."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Sum of Square Numbers",
+    "description": "Given a non-negative integer n, return the sum of all square numbers that are less than or equal to n. A square number is an integer that is the square of an integer.",
+    "topic": "Math",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Math",
+      "Square Numbers",
+      "Sum"
+    ],
+    "input_format": "An integer n (0 <= n <= 10^6).",
+    "output_format": "An integer representing the sum of all square numbers less than or equal to n.",
+    "constraints": [
+      "0 <= n <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "n = 10",
+        "output": "14",
+        "explanation": "The square numbers less than or equal to 10 are 0, 1, 4, and 9. Their sum is 0 + 1 + 4 + 9 = 14."
+      },
+      {
+        "input": "n = 20",
+        "output": "30",
+        "explanation": "The square numbers less than or equal to 20 are 0, 1, 4, 9, and 16. Their sum is 0 + 1 + 4 + 9 + 16 = 30."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a loop to find all integer values whose squares are <= n.",
+      "The square of an integer k is calculated as k * k."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Meeting Rooms II",
+    "description": "Given an array of meeting time intervals, determine the minimum number of meeting rooms required to accommodate all the meetings. Each meeting is represented by a pair of integers, where the first integer is the start time and the second integer is the end time. Overlapping meeting times may require multiple rooms.",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Intervals",
+      "Sorting"
+    ],
+    "input_format": "An array of intervals, where each interval is represented as a list of two integers [startTime, endTime].",
+    "output_format": "An integer representing the minimum number of meeting rooms required.",
+    "constraints": [
+      "0 < intervals.length <= 10^4",
+      "0 <= startTime < endTime <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[0, 30], [5, 10], [15, 20]]",
+        "output": "2",
+        "explanation": "The first meeting (0, 30) overlaps with the second meeting (5, 10), requiring two rooms."
+      },
+      {
+        "input": "intervals = [[7, 10], [2, 4]]",
+        "output": "1",
+        "explanation": "The meetings do not overlap, so only one room is needed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the intervals by their start times.",
+      "Use a min-heap to track the end times of meetings."
+    ],
+    "company": "Two Sigma"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing stock prices over time.",
+    "output_format": "An integer representing the maximum profit achievable.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Track the minimum price seen so far.",
+      "Calculate the profit for each day and keep the maximum."
+    ],
+    "company": "Two Sigma"
+  }
+]

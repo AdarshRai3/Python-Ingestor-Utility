@@ -1,0 +1,194 @@
+[
+  {
+    "question_id": "",
+    "title": "Percentage of Users Attended a Contest",
+    "description": "You are given a list of users who registered for a contest and a list of users who actually attended the contest. Your task is to calculate the percentage of users that attended the contest out of the total registered users. The percentage should be rounded down to the nearest integer.",
+    "topic": "Mathematics",
+    "subtopic": "Percentage Calculation",
+    "tags": [
+      "Math",
+      "Percentage",
+      "Easy"
+    ],
+    "input_format": "Two lists of integers, registered and attended, where each integer represents the user IDs. The first list is of size n (0 <= n <= 1000) and the second list is of size m (0 <= m <= n).",
+    "output_format": "An integer representing the percentage of users who attended the contest.",
+    "constraints": [
+      "0 <= registered.length <= 1000",
+      "0 <= attended.length <= registered.length"
+    ],
+    "examples": [
+      {
+        "input": {
+          "registered": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "attended": [
+            1,
+            2,
+            3
+          ]
+        },
+        "output": "60",
+        "explanation": "3 out of 5 users attended the contest, thus the percentage is 60%."
+      },
+      {
+        "input": {
+          "registered": [
+            1,
+            2,
+            3
+          ],
+          "attended": []
+        },
+        "output": "0",
+        "explanation": "0 out of 3 users attended the contest, thus the percentage is 0%."
+      },
+      {
+        "input": {
+          "registered": [
+            1
+          ],
+          "attended": [
+            1
+          ]
+        },
+        "output": "100",
+        "explanation": "1 out of 1 user attended the contest, thus the percentage is 100%."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Calculate the number of attended users.",
+      "Use the formula: (attended / registered) * 100."
+    ],
+    "company": "Fortinet"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Ways to Paint N \u00d7 3 Grid",
+    "description": "You are given a grid of size N x 3 and you want to paint each cell with one of three colors: red, green, or blue. However, two adjacent cells (horizontally) cannot have the same color. Your task is to determine the number of ways to paint the entire grid while adhering to this constraint. Return the answer modulo 10^9 + 7.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Painting",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Coloring"
+    ],
+    "input_format": "An integer N representing the number of rows in the grid.",
+    "output_format": "An integer representing the total number of valid ways to paint the grid, modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= N <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "N = 1",
+        "output": "3",
+        "explanation": "There are 3 ways to paint a single row (Red, Green, Blue)."
+      },
+      {
+        "input": "N = 2",
+        "output": "6",
+        "explanation": "The valid combinations are: (Red, Green), (Red, Blue), (Green, Red), (Green, Blue), (Blue, Red), (Blue, Green)."
+      },
+      {
+        "input": "N = 3",
+        "output": "12",
+        "explanation": "For example, (Red, Green, Red), (Green, Blue, Green), etc."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use dynamic programming to store the number of ways to paint up to each row.",
+      "Consider the states for the last painted cell."
+    ],
+    "company": "Fortinet"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Palindrome II",
+    "description": "Given a string s, determine if it can be made a palindrome by removing at most one character. A palindrome is a string that reads the same forward and backward.",
+    "topic": "String",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "String",
+      "Two Pointers",
+      "Palindrome"
+    ],
+    "input_format": "A single string s consisting of lowercase and uppercase letters and/or digits.",
+    "output_format": "Return true if the string can be a palindrome after deleting at most one character; otherwise return false.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abca'",
+        "output": "true",
+        "explanation": "Removing 'b' or 'c' would make the string a palindrome."
+      },
+      {
+        "input": "s = 'racecar'",
+        "output": "true",
+        "explanation": "'racecar' is already a palindrome."
+      },
+      {
+        "input": "s = 'abc'",
+        "output": "false",
+        "explanation": "No matter which character is removed, the string cannot be turned into a palindrome."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to compare characters from the beginning and end.",
+      "If characters differ, try skipping one character and check for palindrome."
+    ],
+    "company": "Fortinet"
+  },
+  {
+    "question_id": "",
+    "title": "Construct String With Repeat Limit",
+    "description": "You are given a string consisting of lowercase English letters and a limit on the maximum number of times any character can repeat consecutively. Your task is to construct a new string that meets the limit condition. You may rearrange the characters as needed, but you cannot have any character that exceeds the `maxCount` limit when placed consecutively. If it is impossible to construct such a string, return an empty string.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Greedy",
+      "Rearrangement"
+    ],
+    "input_format": "A string `s` and an integer `maxCount`.",
+    "output_format": "A string which is the rearranged version of `s` that adheres to the repeat limit, or an empty string if impossible.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "1 <= maxCount <= 50",
+      "s consists of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "s = \"aaabbbccc\", maxCount = 2",
+        "output": "abcabcabc",
+        "explanation": "Each character can appear at most 2 times consecutively."
+      },
+      {
+        "input": "s = \"aaabbc\", maxCount = 1",
+        "output": "abc",
+        "explanation": "Each character must be completely rearranged without consecutive repetitions."
+      },
+      {
+        "input": "s = \"aaab\", maxCount = 1",
+        "output": "",
+        "explanation": "It's impossible to arrange 'aaa' and 'b' without violating the limit."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how many characters you can place before the limit is hit.",
+      "Use a frequency count of characters to check how to spread them out.",
+      "Think about using a priority queue to store characters by their frequency."
+    ],
+    "company": "Fortinet"
+  }
+]

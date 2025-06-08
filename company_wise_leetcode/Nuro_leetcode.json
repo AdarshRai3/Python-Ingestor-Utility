@@ -1,0 +1,346 @@
+[
+  {
+    "question_id": "",
+    "title": "Subrectangle Queries",
+    "description": "You are given a 2D grid representing a rectangle, and you need to perform two types of operations on it: 1) Update the value of a cell and 2) Query the sum of values within a specified subrectangle. Implement a class that supports these operations efficiently.",
+    "topic": "Matrix",
+    "subtopic": "Range Sum Query",
+    "tags": [
+      "Matrix",
+      "Update",
+      "Query",
+      "2D Range Sum"
+    ],
+    "input_format": "The class will be initialized with a 2D grid of integers. For updates, given coordinates (row, col) and a new value. For queries, given coordinates (row1, col1, row2, col2).",
+    "output_format": "For update operations, return nothing. For query operations, return the sum of the rectangle defined by the corners (row1, col1) and (row2, col2).",
+    "constraints": [
+      "1 <= rows, cols <= 200",
+      "1 <= grid[i][j] <= 10^5",
+      "update and query operations will be called at most 10^4 times."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,2,3],[4,5,6],[7,8,9]]; update(0, 0, 10); sumRegion(0, 0, 1, 1);",
+        "output": "27",
+        "explanation": "After updating grid[0][0] to 10, the grid becomes [[10,2,3],[4,5,6],[7,8,9]]. The sum of the region from (0,0) to (1,1) is 10 + 2 + 4 + 5 = 21."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a 2D prefix sum array to optimize query operations.",
+      "Remember to update the prefix sum when a cell's value is changed."
+    ],
+    "company": "Nuro"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Visible Points",
+    "description": "You are situated on a 2D plane, surrounded by a set of points. You can rotate your view by a specific angle to identify how many points you can see within that angle. Given a list of points (represented as coordinates) and your position, return the maximum number of visible points when the view is rotated by a certain angle.",
+    "topic": "Geometry",
+    "subtopic": "Angle and Visibility",
+    "tags": [
+      "Geometry",
+      "Math",
+      "Sweep Line"
+    ],
+    "input_format": "An array of coordinates points (x, y) representing the locations of points on the plane, and two integers representing your position (px, py) and the angle of view k.",
+    "output_format": "An integer representing the maximum number of visible points.",
+    "constraints": [
+      "1 <= points.length <= 2000",
+      "-10^4 <= points[i][0], points[i][1] <= 10^4",
+      "0 <= k <= 360"
+    ],
+    "examples": [
+      {
+        "input": "points = [[1,1], [2,2], [3,3]], px = 1, py = 1, k = 90",
+        "output": "2",
+        "explanation": "From (1,1) with a 90 degree view, you can see points (1,1) and (2,2). The point (3,3) falls outside the 90 degree angle."
+      },
+      {
+        "input": "points = [[1,0], [2,1], [3,3]], px = 0, py = 0, k = 180",
+        "output": "3",
+        "explanation": "All points are visible from (0,0) within a 180 degree angle."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the angle between your position and each point.",
+      "You might want to use sorting based on angles.",
+      "Use a circular approach to handle edge cases."
+    ],
+    "company": "Nuro"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Path in a Grid with Obstacles Elimination",
+    "description": "You are given a 2D grid of size m x n where each cell can either be an obstacle (1) or free space (0). Initially, you are positioned at the top-left corner (0, 0), and your goal is to reach the bottom-right corner (m-1, n-1). You can eliminate up to k obstacles in order to find the shortest path. Return the length of the shortest path from (0, 0) to (m-1, n-1) after eliminating up to k obstacles. If it is not possible to find such a path, return -1.",
+    "topic": "Graph",
+    "subtopic": "Pathfinding",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Shortest Path",
+      "Dynamic Programming"
+    ],
+    "input_format": "A 2D grid of integers grid (0 for free space and 1 for obstacles) and an integer k representing the maximum number of obstacles you can eliminate.",
+    "output_format": "An integer representing the length of the shortest path or -1 if no such path exists.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 40",
+      "grid[i][j] is 0 or 1",
+      "0 <= k <= m * n"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0,0,0],[1,1,0],[1,1,0]], k = 1",
+        "output": "4",
+        "explanation": "The shortest path can be achieved by eliminating one obstacle at (1, 0): (0, 0) -> (0, 1) -> (1, 1) -> (2, 1) -> (2, 2)."
+      },
+      {
+        "input": "grid = [[0,1,1],[1,1,1],[1,0,0]], k = 1",
+        "output": "-1",
+        "explanation": "It's impossible to reach the bottom-right corner given the obstacles and k."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use BFS or Dijkstra's algorithm for shortest path.",
+      "Track the number of obstacles eliminated as you explore.",
+      "Use a priority queue to keep track of paths based on length."
+    ],
+    "company": "Nuro"
+  },
+  {
+    "question_id": "",
+    "title": "Evaluate Division",
+    "description": "Given a list of equations and values representing divisions, you need to evaluate the results of queries based on these equations. Each equation is in the form 'A / B = value', and you need to return the results of specific queries such as 'A / B'. If a query cannot be evaluated, return -1.0.",
+    "topic": "Graph",
+    "subtopic": "Union-Find",
+    "tags": [
+      "Graph",
+      "Union-Find",
+      "Division"
+    ],
+    "input_format": "A list of equations and a list of queries. Each equation is a pair of strings and a float, and each query is a pair of strings.",
+    "output_format": "A list of floats, each representing the result of a query.",
+    "constraints": [
+      "1 <= equations.length <= 20",
+      "equations[i].length == 2",
+      "equations[i][0] != equations[i][1]",
+      "0 <= values[i] <= 10^4",
+      "1 <= queries.length <= 20",
+      "queries[i].length == 2",
+      "queries[i][0] != queries[i][1]"
+    ],
+    "examples": [
+      {
+        "input": "equations = [['a', 'b'], ['b', 'c']], values = [2.0, 3.0], queries = [['a', 'c'], ['b', 'a'], ['a', 'e'], ['a', 'a'], ['x', 'y']]",
+        "output": "[6.0, 0.5, -1.0, 1.0, -1.0]",
+        "explanation": "For the first query 'a / c', we have 'a / b * b / c = 2.0 * 3.0 = 6.0'. The second query 'b / a' is the inverse of 'a / b', so it's 1/2 = 0.5. The other queries cannot be evaluated, so we return -1.0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a graph representation for the equations.",
+      "Union-Find might help in connecting variables.",
+      "Handle cycles and disconnected components carefully."
+    ],
+    "company": "Nuro"
+  },
+  {
+    "question_id": "",
+    "title": "Interleaving String",
+    "description": "Given three strings s1, s2, and s3, determine if s3 is formed by an interleaving of s1 and s2. An interleaving of two strings s and t is a configuration where they can be merged into a new string by taking characters alternatively from both strings, while maintaining the order of characters from the original strings.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Interleaving",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Interleaving"
+    ],
+    "input_format": "Three strings s1, s2, and s3.",
+    "output_format": "A boolean value indicating whether s3 is an interleaving of s1 and s2.",
+    "constraints": [
+      "0 <= s1.length, s2.length, s3.length <= 100",
+      "The characters in s1, s2, and s3 are all lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s1 = \"aab\", s2 = \"axy\", s3 = \"aaxyab\"",
+        "output": "true",
+        "explanation": "s3 can be formed by interleaving s1 and s2 as follows: a(aab) x(axy) a(aab) y(axy) b(aab)."
+      },
+      {
+        "input": "s1 = \"aabcc\", s2 = \"dbbca\", s3 = \"aadbbcbcac\"",
+        "output": "true",
+        "explanation": "s3 can be formed by interleaving s1 and s2 as follows: a(aabcc) a(aabcc) d(dbbca) b(dbbca) b(dbbca) c(aabcc) c(aabcc) a(dbbca)."
+      },
+      {
+        "input": "s1 = \"abc\", s2 = \"def\", s3 = \"adbcef\"",
+        "output": "false",
+        "explanation": "s3 cannot be formed by interleaving s1 and s2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a 2D array to apply dynamic programming.",
+      "Check if characters match at indices from both s1 and s2."
+    ],
+    "company": "Nuro"
+  },
+  {
+    "question_id": "",
+    "title": "Moving Average from Data Stream",
+    "description": "Design a class that computes the moving average of a stream of integers. The moving average is defined as the average of the last 'n' elements added to the stream, where 'n' is a specified integer. Your class should support adding new integers to the stream and returning the current moving average.",
+    "topic": "Design",
+    "subtopic": "Data Stream",
+    "tags": [
+      "Design",
+      "Data Stream",
+      "Average"
+    ],
+    "input_format": "Initialize the moving average with a positive integer 'n'. Use the method 'add(val)' to add an integer to the stream.",
+    "output_format": "Call the method 'average()' to return the current moving average as a float.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "0 <= val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "MovingAverage ma = new MovingAverage(3);\nma.add(1);\nma.add(10);\nma.add(3);\nma.add(5);",
+        "output": "4.66667",
+        "explanation": "The moving average after adding 3 numbers is (1 + 10 + 3) / 3 = 4.66667. After adding 5, the average of the last 3 numbers (10, 3, 5) is (10 + 3 + 5) / 3 = 6."
+      },
+      {
+        "input": "MovingAverage ma = new MovingAverage(5);\nma.add(1);\nma.add(2);\nma.add(3);\nma.add(4);\nma.add(5);\nma.add(6);",
+        "output": "4.0",
+        "explanation": "The moving average for 5 added numbers is (1 + 2 + 3 + 4 + 5) / 5 = 3. The average after adding 6 is (2 + 3 + 4 + 5 + 6) / 5 = 4."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a queue to store the last 'n' elements.",
+      "Update the sum of elements to calculate the average efficiently."
+    ],
+    "company": "Nuro"
+  },
+  {
+    "question_id": "",
+    "title": "Interval List Intersections",
+    "description": "Given two lists of intervals, return the intersection of these two lists. Each interval is represented as a pair of integers [a, b], where a is the start and b is the end of the interval. The intersection of two intervals [a, b] and [c, d] is defined as the interval [max(a, c), min(b, d)] if they intersect; otherwise, it is an empty interval.",
+    "topic": "Intervals",
+    "subtopic": "Interval Intersection",
+    "tags": [
+      "Intervals",
+      "Array",
+      "Two Pointers"
+    ],
+    "input_format": "Two lists of intervals, intervals1 and intervals2, where each interval is a list of two integers.",
+    "output_format": "A list of intervals representing the intersection of the two input interval lists.",
+    "constraints": [
+      "0 <= intervals1.length, intervals2.length <= 1000",
+      "intervals1[i].length == 2 && intervals2[i].length == 2",
+      "0 <= intervals1[i][0] <= intervals1[i][1] <= 10^9",
+      "0 <= intervals2[i][0] <= intervals2[i][1] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "[[0,2],[5,10],[13,23],[24,25]], [[1,5],[8,12],[15,24],[25,26]]",
+        "output": "[[1,2],[5,5],[8,10],[15,23],[24,24]]",
+        "explanation": "The intersections are [1,2] from [0,2] and [1,5], [5,5] from [5,10] and [1,5], [8,10] from [5,10] and [8,12], [15,23] from [13,23] and [15,24], and [24,24] from [24,25] and [25,26]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on their start times.",
+      "Use two pointers to traverse both lists of intervals."
+    ],
+    "company": "Nuro"
+  },
+  {
+    "question_id": "",
+    "title": "Line Reflection",
+    "description": "Given a set of points in a 2D plane, determine if they can be reflected across a vertical line. The reflection line is defined by its x-coordinate. You need to check whether there exists a line such that for each point (x, y) in the set, its reflection point (x', y) lies in the set, where x' = line_x - (x - line_x).",
+    "topic": "Geometry",
+    "subtopic": "Reflection",
+    "tags": [
+      "Geometry",
+      "Set",
+      "Reflection"
+    ],
+    "input_format": "A 2D list of integers points where each point is represented as [x, y].",
+    "output_format": "A boolean value indicating whether the points can be reflected across a vertical line.",
+    "constraints": [
+      "1 <= points.length <= 10^4",
+      "-10^6 <= points[i][0] <= 10^6",
+      "-10^6 <= points[i][1] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "points = [[1,1],[-1,1]]",
+        "output": "true",
+        "explanation": "Both points can be reflected over the vertical line x = 0."
+      },
+      {
+        "input": "points = [[1,1],[-1,-1]]",
+        "output": "false",
+        "explanation": "No vertical line can reflect both points to have their x-coordinates match."
+      },
+      {
+        "input": "points = [[0,0],[1,1],[-1,1]]",
+        "output": "true",
+        "explanation": "The points can be reflected over the line x = 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the range of x-coordinates to help identify the potential line of reflection.",
+      "You might want to use a set to store the points for faster lookup."
+    ],
+    "company": "Nuro"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an integer array nums and an integer k, return the maximum sliding window of size k over the array. The sliding window moves from the start of the array to the end, one element at a time, and the maximum value within each window is returned.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Maximum"
+    ],
+    "input_format": "An integer array nums and an integer k, where 1 <= k <= nums.length.",
+    "output_format": "An array of integers representing the maximum values for each sliding window.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,3,-1,-3,5,3,6,7], k = 3",
+        "output": "[3,3,5,5,6,7]",
+        "explanation": "The maximum values of the sliding windows are as follows: [1,3,-1], maximum is 3; [3,-1,-3], maximum is 3; [-1,3,5], maximum is 5; [3,5,3], maximum is 5; [5,3,6], maximum is 6; [3,6,7], maximum is 7."
+      },
+      {
+        "input": "nums = [1,-1], k = 1",
+        "output": "[1,-1]",
+        "explanation": "Each window contains a single element; hence, the maximums are the elements themselves."
+      },
+      {
+        "input": "nums = [9, 10, 9, -1, -2, -3, -9, -10, 11], k = 4",
+        "output": "[10, 10, 11]",
+        "explanation": "The maximums for sliding windows `[9, 10, 9, -1]`, `[10, 9, -1, -2]`, `[9, -1, -2, -3]`, etc., are calculated to give the result."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a deque to store which elements are maximum.",
+      "The deque should store indices of array elements.",
+      "Always remove elements which are out of the current window."
+    ],
+    "company": "Nuro"
+  }
+]

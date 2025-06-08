@@ -1,0 +1,741 @@
+[
+  {
+    "question_id": "",
+    "title": "Maximum Number of Potholes That Can Be Fixed",
+    "description": "You are given a road represented by an array of integers where each integer represents the size of a pothole. Your task is to determine the maximum number of potholes that can be fixed if you can only fix potholes of a certain size 'k' at once. The sizes of the potholes you can fix are contiguous in the array. You may choose to skip some potholes if needed. Return the maximum count of potholes that can be repaired.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Greedy"
+    ],
+    "input_format": "An array of integers 'potholes' followed by an integer 'k'.",
+    "output_format": "An integer representing the maximum number of contiguous potholes that can be fixed.",
+    "constraints": [
+      "1 <= potholes.length <= 10^5",
+      "1 <= potholes[i] <= 1000",
+      "1 <= k <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "potholes = [2, 1, 4, 3, 5, 2], k = 3",
+        "output": "4",
+        "explanation": "The segments [1, 4, 3, 5] allows fixing 4 potholes as they are less than or equal to 3."
+      },
+      {
+        "input": "potholes = [1, 2, 3, 4, 5], k = 2",
+        "output": "2",
+        "explanation": "The maximum size of mush is 2, we can only fix two potholes together."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window to find contiguous segments.",
+      "Track the count of releasable potholes within the window."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Palindromic Number",
+    "description": "Given a string of digits, you need to determine the largest palindromic number that can be formed using the digits found in the string. If no palindromic number can be formed, return an empty string. A palindromic number is one that reads the same forwards and backwards.",
+    "topic": "String",
+    "subtopic": "Palindrome",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Greedy"
+    ],
+    "input_format": "A string 'digits' consisting of digits 0-9.",
+    "output_format": "A string representing the largest palindromic number that can be formed.",
+    "constraints": [
+      "1 <= digits.length <= 50",
+      "digits consist only of digits '0' to '9'."
+    ],
+    "examples": [
+      {
+        "input": "digits = \"987654321\"",
+        "output": "9876789",
+        "explanation": "The digits allow for the formation of the palindromic number 9876789."
+      },
+      {
+        "input": "digits = \"123321\"",
+        "output": "321123",
+        "explanation": "Using all digits, the largest palindromic number is 321123."
+      },
+      {
+        "input": "digits = \"12345\"",
+        "output": "5",
+        "explanation": "The only palindromic number possible is '5', as others can't form larger palindromes."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count the occurrences of each digit.",
+      "A palindromic number can have at most one digit with an odd count.",
+      "Try to place the highest digits at the beginning and end."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Steps to Reduce a Number in Binary Representation to One",
+    "description": "Given a positive integer num, you can perform the following operations to reduce it to 1: if the number is even, divide it by 2; if the number is odd, reduce it by 1. Return the total number of operations required to reduce num to 1.",
+    "topic": "Math",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Math",
+      "Bit Manipulation",
+      "Greedy"
+    ],
+    "input_format": "A single integer num (1 <= num <= 2^31 - 1).",
+    "output_format": "An integer representing the total number of operations to reduce num to 1.",
+    "constraints": [
+      "1 <= num <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "num = 14",
+        "output": "6",
+        "explanation": "Operations are: 14 (even) -> 7 (odd) -> 6 (even) -> 3 (odd) -> 2 (even) -> 1. Total operations: 6."
+      },
+      {
+        "input": "num = 8",
+        "output": "4",
+        "explanation": "Operations are: 8 (even) -> 4 (even) -> 2 (even) -> 1. Total operations: 4."
+      },
+      {
+        "input": "num = 123",
+        "output": "12",
+        "explanation": "Operations are: 123 (odd) -> 122 (even) -> 61 (odd) -> 60 (even) -> 30 (even) -> 15 (odd) -> 14 (even) -> 7 (odd) -> 6 (even) -> 3 (odd) -> 2 (even) -> 1. Total operations: 12."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count how many times you need to divide or subtract to reach 1.",
+      "Use a loop to simulate the operations."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to Roman",
+    "description": "Given an integer, convert it to a Roman numeral. Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. For example, 1 is 'I', 2 is 'II', 3 is 'III'. The number 4 is 'IV', because the one is before the five, which means subtract. The number 6 is 'VI', because the five is after the one. The number 9 is \u2018IX\u2019. The number 58 is 'LVIII', because L = 50, V = 5, III = 3. The number 1994 is 'MCMXCIV', because M = 1000, CM = 900, XC = 90 and IV = 4. You need to implement a function to convert the given integer to its corresponding Roman numeral representation.",
+    "topic": "Mathematics",
+    "subtopic": "Number Conversion",
+    "tags": [
+      "Math",
+      "String",
+      "Conversion"
+    ],
+    "input_format": "An integer num (1 <= num <= 3999).",
+    "output_format": "A string representing the Roman numeral equivalent of the given integer.",
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "examples": [
+      {
+        "input": "num = 3",
+        "output": "III",
+        "explanation": "The integer 3 corresponds to 'III' in Roman numerals."
+      },
+      {
+        "input": "num = 58",
+        "output": "LVIII",
+        "explanation": "The integer 58 corresponds to 'L' + 'V' + 'III' = 'LVIII'."
+      },
+      {
+        "input": "num = 1994",
+        "output": "MCMXCIV",
+        "explanation": "The integer 1994 corresponds to 'M' + 'CM' + 'XC' + 'IV' = 'MCMXCIV'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a mapping of integers to Roman numeral symbols.",
+      "Start from the highest values and work your way down."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine if a 9x9 Sudoku board is valid. Only the numbers 1-9 are allowed in the board, and each number should appear only once in each row, column, and 3x3 sub-box. The board could be partially filled; empty cells are indicated by the character '.'",
+    "topic": "Array",
+    "subtopic": "Validation",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Backtracking"
+    ],
+    "input_format": "A 2D array 'board' of characters representing the Sudoku board.",
+    "output_format": "A boolean value indicating whether the Sudoku board is valid.",
+    "constraints": [
+      "board.length == 9",
+      "board[i].length == 9",
+      "board[i][j] is either a digit 1-9 or '.'"
+    ],
+    "examples": [
+      {
+        "input": "[['5', '3', '.', '.', '7', '.', '.', '.', '.'], ['6', '.', '.', '1', '9', '5', '.', '.', '.'], ['.', '9', '8', '.', '.', '.', '.', '6', '.'], ['8', '.', '.', '.', '6', '.', '.', '.', '3'], ['4', '.', '.', '8', '.', '3', '.', '.', '1'], ['7', '.', '.', '.', '2', '.', '.', '.', '6'], ['.', '6', '.', '.', '.', '.', '2', '8', '.'], ['.', '.', '.', '4', '1', '9', '.', '.', '5'], ['.', '.', '.', '.', '8', '.', '.', '7', '9']]",
+        "output": "true",
+        "explanation": "All rows, columns, and 3x3 boxes contain unique numbers without any repetition."
+      },
+      {
+        "input": "[['8', '3', '.', '.', '7', '.', '.', '.', '.'], ['6', '.', '.', '1', '9', '5', '.', '.', '.'], ['.', '9', '8', '.', '.', '.', '.', '6', '.'], ['8', '.', '.', '.', '6', '.', '.', '.', '3'], ['4', '.', '.', '8', '.', '3', '.', '.', '1'], ['7', '.', '.', '.', '2', '.', '.', '.', '6'], ['.', '6', '.', '.', '.', '.', '2', '8', '.'], ['.', '.', '.', '4', '1', '9', '.', '.', '5'], ['.', '.', '.', '.', '8', '.', '.', '7', '9']]",
+        "output": "false",
+        "explanation": "The number '8' is repeated in the first column, hence it is not a valid Sudoku."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using sets to keep track of numbers in each row, column, and sub-box.",
+      "Iterate over the board and check for duplicates in the current row, column, and respective 3x3 box."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Coin Change",
+    "description": "You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money. You want to determine the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Coin Change Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array `coins` and an integer `amount`.",
+    "output_format": "An integer representing the fewest number of coins needed, or -1 if no combination can create the amount.",
+    "constraints": [
+      "1 <= coins.length <= 12",
+      "1 <= coins[i] <= 2^31 - 1",
+      "0 <= amount <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": {
+          "coins": [
+            1,
+            2,
+            5
+          ],
+          "amount": 11
+        },
+        "output": 3,
+        "explanation": "11 can be made up of 5 + 5 + 1, which uses three coins."
+      },
+      {
+        "input": {
+          "coins": [
+            2
+          ],
+          "amount": 3
+        },
+        "output": -1,
+        "explanation": "3 cannot be made up using coins of value 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to build up the solution.",
+      "Try to find a way to store results of smaller problems to avoid recalculating."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock with Cooldown",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you must wait for one day after selling before you can buy again. Implement a function to determine the maximum profit you can achieve from this transaction under the given constraints.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Stock Buy and Sell",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Stock Market"
+    ],
+    "input_format": "An array of integers where each integer represents the stock prices on different days.",
+    "output_format": "An integer representing the maximum profit achievable.",
+    "constraints": [
+      "1 <= prices.length <= 5000",
+      "0 <= prices[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "prices = [1, 2, 3, 0, 2]",
+        "output": "3",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 2 (price = 2), profit = 2-1=1. Then buy again on day 4 (price = 0) and sell on day 5 (price = 2), profit = 2-0=2. Total profit = 1 + 2 = 3."
+      },
+      {
+        "input": "prices = [1]",
+        "output": "0",
+        "explanation": "There's only one day, so no transactions can be made, resulting in zero profit."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to keep track of various states.",
+      "Think about the cooldown period when deciding when to sell."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "First Missing Positive",
+    "description": "Given an unsorted integer array, find the smallest missing positive integer. You must implement a solution that runs in O(n) time and uses constant extra space.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Hashing"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the smallest missing positive integer.",
+    "constraints": [
+      "0 <= nums.length <= 300",
+      "-2^31 <= nums[i] <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, -1, 1]",
+        "output": "2",
+        "explanation": "The smallest missing positive integer is 2."
+      },
+      {
+        "input": "nums = [1, 2, 0]",
+        "output": "3",
+        "explanation": "The smallest missing positive integer is 3."
+      },
+      {
+        "input": "nums = [7, 8, 9, 11, 12]",
+        "output": "1",
+        "explanation": "The smallest missing positive integer is 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider what the smallest missing positive would be if all elements were in their correct position.",
+      "Use the input array itself to mark the presence of numbers."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Spaces Cleaning Robot Cleaned",
+    "description": "You are given a grid representing a rectangular area where a cleaning robot can operate. The robot starts in the top-left corner of the grid and can only move either down or right. Each cell in the grid can either be dirt (denoted by a 1) or clean (denoted by a 0). The robot cleans a cell if it moves into a dirt cell. Your task is to determine the maximum number of dirt cells that the robot can clean by moving from the top-left corner to the bottom-right corner of the grid.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Robot"
+    ],
+    "input_format": "A 2D grid represented by a list of lists of integers, where each integer is either 0 or 1.",
+    "output_format": "An integer representing the maximum number of dirt cells cleaned by the robot.",
+    "constraints": [
+      "1 <= grid.length <= 100",
+      "1 <= grid[0].length <= 100",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0,0,0],[0,1,0],[0,0,0]]",
+        "output": "1",
+        "explanation": "The robot can clean the single dirt cell at (1,1)."
+      },
+      {
+        "input": "grid = [[1,0,0],[0,1,0],[0,0,1]]",
+        "output": "3",
+        "explanation": "The robot can clean all dirt cells by navigating through the path (0,0) -> (1,0) -> (1,1) -> (2,1) -> (2,2)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use dynamic programming to keep track of cleaned cells.",
+      "Consider the optimal path the robot can take at each step."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Path with Maximum Gold",
+    "description": "In a gold mine represented by a 2D grid of integers, each cell represents the amount of gold in that cell. You can start from any cell in the first row and move to adjacent cells in the row below (i.e., directly below, below left, or below right). Find the maximum amount of gold you can collect given these constraints.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Backtracking"
+    ],
+    "input_format": "A 2D array representing the gold mine where each element is the amount of gold in that cell.",
+    "output_format": "An integer representing the maximum amount of gold that can be collected.",
+    "constraints": [
+      "1 <= grid.length <= 100",
+      "1 <= grid[0].length <= 100",
+      "0 <= grid[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[0,6,0],[5,8,7],[0,9,0]]",
+        "output": "24",
+        "explanation": "Starting from (1,1) -> (2,2) -> (1,1) -> (0,1) collects 24 gold."
+      },
+      {
+        "input": "grid = [[1,0,7],[2,0,6],[3,0,5]]",
+        "output": "16",
+        "explanation": "Starting from (0,0) and moving to (1,0) -> (2,0) -> (2,1) collects 16 gold."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using depth-first search to explore all paths.",
+      "Use memoization to avoid recalculating the maximum gold for the same cell."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Boundary of Binary Tree",
+    "description": "Given a binary tree, return the boundary of the tree in an anti-clockwise manner starting from the root. The boundary includes all the nodes on the leftmost path, all the leaf nodes, and all the nodes on the rightmost path in reverse order.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Traversal"
+    ],
+    "input_format": "The root of a binary tree.",
+    "output_format": "A list of integers representing the boundary of the binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 1000].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4, 5, null, 6]",
+        "output": "[1, 2, 4, 5, 6, 3]",
+        "explanation": "The left boundary is 1 -> 2 -> 4, the leaves are 4, 5, 6, and the right boundary is 3, so the final boundary is 1, 2, 4, 5, 6, 3."
+      },
+      {
+        "input": "root = [1]",
+        "output": "[1]",
+        "explanation": "There is only one node in the tree which is also the boundary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how you can traverse the tree for each part of the boundary.",
+      "The leaf nodes can be found by performing a simple DFS traversal."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Count of Smaller Numbers After Self",
+    "description": "Given an integer array nums, return an array answer such that answer[i] is the number of integers smaller than nums[i] in the array. Implement a solution with O(n log n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Sorting and Searching",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers where each element represents the count of smaller numbers after itself.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 2, 6, 1]",
+        "output": "[2, 1, 1, 0]",
+        "explanation": "For each element in nums: 5 has 2 smaller numbers (2 and 1), 2 has 1 smaller number (1), 6 has 1 smaller number (5), and 1 has 0 smaller numbers."
+      },
+      {
+        "input": "nums = [-1, -1]",
+        "output": "[0, 0]",
+        "explanation": "Both -1s are equal, there are no smaller numbers for either."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using sorting to help count.",
+      "Think about how to maintain the original indices while sorting."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Decode String",
+    "description": "Given an encoded string, return its decoded version. The encoding follows the pattern k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. For example, the string '3[a2[c]]' decodes to 'accaccacc'. Note that k is guaranteed to be a positive integer.",
+    "topic": "String",
+    "subtopic": "Decoding",
+    "tags": [
+      "String",
+      "Decoding",
+      "Stack"
+    ],
+    "input_format": "A single string s which represents the encoded string.",
+    "output_format": "A string representing the decoded version of the input.",
+    "constraints": [
+      "0 <= s.length <= 100",
+      "s is guaranteed to be a valid encoded string."
+    ],
+    "examples": [
+      {
+        "input": "s = '2[abc]3[cd]ef'",
+        "output": "abcabccdcdcdef",
+        "explanation": "The string '2[abc]' decodes to 'abcabc' and '3[cd]' decodes to 'cdcdcd', concatenating with 'ef' gives 'abcabccdcdcdef'."
+      },
+      {
+        "input": "s = '3[a]2[bc]'",
+        "output": "aaabcbc",
+        "explanation": "'3[a]' decodes to 'aaa' and '2[bc]' decodes to 'bcbc'. Concatenating gives 'aaabcbc'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to decode the string.",
+      "Handle numbers and characters separately while parsing the string."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Happy String",
+    "description": "A happy string is a string that doesn't contain any of the substrings 'aaa', 'bbb', or 'ab'. Given integers a, b, and c, representing the number of 'a's, 'b's, and 'c's you can use, return the longest happy string possible. If multiple longest happy strings exist, return any of them. If no such string can be created, return an empty string.",
+    "topic": "String",
+    "subtopic": "Construction",
+    "tags": [
+      "String",
+      "Greedy",
+      "Construction"
+    ],
+    "input_format": "Three integers a, b, and c representing the counts of 'a', 'b', and 'c'.",
+    "output_format": "A string representing the longest happy string or an empty string.",
+    "constraints": [
+      "0 <= a, b, c <= 100",
+      "a + b + c > 0"
+    ],
+    "examples": [
+      {
+        "input": "a = 1, b = 1, c = 7",
+        "output": "ccaccbcc",
+        "explanation": "The longest happy string can be formed by alternating 'c's with 'a's and 'b's."
+      },
+      {
+        "input": "a = 7, b = 1, c = 0",
+        "output": "aabaa",
+        "explanation": "The longest happy string is 'aabaa' which avoids 'aaa' and 'ab'."
+      },
+      {
+        "input": "a = 0, b = 0, c = 0",
+        "output": "",
+        "explanation": "No characters are available to form a string."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to use the character with the highest available count first.",
+      "Ensure the last two characters of your string are not the same."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Roman to Integer",
+    "description": "Given a string representing a Roman numeral, convert it to an integer. The Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. For example, the Roman numeral 'III' is 3, and 'IV' is 4. The combined values of the symbols should also take into account when a smaller numeral appears before a larger one, indicating subtraction.",
+    "topic": "String",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Parsing",
+      "Conversion"
+    ],
+    "input_format": "A string s representing a Roman numeral.",
+    "output_format": "An integer representing the integer value of the Roman numeral.",
+    "constraints": [
+      "1 <= s.length <= 15",
+      "s consists of valid Roman numeral symbols."
+    ],
+    "examples": [
+      {
+        "input": "s = 'III'",
+        "output": "3",
+        "explanation": "'I' + 'I' + 'I' = 3."
+      },
+      {
+        "input": "s = 'IV'",
+        "output": "4",
+        "explanation": "'IV' is 5 - 1 = 4."
+      },
+      {
+        "input": "s = 'IX'",
+        "output": "9",
+        "explanation": "'IX' is 10 - 1 = 9."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a mapping of Roman numeral to integer values.",
+      "Iterate through the string and handle subtraction cases."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Moves to Spread Stones Over Grid",
+    "description": "You are given a grid of size n x n, where each cell can hold a certain number of stones. The goal is to distribute all stones on the grid such that each cell ends up with exactly k stones. You can move stones from one cell to adjacent cells (up, down, left, right) in a single move. Your task is to determine the minimum number of moves required to achieve this configuration.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Min Moves"
+    ],
+    "input_format": "An integer n (1 <= n <= 100) indicating the size of the grid, followed by an n x n grid of integers representing the number of stones in each cell and an integer k (1 <= k <= 10^4) indicating the target number of stones in each cell.",
+    "output_format": "An integer representing the minimum number of moves to distribute the stones accordingly.",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= stones[i][j] <= 10^4 for each cell",
+      "1 <= k <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "n = 3, stones = [[1, 2, 3], [0, 4, 0], [4, 0, 1]], k = 2",
+        "output": "5",
+        "explanation": "To achieve each cell having 2 stones, we can make the following moves: move 1 stone from (0,2) to (0,1), (0,1) to (0,0), (1,1) to (0,1), (2,0) to (1,0), and (2,0) to (1,1)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to calculate the difference in stone counts for each cell.",
+      "Think about using a breadth-first search or a dynamic programming approach to minimize moves.",
+      "An auxiliary variable can help keep track of accumulating moves."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Food Buckets to Feed the Hamsters",
+    "description": "You have a number of hamsters, each requiring a specific amount of food to survive. You have a limited number of food buckets each capable of holding a maximum capacity. Your task is to calculate the minimum number of food buckets required to feed all the hamsters. Each bucket can hold food in varying amounts, so some buckets might be partially filled. Given the total food requirement for the hamsters and the capacities of the available buckets, can you determine the least number of buckets needed?",
+    "topic": "Greedy",
+    "subtopic": "Container Problem",
+    "tags": [
+      "Greedy",
+      "Mathematics",
+      "Capacity"
+    ],
+    "input_format": "Two arrays: an integer array 'food' representing the food requirement for each hamster and another integer array 'buckets' representing the capacity of each bucket.",
+    "output_format": "An integer representing the minimum number of food buckets required.",
+    "constraints": [
+      "1 <= food.length <= 1000",
+      "1 <= buckets.length <= 1000",
+      "1 <= food[i], buckets[j] <= 10000"
+    ],
+    "examples": [
+      {
+        "input": "food = [4, 6, 2], buckets = [5, 3, 7]",
+        "output": "2",
+        "explanation": "We can use the bucket with capacity 7 for hamster 2 (6 food) and the bucket with capacity 5 for hamster 1 (4 food). So, 2 buckets are needed."
+      },
+      {
+        "input": "food = [10, 10, 10], buckets = [3, 5, 2]",
+        "output": "5",
+        "explanation": "All hamsters require 10 food but we only have buckets with maximum capacities of 3, 5, and 2, requiring us to use all the buckets and fill them multiple times."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the buckets by capacity before allocation.",
+      "Consider using a greedy approach to allocate the largest buckets first."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock II",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you can buy and sell the stock multiple times, but you must sell the stock before you buy again. Calculate the maximum profit you can achieve.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers prices.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 3 * 10^4",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5 - 1 = 4. Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6 - 3 = 3. Total profit = 4 + 3 = 7."
+      },
+      {
+        "input": "prices = [1, 2, 3, 4, 5]",
+        "output": "4",
+        "explanation": "You can buy on day 1 (price = 1) and sell on day 5 (price = 5). Profit = 5 - 1 = 4."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done because prices are decreasing."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the problem as a series of peaks and valleys.",
+      "You can earn profit every time the current price is greater than the previous price."
+    ],
+    "company": "Geico"
+  },
+  {
+    "question_id": "",
+    "title": "Cinema Seat Allocation",
+    "description": "You are tasked with allocating seats in a cinema hall. The hall has a specified number of rows and each row contains a certain number of seats. Given the total number of rows and seats, determine the maximum number of seats that can be allocated under the condition that no two adjacent seats can be occupied in the same row. You need to maximize the number of seats allocated while following this rule.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "Two integers, rows and seats, where 1 <= rows <= 100 and 1 <= seats <= 20.",
+    "output_format": "An integer representing the maximum number of seats that can be allocated.",
+    "constraints": [
+      "1 <= rows <= 100",
+      "1 <= seats <= 20"
+    ],
+    "examples": [
+      {
+        "input": "rows = 3, seats = 4",
+        "output": "6",
+        "explanation": "In each of the 3 rows, you can allocate 2 seats (for example, seats 1 and 3), leading to a total of 2 * 3 = 6 seats."
+      },
+      {
+        "input": "rows = 5, seats = 1",
+        "output": "5",
+        "explanation": "Each row can have 1 seat allocated, hence a total of 5 seats."
+      },
+      {
+        "input": "rows = 2, seats = 2",
+        "output": "2",
+        "explanation": "In each row, only one seat can be allocated since they are adjacent, giving a total of 2 seats."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the pattern of seat allocation in a single row.",
+      "You can use dynamic programming to build solutions incrementally.",
+      "Think about how the number of seats allowed changes with different configurations."
+    ],
+    "company": "Geico"
+  }
+]

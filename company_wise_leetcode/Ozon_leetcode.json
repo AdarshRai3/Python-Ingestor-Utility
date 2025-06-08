@@ -1,0 +1,532 @@
+[
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket. For example, '()' and '()[]{}' are valid, but '(]' and '([)]' are not.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s containing characters '(', ')', '{', '}', '[' and ']'.",
+    "output_format": "Return a boolean value indicating whether the string is valid.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The string is valid because the parentheses are matched correctly."
+      },
+      {
+        "input": "s = '([{}])'",
+        "output": "true",
+        "explanation": "The string is valid because all the types of brackets are matched correctly."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The string is invalid because the parentheses do not match."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack data structure to keep track of opening brackets.",
+      "For each closing bracket, check if there is a corresponding opening bracket at the top of the stack."
+    ],
+    "company": "Ozon"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. The intervals are defined as pairs of integers, where each pair represents the start and end of the interval. The output should be a collection of merged intervals sorted by their start time.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A 2D array of integers intervals where each intervals[i] = [start_i, end_i] represents the ith interval.",
+    "output_format": "A 2D array of merged intervals.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "-10^4 <= start_i <= end_i <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they should be merged into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] overlap at 4, so they should be merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the start time.",
+      "Use a list to keep track of merged intervals."
+    ],
+    "company": "Ozon"
+  },
+  {
+    "question_id": "",
+    "title": "Monotonic Array",
+    "description": "An array is called monotonic if it is either entirely non-increasing or non-decreasing. Given an array of integers, determine whether it is a monotonic array.",
+    "topic": "Array",
+    "subtopic": "Monotonicity",
+    "tags": [
+      "Array",
+      "Monotonic",
+      "Boolean"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A boolean value indicating whether the array is monotonic.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3]",
+        "output": "true",
+        "explanation": "The array is non-decreasing."
+      },
+      {
+        "input": "nums = [6, 5, 4, 4]",
+        "output": "true",
+        "explanation": "The array is non-increasing."
+      },
+      {
+        "input": "nums = [1, 3, 2]",
+        "output": "false",
+        "explanation": "The array is neither non-increasing nor non-decreasing."
+      },
+      {
+        "input": "nums = [1, 1, 1]",
+        "output": "true",
+        "explanation": "The array is constant and thus monotonic."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check if the array is non-decreasing by traversing from left to right.",
+      "Check if the array is non-increasing by traversing from right to left."
+    ],
+    "company": "Ozon"
+  },
+  {
+    "question_id": "",
+    "title": "Squares of a Sorted Array",
+    "description": "Given an integer array 'nums' sorted in non-decreasing order, return an array of the squares of each number, also in sorted non-decreasing order.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Squares"
+    ],
+    "input_format": "An array of integers nums, sorted in non-decreasing order.",
+    "output_format": "An array of integers representing the squares of the numbers in sorted order.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-4, -1, 0, 3, 10]",
+        "output": "[0, 1, 9, 16, 100]",
+        "explanation": "The squares are [16, 1, 0, 9, 100] when sorted."
+      },
+      {
+        "input": "nums = [-7, -3, 2, 3, 11]",
+        "output": "[4, 9, 9, 49, 121]",
+        "explanation": "The squares are [49, 9, 4, 9, 121] when sorted."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the absolute values when squaring the elements.",
+      "Use two pointers to compare the squares from both ends of the array."
+    ],
+    "company": "Ozon"
+  },
+  {
+    "question_id": "",
+    "title": "Department Top Three Salaries",
+    "description": "Given a table `Employee` that contains the columns `id`, `name`, and `salary`, return a table that shows the top three salaries from each department. The result should include the department, the first highest salary, the second highest salary, and the third highest salary. If there are fewer than three salaries in a department, the corresponding fields should be NULL.",
+    "topic": "Database",
+    "subtopic": "SQL",
+    "tags": [
+      "SQL",
+      "Database",
+      "Aggregation"
+    ],
+    "input_format": "A table `Employee` with columns `id` (int), `name` (varchar), and `salary` (int).",
+    "output_format": "A table with columns `Department` (varchar), `First`, `Second`, and `Third` (all integers or NULL).",
+    "constraints": [
+      "The `Employee` table has at most 10000 records.",
+      "The salary values can range from 0 to 10^6."
+    ],
+    "examples": [
+      {
+        "input": "Employee table with records (1, 'John', 3000), (2, 'Jane', 6000), (3, 'Sam', 6000), (4, 'Kate', 3000), (5, 'Mike', 7000)",
+        "output": "Department | First | Second | Third\n-----------|-------|--------|------\nHR         | 7000  | 6000   | NULL\nSales      | 6000  | 3000   | NULL\nEngineering | 3000  | NULL   | NULL",
+        "explanation": "In HR, the highest salary is 7000, the second is 6000, and there's no third. In Sales, the highest is 6000, the second is 3000, and there's no third."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use rank functions to partition salaries by department.",
+      "Consider using a Common Table Expression (CTE) for clarity."
+    ],
+    "company": "Ozon"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers, return the indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "Assume there is exactly one solution."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "Because nums[1] + nums[2] == 6, we return [1, 2]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash table to store the numbers and their indices.",
+      "Check if target - nums[i] exists in the hash table."
+    ],
+    "company": "Ozon"
+  },
+  {
+    "question_id": "",
+    "title": "Move Zeroes",
+    "description": "Given an array of integers, move all the 0's to the end of it while maintaining the relative order of the non-zero elements. Do not return a new array; you must do it in-place and without using extra space.",
+    "topic": "Array",
+    "subtopic": "In-place Operations",
+    "tags": [
+      "Array",
+      "In-place",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "The modified array itself, with all zeroes moved to the end.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 1, 0, 3, 12]",
+        "output": "[1, 3, 12, 0, 0]",
+        "explanation": "After moving the zeroes to the end, the order of non-zero elements is maintained."
+      },
+      {
+        "input": "nums = [0, 0, 1]",
+        "output": "[1, 0, 0]",
+        "explanation": "All non-zero elements are moved to the front."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to track the position for non-zero elements."
+    ],
+    "company": "Ozon"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Linked List",
+    "description": "Given the head of a singly linked list, reverse the list, and return the reversed list.",
+    "topic": "Linked List",
+    "subtopic": "Reversing Linked List",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "In-place"
+    ],
+    "input_format": "A singly linked list node, which is the head of the linked list.",
+    "output_format": "The head of the reversed linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000].",
+      "-5000 <= Node.val <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5]",
+        "output": "[5, 4, 3, 2, 1]",
+        "explanation": "Reversing the linked list gives us the order [5, 4, 3, 2, 1]."
+      },
+      {
+        "input": "head = []",
+        "output": "[]",
+        "explanation": "An empty list remains empty after reversal."
+      },
+      {
+        "input": "head = [1]",
+        "output": "[1]",
+        "explanation": "A single node list remains the same after reversal."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try to reverse the pointers of each node iteratively."
+    ],
+    "company": "Ozon"
+  },
+  {
+    "question_id": "",
+    "title": "First Unique Character in a String",
+    "description": "Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.",
+    "topic": "String",
+    "subtopic": "Character Frequency",
+    "tags": [
+      "String",
+      "Frequency",
+      "HashMap"
+    ],
+    "input_format": "A string s consisting of lowercase English letters.",
+    "output_format": "An integer representing the index of the first non-repeating character, or -1 if there is none.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'leetcode'",
+        "output": "0",
+        "explanation": "The first non-repeating character is 'l' at index 0."
+      },
+      {
+        "input": "s = 'loveleetcode'",
+        "output": "2",
+        "explanation": "The first non-repeating character is 'v' at index 2."
+      },
+      {
+        "input": "s = 'aabb'",
+        "output": "-1",
+        "explanation": "There is no non-repeating character in the string."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hashmap to count character frequencies.",
+      "Iterate through the string to find the first character with a frequency of 1."
+    ],
+    "company": "Ozon"
+  },
+  {
+    "question_id": "",
+    "title": "Invert Binary Tree",
+    "description": "Given a binary tree, invert it and return its root. Inverting a binary tree means swapping the left and right children of all nodes in the tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Recursion"
+    ],
+    "input_format": "The root node of a binary tree.",
+    "output_format": "The root node of the inverted binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 100].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [4,2,7,1,3,6,9]",
+        "output": "[4,7,2,9,6,3,1]",
+        "explanation": "The tree before inversion is: \n    4\n   / \\\n  2   7\n / \\ / \\\n1  3 6  9\nAfter inversion, the tree becomes: \n    4\n   / \\\n  7   2\n / \\ / \\\n9  6 3  1"
+      },
+      {
+        "input": "root = [2,1,3]",
+        "output": "[2,3,1]",
+        "explanation": "The tree before inversion is: \n    2\n   / \\\n  1   3\nAfter inversion, the tree becomes: \n    2\n   / \\\n  3   1"
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "explanation": "An empty tree remains empty after inversion."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use recursion to swap the left and right children of each node.",
+      "Base case: if the node is null, return null."
+    ],
+    "company": "Ozon"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Note that you cannot sell a stock before you buy one. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An integer array prices representing the prices of a stock on different days.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done, and the max profit is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try to keep track of the minimum price encountered so far.",
+      "Calculate the potential profit at each price and keep track of the maximum profit."
+    ],
+    "company": "Ozon"
+  },
+  {
+    "question_id": "",
+    "title": "Decode String",
+    "description": "Given an encoded string, return its decoded string. The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. You may assume that the input string is always valid; no extra whitespace, square brackets are well-formed, etc. For example, there won't be input like 3a or 2[4].",
+    "topic": "String",
+    "subtopic": "Decoding",
+    "tags": [
+      "String",
+      "Stack",
+      "Recursion"
+    ],
+    "input_format": "A single string 's' representing the encoded string.",
+    "output_format": "A string representing the fully decoded string.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of digits, lowercase English letters and square brackets '[]'.",
+      "There are no extra spaces in the input."
+    ],
+    "examples": [
+      {
+        "input": "s = '3[a2[c]]'",
+        "output": "accaccacc",
+        "explanation": "Decoded string is 'a' repeated 3 times, where 'a' is 2 times 'c'."
+      },
+      {
+        "input": "s = '2[abc]3[cd]ef'",
+        "output": "abcabccdcddef",
+        "explanation": "'abc' is repeated 2 times and 'cd' is repeated 3 times."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to help with the nesting of brackets.",
+      "Keep track of the current number while processing the string."
+    ],
+    "company": "Ozon"
+  },
+  {
+    "question_id": "",
+    "title": "Department Highest Salary",
+    "description": "Given a database table Employees which has three columns: Id, Name and Salary. Write a SQL query to find the highest salary for each department. If there are multiple employees with the same highest salary, return any one of them. The output must contain the department name along with the corresponding highest salary. If there are no employees in a department, then the department should not be included in the result.",
+    "topic": "Database",
+    "subtopic": "SQL Query",
+    "tags": [
+      "SQL",
+      "Database",
+      "Aggregation"
+    ],
+    "input_format": "A SQL table named Employees with columns Id (integer), Name (string), Salary (integer), and Department (string).",
+    "output_format": "A table with two columns: Department (string) and MaxSalary (integer) representing the name of the department and the highest salary in that department.",
+    "constraints": [
+      "1 <= Id <= 10^6",
+      "0 <= Salary <= 10^6",
+      "The table contains at most 10^5 rows."
+    ],
+    "examples": [
+      {
+        "input": "Employees = [[1, 'John', 3000, 'IT'], [2, 'Jane', 4000, 'IT'], [3, 'Joe', 2000, 'HR'], [4, 'Mary', 3000, 'HR']]",
+        "output": "[['IT', 4000], ['HR', 3000]]",
+        "explanation": "In the IT department, Jane has the highest salary of 4000. In the HR department, Mary and Joe have the highest salary of 3000, but we can return either."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using GROUP BY to group the results by department.",
+      "Use MAX() function to find the highest salary."
+    ],
+    "company": "Ozon"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within a string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Two Pointers"
+    ],
+    "input_format": "A string s consisting of English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 5 * 10^4",
+      "s consists of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'abc', which has a length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is 'b', with a length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'wke', which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window approach to track the characters in the current substring.",
+      "Utilize a hash map to store the last index of each character."
+    ],
+    "company": "Ozon"
+  }
+]

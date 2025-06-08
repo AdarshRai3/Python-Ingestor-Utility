@@ -1,0 +1,292 @@
+[
+  {
+    "question_id": "",
+    "title": "Validate Binary Search Tree",
+    "description": "Given the root of a binary tree, determine if it is a valid binary search tree (BST). A valid BST is defined as follows:  \n- The left subtree of a node contains only nodes with keys less than the node's key.  \n- The right subtree of a node contains only nodes with keys greater than the node's key.  \n- Both the left and right subtrees must also be binary search trees.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "Binary Search Tree",
+      "Recursion"
+    ],
+    "input_format": "The root of a binary tree represented as a TreeNode.",
+    "output_format": "A boolean indicating whether the binary tree is a valid binary search tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "-2^31 <= Node.val <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "[2, 1, 3]",
+        "output": "true",
+        "explanation": "The given binary tree is valid because 1 < 2 < 3."
+      },
+      {
+        "input": "[5, 1, 4, null, null, 3, 6]",
+        "output": "false",
+        "explanation": "The given binary tree is not valid because the node with value 3 is in the right subtree of the node with value 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "You can use an inorder traversal to check the validity of the BST.",
+      "Keep track of the valid range for each node while traversing."
+    ],
+    "company": "SIG"
+  },
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a maximum width, format the text such that each line has exactly maxWidth characters and is fully justified. You should insert extra spaces between words so that each line has exactly maxWidth characters. Extra spaces should be distributed as evenly as possible. If the number of spaces between words is uneven, the extra spaces should be distributed from left to right. For the last line of text, it should be left-justified and no extra space is inserted between words.",
+    "topic": "String",
+    "subtopic": "Formatting",
+    "tags": [
+      "String",
+      "Justification",
+      "Formatting"
+    ],
+    "input_format": "An array of words, where each word consists of one or more non-space characters. An integer maxWidth representing the maximum line width.",
+    "output_format": "An array of formatted lines, each line containing exactly maxWidth characters.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 20",
+      "1 <= maxWidth <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "This",
+            "is",
+            "an",
+            "example",
+            "of",
+            "text",
+            "justification."
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "This    is    an",
+          "example  of text",
+          "justification.  "
+        ],
+        "explanation": "The first line contains 4 words combined to 16 characters with spaces distributed between them. The last line is left-justified."
+      },
+      {
+        "input": {
+          "words": [
+            "What",
+            "must",
+            "be",
+            "acknowledgment",
+            "shall",
+            "be"
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "What   must   be",
+          "acknowledgment  ",
+          "shall be        "
+        ],
+        "explanation": "The second line is the last line and is left-justified."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the total number of spaces needed for each line.",
+      "Keep track of the words and their lengths to compute spacing.",
+      "Handle the last line differently from the others."
+    ],
+    "company": "SIG"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Largest Element in an Array",
+    "description": "Given an integer array nums and an integer k, return the k-th largest element in the array. Note that it is the k-th largest element in the sorted order, not the k-th distinct element. You must solve it in O(n log n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Heap"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the k-th largest element in the array.",
+    "constraints": [
+      "1 <= k <= nums.length",
+      "1 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 1, 5, 6, 4], k = 2",
+        "output": "5",
+        "explanation": "The sorted order of nums is [1, 2, 3, 4, 5, 6]. The 2nd largest element is 5."
+      },
+      {
+        "input": "nums = [3, 2, 3, 1, 2, 4, 5, 5, 6], k = 4",
+        "output": "4",
+        "explanation": "The sorted order of nums is [1, 2, 2, 3, 3, 4, 5, 5, 6]. The 4th largest element is 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a priority queue to solve the problem efficiently.",
+      "You can also sort the array and then index to find the k-th largest element."
+    ],
+    "company": "SIG"
+  },
+  {
+    "question_id": "",
+    "title": "Add Binary",
+    "description": "Given two binary strings a and b, return their sum as a binary string. The input strings are both non-empty and contain only characters '0' or '1'.",
+    "topic": "Strings",
+    "subtopic": "Binary Strings",
+    "tags": [
+      "Strings",
+      "Binary",
+      "Addition"
+    ],
+    "input_format": "Two binary strings a and b.",
+    "output_format": "A binary string representing the sum of a and b.",
+    "constraints": [
+      "1 <= a.length, b.length <= 10^4",
+      "a and b only contain '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "a = '1010', b = '1011'",
+        "output": "'10101'",
+        "explanation": "The binary numbers 1010 (10 in decimal) and 1011 (11 in decimal) sum up to 10101 (21 in decimal)."
+      },
+      {
+        "input": "a = '11', b = '1'",
+        "output": "'100'",
+        "explanation": "The binary numbers 11 (3 in decimal) and 1 (1 in decimal) sum up to 100 (4 in decimal)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use string manipulation to add the binary numbers from right to left.",
+      "Keep track of carry when summing each pair of bits."
+    ],
+    "company": "SIG"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order. The spiral order starts from the top-left corner of the matrix and goes to the right until the last column, then moves down to the last row, then goes to the left in the last row, and finally moves up to the first row. This process is repeated for the inner layers of the matrix until all elements have been traversed.",
+    "topic": "Matrix",
+    "subtopic": "Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Spiral"
+    ],
+    "input_format": "A 2D list (matrix) of integers representing the m x n matrix.",
+    "output_format": "A list of integers representing the elements of the matrix in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "1 <= matrix[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The spiral order of elements is 1 -> 2 -> 3 -> 6 -> 9 -> 8 -> 7 -> 4 -> 5."
+      },
+      {
+        "input": "matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]",
+        "output": "[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]",
+        "explanation": "The spiral order of elements is 1 -> 2 -> 3 -> 4 -> 8 -> 12 -> 11 -> 10 -> 9 -> 5 -> 6 -> 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about the boundaries of the current layer you are processing.",
+      "Use four variables to keep track of the boundaries: top, bottom, left, right."
+    ],
+    "company": "SIG"
+  },
+  {
+    "question_id": "",
+    "title": "Block Placement Queries",
+    "description": "You are given a grid of size n x n filled with 0's and 1's, representing empty and blocked cells respectively. You can perform block placement on this grid where a block of size k x k can occupy the top-left position of an empty cell. Your task is to answer multiple queries about the maximum number of blocks that can be placed within a specific rectangular subgrid defined by two points (x1, y1) and (x2, y2). Each query should return the maximum number of k x k blocks that could fit in the defined subgrid, assuming blocks cannot overlap.",
+    "topic": "Matrix",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Matrix",
+      "Dynamic Programming",
+      "2D Arrays"
+    ],
+    "input_format": "An integer n (1 <= n <= 1000), an integer k (1 <= k <= n), an n x n grid with values of 0 or 1, followed by an integer q (1 <= q <= 1000), and q queries each defined by two pairs of integers (x1, y1) and (x2, y2).",
+    "output_format": "A list of integers, each representing the maximum number of k x k blocks that can be placed in the specified subgrid for each query.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "1 <= k <= n",
+      "grid[i][j] is either 0 or 1",
+      "1 <= q <= 1000",
+      "0 <= x1 <= x2 < n",
+      "0 <= y1 <= y2 < n"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, k = 2, grid = [[0, 0, 1, 0, 0], [0, 0, 1, 0, 0], [1, 1, 1, 1, 1], [0, 0, 0, 0, 0], [0, 0, 0, 1, 1]], q = 2, queries = [(0, 0, 1, 1), (3, 0, 4, 4)]",
+        "output": "[1, 4]",
+        "explanation": "In the first query (0, 0, 1, 1), one block can fit. In the second query (3, 0, 4, 4), four blocks can fit."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to check for k x k block placement in a given subgrid.",
+      "Use prefix sums to optimize checking for empty spaces.",
+      "Evaluate edge cases when the grid has many blocks."
+    ],
+    "company": "SIG"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Black Blocks",
+    "description": "You are given a 2D grid of size m x n representing a map, where each cell can either be 'B' (black block) or 'W' (white block). Write a function to count the number of connected black blocks. Two blocks are considered connected if they share an edge. The function should return the total number of distinct connected components of black blocks in the grid.",
+    "topic": "Graph",
+    "subtopic": "DFS/BFS",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid of characters represented as a list of lists.",
+    "output_format": "An integer representing the number of distinct connected components of black blocks.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "grid[i][j] is 'B' or 'W'"
+    ],
+    "examples": [
+      {
+        "input": "grid = [['B', 'W', 'B'], ['B', 'B', 'W'], ['W', 'W', 'B']]",
+        "output": "2",
+        "explanation": "There are two distinct connected components of black blocks: one at (0,0) and (1,0), and another at (2,2)."
+      },
+      {
+        "input": "grid = [['W', 'W'], ['W', 'W']]",
+        "output": "0",
+        "explanation": "There are no black blocks in the grid, so the count is 0."
+      },
+      {
+        "input": "grid = [['B', 'B', 'B'], ['B', 'B', 'W'], ['W', 'B', 'B']]",
+        "output": "1",
+        "explanation": "All black blocks are connected forming one single component."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using DFS or BFS to explore connected components.",
+      "Keep track of visited nodes to avoid counting them multiple times.",
+      "Start the search from each unvisited black block."
+    ],
+    "company": "SIG"
+  }
+]

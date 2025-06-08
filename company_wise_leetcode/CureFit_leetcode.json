@@ -1,0 +1,196 @@
+[
+  {
+    "question_id": "",
+    "title": "Minimum Moves to Make Array Complementary",
+    "description": "You are given a list of integers `nums`. Your goal is to make the array complementary, which means that every two adjacent integers must have different parities (i.e., one must be even and the other must be odd). You can make moves by incrementing or decrementing any integer in the array. Your task is to determine the minimum number of moves required to achieve this condition.",
+    "topic": "Array",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Array",
+      "Manipulation",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers `nums`.",
+    "output_format": "An integer representing the minimum number of moves required.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3]",
+        "output": "1",
+        "explanation": "We can change the second 2 to 3 to make the array [1, 3, 2, 3], which satisfies the condition."
+      },
+      {
+        "input": "nums = [4, 4, 4, 4]",
+        "output": "2",
+        "explanation": "We can change two 4s to 5s to get the array [5, 4, 5, 4], which meets the criteria."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count the number of odd and even numbers in the array.",
+      "The minimum moves required will be determined by the imbalance between odd and even counts."
+    ],
+    "company": "CureFit"
+  },
+  {
+    "question_id": "",
+    "title": "Word Break",
+    "description": "Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words. You can assume the dictionary does not contain duplicate words.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Recursion"
+    ],
+    "input_format": "A string s and a list of strings wordDict.",
+    "output_format": "A boolean value: true if s can be segmented, false otherwise.",
+    "constraints": [
+      "1 <= s.length <= 300",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 20",
+      "All string inputs are lowercase and have at most 1 total space."
+    ],
+    "examples": [
+      {
+        "input": {
+          "s": "leetcode",
+          "wordDict": [
+            "leet",
+            "code"
+          ]
+        },
+        "output": "true",
+        "explanation": "The string 'leetcode' can be segmented as 'leet code'."
+      },
+      {
+        "input": {
+          "s": "applepenapple",
+          "wordDict": [
+            "apple",
+            "pen"
+          ]
+        },
+        "output": "true",
+        "explanation": "The string 'applepenapple' can be segmented as 'apple pen apple'."
+      },
+      {
+        "input": {
+          "s": "catsandog",
+          "wordDict": [
+            "cats",
+            "dog",
+            "sand",
+            "and",
+            "cat"
+          ]
+        },
+        "output": "false",
+        "explanation": "It cannot be segmented into dictionary words."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to solve the problem.",
+      "Use an array to keep track of whether a substring can be segmented."
+    ],
+    "company": "CureFit"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) cache. It should support the following operations: get and put.\n\nThe get operation retrieves the value of the key if the key exists in the cache. If the key does not exist, return -1.\n\nThe put operation will add/refresh the key-value pair. If the number of keys exceeds the capacity from this operation, it should invalidate the least recently used key.\n\nImplement the LRUCache class:\n\n- LRUCache(int capacity) - Initializes the LRU cache with positive size capacity.\n- int get(int key) - Get the value of the key if the key exists, otherwise return -1.\n- void put(int key, int value) - Update the value of the key if the key exists. Otherwise, add the key-value pair. If the number of keys exceeds the capacity, evict the least recently used key.",
+    "topic": "Design",
+    "subtopic": "Cache",
+    "tags": [
+      "Design",
+      "Cache",
+      "HashMap",
+      "Doubly Linked List"
+    ],
+    "input_format": "Two operations: get(int key) and put(int key, int value). Capacity as an integer when initializing LRUCache.",
+    "output_format": "Returns the value associated with the key for get(int key); nothing for put(int key, int value).",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^5",
+      "The operations get and put will be called at most 2 * 10^5 times.",
+      "All keys will be unique."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache cache = new LRUCache(2);\ncache.put(1, 1);\ncache.put(2, 2);\ncache.get(1);",
+        "output": "1",
+        "explanation": "The cache retrieves the value for key 1, which is 1."
+      },
+      {
+        "input": "cache.put(3, 3);  // evicts key 2\ncache.get(2);",
+        "output": "-1",
+        "explanation": "Key 2 was evicted. Therefore, it returns -1."
+      },
+      {
+        "input": "cache.put(4, 4);  // evicts key 1\ncache.get(1);",
+        "output": "-1",
+        "explanation": "Key 1 was evicted. Therefore, it returns -1."
+      },
+      {
+        "input": "cache.get(3);",
+        "output": "3",
+        "explanation": "The cache retrieves the value for key 3, which is 3."
+      },
+      {
+        "input": "cache.get(4);",
+        "output": "4",
+        "explanation": "The cache retrieves the value for key 4, which is 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a HashMap to store key-value pairs.",
+      "Maintain an order of keys to keep track of the least recently used.",
+      "Consider using a doubly linked list to efficiently remove the least recently used element."
+    ],
+    "company": "CureFit"
+  },
+  {
+    "question_id": "",
+    "title": "Gas Station",
+    "description": "There are n gas stations along a circular route, where the amount of gas at the i-th station is gas[i]. There are also n costs of gas to travel from the i-th station to (i + 1)-th station, where cost[i] is the cost of gas needed to travel from station i to station (i + 1). You start at one of the gas stations and need to determine if you can travel around the circuit once without running out of gas. If you can travel around the circuit, return the starting gas station's index; otherwise, return -1. Note that the solution will be unique and there are no two gas stations with the same index.",
+    "topic": "Greedy",
+    "subtopic": "Gas Station",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Simulation"
+    ],
+    "input_format": "Two arrays, gas and cost, where each has n elements representing gas available and cost required at each station.",
+    "output_format": "An integer representing the starting gas station's index, or -1 if it's not possible to complete the circuit.",
+    "constraints": [
+      "n == gas.length == cost.length",
+      "1 <= n <= 10^4",
+      "0 <= gas[i], cost[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "gas = [1, 2, 3, 4, 5], cost = [3, 4, 5, 1, 2]",
+        "output": "3",
+        "explanation": "Starting at station 3, we can complete the circuit: gas from 4 \u2267 cost of 1 to station 4, gas from 5 \u2267 cost of 2 returning to station 0, gas from 1 \u2267 cost of 3 running back to station 1."
+      },
+      {
+        "input": "gas = [2, 3, 4], cost = [3, 4, 3]",
+        "output": "-1",
+        "explanation": "Starting from any station will lead to running out of gas before completing the circuit."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "You may need to track the total gas and total cost to determine feasibility.",
+      "Consider a greedy approach for the selection of the starting point."
+    ],
+    "company": "CureFit"
+  }
+]

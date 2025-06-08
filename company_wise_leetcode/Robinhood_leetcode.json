@@ -1,0 +1,702 @@
+[
+  {
+    "question_id": "",
+    "title": "Number of Orders in the Backlog",
+    "description": "You are given two lists, orders and deliveries. The orders list contains orders that have been placed, while the deliveries list contains the respective deliveries for those orders. Your task is to compute the total number of orders that remain in the backlog at the end. An order is considered in the backlog if it has not been delivered. Orders can be identified by a unique ID in each list.",
+    "topic": "Array",
+    "subtopic": "Counting & Operations",
+    "tags": [
+      "Array",
+      "Counting",
+      "Backlog"
+    ],
+    "input_format": "Two lists of integers: `orders` and `deliveries`. Each integer represents a unique order ID.",
+    "output_format": "An integer representing the number of orders in the backlog.",
+    "constraints": [
+      "1 <= orders.length <= 10^5",
+      "1 <= deliveries.length <= 10^5",
+      "1 <= orders[i], deliveries[j] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "orders = [1, 2, 3, 4], deliveries = [2, 4]",
+        "output": "2",
+        "explanation": "Orders 1 and 3 are not delivered, hence the backlog has 2 orders."
+      },
+      {
+        "input": "orders = [10, 20, 30], deliveries = [10, 20, 30]",
+        "output": "0",
+        "explanation": "All orders have been delivered, hence the backlog is empty."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a set to keep track of delivered orders.",
+      "Count how many orders are not present in the delivered set."
+    ],
+    "company": "Robinhood"
+  },
+  {
+    "question_id": "",
+    "title": "Restore the Array From Adjacent Pairs",
+    "description": "You are given an array of adjacent pairs of integers. Each pair comprises two integers, and some integers may appear in multiple pairs. Your task is to restore the original array of integers from these pairs. The array should be returned in any order. If restoring the array is not possible, return an empty array.",
+    "topic": "Array",
+    "subtopic": "Graph",
+    "tags": [
+      "Array",
+      "Graph",
+      "HashMap"
+    ],
+    "input_format": "A 2D array of integers pairs where each pair is of length 2.",
+    "output_format": "An array of integers representing the original array.",
+    "constraints": [
+      "1 <= pairs.length <= 10^4",
+      "-10^5 <= pairs[i][0], pairs[i][1] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "pairs = [[2,1],[3,2],[4,3]]",
+        "output": "[1,2,3,4]",
+        "explanation": "The original array can be restored as [1,2,3,4] from the adjacent pairs."
+      },
+      {
+        "input": "pairs = [[1,2],[1,3],[2,3]]",
+        "output": "[1,2,3]",
+        "explanation": "The original array can be restored as [1,2,3], although the order may vary."
+      },
+      {
+        "input": "pairs = [[1,2],[2,1]]",
+        "output": "[1,2]",
+        "explanation": "The original array can be restored as [1,2] or [2,1], both are valid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a HashMap to count occurrences of each integer.",
+      "Ensure that there are not too many endpoints (nodes with only one connection)."
+    ],
+    "company": "Robinhood"
+  },
+  {
+    "question_id": "",
+    "title": "Brightest Position on Street",
+    "description": "You are given an array of intervals where each interval represents a segment of a street. Each interval is defined by two integers [start, end] which indicate the start and end positions of the segment on the street. Your task is to determine the position on the street that is brightest, meaning the position where the maximum number of segments overlap. Return the brightest position and the number of overlapping segments at that position.",
+    "topic": "Geometry",
+    "subtopic": "Interval Overlapping",
+    "tags": [
+      "Geometry",
+      "Intervals",
+      "Overlap"
+    ],
+    "input_format": "An array of intervals, where each interval is represented as a list of two integers [start, end].",
+    "output_format": "A list containing two integers: the brightest position on the street and the number of overlapping segments at that position.",
+    "constraints": [
+      "1 <= intervals.length <= 1000",
+      "0 <= start < end <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1, 4], [2, 5], [3, 6]]",
+        "output": "[3, 3]",
+        "explanation": "The intervals overlap the most at position 3, where 3 intervals intersect."
+      },
+      {
+        "input": "intervals = [[1, 3], [5, 7], [2, 4], [6, 8]]",
+        "output": "[2, 2]",
+        "explanation": "The position 2 is where 2 junctions overlap: [1,3] and [2,4]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sweep line algorithm to track the active intervals.",
+      "Count starts and ends of intervals to determine overlaps."
+    ],
+    "company": "Robinhood"
+  },
+  {
+    "question_id": "",
+    "title": "Count Good Meals",
+    "description": "You are given an array of integers, where each integer represents the calories of a meal. A meal is considered 'good' if its calorie count is a power of two, and it can be paired with another meal (not necessarily distinct) such that their calorie sum is also a power of two. Your task is to count the total number of good meal pairs (i, j) such that i <= j and the sum of the two meals (calories[i] + calories[j]) is a power of two. Return the total number of good meal pairs.",
+    "topic": "Array",
+    "subtopic": "Counting Pairs",
+    "tags": [
+      "Array",
+      "Mathematics",
+      "Count Pairs"
+    ],
+    "input_format": "An array of integers calories, where calories[i] represents the calories of the i-th meal.",
+    "output_format": "An integer representing the total number of good meal pairs.",
+    "constraints": [
+      "1 <= calories.length <= 1000",
+      "1 <= calories[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "calories = [1, 2, 3, 4]",
+        "output": "4",
+        "explanation": "The pairs are (1, 1), (1, 3), (2, 2), and (1, 4) which all have sums that are powers of two."
+      },
+      {
+        "input": "calories = [3, 5, 7, 11]",
+        "output": "0",
+        "explanation": "No pairs of meals sum up to a power of two."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "A number is a power of two if it has exactly one bit set in its binary representation.",
+      "Consider using a hash set to keep track of powers of two for efficient lookup."
+    ],
+    "company": "Robinhood"
+  },
+  {
+    "question_id": "",
+    "title": "Ways to Split Array Into Three Subarrays",
+    "description": "Given an array of integers, you need to find the number of ways to split the array into three non-empty contiguous subarrays such that the sum of the first subarray is less than or equal to the sum of the second subarray and the sum of the second subarray is less than or equal to the sum of the third subarray. Return the number of valid splits possible.",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "Prefix Sum",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer array nums of length n (1 <= n <= 2 * 10^5).",
+    "output_format": "An integer representing the number of ways to split the array into three valid subarrays.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^5",
+      "0 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 1, 5, 0]",
+        "output": "3",
+        "explanation": "The valid ways to split the array are: [1] | [2, 2] | [1, 5, 0], [1, 2] | [2, 1] | [5, 0], and [1, 2, 2] | [1] | [5, 0]."
+      },
+      {
+        "input": "nums = [3, 2, 1, 2, 2]",
+        "output": "0",
+        "explanation": "There is no way to split this array into three valid subarrays."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using prefix sums to efficiently calculate subarray sums.",
+      "Think about how you can maintain the constraints while iterating through potential split points.",
+      "Use binary search to find the number of valid splits at each point."
+    ],
+    "company": "Robinhood"
+  },
+  {
+    "question_id": "",
+    "title": "Check if There is a Valid Path in a Grid",
+    "description": "You are given a grid represented by a 2D array of size m x n, where each cell contains either 0 or 1. A cell with value 1 is a land cell, whereas a cell with value 0 is a water cell. You can start from any land cell and must reach the opposite edge of the grid by only moving up, down, left, or right through land cells. Return true if you can reach the opposite edge, otherwise return false.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Grid"
+    ],
+    "input_format": "A 2D list grid of size m x n, where grid[i][j] is either 0 or 1.",
+    "output_format": "A boolean value indicating if there is a valid path from one edge of the grid to the opposite edge.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "grid[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,0,0],[1,1,0],[0,1,1]]",
+        "output": "true",
+        "explanation": "You can start at (0,0) and reach (2,2) through valid moves."
+      },
+      {
+        "input": "grid = [[0,0,0],[0,0,0],[0,0,0]]",
+        "output": "false",
+        "explanation": "Starting on water, there's no valid land cell to begin with."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a queue for breadth-first search.",
+      "Mark visited cells to avoid cycles."
+    ],
+    "company": "Robinhood"
+  },
+  {
+    "question_id": "",
+    "title": "Capital Gain/Loss",
+    "description": "You are required to calculate the total capital gain or loss from multiple stock transactions. Each transaction will provide details about the number of shares bought or sold and the price per share. A positive value indicates a gain, while a negative value indicates a loss. You need to return the net capital gain or loss after processing all transactions.",
+    "topic": "Finance",
+    "subtopic": "Transactions",
+    "tags": [
+      "Finance",
+      "Capital Gain",
+      "Transactions"
+    ],
+    "input_format": "A list of transactions, where each transaction is represented by an array of three elements: [operation, shares, price], where 'operation' is either 'buy' or 'sell', 'shares' is the number of shares involved, and 'price' is the price per share.",
+    "output_format": "An integer representing the net capital gain or loss.",
+    "constraints": [
+      "1 <= transactions.length <= 10^4",
+      "1 <= shares <= 1000",
+      "1 <= price <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "[['buy', 10, 100], ['sell', 5, 150], ['sell', 5, 200]]",
+        "output": "500",
+        "explanation": "Buying 10 shares at 100 each costs 1000. Selling 5 shares at 150 each gains 750, and selling another 5 shares at 200 each gains 1000. Total gain is 750 + 1000 - 1000 = 750."
+      },
+      {
+        "input": "[['buy', 15, 200], ['sell', 15, 150]]",
+        "output": "-750",
+        "explanation": "Buying 15 shares at 200 each costs 3000. Selling all 15 shares at 150 each gains 2250. Total loss is 2250 - 3000 = -750."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Track the total investment and total returns separately.",
+      "Remember to handle multiple transactions correctly."
+    ],
+    "company": "Robinhood"
+  },
+  {
+    "question_id": "",
+    "title": "Count the Number of Consistent Strings",
+    "description": "Given a string allowed consisting of distinct characters and an array of strings words, return the number of strings in words that are consistent. A string is consistent if all characters in the string appear in the allowed string.",
+    "topic": "String",
+    "subtopic": "Character Matching",
+    "tags": [
+      "String",
+      "Counting",
+      "Character Set"
+    ],
+    "input_format": "A string allowed and an array of strings words.",
+    "output_format": "An integer representing the number of consistent strings.",
+    "constraints": [
+      "1 <= allowed.length <= 26",
+      "1 <= words.length <= 100",
+      "1 <= words[i].length <= 100",
+      "allowed consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": {
+          "allowed": "abc",
+          "words": [
+            "a",
+            "b",
+            "c",
+            "ab",
+            "ac",
+            "bc",
+            "abcd"
+          ]
+        },
+        "output": "6",
+        "explanation": "The consistent strings are 'a', 'b', 'c', 'ab', 'ac', and 'bc'."
+      },
+      {
+        "input": {
+          "allowed": "xxyz",
+          "words": [
+            "xy",
+            "yz",
+            "zxy",
+            "xyz",
+            "xx",
+            "xzy"
+          ]
+        },
+        "output": "4",
+        "explanation": "The consistent strings are 'xy', 'xzy', 'xyz', and 'xx'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check each character of the word against the allowed set."
+    ],
+    "company": "Robinhood"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Words",
+    "description": "Given a list of words, return the k most frequent words. You may return the answer in any order. It is guaranteed that the answer is unique. Follow up: Your algorithm should be better than O(n log n) time complexity.",
+    "topic": "Hash Table",
+    "subtopic": "Frequency Counting",
+    "tags": [
+      "Hash Table",
+      "Sorting",
+      "Frequency Count"
+    ],
+    "input_format": "A list of strings `words` and an integer `k`. The list may contain duplicates.",
+    "output_format": "A list of the k most frequent words.",
+    "constraints": [
+      "1 <= words.length <= 10000",
+      "1 <= k <= the number of unique words in the list",
+      "Each word consists of lowercase letters and has at most 100 characters."
+    ],
+    "examples": [
+      {
+        "input": "words = ['i', 'love', 'leetcode', 'i', 'love', 'coding'], k = 2",
+        "output": "['i', 'love']",
+        "explanation": "The word 'i' appears 2 times and 'love' appears 2 times too, both are the most frequent."
+      },
+      {
+        "input": "words = ['the', 'day', 'is', 'sunny', 'the', 'the', 'sunny', 'is', 'is'], k = 4",
+        "output": "['the', 'is', 'sunny', 'day']",
+        "explanation": "The frequency of the words are 'the' = 3, 'is' = 3, 'sunny' = 2, 'day' = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to count the frequencies of each word.",
+      "Consider using a priority queue to keep track of the top k elements."
+    ],
+    "company": "Robinhood"
+  },
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a length maxWidth, format the text such that each line has exactly maxWidth characters and is fully justified. You should pack as many words as you can in a single line. Extra spaces should be distributed in such a way that all lines have the same length (maxWidth). If the number of spaces on a line is more than one, you should distribute the extra spaces equally between the words. If the spaces are not evenly distributable, the extra spaces should be distributed from left to right. The last line of text should be left-justified, and no extra space is inserted before or after it.",
+    "topic": "String",
+    "subtopic": "Text Formatting",
+    "tags": [
+      "String",
+      "Text Justification",
+      "Greedy"
+    ],
+    "input_format": "An array of strings words and an integer maxWidth.",
+    "output_format": "An array of strings representing the fully justified text.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 100",
+      "1 <= maxWidth <= 100",
+      "The sum of words[i].length <= maxWidth for the last line."
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "This",
+            "is",
+            "an",
+            "example",
+            "of",
+            "text",
+            "justification."
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "This    is    an",
+          "example  of text",
+          "justification.  "
+        ],
+        "explanation": "The first line has 16 characters, with spaces distributed after 'This', 'is', and 'an'. The second line perfectly fits 'example' and 'of text'. The last line is left-justified."
+      },
+      {
+        "input": {
+          "words": [
+            "What",
+            "must",
+            "be",
+            "acknowledgment",
+            "shall",
+            "be"
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "What   must   be",
+          "acknowledgment   ",
+          "shall be        "
+        ],
+        "explanation": "The first line has space after 'What' and 'must' to fill maxWidth. The second line ends with spaces as the last line should be left-justified."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to distribute spaces when there are multiple words.",
+      "Handle the last line separately since it needs to be left-justified."
+    ],
+    "company": "Robinhood"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the stock prices.",
+    "output_format": "An integer representing the maximum profit possible.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Track the minimum price seen so far and calculate the profit at each step.",
+      "Consider scenarios where buying and selling on the same day yields no profit."
+    ],
+    "company": "Robinhood"
+  },
+  {
+    "question_id": "",
+    "title": "Minesweeper",
+    "description": "You are given a 2D grid representing a 'Minesweeper' board, where 'M' represents a mine and 'E' represents an empty square. Each cell can also be revealed to display a number that indicates the number of mines in the eight neighboring cells. You need to implement a function that reveals a square on the board and returns an updated board after the reveal. If the revealed square is a mine (i.e., it contains 'M'), the game is over. If it is empty ('E'), you should recursively reveal all neighboring cells that are also 'E'. If any of the neighboring cells are mines, you should reveal those with their respective count of neighboring mines.",
+    "topic": "Depth-First Search",
+    "subtopic": "Recursion",
+    "tags": [
+      "Matrix",
+      "Depth First Search",
+      "Recursion"
+    ],
+    "input_format": "A 2D grid board of size m x n, and a click position represented as an array [clickRow, clickCol].",
+    "output_format": "A 2D grid that represents the updated Minesweeper board after the reveal.",
+    "constraints": [
+      "1 <= m, n <= 50",
+      "board[i][j] is either 'M' or 'E'.",
+      "click.length == 2, with 0 <= clickRow < m and 0 <= clickCol < n."
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "E",
+              "E",
+              "E",
+              "E",
+              "E"
+            ],
+            [
+              "E",
+              "E",
+              "M",
+              "E",
+              "E"
+            ],
+            [
+              "E",
+              "E",
+              "E",
+              "E",
+              "E"
+            ],
+            [
+              "E",
+              "E",
+              "E",
+              "E",
+              "E"
+            ]
+          ],
+          "click": [
+            3,
+            0
+          ]
+        },
+        "output": [
+          [
+            "B",
+            "1",
+            "E",
+            "E",
+            "E"
+          ],
+          [
+            "B",
+            "1",
+            "M",
+            "1",
+            "E"
+          ],
+          [
+            "B",
+            "1",
+            "1",
+            "1",
+            "E"
+          ],
+          [
+            "B",
+            "B",
+            "1",
+            "E",
+            "E"
+          ]
+        ],
+        "explanation": "Clicking on (3, 0) reveals that all eight neighboring mines are counted, changing the board accordingly."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "E",
+              "E",
+              "E",
+              "E",
+              "E"
+            ],
+            [
+              "E",
+              "E",
+              "M",
+              "E",
+              "E"
+            ],
+            [
+              "E",
+              "E",
+              "E",
+              "E",
+              "E"
+            ],
+            [
+              "M",
+              "E",
+              "E",
+              "E",
+              "E"
+            ]
+          ],
+          "click": [
+            1,
+            2
+          ]
+        },
+        "output": [
+          [
+            "E",
+            "E",
+            "E",
+            "E",
+            "E"
+          ],
+          [
+            "E",
+            "E",
+            "X",
+            "E",
+            "E"
+          ],
+          [
+            "E",
+            "E",
+            "E",
+            "E",
+            "E"
+          ],
+          [
+            "M",
+            "E",
+            "E",
+            "E",
+            "E"
+          ]
+        ],
+        "explanation": "Clicking on (1, 2) reveals a mine, marking it with 'X' and ending the game."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using DFS to explore neighboring cells.",
+      "Use a queue or stack to manage cells to be revealed."
+    ],
+    "company": "Robinhood"
+  },
+  {
+    "question_id": "",
+    "title": "Defanging an IP Address",
+    "description": "Given a valid IPv4 address as a string, replace every '.' with '[.]' to defang the IP address. The defanged IP address should be returned as a string.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "IP Address"
+    ],
+    "input_format": "A string representing a valid IPv4 address.",
+    "output_format": "A string representing the defanged IPv4 address.",
+    "constraints": [
+      "The input string is a valid IPv4 address.",
+      "1 <= input.length <= 15"
+    ],
+    "examples": [
+      {
+        "input": "address = '1.1.1.1'",
+        "output": "1[.]1[.]1[.]1",
+        "explanation": "Each '.' in the IP address is replaced with '[.]'."
+      },
+      {
+        "input": "address = '255.100.50.0'",
+        "output": "255[.]100[.]50[.]0",
+        "explanation": "Each dot in '255.100.50.0' is replaced with '[.]'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a string replacement method to replace '.' with '[.]'."
+    ],
+    "company": "Robinhood"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Elements",
+    "description": "Given a non-empty array of integers, return the k most frequent elements. You may assume that the answer is guaranteed to be unique, and order does not matter.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Frequency Count"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An array of the k most frequent elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= the number of unique elements in the array"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 1, 2, 2, 3], k = 2",
+        "output": "[1, 2]",
+        "explanation": "1 is the most frequent element and 2 is the second most frequent. So, the result is [1, 2]."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "There is only one element, which is 1."
+      },
+      {
+        "input": "nums = [1, 2, 3, 3, 2, 2], k = 2",
+        "output": "[2, 3]",
+        "explanation": "2 appears 3 times and 3 appears 2 times. Hence, they are the top 2 frequent elements."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash table to count frequencies.",
+      "Use a priority queue to keep track of the top k elements."
+    ],
+    "company": "Robinhood"
+  }
+]

@@ -1,0 +1,185 @@
+[
+  {
+    "question_id": "",
+    "title": "Smallest Subsequence of Distinct Characters",
+    "description": "Given a string s, return the smallest subsequence of s that contains all the distinct characters in s exactly once. You must make sure that the result is the lexicographically smallest among all possible choices.",
+    "topic": "String",
+    "subtopic": "Greedy",
+    "tags": [
+      "String",
+      "Greedy",
+      "Subsequence"
+    ],
+    "input_format": "A string s consisting of digits and lowercase English letters.",
+    "output_format": "A string that represents the smallest subsequence of distinct characters in s.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of lowercase English letters and digits."
+    ],
+    "examples": [
+      {
+        "input": "bcabc",
+        "output": "abc",
+        "explanation": "The smallest subsequence is 'abc' which contains all distinct characters."
+      },
+      {
+        "input": "cbacdcbc",
+        "output": "acdb",
+        "explanation": "The smallest subsequence is 'acdb'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the current characters.",
+      "Utilize a frequency counter to know when to pop characters from the stack."
+    ],
+    "company": "FactSet"
+  },
+  {
+    "question_id": "",
+    "title": "Remove All Adjacent Duplicates in String II",
+    "description": "Given a string s, remove adjacent duplicates in such a way that there are at most two adjacent characters of the same type. If there are more than two adjacent characters, remove them all, and repeat the process until no more adjacent duplicates exist.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Stack",
+      "Manipulation"
+    ],
+    "input_format": "A string s consisting of lowercase English letters.",
+    "output_format": "A string representing the modified string after all adjacent duplicates have been removed.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"deeedbbaccd\"",
+        "output": "bb",
+        "explanation": "The characters 'eee' are removed, then 'dd' is removed, leaving 'bb'."
+      },
+      {
+        "input": "s = \"pbbcggttciiippooaais\"",
+        "output": "ps",
+        "explanation": "After removing adjacent duplicates step by step, we end up with 'ps'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to keep track of characters and their counts.",
+      "Pop the stack when the count exceeds 2."
+    ],
+    "company": "FactSet"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicate Letters",
+    "description": "Given a string s, return the smallest possible string in lexicographical order that can be achieved by removing some letters from s. Every letter in s must occur at most once in the result, and the result should be the smallest in lexicographical order among all possible results.",
+    "topic": "String",
+    "subtopic": "Greedy",
+    "tags": [
+      "String",
+      "Greedy",
+      "Stack"
+    ],
+    "input_format": "A single string s consisting of lowercase English letters.",
+    "output_format": "A string representing the smallest possible string in lexicographical order after removing duplicate letters.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "bcabc",
+        "output": "abc",
+        "explanation": "By removing the duplicate letters 'b' and 'c', the remaining letters 'abc' are in lexicographical order."
+      },
+      {
+        "input": "cbacdcbc",
+        "output": "acd",
+        "explanation": "We can remove 'c' at the start, then 'b', and finally one of the 'c's, leaving 'acd' which is lexicographically smallest."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the current letters.",
+      "Check the last letter of the stack to decide whether to pop it."
+    ],
+    "company": "FactSet"
+  },
+  {
+    "question_id": "",
+    "title": "Happy Number",
+    "description": "A happy number is defined by the following process: Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle that does not include 1. Those numbers for which this process ends in 1 are happy numbers, while those that do not end in 1 are unhappy numbers. Write a function to determine if a given number is a happy number.",
+    "topic": "Math",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Math",
+      "Number Theory",
+      "Simulation"
+    ],
+    "input_format": "An integer n, representing the number to be checked.",
+    "output_format": "Return true if n is a happy number, otherwise return false.",
+    "constraints": [
+      "1 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 19",
+        "output": "true",
+        "explanation": "1^2 + 9^2 = 1 + 81 = 82; 8^2 + 2^2 = 64 + 4 = 68; 6^2 + 8^2 = 36 + 64 = 100; 1^2 + 0^2 + 0^2 = 1. Hence, 19 is a happy number."
+      },
+      {
+        "input": "n = 2",
+        "output": "false",
+        "explanation": "2 loops in a cycle (2 -> 4 -> 16 -> 37 -> 58 -> 89 -> 145 -> 42 -> 20 -> 4). Hence, 2 is not a happy number."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a set to track numbers you've already seen.",
+      "You can repeatedly square the digits of the number until you reach 1 or a previous number."
+    ],
+    "company": "FactSet"
+  },
+  {
+    "question_id": "",
+    "title": "Increasing Triplet Subsequence",
+    "description": "Given an integer array nums, return true if there exists a triple (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such triple exists, return false.",
+    "topic": "Array",
+    "subtopic": "Subsequence",
+    "tags": [
+      "Array",
+      "Subsequence",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A boolean value indicating whether an increasing triplet subsequence exists.",
+    "constraints": [
+      "1 <= nums.length <= 5 * 10^5",
+      "0 <= nums[i] <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5]",
+        "output": "true",
+        "explanation": "The triplet (1, 2, 3) is an increasing subsequence."
+      },
+      {
+        "input": "nums = [5, 4, 3, 2, 1]",
+        "output": "false",
+        "explanation": "No triplet exists where nums[i] < nums[j] < nums[k]."
+      },
+      {
+        "input": "nums = [2, 1, 5, 0, 4, 6]",
+        "output": "true",
+        "explanation": "The triplet (1, 4, 6) is an increasing subsequence."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to maintain two variables to track the first and second smallest."
+    ],
+    "company": "FactSet"
+  }
+]

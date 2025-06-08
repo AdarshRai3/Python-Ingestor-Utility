@@ -1,0 +1,180 @@
+[
+  {
+    "question_id": "",
+    "title": "Meeting Rooms II",
+    "description": "Given an array of meeting time intervals consisting of start and end times [[start1, end1], [start2, end2], ...], find the minimum number of conference rooms required to hold all meetings. A meeting room can hold multiple meetings as long as they do not overlap.",
+    "topic": "Interval",
+    "subtopic": "Greedy",
+    "tags": [
+      "Interval",
+      "Greedy",
+      "Sorting"
+    ],
+    "input_format": "An array of meeting time intervals intervals, where intervals[i] = [start_i, end_i].",
+    "output_format": "An integer representing the minimum number of conference rooms needed.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "0 <= start_i < end_i <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[0, 30], [5, 10], [15, 20]]",
+        "output": "2",
+        "explanation": "There are two overlapping meetings: [0, 30] and [5, 10]. Thus, you need at least two rooms."
+      },
+      {
+        "input": "intervals = [[7, 10], [2, 4]]",
+        "output": "1",
+        "explanation": "The meetings do not overlap, so only one room is needed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the intervals based on start times.",
+      "Track the end times of meetings currently in session."
+    ],
+    "company": "Turo"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. It should support the following operations: get and put. The get operation retrieves the value of the key if the key exists in the cache. If the key does not exist, return -1. The put operation inserts or updates the value of the key. When inserting a new key-value pair, if the cache reaches its capacity, it should invalidate the least recently used item before inserting the new item.",
+    "topic": "Design",
+    "subtopic": "Cache",
+    "tags": [
+      "Design",
+      "Cache",
+      "Data Structures"
+    ],
+    "input_format": "Actions will be performed on the cache using the put and get methods.",
+    "output_format": "Return the value for the get method or nothing for the put method.",
+    "constraints": [
+      "Capacity of the cache is between 1 and 300.",
+      "Key and value are integers, with a maximum value of 10^6.",
+      "There will be a maximum of 10^4 calls to put and get."
+    ],
+    "examples": [
+      {
+        "input": "operations = [\"LRUCache\", \"put\", \"put\", \"get\", \"put\", \"get\", \"put\", \"get\", \"get\", \"get\"]\nvalues = [[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]",
+        "output": "[null,null,null,1,null,-1,null,-1,3,4]",
+        "explanation": "The cache is initialized with capacity 2. After performing all operations, the sequence of outputs is as shown."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a combination of a hash map and a doubly linked list.",
+      "The hash map can help for O(1) access, while the linked list helps manage the order of usage."
+    ],
+    "company": "Turo"
+  },
+  {
+    "question_id": "",
+    "title": "Meeting Rooms",
+    "description": "Given an array of meeting time intervals where each interval is represented as a pair of integers [start, end], determine if a person could attend all meetings without any overlaps. The meetings are represented as an array of intervals, and a person can attend a meeting if its start time is not less than the end time of the previous meeting he/she attended.",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Intervals",
+      "Scheduling"
+    ],
+    "input_format": "An array of pairs of integers intervals, where each pair [start, end] represents a meeting time interval.",
+    "output_format": "Return true if the person can attend all meetings, otherwise return false.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "0 <= intervals[i][0] < intervals[i][1] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[0, 30], [5, 10], [15, 20]]",
+        "output": "false",
+        "explanation": "The first meeting is [0, 30] and the second is [5, 10], which overlaps."
+      },
+      {
+        "input": "intervals = [[7, 10], [2, 4]]",
+        "output": "true",
+        "explanation": "There are no overlapping meetings."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Sort the meetings based on their start time.",
+      "Check for overlap between consecutive meetings."
+    ],
+    "company": "Turo"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A palindromic substring is a string that reads the same backward as forward. You may assume that the input string has at least one character, and you may consider empty string as a valid answer.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s, where 1 <= s.length <= 1000.",
+    "output_format": "A string representing the longest palindromic substring.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consist of only digits and English letters."
+    ],
+    "examples": [
+      {
+        "input": "babad",
+        "output": "bab",
+        "explanation": "Both 'bab' and 'aba' are valid answers, but 'bab' is returned because it appears first."
+      },
+      {
+        "input": "cbbd",
+        "output": "bb",
+        "explanation": "'bb' is the longest palindromic substring."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around the center of the substring.",
+      "Check for both odd and even length palindromes."
+    ],
+    "company": "Turo"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold",
+    "description": "Given an integer array 'nums' and two integers 'k' and 'threshold', return the number of contiguous sub-arrays of size 'k' whose average is greater than or equal to 'threshold'. A sub-array is defined as a contiguous part of an array.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Average"
+    ],
+    "input_format": "The input consists of an integer array 'nums', an integer 'k', and an integer 'threshold'.",
+    "output_format": "An integer representing the number of contiguous sub-arrays of size 'k' that meet the average condition.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= k <= nums.length",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= threshold <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 2, 2, 2, 5, 5, 5], k = 3, threshold = 3",
+        "output": "3",
+        "explanation": "The valid sub-arrays are [2, 2, 2], [2, 2, 5], and [2, 5, 5], each having an average >= 3."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5], k = 1, threshold = 3",
+        "output": "3",
+        "explanation": "The valid sub-arrays are [3], [4], and [5], each with average >= 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window technique to efficiently calculate sub-array averages.",
+      "Keep track of the current sum of the window as you slide through the array."
+    ],
+    "company": "Turo"
+  }
+]

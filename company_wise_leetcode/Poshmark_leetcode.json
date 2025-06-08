@@ -1,0 +1,153 @@
+[
+  {
+    "question_id": "",
+    "title": "Count Unguarded Cells in the Grid",
+    "description": "You are given a 2D grid of size m x n representing a field where '0' represents water and '1' represents land. The grid also contains guard cells represented by the integer '2', which can protect the water cells directly adjacent (horizontally or vertically) to them from being counted. Your task is to count the number of water cells that are not guarded by any guard cell.",
+    "topic": "Grid",
+    "subtopic": "Count Cells",
+    "tags": [
+      "Grid",
+      "Counting",
+      "2D-array"
+    ],
+    "input_format": "The first line contains two integers m and n, representing the number of rows and columns. The next m lines contain n integers each (0, 1, or 2) representing the grid.",
+    "output_format": "An integer representing the number of unguarded water cells.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "grid[i][j] is either 0, 1, or 2.",
+      "The grid is guaranteed to contain at least one water cell (0)."
+    ],
+    "examples": [
+      {
+        "input": "3 3\n0 0 0\n0 2 0\n0 0 0",
+        "output": "6",
+        "explanation": "All water cells (0) in the grid are unguarded as the guard (2) only protects the adjacent cells."
+      },
+      {
+        "input": "4 4\n1 0 2 0\n0 0 0 2\n1 0 0 0\n0 2 0 1",
+        "output": "3",
+        "explanation": "Only three water cells remain unguarded after accounting for the guard cells."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider checking the cells adjacent to guard cells to mark water cells as guarded.",
+      "You can use a BFS or DFS to traverse and mark the cells."
+    ],
+    "company": "Poshmark"
+  },
+  {
+    "question_id": "",
+    "title": "Market Analysis I",
+    "description": "You are given a list of daily stock prices for a company over a period of days. Your task is to analyze the data and determine the maximum profit that could have been made by buying on one day and selling on a subsequent day. If no profit can be made, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Maximum Subarray Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers prices where prices[i] represents the stock price on the ith day.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the minimum price encountered so far.",
+      "At each day's price, calculate the potential profit if sold that day."
+    ],
+    "company": "Poshmark"
+  },
+  {
+    "question_id": "",
+    "title": "Market Analysis II",
+    "description": "You are analyzing a market with multiple stock prices recorded over time. Your task is to determine the maximum profit you can achieve through buying on one day and selling on another subsequent day. However, to maximize the profit, you must account for transaction fees incurred at each sale. Given an array of prices and a fee, return the maximum profit you can achieve after performing at most one buy and one sell operation.",
+    "topic": "Dynamic Programming",
+    "subtopic": "State Management",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers prices followed by an integer fee.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4",
+      "0 <= fee <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [1, 3, 2, 8, 4, 9], fee = 2",
+        "output": "8",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 4 (price = 8). After transaction fee of 2, profit = 8 - 1 - 2 = 5. Buy again on day 3 (price = 2) and sell on day 5 (price = 4) to achieve total profit = 5 + (4 - 2 - 2) = 5 + 0 = 5."
+      },
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4], fee = 1",
+        "output": "4",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). After the fee, profit = 6 - 1 - 1 = 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "You may want to simulate the buying and selling process, keeping track of the current profit."
+    ],
+    "company": "Poshmark"
+  },
+  {
+    "question_id": "",
+    "title": "Max Chunks To Make Sorted",
+    "description": "Given an array of integers arr where arr[i] is a permutation of the integers from 0 to n-1, you can split this array into some chunks. Each chunk is then sorted independently. After sorting all chunks, if the concatenation of all chunks results in the sorted array, return the maximum number of chunks you can make. Note that a chunk is a contiguous subarray.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Greedy"
+    ],
+    "input_format": "An array of integers arr, which is a permutation of integers from 0 to n-1.",
+    "output_format": "An integer representing the maximum number of chunks that can be made.",
+    "constraints": [
+      "1 <= arr.length <= 10^4",
+      "0 <= arr[i] < arr.length",
+      "arr is a permutation of the first n integers."
+    ],
+    "examples": [
+      {
+        "input": "arr = [4, 3, 2, 1, 0]",
+        "output": "1",
+        "explanation": "The whole array is one chunk, and sorting it gives [0, 1, 2, 3, 4]."
+      },
+      {
+        "input": "arr = [1, 0, 2, 3]",
+        "output": "4",
+        "explanation": "The array is already sorted, so each individual element can be its own chunk."
+      },
+      {
+        "input": "arr = [0, 1, 2, 3, 4]",
+        "output": "5",
+        "explanation": "Each element is already sorted, so we can make one chunk for each element."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the maximum number in the current chunk.",
+      "Count chunks where the last index of the chunk matches the maximum number in that chunk."
+    ],
+    "company": "Poshmark"
+  }
+]

@@ -1,0 +1,131 @@
+[
+  {
+    "question_id": "",
+    "title": "Dota2 Senate",
+    "description": "In the Dota2 Senate, each player votes for a candidate they support. The candidate with the majority of votes (more than half) wins the election. Given a string representing the votes cast by players, where 'A' represents a vote for candidate A and 'B' represents a vote for candidate B, write a function to determine the winner of the election. If no candidate receives a majority, return 'No Winner'.",
+    "topic": "Strings",
+    "subtopic": "Counting Frequencies",
+    "tags": [
+      "String",
+      "Counting",
+      "Majority"
+    ],
+    "input_format": "A string votes consisting of characters 'A' and 'B' only.",
+    "output_format": "A string indicating the winner, either 'A', 'B', or 'No Winner'.",
+    "constraints": [
+      "1 <= votes.length <= 1000",
+      "votes[i] == 'A' or votes[i] == 'B'"
+    ],
+    "examples": [
+      {
+        "input": "votes = 'AABBAA'",
+        "output": "A",
+        "explanation": "Candidate A has 4 votes, while candidate B has 2 votes. A has a majority."
+      },
+      {
+        "input": "votes = 'AABB'",
+        "output": "No Winner",
+        "explanation": "Candidate A has 2 votes and candidate B has 2 votes. No candidate has more than half."
+      },
+      {
+        "input": "votes = 'AAABBB'",
+        "output": "No Winner",
+        "explanation": "Candidate A has 3 votes and candidate B has 3 votes. No candidate has more than half."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count the number of votes for each candidate.",
+      "Check if any candidate has more than half of the total votes."
+    ],
+    "company": "Valve"
+  },
+  {
+    "question_id": "",
+    "title": "Deep Merge of Two Objects",
+    "description": "You are given two objects, 'obj1' and 'obj2'. Your task is to create a new object by deeply merging 'obj2' into 'obj1'. A deep merge means that if the properties of 'obj1' and 'obj2' are both objects, they should be merged recursively. If a property is present in both objects and is not an object, the value from 'obj2' should overwrite the value from 'obj1'. The result should not modify either of the input objects.",
+    "topic": "Object Manipulation",
+    "subtopic": "Merging Objects",
+    "tags": [
+      "Object",
+      "Merge",
+      "Recursion"
+    ],
+    "input_format": "Two objects, obj1 and obj2.",
+    "output_format": "A merged object resulting from merging obj2 into obj1.",
+    "constraints": [
+      "Both obj1 and obj2 will contain only valid JSON objects.",
+      "The depth of the objects will not exceed 10 levels.",
+      "The number of properties in each object will not exceed 100."
+    ],
+    "examples": [
+      {
+        "input": "obj1 = {'a': 1, 'b': {'c': 2}}, obj2 = {'b': {'d': 3, 'c': 4}}",
+        "output": "{'a': 1, 'b': {'c': 4, 'd': 3}}",
+        "explanation": "The property 'b' is an object in both obj1 and obj2, so they are merged. 'c' is overwritten with the value from obj2."
+      },
+      {
+        "input": "obj1 = {'x': 1}, obj2 = {'y': 2}",
+        "output": "{'x': 1, 'y': 2}",
+        "explanation": "No overlapping properties, so both are included in the merged object."
+      },
+      {
+        "input": "obj1 = {'a': {'b': 1}}, obj2 = {'a': {'c': 2}}",
+        "output": "{'a': {'b': 1, 'c': 2}}",
+        "explanation": "The common property 'a' is an object, so 'b' and 'c' are merged."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a recursive function to handle nested objects.",
+      "Check the type of each property before merging."
+    ],
+    "company": "Valve"
+  },
+  {
+    "question_id": "",
+    "title": "Design Parking System",
+    "description": "You are tasked with designing a parking system for a parking lot with a certain number of spaces. The parking lot can hold three types of vehicles: cars, trucks, and motorcycles. You are required to implement the ParkingSystem class that will manage the parking spaces. The ParkingSystem class should have the following methods:\n\n1. `ParkingSystem(int big, int medium, int small)` - Initializes the parking system with the number of spaces for big, medium, and small vehicles.\n\n2. `bool addCar(int carType)` - Adds a car of the specified type (1 = big, 2 = medium, 3 = small) to the parking lot. Returns true if the car was successfully parked, false otherwise.",
+    "topic": "Design",
+    "subtopic": "Object-Oriented Design",
+    "tags": [
+      "Design",
+      "OOP",
+      "Parking System"
+    ],
+    "input_format": "The constructor requires three integers representing the number of big, medium, and small parking spaces. The addCar method takes an integer representing the car type.",
+    "output_format": "The addCar method returns a boolean value indicating whether the car was parked successfully.",
+    "constraints": [
+      "1 <= big, medium, small <= 1000",
+      "carType is 1, 2, or 3."
+    ],
+    "examples": [
+      {
+        "input": "ParkingSystem parkingSystem = new ParkingSystem(1, 1, 0);\nparkingSystem.addCar(1);",
+        "output": "true",
+        "explanation": "The big parking spot is available, so the car can be parked."
+      },
+      {
+        "input": "parkingSystem.addCar(2);",
+        "output": "true",
+        "explanation": "The medium parking spot is available, so the medium car can be parked."
+      },
+      {
+        "input": "parkingSystem.addCar(3);",
+        "output": "false",
+        "explanation": "There are no small parking spots available, so the small car cannot be parked."
+      },
+      {
+        "input": "parkingSystem.addCar(1);",
+        "output": "false",
+        "explanation": "The big parking spot is already taken, so another big car cannot be parked."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a simple array or dictionary to keep track of available spots.",
+      "Think about how to decrement the count when a car is parked."
+    ],
+    "company": "Valve"
+  }
+]

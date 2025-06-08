@@ -1,0 +1,1256 @@
+[
+  {
+    "question_id": "",
+    "title": "Number of Subarrays That Match a Pattern I",
+    "description": "Given an array of integers and a pattern, calculate the number of contiguous subarrays that match the given pattern. A subarray matches the pattern if it can be represented with its elements conforming to the ordering and values of the pattern elements.",
+    "topic": "Array",
+    "subtopic": "Subarrays",
+    "tags": [
+      "Array",
+      "Subarrays",
+      "Pattern Matching"
+    ],
+    "input_format": "An array of integers nums and an array of integers pattern.",
+    "output_format": "An integer representing the number of subarrays that match the given pattern.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= pattern.length <= 10^5",
+      "-10^5 <= nums[i], pattern[j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 1, 2, 1], pattern = [1, 2]",
+        "output": "6",
+        "explanation": "The matching subarrays are: [1, 2], [1, 2], [2, 1], [1, 2], [1, 2, 1], and [2, 1, 2]."
+      },
+      {
+        "input": "nums = [1, 3, 2, 3, 1], pattern = [3, 1]",
+        "output": "2",
+        "explanation": "The matching subarrays are: [3, 1] and [3, 1] (from the end of the array)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window or two-pointer technique to find matching subarrays.",
+      "Keep track of matched indices when checking against the pattern."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Changing Keys",
+    "description": "You are given a list of strings representing key sequences. A key sequence changes if its characters are not all the same. Your task is to determine the number of distinct keys which change at least once as per the given sequence. A key sequence is defined to change if there is at least one character transition from one character to another in that sequence. Return the count of such changing keys.",
+    "topic": "String",
+    "subtopic": "Character Manipulation",
+    "tags": [
+      "Strings",
+      "Counting",
+      "Unique"
+    ],
+    "input_format": "A list of strings 'keys' where each string represents a key sequence.",
+    "output_format": "An integer representing the number of distinct changing keys.",
+    "constraints": [
+      "1 <= keys.length <= 10^4",
+      "1 <= keys[i].length <= 100",
+      "keys[i] consists only of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "keys = [\"aaa\", \"abc\", \"aab\", \"bcc\", \"bbb\"]",
+        "output": "3",
+        "explanation": "The keys 'abc', 'aab', and 'bcc' change at least once."
+      },
+      {
+        "input": "keys = [\"a\", \"aa\", \"aaa\"]",
+        "output": "0",
+        "explanation": "All keys do not change at all."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how you can identify transitions between characters in a string.",
+      "Use a set to keep track of distinct changing keys."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Distribute Elements Into Two Arrays I",
+    "description": "Given an array of integers, your task is to determine if it is possible to split the array into two subsets such that the sum of elements in both subsets is the same. If it is possible, return true; otherwise, return false.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Subset Sum"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A boolean value indicating whether the array can be partitioned into two subsets with equal sum.",
+    "constraints": [
+      "1 <= nums.length <= 200",
+      "0 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 5, 11, 5]",
+        "output": "true",
+        "explanation": "The array can be partitioned into [1, 5, 5] and [11] which both have a sum of 11."
+      },
+      {
+        "input": "nums = [1, 2, 3, 5]",
+        "output": "false",
+        "explanation": "The array cannot be partitioned into two subsets with equal sum."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the total sum of the array elements. If it is odd, return false.",
+      "Try to find a subset with a sum equal to half of the total sum."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Distribute Elements Into Two Arrays II",
+    "description": "Given an integer array nums, you need to divide it into two arrays, A and B, such that each element from nums is included either in A or in B. Your goal is to satisfy the following conditions: 1) The sum of the elements in A must be equal to the sum of the elements in B. 2) The absolute difference between the counts of elements in A and B should not exceed one. Return true if you can achieve this partitioning; otherwise, return false.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Subset Sum",
+      "Arrays"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A boolean value, true if partitioning is possible, otherwise false.",
+    "constraints": [
+      "1 <= nums.length <= 20",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 5, 11, 5]",
+        "output": "true",
+        "explanation": "The array can be divided into A = [1, 5, 5] and B = [11] with equal sums of 11."
+      },
+      {
+        "input": "nums = [1, 2, 3, 5]",
+        "output": "false",
+        "explanation": "There is no way to divide the array into two parts with equal sums."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about whether the total sum can be split into two equal parts.",
+      "Consider using dynamic programming to solve the subset-sum variation."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Subarrays That Match a Pattern II",
+    "description": "You are given an array of integers nums and a pattern represented by a string. Your task is to count the number of subarrays whose sum matches the sum of the elements defined by the pattern. The pattern can contain both integers and wildcards represented by '?', which can match any integer. You need to determine the total count of such subarrays.",
+    "topic": "Array",
+    "subtopic": "Subarray Sum",
+    "tags": [
+      "Array",
+      "Subarray",
+      "Pattern Matching"
+    ],
+    "input_format": "An array of integers nums, followed by a string pattern.",
+    "output_format": "An integer representing the number of subarrays that match the given pattern.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "1 <= pattern.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4], pattern = '3'",
+        "output": "1",
+        "explanation": "The only subarray that matches the sum of 3 is [3]."
+      },
+      {
+        "input": "nums = [4, 1, 2, 4], pattern = '5'",
+        "output": "2",
+        "explanation": "The valid subarrays are [4, 1] and [1, 4]. Both have a sum of 5."
+      },
+      {
+        "input": "nums = [5, 5, 5], pattern = '5?'",
+        "output": "6",
+        "explanation": "The valid subarrays are [5], [5], [5], [5, 5], [5, 5], and [5, 5, 5]. All give sums matching the pattern."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "Precompute prefix sums for faster calculations.",
+      "Handle wildcards by generating possible sums."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Count Prefix and Suffix Pairs II",
+    "description": "Given a list of strings, your task is to count the number of pairs of strings (i, j) such that the ith string is a prefix of the jth string and the jth string is a suffix of the ith string. A prefix is defined as a substring that appears at the beginning of a string, while a suffix is defined as a substring that appears at the end. Note that i cannot be equal to j in this context.",
+    "topic": "String",
+    "subtopic": "Prefix and Suffix",
+    "tags": [
+      "String",
+      "Prefixes",
+      "Suffixes",
+      "Counting"
+    ],
+    "input_format": "A list of strings 'words'.",
+    "output_format": "An integer representing the count of valid prefix and suffix pairs.",
+    "constraints": [
+      "1 <= words.length <= 10^5",
+      "1 <= words[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "words = [\"abc\", \"ab\", \"bc\", \"c\"]",
+        "output": "2",
+        "explanation": "The valid pairs are: (0, 1) where 'abc' is a prefix of 'ab' and (1, 0) where 'ab' is a suffix of 'abc'."
+      },
+      {
+        "input": "words = [\"a\", \"aa\", \"aaa\"]",
+        "output": "3",
+        "explanation": "The valid pairs are: (0, 1), (0, 2), (1, 2) with 'a' being prefix for 'aa' and 'aaa', and 'aa' being prefix for 'aaa'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a trie to efficiently store and search for prefixes.",
+      "Suffix arrays might help in determining suffix relationships.",
+      "Optimize the counting process to avoid O(n^2) complexity."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Count Prefix and Suffix Pairs I",
+    "description": "Given a list of strings, you need to count how many pairs of strings have the same prefix and suffix. A string's prefix is defined as the part of the string that comes before the last character, and its suffix is the last character. For example, in the string 'hello', the prefix is 'hell' and the suffix is 'o'. You should return the count of pairs of strings that have the same prefix and the same suffix.",
+    "topic": "String",
+    "subtopic": "Prefix and Suffix",
+    "tags": [
+      "String",
+      "Prefix",
+      "Suffix"
+    ],
+    "input_format": "A list of strings `words` (1 <= words.length <= 10^4, 1 <= words[i].length <= 100).",
+    "output_format": "An integer representing the count of pairs of strings with the same prefix and suffix.",
+    "constraints": [
+      "1 <= words.length <= 10^4",
+      "1 <= words[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "words = ['ab', 'ac', 'bc', 'ab']",
+        "output": "1",
+        "explanation": "Only the strings 'ab' and 'ab' have the same prefix 'a' and suffix 'b'."
+      },
+      {
+        "input": "words = ['hello', 'hell', 'world', 'h']",
+        "output": "0",
+        "explanation": "No pairs have the same prefix and suffix."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a dictionary to store the prefix-suffix pairs.",
+      "Remember to only consider the first few characters and the last character of each string."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an integer array nums and an integer k, return the maximum sliding window for each sliding window in the array. You must solve it in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Queue"
+    ],
+    "input_format": "An integer array nums of length n (1 <= n <= 10^5) and an integer k (1 <= k <= n).",
+    "output_format": "An array containing the maximum value of each sliding window.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,3,-1,-3,5,3,6,7], k = 3",
+        "output": "[3, 3, 5, 5, 6, 7]",
+        "explanation": "The sliding windows are [1,3,-1], [3,-1,-3], [-1,3,5], [3,5,3], [5,3,6], [3,6,7]. The maximums are 3, 3, 5, 5, 6, and 7."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Only one window exists [1], so the maximum is 1."
+      },
+      {
+        "input": "nums = [1,-1], k = 1",
+        "output": "[1, -1]",
+        "explanation": "There are two windows [1] and [-1], which gives 1 and -1 as maximums."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a deque to maintain the indices of the elements.",
+      "Remove elements not in the sliding window.",
+      "Maintain the order of indices based on their values."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Grouping",
+    "tags": [
+      "String",
+      "Hashmap",
+      "Sorting"
+    ],
+    "input_format": "An array of strings 'strs'.",
+    "output_format": "A list of lists, where each sublist contains grouped anagrams.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The anagrams are grouped together, and the order of the groups and the words within them can vary."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "There is only one element and it is an empty string, thus it is grouped by itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "There is only one element, which is a single character, and it is grouped by itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to group words by their sorted representation.",
+      "Sorting each string will help in identifying anagrams."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "Given a rotated sorted array `nums` and an integer `target`, write a function to search for `target` in `nums`. If found, return its index, otherwise, return -1. You must write an algorithm with a runtime complexity of O(log n).",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An integer array nums that has been rotated and an integer target.",
+    "output_format": "An integer representing the index of target in nums, or -1 if target is not found.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "\u221210^4 <= nums[i] <= 10^4",
+      "All integers in nums are unique.",
+      "nums is guaranteed to be rotated at some pivot."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "The target 0 is present at index 4 in the rotated array."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "The target 3 is not present in the array."
+      },
+      {
+        "input": "nums = [1], target = 0",
+        "output": "-1",
+        "explanation": "The target 0 is not present in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a modified binary search approach.",
+      "Identify the sorted part of the array to decide which side to search."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Product of Array Except Self",
+    "description": "Given an integer array nums, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i]. You must solve it without using division and in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Product Array",
+    "tags": [
+      "Array",
+      "Product",
+      "Prefix Sum"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing the product of all elements except self.",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-30 <= nums[i] <= 30"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "[24, 12, 8, 6]",
+        "explanation": "For the input array, the output is calculated as follows: output[0] = 2*3*4 = 24, output[1] = 1*3*4 = 12, output[2] = 1*2*4 = 8, output[3] = 1*2*3 = 6."
+      },
+      {
+        "input": "nums = [-1, 1, 0, -3, 3]",
+        "output": "[0, 0, 9, 0, 0]",
+        "explanation": "The output is generated such that all elements, except the one corresponding to the position of zero in the input, become zero, while for index 2, we get the product of -1, 1, -3, and 3, which is 9."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using prefix and suffix products.",
+      "You might need to use two passes through the array."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. The mapping of digits to letters follows the standard telephone keypad layout. For instance, '2' corresponds to 'abc', '3' to 'def', and so on. The combinations should be returned in lexicographic order.",
+    "topic": "Backtracking",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Combinations"
+    ],
+    "input_format": "A string digits representing a combination of digits.",
+    "output_format": "A list of all possible letter combinations in lexicographic order.",
+    "constraints": [
+      "0 <= digits.length <= 4",
+      "digits contains only digits 2-9."
+    ],
+    "examples": [
+      {
+        "input": "digits = '23'",
+        "output": [
+          "ad",
+          "ae",
+          "af",
+          "bd",
+          "be",
+          "bf",
+          "cd",
+          "ce",
+          "cf"
+        ],
+        "explanation": "The digit '2' maps to 'abc' and '3' maps to 'def'. Thus, the combinations will be all possible pairs formed by taking one letter from 'abc' and one from 'def'."
+      },
+      {
+        "input": "digits = ''",
+        "output": [],
+        "explanation": "An empty input returns an empty list, as there are no digits to map."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to generate combinations.",
+      "You can use a mapping of digits to characters to simplify the process."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A palindrome is a string that reads the same backward as forward. If there are multiple longest palindromic substrings, return any one of them.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s, with length n.",
+    "output_format": "A single string representing the longest palindromic substring in s.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "s consists of only digits and English letters."
+    ],
+    "examples": [
+      {
+        "input": "babad",
+        "output": "bab",
+        "explanation": "Both 'bab' and 'aba' are valid outputs, as they are longest palindromic substrings."
+      },
+      {
+        "input": "cbbd",
+        "output": "bb",
+        "explanation": "'bb' is the longest palindromic substring in 'cbbd'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider checking for palindromes by expanding around the center.",
+      "Remember that a single letter is also a palindrome.",
+      "Look for both odd and even length palindromes."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Sorting and Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting",
+      "Hashing"
+    ],
+    "input_format": "An integer array nums of length n.",
+    "output_format": "A list of unique triplets that sum up to zero.",
+    "constraints": [
+      "0 <= n <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The unique triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "There are no elements in the input array, hence no triplets can be formed."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "There are no triplets that can sum to zero with the given numbers."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try sorting the array to make handling duplicates easier.",
+      "Use a two-pointer approach to find pairs that sum to a target."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Elimination Game",
+    "description": "You are given a list of integers starting from 1 to n (inclusive). During each round, you will eliminate every second number until only one number remains. Your task is to determine which number will remain at the end. For example, if n = 7, the elimination order is 1, 2, 3, 4, 5, 6, 7, and the final number standing will be 4.",
+    "topic": "Mathematics",
+    "subtopic": "Simulation",
+    "tags": [
+      "Mathematics",
+      "Simulation",
+      "Game"
+    ],
+    "input_format": "An integer n representing the total numbers from 1 to n.",
+    "output_format": "An integer that represents the last remaining number.",
+    "constraints": [
+      "1 <= n <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "n = 7",
+        "output": "4",
+        "explanation": "The elimination sequence is: 1, 2, 3, 4, 5, 6, 7. After round 1, we have: 1, 3, 5, 7; after round 2: 3, 7; and finally, 4 is the last remaining."
+      },
+      {
+        "input": "n = 1",
+        "output": "1",
+        "explanation": "Only 1 is present, so it remains the last number."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the pattern in the elimination process.",
+      "Can you find a mathematical formula to solve it efficiently?"
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).",
+    "topic": "Binary Search",
+    "subtopic": "Search Algorithms",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Median"
+    ],
+    "input_format": "Two sorted arrays nums1 and nums2, each containing integers.",
+    "output_format": "A single number representing the median of the two sorted arrays.",
+    "constraints": [
+      "0 <= nums1.length <= 1000",
+      "0 <= nums2.length <= 1000",
+      "nums1 and nums2 are both sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 3], nums2 = [2]",
+        "output": "2.0",
+        "explanation": "The combined sorted array is [1, 2, 3]. The median is 2."
+      },
+      {
+        "input": "nums1 = [1, 2], nums2 = [3, 4]",
+        "output": "2.5",
+        "explanation": "The combined sorted array is [1, 2, 3, 4]. The median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider binary searching the smaller array.",
+      "You need to partition both arrays."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Set Matrix Zeroes",
+    "description": "Given an m x n integer matrix, if an element is 0, set its entire row and column to 0. You must do it in place. Do not use an additional matrix to solve the problem.",
+    "topic": "Matrix",
+    "subtopic": "In-place Manipulation",
+    "tags": [
+      "Matrix",
+      "In-place",
+      "Array"
+    ],
+    "input_format": "An m x n integer matrix matrix.",
+    "output_format": "The modified matrix with rows and columns set to 0 in place.",
+    "constraints": [
+      "m == matrix.length",
+      "n == matrix[0].length",
+      "1 <= m, n <= 200",
+      "-10^5 <= matrix[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1,1,1],[1,0,1],[1,1,1]]",
+        "output": "[[1,0,1],[0,0,0],[1,0,1]]",
+        "explanation": "The element at (1, 1) is 0, so the entire row 1 and column 1 are set to 0."
+      },
+      {
+        "input": "matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]",
+        "output": "[[0,0,0,0],[0,4,5,0],[0,3,1,0]]",
+        "explanation": "The element at (0, 0) is 0, so all elements in its row and column are set to 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the first row and first column to track which rows and columns should be set to zero.",
+      "You need to be careful about the first row and first column since they are used for tracking."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. A subarray is a contiguous part of an array.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum sum of the contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The subarray [4,-1,2,1] has the largest sum 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The only subarray is [1] which has sum 1."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The subarray [5,4,-1,7,8] has the largest sum 23."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window or dynamic programming approach.",
+      "Keep track of the current subarray sum and update the maximum sum as necessary."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Size Subarray Sum",
+    "description": "Given an array of positive integers nums and a positive integer target, return the minimal length of a contiguous subarray of which the sum is greater than or equal to target. If there is no such subarray, return 0 instead.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Two Pointers"
+    ],
+    "input_format": "A list of positive integers nums followed by an integer target.",
+    "output_format": "An integer representing the minimal length of a contiguous subarray, or 0 if no such subarray exists.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^4",
+      "1 <= target <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2,3,1,2,4,3], target = 7",
+        "output": "2",
+        "explanation": "The subarray [4,3] has the minimal length of 2 whose sum is 7."
+      },
+      {
+        "input": "nums = [1,4,4], target = 4",
+        "output": "1",
+        "explanation": "The subarray [4] has a length of 1 and its sum is 4."
+      },
+      {
+        "input": "nums = [1,1,1,1,1,1,1,1], target = 11",
+        "output": "0",
+        "explanation": "No subarray exists with sum greater than or equal to 11."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window to optimize your solution.",
+      "Keep track of the sum of the current window and adjust the start pointer as needed."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Koko Eating Bananas",
+    "description": "Koko loves to eat bananas, and she can eat a specific number of bananas each hour. She has a pile of bananas and wants to finish them in a minimum number of hours. Given the number of bananas in the pile and the eating rate, your task is to find the minimum number of hours required for Koko to eat all the bananas. She can adjust her eating speed but needs to choose the same rate for the entire hour.",
+    "topic": "Binary Search",
+    "subtopic": "Optimization",
+    "tags": [
+      "Binary Search",
+      "Greedy",
+      "Simulation"
+    ],
+    "input_format": "Three integers: piles representing the array of the number of bananas in each pile, h representing the total hours available.",
+    "output_format": "An integer representing the minimum eating speed required to finish the bananas in h hours.",
+    "constraints": [
+      "1 <= piles.length <= 10^4",
+      "1 <= piles[i] <= 10^9",
+      "1 <= h <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "piles = [3, 6, 7, 11], h = 8",
+        "output": "4",
+        "explanation": "If Koko eats at a speed of 4 bananas/hour, she can finish in 8 hours."
+      },
+      {
+        "input": "piles = [30, 11, 23, 4, 20], h = 5",
+        "output": "30",
+        "explanation": "The minimum speed needed to eat all bananas in 5 hours is 30."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to find the optimal eating speed.",
+      "The speed must be at least 1, and can be at most the size of the largest pile."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Majority Element",
+    "description": "Given an array of size n, find the majority element. The majority element is the element that appears more than n/2 times in the array. You may assume that the majority element always exists in the array.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Frequency Count"
+    ],
+    "input_format": "An array of integers nums with size n.",
+    "output_format": "An integer representing the majority element.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 2, 1, 1, 1, 2, 2]",
+        "output": "2",
+        "explanation": "The number 2 appears 4 times which is more than n/2. Hence, it is the majority element."
+      },
+      {
+        "input": "nums = [3, 3, 4, 2, 4, 4, 2, 4, 4]",
+        "output": "4",
+        "explanation": "The number 4 appears 5 times which is more than n/2. Hence, it is the majority element."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hash map to count the frequency of elements.",
+      "The Boyer-Moore Voting Algorithm is an efficient approach."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Restore IP Addresses",
+    "description": "Given a string s consisting of digits, you need to restore it by returning all possible valid IP address combinations. A valid IP address consists of exactly four integers (each between 0 and 255) separated by single dots. The integers cannot contain leading zeros. For example, '01' is not allowed but '0' and '1' are. Your task is to find all the distinct valid IP addresses that can be created from the input string.",
+    "topic": "Backtracking",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "IP Address"
+    ],
+    "input_format": "A string s of digits (1 <= s.length <= 20).",
+    "output_format": "A list of strings representing all possible valid IP addresses.",
+    "constraints": [
+      "s consists of only digits.",
+      "1 <= s.length <= 20"
+    ],
+    "examples": [
+      {
+        "input": "s = \"25525511135\"",
+        "output": "[\"255.255.11.135\", \"255.255.111.35\"]",
+        "explanation": "The input '25525511135' can be split into two valid combinations: '255.255.11.135' and '255.255.111.35'."
+      },
+      {
+        "input": "s = \"0000\"",
+        "output": "[\"0.0.0.0\"]",
+        "explanation": "The input '0000' can only be split into '0.0.0.0' as the only valid combination."
+      },
+      {
+        "input": "s = \"1111\"",
+        "output": "[\"1.1.1.1\"]",
+        "explanation": "The input '1111' can only be split into '1.1.1.1' as the only valid combination."
+      },
+      {
+        "input": "s = \"010010\"",
+        "output": "[\"0.100.10.10\", \"0.100.101\", \"10.0.0.10\", \"10.0.10\", \"100.1.0.10\", \"100.10\"]",
+        "explanation": "The input '010010' can produce several valid combinations including '0.100.10.10' and '10.0.0.10'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider different lengths for each segment.",
+      "Use recursion to build the IP segments.",
+      "Remember to check for leading zeros."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string s consisting of parentheses, determine whether the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket in the correct order.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of characters '(', ')', '{', '}', '[' and ']'.",
+    "output_format": "Return a boolean value indicating whether the string s is valid.",
+    "constraints": [
+      "0 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The string contains one opening and one closing parenthesis in order."
+      },
+      {
+        "input": "s = '([{}])'",
+        "output": "true",
+        "explanation": "All brackets are closed properly in the correct order."
+      },
+      {
+        "input": "s = '(()'",
+        "output": "false",
+        "explanation": "The string contains one opening parenthesis without a matching closing parenthesis."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try using a stack to help keep track of the opening brackets.",
+      "Check if the current character is a closing bracket, and if it matches the top of the stack."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Combination Sum",
+    "description": "Given an array of distinct integers candidates and a target integer target, return all unique combinations of candidates where the chosen numbers sum to target. You may return the combinations in any order. The same number may be chosen from candidates an unlimited number of times. The solution set must not contain duplicate combinations.",
+    "topic": "Backtracking",
+    "subtopic": "Combination Sum",
+    "tags": [
+      "Backtracking",
+      "DFS",
+      "Combination"
+    ],
+    "input_format": "An array of distinct integers candidates and an integer target.",
+    "output_format": "A 2D array representing all unique combinations that sum to target.",
+    "constraints": [
+      "1 <= candidates.length <= 30",
+      "1 <= candidates[i] <= 200",
+      "All elements of candidates are distinct.",
+      "0 <= target <= 500"
+    ],
+    "examples": [
+      {
+        "input": "candidates = [2, 3, 6, 7], target = 7",
+        "output": "[[7], [2, 2, 3]]",
+        "explanation": "Two combinations that sum to 7 are [7] and [2, 2, 3]."
+      },
+      {
+        "input": "candidates = [2, 3, 5], target = 8",
+        "output": "[[2, 2, 2, 2], [2, 3, 3], [3, 5]]",
+        "explanation": "The combinations are [2, 2, 2, 2], [2, 3, 3], and [3, 5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to explore all combinations.",
+      "Use an index to keep track of the current position in candidates.",
+      "The same number can be used multiple times; don't increment the index when including it."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine if a given 9x9 Sudoku board is valid according to the rules of Sudoku. The Sudoku board is valid if the following conditions are met: Each row must contain the digits 1-9 without repetition, each column must contain the digits 1-9 without repetition, and each of the nine 3x3 sub-boxes must also contain the digits 1-9 without repetition. Empty cells are represented by the '.' character.",
+    "topic": "Board",
+    "subtopic": "Validation",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Board"
+    ],
+    "input_format": "A 9x9 2D character array representing the Sudoku board.",
+    "output_format": "Return true if the board is valid, otherwise return false.",
+    "constraints": [
+      "The board is a 9x9 grid.",
+      "Each cell contains either a digit ('1' to '9') or '.' for empty cells."
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "5",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "true",
+        "explanation": "All rows, columns, and 3x3 sub-boxes contain unique numbers from 1 to 9."
+      },
+      {
+        "input": [
+          [
+            "8",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "false",
+        "explanation": "The number '8' occurs twice in the first column."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use sets to track seen numbers in rows, columns, and boxes.",
+      "Consider all possibilities for each number's position."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given a linked list, reverse the nodes of a linked list k at a time and return its modified list. k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k, then left-out nodes in the end should remain as they are. You may not alter the values of the nodes, only nodes themselves may be changed in place.",
+    "topic": "Linked List",
+    "subtopic": "Reversing Linked List",
+    "tags": [
+      "Linked List",
+      "Two Pointers",
+      "Recursion"
+    ],
+    "input_format": "The input consists of the head of the linked list and an integer k.",
+    "output_format": "The head of the modified linked list after performing the k-group reverse.",
+    "constraints": [
+      "The number of nodes in the list is in the range [1, 10^4].",
+      "0 <= Node.val <= 1000",
+      "k is a positive integer less than or equal to the length of the linked list."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[2, 1, 4, 3, 5]",
+        "explanation": "The first two nodes (1 and 2) are reversed to become (2 and 1). Similarly, the next two nodes (3 and 4) are reversed. Node 5 remains as it is since there are no more nodes to form a complete group of 2."
+      },
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 3",
+        "output": "[3, 2, 1, 4, 5]",
+        "explanation": "The first three nodes (1, 2, and 3) are reversed to become (3, 2, and 1). The remaining nodes (4 and 5) are left as they are since they don't form a complete group of 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a dummy node to simplify edge cases.",
+      "You might need to count nodes to determine when to stop reversing."
+    ],
+    "company": "Autodesk"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Colors",
+    "description": "Given an array nums consisting of 0, 1, and 2, sort the array in-place so that all 0's come first, followed by all 1's, and all 2's. The problem can be solved using a single pass algorithm without using any extra space.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums where each element is 0, 1, or 2.",
+    "output_format": "The sorted array in-place, with all 0's first, followed by 1's and then 2's.",
+    "constraints": [
+      "1 <= nums.length <= 300",
+      "nums[i] is either 0, 1, or 2"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2,0,2,1,1,0]",
+        "output": "[0,0,1,1,2,2]",
+        "explanation": "After sorting, all 0's come first, followed by 1's and 2's."
+      },
+      {
+        "input": "nums = [2,0,1]",
+        "output": "[0,1,2]",
+        "explanation": "Sorting the array gives us all 0's, followed by 1's and 2's."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a one-pass algorithm for efficiency.",
+      "You may use three pointers to categorize the numbers."
+    ],
+    "company": "Autodesk"
+  }
+]

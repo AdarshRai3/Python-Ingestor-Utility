@@ -1,0 +1,282 @@
+[
+  {
+    "question_id": "",
+    "title": "Intersection of Two Arrays",
+    "description": "Given two integer arrays, write a function to compute their intersection. Each element in the result must be unique and you may return the result in any order.",
+    "topic": "Array",
+    "subtopic": "Set Operations",
+    "tags": [
+      "Array",
+      "Set",
+      "Intersection"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2.",
+    "output_format": "An array of unique integers representing the intersection of the two arrays.",
+    "constraints": [
+      "1 <= nums1.length, nums2.length <= 1000",
+      "-1000 <= nums1[i], nums2[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 2, 1], nums2 = [2, 2]",
+        "output": "[2]",
+        "explanation": "The intersection of arrays is 2, as it is the only common element."
+      },
+      {
+        "input": "nums1 = [4, 9, 5], nums2 = [9, 4, 9, 8, 4]",
+        "output": "[9, 4]",
+        "explanation": "The intersection of arrays is 4 and 9, both present in nums1 and nums2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a set to store the elements of one array for constant time lookups.",
+      "Think about how to ensure the result contains unique values."
+    ],
+    "company": "Criteo"
+  },
+  {
+    "question_id": "",
+    "title": "Flood Fill",
+    "description": "Given a 2D integer grid image representing the color of each pixel and a starting pixel (sr, sc), perform a flood fill on the image to change the color of the starting pixel to newColor and all adjacent pixels connected to it (4-directionally) that have the same color as the starting pixel to this new color. Return the modified image after performing the flood fill.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D array of integers image, an integer sr, an integer sc, and an integer newColor.",
+    "output_format": "A 2D array of integers representing the modified image after the flood fill.",
+    "constraints": [
+      "1 <= image.length, image[0].length <= 50",
+      "0 <= image[i][j], newColor <= 100000",
+      "0 <= sr < image.length",
+      "0 <= sc < image[0].length"
+    ],
+    "examples": [
+      {
+        "input": "image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, newColor = 2",
+        "output": "[[2,2,2],[2,2,0],[2,0,1]]",
+        "explanation": "From the pixel (1,1) which has the color 1, we change all adjacent pixels with the same color to 2."
+      },
+      {
+        "input": "image = [[0,0,0],[0,0,0]], sr = 0, sc = 0, newColor = 2",
+        "output": "[[2,2,2],[2,2,2]]",
+        "explanation": "All pixels are connected and thus, all will change to new color 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You can use DFS or BFS to explore the connected pixels.",
+      "Make sure to check the boundaries when you move in four directions: up, down, left, right."
+    ],
+    "company": "Criteo"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Brackets"
+    ],
+    "input_format": "A string s consisting of parentheses characters.",
+    "output_format": "A boolean value indicating whether the strings of parentheses are valid.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are properly closed and nested."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "All brackets are closed in the correct order."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The brackets are not closed in the correct order."
+      },
+      {
+        "input": "s = '{[()]}')",
+        "output": "true",
+        "explanation": "All brackets are closed in the correct order."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Pop from the stack when you encounter a closing bracket.",
+      "Check if the popped element matches the expected closing bracket."
+    ],
+    "company": "Criteo"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "You are given two integer arrays, nums1 and nums2, which are sorted in non-decreasing order. You need to merge the two arrays into a single array, sorted in non-decreasing order. The merged array should be stored in nums1. The first part of nums1 has a size of m, which represents the number of elements in nums1 that should be considered, and the remaining part of nums1 has a size of n, which represents the space available for the elements from nums2. After merging, the merged array should also be non-decreasingly sorted.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "Two integer arrays, nums1 and nums2, with their sizes m and n.",
+    "output_format": "The merged sorted array stored in nums1.",
+    "constraints": [
+      "1 <= m, n <= 200",
+      "0 <= nums1.length <= 200",
+      "0 <= nums2.length <= 200",
+      "-10^9 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [2, 5, 6], n = 3",
+        "output": "[1, 2, 2, 3, 5, 6]",
+        "explanation": "After merging, the array becomes [1, 2, 2, 3, 5, 6]."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "With no elements to merge from nums2, the result remains [1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to compare elements of both arrays.",
+      "Start filling nums1 from the end to avoid overwriting its own elements."
+    ],
+    "company": "Criteo"
+  },
+  {
+    "question_id": "",
+    "title": "Ransom Note",
+    "description": "Given two strings: `ransomNote` and `magazine`, return true if `ransomNote` can be constructed from the letters of `magazine` and false otherwise. Each letter in the magazine can only be used once in the ransomNote.",
+    "topic": "String",
+    "subtopic": "Character Counting",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Counting"
+    ],
+    "input_format": "Two strings, `ransomNote` and `magazine`, where 1 <= ransomNote.length, magazine.length <= 10^5.",
+    "output_format": "A boolean value indicating whether the ransom note can be constructed from the magazine.",
+    "constraints": [
+      "1 <= ransomNote.length, magazine.length <= 10^5",
+      "Both `ransomNote` and `magazine` consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "ransomNote = 'a', magazine = 'b'",
+        "output": "false",
+        "explanation": "The magazine doesn't have letter 'a', so the ransom note cannot be constructed."
+      },
+      {
+        "input": "ransomNote = 'aa', magazine = 'aab'",
+        "output": "true",
+        "explanation": "The magazine contains two 'a's and one 'b', so the ransom note can be constructed."
+      },
+      {
+        "input": "ransomNote = 'abc', magazine = 'cba'",
+        "output": "true",
+        "explanation": "The magazine contains all letters needed for the ransomNote in different order."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a frequency count of letters.",
+      "You can use a Hash Map to keep track of letter counts."
+    ],
+    "company": "Criteo"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers 'nums' and an integer 'target', return the indices of the two numbers such that they add up to 'target'. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers that add up to target.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9",
+      "Each input would have exactly one solution."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9, hence the indices are [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6, hence the indices are [1, 2]."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 3 + 3 = 6, hence the indices are [0, 1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash table to store the indices of elements."
+    ],
+    "company": "Criteo"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "You are given a rotated sorted array, and you need to search for a target value within it. If found, return its index. Otherwise, return -1. Write an efficient algorithm to accomplish this task.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An integer array 'nums' and an integer 'target'.",
+    "output_format": "An integer representing the index of 'target' in 'nums' or -1 if 'target' is not found.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "-10^4 <= nums[i] <= 10^4",
+      "All elements of nums are unique.",
+      "It's guaranteed that 'nums' is rotated."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4, 5, 6, 7, 0, 1, 2], target = 0",
+        "output": "4",
+        "explanation": "The target value 0 is found at index 4 in the array."
+      },
+      {
+        "input": "nums = [4, 5, 6, 7, 0, 1, 2], target = 3",
+        "output": "-1",
+        "explanation": "The target value 3 is not present in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to reduce the time complexity.",
+      "Identify which part of the array is sorted to decide where to search."
+    ],
+    "company": "Criteo"
+  }
+]

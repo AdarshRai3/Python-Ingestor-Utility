@@ -1,0 +1,4298 @@
+[
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers 'nums' and an integer 'target', return the indices of the two numbers such that they add up to 'target'. You may assume that each input would have exactly one solution, and you may not use the same element twice.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array containing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9",
+      "Assume there is exactly one solution."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9, thus the answer is indices 0 and 1."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6, thus the answer is indices 1 and 2."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 3 + 3 = 6, thus the answer is indices 0 and 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to track numbers and their indices.",
+      "Iterate through the array and check for the complement."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Roman to Integer",
+    "description": "Given a string representing a Roman numeral, convert it to an integer. The Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. In this conversion, it's important to consider that when a lesser numeral appears before a greater numeral, it indicates subtraction.",
+    "topic": "String",
+    "subtopic": "Conversion",
+    "tags": [
+      "String",
+      "Conversion",
+      "Roman Numerals"
+    ],
+    "input_format": "A string s representing a Roman numeral.",
+    "output_format": "An integer representing the converted value.",
+    "constraints": [
+      "1 <= s.length <= 15",
+      "s consists of valid Roman numeral symbols."
+    ],
+    "examples": [
+      {
+        "input": "s = 'XIV'",
+        "output": "14",
+        "explanation": "X (10) + IV (4) = 14."
+      },
+      {
+        "input": "s = 'CCXLVI'",
+        "output": "246",
+        "explanation": "CC (200) + XL (40) + VI (6) = 246."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Identify combinations of symbols that represent subtraction."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Map"
+    ],
+    "input_format": "A string s consisting of English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 5 * 10^4",
+      "s consists of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The answer is 'abc', with the length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The answer is 'b', with the length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The answer is 'wke', with the length of 3."
+      },
+      {
+        "input": "s = ''",
+        "output": "0",
+        "explanation": "The input string is empty, so the length is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use two pointers to represent the current substring.",
+      "Use a hash map to track the last index of each character."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Container With Most Water",
+    "description": "Given n non-negative integers a_1, a_2, ..., a_n where each represents a point at coordinate (i, a_i). n vertical lines are drawn such that the two endpoints of a line i is at (i, a_i) and (i, 0). Find two lines, which together with the x-axis forms a container, such that the container contains the most water. Note that you may not slant the container.",
+    "topic": "Array",
+    "subtopic": "Two-Pointer",
+    "tags": [
+      "Array",
+      "Two-Pointer",
+      "Greedy"
+    ],
+    "input_format": "An integer array height of length n.",
+    "output_format": "An integer representing the maximum amount of water that can be contained.",
+    "constraints": [
+      "2 <= height.length <= 10^5",
+      "0 <= height[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "height = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The lines at index 1 and index 8 form a container with a width of 7 and a height of 7, so the area is 7 * 7 = 49."
+      },
+      {
+        "input": "height = [1,1]",
+        "output": "1",
+        "explanation": "The only container is formed by the two lines at index 0 and 1, which have a height of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two pointers to optimize the search for the maximum area.",
+      "The area is limited by the shorter of the two lines."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)). If the combined array is of even size, the median is the average of the two middle numbers. If the combined array is of odd size, the median is the middle number.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Median"
+    ],
+    "input_format": "Two sorted arrays nums1 and nums2.",
+    "output_format": "A float representing the median of the two sorted arrays.",
+    "constraints": [
+      "0 <= nums1.length <= 1000",
+      "0 <= nums2.length <= 1000",
+      "-10^6 <= nums1[i], nums2[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 3], nums2 = [2]",
+        "output": "2.0",
+        "explanation": "The merged array is [1, 2, 3] and the median is 2."
+      },
+      {
+        "input": "nums1 = [1, 2], nums2 = [3, 4]",
+        "output": "2.5",
+        "explanation": "The merged array is [1, 2, 3, 4] and the median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider finding the median position in the combined length of the two arrays.",
+      "You can use binary search to optimize the process."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Depth of Binary Tree",
+    "description": "Given a binary tree, return its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.",
+    "topic": "Tree",
+    "subtopic": "Depth-first Search",
+    "tags": [
+      "Tree",
+      "Depth",
+      "DFS"
+    ],
+    "input_format": "The input is the root node of a binary tree.",
+    "output_format": "An integer representing the maximum depth of the binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [3, 9, 20, null, null, 15, 7]",
+        "output": "3",
+        "explanation": "The maximum depth is 3, which is the path 3 -> 20 -> 15."
+      },
+      {
+        "input": "root = [1,null,2]",
+        "output": "2",
+        "explanation": "The maximum depth is 2, which is the path 1 -> 2."
+      },
+      {
+        "input": "root = []",
+        "output": "0",
+        "explanation": "An empty tree has a maximum depth of 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a recursive approach to traverse the tree.",
+      "The depth of a node is 1 plus the maximum depth of its children."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Add Two Numbers",
+    "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return it as a linked list.",
+    "topic": "Linked List",
+    "subtopic": "Addition",
+    "tags": [
+      "Linked List",
+      "Math",
+      "Addition"
+    ],
+    "input_format": "Two linked lists representing the numbers.",
+    "output_format": "A linked list representing the sum of the two numbers.",
+    "constraints": [
+      "The number of nodes in each linked list is in the range [1, 100].",
+      "0 <= Node.val <= 9",
+      "It is guaranteed that the list represents a number."
+    ],
+    "examples": [
+      {
+        "input": "l1 = [2,4,3], l2 = [5,6,4]",
+        "output": "[7,0,8]",
+        "explanation": "342 + 465 = 807, hence the output in reverse order is [7,0,8]."
+      },
+      {
+        "input": "l1 = [0], l2 = [0]",
+        "output": "[0]",
+        "explanation": "0 + 0 = 0."
+      },
+      {
+        "input": "l1 = [9,9,9,9,9,9,9], l2 = [9,9,9]",
+        "output": "[8,9,9,9,0,0,1]",
+        "explanation": "9999999 + 999 = 10009998, hence output in reverse order is [8,9,9,9,0,0,1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to handle carrying when two digits add up to 10 or more.",
+      "You may need an additional node for a carry at the end."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an array of integers, return all the unique triplets [nums[a], nums[b], nums[c]] such that a, b, and c are distinct indices and nums[a] + nums[b] + nums[c] == 0. You may return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Hash Table"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of unique triplets that sum up to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The two unique triplets that sum up to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "There are no elements in the array, hence no triplets."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "No triplet can sum up to zero since the minimum element is greater than zero."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array to make it easier to find triplets.",
+      "Use a set to avoid duplicate triplets."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicates from Sorted Array",
+    "description": "Given a sorted array nums, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be preserved. Since it is impossible to change the length of the array in Java, you must instead have the result be placed in the first part of the array nums. You must return the new length of the array. Do not allocate extra space for another array, you must do this by modifying the input array in-place.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-Place"
+    ],
+    "input_format": "A sorted array of integers nums.",
+    "output_format": "An integer representing the new length of the array after removing duplicates.",
+    "constraints": [
+      "0 <= nums.length <= 3 * 10^4",
+      "-10^4 <= nums[i] <= 10^4",
+      "nums is sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2]",
+        "output": "2",
+        "explanation": "The unique elements are 1 and 2. The new length is 2."
+      },
+      {
+        "input": "nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]",
+        "output": "5",
+        "explanation": "The unique elements are 0, 1, 2, 3, and 4. The new length is 5."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to keep track of the current position.",
+      "Modify the array in such a way that unique elements are shifted to the front."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. The elements of nums1 are already in place to accommodate the merging. You must fulfill this in-place and without using extra space.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "Two sorted integer arrays nums1 and nums2. The first array has a size that is equal to m + n where m is the number of elements initialized in nums1 and n is the number of elements in nums2.",
+    "output_format": "The merged array sorted in non-decreasing order.",
+    "constraints": [
+      "0 <= m, n <= 200",
+      "1 <= m + n <= 200",
+      "-10^9 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3",
+        "output": "[1,2,2,3,5,6]",
+        "explanation": "After merging nums2 into nums1, the sorted array becomes [1,2,2,3,5,6]."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "Since nums2 is empty, the merged array is just nums1: [1]."
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "explanation": "The nums1 initially contains no elements, so we fill it with elements from nums2 resulting in [1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to traverse both arrays.",
+      "Start merging from the end of the nums1 array."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A string is considered a palindrome if it reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s with length n (1 <= n <= 1000).",
+    "output_format": "A string representing the longest palindromic substring.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "babad",
+        "output": "bab",
+        "explanation": "Both 'bab' and 'aba' are valid longest palindromic substrings. The answer can be either."
+      },
+      {
+        "input": "cbbd",
+        "output": "bb",
+        "explanation": "'bb' is the longest palindromic substring."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding from the center of potential palindromic substrings.",
+      "Check for both odd and even length palindromes."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers prices representing the stock prices on different days.",
+    "output_format": "An integer representing the maximum profit from a single buy and sell operation.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price encountered so far.",
+      "Calculate the profit at each step and update the maximum profit."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Word Break",
+    "description": "Given an input string s and a dictionary of words wordDict, determine if s can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Backtracking"
+    ],
+    "input_format": "A string s and a list of strings wordDict representing the dictionary.",
+    "output_format": "A boolean value indicating whether the string can be segmented into words from the dictionary.",
+    "constraints": [
+      "1 <= s.length <= 300",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 20",
+      "The input string and words in the dictionary consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"leetcode\", wordDict = [\"leet\", \"code\"]",
+        "output": "true",
+        "explanation": "'leetcode' can be segmented as 'leet' and 'code'."
+      },
+      {
+        "input": "s = \"applepenapple\", wordDict = [\"apple\", \"pen\"]",
+        "output": "true",
+        "explanation": "'applepenapple' can be segmented as 'apple', 'pen', and 'apple'."
+      },
+      {
+        "input": "s = \"catsandog\", wordDict = [\"cats\", \"dog\", \"sand\", \"and\", \"cat\"]",
+        "output": "false",
+        "explanation": "'catsandog' cannot be segmented into words from the given dictionary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to solve this problem.",
+      "Use a boolean array to keep track of valid segmentations."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Number",
+    "description": "Given an integer, determine if it is a palindrome. An integer is a palindrome when it reads the same backward as forward. For example, 121 is a palindrome while 123 is not.",
+    "topic": "Number",
+    "subtopic": "Mathematical Properties",
+    "tags": [
+      "Number",
+      "Palindrome",
+      "Mathematics"
+    ],
+    "input_format": "An integer x.",
+    "output_format": "Return true if x is a palindrome, otherwise return false.",
+    "constraints": [
+      "-2^31 <= x <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "121",
+        "output": "true",
+        "explanation": "121 reads the same backward as forward."
+      },
+      {
+        "input": "-121",
+        "output": "false",
+        "explanation": "-121 reversed is 121-, which is not the same."
+      },
+      {
+        "input": "10",
+        "output": "false",
+        "explanation": "10 reversed is 01, which is not the same."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how you can reverse the number and compare it to the original."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Climbing Stairs",
+    "description": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "topic": "Dynamic Programming",
+    "subtopic": "Fibonacci Sequence",
+    "tags": [
+      "Dynamic Programming",
+      "Recursion",
+      "Mathematics"
+    ],
+    "input_format": "An integer n, representing the total number of steps in the staircase.",
+    "output_format": "An integer representing the number of distinct ways to climb to the top.",
+    "constraints": [
+      "1 <= n <= 45"
+    ],
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "There are two ways to climb to the top: (1 step + 1 step) and (2 steps)."
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "explanation": "There are three ways to climb to the top: (1 step + 1 step + 1 step), (1 step + 2 steps), and (2 steps + 1 step)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using dynamic programming to solve this problem efficiently.",
+      "The number of ways to reach step n can be expressed in terms of ways to reach previous steps."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Image",
+    "description": "You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise) in place. You have to rotate the matrix without using any extra space.",
+    "topic": "Matrix",
+    "subtopic": "In-place Rotation",
+    "tags": [
+      "Matrix",
+      "In-place",
+      "Rotation"
+    ],
+    "input_format": "An n x n 2D list (matrix) of integers where 1 <= n <= 20 and each element is a value between 0 and 100.",
+    "output_format": "The matrix after rotating it 90 degrees clockwise in place.",
+    "constraints": [
+      "1 <= matrix.length == matrix[i].length <= 20",
+      "0 <= matrix[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1,2,3],[4,5,6],[7,8,9]]",
+        "output": "[[7,4,1],[8,5,2],[9,6,3]]",
+        "explanation": "The matrix after rotating 90 degrees clockwise becomes [[7,4,1],[8,5,2],[9,6,3]]."
+      },
+      {
+        "input": "matrix = [[5]]",
+        "output": "[[5]]",
+        "explanation": "A single element matrix remains the same after rotation."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to rotate the corners and edges of the matrix.",
+      "Think about swapping elements in groups."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Sorted Lists",
+    "description": "You are given the heads of two sorted linked lists. Merge the two lists into one sorted linked list and return it. The list should be made by splicing together the nodes of the two lists. Note that the new list should be made by the nodes from the input lists, and should not be created from scratch.",
+    "topic": "Linked List",
+    "subtopic": "Merge",
+    "tags": [
+      "Linked List",
+      "Merge",
+      "Sorting"
+    ],
+    "input_format": "The input consists of two linked lists represented by the heads of the lists.",
+    "output_format": "A linked list that represents the merged sorted list.",
+    "constraints": [
+      "The number of nodes in both lists is in the range [0, 50].",
+      "-100 <= Node.val <= 100",
+      "Both lists are guaranteed to be sorted in non-decreasing order."
+    ],
+    "examples": [
+      {
+        "input": "list1 = [1, 2, 4], list2 = [1, 3, 4]",
+        "output": "[1, 1, 2, 3, 4, 4]",
+        "explanation": "Merging the two lists, we get the sorted list [1, 1, 2, 3, 4, 4]."
+      },
+      {
+        "input": "list1 = [], list2 = [0]",
+        "output": "[0]",
+        "explanation": "When one list is empty, the result is just the other list."
+      },
+      {
+        "input": "list1 = [], list2 = []",
+        "output": "[]",
+        "explanation": "Merging two empty lists results in an empty list."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a dummy node to simplify the merging process.",
+      "You can iterate through both lists and compare their values."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Common Prefix",
+    "description": "Write a function to find the longest common prefix string among an array of strings. If there is no common prefix, return an empty string.",
+    "topic": "String",
+    "subtopic": "Prefix",
+    "tags": [
+      "String",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings `strs` where 1 <= strs.length <= 200 and 0 <= strs[i].length <= 200.",
+    "output_format": "A string representing the longest common prefix.",
+    "constraints": [
+      "1 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "All strings consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\", \"flow\", \"flight\"]",
+        "output": "\"fl\"",
+        "explanation": "The longest common prefix is 'fl'."
+      },
+      {
+        "input": "strs = [\"dog\", \"racecar\", \"car\"]",
+        "output": "\"\"",
+        "explanation": "There is no common prefix among the strings."
+      },
+      {
+        "input": "strs = [\"ab\", \"a\"]",
+        "output": "\"a\"",
+        "explanation": "The longest common prefix is 'a'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider horizontal scanning to compare strings one by one.",
+      "If you find a mismatch, shorten the prefix.",
+      "An empty prefix means no common prefix exists."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Linked List Cycle",
+    "description": "Given a linked list, determine if it has a cycle in it. A cycle is formed when a node's next pointer points back to a previous node in the list. To detect the cycle, you can use a fast and slow pointer technique.",
+    "topic": "Linked List",
+    "subtopic": "Cycle Detection",
+    "tags": [
+      "LinkedList",
+      "Cycle",
+      "Two Pointers"
+    ],
+    "input_format": "The input consists of a head node of a singly linked list.",
+    "output_format": "Return true if the linked list has a cycle, otherwise return false.",
+    "constraints": [
+      "The number of nodes in the linked list can be in the range [0, 10^4].",
+      "The value of the nodes can be any integer."
+    ],
+    "examples": [
+      {
+        "input": "head = [3, 2, 0, -4], pos = 1",
+        "output": "true",
+        "explanation": "The tail connects to the second node, creating a cycle."
+      },
+      {
+        "input": "head = [1, 2], pos = 0",
+        "output": "true",
+        "explanation": "The tail connects to the first node, creating a cycle."
+      },
+      {
+        "input": "head = [1], pos = -1",
+        "output": "false",
+        "explanation": "The linked list does not have a cycle."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers moving at different speeds.",
+      "If there is a cycle, the fast pointer will meet the slow pointer."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of characters '(', ')', '{', '}', '[' and ']'.",
+    "output_format": "A boolean value, true if the string is valid, false otherwise.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The string has a matching opening and closing parenthesis."
+      },
+      {
+        "input": "s = '(]')",
+        "output": "false",
+        "explanation": "The string contains mismatched parentheses."
+      },
+      {
+        "input": "s = '{[()]}')",
+        "output": "true",
+        "explanation": "All brackets in the string are properly matched and closed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to track opening brackets.",
+      "Pop from the stack when a closing bracket is found."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Element",
+    "description": "Given an array of integers nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed. Since it is impossible to change the length of the array in Java, you must instead have the result be placed in the first part of the array. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-Place"
+    ],
+    "input_format": "An array of integers nums and an integer val.",
+    "output_format": "The new length of the array after removal of the element val.",
+    "constraints": [
+      "0 <= nums.length <= 100",
+      "-100 <= nums[i] <= 100",
+      "val is an integer"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 2, 3], val = 3",
+        "output": "2",
+        "explanation": "After removing 3, the array is [2, 2]. The length of the array after removal is 2."
+      },
+      {
+        "input": "nums = [0,1,2,2,3,0,4,2], val = 2",
+        "output": "5",
+        "explanation": "After removing 2, the array is [0, 1, 3, 0, 4]. The length of the array after removal is 5."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to track the position of elements in the array.",
+      "Move the elements that are not equal to val to the front of the array."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Generation",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "String"
+    ],
+    "input_format": "An integer n representing the number of pairs of parentheses.",
+    "output_format": "A list of strings representing all combinations of well-formed parentheses.",
+    "constraints": [
+      "0 <= n <= 8"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\"]",
+        "explanation": "The valid combinations of 3 pairs of parentheses are: ((())), (()()), (()), ()() and ()()."
+      },
+      {
+        "input": "n = 1",
+        "output": "[\"()\"]",
+        "explanation": "The only valid combination for 1 pair of parentheses is: ()"
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a backtracking approach to build the strings.",
+      "Keep track of the number of opening and closing parentheses used."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. An interval is defined as a pair of integers, where the first element is the start and the second element is the end of the interval. If two intervals overlap, they can be merged into one continuous interval. The output should be a list of non-overlapping intervals sorted by their starting points.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A list of intervals, where each interval is represented as a list of two integers [start, end].",
+    "output_format": "A list of merged intervals, where each interval is also represented as a list of two integers [start, end].",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they are merged into [1,6]. The other intervals do not overlap."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] overlap at the boundary, so they are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on their starting values.",
+      "Use a stack or a list to keep track of the merged intervals."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Your goal is to determine if you can reach the last index starting from the first index. You can assume that you can always reach the last index if you are already at it.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "A boolean value indicating whether you can reach the last index.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "true",
+        "explanation": "Jump 1 step from index 0 to 1, then 2 steps to reach index 4."
+      },
+      {
+        "input": "nums = [3, 2, 1, 0, 4]",
+        "output": "false",
+        "explanation": "You will always land on the index 3 and cannot jump further to reach the last index."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to track the farthest index you can reach.",
+      "If at any point the current index exceeds the farthest reachable index, you cannot proceed."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order. This means starting from the upper left element, traverse the matrix in a clockwise spiral pattern and return the elements in the order they are visited.",
+    "topic": "Matrix",
+    "subtopic": "Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Spiral"
+    ],
+    "input_format": "An m x n matrix represented as a 2D list of integers.",
+    "output_format": "A list of integers representing the elements of the matrix in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "The total number of elements does not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The elements are traversed in a spiral order starting from 1 and ending at 5."
+      },
+      {
+        "input": "matrix = [[1]]",
+        "output": "[1]",
+        "explanation": "There is only one element in the matrix, which is returned."
+      },
+      {
+        "input": "matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]",
+        "output": "[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]",
+        "explanation": "The elements are traversed spirally starting from 1 to 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using boundaries to manage the spiral traversal.",
+      "Move right, down, left, and up in sequence while adjusting the boundaries."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of integers representing the height of bars in a histogram, compute how much water can be trapped after raining. The width of each bar is 1.",
+    "topic": "Array",
+    "subtopic": "Two Pointer Technique",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers representing the height of each bar, where the ith element is the height of the ith bar.",
+    "output_format": "An integer representing the total unit of water trapped.",
+    "constraints": [
+      "0 <= height.length <= 2 * 10^4",
+      "0 <= height[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water can be trapped between the heights: 1, 2, and 3 for a total of 6 units."
+      },
+      {
+        "input": "height = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water can be trapped in the spaces between the heights for a total of 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two pointers to track the maximum height on both sides.",
+      "Think about how the water level is determined by the minimum of the two maximum heights."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Anagrams"
+    ],
+    "input_format": "An array of strings strs where 1 <= strs.length <= 10^4 and 1 <= strs[i].length <= 100.",
+    "output_format": "A list of lists, where each sublist contains strings that are anagrams.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "1 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The strings \"eat\", \"tea\", and \"ate\" are anagrams of each other. Similarly, \"nat\" and \"tan\" are anagrams."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "The only string is an empty string, which is trivially an anagram of itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to group the strings.",
+      "Use sorted versions of the strings as keys in your hashmap."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Search Insert Position",
+    "description": "Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Insertion"
+    ],
+    "input_format": "An array of distinct integers nums and an integer target.",
+    "output_format": "An integer representing the index of the target or the index where it can be inserted.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^4 <= nums[i] <= 10^4",
+      "nums is sorted in ascending order.",
+      "The integers in nums are distinct."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 5, 6], target = 5",
+        "output": "2",
+        "explanation": "Target 5 is found at index 2."
+      },
+      {
+        "input": "nums = [1, 3, 5, 6], target = 2",
+        "output": "1",
+        "explanation": "Target 2 is not found. It can be inserted at index 1."
+      },
+      {
+        "input": "nums = [1, 3, 5, 6], target = 7",
+        "output": "4",
+        "explanation": "Target 7 is not found. It can be inserted at index 4."
+      },
+      {
+        "input": "nums = [1, 3, 5, 6], target = 0",
+        "output": "0",
+        "explanation": "Target 0 is not found. It can be inserted at index 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use binary search to find the position efficiently.",
+      "Consider edge cases where the target is less than the first element or greater than the last element."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Subsets",
+    "description": "Given a set of distinct integers, nums, return all possible subsets (the power set). The solution set must not contain duplicate subsets. You may return the answer in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Generating Subsets",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "Subsets"
+    ],
+    "input_format": "An array of distinct integers nums.",
+    "output_format": "A list of lists containing all possible subsets of nums.",
+    "constraints": [
+      "0 <= nums.length <= 10",
+      "-10 <= nums[i] <= 10",
+      "All elements of nums are distinct."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[[], [1], [2], [3], [1,2], [1,3], [2,3], [1,2,3]]",
+        "explanation": "The power set of [1, 2, 3] includes all combinations: the empty subset, single elements, pairs, and the full set."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[[], [0]]",
+        "explanation": "The power set of [0] includes the empty subset and the set itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to explore all combinations.",
+      "You can build subsets incrementally and backtrack when needed.",
+      "Empty subset is a valid subset."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "description": "Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value. If target is not found in the array, return [-1, -1]. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An array of integers nums which is sorted in ascending order followed by an integer target.",
+    "output_format": "A list of two integers representing the starting and ending position of the target value in the array.",
+    "constraints": [
+      "0 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "The array is sorted in ascending order.",
+      "You must only check for integer equality."
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 8",
+        "output": "[3, 4]",
+        "explanation": "The first position of 8 is at index 3 and the last position is at index 4."
+      },
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 6",
+        "output": "[-1, -1]",
+        "explanation": "The target value 6 does not exist in the array."
+      },
+      {
+        "input": "nums = [], target = 0",
+        "output": "[-1, -1]",
+        "explanation": "The array is empty, so the target cannot be found."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search for this problem.",
+      "You may need to adjust the binary search slightly to find both positions."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Integer",
+    "description": "Given a 32-bit signed integer, reverse the digits of the integer. If the reversed integer overflows, return 0. Make sure to handle negative integers appropriately.",
+    "topic": "Mathematics",
+    "subtopic": "Number Manipulation",
+    "tags": [
+      "Integer",
+      "Mathematics",
+      "String Manipulation"
+    ],
+    "input_format": "A single integer x which can be positive or negative.",
+    "output_format": "An integer representing the reversed digits of x, or 0 if overflow occurs.",
+    "constraints": [
+      "\u22122^31 <= x <= 2^31 \u2212 1"
+    ],
+    "examples": [
+      {
+        "input": "x = 123",
+        "output": "321",
+        "explanation": "The reverse of 123 is 321."
+      },
+      {
+        "input": "x = -120",
+        "output": "-21",
+        "explanation": "The reverse of -120 is -21, removing the trailing zeros."
+      },
+      {
+        "input": "x = 1534236469",
+        "output": "0",
+        "explanation": "Reversing 1534236469 gives 9646324351, which overflows 32-bit signed integer range."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using string manipulation.",
+      "Watch for integer overflow cases."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Count and Say",
+    "description": "The 'Count and Say' sequence is a sequence of digit strings defined by the recursive formula: countAndSay(1) = '1'. To generate the next term in the sequence, count the number of digits in the previous term, and say what you see. The first few terms are: \n1. '1' \n2. '11' (saying 'one 1') \n3. '21' (saying 'two 1s') \n4. '1211' (saying 'one 2, then one 1') \n5. '111221' (saying 'one 1, one 2, then two 1s')\n\nGiven an integer n, generate the nth term of the 'Count and Say' sequence.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Recursion",
+      "Simulation"
+    ],
+    "input_format": "An integer n (1 <= n <= 30).",
+    "output_format": "A string representing the nth term of the Count and Say sequence.",
+    "constraints": [
+      "1 <= n <= 30"
+    ],
+    "examples": [
+      {
+        "input": "n = 1",
+        "output": "1",
+        "explanation": "The first term is defined as '1'."
+      },
+      {
+        "input": "n = 4",
+        "output": "1211",
+        "explanation": "The first term is '1', the second term is '11', the third term is '21', and the fourth term is '1211'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to describe the previous term up to n.",
+      "You can use string manipulation to build the next term."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Combination Sum",
+    "description": "Given an array of distinct integers 'candidates' and a target integer 'target', return all unique combinations of 'candidates' where the chosen numbers sum to 'target'. You may reuse the same number from 'candidates' an unlimited number of times. The solution set must not contain duplicate combinations.",
+    "topic": "Backtracking",
+    "subtopic": "Combination Generation",
+    "tags": [
+      "Backtracking",
+      "Combination",
+      "Recursion"
+    ],
+    "input_format": "An array of distinct integers 'candidates' and an integer 'target'.",
+    "output_format": "A list of lists of integers, where each list contains a unique combination of 'candidates' that sum to 'target'.",
+    "constraints": [
+      "1 <= candidates.length <= 30",
+      "1 <= candidates[i] <= 200",
+      "All elements of candidates are distinct."
+    ],
+    "examples": [
+      {
+        "input": "candidates = [2, 3, 6, 7], target = 7",
+        "output": "[[7], [2, 2, 3]]",
+        "explanation": "The combination [7] sums to 7. The combination [2, 2, 3] also sums to 7."
+      },
+      {
+        "input": "candidates = [2, 3, 5], target = 8",
+        "output": "[[2, 2, 2, 2], [2, 3, 3], [3, 5]]",
+        "explanation": "The combinations that sum to 8 are [2, 2, 2, 2], [2, 3, 3], and [3, 5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using recursion to explore all combinations.",
+      "Consider the case where you can use the same number multiple times."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Index of the First Occurrence in a String",
+    "description": "Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.",
+    "topic": "String",
+    "subtopic": "Substring Search",
+    "tags": [
+      "String",
+      "Searching",
+      "Substring"
+    ],
+    "input_format": "Two strings, haystack and needle.",
+    "output_format": "An integer representing the index of the first occurrence of needle in haystack, or -1 if needle is not found.",
+    "constraints": [
+      "1 <= haystack.length, needle.length <= 10^4",
+      "haystack and needle consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "haystack = 'sadbutsad', needle = 'sad'",
+        "output": "0",
+        "explanation": "The substring 'sad' appears at index 0 in 'sadbutsad'."
+      },
+      {
+        "input": "haystack = 'leetcode', needle = 'leeto'",
+        "output": "-1",
+        "explanation": "The substring 'leeto' is not found in 'leetcode'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using the built-in string methods for substring search.",
+      "Remember to handle the case when needle is longer than haystack."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Plus One",
+    "description": "You are given a non-empty array of non-negative integers representing the digits of a number. The most significant digit is at the head of the array, and each element in the array is a single digit. The number represented by the array is incremented by one, and you need to return the resulting array of digits.",
+    "topic": "Array",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Array",
+      "Math",
+      "Manipulation"
+    ],
+    "input_format": "An array of integers digits.",
+    "output_format": "An array of integers representing the digits after incrementing the original number by one.",
+    "constraints": [
+      "1 <= digits.length <= 100",
+      "0 <= digits[i] <= 9",
+      "digits does not contain any leading zeros, except for the number 0 itself."
+    ],
+    "examples": [
+      {
+        "input": "digits = [1, 2, 3]",
+        "output": "[1, 2, 4]",
+        "explanation": "The number represented is 123. Adding one gives 124."
+      },
+      {
+        "input": "digits = [9]",
+        "output": "[1, 0]",
+        "explanation": "The number represented is 9. Adding one gives 10."
+      },
+      {
+        "input": "digits = [4, 3, 2, 1]",
+        "output": "[4, 3, 2, 2]",
+        "explanation": "The number represented is 4321. Adding one gives 4322."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the carry when adding one to the last digit.",
+      "You might need to handle cases where the last digit is 9."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Single Number",
+    "description": "Given a non-empty array of integers, every element appears twice except for one. Find that single one. You must implement a solution with a linear runtime complexity and without using extra space.",
+    "topic": "Array",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Array",
+      "Bit Manipulation",
+      "Unique Element"
+    ],
+    "input_format": "An array of integers nums where every integer appears twice except for one.",
+    "output_format": "An integer representing the single number that appears only once.",
+    "constraints": [
+      "1 <= nums.length <= 3 * 10^4",
+      "-3 * 10^4 <= nums[i] <= 3 * 10^4",
+      "It is guaranteed that the single number exists."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4, 1, 2, 1, 2]",
+        "output": "4",
+        "explanation": "In the array, 4 appears only once while all other numbers appear twice."
+      },
+      {
+        "input": "nums = [2, 2, 1]",
+        "output": "1",
+        "explanation": "1 is the number that appears only once."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use XOR operation, as it has a unique property that a ^ a = 0 and a ^ 0 = a."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Divide Two Integers",
+    "description": "Implement the division operation without using the division operator. Given two integers, dividend and divisor, divide them and return the quotient. The result should be truncated towards zero (i.e., rounding towards zero). Note that you should also handle overflow cases where the quotient exceeds the bounds of 32-bit signed integer.",
+    "topic": "Math",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Math",
+      "Bit Manipulation",
+      "Division"
+    ],
+    "input_format": "Two integers, dividend and divisor.",
+    "output_format": "An integer representing the quotient of the division.",
+    "constraints": [
+      "-2^31 <= dividend, divisor <= 2^31 - 1",
+      "divisor != 0",
+      "The result will be truncated towards zero."
+    ],
+    "examples": [
+      {
+        "input": "dividend = 10, divisor = 3",
+        "output": "3",
+        "explanation": "10 divided by 3 is 3.333... which is truncated to 3."
+      },
+      {
+        "input": "dividend = 7, divisor = -3",
+        "output": "-2",
+        "explanation": "7 divided by -3 is -2.333... which is truncated to -2."
+      },
+      {
+        "input": "dividend = 0, divisor = 1",
+        "output": "0",
+        "explanation": "0 divided by any number is 0."
+      },
+      {
+        "input": "dividend = 1, divisor = 1",
+        "output": "1",
+        "explanation": "1 divided by 1 is 1."
+      },
+      {
+        "input": "dividend = -2147483648, divisor = -1",
+        "output": "2147483647",
+        "explanation": "Overflow occurs since 2147483648 is out of the 32-bit signed integer range."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use bit manipulation to approximate the quotient efficiently.",
+      "Consider the signs of both dividend and divisor.",
+      "Handle edge cases, especially with minimum and maximum integer values."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Pascal's Triangle",
+    "description": "Given an integer numRows, return the first numRows of Pascal's Triangle. In Pascal's Triangle, each number is the sum of the two numbers directly above it. The first row is indexed as row 0, and it contains a single 1. The rows are indexed starting from 0, representing the number of rows of Pascal's Triangle to compute.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Triangle"
+    ],
+    "input_format": "An integer numRows representing the number of rows in Pascal's Triangle to generate.",
+    "output_format": "A 2D list of integers representing the first numRows of Pascal's Triangle.",
+    "constraints": [
+      "0 <= numRows <= 30"
+    ],
+    "examples": [
+      {
+        "input": "numRows = 5",
+        "output": "[[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]",
+        "explanation": "The first five rows of Pascal's Triangle are as shown in the output."
+      },
+      {
+        "input": "numRows = 1",
+        "output": "[[1]]",
+        "explanation": "The first row of Pascal's Triangle consists of just the number 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how each row is constructed based on the previous row.",
+      "The first and last elements of each row are always 1."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Kadane's Algorithm",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum sum of the contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The subarray [4,-1,2,1] has the largest sum 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The only subarray is [1], which has a sum of 1."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The subarray [5,4,-1,7,8] has the largest sum 23."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to maintain a running sum and reset it when it becomes negative.",
+      "Keep track of the maximum sum found so far."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. The mapping of digits to letters is similar to that of a telephone keypad. Note that 1 does not map to any letters. You may return the combinations in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Combination Generation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Combinations"
+    ],
+    "input_format": "A string digits representing a sequence of digits (2-9) on a phone keypad.",
+    "output_format": "A list of strings representing all possible letter combinations.",
+    "constraints": [
+      "0 <= digits.length <= 4",
+      "digits[i] is a digit in the range ['2', '9']"
+    ],
+    "examples": [
+      {
+        "input": "digits = '23'",
+        "output": "['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']",
+        "explanation": "The digit '2' maps to ['a', 'b', 'c'] and '3' maps to ['d', 'e', 'f']. The combinations are formed by taking one letter from each digit."
+      },
+      {
+        "input": "digits = ''",
+        "output": "[]",
+        "explanation": "An empty input returns an empty list."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to explore all combinations.",
+      "Create a mapping for digits to their corresponding letters."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Sqrt(x)",
+    "description": "Implement the mySqrt function that computes and returns the square root of a non-negative integer x, rounded down to the nearest integer. Only integers are allowed and do not use built-in math functions for calculating the square root.",
+    "topic": "Mathematics",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Math",
+      "Binary Search"
+    ],
+    "input_format": "A single non-negative integer x.",
+    "output_format": "An integer representing the square root of x, rounded down.",
+    "constraints": [
+      "0 <= x <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "x = 4",
+        "output": "2",
+        "explanation": "The square root of 4 is 2."
+      },
+      {
+        "input": "x = 8",
+        "output": "2",
+        "explanation": "The square root of 8 is approximately 2.828, rounded down to 2."
+      },
+      {
+        "input": "x = 0",
+        "output": "0",
+        "explanation": "The square root of 0 is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using binary search to efficiently find the square root.",
+      "The square root of x is always between 0 and x."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum Closest",
+    "description": "Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to the target. Return the sum of the three integers. You may assume that each input would have exactly one solution.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An integer representing the sum of the three integers closest to the target.",
+    "constraints": [
+      "3 <= nums.length <= 1000",
+      "-10^3 <= nums[i] <= 10^3",
+      "-10^4 <= target <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 2, 1, -4], target = 1",
+        "output": "2",
+        "explanation": "The sum that is closest to the target 1 is -1 + 2 + 1 = 2."
+      },
+      {
+        "input": "nums = [0, 0, 0], target = 1",
+        "output": "0",
+        "explanation": "The only triplet possible is 0 + 0 + 0 = 0, which is closest to target 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array to use two pointers effectively.",
+      "Keep track of the closest sum found so far."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Consecutive Sequence",
+    "description": "Given an unsorted array of integers, find the length of the longest consecutive elements sequence. Your algorithm should run in O(n) complexity.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Sequence"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest consecutive sequence.",
+    "constraints": [
+      "0 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [100, 4, 200, 1, 3, 2]",
+        "output": "4",
+        "explanation": "The longest consecutive sequence is [1, 2, 3, 4], which has a length of 4."
+      },
+      {
+        "input": "nums = [0, 0, 1, 1, 2, 3, 4]",
+        "output": "5",
+        "explanation": "The longest consecutive sequence is [0, 1, 2, 3, 4], which has a length of 5."
+      },
+      {
+        "input": "nums = []",
+        "output": "0",
+        "explanation": "There are no elements, so the longest consecutive sequence length is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a set to store the numbers for O(1) lookups.",
+      "For each number, check if it is the start of a sequence."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Set Matrix Zeroes",
+    "description": "Given a m x n matrix, if an element is 0, set its entire row and column to 0. You must do it in place, which means you should not use an additional matrix.",
+    "topic": "Matrix",
+    "subtopic": "In-place Modification",
+    "tags": [
+      "Matrix",
+      "In-place",
+      "Array"
+    ],
+    "input_format": "A 2D array of integers matrix.",
+    "output_format": "The modified matrix after setting the appropriate rows and columns to 0.",
+    "constraints": [
+      "m == matrix.length",
+      "n == matrix[i].length",
+      "1 <= m, n <= 200",
+      "-231 <= matrix[i][j] <= 231 - 1"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1,1,1],[1,0,1],[1,1,1]]",
+        "output": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "explanation": "The element at (1, 1) is 0, so the entire 1st row and 1st column are set to 0."
+      },
+      {
+        "input": "matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]",
+        "output": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            5,
+            0
+          ],
+          [
+            0,
+            3,
+            1,
+            0
+          ]
+        ],
+        "explanation": "The elements at (0, 0) and (0, 3) are 0, so the entire 0th row and 0th column are set to 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the first row and first column to mark the rows and columns that need to be zeroed.",
+      "Make sure to handle the first row and column separately if they contain zeros."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Length of Last Word",
+    "description": "Given a string s consisting of words separated by spaces, return the length of the last word in the string. A word is defined as a maximal substring consisting of non-space characters only. If there are no words in the string, return 0.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Traversal",
+      "Length"
+    ],
+    "input_format": "A single string s with words separated by spaces.",
+    "output_format": "An integer representing the length of the last word.",
+    "constraints": [
+      "0 <= s.length <= 10^4",
+      "s consists of only printable ASCII characters and spaces."
+    ],
+    "examples": [
+      {
+        "input": "Hello World",
+        "output": "5",
+        "explanation": "The last word is 'World', which has a length of 5."
+      },
+      {
+        "input": "   fly me   to   the moon  ",
+        "output": "4",
+        "explanation": "The last word is 'moon', which has a length of 4."
+      },
+      {
+        "input": "luffy is still joyboy",
+        "output": "6",
+        "explanation": "The last word is 'joyboy', which has a length of 6."
+      },
+      {
+        "input": " ",
+        "output": "0",
+        "explanation": "There are no words in the string, so the output is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Strip leading and trailing whitespace from the string.",
+      "Split the string by spaces and check the last element."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Level Order Traversal",
+    "description": "Given a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Traversal"
+    ],
+    "input_format": "The root of the binary tree.",
+    "output_format": "A list of lists of integers representing the level order traversal.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 2000].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [3,9,20,null,null,15,7]",
+        "output": "[[3],[9,20],[15,7]]",
+        "explanation": "Level 0 has 3, level 1 has 9 and 20, level 2 has 15 and 7."
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "explanation": "The tree is empty, so the output is an empty list."
+      },
+      {
+        "input": "root = [1]",
+        "output": "[[1]]",
+        "explanation": "Only one node is present at level 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a queue to assist with level order traversal.",
+      "Track the number of nodes in the current level."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Search a 2D Matrix",
+    "description": "Given a 2D matrix of integers, where each row is sorted in ascending order and the first integer of each row is greater than the last integer of the previous row, write a function that searches for a target value in the matrix. Return true if the target exists in the matrix, or false otherwise.",
+    "topic": "Binary Search",
+    "subtopic": "Matrix Search",
+    "tags": [
+      "Matrix",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "A 2D matrix of integers matrix and an integer target.",
+    "output_format": "A boolean value indicating whether the target exists in the matrix.",
+    "constraints": [
+      "m == matrix.length",
+      "n == matrix[i].length",
+      "1 <= m, n <= 100",
+      "-10^4 <= matrix[i][j] <= 10^4",
+      "All integers in the matrix are unique.",
+      "The matrix is guaranteed to be sorted in a specific order."
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 3, 5], [7, 9, 11], [13, 15, 17]], target = 9",
+        "output": "true",
+        "explanation": "The target value 9 exists in the matrix."
+      },
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6]], target = 10",
+        "output": "false",
+        "explanation": "The target value 10 does not exist in the matrix."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of the sorted matrix.",
+      "You can treat the 2D matrix as a 1D array for search purposes."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Zigzag Conversion",
+    "description": "The string is written in a zigzag pattern on a given number of rows. Read the characters line by line. Given a string 's' and an integer 'numRows', convert the string into a zigzag pattern and return it read line by line.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Zigzag",
+      "Conversion"
+    ],
+    "input_format": "A string s and an integer numRows representing the number of rows.",
+    "output_format": "A single string representing the characters read line by line from the zigzag pattern.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= numRows <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "s = 'PAYPALISHIRING', numRows = 3",
+        "output": "PAHNAPLSIIGYIR",
+        "explanation": "The zigzag pattern on 3 rows is:\nP   A   H   N\nA P L S I I G\n Y   I\nReading line by line gives 'PAHNAPLSIIGYIR'."
+      },
+      {
+        "input": "s = 'AB', numRows = 1",
+        "output": "AB",
+        "explanation": "With only one row, the zigzag conversion is the same as the original string."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Visualize the zigzag pattern to understand the placement of characters.",
+      "Consider using a list of strings to build each row."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Next Permutation",
+    "description": "Implement the next permutation function, which rearranges numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it to the lowest possible order (i.e., sorted in ascending order). This must be done in-place and using only constant extra memory.",
+    "topic": "Array",
+    "subtopic": "Permutation",
+    "tags": [
+      "Array",
+      "Permutation",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums representing the current permutation.",
+    "output_format": "Modify the input array to represent the next permutation in place.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[1, 3, 2]",
+        "explanation": "The next permutation is obtained by swapping 2 and 3."
+      },
+      {
+        "input": "nums = [3, 2, 1]",
+        "output": "[1, 2, 3]",
+        "explanation": "Since this permutation is the largest, the next permutation is the lowest, sorted order."
+      },
+      {
+        "input": "nums = [1, 1, 5]",
+        "output": "[1, 5, 1]",
+        "explanation": "The next permutation is obtained by swapping the last two numbers."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Find the pivot where the order breaks.",
+      "Find the smallest number larger than the pivot to the right.",
+      "Reverse the order after the pivot."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Pow(x, n)",
+    "description": "Implement the pow function, which calculates x raised to the power n (i.e., x^n). You should handle both positive and negative values of n. The result should be computed with an efficient algorithm.",
+    "topic": "Math",
+    "subtopic": "Exponentiation",
+    "tags": [
+      "Math",
+      "Exponentiation",
+      "Recursion",
+      "Binary Exponentiation"
+    ],
+    "input_format": "Two parameters: a floating-point number x and an integer n.",
+    "output_format": "A floating-point number representing x raised to the power n.",
+    "constraints": [
+      "-100.0 <= x <= 100.0",
+      "-10^4 <= n <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "x = 2.00000, n = 10",
+        "output": "1024.00000",
+        "explanation": "2 raised to the power of 10 is 1024."
+      },
+      {
+        "input": "x = 2.10000, n = 3",
+        "output": "9.26100",
+        "explanation": "2.1 raised to the power of 3 is approximately 9.261."
+      },
+      {
+        "input": "x = 2.00000, n = -2",
+        "output": "0.25000",
+        "explanation": "2 raised to the power of -2 is 1/(2^2) which equals 0.25."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try reducing the problem using the properties of exponents.",
+      "Consider using recursion to break down the problem.",
+      "What happens when n is negative?"
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Palindrome",
+    "description": "Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring case. A string is a palindrome if it reads the same forward and backward.",
+    "topic": "String",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "A string s consisting of printable ASCII characters.",
+    "output_format": "Return true if s is a palindrome, otherwise return false.",
+    "constraints": [
+      "0 <= s.length <= 2 * 10^5"
+    ],
+    "examples": [
+      {
+        "input": "A man, a plan, a canal: Panama",
+        "output": "true",
+        "explanation": "After removing non-alphanumeric characters and converting to lowercase, the string becomes 'amanaplanacanalpanama', which is a palindrome."
+      },
+      {
+        "input": "race a car",
+        "output": "false",
+        "explanation": "After cleaning the string, it becomes 'raceacar', which is not a palindrome."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to compare characters from the start and end of the string.",
+      "Ignore non-alphanumeric characters in both checks."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Rectangle in Histogram",
+    "description": "Given an array of integers representing the heights of bars in a histogram, find the area of the largest rectangle that can be formed in the histogram. The rectangle must be entirely contained within the histogram, and its height is determined by the shortest bar in the rectangle.",
+    "topic": "Stack",
+    "subtopic": "Histogram",
+    "tags": [
+      "Stack",
+      "Array",
+      "Rectangle"
+    ],
+    "input_format": "An array of integers heights where heights[i] represents the height of the i-th bar.",
+    "output_format": "An integer representing the area of the largest rectangle that can be formed.",
+    "constraints": [
+      "1 <= heights.length <= 10^5",
+      "0 <= heights[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[2,1,5,6,2,3]",
+        "output": "10",
+        "explanation": "The largest rectangle has an area of 10, formed by the bars of height 5 and 6."
+      },
+      {
+        "input": "[2,4]",
+        "output": "4",
+        "explanation": "The largest rectangle has an area of 4, formed by the bar of height 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to keep track of the indices of the bars.",
+      "Pop from the stack when a bar is shorter than the bar at the index stored at the top of the stack."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Regular Expression Matching",
+    "description": "Implement a function that checks whether a given string matches a specified pattern, which may include the special characters '.' and '*'. The character '.' matches any single character, and the character '*' matches zero or more occurrences of the preceding element.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Matching",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Recursion"
+    ],
+    "input_format": "A string s and a pattern p, where 1 <= s.length, p.length <= 20.",
+    "output_format": "A boolean indicating whether the string matches the pattern.",
+    "constraints": [
+      "1 <= s.length <= 20",
+      "1 <= p.length <= 20",
+      "s and p consist of lowercase English letters, '.' and '*'"
+    ],
+    "examples": [
+      {
+        "input": "s = \"aab\", p = \"c*a*b\"",
+        "output": "true",
+        "explanation": "The pattern 'c*a*b' matches the string 'aab' as 'a' can occur 0 times and 'b' exactly once."
+      },
+      {
+        "input": "s = \"mississippi\", p = \"mis*is*p*.\"",
+        "output": "false",
+        "explanation": "The pattern does not match the string as there are not enough characters to satisfy the pattern."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to store results of subproblems.",
+      "Handle the '*' character as a special case in your solution."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "4Sum",
+    "description": "Given an array of integers nums and an integer target, return all unique quadruplets (a, b, c, d) such that a + b + c + d = target. A quadruplet (a, b, c, d) is considered unique if the combination of its elements taken in any order is unique. You may return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Combination"
+    ],
+    "input_format": "An integer array nums and an integer target.",
+    "output_format": "A list of unique quadruplets that sum up to the target.",
+    "constraints": [
+      "0 <= nums.length <= 200",
+      "-109 <= nums[i] <= 109",
+      "The solution set must not contain duplicate quadruplets."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 0, -1, 0, -2, 2], target = 0",
+        "output": "[[-2, -1, 0, 1], [0, 0, 0, 0]]",
+        "explanation": "The quadruplets that sum to zero are [-2, -1, 0, 1] and [0, 0, 0, 0]."
+      },
+      {
+        "input": "nums = [2, 2, 2, 2, 2], target = 8",
+        "output": "[[2, 2, 2, 2]]",
+        "explanation": "The only unique quadruplet that sums to 8 is [2, 2, 2, 2]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array to make it easier to avoid duplicates.",
+      "Use nested loops for the first two numbers and two pointers for the other two."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Single Number II",
+    "description": "Given an integer array nums, wherein each element appears three times except for one, which appears exactly once, find the single number that appears only once. You must implement a solution with O(n) time complexity and O(1) space complexity.",
+    "topic": "Array",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Array",
+      "Bit Manipulation",
+      "Hash Table"
+    ],
+    "input_format": "An integer array nums where every element appears three times except for one.",
+    "output_format": "An integer representing the single number that appears only once.",
+    "constraints": [
+      "1 <= nums.length <= 3 * 10^4",
+      "-2^31 <= nums[i] <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 2, 3, 2]",
+        "output": "3",
+        "explanation": "The number 3 appears only once while all other numbers appear three times."
+      },
+      {
+        "input": "nums = [0, 1, 0, 1, 0, 1, 99]",
+        "output": "99",
+        "explanation": "The number 99 appears only once while all other numbers appear three times."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how you can leverage bit manipulation.",
+      "Consider how many times the bits of numbers contribute to the result."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Gas Station",
+    "description": "There are n gas stations along a circular route, where the amount of gas at the ith station is gas[i]. You have a car that can travel a distance of cost[i] from the ith station to the next station. The car starts with an empty tank at one of the gas stations. Write a function to determine the starting gas station's index from which you can travel around the circuit once without running out of gas. If there is no such starting index, return -1.",
+    "topic": "Greedy",
+    "subtopic": "Simulation",
+    "tags": [
+      "Greedy",
+      "Simulation",
+      "Array"
+    ],
+    "input_format": "An integer array gas representing the amount of gas at each station and an integer array cost representing the cost of gas to travel to the next station.",
+    "output_format": "An integer representing the index of the starting gas station, or -1 if it is not possible to complete the circuit.",
+    "constraints": [
+      "n == gas.length == cost.length",
+      "1 <= n <= 10^4",
+      "0 <= gas[i], cost[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": {
+          "gas": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "cost": [
+            3,
+            4,
+            5,
+            1,
+            2
+          ]
+        },
+        "output": "3",
+        "explanation": "Starting at station 3, we can travel to station 4 (gas = 4, cost = 1), then back to station 0 (gas = 5, cost = 2), and so forth until we complete the circuit."
+      },
+      {
+        "input": {
+          "gas": [
+            2,
+            3,
+            4
+          ],
+          "cost": [
+            3,
+            4,
+            3
+          ]
+        },
+        "output": "-1",
+        "explanation": "It's impossible to complete the circuit from any starting station."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a greedy approach to evaluate potential starting points.",
+      "Track the total gas and cost to determine feasibility."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Permutations",
+    "description": "Given an array of distinct integers, return all the possible permutations. You can return the answer in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Permutations",
+    "tags": [
+      "Backtracking",
+      "Permutations",
+      "Array"
+    ],
+    "input_format": "An array of distinct integers nums.",
+    "output_format": "A list of lists of integers, representing all the possible permutations of the input array.",
+    "constraints": [
+      "1 <= nums.length <= 6",
+      "-10 <= nums[i] <= 10"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]",
+        "explanation": "The permutations of [1, 2, 3] are all possible arrangements of these numbers."
+      },
+      {
+        "input": "nums = [0, 1]",
+        "output": "[[0,1],[1,0]]",
+        "explanation": "The permutations of [0, 1] are the two arrangements: [0, 1] and [1, 0]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use backtracking to explore all possible permutations.",
+      "When building a permutation, consider the numbers that have not been used yet."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to Roman",
+    "description": "Given an integer, convert it to a Roman numeral. The conversion must be done using the following rules: \n- Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. \n- For example, 1 is represented as 'I', 2 is 'II' and 3 is 'III'. \n- 4 is 'IV' because 'I' is before 'V' which is 5. \n- The number 6 is 'VI' because 'I' is after 'V'. \n- The number 9 is 'IX'. \n- To convert from integer to Roman, the following rules are employed:\n   - I can be placed before V (5) and X (10) to make 4 and 9. \n   - X can be placed before L (50) and C (100) to make 40 and 90. \n   - C can be placed before D (500) and M (1000) to make 400 and 900.",
+    "topic": "Math",
+    "subtopic": "Conversion",
+    "tags": [
+      "Math",
+      "Conversion",
+      "Strings"
+    ],
+    "input_format": "An integer num.",
+    "output_format": "A string representing the Roman numeral equivalent of the integer.",
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "examples": [
+      {
+        "input": "num = 3",
+        "output": "III",
+        "explanation": "The number 3 is represented as 'III'."
+      },
+      {
+        "input": "num = 4",
+        "output": "IV",
+        "explanation": "The number 4 is represented as 'IV'."
+      },
+      {
+        "input": "num = 9",
+        "output": "IX",
+        "explanation": "The number 9 is represented as 'IX'."
+      },
+      {
+        "input": "num = 58",
+        "output": "LVIII",
+        "explanation": "The number 58 is represented as 'LVIII', which is 'L' (50) + 'V' (5) + 'III' (3)."
+      },
+      {
+        "input": "num = 1994",
+        "output": "MCMXCIV",
+        "explanation": "The number 1994 is represented as 'MCMXCIV', which is 'M' (1000) + 'CM' (900) + 'XC' (90) + 'IV' (4)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider breaking down the integer into its constituent parts for easier conversion.",
+      "Use a mapping of integer values to Roman numeral symbols."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Recover Binary Search Tree",
+    "description": "You are given the root of a binary search tree (BST) that has been corrupted. This means that two of the nodes in the BST have been swapped by mistake. You need to recover the tree to restore the binary search tree property. You should not return anything, just modify the tree in place.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "BST",
+      "Recursion"
+    ],
+    "input_format": "A root node of the binary search tree.",
+    "output_format": "The same tree, corrected to follow the properties of a binary search tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [2, 1000].",
+      "The values of nodes are distinct integers."
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 3, null, null, 2]",
+        "output": "[3, 1, null, null, 2]",
+        "explanation": "The nodes with values 1 and 3 are swapped. The array representation of the tree after recovering it is [3, 1, null, null, 2]."
+      },
+      {
+        "input": "root = [3, 1, 4, null, null, 2]",
+        "output": "[2, 1, 4, null, null, 3]",
+        "explanation": "The nodes with values 2 and 3 are swapped. The array representation of the tree after recovering it is [2, 1, 4, null, null, 3]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "In a valid BST, the inorder traversal of the tree should yield sorted values.",
+      "Identify the two nodes that are out of order during the traversal."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Colors",
+    "description": "Given an array of integers representing colors coded as 0, 1, and 2, sort the array in-place so that all 0's come first, followed by all 1's, and then all 2's. You must solve the problem in a single pass using constant space.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums where each element is one of 0, 1, or 2.",
+    "output_format": "The sorted array in-place.",
+    "constraints": [
+      "1 <= nums.length <= 300",
+      "nums[i] is either 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 0, 2, 1, 1, 0]",
+        "output": "[0, 0, 1, 1, 2, 2]",
+        "explanation": "After sorting, all 0's are followed by 1's and then 2's."
+      },
+      {
+        "input": "nums = [0, 1, 2]",
+        "output": "[0, 1, 2]",
+        "explanation": "The array is already sorted."
+      },
+      {
+        "input": "nums = [1, 2, 0, 0, 1, 2]",
+        "output": "[0, 0, 1, 1, 2, 2]",
+        "explanation": "After sorting, 0's are moved to the front, then 1's and finally 2's."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a three-pointer approach.",
+      "Think about using constant space for sorting."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Validate Binary Search Tree",
+    "description": "Given the root of a binary tree, determine if it is a valid binary search tree (BST). A valid BST is defined as follows:  \n1. The left subtree of a node contains only nodes with keys less than the node's key.  \n2. The right subtree of a node contains only nodes with keys greater than the node's key.  \n3. Both the left and right subtrees must also be binary search trees.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "BST",
+      "Validation"
+    ],
+    "input_format": "The root of a binary tree.",
+    "output_format": "A boolean indicating whether the tree is a valid binary search tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "-10^5 <= Node.val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "root = [2, 1, 3]",
+        "output": "true",
+        "explanation": "This tree is a valid BST with root 2, left child 1 and right child 3."
+      },
+      {
+        "input": "root = [5, 1, 4, null, null, 3, 6]",
+        "output": "false",
+        "explanation": "This tree is not a valid BST because the right child of the root (4) is greater than the root (5)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a recursive function to validate the BST properties.",
+      "Maintain a range of valid values for each node."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "Given a rotated sorted array and a target value, return the index of the target if it is in the array, otherwise return -1. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Binary Search",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An integer array nums that is rotated at an unknown pivot index, and an integer target.",
+    "output_format": "An integer representing the index of target in nums, or -1 if target is not found.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "-10^4 <= nums[i] <= 10^4",
+      "nums is guaranteed to be rotated at some pivot.",
+      "All elements in nums are unique."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "The target 0 is found at index 4."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "The target 3 is not in the array, hence return -1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of a rotated sorted array.",
+      "Use binary search to find the target efficiently.",
+      "Check which part of the array is sorted and decide where to search next."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock II",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you are allowed to make as many transactions as you like (i.e., buy one and sell one share of the stock multiple times). Note that you cannot participate in multiple transactions simultaneously (you must sell the stock before you buy again).",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers prices, where 1 <= prices.length <= 3 * 10^4 and 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 3 * 10^4",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 3 (price = 5), then buy on day 4 (price = 3) and sell on day 5 (price = 6). The profit is (5 - 1) + (6 - 3) = 7."
+      },
+      {
+        "input": "prices = [1, 2, 3, 4, 5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5). The profit is 5 - 1 = 4."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "No transactions are done, the profit is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider when to buy and sell for maximum profit.",
+      "Look for opportunities to gain profit in every upward slope.",
+      "Think about the changes in price day by day."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Symmetric Tree",
+    "description": "Given a binary tree, determine if it is symmetric around its center. A tree is considered symmetric if it is a mirror reflection of itself, meaning the left subtree is a mirror reflection of the right subtree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Recursion",
+      "Binary Tree"
+    ],
+    "input_format": "The root node of a binary tree.",
+    "output_format": "A boolean value indicating whether the tree is symmetric or not.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 1000].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 2, 3, 4, 4, 3]",
+        "output": "true",
+        "explanation": "The tree is symmetric. The left and right subtrees are mirror images."
+      },
+      {
+        "input": "root = [1, 2, 2, null, 3, null, 3]",
+        "output": "false",
+        "explanation": "The tree is not symmetric. The left subtree has a node with value 3, while the right subtree has a different structure."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try to use a recursive approach to compare the left and right subtrees."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Partitioning",
+    "description": "Given a string s, partition s such that every substring of the partition is a palindrome. Return all possible palindrome partitioning of s. A palindrome is a string that reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Backtracking",
+    "tags": [
+      "String",
+      "Backtracking",
+      "Palindrome"
+    ],
+    "input_format": "A string s, with length between 1 and 16.",
+    "output_format": "A list of lists of strings, where each inner list contains all substrings that are palindromes.",
+    "constraints": [
+      "1 <= s.length <= 16",
+      "s consists of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "aab",
+        "output": "[['a', 'a', 'b'], ['aa', 'b']]",
+        "explanation": "The two possible palindrome partitioning are [['a', 'a', 'b'], ['aa', 'b']]."
+      },
+      {
+        "input": "a",
+        "output": "[['a']]",
+        "explanation": "There is only one substring consisting of 'a' which is a palindrome."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to check if a substring is a palindrome.",
+      "Use backtracking to build possible partitions of the string."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Preorder Traversal",
+    "description": "Given the root of a binary tree, return the preorder traversal of its nodes' values. The preorder traversal is defined as visiting the current node first, then the left subtree, followed by the right subtree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "Traversal",
+      "Binary Tree"
+    ],
+    "input_format": "The root node of a binary tree.",
+    "output_format": "An array of integers representing the preorder traversal of the binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 100].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [1,null,2,3]",
+        "output": "[1,2,3]",
+        "explanation": "The preorder traversal is: visit node 1, then node 2, and finally node 3."
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "explanation": "An empty tree has no nodes to traverse."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of nodes.",
+      "Visit the root before the subtrees."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Interval",
+    "description": "Given a collection of intervals, insert a new interval into the intervals (merge if necessary). The intervals are presented as a list of tuples, where each tuple contains two integers representing the start and end of the interval. The new interval you want to insert may overlap with some of the existing intervals, so you need to merge them as necessary.",
+    "topic": "Array",
+    "subtopic": "Intervals",
+    "tags": [
+      "Array",
+      "Intervals",
+      "Merging"
+    ],
+    "input_format": "A list of intervals, where each interval is represented as a list of two integers. Also, a new interval represented as a list of two integers.",
+    "output_format": "A list of merged intervals after inserting the new interval.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "intervals are sorted by the start time in ascending order.",
+      "newInterval.length == 2"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[6,9]], newInterval = [2,5]",
+        "output": "[[1,5],[6,9]]",
+        "explanation": "The new interval [2,5] overlaps with [1,3], so they merge to [1,5]. Therefore, the result is [[1,5],[6,9]]."
+      },
+      {
+        "input": "intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]",
+        "output": "[[1,2],[3,10],[12,16]]",
+        "explanation": "The new interval [4,8] overlaps with [3,5] and [6,7] and merges to form [3,10]. The final result is [[1,2],[3,10],[12,16]]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to merge overlapping intervals.",
+      "You may need to keep track of the start and end of the merged intervals."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine if a 9x9 Sudoku board is valid according to the rules of Sudoku. The board may contain digits from '1' to '9' and '.' for empty cells. The rules of Sudoku require that each digit appears only once in each row, column, and 3x3 sub-box.",
+    "topic": "Array",
+    "subtopic": "Matrix",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Validation"
+    ],
+    "input_format": "A 2D array of characters representing the Sudoku board.",
+    "output_format": "A boolean value indicating whether the Sudoku board is valid.",
+    "constraints": [
+      "The board must be a 9x9 matrix.",
+      "The characters in the board must be digits from '1' to '9' or '.' for empty cells."
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "5",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "true",
+        "explanation": "The input Sudoku board is valid since all digits meet the Sudoku rules."
+      },
+      {
+        "input": [
+          [
+            "8",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "false",
+        "explanation": "The input Sudoku board is invalid as the number '8' appears twice in the same row."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Each row, column, and box must contain unique numbers.",
+      "Use a set to track seen numbers for rows, columns, and boxes."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicates from Sorted Array II",
+    "description": "Given a sorted array nums, you need to modify the array in-place such that each element appears at most twice and return the new length. Do not allocate extra space for another array. The relative order of the elements should be kept the same.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-Place"
+    ],
+    "input_format": "An array of integers nums, sorted in non-decreasing order.",
+    "output_format": "An integer representing the new length of the modified array.",
+    "constraints": [
+      "0 <= nums.length <= 3 * 10^4",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,1,1,2,2,3]",
+        "output": "5",
+        "explanation": "The modified array is [1,1,2,2,3] with length 5."
+      },
+      {
+        "input": "nums = [0,0,1,1,1,1,2,3,3]",
+        "output": "7",
+        "explanation": "The modified array is [0,0,1,1,2,3,3] with length 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use two pointers to track the position of duplicates.",
+      "Consider how many times each number can appear."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "String to Integer (atoi)",
+    "description": "Implement the myAtoi function, which converts a string to a 32-bit signed integer (similar to C/C++'s atoi function). The function should ignore leading whitespace characters, handle optional signs, and convert the number until it encounters a non-numeric character. If the resulting integer overflows or underflows, return 2147483647 or -2147483648, respectively.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Parsing",
+      "Integer Conversion"
+    ],
+    "input_format": "A single string s, which represents the input to be converted.",
+    "output_format": "An integer that represents the converted value.",
+    "constraints": [
+      "1 <= s.length <= 200",
+      "s may contain leading or trailing whitespaces."
+    ],
+    "examples": [
+      {
+        "input": "\"   -42\"",
+        "output": "-42",
+        "explanation": "Leading whitespaces are ignored, and the negative sign is considered."
+      },
+      {
+        "input": "\"4193 with words\"",
+        "output": "4193",
+        "explanation": "The conversion stops at the first non-numeric character."
+      },
+      {
+        "input": "\"words and 987\"",
+        "output": "0",
+        "explanation": "No valid conversion can be made; return 0."
+      },
+      {
+        "input": "\"-91283472332\"",
+        "output": "-2147483648",
+        "explanation": "The value is less than the minimum 32-bit integer, so it returns -2147483648."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Trim leading and trailing spaces before processing.",
+      "Consider the sign of the number.",
+      "Stop processing when a non-digit character is encountered.",
+      "Handle overflow cases explicitly."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Nth Node From End of List",
+    "description": "Given a linked list, remove the n-th node from the end of the list and return its head. The n-th node is 1-based index from the end of the list. If the list has fewer than n nodes, do nothing and return the original list.",
+    "topic": "Linked List",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Linked List",
+      "Two Pointers",
+      "Removal"
+    ],
+    "input_format": "The head of a singly linked list and an integer n.",
+    "output_format": "The head of the modified linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [1, 10^4].",
+      "1 <= n <= the number of nodes in the list."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], n = 2",
+        "output": "[1, 2, 3, 5]",
+        "explanation": "Removing the 2nd node from the end results in the list [1, 2, 3, 5]."
+      },
+      {
+        "input": "head = [1], n = 1",
+        "output": "[]",
+        "explanation": "Removing the only node from the list results in an empty list."
+      },
+      {
+        "input": "head = [1, 2], n = 1",
+        "output": "[1]",
+        "explanation": "Removing the last node results in the list [1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use two pointers to find the node.",
+      "First pointer can run n steps ahead."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Paths",
+    "description": "You are given a grid with dimensions m x n, and you start at the top-left corner of the grid (0,0) and want to reach the bottom-right corner (m-1,n-1). You can only move either down or right at any point in time. Your task is to determine how many unique paths exist from the top-left corner to the bottom-right corner.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Paths",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Pathfinding"
+    ],
+    "input_format": "Two integers m and n representing the number of rows and columns in the grid.",
+    "output_format": "An integer representing the number of unique paths from the top-left to the bottom-right corner.",
+    "constraints": [
+      "1 <= m, n <= 100"
+    ],
+    "examples": [
+      {
+        "input": "m = 3, n = 7",
+        "output": "28",
+        "explanation": "There are 28 unique paths from the top-left to the bottom-right corner of a 3x7 grid."
+      },
+      {
+        "input": "m = 3, n = 2",
+        "output": "3",
+        "explanation": "There are 3 unique paths from the top-left to the bottom-right corner of a 3x2 grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to store the number of unique paths to each cell.",
+      "Try to find a recurrence relation for the number of paths to reach any cell."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Window Substring",
+    "description": "Given two strings 's' and 't', return the minimum window substring of 's' such that every character in 't' (including duplicates) is included in the window. If there is no such substring, return an empty string. The input strings consist of only lowercase English letters.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Two Pointers"
+    ],
+    "input_format": "Two strings s and t.",
+    "output_format": "A string representing the minimum window substring of s that contains all characters of t.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "1 <= t.length <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "s = \"ADOBECODEBANC\", t = \"ABC\"",
+        "output": "\"BANC\"",
+        "explanation": "The minimum window substring in 's' that contains all characters of 't' is 'BANC'."
+      },
+      {
+        "input": "s = \"AA\", t = \"AA\"",
+        "output": "\"AA\"",
+        "explanation": "The entire string 's' is the minimum window substring as it contains all characters of 't'."
+      },
+      {
+        "input": "s = \"A\", t = \"AA\"",
+        "output": "\"\"",
+        "explanation": "There is no such window as 't' requires more characters than 's' has."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a hashmap to count characters of 't'.",
+      "Expand the window by moving the right pointer; shrink by moving the left pointer.",
+      "Track the count of characters matched to optimize the window size."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Sudoku Solver",
+    "description": "Write a program to solve a Sudoku puzzle by filling the empty cells. A Sudoku solution must satisfy the following rules: each column, each row, and each of the nine 3\u00d73 sub-boxes that compose the grid must contain all of the digits from 1 to 9 without repetition. The input is a partially filled 9x9 grid, represented as a 2D array of characters, where '.' represents an empty cell.",
+    "topic": "Backtracking",
+    "subtopic": "Constraint Satisfaction",
+    "tags": [
+      "Backtracking",
+      "Matrix",
+      "Recursion"
+    ],
+    "input_format": "A 9x9 2D array of characters representing the Sudoku board. Each cell contains a digit '1'-'9' or a '.' for empty cells.",
+    "output_format": "The same 2D array modified in-place, representing the solved Sudoku board.",
+    "constraints": [
+      "The input board is guaranteed to be partially filled and valid.",
+      "The board contains empty cells represented as '.' and the digits '1' to '9'."
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "5",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": [
+          [
+            "5",
+            "3",
+            "4",
+            "6",
+            "7",
+            "8",
+            "9",
+            "1",
+            "2"
+          ],
+          [
+            "6",
+            "7",
+            "2",
+            "1",
+            "9",
+            "5",
+            "3",
+            "4",
+            "8"
+          ],
+          [
+            "1",
+            "9",
+            "8",
+            "3",
+            "4",
+            "2",
+            "5",
+            "6",
+            "7"
+          ],
+          [
+            "8",
+            "5",
+            "9",
+            "7",
+            "6",
+            "1",
+            "4",
+            "2",
+            "3"
+          ],
+          [
+            "4",
+            "2",
+            "6",
+            "8",
+            "5",
+            "3",
+            "7",
+            "9",
+            "1"
+          ],
+          [
+            "7",
+            "1",
+            "3",
+            "9",
+            "2",
+            "4",
+            "8",
+            "5",
+            "6"
+          ],
+          [
+            "9",
+            "6",
+            "1",
+            "2",
+            "3",
+            "5",
+            "2",
+            "8",
+            "4"
+          ],
+          [
+            "2",
+            "8",
+            "7",
+            "4",
+            "1",
+            "9",
+            "6",
+            "3",
+            "5"
+          ],
+          [
+            "3",
+            "4",
+            "5",
+            "6",
+            "8",
+            "7",
+            "1",
+            "2",
+            "9"
+          ]
+        ],
+        "explanation": "The numbers are filled in according to Sudoku rules with no repetitions in rows, columns, or 3x3 grids."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using backtracking to explore possible placements of numbers.",
+      "Ensure to check for violations of Sudoku rules after each placement."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Maximum Path Sum",
+    "description": "Given a non-empty binary tree, find the maximum path sum. A path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root. The maximum path sum is the largest sum of values among all possible paths in the tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "DFS"
+    ],
+    "input_format": "The input consists of the root of the binary tree, where each node contains a value (an integer).",
+    "output_format": "Return an integer representing the maximum path sum.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 3 * 10^4].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "[1, 2, 3]",
+        "output": "6",
+        "explanation": "The maximum path sum is 2 + 1 + 3 = 6."
+      },
+      {
+        "input": "[1, 2, -1, 4, 5]",
+        "output": "10",
+        "explanation": "The maximum path sum is 4 + 2 + 1 + 3 = 10."
+      },
+      {
+        "input": "[-10, 9, 20, null, null, 15, 7]",
+        "output": "42",
+        "explanation": "The maximum path sum is 15 + 20 + 7 = 42."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a depth-first search (DFS) approach.",
+      "Keep track of the maximum sum found at each node.",
+      "The maximum path sum at a node can include its left and right child nodes."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Multiply Strings",
+    "description": "Given two non-negative integers num1 and num2 represented as string, return the product of num1 and num2, also represented as a string. You must not use any built-in BigInteger library or convert the inputs to integer directly.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Multiplication"
+    ],
+    "input_format": "Two strings num1 and num2 representing non-negative integers.",
+    "output_format": "A string representing the product of the two numbers.",
+    "constraints": [
+      "1 <= num1.length, num2.length <= 200",
+      "num1 and num2 consist of digits only.",
+      "Both num1 and num2 do not have leading zeros, except for the number '0'."
+    ],
+    "examples": [
+      {
+        "input": "num1 = '123', num2 = '456'",
+        "output": "'56088'",
+        "explanation": "123 multiplied by 456 equals 56088."
+      },
+      {
+        "input": "num1 = '0', num2 = '12345'",
+        "output": "'0'",
+        "explanation": "Any number multiplied by 0 equals 0."
+      },
+      {
+        "input": "num1 = '2', num2 = '3'",
+        "output": "'6'",
+        "explanation": "2 multiplied by 3 equals 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how you would multiply numbers manually.",
+      "Use an array to store intermediate results."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Word Ladder",
+    "description": "Given two words (beginWord and endWord), and a dictionary's word list, find the length of the shortest transformation sequence from beginWord to endWord, such that only one letter can be changed at a time. Each transformed word must exist in the word list. Note that beginWord is not a part of the word list. If there is no such transformation sequence, return 0.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "String",
+      "BFS"
+    ],
+    "input_format": "A string beginWord, a string endWord, and a list of strings wordList.",
+    "output_format": "An integer representing the length of the shortest transformation sequence from beginWord to endWord.",
+    "constraints": [
+      "1 <= beginWord.length <= 10",
+      "1 <= endWord.length <= 10",
+      "1 <= wordList.length <= 5000",
+      "beginWord and endWord consist of lowercase letters.",
+      "All the words in the word list are unique."
+    ],
+    "examples": [
+      {
+        "input": "beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\",\"cog\"]",
+        "output": "5",
+        "explanation": "The shortest transformation sequence is \"hit\" -> \"hot\" -> \"dot\" -> \"dog\" -> \"cog\", which is of length 5."
+      },
+      {
+        "input": "beginWord = \"hit\", endWord = \"cog\", wordList = [\"hot\",\"dot\",\"dog\",\"lot\",\"log\"]",
+        "output": "0",
+        "explanation": "The transformation sequence cannot be completed because \"cog\" is not in the word list."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using BFS to traverse the word transformations.",
+      "You can generate new words by altering each character in the input words."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicates from Sorted List",
+    "description": "Given a sorted linked list, delete all duplicates such that each element appears only once. The linked list is sorted in ascending order.",
+    "topic": "Linked List",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Linked List",
+      "Sorting",
+      "Duplicates"
+    ],
+    "input_format": "The head of a sorted linked list.",
+    "output_format": "The head of the linked list after duplicates have been removed.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 300].",
+      "-100 <= Node.val <= 100",
+      "The list is guaranteed to be sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "1 -> 1 -> 2",
+        "output": "1 -> 2",
+        "explanation": "The second '1' is a duplicate and is removed."
+      },
+      {
+        "input": "1 -> 1 -> 2 -> 3 -> 3",
+        "output": "1 -> 2 -> 3",
+        "explanation": "The duplicates '1' and '3' are removed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a pointer to traverse the list.",
+      "Compare the current node's value with the next node's value."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Clone Graph",
+    "description": "Given a reference to a node in a clone of a graph, return a deep copy (clone) of the graph. Each node in the graph contains a value and a list of its neighbors. The graph is guaranteed to be a connected undirected graph. You must implement an algorithm that uses O(1) extra space, without using additional data structures.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "Depth-First Search",
+      "Clone"
+    ],
+    "input_format": "A node reference to the start of a graph.",
+    "output_format": "A node reference to the cloned graph.",
+    "constraints": [
+      "The number of nodes in the graph is at most 100.",
+      "Each node's value is a unique integer between 1 and 100.",
+      "The graph is connected and undirected."
+    ],
+    "examples": [
+      {
+        "input": "graph = [[2,4],[1,3],[2],[1]]",
+        "output": "[[2,4],[1,3],[2],[1]]",
+        "explanation": "The graph is a deep copy of itself."
+      },
+      {
+        "input": "graph = [[]]",
+        "output": "[[]]",
+        "explanation": "A single node with no neighbors is cloned exactly as is."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS to traverse the graph and clone each node.",
+      "Maintain a mapping between original and cloned nodes to handle references."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Merge k Sorted Lists",
+    "description": "You are given an array of k linked lists, each list is sorted in ascending order. Merge all the linked lists into one sorted linked list and return it. The linked list should be made by splicing together the nodes of the input lists.",
+    "topic": "Linked List",
+    "subtopic": "Merge",
+    "tags": [
+      "Linked List",
+      "Merge",
+      "Sorting"
+    ],
+    "input_format": "An array of k head nodes of sorted linked lists.",
+    "output_format": "The head node of the merged sorted linked list.",
+    "constraints": [
+      "0 <= k <= 10^4",
+      "0 <= n <= 5000 (where n is the number of nodes in a single linked list)",
+      "Node values are valid 32-bit integers."
+    ],
+    "examples": [
+      {
+        "input": "[1->4->5, 1->3->4, 2->6]",
+        "output": "1->1->2->3->4->4->5->6",
+        "explanation": "The merged linked list is constructed by merging the nodes from the three input lists in sorted order."
+      },
+      {
+        "input": "[]",
+        "output": "",
+        "explanation": "An empty input yields an empty output."
+      },
+      {
+        "input": "[5->6->7, 1->2->3]",
+        "output": "1->2->3->5->6->7",
+        "explanation": "The merged linked list combines the nodes from both linked lists in sorted order."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a priority queue to manage the k lists.",
+      "Each time you extract the minimum element, add it to the result and then push the next element from the corresponding list."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Copy List with Random Pointer",
+    "description": "You are given a special linked list with the following properties: Each node contains an additional random pointer, which could point to any node in the list or null. Your task is to create a deep copy of the list. Each new node must have its own memory allocation and should not share any pointers with the original nodes.",
+    "topic": "Linked List",
+    "subtopic": "Deep Copy",
+    "tags": [
+      "Linked List",
+      "Depth First Search",
+      "Hash Table"
+    ],
+    "input_format": "The head of the original linked list with nodes containing a random pointer.",
+    "output_format": "The head of the new deep copied linked list.",
+    "constraints": [
+      "0 <= n <= 1000",
+      "The random pointer for each node in the linked list is either null or pointing to some node in the list."
+    ],
+    "examples": [
+      {
+        "input": "head = [[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "output": "[[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "explanation": "The copied list maintains random pointers that correctly refer to the equivalent nodes in the original list."
+      },
+      {
+        "input": "head = [[1,1],[2,1]]",
+        "output": "[[1,1],[2,1]]",
+        "explanation": "All random pointers point to the same node, ensuring correct deep copy."
+      },
+      {
+        "input": "head = [[3,null],[3,0],[3,null]]",
+        "output": "[[3,null],[3,0],[3,null]]",
+        "explanation": "The random pointers in the copied list match those in the original list."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to store the mapping between original and copied nodes.",
+      "Three passes might help: one to copy nodes, a second to assign random pointers, and a third to separate the lists."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Reorder List",
+    "description": "Given a singly linked list, reorder it by rearranging its nodes such that the node at the front is followed by the last node, then the second node, followed by the second last node, and so on. The first half of the list contains the original order while the second half is reversed.",
+    "topic": "Linked List",
+    "subtopic": "Rearranging Nodes",
+    "tags": [
+      "Linked List",
+      "Reordering",
+      "Two Pointers"
+    ],
+    "input_format": "The input consists of a singly linked list represented as a ListNode.",
+    "output_format": "The function should return the head of the modified linked list.",
+    "constraints": [
+      "The number of nodes in the list is n.",
+      "1 <= n <= 5 * 10^4"
+    ],
+    "examples": [
+      {
+        "input": "head = [1,2,3,4,5]",
+        "output": "[1,5,2,4,3]",
+        "explanation": "The original list is 1 -> 2 -> 3 -> 4 -> 5. After reordering, the new list is 1 -> 5 -> 2 -> 4 -> 3."
+      },
+      {
+        "input": "head = [1,2,3,4]",
+        "output": "[1,4,2,3]",
+        "explanation": "The original list is 1 -> 2 -> 3 -> 4. After reordering, the new list is 1 -> 4 -> 2 -> 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the slow and fast pointer technique to find the middle of the list.",
+      "Reverse the second half of the linked list before merging."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given a linked list, you need to reverse the nodes of the list k at a time and return the modified list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as is. You may not alter the values in the nodes, only nodes themselves may be changed.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Two Pointers"
+    ],
+    "input_format": "The input consists of a linked list and an integer k, where k is the number of nodes to reverse.",
+    "output_format": "Return the head of the modified linked list after reversing the nodes in k-group.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000].",
+      "1 <= k <= 5000."
+    ],
+    "examples": [
+      {
+        "input": "head = [1,2,3,4,5], k = 2",
+        "output": "[2,1,4,3,5]",
+        "explanation": "The nodes are reversed in pairs (2,1) and (4,3). The last node (5) remains unchanged."
+      },
+      {
+        "input": "head = [1,2,3], k = 3",
+        "output": "[3,2,1]",
+        "explanation": "The entire list is reversed as the number of nodes is equal to k."
+      },
+      {
+        "input": "head = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Only one node, which remains unchanged after reversal."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a dummy node to simplify the code.",
+      "Keep track of the previous group's tail.",
+      "Reverse the links for k nodes at a time."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Pascal's Triangle II",
+    "description": "Given an integer rowIndex, return the rowIndexth (0-indexed) row of the Pascal's triangle. In Pascal's triangle, each row is represented by the binomial coefficients. The rowIndex is 0-based, meaning the 0th row is [1], the 1st row is [1, 1], the 2nd row is [1, 2, 1], and so on. You need to implement a function that generates the specified row without generating the entire triangle.",
+    "topic": "Array",
+    "subtopic": "Binomial Coefficients",
+    "tags": [
+      "Array",
+      "Mathematics",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer rowIndex (0 <= rowIndex <= 30).",
+    "output_format": "A list of integers representing the coefficients in the rowIndexth row of Pascal's triangle.",
+    "constraints": [
+      "0 <= rowIndex <= 30"
+    ],
+    "examples": [
+      {
+        "input": "rowIndex = 3",
+        "output": "[1, 3, 3, 1]",
+        "explanation": "The 3rd row of Pascal's triangle is [1, 3, 3, 1]."
+      },
+      {
+        "input": "rowIndex = 0",
+        "output": "[1]",
+        "explanation": "The 0th row of Pascal's triangle is [1]."
+      },
+      {
+        "input": "rowIndex = 1",
+        "output": "[1, 1]",
+        "explanation": "The 1st row of Pascal's triangle is [1, 1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using the properties of binomial coefficients.",
+      "Each element in a row can be computed based on the previous row."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array II",
+    "description": "Given a potentially duplicated sorted array of integers nums and a target value, determine if the target is in the array. The array may be rotated at an unknown pivot, and it may contain duplicates. You must write an algorithm with a time complexity of O(log n) or O(n) in the worst case.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Searching"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "A boolean indicating whether the target exists in the array.",
+    "constraints": [
+      "1 <= nums.length <= 50000",
+      "-10^4 <= nums[i] <= 10^4",
+      "nums may contain duplicates."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2,5,6,0,0,1,2], target = 0",
+        "output": "true",
+        "explanation": "0 is present in the array."
+      },
+      {
+        "input": "nums = [2,5,6,0,0,1,2], target = 3",
+        "output": "false",
+        "explanation": "3 is not present in the array."
+      },
+      {
+        "input": "nums = [1], target = 1",
+        "output": "true",
+        "explanation": "1 is present in the array."
+      },
+      {
+        "input": "nums = [1, 1, 1, 1, 1, 1], target = 2",
+        "output": "false",
+        "explanation": "2 is not present in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search despite duplicates.",
+      "Handle duplicates carefully so they do not hinder your search."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Flatten Binary Tree to Linked List",
+    "description": "Given a binary tree, flatten it to a linked list in-place. The linked list should use the same TreeNode class and follow the order of the nodes in a pre-order traversal of the binary tree. This means that for each node, you should first consider the node's value, then its left subtree, and finally its right subtree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "DFS",
+      "Linked List"
+    ],
+    "input_format": "The root of a binary tree represented by TreeNode structure.",
+    "output_format": "The binary tree should be modified in place; thus, there is no return value.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 2000]",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 5, 3, 4, null, 6]",
+        "output": "1 -> 2 -> 3 -> 4 -> 5 -> 6",
+        "explanation": "The pre-order traversal of the given binary tree is 1, 2, 3, 4, 5, 6."
+      },
+      {
+        "input": "root = []",
+        "output": "",
+        "explanation": "An empty binary tree results in an empty linked list."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to traverse the tree in a pre-order way.",
+      "Consider using a stack for iterative traversal.",
+      "Keep track of the previous node as you traverse."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Path Sum",
+    "description": "Given a binary tree, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals a given sum. A leaf is a node with no children.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Recursion"
+    ],
+    "input_format": "The root of a binary tree and an integer representing the target sum.",
+    "output_format": "A boolean indicating whether such a path exists.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 1000].",
+      "-1000 <= Node.val <= 1000",
+      "-1000 <= target <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [5, 4, 8, 11, null, 13, 4], target = 22",
+        "output": "true",
+        "explanation": "The path 5 -> 4 -> 11 gives the sum 20, while the path 5 -> 8 -> 4 gives the sum 22."
+      },
+      {
+        "input": "root = [1, 2, 3], target = 5",
+        "output": "false",
+        "explanation": "There is no path from root to leaf that sums to 5."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use Depth-First Search (DFS) to traverse the tree.",
+      "Check leaf nodes to determine if you've found a valid path."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+    "description": "Given two integer arrays, preorder and inorder, which represent the preorder and inorder traversals of a binary tree, construct the binary tree and return its root.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Recursion"
+    ],
+    "input_format": "Two integer arrays, preorder and inorder.",
+    "output_format": "The root node of the constructed binary tree.",
+    "constraints": [
+      "1 <= preorder.length <= 3000",
+      "1 <= inorder.length <= 3000",
+      "preorder and inorder consist of unique values.",
+      "preorder is guaranteed to be the preorder traversal of the tree.",
+      "inorder is guaranteed to be the inorder traversal of the tree."
+    ],
+    "examples": [
+      {
+        "input": "preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]",
+        "output": "[3,9,20,null,null,15,7]",
+        "explanation": "The resulting binary tree is:\n    3\n   / \\\n  9  20\n     /  \\\n   15   7"
+      },
+      {
+        "input": "preorder = [1,2], inorder = [2,1]",
+        "output": "[1,2]",
+        "explanation": "The resulting binary tree is:\n    1\n   / \n  2"
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use preorder to identify the root and then find its index in inorder.",
+      "Split the inorder array around the root to construct left and right subtrees."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Paths II",
+    "description": "You are given a grid represented as a 2D array. Each cell can either be a '0' (empty space) or a '1' (obstacle). You can only move right or down from a cell. Your goal is to find the number of unique paths from the top-left corner to the bottom-right corner of the grid, which is located at (m-1, n-1). It is guaranteed that you can reach the bottom-right corner if there are no obstacles in the grid.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Paths",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Pathfinding"
+    ],
+    "input_format": "A 2D array of integers grid where 0 represents an empty cell and 1 represents an obstacle.",
+    "output_format": "An integer representing the number of unique paths from the top-left to the bottom-right corner.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "grid[i][j] is either 0 or 1.",
+      "The starting cell grid[0][0] and the ending cell grid[m-1][n-1] will always be 0."
+    ],
+    "examples": [
+      {
+        "input": "[[0,0,0],[0,1,0],[0,0,0]]",
+        "output": "2",
+        "explanation": "There are two unique paths to reach the bottom-right corner: right -> down -> down, and down -> down -> right."
+      },
+      {
+        "input": "[[0,1],[0,0]]",
+        "output": "1",
+        "explanation": "There is only one unique path: down -> right."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to store intermediate results.",
+      "Use a 2D array to count the number of paths to each cell."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Path Sum",
+    "description": "Given a m x n grid filled with non-negative numbers, find a path from the top left to the bottom right which minimizes the sum of the numbers along its path. You can only move either down or right at any point in time.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Traversal",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Pathfinding"
+    ],
+    "input_format": "A 2D grid represented as a list of lists, where each element is a non-negative integer.",
+    "output_format": "An integer representing the minimum path sum from the top left to the bottom right of the grid.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "0 <= grid[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,3,1],[1,5,1],[4,2,1]]",
+        "output": "7",
+        "explanation": "The path 1\u21923\u21921\u21921 minimizes the sum to 7."
+      },
+      {
+        "input": "grid = [[1,2,3],[4,5,6]]",
+        "output": "12",
+        "explanation": "The path 1\u21922\u21923\u21926 minimizes the sum to 12."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to store intermediate results.",
+      "The minimum path sum at any cell can be derived from the cell above or the cell to the left."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Simplify Path",
+    "description": "Given a string representing an absolute path for a file (Unix-style), simplify it. You may assume that the given path will always be valid. For example, a path could contain \"..\" which means 'go up a directory' and \".\" which means 'stay in the current directory'. The returned simplified path should not contain any redundant slashes and should be in the form of an absolute path.",
+    "topic": "String",
+    "subtopic": "Path Manipulation",
+    "tags": [
+      "String",
+      "Path",
+      "Manipulation"
+    ],
+    "input_format": "A string representing the absolute path.",
+    "output_format": "A string representing the simplified absolute path.",
+    "constraints": [
+      "1 <= path.length <= 3000",
+      "path consists of English letters, digits, '/', '.', and '..'.",
+      "The path will always start with a '/' character."
+    ],
+    "examples": [
+      {
+        "input": "/a/./b/../../c/",
+        "output": "/c",
+        "explanation": "The original path resolves to '/a' -> stay in current directory -> remove '../' -> go to '/c'."
+      },
+      {
+        "input": "/../",
+        "output": "/",
+        "explanation": "Going up from the root directory doesn't change the path; hence it resolves to '/'."
+      },
+      {
+        "input": "/home//foo/",
+        "output": "/home/foo",
+        "explanation": "The path has redundant slashes, effectively simplifying to '/home/foo'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to manage the directory names.",
+      "Skip any '.' characters as they refer to the current directory.",
+      "Handle '..' by popping from the stack if it's not empty."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Same Tree",
+    "description": "Given two binary trees, write a function to determine if they are the same or not. Two binary trees are considered the same if they are structurally identical and the nodes have the same value.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Recursion"
+    ],
+    "input_format": "The input consists of two binary trees represented as two root nodes, root1 and root2.",
+    "output_format": "A boolean value indicating whether the two trees are the same.",
+    "constraints": [
+      "The number of nodes in each tree is in the range [0, 100].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root1 = [1, 2, 3], root2 = [1, 2, 3]",
+        "output": "true",
+        "explanation": "Both trees have the same structure and node values."
+      },
+      {
+        "input": "root1 = [1, 2], root2 = [1, null, 2]",
+        "output": "false",
+        "explanation": "The trees have different structures."
+      },
+      {
+        "input": "root1 = [], root2 = []",
+        "output": "true",
+        "explanation": "Both trees are empty."
+      },
+      {
+        "input": "root1 = [1], root2 = [1, 2]",
+        "output": "false",
+        "explanation": "The trees have different structures and values."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use recursion to compare both trees.",
+      "Check if both nodes are null at the same time."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Edit Distance",
+    "description": "Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2. You may perform the following three operations: Insert a character, Delete a character, or Replace a character.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Strings",
+    "tags": [
+      "Dynamic Programming",
+      "Strings",
+      "Edit Distance"
+    ],
+    "input_format": "Two strings, word1 and word2, where 0 <= word1.length, word2.length <= 100.",
+    "output_format": "An integer representing the minimum number of operations required to convert word1 to word2.",
+    "constraints": [
+      "0 <= word1.length, word2.length <= 100",
+      "The strings consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "word1 = 'horse', word2 = 'ros'",
+        "output": "3",
+        "explanation": "horse -> rorse (replace 'h' with 'r') -> roise (replace 'h' with 'i') -> rose (remove 'e')"
+      },
+      {
+        "input": "word1 = 'intention', word2 = 'execution'",
+        "output": "5",
+        "explanation": "intention -> inention (remove 't') -> enention (replace 'i' with 'e') -> exention (replace 'n' with 'x') -> exection (replace 'n' with 'c') -> execution (add 'u')"
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a 2D array to store the distance values.",
+      "Think about how to compute the distances based on the previous values."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Interleaving String",
+    "description": "Given three strings s1, s2, and s3, determine if s3 is formed by the interleaving of s1 and s2. An interleaving of two strings consists of picking characters from the strings in such a way that the original character order is preserved. It is guaranteed that the characters in s3 are a combination of all characters from s1 and s2. You need to return true if s3 is an interleaving of s1 and s2; otherwise, return false.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Interleaving",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Interleave"
+    ],
+    "input_format": "Three strings s1, s2, and s3.",
+    "output_format": "A boolean value indicating if s3 is formed by interleaving s1 and s2.",
+    "constraints": [
+      "1 <= s1.length, s2.length <= 100",
+      "s3.length == s1.length + s2.length"
+    ],
+    "examples": [
+      {
+        "input": "s1 = 'aab', s2 = 'axy', s3 = 'aaxyab'",
+        "output": "true",
+        "explanation": "We can interleave s1 and s2 to get s3: (a) from s1, (a) from s1, (x) from s2, (y) from s2, (a) from s1, (b) from s1."
+      },
+      {
+        "input": "s1 = 'abcd', s2 = 'efgh', s3 = 'abefcdgh'",
+        "output": "true",
+        "explanation": "We can interleave s1 and s2 to form s3 by taking (a) from s1, (b) from s1, (e) from s2, (f) from s2, (c) from s1, (d) from s1, (g) from s2, (h) from s2."
+      },
+      {
+        "input": "s1 = 'a', s2 = 'b', s3 = 'ab'",
+        "output": "true",
+        "explanation": "The strings can be interleaved directly as s1 and s2 alternately."
+      },
+      {
+        "input": "s1 = 'a', s2 = 'b', s3 = 'aa'",
+        "output": "false",
+        "explanation": "s3 cannot be formed by interleaving s1 and s2 as 'a' and 'b' do not produce 'aa'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to solve this problem.",
+      "Think about how you can use a 2D array to keep track of possible interleaving states."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Binary Search Trees",
+    "description": "Given n, the number of nodes in a binary search tree (BST), return the number of unique BSTs that can be formed with these nodes. The nodes are labeled from 1 to n. For example, when n = 3, the unique BSTs can be formed with nodes 1, 2, and 3.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorial Structures",
+    "tags": [
+      "Dynamic Programming",
+      "Binary Search Tree",
+      "Combinatorial"
+    ],
+    "input_format": "An integer n representing the number of nodes in the BST.",
+    "output_format": "An integer representing the number of unique BSTs that can be formed with n nodes.",
+    "constraints": [
+      "1 <= n <= 19"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "5",
+        "explanation": "The five unique BSTs that can be formed with nodes 1, 2, and 3 are: 1-2-3, 1-3-2, 2-1-3, 3-1-2, and 2-3-1."
+      },
+      {
+        "input": "n = 1",
+        "output": "1",
+        "explanation": "There is only one unique BST that can be formed with a single node."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the number of unique structures for each possible root node.",
+      "Use dynamic programming to build the solution from smaller subproblems."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Linked List II",
+    "description": "Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the modified list. The numbering of nodes starts at 1. The nodes at position left and right are inclusive.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "LinkedList",
+      "Reversal",
+      "Two Pointers"
+    ],
+    "input_format": "A linked list node (head), and two integers left and right.",
+    "output_format": "The head of the modified linked list after reversing the specified section.",
+    "constraints": [
+      "1 <= left <= right <= n",
+      "n is the length of the linked list.",
+      "1 <= n <= 500"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], left = 2, right = 4",
+        "output": "[1, 4, 3, 2, 5]",
+        "explanation": "Reversing the nodes from position 2 to 4 gives us the modified list: [1, 4, 3, 2, 5]."
+      },
+      {
+        "input": "head = [1, 2, 3, 4, 5], left = 1, right = 5",
+        "output": "[5, 4, 3, 2, 1]",
+        "explanation": "Reversing the entire list results in [5, 4, 3, 2, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a pointer to find the start of the reversed section.",
+      "Use a temporary list to hold the reversed nodes."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Maximal Rectangle",
+    "description": "Given a 2D binary matrix filled with 0's and 1's, find the area of the largest rectangle containing only 1's and return its area.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "Matrix",
+      "Rectangle"
+    ],
+    "input_format": "A 2D binary matrix represented as a list of lists, where the inner lists contain integers 0 or 1.",
+    "output_format": "An integer representing the area of the largest rectangle containing only 1's.",
+    "constraints": [
+      "1 <= matrix.length <= 200",
+      "1 <= matrix[i].length <= 200",
+      "matrix[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "[[1,0,1,0,0],[1,0,1,1,1],[1,1,1,1,1],[1,0,0,1,0]]",
+        "output": "6",
+        "explanation": "The maximal rectangle is formed by the 1's in the center, which has an area of 6."
+      },
+      {
+        "input": "[[0,0,0,0],[0,0,0,0]]",
+        "output": "0",
+        "explanation": "There are no 1's in the matrix, so the area is 0."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider building a histogram out of the matrix.",
+      "For each row, calculate the maximum area rectangle in the histogram."
+    ],
+    "company": "Yahoo"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate List",
+    "description": "Given a linked list, rotate the list to the right by k places, where k is non-negative.",
+    "topic": "Linked List",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Linked List",
+      "Rotation",
+      "Two Pointers"
+    ],
+    "input_format": "The function receives the head of a linked list and an integer k.",
+    "output_format": "Return the head of the rotated linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 500].",
+      "-100 <= Node.val <= 100",
+      "0 <= k <= 2 * 10^9"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[4, 5, 1, 2, 3]",
+        "explanation": "After rotating the list to the right by 2 places, the list becomes [4, 5, 1, 2, 3]."
+      },
+      {
+        "input": "head = [0, 1, 2], k = 4",
+        "output": "[2, 0, 1]",
+        "explanation": "Rotating the list to the right by 4 places is the same as rotating by 1 place."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the length of the list to optimize the number of rotations.",
+      "You may want to connect the end of the list to the start."
+    ],
+    "company": "Yahoo"
+  }
+]

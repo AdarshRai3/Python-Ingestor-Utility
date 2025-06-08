@@ -1,0 +1,124 @@
+[
+  {
+    "question_id": "",
+    "title": "Design Tic-Tac-Toe",
+    "description": "Design a Tic-Tac-Toe game that supports a 3x3 grid. Players take turns placing their marks (either 'X' or 'O') on the grid. Your implementation should be able to check for a win condition, a draw, and reset the game. Write a class `TicTacToe` with the following methods:\n\n1. `__init__(self)` - Initializes an empty grid.\n2. `move(self, row: int, col: int, player: str) -> str` - Places a mark for the given player at the specified row and column. Returns 'X' if player 'X' wins, 'O' if player 'O' wins, 'Draw' if the grid is full without a winner, or 'Continue' if the game can keep going.\n3. `reset(self) -> None` - Resets the game board to an empty grid.",
+    "topic": "Design",
+    "subtopic": "Game Design",
+    "tags": [
+      "Design",
+      "Game",
+      "OOP"
+    ],
+    "input_format": "Three parameters: row (0-indexed), col (0-indexed), and player ('X' or 'O').",
+    "output_format": "Returns a string indicating the game state after the move.",
+    "constraints": [
+      "1 <= row, col <= 3",
+      "player is either 'X' or 'O'",
+      "A player cannot make a move on an already occupied cell."
+    ],
+    "examples": [
+      {
+        "input": "tictactoe = TicTacToe(); tictactoe.move(0, 0, 'X'); tictactoe.move(1, 0, 'O'); tictactoe.move(0, 1, 'X'); tictactoe.move(1, 1, 'O'); tictactoe.move(0, 2, 'X')",
+        "output": "'X'",
+        "explanation": "Player 'X' wins by filling the first row."
+      },
+      {
+        "input": "tictactoe = TicTacToe(); tictactoe.move(0, 0, 'X'); tictactoe.move(0, 1, 'O'); tictactoe.move(0, 2, 'X'); tictactoe.move(1, 0, 'O'); tictactoe.move(1, 1, 'X'); tictactoe.move(1, 2, 'O'); tictactoe.move(2, 0, 'X'); tictactoe.move(2, 1, 'O'); tictactoe.move(2, 2, 'X')",
+        "output": "'X'",
+        "explanation": "Player 'X' wins by filling the last diagonal."
+      },
+      {
+        "input": "tictactoe = TicTacToe(); tictactoe.move(0, 0, 'X'); tictactoe.move(0, 1, 'O'); tictactoe.move(0, 2, 'X'); tictactoe.move(1, 0, 'O'); tictactoe.move(1, 1, 'X'); tictactoe.move(2, 0, 'O'); tictactoe.move(2, 1, 'X'); tictactoe.move(2, 2, 'O')",
+        "output": "'Draw'",
+        "explanation": "All cells are filled without any player winning."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Track two conditions: player win conditions and grid occupation."
+    ],
+    "company": "Yext"
+  },
+  {
+    "question_id": "",
+    "title": "Excel Sheet Column Title",
+    "description": "Given a positive integer columnNumber, return its corresponding column title as it appears in an Excel sheet. For example, given columnNumber = 1, return 'A'. For columnNumber = 28, return 'AB'. Solve this problem as if the column numbers are infinitely large.",
+    "topic": "Math",
+    "subtopic": "Base Conversion",
+    "tags": [
+      "Math",
+      "String",
+      "Base Conversion"
+    ],
+    "input_format": "A single integer columnNumber representing the column number in Excel.",
+    "output_format": "A string representing the corresponding column title in Excel.",
+    "constraints": [
+      "1 <= columnNumber <= 2 * 10^26"
+    ],
+    "examples": [
+      {
+        "input": "columnNumber = 1",
+        "output": "'A'",
+        "explanation": "Column number 1 corresponds to title 'A'."
+      },
+      {
+        "input": "columnNumber = 28",
+        "output": "'AB'",
+        "explanation": "Column number 28 corresponds to title 'AB'."
+      },
+      {
+        "input": "columnNumber = 701",
+        "output": "'ZY'",
+        "explanation": "Column number 701 corresponds to title 'ZY'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think of how the columns are labelled in a number system, starting from 1 to 26 for A to Z.",
+      "You may need to convert the number to a different base."
+    ],
+    "company": "Yext"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to English Words",
+    "description": "Convert a non-negative integer to its English words representation. The function should support converting integer values up to 2^31 - 1. For example, the integer 123 should be converted to 'One Hundred Twenty Three'. If the number is 0, the output should be 'Zero'.",
+    "topic": "String",
+    "subtopic": "Conversion",
+    "tags": [
+      "String",
+      "Conversion",
+      "Number"
+    ],
+    "input_format": "A single integer num (0 <= num <= 2^31 - 1).",
+    "output_format": "A string representing the English words for the number.",
+    "constraints": [
+      "0 <= num <= 2147483647"
+    ],
+    "examples": [
+      {
+        "input": "num = 123",
+        "output": "One Hundred Twenty Three",
+        "explanation": "The number 123 is composed of 'One Hundred' for 100 and 'Twenty Three' for 23."
+      },
+      {
+        "input": "num = 0",
+        "output": "Zero",
+        "explanation": "The word representation for the number 0 is simply 'Zero'."
+      },
+      {
+        "input": "num = 1000000",
+        "output": "One Million",
+        "explanation": "The number 1000000 translates directly to 'One Million'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Break the number into segments of thousands.",
+      "Use recursive or iterative methods to handle each segment.",
+      "Consider special cases for numbers less than 20."
+    ],
+    "company": "Yext"
+  }
+]

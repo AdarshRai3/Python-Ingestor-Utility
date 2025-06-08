@@ -1,0 +1,638 @@
+[
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) Cache. It should support the following operations: get and put.\n\nThe get function takes a key and returns the value if the key exists in the cache. If the key does not exist, it should return -1.\n\nThe put function takes a key and a value and updates the value if the key exists. If the key does not exist, it adds the key-value pair to the cache. If the number of keys exceeds the capacity, it should invalidate the least recently used key before inserting a new key-value pair.",
+    "topic": "Design",
+    "subtopic": "Cache",
+    "tags": [
+      "Design",
+      "Cache",
+      "Data Structures"
+    ],
+    "input_format": "The constructor of LRUCache takes an integer capacity as an argument. The get and put functions take a key and a value (for put) as arguments.",
+    "output_format": "The get function returns the value associated with the key, or -1 if the key does not exist.",
+    "constraints": [
+      "0 <= capacity <= 3000",
+      "0 <= key <= 10000",
+      "-10^5 <= value <= 10^5",
+      "The operations get and put are called at most 10000 times."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache lRUCache = new LRUCache(2);\nlRUCache.put(1, 1);\nlRUCache.put(2, 2);\nlRUCache.get(1);   // returns 1\nlRUCache.put(3, 3); // evicts key 2\nlRUCache.get(2);   // returns -1 (not found)\nlRUCache.put(4, 4); // evicts key 1\nlRUCache.get(1);   // returns -1 (not found)\nlRUCache.get(3);   // returns 3\nlRUCache.get(4);   // returns 4",
+        "output": "[1, -1, -1, 3, 4]",
+        "explanation": "The operations demonstrate the LRU cache functionalities, where least recently used entries are evicted when capacity is exceeded."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hashmap and a doubly linked list.",
+      "Maintain the order of keys to identify the least recently used.",
+      "Update the key's position in the list each time it is accessed."
+    ],
+    "company": "Confluent"
+  },
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value data structure that can store multiple values for the same key at different timestamps. Implement the following methods: set(key, value, timestamp) to store a value in the key at a specific timestamp, and get(key, timestamp) to retrieve the value associated with the key at the greatest timestamp less than or equal to the given timestamp. If no such timestamp exists, return an empty string.",
+    "topic": "Data Structure",
+    "subtopic": "Design",
+    "tags": [
+      "Data Structure",
+      "Hash Table",
+      "Binary Search"
+    ],
+    "input_format": "The set method will take (string key, string value, integer timestamp). The get method will take (string key, integer timestamp).",
+    "output_format": "A string representing the value associated with the key at the specified timestamp or an empty string if no such timestamp exists.",
+    "constraints": [
+      "1 <= key.length, value.length <= 100",
+      "1 <= timestamp <= 10^7",
+      "get always returns a value that was set."
+    ],
+    "examples": [
+      {
+        "input": "set(\"foo\", \"bar\", 1)\nset(\"foo\", \"baz\", 2)\nget(\"foo\", 1)",
+        "output": "\"bar\"",
+        "explanation": "At timestamp 1, the value for key 'foo' is 'bar'."
+      },
+      {
+        "input": "get(\"foo\", 3)",
+        "output": "\"baz\"",
+        "explanation": "At timestamp 3, the most recent value for key 'foo' is 'baz'."
+      },
+      {
+        "input": "get(\"foo\", 0)",
+        "output": "\"\"",
+        "explanation": "No value is associated with key 'foo' at timestamp 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a data structure that allows fast access to the highest timestamp."
+    ],
+    "company": "Confluent"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine if a 9x9 Sudoku board is valid according to the rules of Sudoku. The board could be partially filled, where empty cells are denoted by '.' (a period). A valid Sudoku board follows these rules: Each row must contain the digits 1-9 without repetition, each column must contain the digits 1-9 without repetition, and each of the nine 3x3 sub-boxes must also contain the digits 1-9 without repetition.",
+    "topic": "Board Game",
+    "subtopic": "Validation",
+    "tags": [
+      "Sudoku",
+      "Board",
+      "Validation"
+    ],
+    "input_format": "A 9x9 2D character array representing the Sudoku board.",
+    "output_format": "Return true if the Sudoku board is valid, otherwise return false.",
+    "constraints": [
+      "The board is a 9x9 array.",
+      "Each cell may contain a digit '1' to '9' or a '.' (which represents an empty cell)."
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "5",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "true",
+        "explanation": "The board satisfies all the rules of Sudoku."
+      },
+      {
+        "input": [
+          [
+            "8",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "false",
+        "explanation": "The number '8' appears twice in the first column."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a set to track the numbers you have seen in each row, column, and sub-box.",
+      "Check each cell one by one and validate it against the constraints."
+    ],
+    "company": "Confluent"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Time to Eat All Grains",
+    "description": "You are given an array of integers where each element represents the number of grains in a pile. Your task is to calculate the minimum time required to eat all the grains, given that you can eat grains from any pile at a rate of one grain per unit time. You can pick any pile to eat from in each unit of time, and the goal is to determine the minimum number of units of time required to finish eating all the grains. If the piles are empty, it should return 0. If the array is empty, it should also return 0.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Simulation"
+    ],
+    "input_format": "An array of integers 'grains' representing the number of grains in each pile.",
+    "output_format": "An integer representing the minimum time required to eat all the grains.",
+    "constraints": [
+      "1 <= grains.length <= 10^5",
+      "0 <= grains[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "grains = [3, 6, 2, 8]",
+        "output": "8",
+        "explanation": "In 8 time units, you can consume all the grains from the different piles."
+      },
+      {
+        "input": "grains = [1, 1, 1, 1]",
+        "output": "4",
+        "explanation": "Each pile has 1 grain. It will take 4 time units to eat all."
+      },
+      {
+        "input": "grains = []",
+        "output": "0",
+        "explanation": "There are no grains to eat, so the time required is 0."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how parallel consumption can reduce time.",
+      "Look for patterns in consumption when piles have varying sizes."
+    ],
+    "company": "Confluent"
+  },
+  {
+    "question_id": "",
+    "title": "Regular Expression Matching",
+    "description": "Implement a function that determines if a given string matches a specified pattern using regular expressions. The pattern may include '.' which matches any single character and '*' which matches zero or more of the preceding element.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Matching",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Regex"
+    ],
+    "input_format": "A string `s` and a string `p` where `s` is the input string and `p` is the regular expression pattern.",
+    "output_format": "Return a boolean indicating whether the string matches the pattern.",
+    "constraints": [
+      "0 <= s.length <= 20",
+      "0 <= p.length <= 20"
+    ],
+    "examples": [
+      {
+        "input": "s = 'aab', p = 'c*a*b'",
+        "output": "true",
+        "explanation": "The pattern 'c*a*b' matches the string 'aab' because 'c*' means zero occurrences of 'c', 'a*' means two occurrences of 'a', and 'b' matches 'b'."
+      },
+      {
+        "input": "s = 'mississippi', p = 'mis*is*p*.",
+        "output": "false",
+        "explanation": "The pattern 'mis*is*p*.' does not match 'mississippi' as the pattern expects an additional 'p' at the end which doesn't correspond to the string."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to store intermediate results.",
+      "Think about handling the '*' character carefully."
+    ],
+    "company": "Confluent"
+  },
+  {
+    "question_id": "",
+    "title": "Wildcard Matching",
+    "description": "Implement a function that takes two strings: s and p, where s is the input string and p is a wildcard pattern. The pattern may include the characters '?' that matches any single character and '*' that matches any sequence of characters (including the empty sequence). Your task is to determine if the input string matches the wildcard pattern.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Matching",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Wildcard Matching"
+    ],
+    "input_format": "Two strings: s (the input string) and p (the wildcard pattern).",
+    "output_format": "A boolean value indicating whether the input string s matches the wildcard pattern p.",
+    "constraints": [
+      "0 <= s.length, p.length <= 2000"
+    ],
+    "examples": [
+      {
+        "input": "s = 'adceb', p = '*a*b'",
+        "output": "true",
+        "explanation": "The pattern '*a*b' matches the input string 'adceb' by matching 'a' with 'a' and allowing '*' to match 'dce'."
+      },
+      {
+        "input": "s = 'acdcb', p = 'a*c?b'",
+        "output": "false",
+        "explanation": "The pattern 'a*c?b' does not match the input string 'acdcb' as the '?' must match exactly one character."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a dynamic programming approach to solve this problem efficiently.",
+      "Think about how to handle the '*' character in the pattern."
+    ],
+    "company": "Confluent"
+  },
+  {
+    "question_id": "",
+    "title": "Debounce",
+    "description": "Implement a debouncing function that limits the rate at which a function can fire. The debouncing function should return a new function that, when invoked, will postpone its execution until after a given wait time in milliseconds has elapsed since the last time it was invoked. If the returned function is invoked again before the wait timer expires, the current timer is cleared and a new timer is set. This is useful for scenarios like handling resize or scroll events where debouncing can improve performance.",
+    "topic": "Function",
+    "subtopic": "Debouncing",
+    "tags": [
+      "Function",
+      "Debounce",
+      "Performance"
+    ],
+    "input_format": "A function `fn` and a number `wait`, where `fn` is the function to debounce and `wait` is the wait time in milliseconds.",
+    "output_format": "A debounced version of the provided function `fn`.",
+    "constraints": [
+      "0 <= wait <= 10^4",
+      "fn is a callable function with no arguments."
+    ],
+    "examples": [
+      {
+        "input": "debouncedFunction = debounce(() => console.log('Hello'), 1000);\ndebouncedFunction();",
+        "output": "No output until 1000 milliseconds has passed.",
+        "explanation": "The function logs 'Hello' after waiting for 1000 milliseconds since the last call."
+      },
+      {
+        "input": "debouncedFunction = debounce(() => console.log('Debounced!'), 500);\ndebouncedFunction();\ndebouncedFunction();\ndebouncedFunction();",
+        "output": "Output will be 'Debounced!' after 500 milliseconds from the last call.",
+        "explanation": "Only the last call is executed after waiting for 500 milliseconds since the last invocation."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using setTimeout to implement the wait feature.",
+      "Clear the previous timer using clearTimeout if the function is called again."
+    ],
+    "company": "Confluent"
+  },
+  {
+    "question_id": "",
+    "title": "Design Authentication Manager",
+    "description": "Create an Authentication Manager that manages session tokens for a specified time period. You should be able to add tokens, refresh them, and check how many valid tokens are currently active at a specific timestamp. A token will expire after a defined time 'expireTime' since its creation. Implement the following methods: 'generate', 'renew', and 'countActiveTokens'.",
+    "topic": "Design",
+    "subtopic": "System Design",
+    "tags": [
+      "Design",
+      "System Design",
+      "Tokens"
+    ],
+    "input_format": "No specific input format; interface methods are described in the problem.",
+    "output_format": "The methods return either void (for generate and renew) or an integer (for countActiveTokens).",
+    "constraints": [
+      "1 <= expireTime <= 1000",
+      "The number of tokens generated will not exceed 10^6 in total.",
+      "All timestamps will be non-negative integers."
+    ],
+    "examples": [
+      {
+        "input": {
+          "operations": [
+            "AuthenticationManager",
+            "generate",
+            "countActiveTokens",
+            "renew",
+            "countActiveTokens"
+          ],
+          "args": [
+            5,
+            [
+              "token1",
+              1
+            ],
+            [],
+            [
+              "token1",
+              6
+            ],
+            []
+          ]
+        },
+        "output": [
+          null,
+          null,
+          1,
+          null,
+          0
+        ],
+        "explanation": "Initially, the manager has no tokens. After generating 'token1' at timestamp 1, there's 1 active token. The 'renew' operation at timestamp 6 fails as the token has expired, resulting in 0 active tokens."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a map to store tokens and their expiration times.",
+      "Remember to filter out expired tokens during operations."
+    ],
+    "company": "Confluent"
+  },
+  {
+    "question_id": "",
+    "title": "Count Subarrays With Median K",
+    "description": "Given an array of integers and an integer k, return the number of contiguous subarrays whose median is equal to k. A median of a sorted array is the middle element if the array has an odd length, and the average of the two middle elements if the array has an even length.",
+    "topic": "Array",
+    "subtopic": "Subarray Counting",
+    "tags": [
+      "Array",
+      "Subarray",
+      "Counting",
+      "Median"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the count of subarrays with median equal to k.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5",
+      "1 <= k <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 2, 4, 5], k = 3",
+        "output": "3",
+        "explanation": "The subarrays [3], [1, 3, 2], and [3, 2, 4] have a median of 3."
+      },
+      {
+        "input": "nums = [7, 3, 1, 4, 3, 5], k = 4",
+        "output": "2",
+        "explanation": "The subarrays [4] and [3, 1, 4] have a median of 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using prefix sums to keep track of counts.",
+      "A sliding window technique might help in counting subarrays efficiently."
+    ],
+    "company": "Confluent"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Atoms",
+    "description": "You are given a string representing a chemical formula. The string consists of uppercase and lowercase letters, digits, and parentheses. Each uppercase letter represents an element (e.g., 'H' for Hydrogen, 'O' for Oxygen). Lowercase letters are used to indicate a specific isotope of an element (e.g., 'Fe' for Iron). Digits indicate the number of atoms of the element or group following them. Parentheses can be used to denote groups of atoms, and if there is a digit immediately following a closing parenthesis, it signifies that all atoms in the group must be multiplied by that digit.\n\nYour task is to compute the total number of different types of atoms present in the chemical formula and return a dictionary where the keys are the element symbols and the values are the respective counts of atoms.",
+    "topic": "String Parsing",
+    "subtopic": "Data Structure Manipulation",
+    "tags": [
+      "String",
+      "Parsing",
+      "Data Structure",
+      "Math"
+    ],
+    "input_format": "A single string `formula` representing the chemical formula.\n",
+    "output_format": "A dictionary where keys are strings representing element symbols and values are integers representing the total count of atoms.",
+    "constraints": [
+      "1 <= formula.length <= 1000",
+      "The formula will always be a valid chemical formula."
+    ],
+    "examples": [
+      {
+        "input": "C6H12O6",
+        "output": "{ 'C': 6, 'H': 12, 'O': 6 }",
+        "explanation": "The formula represents 6 Carbon atoms, 12 Hydrogen atoms, and 6 Oxygen atoms."
+      },
+      {
+        "input": "Mg(OH)2",
+        "output": "{ 'Mg': 1, 'O': 2, 'H': 2 }",
+        "explanation": "There is 1 Magnesium atom, 2 Oxygen atoms, and 2 Hydrogen atoms in this compound."
+      },
+      {
+        "input": "K4(ON(SO3)2)2",
+        "output": "{ 'K': 4, 'O': 14, 'N': 2, 'S': 4 }",
+        "explanation": "This compound has 4 Potassium atoms, 14 Oxygen atoms, 2 Nitrogen atoms, and 4 Sulfur atoms."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to handle the nested parentheses.",
+      "Use a regular expression to help with parsing elements and counts."
+    ],
+    "company": "Confluent"
+  },
+  {
+    "question_id": "",
+    "title": "Combination Sum",
+    "description": "Given an integer array candidates and an integer target, return all unique combinations of candidates where the chosen numbers sum to target. You may return the combinations in any order. The same number may be chosen from candidates an unlimited number of times. It is guaranteed that each input would have at least one unique solution, and you may not include the same combination multiple times.",
+    "topic": "Backtracking",
+    "subtopic": "Combination Generation",
+    "tags": [
+      "Backtracking",
+      "Combination",
+      "DFS"
+    ],
+    "input_format": "An array of distinct integers candidates and an integer target.",
+    "output_format": "A list of all unique combinations of candidates that sum up to the target.",
+    "constraints": [
+      "1 <= candidates.length <= 30",
+      "1 <= candidates[i] <= 200",
+      "All elements of candidates are distinct.",
+      "0 < target <= 500"
+    ],
+    "examples": [
+      {
+        "input": "candidates = [2, 3, 6, 7], target = 7",
+        "output": "[[7],[2,2,3]]",
+        "explanation": "The candidates 2, 2, and 3 can be combined to give 7, and the single candidate 7 equals the target itself."
+      },
+      {
+        "input": "candidates = [1], target = 2",
+        "output": "[[1,1]]",
+        "explanation": "The number 1 can be chosen twice to reach the target of 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to explore all combinations.",
+      "Think about how to track the current combination and the remaining target."
+    ],
+    "company": "Confluent"
+  }
+]

@@ -1,0 +1,205 @@
+[
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water II",
+    "description": "Given a 2D integer grid representing an elevation map where `grid[i][j]` is the height of the terrain at that point, return the total amount of rainwater that can be trapped after raining. You may assume all four edges of the grid are filled with water. The volume of water trapped depends on the heights surrounding each cell.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Trapping Rain Water",
+    "tags": [
+      "2D Matrix",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "A 2D grid of integers where grid[i][j] represents the height at that point.",
+    "output_format": "An integer representing the total amount of trapped rainwater.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 200",
+      "0 <= grid[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "[[1,4,3,1,3,2],[3,2,1,3,2,4],[2,3,3,2,3,4],[6,1,2,4,5,5],[5,5,5,4,4,4]]",
+        "output": "10",
+        "explanation": "The trapped water can be visualized as being held in between higher elevations."
+      },
+      {
+        "input": "[[2,1,1,2],[1,0,0,1],[1,0,0,1],[2,1,1,2]]",
+        "output": "6",
+        "explanation": "The water trapped is 6 units based on the surrounding heights."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a min-heap to keep track of the boundaries.",
+      "Use a breadth-first search to explore the grid."
+    ],
+    "company": "Otter.ai"
+  },
+  {
+    "question_id": "",
+    "title": "The Number of the Smallest Unoccupied Chair",
+    "description": "In a party with 'n' people sitting in a line, each person is sitting on a chair identified by their number starting from 0 to n-1. Your task is to find the number of the smallest chair that is not occupied by anyone. You can assume that the state of each chair is given in a list where a value of '1' means the chair is occupied and '0' means it is unoccupied. Additionally, some chairs may not exist in the array. If a chair is mentioned in the input array as occupied, it should be considered occupied, even if it exceeds the range of the chair numbers. Return the smallest index of the chair that is unoccupied.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Greedy"
+    ],
+    "input_format": "An integer n representing the number of chairs and an array of integers where each integer represents an occupied chair.",
+    "output_format": "An integer representing the smallest index of an unoccupied chair.",
+    "constraints": [
+      "1 <= n <= 10^6",
+      "The length of the array is up to 10^5.",
+      "The values in the array are non-negative integers."
+    ],
+    "examples": [
+      {
+        "input": "n = 5, occupied_chairs = [0, 1, 2, 3, 4]",
+        "output": "5",
+        "explanation": "All chairs from 0 to 4 are occupied, so the smallest unoccupied chair is 5."
+      },
+      {
+        "input": "n = 10, occupied_chairs = [0, 2, 3, 5, 8]",
+        "output": "1",
+        "explanation": "The chairs 0, 2, 3, 5, and 8 are occupied, leaving 1 as the smallest unoccupied chair."
+      },
+      {
+        "input": "n = 7, occupied_chairs = [7, 8, 9]",
+        "output": "0",
+        "explanation": "All chairs from 7 and above are out of bounds, so chair 0 is the smallest unoccupied chair."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the occupied chairs using a set.",
+      "Iterate from 0 to n - 1 to find the first unoccupied chair."
+    ],
+    "company": "Otter.ai"
+  },
+  {
+    "question_id": "",
+    "title": "Frog Jump",
+    "description": "You are given a number of ponds, each at a height represented by an integer in an array. A frog can jump from one pond to another, but it can only jump to a pond if it is at the same height or lower than the current pond. Your task is to find the minimum number of jumps needed for the frog to reach the last pond from the first pond. If it is not possible to reach the last pond, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Graph"
+    ],
+    "input_format": "An array of integers heights representing the height of each pond.",
+    "output_format": "An integer representing the minimum number of jumps needed, or -1 if not possible.",
+    "constraints": [
+      "1 <= heights.length <= 10^5",
+      "1 <= heights[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "heights = [10, 30, 20, 40, 50]",
+        "output": "3",
+        "explanation": "The frog can jump from pond 0 (height 10) to pond 1 (height 30) to pond 2 (height 20), and then to pond 4 (height 50)."
+      },
+      {
+        "input": "heights = [5, 1, 3, 2, 4]",
+        "output": "4",
+        "explanation": "The frog will jump through each pond directly to reach the last pond."
+      },
+      {
+        "input": "heights = [5, 4, 3, 2, 1]",
+        "output": "4",
+        "explanation": "The frog can jump directly to each lower height, needing 4 jumps to reach the last pond."
+      },
+      {
+        "input": "heights = [1, 3, 5, 4, 2, 1]",
+        "output": "-1",
+        "explanation": "The frog cannot move from pond 5 to pond 4 because it can't jump to a higher pond."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a breadth-first search strategy to explore the jumps.",
+      "Keep track of the visited ponds to avoid cycles."
+    ],
+    "company": "Otter.ai"
+  },
+  {
+    "question_id": "",
+    "title": "Word Break",
+    "description": "Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Memoization",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Backtracking"
+    ],
+    "input_format": "A string s and a list of strings wordDict.",
+    "output_format": "A boolean indicating whether the string can be segmented into dictionary words.",
+    "constraints": [
+      "1 <= s.length <= 300",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 20",
+      "s and the words in wordDict consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'leetcode', wordDict = ['leet', 'code']",
+        "output": "true",
+        "explanation": "'leetcode' can be segmented as 'leet' + 'code'."
+      },
+      {
+        "input": "s = 'applepenapple', wordDict = ['apple', 'pen']",
+        "output": "true",
+        "explanation": "'applepenapple' can be segmented as 'apple' + 'pen' + 'apple'."
+      },
+      {
+        "input": "s = 'catsandog', wordDict = ['cats', 'dog', 'sand', 'and', 'cat']",
+        "output": "false",
+        "explanation": "'catsandog' cannot be segmented into any combination of words from the dictionary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to use dynamic programming to store results of subproblems.",
+      "Consider using a boolean array to track which indices can form a valid word."
+    ],
+    "company": "Otter.ai"
+  },
+  {
+    "question_id": "",
+    "title": "Flatten Deeply Nested Array",
+    "description": "You are given a deeply nested array of integers. Your task is to flatten this array into a single-dimensional array. The input can contain integers, arrays, and even other nested arrays. Ensure that all the integers are in the same order as they appear in the original nested array.",
+    "topic": "Array",
+    "subtopic": "Recursion",
+    "tags": [
+      "Array",
+      "Recursion",
+      "Flattening"
+    ],
+    "input_format": "An array that may contain integers and nested arrays.",
+    "output_format": "A single-dimensional array of integers.",
+    "constraints": [
+      "1 <= length of input array <= 10^5",
+      "The integers in the array are between -10^5 and 10^5."
+    ],
+    "examples": [
+      {
+        "input": "[1, [2, 3], 4, [5, [6, 7]]]",
+        "output": "[1, 2, 3, 4, 5, 6, 7]",
+        "explanation": "The integers 1, 2, 3, 4, 5, 6, and 7 appear in that order when the array is flattened."
+      },
+      {
+        "input": "[[1, 2], [3, [4, 5]], 6]",
+        "output": "[1, 2, 3, 4, 5, 6]",
+        "explanation": "Flattening gives us the sequential list of integers 1, 2, 3, 4, 5, and 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using recursion to handle the nested arrays.",
+      "You can check the type of each element in the array."
+    ],
+    "company": "Otter.ai"
+  }
+]

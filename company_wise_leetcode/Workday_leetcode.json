@@ -1,0 +1,301 @@
+[
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once. The output should be a list of groups of anagrams, where each group is a list of strings that are anagrams of each other.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Anagram",
+      "Hashing"
+    ],
+    "input_format": "A list of strings strs, containing at least one anagram pair.",
+    "output_format": "A list of lists, where each inner list contains strings that are anagrams of each other.",
+    "constraints": [
+      "1 <= strs.length <= 1000",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"eat\",\"tea\",\"ate\"],[\"tan\",\"nat\"],[\"bat\"]]",
+        "explanation": "The words 'eat', 'tea', and 'ate' are anagrams of each other. Similarly, 'tan' and 'nat' are anagrams, while 'bat' is on its own."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "An empty string is an anagram of itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "A single character string is also an anagram of itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to group the strings by sorted characters.",
+      "Remember that anagrams share the same sorted character string."
+    ],
+    "company": "Workday"
+  },
+  {
+    "question_id": "",
+    "title": "Reaching Points",
+    "description": "You are initially at point (0, 0). Your goal is to reach the point (targetX, targetY) using the following operations: If you are at (x, y), you can move to either (x + y, y) or (x, x + y). You can perform these operations any number of times. Determine if it is possible to reach the target point (targetX, targetY) using the allowed operations.",
+    "topic": "Mathematics",
+    "subtopic": "Geometry",
+    "tags": [
+      "Math",
+      "Geometry",
+      "Dynamic Programming"
+    ],
+    "input_format": "Two integers targetX and targetY.",
+    "output_format": "A boolean value indicating whether the point (targetX, targetY) can be reached or not.",
+    "constraints": [
+      "0 <= targetX, targetY <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "targetX = 8, targetY = 6",
+        "output": "true",
+        "explanation": "You can reach (8, 6) from (0, 0) by the following moves: (0, 0) -> (0, 0) -> (0, 6) -> (6, 6) -> (8, 6)."
+      },
+      {
+        "input": "targetX = 1, targetY = 1",
+        "output": "false",
+        "explanation": "To reach (1, 1) from (0, 0), this is not possible since you can only move to points (x + y, y) or (x, x + y)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider working backwards from the target point.",
+      "Try to reduce the problem by subtracting larger coordinates.",
+      "When both coordinates are equal, check for divisibility."
+    ],
+    "company": "Workday"
+  },
+  {
+    "question_id": "",
+    "title": "Serialize and Deserialize Binary Tree",
+    "description": "Design an algorithm to serialize and deserialize a binary tree. A binary tree can be represented as an array, where the parent node is at index i and its left and right children are located at indices 2*i + 1 and 2*i + 2 respectively. You should be able to reconstruct the tree from this serialized representation. Implement the following two functions: `serialize(root)` for serialization and `deserialize(data)` for deserialization.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Serialization",
+      "Deserialization",
+      "Binary Tree"
+    ],
+    "input_format": "A binary tree represented by its root node.",
+    "output_format": "A string that represents the serialized form of the binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "Each node's value is an integer in the range [-10^5, 10^5]."
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, null, null, 4, 5]",
+        "output": "'1,2,3,null,null,4,5'",
+        "explanation": "The binary tree can be represented as a list, and the serialized string follows pre-order traversal."
+      },
+      {
+        "input": "root = []",
+        "output": "'#'",
+        "explanation": "An empty tree is serialized as '#'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using level-order or pre-order traversal for serialization.",
+      "Use a placeholder in the serialized string to indicate null nodes."
+    ],
+    "company": "Workday"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, if the input is [[1,3],[2,6],[8,10],[15,18]], the output should be [[1,6],[8,10],[15,18]]. The intervals [1,3] and [2,6] overlap, so they can be merged into [1,6].",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Merging"
+    ],
+    "input_format": "A list of intervals, where each interval is represented by a pair of integers [start, end].",
+    "output_format": "A list of merged intervals.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they are merged to form [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] touch and are merged to form [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals by their starting point.",
+      "Use a stack or a temporary list to manage merged intervals."
+    ],
+    "company": "Workday"
+  },
+  {
+    "question_id": "",
+    "title": "Convert Binary Number in a Linked List to Integer",
+    "description": "Given a singly linked list that represents a binary number, convert it to an integer. The linked list's nodes contain either 0 or 1 and are ordered from the most significant bit at the head to the least significant bit at the tail.",
+    "topic": "Linked List",
+    "subtopic": "Conversion",
+    "tags": [
+      "Linked List",
+      "Binary",
+      "Conversion"
+    ],
+    "input_format": "A singly linked list where each node contains a binary digit (0 or 1).",
+    "output_format": "An integer representing the decimal value of the binary number represented by the linked list.",
+    "constraints": [
+      "The linked list contains at least one node.",
+      "All node's values are either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 0, 1]",
+        "output": "5",
+        "explanation": "The binary number represented by the linked list is 101, which is equal to 5 in decimal."
+      },
+      {
+        "input": "head = [0]",
+        "output": "0",
+        "explanation": "The binary number represented by the linked list is 0, which is equal to 0 in decimal."
+      },
+      {
+        "input": "head = [1, 1, 1, 0]",
+        "output": "14",
+        "explanation": "The binary number represented by the linked list is 1110, which is equal to 14 in decimal."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Reverse iterate through the linked list or build the binary number from head to tail.",
+      "Shift the current value left and add the node value."
+    ],
+    "company": "Workday"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) Cache. It should support the following operations: get and put. The get operation should return the value of the key if the key exists in the cache, otherwise return -1. The put operation should insert or update the value of the key. If the number of keys exceeds the capacity of the cache, it should invalidate the least recently used key.",
+    "topic": "Data Structure",
+    "subtopic": "Cache",
+    "tags": [
+      "Cache",
+      "Data Structure",
+      "Design"
+    ],
+    "input_format": "The cache is initialized with a positive capacity. A list of operations will be given, with each operation either being a 'get' operation with a key or a 'put' operation with a key and value.",
+    "output_format": "The output should reflect the results of the 'get' operations in the order they are called.",
+    "constraints": [
+      "The capacity of the cache is between 1 and 100.",
+      "All keys and values are integers.",
+      "A call to get(key) will always be preceded by a put(key, value) call."
+    ],
+    "examples": [
+      {
+        "input": "operations = [['LRUCache', 2], ['put', 1, 1], ['put', 2, 2], ['get', 1], ['put', 3, 3], ['get', 2], ['put', 4, 4], ['get', 1], ['get', 3], ['get', 4]]",
+        "output": "[null, null, null, 1, null, -1, null, -1, 3, 4]",
+        "explanation": "At the start we insert (1,1) and (2,2), so the cache is [1,2]. Get(1) returns 1. Inserting (3,3) evicts (2,2) since it's the least recently used. Get(2) returns -1 (not found). Inserting (4,4) evicts (1,1). Get(1) returns -1 (not found), Get(3) returns 3 and Get(4) returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a data structure that allows fast access and updates.",
+      "Think about how to keep track of the most and least recently used items."
+    ],
+    "company": "Workday"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule II",
+    "description": "There are a total of n courses you have to take, labeled from 0 to n-1. Some courses may have prerequisites, which means you must take certain courses before others. You are given an array of prerequisite pairs where each pair [a, b] indicates that you must take course a before course b. Your task is to return the order in which you can finish all courses. If it is impossible to complete all courses, return an empty array.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS"
+    ],
+    "input_format": "An integer n representing the number of courses, and a 2D array prerequisites representing the prerequisite pairs.",
+    "output_format": "An array of integers representing the order of courses to finish, or an empty array if it's impossible.",
+    "constraints": [
+      "0 <= n <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, prerequisites = [[1,0],[2,1],[3,2]]",
+        "output": "[0,1,2,3]",
+        "explanation": "You can take the courses in the order of 0 -> 1 -> 2 -> 3."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "[]",
+        "explanation": "It's impossible to finish the courses because of a cyclic dependency."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using DFS or Kahn's algorithm for topological sorting.",
+      "Keep track of the number of prerequisites left for each course."
+    ],
+    "company": "Workday"
+  },
+  {
+    "question_id": "",
+    "title": "Permutations",
+    "description": "Given an array of distinct integers, return all the possible permutations. You can return the answer in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Permutations",
+    "tags": [
+      "Backtracking",
+      "Permutations",
+      "Recursion"
+    ],
+    "input_format": "An array of distinct integers nums.",
+    "output_format": "A list of lists containing all possible permutations of the input array.",
+    "constraints": [
+      "1 <= nums.length <= 6",
+      "-10 <= nums[i] <= 10",
+      "All integers in nums are distinct."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]",
+        "explanation": "The permutations of the array [1, 2, 3] include various arrangements of the three numbers."
+      },
+      {
+        "input": "nums = [0, 1]",
+        "output": "[[0,1],[1,0]]",
+        "explanation": "The only permutations of the array [0, 1] are [0, 1] and [1, 0]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a backtracking approach to generate permutations.",
+      "Keep track of the elements that have been used in the current permutation."
+    ],
+    "company": "Workday"
+  }
+]

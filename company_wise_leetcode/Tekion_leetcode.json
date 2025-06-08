@@ -1,0 +1,648 @@
+[
+  {
+    "question_id": "",
+    "title": "Count the Number of Infection Sequences",
+    "description": "Given a grid representing a field of cells, where each cell can either be infected or healthy, count the number of distinct sequences of infections that can spread from one infected cell to its adjacent healthy cells. An infection can spread to a healthy cell if it is directly adjacent to an infected cell (up, down, left, right). Once a healthy cell is infected, it cannot be infected again during the same sequence.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Grid",
+      "Infection"
+    ],
+    "input_format": "A 2D grid of integers where 1 represents an infected cell and 0 represents a healthy cell.",
+    "output_format": "An integer representing the number of distinct infection sequences.",
+    "constraints": [
+      "1 <= grid.length <= 100",
+      "1 <= grid[0].length <= 100",
+      "grid[i][j] is either 0 or 1"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]",
+        "output": "3",
+        "explanation": "Each infected cell can spread to its own adjacent healthy cell, creating three distinct sequences of infections."
+      },
+      {
+        "input": "grid = [[1, 1, 0], [1, 0, 0], [0, 0, 1]]",
+        "output": "1",
+        "explanation": "The infected cells are connected, allowing a single sequence of infection."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using DFS or BFS to explore adjacent cells.",
+      "Keep track of visited cells to avoid counting the same sequence multiple times."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the height of walls, compute how much water can be trapped between the walls after raining. The width of each wall is 1 unit.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers heights where heights[i] represents the height of the ith wall.",
+    "output_format": "An integer representing the total amount of trapped rain water.",
+    "constraints": [
+      "0 <= heights.length <= 2 * 10^4",
+      "0 <= heights[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The trapped water is 1 unit over index 2, and 3 units over indices 6, 7, and 8."
+      },
+      {
+        "input": "heights = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The trapped water is 1 unit over indices 2, and 8 units over indices 3 and 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use two pointers to keep track of the maximum height from the left and right.",
+      "Water is trapped based on the minimum of the maximum heights at both ends.",
+      "Think about how you can calculate the water at each index based on these maximum heights."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the sum of the maximum subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The subarray [4,-1,2,1] has the largest sum = 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The only subarray is [1], which has the sum of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to keep track of the maximum sum as you iterate through the array.",
+      "Consider negative numbers and how they affect the current subarray sum."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Most Stones Removed with Same Row or Column",
+    "description": "You have a grid of stones where each stone is located at a distinct coordinate (x, y). You can remove stones from the same row or the same column. Each time you remove a stone, all stones in the same row or column are also removed. Calculate the maximum number of stones you can remove.",
+    "topic": "Graph",
+    "subtopic": "Union-Find",
+    "tags": [
+      "Graph",
+      "Union-Find",
+      "Greedy"
+    ],
+    "input_format": "A 2D array of integers, `stones`, where each element is a pair [x, y] indicating the coordinates of a stone.",
+    "output_format": "An integer representing the maximum number of stones that can be removed.",
+    "constraints": [
+      "1 <= stones.length <= 20000",
+      "-10^4 <= stones[i][0], stones[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "stones = [[0, 0], [0, 1], [1, 0], [1, 1]]",
+        "output": "3",
+        "explanation": "Removing stones in row 0 (0,0) and (0,1) removes all stones in row 0 and also (1,0) which is in column 0. So we can remove 3 stones."
+      },
+      {
+        "input": "stones = [[0, 0], [0, 2], [1, 1], [2, 0], [2, 2]]",
+        "output": "5",
+        "explanation": "By removing stones from row 0, we can remove (0,0) and (0,2), and then we can also remove (1,1) and (2,0) and (2,2) by using column 2 or row 2. Thus, all stones can be removed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS or Union-Find to explore connected components."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Split Array Largest Sum",
+    "description": "Given an array of integers nums and an integer k, split the array into k non-empty continuous subarrays such that the largest sum among these subarrays is minimized. Return the minimum largest sum of these k subarrays.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Binary Search"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the minimum largest sum among k subarrays.",
+    "constraints": [
+      "1 <= k <= nums.length <= 1000",
+      "0 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [7, 2, 5, 10, 8], k = 2",
+        "output": "18",
+        "explanation": "The array can be split into [7, 2, 5] and [10, 8], where the largest sum is 18."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5], k = 2",
+        "output": "9",
+        "explanation": "The array can be split into [1, 2, 3] and [4, 5], where the largest sum is 9."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use binary search to find the optimal largest sum.",
+      "Try to minimize the maximum subarray sum using a greedy approach."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Cousins in Binary Tree",
+    "description": "Given a binary tree, determine if two given nodes are cousins. Two nodes are considered cousins if they are on the same level of the tree but have different parents. You will receive the root of the binary tree and the values of the two nodes.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Cousins"
+    ],
+    "input_format": "The root of the binary tree and two integers x and y that represent the values of the nodes to check.",
+    "output_format": "Return true if the nodes are cousins, otherwise return false.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [2, 100].",
+      "Each node's value is unique.",
+      "x and y are values of nodes in the tree."
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4], x = 4, y = 3",
+        "output": "false",
+        "explanation": "Nodes 4 and 3 are not on the same level, hence they are not cousins."
+      },
+      {
+        "input": "root = [1, 2, 3, null, 4, null, 5], x = 4, y = 5",
+        "output": "true",
+        "explanation": "Nodes 4 and 5 are on the same level and have different parents, so they are cousins."
+      },
+      {
+        "input": "root = [1, 2, 3, null, null, 4, 5], x = 4, y = 5",
+        "output": "false",
+        "explanation": "Nodes 4 and 5 have the same parent (node 3), so they are not cousins."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a level order traversal to find the depth of each node.",
+      "Keep track of the parent of each node as you traverse the tree."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock III",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you are allowed to make at most two transactions (i.e., buy one and sell one stock twice). Return the maximum profit you can achieve. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Stock Buy and Sell",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Stock"
+    ],
+    "input_format": "An array of integers prices where 1 <= prices.length <= 10^5 and 0 <= prices[i] <= 10^5.",
+    "output_format": "An integer representing the maximum profit that can be made with at most two transactions.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "prices = [3,2,6,5,0,3]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 2) and sell on day 3 (price = 6), profit = 6 - 2 = 4. Then buy on day 5 (price = 0) and sell on day 6 (price = 3), profit = 3 - 0 = 3. Total profit = 4 + 3 = 7."
+      },
+      {
+        "input": "prices = [1,2,3,4,5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5 - 1 = 4."
+      },
+      {
+        "input": "prices = [7,6,4,3,1]",
+        "output": "0",
+        "explanation": "No transactions are done and the max profit is 0."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a dynamic programming approach to track profits for up to two transactions.",
+      "You can iterate through the prices to calculate potential profit and keep track of the best outcomes."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers `nums` and an integer `target`, return the indices of the two numbers such that they add up to `target`. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers `nums` and an integer `target`.",
+    "output_format": "An array of two integers representing the indices of the two numbers that add up to `target`.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9",
+      "Only one valid answer exists."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "The numbers at indices 0 and 1 are 2 and 7, which add up to 9."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "The numbers at indices 1 and 2 are 2 and 4, which add up to 6."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "The numbers at indices 0 and 1 are both 3, which add up to 6."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the difference and index."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Meeting Rooms II",
+    "description": "Given an array of meeting time intervals consisting of start and end times, find the minimum number of meeting rooms required to accommodate all the meetings. Each meeting will be represented as an array of intervals, where each interval is an array of two integers [start, end]. A meeting can only be accommodated in one room at a time. If a meeting starts before another meeting ends, they cannot be in the same room.",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Interval",
+      "Sorting"
+    ],
+    "input_format": "An array of meeting intervals represented as an array of arrays [[start1, end1], [start2, end2], ...].",
+    "output_format": "An integer representing the minimum number of meeting rooms required.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "0 <= intervals[i][0] < intervals[i][1] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "[[0, 30], [5, 10], [15, 20]]",
+        "output": "2",
+        "explanation": "We need two rooms to hold the first meeting and when the second meeting starts, as the first one overlaps with it, so we need another room."
+      },
+      {
+        "input": "[[7, 10], [2, 4]]",
+        "output": "1",
+        "explanation": "Since the meetings do not overlap, we only need one room."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the meetings by start time.",
+      "Use a min-heap to track the end times of meetings."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Ways to Split Array Into Three Subarrays",
+    "description": "Given an integer array nums, you need to split it into three subarrays (left, middle, right) such that the sum of the elements in left is equal to the sum of the elements in right. Return the number of ways to achieve this split while ensuring that each subarray contains at least one element. If no such split is possible, return 0.",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "Prefix Sum",
+      "Subarrays"
+    ],
+    "input_format": "An integer array nums, where 1 <= nums.length <= 10^5 and -10^5 <= nums[i] <= 10^5.",
+    "output_format": "An integer representing the number of valid ways to split the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 1]",
+        "output": "1",
+        "explanation": "The only valid split is: left = [1], middle = [1], right = [1]."
+      },
+      {
+        "input": "nums = [0, 0, 0, 0]",
+        "output": "1",
+        "explanation": "All elements are zero; the only valid split is any arrangement where the sums are equal (they are all zero)."
+      },
+      {
+        "input": "nums = [2, 1, 1, 2, 1]",
+        "output": "0",
+        "explanation": "There are no valid splits where the sum of left equals the sum of right."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use prefix sums to calculate the total sum and needed split points efficiently.",
+      "Consider the relationship between the left and right sums with the middle section."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Determine if you can reach the last index. You start at the first index and must be able to reach the end of the array using jumps of varying lengths as specified in the nums array.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "A boolean value indicating whether it is possible to reach the last index.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "[2, 3, 1, 1, 4]",
+        "output": "true",
+        "explanation": "You can jump from index 0 to 1, and then jump from index 1 to 4 (the last index)."
+      },
+      {
+        "input": "[3, 2, 1, 0, 4]",
+        "output": "false",
+        "explanation": "You will always get stuck at index 3 because you cannot jump to the last index."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how far you can reach as you iterate through the array.",
+      "Use a greedy approach to keep track of the maximum reachable index."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Find Peak Element",
+    "description": "You are given an integer array nums. A peak element is an element that is strictly greater than its neighbors. An element at the end of the array can be a peak if it is greater than its only neighbor. Your task is to find any peak element in the array and return its index. You may assume that the input array is non-empty, and you can return any peak element if multiple peaks exist.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Peak Element"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the index of any peak element.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "2",
+        "explanation": "The peak element is 3 at index 2."
+      },
+      {
+        "input": "nums = [1, 2, 1, 3, 5, 6, 4]",
+        "output": "1 or 5",
+        "explanation": "The peak elements can be either 2 at index 1 or 6 at index 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use binary search to find a peak efficiently.",
+      "Consider the edge cases where the peak might be at the beginning or end of the array."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Is Subsequence",
+    "description": "Given two strings s and t, return true if s is a subsequence of t, or false otherwise. A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., 'ace' is a subsequence of 'abcde' while 'aec' is not).",
+    "topic": "String",
+    "subtopic": "Subsequence",
+    "tags": [
+      "String",
+      "Two Pointers",
+      "Subsequence"
+    ],
+    "input_format": "Two strings s and t, where 0 <= s.length <= 100 and 0 <= t.length <= 10^4.",
+    "output_format": "A boolean value indicating whether s is a subsequence of t.",
+    "constraints": [
+      "0 <= s.length <= 100",
+      "0 <= t.length <= 10^4",
+      "The characters in s and t are English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abc', t = 'ahbgdc'",
+        "output": "true",
+        "explanation": "'abc' is a subsequence of 'ahbgdc'."
+      },
+      {
+        "input": "s = 'axc', t = 'ahbgdc'",
+        "output": "false",
+        "explanation": "'axc' is not a subsequence of 'ahbgdc'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to iterate over both strings.",
+      "Move the pointer in string t only if there's a match with string s."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order. You need to traverse the matrix in a clockwise spiral starting from the top-left corner.",
+    "topic": "Matrix",
+    "subtopic": "Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Spiral"
+    ],
+    "input_format": "A 2D list of integers representing the matrix.",
+    "output_format": "A list of integers representing the elements of the matrix in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "Total elements in the matrix do not exceed 10^4.",
+      "-10^5 <= matrix[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The elements are traversed in the following spiral order: 1 \u2192 2 \u2192 3 \u2192 6 \u2192 9 \u2192 8 \u2192 7 \u2192 4 \u2192 5."
+      },
+      {
+        "input": "matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]",
+        "output": "[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]",
+        "explanation": "The elements are traversed in the following spiral order: 1 \u2192 2 \u2192 3 \u2192 4 \u2192 8 \u2192 12 \u2192 11 \u2192 10 \u2192 9 \u2192 5 \u2192 6 \u2192 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use four boundaries (top, bottom, left, right) to manage the spiral traversal.",
+      "Iteratively move in the direction of right, down, left, and up, then update the boundaries."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Product of Array Except Self",
+    "description": "Given an integer array nums, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i]. You must do this without using the division operation and in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Product Calculation",
+    "tags": [
+      "Array",
+      "Product",
+      "Prefix Sum",
+      "Suffix Product"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing the product of all elements except the corresponding index.",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-30 <= nums[i] <= 30",
+      "The product of any prefix or suffix of nums will fit in a 32-bit integer."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "[24, 12, 8, 6]",
+        "explanation": "The output array is computed as follows: output[0] = 2 * 3 * 4 = 24, output[1] = 1 * 3 * 4 = 12, output[2] = 1 * 2 * 4 = 8, output[3] = 1 * 2 * 3 = 6."
+      },
+      {
+        "input": "nums = [-1, 1, 0, -3, 3]",
+        "output": "[0, 0, 9, 0, 0]",
+        "explanation": "The output array is calculated as: output[0] = 1 * 0 * -3 * 3 = 0, and similarly for the rest."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using prefix and suffix products.",
+      "You can use two passes to calculate the result."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the stock prices on consecutive days.",
+    "output_format": "An integer representing the maximum profit.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Iterate through the prices while keeping track of the minimum price seen so far.",
+      "Calculate the potential profit at each price point."
+    ],
+    "company": "Tekion"
+  },
+  {
+    "question_id": "",
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "description": "Given an array of integers sorted in ascending order, find the starting and ending position of a given target value. If the target is not found in the array, return [-1, -1]. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Searching"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the starting and ending positions of the target.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "nums is sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 8",
+        "output": "[3, 4]",
+        "explanation": "The target value 8 can be found starting at index 3 and ending at index 4."
+      },
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 6",
+        "output": "[-1, -1]",
+        "explanation": "The target value 6 is not present in the array."
+      },
+      {
+        "input": "nums = [], target = 0",
+        "output": "[-1, -1]",
+        "explanation": "The array is empty, hence the target cannot be found."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to improve the efficiency of your search.",
+      "Use a helper function to locate the first and last occurrences separately."
+    ],
+    "company": "Tekion"
+  }
+]

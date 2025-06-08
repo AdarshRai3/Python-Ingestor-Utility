@@ -1,0 +1,1902 @@
+[
+  {
+    "question_id": "",
+    "title": "Find the Smallest Divisor Given a Threshold",
+    "description": "Given an array of integers nums and a threshold value, find the smallest divisor such that when all elements in nums are divided by this divisor and summed up, the result is less than or equal to the threshold. If no such divisor exists, return -1.",
+    "topic": "Binary Search",
+    "subtopic": "Searching",
+    "tags": [
+      "Binary Search",
+      "Math",
+      "Array"
+    ],
+    "input_format": "An array of integers nums and an integer threshold.",
+    "output_format": "An integer representing the smallest divisor that meets the condition or -1 if no such divisor exists.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^6",
+      "1 <= threshold <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 5, 9], threshold = 6",
+        "output": "5",
+        "explanation": "Dividing each element by 5 gives us 1 + 0 + 1 + 1 = 3, which is less than 6."
+      },
+      {
+        "input": "nums = [44, 22, 33, 11], threshold = 5",
+        "output": "44",
+        "explanation": "No divisor less than 44 gives a sum less than or equal to 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to find the smallest divisor.",
+      "Check the sum of the divisions for potential divisors.",
+      "Start with the range from 1 to the maximum element in nums."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Triangle Number",
+    "description": "Given an array of integers, you need to determine how many possible triplets (i, j, k) can form a triangle. A triplet can form a triangle if the sum of any two lengths is greater than the third length. You need to return the number of valid triplets that can form triangles from the given array.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Triangle Inequality"
+    ],
+    "input_format": "An array of integers 'nums' of length n.",
+    "output_format": "An integer representing the number of valid triplets that can form triangles.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 2, 3, 4]",
+        "output": "3",
+        "explanation": "The valid triplets are (2, 2, 3), (2, 2, 4), and (2, 3, 4)."
+      },
+      {
+        "input": "nums = [4, 2, 3, 4]",
+        "output": "4",
+        "explanation": "The valid triplets are (2, 3, 4), (2, 4, 4), (3, 4, 4), and (4, 4, 4)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array first to leverage the triangle inequality.",
+      "Use a three-pointer approach to efficiently count valid triplets.",
+      "Consider using binary search for optimization."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "The kth Factor of n",
+    "description": "Given two integers n and k, return the kth factor of n. A factor of n is defined as an integer that divides n evenly (i.e., n % factor == 0). If there are fewer than k factors, return -1.",
+    "topic": "Math",
+    "subtopic": "Factors and Divisibility",
+    "tags": [
+      "Math",
+      "Factors",
+      "Divisibility"
+    ],
+    "input_format": "Two integers n and k.",
+    "output_format": "An integer representing the kth factor of n, or -1 if it does not exist.",
+    "constraints": [
+      "1 <= n <= 10^3",
+      "1 <= k <= n"
+    ],
+    "examples": [
+      {
+        "input": "n = 12, k = 3",
+        "output": "3",
+        "explanation": "The factors of 12 are 1, 2, 3, 4, 6, and 12. The 3rd factor is 3."
+      },
+      {
+        "input": "n = 7, k = 2",
+        "output": "7",
+        "explanation": "The factors of 7 are 1 and 7. The 2nd factor does not exist, so the output is -1."
+      },
+      {
+        "input": "n = 28, k = 6",
+        "output": "-1",
+        "explanation": "The factors of 28 are 1, 2, 4, 7, 14, and 28. There are only 6 factors, so the output is -1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Iterate through the range from 1 to n to find factors.",
+      "Keep a count of the number of factors found.",
+      "Return the kth factor or -1 if not enough factors are found."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Swaps to Group All 1's Together",
+    "description": "You are given a binary array (a list of zeros and ones). Your task is to find the minimum number of swaps required to group all the '1's together in the array. A swap consists of exchanging two elements in the array.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Greedy"
+    ],
+    "input_format": "A binary array nums of length n, where n is the number of elements.",
+    "output_format": "An integer representing the minimum number of swaps needed.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "nums[i] is either 0 or 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 0, 1, 0, 1]",
+        "output": "1",
+        "explanation": "Swapping the second '0' with the second '1' groups all '1's together: [1, 1, 1, 0, 0]."
+      },
+      {
+        "input": "nums = [0, 0, 0, 0]",
+        "output": "0",
+        "explanation": "There are no '1's to group together, so no swaps are necessary."
+      },
+      {
+        "input": "nums = [1, 1, 0, 1, 0, 1, 0, 1]",
+        "output": "2",
+        "explanation": "Swapping two '0's with '1's can group all '1's together."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window to track the number of '1's.",
+      "Calculate the number of zeros in the window for swap count."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Divide Players Into Teams of Equal Skill",
+    "description": "You are given an array of integers where each integer represents the skill level of a player. Your task is to divide the players into two teams such that the difference in the total skill level of the two teams is minimized. If it is not possible to divide the players into two teams, return -1. Each team must have at least one player.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers representing the skill levels of players.",
+    "output_format": "An integer representing the minimum difference in skill levels between two teams, or -1 if division is not possible.",
+    "constraints": [
+      "1 <= players.length <= 100",
+      "1 <= players[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[1, 3, 4, 2]",
+        "output": "0",
+        "explanation": "The players can be divided into teams with skill levels [1, 4] and [3, 2], which have equal total skill levels."
+      },
+      {
+        "input": "[5, 6, 7, 8]",
+        "output": "2",
+        "explanation": "The best division is into teams [5, 8] and [6, 7] with the total skill levels of 13 and 13, so the difference is 0."
+      },
+      {
+        "input": "[1, 1, 3]",
+        "output": "1",
+        "explanation": "The closest division would be [1, 3] and [1], with a skill level difference of 1."
+      },
+      {
+        "input": "[11, 12, 14]",
+        "output": "-1",
+        "explanation": "It is impossible to divide players into two teams, as there's an odd number of players."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "A dynamic programming approach might help in minimizing the difference.",
+      "Consider using a subset sum technique to find the closest sum to half the total."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Break a Palindrome",
+    "description": "Given a palindromic string of lowercase letters, your task is to break it into a non-palindromic string by changing exactly one character. If it is not possible to do so, return an empty string. A palindrome is a string that reads the same forwards and backwards.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Manipulation"
+    ],
+    "input_format": "A string s, which is guaranteed to be a palindrome.",
+    "output_format": "A string that is not a palindrome after changing one character, or an empty string if no such string can be formed.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "abccba",
+        "output": "aaccba",
+        "explanation": "Changing the first character 'b' to 'a' gives 'aaccba', which is not a palindrome."
+      },
+      {
+        "input": "a",
+        "output": "",
+        "explanation": "When the string has only one character, it's impossible to break the palindrome, so the output is an empty string."
+      },
+      {
+        "input": "aa",
+        "output": "ab",
+        "explanation": "Changing the second 'a' to 'b' results in 'ab', which is not a palindrome."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to change the first character that is not 'a'.",
+      "If the string is all 'a's, change the last character."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum One Bit Operations to Make Integers Zero",
+    "description": "Given a positive integer n, you can perform the following operations: flip the k-th bit of n (set to 0 if it was 1, and to 1 if it was 0). The goal is to make the integer 0 using the minimum number of bit flip operations. The challenge is to find the minimum number of operations required to change n to 0.",
+    "topic": "Bit Manipulation",
+    "subtopic": "Bitwise Operations",
+    "tags": [
+      "Bit Manipulation",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "A single integer n (1 <= n <= 10^9).",
+    "output_format": "An integer representing the minimum number of operations required.",
+    "constraints": [
+      "1 <= n <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "n = 39",
+        "output": "5",
+        "explanation": "The binary representation of 39 is 100111. To make it zero, you can flip bits: (100111 -> 000000) requires 5 flips."
+      },
+      {
+        "input": "n = 0",
+        "output": "0",
+        "explanation": "Since n is already 0, no operations are required."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how many bits are set to 1 in the binary representation.",
+      "Think about the sequence of operations needed to reach 0."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Most Visited Sector in a Circular Track",
+    "description": "You are given an array of integers representing the sectors of a circular track, where each integer indicates a sector that a user visits. Your task is to return the sector that is visited the most. If there is a tie, return the sector with the smallest index.",
+    "topic": "Array",
+    "subtopic": "Counting Frequencies",
+    "tags": [
+      "Array",
+      "Counting",
+      "HashMap"
+    ],
+    "input_format": "An integer array `sectors` where 1 <= sectors.length <= 1000, and 1 <= sectors[i] <= 100.",
+    "output_format": "An integer representing the most visited sector.",
+    "constraints": [
+      "1 <= sectors.length <= 1000",
+      "1 <= sectors[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "sectors = [1, 2, 3, 1, 2, 3, 1]",
+        "output": "1",
+        "explanation": "Sector 1 is visited 3 times, which is more than any other sector."
+      },
+      {
+        "input": "sectors = [2, 3, 3, 2, 1, 1]",
+        "output": "1",
+        "explanation": "Both sector 2 and 3 are visited 2 times, but sector 1 is the smallest index with 2 visits."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to count the frequency of each sector.",
+      "Keep track of the most visited sector and its count while iterating."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Good Binary Strings",
+    "description": "A good binary string is defined as a binary string where there are no three consecutive '1's. Given an integer n, return the number of good binary strings of length n.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Counting & Combinatorics",
+    "tags": [
+      "Dynamic Programming",
+      "Binary String",
+      "Counting"
+    ],
+    "input_format": "An integer n (1 <= n <= 30), the length of the binary string.",
+    "output_format": "An integer representing the total number of good binary strings of length n.",
+    "constraints": [
+      "1 <= n <= 30"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "5",
+        "explanation": "The good binary strings of length 3 are '000', '001', '010', '100', and '101'."
+      },
+      {
+        "input": "n = 4",
+        "output": "8",
+        "explanation": "The good binary strings of length 4 include '0000', '0001', '0010', '0100', '1000', '1001', '1010', and '1100'."
+      },
+      {
+        "input": "n = 5",
+        "output": "13",
+        "explanation": "The good binary strings of length 5 consist of 13 combinations, ensuring no three '1's appear consecutively."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to build the count from smaller lengths.",
+      "Store results of subproblems to avoid redundant calculations."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Rearrange Words in a Sentence",
+    "description": "Given a sentence as a string, rearrange the words in the sentence in ascending order based on their lengths. If two words have the same length, they should appear in the order they were originally present in the sentence. Return the rearranged sentence as a single string.",
+    "topic": "String",
+    "subtopic": "Sorting",
+    "tags": [
+      "String",
+      "Sorting",
+      "Array"
+    ],
+    "input_format": "A single string representing the sentence, with words separated by spaces.",
+    "output_format": "A single string representing the rearranged sentence.",
+    "constraints": [
+      "1 <= sentence.length <= 10^5",
+      "The sentence will contain words consisting only of lowercase letters and spaces."
+    ],
+    "examples": [
+      {
+        "input": "I have a dream",
+        "output": "a I have dream",
+        "explanation": "The words sorted by length are 'a', 'I', 'have', and 'dream'."
+      },
+      {
+        "input": "The quick brown fox",
+        "output": "The fox brown quick",
+        "explanation": "The words sorted by length are 'The', 'fox', 'brown', and 'quick'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Split the sentence into words.",
+      "Use a sorting algorithm that compares word lengths."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "String Compression",
+    "description": "Given an array of characters, compress it using the following algorithm: Begin with an empty string, iterate through the array, and count the consecutive occurrences of each character. If a character appears consecutively more than once, append the character followed by its count to the new string. If the character occurs only once, append just the character. Return the compressed string. Note that the length of the compressed string should not exceed the original array length.",
+    "topic": "String",
+    "subtopic": "Compression",
+    "tags": [
+      "String",
+      "Compression",
+      "Array"
+    ],
+    "input_format": "An array of characters represented as a list of single-character strings.",
+    "output_format": "A string representing the compressed version of the input character array.",
+    "constraints": [
+      "1 <= chars.length <= 1000",
+      "chars[i] is a single lowercase English letter."
+    ],
+    "examples": [
+      {
+        "input": "chars = ['a', 'a', 'b', 'b', 'c', 'c', 'c']",
+        "output": "'a2b2c3'",
+        "explanation": "The compressed string is 'a2b2c3' because 'a' occurs 2 times, 'b' occurs 2 times, and 'c' occurs 3 times."
+      },
+      {
+        "input": "chars = ['a']",
+        "output": "'a'",
+        "explanation": "The string is not compressed since 'a' occurs only once."
+      },
+      {
+        "input": "chars = ['a', 'b', 'c']",
+        "output": "'abc'",
+        "explanation": "Each character appears once, so the compressed string is the same as the input."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how you can track consecutive characters.",
+      "You may need two pointers to manage the current character and the count."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Replacements to Sort the Array",
+    "description": "Given an array of integers, you are allowed to replace any element with any non-negative integer. Your task is to determine the minimum number of replacements needed to make the array sorted in non-decreasing order. A sorted array means that for all indices i, nums[i] <= nums[i + 1].",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Greedy"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the minimum number of replacements required.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 4, 3, 2, 1]",
+        "output": "4",
+        "explanation": "We can replace 5, 4, 3, and 2 with 1 to make the array [1, 1, 1, 1, 1], which is sorted."
+      },
+      {
+        "input": "nums = [1, 5, 3, 6, 7]",
+        "output": "1",
+        "explanation": "We can replace 5 with 3 to make the array [1, 3, 3, 6, 7], which is sorted."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5]",
+        "output": "0",
+        "explanation": "The array is already sorted in non-decreasing order."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to keep track of the last confirmed element in the sorted version.",
+      "Try to work backward through the array to limit replacements.",
+      "Identify ranges that can remain the same through replacements."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Substrings With Equal Digit Frequency",
+    "description": "Given a string s consisting of digits from '0' to '9', your task is to find the total number of unique substrings that can be formed from s such that the frequency of each digit in the substring is equal. A substring is defined as a contiguous sequence of characters within the string. For example, in the string '122333', the substring '233' has equal frequency of '2', '3', and '3'. The substring '122' does not meet the criteria as '1' occurs once while '2' occurs twice.",
+    "topic": "String",
+    "subtopic": "Substring",
+    "tags": [
+      "String",
+      "HashMap",
+      "Sliding Window"
+    ],
+    "input_format": "A string s of digits (0-9).",
+    "output_format": "An integer representing the number of unique substrings with equal digit frequency.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s[i] is a digit between '0' and '9'."
+    ],
+    "examples": [
+      {
+        "input": "s = '122333'",
+        "output": "4",
+        "explanation": "The unique substrings with equal digit frequency are: '2', '2', '3', '33'."
+      },
+      {
+        "input": "s = '000111'",
+        "output": "3",
+        "explanation": "The unique substrings with equal digit frequency are: '0', '1', '00', '11'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to count the frequency of each digit.",
+      "Keep track of unique substrings using a set."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Word",
+    "description": "Given a string, determine if it is a valid word composed of only alphabetical characters. A valid word must not be empty and can contain any uppercase or lowercase letters. Your task is to implement a function that checks the validity of the word according to these rules.",
+    "topic": "String",
+    "subtopic": "Validation",
+    "tags": [
+      "String",
+      "Validation",
+      "Alphabet"
+    ],
+    "input_format": "A single string `word` consisting of uppercase and lowercase English letters.",
+    "output_format": "A boolean value: `true` if the word is valid, otherwise `false`.",
+    "constraints": [
+      "1 <= word.length <= 100",
+      "word consists only of alphabetic characters"
+    ],
+    "examples": [
+      {
+        "input": "word = 'Hello'",
+        "output": "true",
+        "explanation": "'Hello' is a valid word as it contains only alphabetical characters."
+      },
+      {
+        "input": "word = '123'",
+        "output": "false",
+        "explanation": "'123' is not a valid word as it contains non-alphabetical characters."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check if the string is not empty.",
+      "Use string methods to verify if it consists only of letters."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "The Earliest Moment When Everyone Become Friends",
+    "description": "You are given a list of 'friendship events', where each event represents two people becoming friends at a certain time. Your task is to determine the earliest moment when every person in the list is friends with every other person. If such a moment does not exist, return -1. The friendship events are represented as tuples (time, personA, personB).",
+    "topic": "Graph",
+    "subtopic": "Union Find",
+    "tags": [
+      "Graph",
+      "Union Find",
+      "Time Complexity"
+    ],
+    "input_format": "A list of tuples, where each tuple contains an integer time and two integers representing the friends.",
+    "output_format": "An integer representing the earliest time when all persons are friends, or -1 if it's not possible.",
+    "constraints": [
+      "1 <= events.length <= 10^5",
+      "0 <= time <= 10^9",
+      "0 <= personA, personB < 10^5"
+    ],
+    "examples": [
+      {
+        "input": "events = [(1, 0, 1), (2, 1, 2), (3, 0, 2)]",
+        "output": "3",
+        "explanation": "All persons (0, 1, 2) become friends by time 3."
+      },
+      {
+        "input": "events = [(1, 0, 1), (2, 1, 2)]",
+        "output": "-1",
+        "explanation": "Person 0 and Person 2 never become friends."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a Union-Find structure to efficiently manage friendships.",
+      "Track the number of connected components between updates."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket, and brackets must be closed in the correct order.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of brackets '()', '{}', and '[]'.",
+    "output_format": "A boolean value indicating whether the input string is valid (true) or not (false).",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only '()[]{}'"
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are correctly matched."
+      },
+      {
+        "input": "s = '([{}])'",
+        "output": "true",
+        "explanation": "All the brackets are correctly matched and nested."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The parentheses are not correctly matched."
+      },
+      {
+        "input": "s = '([)]'",
+        "output": "false",
+        "explanation": "The brackets are incorrectly nested."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Pop from the stack when encountering a closing bracket."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicate Letters",
+    "description": "Given a string s, find the smallest lexicographical order of its characters after removing duplicates. You must also ensure that the remaining characters are in the same order as they first appeared in s.",
+    "topic": "String",
+    "subtopic": "Greedy",
+    "tags": [
+      "String",
+      "Greedy",
+      "Stack"
+    ],
+    "input_format": "A string s of lowercase English letters.",
+    "output_format": "A string containing the smallest lexicographical order of the characters after removing duplicates.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "bcabc",
+        "output": "abc",
+        "explanation": "By removing letters 'b' and 'c', we obtain 'abc', which is in lexicographical order."
+      },
+      {
+        "input": "cbacdcbc",
+        "output": "acdb",
+        "explanation": "We can remove the second 'c', 'b', and the second 'c' to achieve 'acdb'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to maintain the order of characters.",
+      "Ensure that you do not push a character onto the stack if it is already present."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Capacity To Ship Packages Within D Days",
+    "description": "You are given an integer array 'weights' where weights[i] is the weight of the i-th package. You are also given an integer 'D' which represents the number of days within which you need to ship all the packages. Your task is to determine the minimum capacity (weight limit) of the ship that will allow you to ship all packages within D days. The ship can only carry a certain weight at a time and it can only make one trip per day.",
+    "topic": "Binary Search",
+    "subtopic": "Search",
+    "tags": [
+      "Binary Search",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array 'weights' and an integer 'D'.",
+    "output_format": "An integer representing the minimum capacity of the ship.",
+    "constraints": [
+      "1 <= weights.length <= 50000",
+      "1 <= weights[i] <= 500"
+    ],
+    "examples": [
+      {
+        "input": "weights = [1,2,3,4,5,6,7,8,9,10], D = 5",
+        "output": "15",
+        "explanation": "In 5 days, you can ship packages with a maximum weight of 15 each day. For example, you can ship weights [1,2,3,4,5] on the first day and [6,7,8,9,10] on the second day."
+      },
+      {
+        "input": "weights = [3,2,2,4,1,4], D = 3",
+        "output": "6",
+        "explanation": "You can ship weights [3,2] on the first day, [2,4] on the second day, and [1,4] on the third day, giving a maximum weight of 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search on the possible capacities.",
+      "The lower limit can be the maximum weight in the weights array.",
+      "The upper limit can be the sum of all weights."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Find the City With the Smallest Number of Neighbors at a Threshold Distance",
+    "description": "There are n cities connected by m bidirectional roads, where roads[i] = [u, v, w] represents a road between city u and city v with a distance of w. The roads are represented as a 2D array where each road is represented with three integers. Your task is to find the city with the smallest number of neighbors at a distance less than or equal to a given threshold distance. If multiple cities meet the criteria, return the city with the greatest number (i.e., the highest index).",
+    "topic": "Graph",
+    "subtopic": "Dijkstra's Algorithm",
+    "tags": [
+      "Graph",
+      "Dijkstra",
+      "Shortest Path"
+    ],
+    "input_format": "An integer n, a 2D list roads, and an integer distanceThreshold.",
+    "output_format": "An integer representing the city with the smallest number of neighbors at the given distance threshold.",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= roads.length <= 10^4",
+      "0 <= roads[i][0], roads[i][1] < n",
+      "1 <= roads[i][2] <= 10^4",
+      "0 <= distanceThreshold <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, roads = [[0, 1, 3], [1, 2, 1], [2, 3, 4], [0, 3, 2]], distanceThreshold = 4",
+        "output": "3",
+        "explanation": "City 0 has neighbors [1, 3] within threshold; City 1 has neighbors [0, 2] within threshold; City 2 has neighbors [1] within threshold; City 3 has neighbors [0] within threshold. City 3 (with index 3) has the largest index."
+      },
+      {
+        "input": "n = 5, roads = [[0, 1, 2], [0, 2, 4], [1, 2, 1], [1, 3, 3], [2, 3, 2]], distanceThreshold = 4",
+        "output": "3",
+        "explanation": "City 0 has neighbors [1, 2] within threshold; City 1 has neighbors [0, 2, 3] within threshold; City 2 has neighbors [0, 1, 3] within threshold; City 3 has neighbors [1, 2] within threshold. City 3 (with index 3) has the largest index."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Dijkstra's algorithm to find the shortest paths.",
+      "Count the number of neighbors within the threshold for each city."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers height where height[i] represents the height of the elevation at index i.",
+    "output_format": "An integer representing the total amount of trapped rainwater.",
+    "constraints": [
+      "n == height.length",
+      "1 <= n <= 2 * 10^4",
+      "0 <= height[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "height = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water trapped is 1 unit between heights 1 and 2, 2 units between heights 2 and 3, and 3 units between heights 3 and 1."
+      },
+      {
+        "input": "height = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water trapped can be calculated using the heights, resulting in 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the elevation from both sides.",
+      "Use two pointers to find the trapped water efficiently."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hash Table",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Anagrams"
+    ],
+    "input_format": "An array of strings 'strs'.",
+    "output_format": "A list of lists, where each inner list contains the grouped anagrams.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The anagrams 'eat', 'tea', and 'ate' are grouped together, as well as 'nat' and 'tan'."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "There's only one empty string, so it's grouped by itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "The string 'a' is an anagram of itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash table to group the strings.",
+      "Sorting the characters in each string could help identify anagrams."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Swaps to Make the String Balanced",
+    "description": "Given a string containing only the characters 'L' and 'R', you need to determine the minimum number of adjacent swaps required to make the string balanced. A string is considered balanced if every 'L' appears to the left of every 'R'. For example, 'LLRR' is balanced, while 'RLLR' is not. Your task is to find the minimum number of adjacent swaps needed to achieve a balanced string from any given string.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Greedy"
+    ],
+    "input_format": "A single string s consisting only of characters 'L' and 'R'.",
+    "output_format": "An integer representing the minimum number of adjacent swaps needed to balance the string.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of characters 'L' and 'R' only."
+    ],
+    "examples": [
+      {
+        "input": "s = 'RLLR'",
+        "output": "1",
+        "explanation": "One swap of 'R' and the first 'L' will result in 'LRLR', which is balanced."
+      },
+      {
+        "input": "s = 'LLRRR'",
+        "output": "2",
+        "explanation": "Two swaps are needed to move the 'R's to the right, resulting in 'LLRRL'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count the number of 'R's in the string.",
+      "Use a greedy approach to count how many 'R's you encounter before each 'L'."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Set Matrix Zeroes",
+    "description": "Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in place. The algorithm should have a space complexity of O(1).",
+    "topic": "Matrix",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Matrix",
+      "In-place",
+      "Manipulation"
+    ],
+    "input_format": "A 2D array of integers matrix of size m x n.",
+    "output_format": "The input matrix after setting the appropriate rows and columns to 0.",
+    "constraints": [
+      "1 <= m, n <= 200",
+      "-10^9 <= matrix[i][j] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1,1,1],[1,0,1],[1,1,1]]",
+        "output": "[[1,0,1],[0,0,0],[1,0,1]]",
+        "explanation": "The second element in the first row is 0, hence the entire second row and the second column are set to 0."
+      },
+      {
+        "input": "matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]",
+        "output": "[[0,0,0,0],[0,4,5,0],[0,3,1,0]]",
+        "explanation": "The first element in the first row is 0, which affects the entire first row and the first column."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the first row and first column as markers.",
+      "Use two passes to manage the zero setting."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices, where 1 <= prices.length <= 10^5 and 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate the profit if you sell at the current day's price."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. Your solution should have a time complexity of O(n).",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A single string s consisting of English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 5 * 10^4",
+      "s consists of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'abc', which has a length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is 'b', with a length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'wke', which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window approach to track the start and end of the current substring.",
+      "Use a hash map to store the characters and their most recent indices."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game II",
+    "description": "You are given an integer array nums. Each element in the array represents your maximum jump length at that position. Your goal is to reach the last index in the minimum number of jumps. Write a function that returns the minimum number of jumps required to reach the last index. If it is not possible to reach the last index, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers nums where nums[i] >= 0 and represents the maximum jump length at index i.",
+    "output_format": "An integer representing the minimum number of jumps required to reach the last index, or -1 if it is not possible.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then jump 3 steps to the last index."
+      },
+      {
+        "input": "nums = [2, 3, 0, 1, 4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then jump 3 steps to the last index."
+      },
+      {
+        "input": "nums = [3, 2, 1, 0, 4]",
+        "output": "-1",
+        "explanation": "Jumping from index 0 can only reach to index 1, 2, or 3, but none of these can reach the last index."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a greedy approach to minimize the number of jumps.",
+      "Track the furthest index you can reach with each jump."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Max Consecutive Ones III",
+    "description": "Given a binary array nums and an integer k, return the maximum number of consecutive 1's in the array if you can flip at most k 0's to 1's.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Two Pointers"
+    ],
+    "input_format": "A binary array nums and an integer k.",
+    "output_format": "An integer representing the maximum number of consecutive 1's after flipping at most k 0's.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "nums[i] is either 0 or 1.",
+      "0 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,1,0,0,1,1,1,0,1], k = 2",
+        "output": "7",
+        "explanation": "Flipping the two 0's at index 2 and 3 to 1's results in the array [1,1,1,1,1,1,1,0,1], which has 7 consecutive 1's."
+      },
+      {
+        "input": "nums = [0,0,0,0,0], k = 1",
+        "output": "1",
+        "explanation": "Flipping one 0 to a 1 allows for a maximum of 1 consecutive 1."
+      },
+      {
+        "input": "nums = [1,1,1,1], k = 2",
+        "output": "4",
+        "explanation": "No flipping needed, as all elements are already 1's."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window approach to count the number of 0's.",
+      "Keep track of the maximum length of the window that contains at most k 0's."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Roman to Integer",
+    "description": "Given a string that represents a Roman numeral, convert it to an integer. The input string is guaranteed to be within the range from 1 to 3999.",
+    "topic": "Math",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Math",
+      "String",
+      "Conversion"
+    ],
+    "input_format": "A string `s` representing a Roman numeral.",
+    "output_format": "An integer representing the converted value.",
+    "constraints": [
+      "1 <= s.length <= 15",
+      "s is a valid Roman numeral in the range from 1 to 3999."
+    ],
+    "examples": [
+      {
+        "input": "s = \"III\"",
+        "output": "3",
+        "explanation": "The Roman numeral III represents the integer 3."
+      },
+      {
+        "input": "s = \"IV\"",
+        "output": "4",
+        "explanation": "The Roman numeral IV represents the integer 4."
+      },
+      {
+        "input": "s = \"IX\"",
+        "output": "9",
+        "explanation": "The Roman numeral IX represents the integer 9."
+      },
+      {
+        "input": "s = \"LVIII\"",
+        "output": "58",
+        "explanation": "The Roman numeral LVIII represents L (50) + V (5) + III (3) = 58."
+      },
+      {
+        "input": "s = \"MCMXCIV\"",
+        "output": "1994",
+        "explanation": "The Roman numeral MCMXCIV represents M (1000) + CM (900) + XC (90) + IV (4) = 1994."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the values of individual Roman characters.",
+      "Look for patterns where a smaller numeral precedes a larger one for subtraction.",
+      "Use a map to associate each Roman numeral with its integer value."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid representing a map where '1's represent land and '0's represent water, count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid of '0's and '1's representing water and land.",
+    "output_format": "An integer representing the number of islands in the grid.",
+    "constraints": [
+      "1 <= grid.length <= 300",
+      "1 <= grid[0].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "[['1', '1', '0', '0', '0'], ['1', '1', '0', '0', '0'], ['0', '0', '1', '0', '0'], ['0', '0', '0', '1', '1']]",
+        "output": "3",
+        "explanation": "There are three islands formed by the land cells."
+      },
+      {
+        "input": "[['1', '1', '1', '1', '0'], ['1', '1', '0', '1', '0'], ['1', '1', '0', '0', '0'], ['0', '0', '0', '0', '0']]",
+        "output": "1",
+        "explanation": "All the land cells are connected, forming one single island."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use Depth-First Search (DFS) or Breadth-First Search (BFS) to explore adjacent lands.",
+      "Remember to mark the visited land cells to avoid counting them multiple times."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Chairs in a Waiting Room",
+    "description": "You are given an array of pairs, where each pair represents the arrival and departure times of customers in a waiting room. Your task is to determine the minimum number of chairs required in the waiting room so that no customer has to wait. A customer occupies a chair when they arrive and leaves their chair when they depart. The arrival and departure times are represented as integers, where each integer denotes the time in minutes. Return the minimum number of chairs needed to accommodate all customers at any point in time.",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Interval",
+      "Scheduling"
+    ],
+    "input_format": "An array of pairs [[arrival1, departure1], [arrival2, departure2], ...].",
+    "output_format": "An integer representing the minimum number of chairs required.",
+    "constraints": [
+      "1 <= pairs.length <= 10^5",
+      "0 <= arrival < departure <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[[1, 2], [2, 3], [3, 4]]",
+        "output": "1",
+        "explanation": "All customers arrive and leave sequentially; therefore, at most one chair is needed at any time."
+      },
+      {
+        "input": "[[1, 4], [2, 3], [3, 5], [6, 7]]",
+        "output": "3",
+        "explanation": "At time 3, customers from [1, 4], [2, 3], and [3, 5] are in the waiting room, requiring 3 chairs."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a priority queue to track departure times.",
+      "Sort the arrival times and process them against departure times."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. The merge should be done in-place and within the array nums1, which has a size of m + n, where m is the number of elements initialized in nums1 and n is the number of elements in nums2. You should not return anything, modify nums1 in-place instead.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "Two integer arrays nums1, nums2 where nums1 has a length of m + n and contains m initialized elements followed by n zeros. nums2 has a length of n.",
+    "output_format": "The merged array in nums1.",
+    "constraints": [
+      "0 <= m, n <= 200",
+      "1 <= m + n <= 200",
+      "-10^9 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [2, 5, 6], n = 3",
+        "output": "[1, 2, 2, 3, 5, 6]",
+        "explanation": "After merging, the sorted array is [1, 2, 2, 3, 5, 6]."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "No elements to merge; nums1 remains unchanged."
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "explanation": "The only element from nums2 is merged into nums1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to compare elements from nums1 and nums2.",
+      "You may want to fill nums1 backwards to avoid overwriting values."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Linked List",
+    "description": "Given the head of a singly linked list, reverse the list and return the reversed list.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "LinkedList",
+      "Reversal",
+      "Pointer Manipulation"
+    ],
+    "input_format": "A singly linked list represented by the `head` node.",
+    "output_format": "The head of the reversed singly linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 10^4].",
+      "-5000 <= Node.val <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5]",
+        "output": "[5, 4, 3, 2, 1]",
+        "explanation": "The original linked list is 1 -> 2 -> 3 -> 4 -> 5. After reversing, it becomes 5 -> 4 -> 3 -> 2 -> 1."
+      },
+      {
+        "input": "head = []",
+        "output": "[]",
+        "explanation": "An empty list remains empty after reversal."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to keep track of the previous and current nodes.",
+      "Iterate through the list and change the next pointers accordingly."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Increasing Subsequence",
+    "description": "Given an integer array nums, return the length of the longest strictly increasing subsequence.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subsequences",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Subsequence"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest increasing subsequence.",
+    "constraints": [
+      "1 <= nums.length <= 2500",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 9, 2, 5, 3, 7, 101, 18]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [2, 3, 7, 101], which has a length of 4."
+      },
+      {
+        "input": "nums = [0, 1, 0, 3, 2, 3]",
+        "output": "4",
+        "explanation": "The longest increasing subsequence is [0, 1, 2, 3], which has a length of 4."
+      },
+      {
+        "input": "nums = [7, 7, 7, 7, 7, 7, 7]",
+        "output": "1",
+        "explanation": "The longest increasing subsequence can only be any single element, hence the length is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to solve this problem efficiently.",
+      "You can maintain an array to store the lengths of longest increasing subsequences found so far.",
+      "Think about how you can build solutions to bigger problems using solutions to smaller problems."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Reformat Date",
+    "description": "Given a date string in the format 'DD MMM YYYY', where 'DD' is the day, 'MMM' is the three-letter month abbreviation, and 'YYYY' is the four-digit year, convert it to the format 'YYYY-MM-DD'. You can assume that the input date is valid and that the month abbreviations will always be in English.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Date",
+      "Formatting"
+    ],
+    "input_format": "A string representing the date in the format 'DD MMM YYYY'.",
+    "output_format": "A string representing the date in the format 'YYYY-MM-DD'.",
+    "constraints": [
+      "The input date string will always be valid and follow the specified format."
+    ],
+    "examples": [
+      {
+        "input": "s = '20 Apr 1999'",
+        "output": "1999-04-20",
+        "explanation": "The date '20 Apr 1999' is reformatted to '1999-04-20'."
+      },
+      {
+        "input": "s = '01 Jan 2020'",
+        "output": "2020-01-01",
+        "explanation": "The date '01 Jan 2020' is reformatted to '2020-01-01'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a dictionary to map month abbreviations to their corresponding numbers."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Keys and Rooms",
+    "description": "There are N rooms and you start in room 0. Each room has a list of keys that can open other rooms. Specifically, room i contains a list of keys rooms[i], where each key is an integer representing the room number that can be unlocked. Your task is to determine if you can visit all rooms starting from room 0.",
+    "topic": "Graph",
+    "subtopic": "Depth-first Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Traversal"
+    ],
+    "input_format": "A list of lists, rooms, where rooms[i] is a list of keys available in room i.",
+    "output_format": "A boolean value indicating whether all rooms can be visited.",
+    "constraints": [
+      "1 <= rooms.length <= 100",
+      "0 <= rooms[i].length <= 100",
+      "The keys are guaranteed to be distinct."
+    ],
+    "examples": [
+      {
+        "input": "rooms = [[1],[2],[3],[]]",
+        "output": "true",
+        "explanation": "You can unlock room 1, then room 2, then room 3, and then visit all rooms."
+      },
+      {
+        "input": "rooms = [[1,3],[3,0,1],[2],[0]]",
+        "output": "false",
+        "explanation": "You cannot access all rooms; for example, you cannot access room 2 from the available keys."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how you can represent rooms and their keys. A graph might be helpful.",
+      "Consider using depth-first search (DFS) or breadth-first search (BFS) to explore reachable rooms."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9",
+      "Each input would have exactly one solution."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] == 2 + 7 == 9, so the indices are [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] == 2 + 4 == 6, so the indices are [1, 2]."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] == 3 + 3 == 6, so the indices are [0, 1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash table to store the differences and their indices."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Index of the First Occurrence in a String",
+    "description": "Given two strings 'haystack' and 'needle', return the index of the first occurrence of 'needle' in 'haystack', or -1 if 'needle' is not part of 'haystack'. Implement the solution with a linear time complexity.",
+    "topic": "String",
+    "subtopic": "Searching",
+    "tags": [
+      "String",
+      "Searching",
+      "Substring"
+    ],
+    "input_format": "Two strings 'haystack' and 'needle'.",
+    "output_format": "An integer representing the index of the first occurrence of 'needle' in 'haystack', or -1 if not found.",
+    "constraints": [
+      "1 <= haystack.length <= 10^4",
+      "0 <= needle.length <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "haystack = 'hello', needle = 'll'",
+        "output": "2",
+        "explanation": "'ll' is found starting at index 2 in 'hello'."
+      },
+      {
+        "input": "haystack = 'aaaaa', needle = 'bba'",
+        "output": "-1",
+        "explanation": "'bba' is not found in 'aaaaa'."
+      },
+      {
+        "input": "haystack = '', needle = ''",
+        "output": "0",
+        "explanation": "An empty needle is found at index 0 in any haystack including an empty one."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "Check edge cases when either string is empty."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Visible People in a Queue",
+    "description": "In a queue of people, each person can be represented by their height. A person is considered 'visible' if there are no taller people in front of them. Given an array of integers where each integer represents the height of the person in the queue, return the number of visible people from the front of the queue.",
+    "topic": "Array",
+    "subtopic": "Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Simulation"
+    ],
+    "input_format": "An array of integers heights representing the heights of people in the queue.",
+    "output_format": "An integer representing the number of visible people in the queue.",
+    "constraints": [
+      "1 <= heights.length <= 10^5",
+      "1 <= heights[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "heights = [1, 2, 3, 2, 1]",
+        "output": "3",
+        "explanation": "From front to back: 1 (visible), 2 (visible), 3 (visible), 2 (not visible due to 3), 1 (not visible due to 3). Total visible = 3."
+      },
+      {
+        "input": "heights = [5, 3, 4, 5, 2]",
+        "output": "3",
+        "explanation": "From front to back: 5 (visible), 3 (not visible due to 5), 4 (not visible due to 5), 5 (visible), 2 (not visible due to 5). Total visible = 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to keep track of the heights.",
+      "Iterate through the heights from the back to the front.",
+      "Only count a height if it is greater than all previously counted heights."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Add Two Numbers",
+    "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return it as a linked list in the same reverse order.",
+    "topic": "Linked List",
+    "subtopic": "Addition of Numbers",
+    "tags": [
+      "Linked List",
+      "Addition",
+      "Math"
+    ],
+    "input_format": "Two linked lists l1 and l2 where each list represents a non-negative integer.",
+    "output_format": "A linked list representing the sum of the two numbers.",
+    "constraints": [
+      "The number of nodes in each linked list is between 1 and 100.",
+      "0 <= node.val <= 9"
+    ],
+    "examples": [
+      {
+        "input": "l1 = [2, 4, 3], l2 = [5, 6, 4]",
+        "output": "[7, 0, 8]",
+        "explanation": "342 + 465 = 807, which is represented as [7, 0, 8] in reverse order."
+      },
+      {
+        "input": "l1 = [0], l2 = [0]",
+        "output": "[0]",
+        "explanation": "0 + 0 = 0, the result is [0]."
+      },
+      {
+        "input": "l1 = [9, 9, 9, 9, 9, 9, 9], l2 = [9, 9, 9, 9]",
+        "output": "[8, 9, 9, 9, 0, 0, 1]",
+        "explanation": "9999999 + 9999 = 10009998, which is represented as [8, 9, 9, 9, 0, 0, 1] in reverse order."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a carry variable to manage sums greater than 9.",
+      "Iterate through both lists until both are exhausted."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) Cache. Implement the LRUCache class with the following methods: \n\n- LRUCache(int capacity): Initialize the LRU cache with positive size capacity. \n- int get(int key): Return the value of the key if the key exists, otherwise return -1. \n- void put(int key, int value): Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key. \n\nThe least recently used key is the one that was used the least recently in the cache.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Hash Map",
+      "Linked List",
+      "Design"
+    ],
+    "input_format": "You will be given the capacity of the cache as a positive integer and a series of operations on the cache.",
+    "output_format": "Return the value for the get operation or nothing for the put operation.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key, value <= 10^4",
+      "At most 3 * 10^4 calls will be made to get and put."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache cache = new LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1,-1,4,3]",
+        "explanation": "After the series of operations, 1 is returned from the cache, -1 indicates a miss, and the final results are 4, 3, indicating the values for keys 4 and 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a combination of a HashMap and a doubly linked list.",
+      "The linked list will help maintain the order of usage.",
+      "Think about how to efficiently remove the least recently used item."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, if the input is [[1,3],[2,6],[8,10],[15,18]], the merged output should be [[1,6],[8,10],[15,18]]. The intervals are represented as pairs of integers where the first integer is the start and the second integer is the end of the interval. Your goal is to combine any overlapping intervals into a single interval.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A list of intervals, where each interval is represented as a list of two integers [start, end].",
+    "output_format": "A list of merged intervals, where each interval is represented as a list of two integers [start, end].",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap and are merged into [1,6]. The other intervals do not overlap."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] touch at the edge, hence they are merged to form [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the start time.",
+      "Iterate through the sorted list and merge where necessary."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Subarray Sums Divisible by K",
+    "description": "Given an integer array nums and an integer k, return the number of subarrays whose sum is divisible by k. A subarray is a contiguous part of an array. For example, the subarray of [1,2,3] is [1], [1,2], [1,2,3], [2], [2,3], [3].",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "Prefix Sum",
+      "Mathematics"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the number of subarrays whose sum is divisible by k.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [4, 5, 0, -2, -3, 1], k = 5",
+        "output": "7",
+        "explanation": "The subarrays are [4], [5], [0], [-2], [-3], [1], and [4, 5, 0, -2, -3, 1] whose sums are all divisible by 5."
+      },
+      {
+        "input": "nums = [5, 10, 0, 2], k = 5",
+        "output": "6",
+        "explanation": "The subarrays are [5], [10], [0], [2], [5, 10], [10, 0] whose sums are all divisible by 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a prefix sum and a hashmap to store the frequency of mod results.",
+      "Consider the problem of finding how many previous prefix sums have the same mod with k."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Least Number of Unique Integers after K Removals",
+    "description": "Given an integer array 'arr' and an integer 'k', you must remove exactly 'k' elements from 'arr'. You need to return the least number of unique integers remaining in the array after the removals. The elements can be removed in any order, and you may remove duplicates as well.",
+    "topic": "Array",
+    "subtopic": "Count and Frequency",
+    "tags": [
+      "Array",
+      "Hash Map",
+      "Counting"
+    ],
+    "input_format": "An integer array arr and an integer k.",
+    "output_format": "An integer representing the least number of unique integers remaining after k removals.",
+    "constraints": [
+      "1 <= arr.length <= 10^5",
+      "0 <= k < arr.length"
+    ],
+    "examples": [
+      {
+        "input": "arr = [5, 5, 4, 4, 3, 2], k = 2",
+        "output": "2",
+        "explanation": "After removing two '5's, the remaining unique integers are [4, 4, 3, 2] which gives us 2 unique integers (4, 3, 2)."
+      },
+      {
+        "input": "arr = [1, 2, 1, 2, 3], k = 1",
+        "output": "2",
+        "explanation": "By removing one '1', the unique integers remaining are [2, 2, 3] which gives us 2 unique integers (2, 3)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about using a frequency map to count occurrences of each integer.",
+      "Sort the unique integers by their frequencies to decide which to remove."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Permutation in String",
+    "description": "Given two strings s1 and s2, write a function to determine if one of the strings is a permutation of the other. A permutation is a rearrangement of the characters of a string. For example, 'abc' is a permutation of 'cab'.",
+    "topic": "String",
+    "subtopic": "Character Counting",
+    "tags": [
+      "String",
+      "Permutation",
+      "Hash Table"
+    ],
+    "input_format": "Two strings s1 and s2, where 1 <= s1.length, s2.length <= 10^4 and s1, s2 consist of lowercase English letters.",
+    "output_format": "A boolean value indicating whether s2 is a permutation of s1.",
+    "constraints": [
+      "1 <= s1.length, s2.length <= 10^4",
+      "s1 and s2 consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s1 = 'ab', s2 = 'ba'",
+        "output": "true",
+        "explanation": "The string 'ba' is a rearrangement of the string 'ab'."
+      },
+      {
+        "input": "s1 = 'abc', s2 = 'cab'",
+        "output": "true",
+        "explanation": "'cab' can be formed by rearranging 'abc'."
+      },
+      {
+        "input": "s1 = 'abc', s2 = 'abcd'",
+        "output": "false",
+        "explanation": "'abcd' contains an extra character, so it cannot be a permutation of 'abc'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a frequency counter for each string.",
+      "If the frequency counts of both strings are the same, they are permutations."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected, and it will automatically contact the police if two adjacent houses were broken into on the same night. Given an integer array 'nums' representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Memoization",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array nums representing the amount of money in each house.",
+    "output_format": "An integer representing the maximum amount of money you can rob without alerting the police.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 400"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Rob house 1 (money = 1) and then rob house 3 (money = 3). Total amount robbed = 1 + 3 = 4."
+      },
+      {
+        "input": "nums = [2, 7, 9, 3, 1]",
+        "output": "12",
+        "explanation": "Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1). Total amount robbed = 2 + 9 + 1 = 12."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to store the results of previous calculations.",
+      "Think about how to handle the decision of robbing or skipping each house."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Climbing Stairs",
+    "description": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "topic": "Dynamic Programming",
+    "subtopic": "Fibonacci Sequence",
+    "tags": [
+      "Dynamic Programming",
+      "Recursion",
+      "Fibonacci"
+    ],
+    "input_format": "An integer n where 1 <= n <= 45, the number of steps.",
+    "output_format": "An integer representing the number of distinct ways to climb to the top.",
+    "constraints": [
+      "1 <= n <= 45"
+    ],
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "There are two ways to climb to the top: (1 step + 1 step) or (2 steps)."
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "explanation": "There are three ways to climb to the top: (1 step + 1 step + 1 step), (1 step + 2 steps), or (2 steps + 1 step)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the ways to reach the n-th step based on the previous steps.",
+      "The problem can be solved using a recursive relation."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Count Number of Pairs With Absolute Difference K",
+    "description": "Given an array of integers and a non-negative integer K, count the number of unique pairs (i, j) such that the absolute difference between nums[i] and nums[j] equals K. A pair (i, j) is considered the same as (j, i), so order does not matter. The array may contain duplicate integers, and you should only count unique pairs.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Hash Table"
+    ],
+    "input_format": "An array of integers nums and a non-negative integer K.",
+    "output_format": "An integer representing the number of unique pairs with absolute difference K.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= K <= 10^9",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], K = 2",
+        "output": "3",
+        "explanation": "The unique pairs are (1, 3), (2, 4), and (3, 5) which have an absolute difference of 2."
+      },
+      {
+        "input": "nums = [1, 3, 1, 5, 4], K = 0",
+        "output": "1",
+        "explanation": "The unique pair is (1, 1) with an absolute difference of 0."
+      },
+      {
+        "input": "nums = [1, 2, 3], K = 1",
+        "output": "2",
+        "explanation": "The unique pairs are (1, 2) and (2, 3) with an absolute difference of 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a set to track unique elements.",
+      "You can use a hash map to store counts of elements."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Rotting Oranges",
+    "description": "In a given grid of size m x n, each cell can have one of three values: 0 (empty), 1 (fresh orange), or 2 (rotten orange). Every minute, any fresh orange that is adjacent (horizontally or vertically) to a rotten orange will rot. Return the minimum number of minutes that must elapse until no fresh oranges remain. If this is impossible, return -1.",
+    "topic": "Graph",
+    "subtopic": "BFS/DFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid of integers representing the oranges.",
+    "output_format": "An integer representing the minimum number of minutes until no fresh oranges remain, or -1 if impossible.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "m * n <= 10^4",
+      "grid[i][j] is either 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[2,1,1],[1,1,0],[0,1,1]]",
+        "output": "4",
+        "explanation": "In four minutes, all fresh oranges will become rotten."
+      },
+      {
+        "input": "grid = [[2,1,1],[0,1,1],[1,0,2]]",
+        "output": "-1",
+        "explanation": "Fresh oranges in the second row cannot rot because they are surrounded by empty cells."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a breadth-first search (BFS) to simulate the rotting process.",
+      "Keep track of the number of fresh oranges and rotten oranges."
+    ],
+    "company": "Expedia"
+  },
+  {
+    "question_id": "",
+    "title": "Degree of an Array",
+    "description": "Given a non-empty array of non-negative integers, the degree of the array is defined as the maximum frequency of any one of its elements. Your task is to find the minimum length of a contiguous subarray that has the same degree as the array. If multiple subarrays have the same length, return the one with the smallest starting index.",
+    "topic": "Array",
+    "subtopic": "Finding Degree",
+    "tags": [
+      "Array",
+      "Degree",
+      "Subarray"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "An integer representing the minimum length of a contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 50,000",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3, 1]",
+        "output": "2",
+        "explanation": "The degree is 2, as the number 2 appears twice. The minimum length subarray with degree 2 is [2, 2]."
+      },
+      {
+        "input": "nums = [1, 2, 2, 3, 1, 4, 2]",
+        "output": "6",
+        "explanation": "The degree is 3, as the number 2 appears three times. The minimum length subarray with degree 3 is [2, 2, 3, 1, 4, 2]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the frequency of each element.",
+      "Keep track of the first and last occurrences of each number."
+    ],
+    "company": "Expedia"
+  }
+]

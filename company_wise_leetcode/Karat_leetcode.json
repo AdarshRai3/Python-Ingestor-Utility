@@ -1,0 +1,789 @@
+[
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a length maxWidth, format the text such that each line has exactly maxWidth characters and is fully justified. You should pack your text such that each line contains as many words as possible. The last line should be left-justified and no extra space is inserted between words. You need to return a list of strings representing the fully justified text.",
+    "topic": "String",
+    "subtopic": "Text Justification",
+    "tags": [
+      "String",
+      "Justification",
+      "Formatting"
+    ],
+    "input_format": "An array of strings words and an integer maxWidth.",
+    "output_format": "A list of strings, each representing a justified line of text.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 20",
+      "1 <= maxWidth <= 100"
+    ],
+    "examples": [
+      {
+        "input": "words = [\"This\", \"is\", \"an\", \"example\", \"of\", \"text\", \"justification.\"], maxWidth = 16",
+        "output": "[\"This    is    an\", \"example  of text\", \"justification.  \"]",
+        "explanation": "Each line is justified such that it has 16 characters. The spaces are distributed."
+      },
+      {
+        "input": "words = [\"What\", \"must\", \"be\", \"acknowledgment\", \"shall\", \"be\"], maxWidth = 16",
+        "output": "[\"What   must   be\", \"acknowledgment  \", \"shall be        \"]",
+        "explanation": "The last line is left-justified and has spaces added to fit maxWidth."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to distribute spaces evenly between words.",
+      "Pay attention to the handling of the last line differently.",
+      "Use a greedy approach to decide how many words to add to each line."
+    ],
+    "company": "Karat"
+  },
+  {
+    "question_id": "",
+    "title": "Find Words That Can Be Formed by Characters",
+    "description": "Given an array of strings 'words' and a string 'chars', return the sum of the lengths of all the words in 'words' that can be formed by the characters in 'chars'. Each character in 'chars' can only be used once per word. If a word cannot be formed, it is not counted in the total length.",
+    "topic": "String",
+    "subtopic": "Character Counting",
+    "tags": [
+      "String",
+      "Counting",
+      "Hash Table"
+    ],
+    "input_format": "An array of strings 'words' and a string 'chars'.",
+    "output_format": "An integer representing the total length of all the words that can be formed by 'chars'.",
+    "constraints": [
+      "1 <= words.length <= 100",
+      "1 <= words[i].length <= 100",
+      "1 <= chars.length <= 100",
+      "All strings consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "cat",
+            "bt",
+            "hat",
+            "tree"
+          ],
+          "chars": "atach"
+        },
+        "output": "6",
+        "explanation": "The words that can be formed are 'cat' (3 letters) and 'hat' (3 letters), giving a total of 6."
+      },
+      {
+        "input": {
+          "words": [
+            "hello",
+            "world",
+            "leetcode"
+          ],
+          "chars": "welldonehoneyr"
+        },
+        "output": "10",
+        "explanation": "The words that can be formed are 'hello' (5 letters) and 'world' (5 letters), giving a total of 10."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a frequency counter to keep track of the characters in 'chars'.",
+      "Check if each word can be formed by comparing character counts."
+    ],
+    "company": "Karat"
+  },
+  {
+    "question_id": "",
+    "title": "Check if Every Row and Column Contains All Numbers",
+    "description": "You are given a 2D grid representing an n x n matrix. You need to check if every row and every column contains all numbers from 1 to n exactly once. Return true if the matrix satisfies this condition, and false otherwise.",
+    "topic": "Matrix",
+    "subtopic": "Validation",
+    "tags": [
+      "Matrix",
+      "Validation",
+      "Array"
+    ],
+    "input_format": "A 2D array of integers grid representing the matrix.",
+    "output_format": "A boolean value: true if every row and column contains all numbers from 1 to n exactly once, otherwise false.",
+    "constraints": [
+      "1 <= grid.length == grid[i].length <= 100",
+      "1 <= grid[i][j] <= n"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1, 2, 3], [3, 1, 2], [2, 3, 1]]",
+        "output": "true",
+        "explanation": "Each row and column contains numbers 1 to 3 exactly once."
+      },
+      {
+        "input": "grid = [[1, 2, 2], [2, 1, 3], [3, 3, 1]]",
+        "output": "false",
+        "explanation": "The first row contains the number 2 twice, so it does not satisfy the condition."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use sets to validate uniqueness in rows and columns.",
+      "You can iterate through the grid and check counts."
+    ],
+    "company": "Karat"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search",
+    "description": "Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where 'adjacent' cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.",
+    "topic": "Backtracking",
+    "subtopic": "Matrix Search",
+    "tags": [
+      "Backtracking",
+      "Matrix",
+      "Depth-First Search"
+    ],
+    "input_format": "A 2D board of characters and a string word.",
+    "output_format": "A boolean indicating whether the word exists in the grid.",
+    "constraints": [
+      "1 <= board.length <= 200",
+      "1 <= board[i].length <= 200",
+      "board[i][j] are lowercase English letters",
+      "1 <= word.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "board = [['A','B','C','E'], ['S','F','C','S'], ['A','D','E','E']], word = 'ABCCED'",
+        "output": "true",
+        "explanation": "The word 'ABCCED' exists in the board."
+      },
+      {
+        "input": "board = [['A','B','C','E'], ['S','F','C','S'], ['A','D','E','E']], word = 'SEE'",
+        "output": "true",
+        "explanation": "The word 'SEE' exists in the board."
+      },
+      {
+        "input": "board = [['A','B','C','E'], ['S','F','C','S'], ['A','D','E','E']], word = 'ABCB'",
+        "output": "false",
+        "explanation": "The word 'ABCB' does not exist in the board."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use depth-first search to explore all possible paths.",
+      "Keep track of visited cells to avoid using the same cell more than once.",
+      "Backtrack when the current path does not lead to a solution."
+    ],
+    "company": "Karat"
+  },
+  {
+    "question_id": "",
+    "title": "Alert Using Same Key-Card Three or More Times in a One Hour Period",
+    "description": "In a secure building, access is logged whenever someone uses their key-card to enter. Each log entry contains the name of the employee and the timestamp of their entry. You need to determine which employees used their key-cards three or more times within a one-hour time span. Return a list of names of employees who triggered the alert, sorted in alphabetical order.",
+    "topic": "Hash Table",
+    "subtopic": "Frequency Counting",
+    "tags": [
+      "Hash Table",
+      "Sorting",
+      "Time Window"
+    ],
+    "input_format": "A list of log entries, each represented as a tuple (name: str, timestamp: str) where timestamp is in the format 'YYYY-MM-DD HH:MM:SS'.",
+    "output_format": "A list of employee names sorted in alphabetical order.",
+    "constraints": [
+      "1 <= logs.length <= 20000",
+      "Each log entry is guaranteed to contain the employee's name and a valid timestamp."
+    ],
+    "examples": [
+      {
+        "input": "[('Alice', '2023-10-01 10:00:00'), ('Alice', '2023-10-01 10:20:00'), ('Alice', '2023-10-01 10:40:00'), ('Bob', '2023-10-01 10:30:00')]",
+        "output": "['Alice']",
+        "explanation": "Alice used her key-card three times within the hour from 10:00 AM to 11:00 AM."
+      },
+      {
+        "input": "[('Alice', '2023-10-01 10:00:00'), ('Bob', '2023-10-01 10:10:00'), ('Charlie', '2023-10-01 10:20:00'), ('Alice', '2023-10-01 10:30:00'), ('Alice', '2023-10-01 10:45:00'), ('Bob', '2023-10-01 10:50:00')]",
+        "output": "['Alice']",
+        "explanation": "Alice used her key-card three times within the hour from 10:00 AM to 11:00 AM."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window to manage the timestamps.",
+      "Sort the logs based on timestamps first before processing.",
+      "A dictionary can be used to count occurrences."
+    ],
+    "company": "Karat"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given an integer numCourses representing the total number of courses you have to take, labeled from 0 to numCourses - 1. You are also given a list of prerequisite pairs where prerequisites[i] = [a, b] indicates that you must take course b before course a. Return true if you can finish all courses. Otherwise, return false.",
+    "topic": "Graph",
+    "subtopic": "Topological Sort",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "An integer numCourses and a 2D array prerequisites.",
+    "output_format": "A boolean value indicating whether it is possible to finish all courses.",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2",
+      "0 <= prerequisites[i][0], prerequisites[i][1] < numCourses"
+    ],
+    "examples": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0]]",
+        "output": "true",
+        "explanation": "You can take course 0 first and then take course 1."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "false",
+        "explanation": "There is a cycle between courses 0 and 1, so it's impossible to finish all courses."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a graph representation of courses.",
+      "Check for cycles in the graph."
+    ],
+    "company": "Karat"
+  },
+  {
+    "question_id": "",
+    "title": "Ransom Note",
+    "description": "Given two strings 'ransomNote' and 'magazine', return true if 'ransomNote' can be constructed from the letters of 'magazine' and false otherwise. Each letter in 'magazine' can only be used once in constructing 'ransomNote'.",
+    "topic": "String",
+    "subtopic": "Hash Table",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Counting"
+    ],
+    "input_format": "Two strings: ransomNote and magazine where 1 <= ransomNote.length, magazine.length <= 10^5.",
+    "output_format": "A boolean value, true if ransomNote can be constructed from magazine, else false.",
+    "constraints": [
+      "1 <= ransomNote.length, magazine.length <= 10^5",
+      "Both strings consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "ransomNote = 'a', magazine = 'b'",
+        "output": "false",
+        "explanation": "'b' does not contain 'a'."
+      },
+      {
+        "input": "ransomNote = 'aa', magazine = 'aab'",
+        "output": "true",
+        "explanation": "'aab' can be used to construct 'aa'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a frequency counter for the letters.",
+      "You can use a dictionary or an array to count the occurrences of each letter."
+    ],
+    "company": "Karat"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine if a 9x9 Sudoku board is valid according to the following rules: Each row must contain the digits 1-9 without repetition, each column must also contain the digits 1-9 without repetition, and each of the nine 3x3 sub-boxes must contain the digits 1-9 without repetition. Empty cells are represented by the period '.' character.",
+    "topic": "Array",
+    "subtopic": "2D Array",
+    "tags": [
+      "Array",
+      "Backtracking",
+      "Validation"
+    ],
+    "input_format": "A 2D array of characters representing the Sudoku board.",
+    "output_format": "A boolean indicating whether the Sudoku board is valid.",
+    "constraints": [
+      "The board is a 9x9 2D array.",
+      "Each cell contains either a digit ('1'-'9') or a '.' (for empty cells)."
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "5",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "true",
+        "explanation": "The board is valid according to Sudoku rules."
+      },
+      {
+        "input": [
+          [
+            "8",
+            "5",
+            ".",
+            ".",
+            "4",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            "3",
+            ".",
+            ".",
+            "6",
+            ".",
+            "1"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            "8",
+            "5",
+            "2",
+            "4",
+            "9",
+            "."
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            ".",
+            "2",
+            "3",
+            "1",
+            "5",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "3",
+            ".",
+            "8",
+            "8",
+            ".",
+            "9"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "1",
+            "6",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            "9",
+            "6",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "4",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "3",
+            ".",
+            ".",
+            "9",
+            "8"
+          ]
+        ],
+        "output": "false",
+        "explanation": "The board is invalid because the number '8' is duplicated."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use sets to track seen numbers for rows, columns, and boxes.",
+      "Validate each number by checking its corresponding row, column, and box."
+    ],
+    "company": "Karat"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "Depth-First Search",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid represented as a list of lists, where each element is either '1' (land) or '0' (water).",
+    "output_format": "An integer representing the number of islands in the grid.",
+    "constraints": [
+      "1 <= grid.length <= 300",
+      "1 <= grid[0].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [['1', '1', '0', '0', '0'], ['1', '1', '0', '0', '0'], ['0', '0', '1', '0', '0'], ['0', '0', '0', '1', '1']]",
+        "output": "3",
+        "explanation": "There are three islands in the grid."
+      },
+      {
+        "input": "grid = [['1', '1', '1', '1', '0'], ['1', '1', '0', '1', '0'], ['1', '1', '0', '0', '0'], ['0', '0', '0', '0', '0']]",
+        "output": "1",
+        "explanation": "There is one large island in the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using Depth-First Search to explore the islands.",
+      "Use a visited matrix to keep track of cells you have already explored."
+    ],
+    "company": "Karat"
+  },
+  {
+    "question_id": "",
+    "title": "Maximal Square",
+    "description": "Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.",
+    "topic": "Dynamic Programming",
+    "subtopic": "2D Arrays",
+    "tags": [
+      "Dynamic Programming",
+      "Matrix",
+      "Square"
+    ],
+    "input_format": "A 2D binary matrix represented as a list of lists.",
+    "output_format": "An integer representing the area of the largest square containing only 1's.",
+    "constraints": [
+      "1 <= matrix.length <= 300",
+      "1 <= matrix[i].length <= 300",
+      "matrix[i][j] is either '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "[['1','0','1','0','0'], ['1','0','1','1','1'], ['1','1','1','1','1'], ['1','0','0','1','0']]",
+        "output": "4",
+        "explanation": "The largest square has a side length of 2, so the area is 2 * 2 = 4."
+      },
+      {
+        "input": "[['0','1'], ['1','1']]",
+        "output": "1",
+        "explanation": "The largest square has a side length of 1, so the area is 1 * 1 = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use dynamic programming to keep track of the size of the largest square ending at each position.",
+      "Each position can only form a square if its adjacent top, left, and top-left cells are also part of a square."
+    ],
+    "company": "Karat"
+  },
+  {
+    "question_id": "",
+    "title": "Subdomain Visit Count",
+    "description": "A web server logs the number of visits to various subdomains of websites. For example, if a given log entry is '9001 discuss.leetcode.com', it means that the subdomain 'discuss.leetcode.com' received 9001 visits. You should return a count of visits for each subdomain, including the total visits for parent domains. For instance, the counts for the above log should be: '9001 discuss.leetcode.com', '9001 leetcode.com', and '9001 com'.",
+    "topic": "String",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Parsing",
+      "HashMap"
+    ],
+    "input_format": "An array of strings, where each string represents a log entry in the format 'count subdomain'.",
+    "output_format": "A list of strings, each representing the subdomain and its visit count in the format 'count subdomain'.",
+    "constraints": [
+      "1 <= logs.length <= 10^4",
+      "1 <= logs[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "logs = [\"9001 discuss.leetcode.com\", \"9001 yahoo.com\", \"9001 leetcode.com\", \"9001 com\"]",
+        "output": "[\"9001 discuss.leetcode.com\", \"9001 leetcode.com\", \"9001 com\", \"9001 yahoo.com\"]",
+        "explanation": "The counts for all subdomains are calculated, and we include both subdomain and parent domain counts."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about splitting the domain strings.",
+      "Consider using a map to keep track of the counts."
+    ],
+    "company": "Karat"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search II",
+    "description": "Given a 2D board and a list of words, find all words in the grid. The word can be formed by connecting the cells horizontally or vertically. Each letter must be used in sequence and can only be used once per word. Implement a function that returns the list of words found in the board.",
+    "topic": "Backtracking",
+    "subtopic": "DFS",
+    "tags": [
+      "Backtracking",
+      "Trie",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid of characters board and a list of strings words.",
+    "output_format": "A list of strings representing all the words found on the board.",
+    "constraints": [
+      "1 <= board.length <= 12",
+      "1 <= board[i].length <= 12",
+      "1 <= words.length <= 3 * 10^4",
+      "1 <= words[i].length <= 10"
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "o",
+              "a",
+              "a",
+              "n"
+            ],
+            [
+              "e",
+              "t",
+              "a",
+              "e"
+            ],
+            [
+              "i",
+              "h",
+              "k",
+              "r"
+            ],
+            [
+              "i",
+              "f",
+              "l",
+              "v"
+            ]
+          ],
+          "words": [
+            "oath",
+            "pea",
+            "eat",
+            "rain"
+          ]
+        },
+        "output": [
+          "eat",
+          "oath"
+        ],
+        "explanation": "The words 'eat' and 'oath' can be found in the grid."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "c",
+              "d"
+            ]
+          ],
+          "words": [
+            "abcb"
+          ]
+        },
+        "output": [],
+        "explanation": "No words can be formed from the grid."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a Trie to store the words for efficient searching.",
+      "Perform DFS from each cell in the grid."
+    ],
+    "company": "Karat"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule II",
+    "description": "You are given a number of courses you have to take, denoted by a list of prerequisite pairs. Each prerequisite pair indicates that you must take one course before another. Write a function to return the ordering of courses you should take to finish all the courses. If it is impossible to finish all courses, return an empty list.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS"
+    ],
+    "input_format": "An integer numCourses representing the total number of courses and a list of prerequisite pairs, where each pair [a, b] indicates that you must take course b before course a.",
+    "output_format": "A list of integers representing the order of courses to be taken. If it is not possible to finish all courses, return an empty list.",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2",
+      "0 <= prerequisites[i][0], prerequisites[i][1] < numCourses"
+    ],
+    "examples": [
+      {
+        "input": "numCourses = 4, prerequisites = [[1,0],[2,1],[3,2]]",
+        "output": "[0, 1, 2, 3]",
+        "explanation": "The order of taking courses can be 0 -> 1 -> 2 -> 3."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "[]",
+        "explanation": "It is impossible to finish all courses because they depend on each other."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use topological sorting to find a valid ordering.",
+      "Track the number of prerequisites for each course.",
+      "Use a queue to process courses with no remaining prerequisites."
+    ],
+    "company": "Karat"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Determine if you are able to reach the last index starting from the first index. You can assume that you can always jump to the last index if you are at an index from which you can reach the last index directly.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers, nums.",
+    "output_format": "A boolean value indicating whether you can reach the last index.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "true",
+        "explanation": "Jump 1 step from index 0 to 1, then jump 2 steps to reach the last index."
+      },
+      {
+        "input": "nums = [3, 2, 1, 0, 4]",
+        "output": "false",
+        "explanation": "You will always get stuck at index 3, as you cannot jump over to the last index."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Check how far you can jump from each position.",
+      "Maintain a variable to track the furthest index you can reach."
+    ],
+    "company": "Karat"
+  }
+]

@@ -1,0 +1,265 @@
+[
+  {
+    "question_id": "",
+    "title": "Number of Divisible Substrings",
+    "description": "Given a string s representing a number and an integer k, return the number of non-empty substrings of s that are divisible by k. A substring is defined as a contiguous sequence of characters within the string. Note that leading zeros are not considered when calculating divisibility.",
+    "topic": "String",
+    "subtopic": "Substring",
+    "tags": [
+      "String",
+      "Substring",
+      "Divisibility"
+    ],
+    "input_format": "A string s representing a non-negative integer, and an integer k (1 <= k <= 1000).",
+    "output_format": "An integer representing the number of non-empty substrings that are divisible by k.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s only contains digits."
+    ],
+    "examples": [
+      {
+        "input": "s = \"12345\", k = 3",
+        "output": "6",
+        "explanation": "The substrings divisible by 3 are: \"3\", \"12\", \"21\", \"30\", \"123\", and \"345\"."
+      },
+      {
+        "input": "s = \"000\", k = 2",
+        "output": "6",
+        "explanation": "Every substring of \"000\" (including leading zeros) is divisible by 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider checking all possible substrings.",
+      "Keep track of leading zeros when forming substrings."
+    ],
+    "company": "Amdocs"
+  },
+  {
+    "question_id": "",
+    "title": "Design a 3D Binary Matrix with Efficient Layer Tracking",
+    "description": "You are tasked with designing a 3D binary matrix that supports adding layers of binary values efficiently. The matrix can be defined as cubes of dimensions n x n x n, where each cell can hold either a 0 or 1. You should implement methods to add a layer (filled with 0s and 1s) at a specific index of the z-axis, retrieve a specific 2D slice from the matrix, and perform efficient space tracking operations.",
+    "topic": "Data Structure",
+    "subtopic": "Matrix",
+    "tags": [
+      "3D Matrix",
+      "Binary Matrix",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "Commands to interact with the 3D binary matrix, including operations to add layers and get slices.",
+    "output_format": "The result of the retrieve operation as a 2D array.",
+    "constraints": [
+      "1 <= n <= 100",
+      "The number of layers added must not exceed 100."
+    ],
+    "examples": [
+      {
+        "input": "addLayer(layer = [[1, 0], [0, 1]], z = 0), getSlice(z = 0)",
+        "output": "[[1, 0], [0, 1]]",
+        "explanation": "The first command adds a layer at index 0, and the second command retrieves that layer as a 2D slice."
+      },
+      {
+        "input": "addLayer(layer = [[0, 1], [1, 0]], z = 1), getSlice(z = 1)",
+        "output": "[[0, 1], [1, 0]]",
+        "explanation": "The first command adds another layer at index 1, and retrieving it gives back the added layer."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider efficient ways to store and retrieve layers.",
+      "Think about how to represent the 3D matrix in memory."
+    ],
+    "company": "Amdocs"
+  },
+  {
+    "question_id": "",
+    "title": "Backspace String Compare",
+    "description": "Given two strings s and t, return true if they are equal when both are typed into empty text editors. '#' means a backspace character. Notice that after backspacing an empty text, the text will continue empty.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Backspace",
+      "Two Pointers"
+    ],
+    "input_format": "Two strings s and t.",
+    "output_format": "A boolean indicating if the processed strings are equal.",
+    "constraints": [
+      "0 <= s.length, t.length <= 200",
+      "s and t consist of lowercase letters and '#' characters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"ab#c\", t = \"ad#c\"",
+        "output": "true",
+        "explanation": "Both strings become 'ac' after processing backspaces."
+      },
+      {
+        "input": "s = \"ab##\", t = \"c#d#\"",
+        "output": "true",
+        "explanation": "Both strings become '' after processing backspaces."
+      },
+      {
+        "input": "s = \"a#c\", t = \"b\"",
+        "output": "false",
+        "explanation": "'a#c' becomes 'c', while 'b' remains 'b'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to compare the strings from the end.",
+      "You can implement a function to process each string and ignore backspaces."
+    ],
+    "company": "Amdocs"
+  },
+  {
+    "question_id": "",
+    "title": "Second Highest Salary",
+    "description": "Write an SQL query to fetch the second highest salary from the Employee table. If there is no second highest salary, the query should return null.",
+    "topic": "Database",
+    "subtopic": "SQL Queries",
+    "tags": [
+      "SQL",
+      "Database",
+      "Ranking"
+    ],
+    "input_format": "The input consists of a table named Employee with the following schema: Employee(id INT, salary INT).",
+    "output_format": "Return a single integer representing the second highest salary. Return null if it does not exist.",
+    "constraints": [
+      "The Employee table has at least one entry.",
+      "Salaries are non-negative integers."
+    ],
+    "examples": [
+      {
+        "input": "Employee = [[1, 100], [2, 200], [3, 100]]",
+        "output": "100",
+        "explanation": "The highest salary is 200, and the second highest salary is 100."
+      },
+      {
+        "input": "Employee = [[1, 30000], [2, 30000], [3, 40000]]",
+        "output": "30000",
+        "explanation": "The highest salary is 40000, and the second highest salary is also 30000 due to duplicates."
+      },
+      {
+        "input": "Employee = [[1, 20000]]",
+        "output": "null",
+        "explanation": "There is only one salary in the table, so the second highest salary does not exist."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using the DISTINCT keyword to avoid duplicates.",
+      "Consider using a subquery to isolate the second highest value."
+    ],
+    "company": "Amdocs"
+  },
+  {
+    "question_id": "",
+    "title": "Build Array Where You Can Find The Maximum Exactly K Comparisons",
+    "description": "You are given an integer array 'nums' and an integer 'k'. Your task is to build an array 'result' such that the maximum value in 'result' can be found by making exactly 'k' comparisons. A comparison is defined as checking if one number is greater than another. The array 'result' should be built in such a way that every number in 'result' can be represented as a sum of elements from 'nums'. If it is impossible to build such an array, return an empty array. Otherwise, return the array 'result'.",
+    "topic": "Array",
+    "subtopic": "Building Arrays",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "The first line contains an integer n (1 <= n <= 100), the number of elements in the array. The second line contains n integers representing the 'nums' array (1 <= nums[i] <= 1000). The third line contains an integer k (1 <= k <= n).",
+    "output_format": "An array of integers representing the 'result' array, or an empty array if it's not possible to achieve the required comparisons.",
+    "constraints": [
+      "1 <= n <= 100",
+      "1 <= nums[i] <= 1000",
+      "1 <= k <= n"
+    ],
+    "examples": [
+      {
+        "input": "5\n1 2 3 4 5\n3",
+        "output": "[5]",
+        "explanation": "The maximum is 5, which can be found in 3 comparisons (1 vs 2, 2 vs 3, and 3 vs 4)."
+      },
+      {
+        "input": "4\n1 2 3 4\n4",
+        "output": "[]",
+        "explanation": "It's impossible to find the maximum with 4 comparisons when there are only 4 elements."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using sorting to generate possible arrays.",
+      "Think about how to count comparisons efficiently."
+    ],
+    "company": "Amdocs"
+  },
+  {
+    "question_id": "",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Generation",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "String"
+    ],
+    "input_format": "An integer n representing the number of pairs of parentheses.",
+    "output_format": "A list of strings representing all combinations of well-formed parentheses.",
+    "constraints": [
+      "0 <= n <= 8"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\"]",
+        "explanation": "The valid combinations of well-formed parentheses for n = 3 are: ((())), (()()), (())(), ()(()), and ()()."
+      },
+      {
+        "input": "n = 1",
+        "output": "[\"()\"]",
+        "explanation": "The only valid combination of well-formed parentheses for n = 1 is: ()."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use backtracking to explore all possibilities.",
+      "Keep track of the number of open and closed parentheses used."
+    ],
+    "company": "Amdocs"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate String",
+    "description": "Given two strings s and goal, determine if you can rotate string s a number of times to get goal. A right rotation on string s consists of moving the last character of s to the front of it. For example, if s = 'abcde', one right rotation results in 'eabcd'.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Rotation",
+      "Manipulation"
+    ],
+    "input_format": "Two strings s and goal with lengths between 1 and 100.",
+    "output_format": "A boolean value indicating whether s can be rotated to match goal.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "1 <= goal.length <= 100",
+      "s and goal consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcde', goal = 'cdeab'",
+        "output": "true",
+        "explanation": "Rotating 'abcde' twice gives 'cdeab'."
+      },
+      {
+        "input": "s = 'abcde', goal = 'abced'",
+        "output": "false",
+        "explanation": "'abced' cannot be obtained by rotating 'abcde'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider concatenating string s with itself."
+    ],
+    "company": "Amdocs"
+  }
+]

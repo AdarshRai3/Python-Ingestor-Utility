@@ -1,0 +1,140 @@
+[
+  {
+    "question_id": "",
+    "title": "Valid Parenthesis String",
+    "description": "Given a string s consisting of three types of characters: '(', ')', and '*', return true if s is valid. The following rules define a valid string: 1. Any left parenthesis '(' must have a corresponding right parenthesis ')'. 2. Any right parenthesis ')' must have a corresponding left parenthesis '('. 3. The '*' character can represent either a single right parenthesis ')', a single left parenthesis '(', or an empty string. An empty string is also considered valid. You must decide whether the string is valid according to these rules.",
+    "topic": "String",
+    "subtopic": "Valid Parentheses",
+    "tags": [
+      "String",
+      "Parentheses",
+      "Greedy"
+    ],
+    "input_format": "A string s of length n (1 <= n <= 100).",
+    "output_format": "Return a boolean indicating whether the string is valid.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s only consists of '(', ')', and '*' characters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"(*)\"",
+        "output": "true",
+        "explanation": "The string can be seen as '()' which is valid."
+      },
+      {
+        "input": "s = \"(*))\"",
+        "output": "true",
+        "explanation": "The '*' can be seen as '(', resulting in '(()))', which is valid."
+      },
+      {
+        "input": "s = \"((*)\"",
+        "output": "true",
+        "explanation": "The '*' can be seen as ')', resulting in '(()()', which is valid."
+      },
+      {
+        "input": "s = \"())\"",
+        "output": "false",
+        "explanation": "There are too many right parentheses."
+      },
+      {
+        "input": "s = \"*\"",
+        "output": "true",
+        "explanation": "The '*' can be considered as an empty string."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to track open parentheses.",
+      "You can treat '*' as either type of parentheses in various iterations."
+    ],
+    "company": "Blizzard"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where 0 <= prices.length <= 10^5.",
+    "output_format": "An integer representing the maximum profit.",
+    "constraints": [
+      "0 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Maximum profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider tracking the minimum price you've seen so far.",
+      "Calculate profit as the difference between the current price and the minimum price."
+    ],
+    "company": "Blizzard"
+  },
+  {
+    "question_id": "",
+    "title": "Roman to Integer",
+    "description": "Given a string representing a Roman numeral, convert it to an integer. The Roman numerals are represented as follows: I=1, V=5, X=10, L=50, C=100, D=500, M=1000. For example, the Roman numeral 'IV' equals 4, and 'XLII' equals 42. You need to handle cases where a smaller numeral appears before a larger numeral, indicating subtraction.",
+    "topic": "Strings",
+    "subtopic": "Parsing and Conversion",
+    "tags": [
+      "Strings",
+      "Conversion",
+      "Mathematics"
+    ],
+    "input_format": "A string s representing a valid Roman numeral.",
+    "output_format": "An integer representing the equivalent value of the Roman numeral.",
+    "constraints": [
+      "1 <= s.length <= 15",
+      "s consists of valid Roman numerals."
+    ],
+    "examples": [
+      {
+        "input": "s = 'III'",
+        "output": "3",
+        "explanation": "The Roman numeral 'III' represents 1 + 1 + 1 = 3."
+      },
+      {
+        "input": "s = 'IV'",
+        "output": "4",
+        "explanation": "The Roman numeral 'IV' represents 5 - 1 = 4."
+      },
+      {
+        "input": "s = 'IX'",
+        "output": "9",
+        "explanation": "The Roman numeral 'IX' represents 10 - 1 = 9."
+      },
+      {
+        "input": "s = 'LVIII'",
+        "output": "58",
+        "explanation": "The Roman numeral 'LVIII' represents 50 + 5 + 3 = 58."
+      },
+      {
+        "input": "s = 'MCMXCIV'",
+        "output": "1994",
+        "explanation": "The Roman numeral 'MCMXCIV' represents 1000 + (1000 - 100) + (1000 - 10) + 5 = 1994."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a mapping of Roman numerals to integers.",
+      "Check adjacent characters to determine if you need to add or subtract."
+    ],
+    "company": "Blizzard"
+  }
+]

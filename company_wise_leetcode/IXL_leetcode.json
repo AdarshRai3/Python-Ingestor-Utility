@@ -1,0 +1,698 @@
+[
+  {
+    "question_id": "",
+    "title": "Range Addition II",
+    "description": "You are given a 2D array `m` that represents a matrix of size `n x m` initialized with zeros. You are also given a list of updates, where each update is represented by an array of four integers, `row1`, `col1`, `row2`, and `col2`. The updates represent a range in the matrix, and you need to apply each update by incrementing all elements in the specified range by 1. Finally, return the number of cells with a value greater than 0 in the matrix after all updates have been applied.",
+    "topic": "Matrix",
+    "subtopic": "Range Updates",
+    "tags": [
+      "Matrix",
+      "Range Update",
+      "Prefix Sum"
+    ],
+    "input_format": "An integer `n`, an integer `m`, and a list of updates where each update is an array of four integers.",
+    "output_format": "An integer representing the count of cells with a value greater than 0 after all updates.",
+    "constraints": [
+      "1 <= n, m <= 200",
+      "0 <= updates.length <= 10^4",
+      "0 <= row1 <= row2 < n",
+      "0 <= col1 <= col2 < m"
+    ],
+    "examples": [
+      {
+        "input": "n = 3, m = 3, updates = [[1, 1, 2, 2], [0, 0, 1, 1]]",
+        "output": "5",
+        "explanation": "After applying the first update, the matrix will look like this: [[1, 1, 0], [1, 1, 0], [0, 0, 0]]. Applying the second update will make it: [[2, 2, 0], [2, 2, 0], [0, 0, 0]]. Cells with value > 0 are 5."
+      },
+      {
+        "input": "n = 4, m = 4, updates = [[0, 0, 1, 1], [2, 2, 3, 3], [1, 1, 2, 2]]",
+        "output": "8",
+        "explanation": "After applying all updates, the matrix will have 8 cells with values greater than 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a difference array for efficient range updates."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Fraction Addition and Subtraction",
+    "description": "You are given a string representing two fractions and an operation ('+' or '-') to perform between them. The fractions are represented in the form 'numerator/denominator'. Your task is to compute the result of the operation and return it as a simplified fraction. If the result is an integer, return it as 'integer/1'.",
+    "topic": "Math",
+    "subtopic": "Fractions",
+    "tags": [
+      "Math",
+      "Fractions",
+      "String Manipulation"
+    ],
+    "input_format": "A string formatted as 'fraction1 operator fraction2', where fraction1 and fraction2 are in the form 'numerator/denominator' and operator is either '+' or '-'.",
+    "output_format": "A string representing the result of the operation in the form 'numerator/denominator'.",
+    "constraints": [
+      "The numerators and denominators are integers within the range of [-1000, 1000], and the denominators are non-zero.",
+      "The input string is guaranteed to have a valid format."
+    ],
+    "examples": [
+      {
+        "input": "\"1/2 + 1/3\"",
+        "output": "\"5/6\"",
+        "explanation": "The sum of 1/2 and 1/3 is 5/6."
+      },
+      {
+        "input": "\"1/2 - 1/4\"",
+        "output": "\"1/4\"",
+        "explanation": "The result of minimizing 1/2 minus 1/4 is 1/4."
+      },
+      {
+        "input": "\"1/3 + 1/3\"",
+        "output": "\"2/3\"",
+        "explanation": "Adding 1/3 and 1/3 gives us 2/3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "To simplify the fraction, find the greatest common divisor (GCD) of the numerator and denominator.",
+      "Ensure to handle cases where the result can be simplified to an integer."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Linked List",
+    "description": "Given the head of a singly linked list, determine if it is a palindrome. A linked list is a palindrome if it reads the same forward and backward.",
+    "topic": "Linked List",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Linked List",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "A singly linked list where each node contains an integer value.",
+    "output_format": "Return true if the linked list is a palindrome, otherwise return false.",
+    "constraints": [
+      "The number of nodes in the list is in the range [1, 10^5].",
+      "-10^5 <= Node.val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 2, 1]",
+        "output": "true",
+        "explanation": "The linked list reads the same forward and backward: 1 -> 2 -> 2 -> 1."
+      },
+      {
+        "input": "head = [1, 2]",
+        "output": "false",
+        "explanation": "The linked list reads different forwards and backwards: 1 -> 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a two-pointer technique to find the middle of the list.",
+      "Reverse the second half of the list and compare it with the first half."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Stickers to Spell Word",
+    "description": "You have a list of stickers, where each sticker has a lowercase English letter on it. You can use multiple stickers to form a target word. Your goal is to determine the minimum number of stickers needed to spell the entire target word. A sticker can be used as many times as needed, and you can rearrange the letters in the stickers as necessary. If it is not possible to spell the target word, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorial Optimization",
+    "tags": [
+      "Backtracking",
+      "Dynamic Programming",
+      "String"
+    ],
+    "input_format": "An array of strings 'stickers' representing the available stickers and a string 'target' representing the target word.",
+    "output_format": "An integer representing the minimum number of stickers needed to spell the target word; return -1 if it's impossible.",
+    "constraints": [
+      "1 <= stickers.length <= 50",
+      "1 <= stickers[i].length <= 10",
+      "1 <= target.length <= 15",
+      "All strings consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": {
+          "stickers": [
+            "with",
+            "example",
+            "science"
+          ],
+          "target": "thehat"
+        },
+        "output": 3,
+        "explanation": "We need 3 stickers: 'with' to get 'h', 'example' for 'e', and 'science' for 't'."
+      },
+      {
+        "input": {
+          "stickers": [
+            "notice",
+            "possible"
+          ],
+          "target": "basicpossible"
+        },
+        "output": -1,
+        "explanation": "It's impossible to form 'basicpossible' with the given stickers."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about how to represent the frequency of each letter in stickers.",
+      "Use backtracking or dynamic programming to minimize the number of used stickers.",
+      "Consider the minimum number of stickers needed for smaller prefixes of the target."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Merge k Sorted Lists",
+    "description": "You are given an array of k linked lists, each linked list is sorted in ascending order. You need to merge all the linked lists into a single sorted linked list and return it. Please note that the linked list should be returned as part of a new list of nodes, with no nodes from the original lists reused.",
+    "topic": "Linked List",
+    "subtopic": "Merge",
+    "tags": [
+      "Linked List",
+      "Sorting",
+      "Merge"
+    ],
+    "input_format": "An array of head pointers of k linked lists.",
+    "output_format": "A head pointer of the merged linked list.",
+    "constraints": [
+      "0 <= k <= 10^4",
+      "0 <= n <= 500",
+      "The total number of nodes in all linked lists will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "lists = [[1, 4, 5], [1, 3, 4], [2, 6]]",
+        "output": "[1, 1, 2, 3, 4, 4, 5, 6]",
+        "explanation": "The merged linked list is 1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6."
+      },
+      {
+        "input": "lists = []",
+        "output": "[]",
+        "explanation": "There are no linked lists to merge, so the result is an empty list."
+      },
+      {
+        "input": "lists = [[-1, 5, 11], [0, 2, 4], [1, 3, 4]]",
+        "output": "[-1, 0, 1, 2, 3, 4, 4, 5, 11]",
+        "explanation": "The merged linked list is -1 -> 0 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 11."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a priority queue to efficiently get the smallest element.",
+      "You can use a 'dummy' node to simplify the merge process."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given an array of intervals where intervals[i] = [start, end], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging Intervals",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals",
+      "Merging"
+    ],
+    "input_format": "An array of intervals intervals, where 1 <= intervals.length <= 10^4.",
+    "output_format": "An array of merged intervals.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "-10^5 <= intervals[i][0] <= intervals[i][1] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "Since intervals [1,3] and [2,6] overlap, they are merged into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The two intervals [1,4] and [4,5] overlap at point 4, so they merge into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the start time.",
+      "Iterate through the sorted intervals and merge them if they overlap."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Design Snake Game",
+    "description": "Design a simple Snake Game. The game starts with a snake of length 1 and grows as it eats food items appearing at random locations on the grid. The player can control the direction of the snake using commands: 'U' (up), 'D' (down), 'L' (left), and 'R' (right). The game ends when the snake collides with itself or the wall. You need to implement a method to move the snake and keep track of the score based on the number of food items eaten.",
+    "topic": "Game Development",
+    "subtopic": "Simulation",
+    "tags": [
+      "Game",
+      "Simulation",
+      "Snake",
+      "Data Structures"
+    ],
+    "input_format": "A list of commands (strings) representing the movement of the snake.",
+    "output_format": "An integer representing the score (number of food items eaten).",
+    "constraints": [
+      "1 <= commands.length <= 1000",
+      "The grid boundaries are defined by [0, 0] to [width - 1, height - 1].",
+      "The snake starts at the position (0, 0) and initially moves right."
+    ],
+    "examples": [
+      {
+        "input": "commands = ['R', 'R', 'D', 'D', 'L', 'U']",
+        "output": "1",
+        "explanation": "After executing the commands, the snake eats one food item and its length grows."
+      },
+      {
+        "input": "commands = ['R', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'R']",
+        "output": "0",
+        "explanation": "The snake collides with itself after some movements, resulting in a score of 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to maintain the position of the snake as it grows.",
+      "Use a set to keep track of the snake's body to check for collisions easily."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Derangement of An Array",
+    "description": "Given an integer n, return the number of derangements (permutations such that no element appears in its original position) of the array [0, 1, 2, ..., n - 1]. Since the answer can be very large, return it modulo 10^9 + 7.",
+    "topic": "Mathematics",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Math",
+      "Dynamic Programming",
+      "Combinatorics"
+    ],
+    "input_format": "An integer n (0 <= n <= 10^6).",
+    "output_format": "An integer representing the number of derangements modulo 10^9 + 7.",
+    "constraints": [
+      "0 <= n <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "2",
+        "explanation": "The two valid derangements of [0, 1, 2] are [1, 2, 0] and [2, 0, 1]."
+      },
+      {
+        "input": "n = 4",
+        "output": "9",
+        "explanation": "The nine valid derangements of [0, 1, 2, 3] can be found by listing them out or calculating using the derangement formula."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use dynamic programming to build a solution iteratively.",
+      "The formula for derangements is D(n) = (n - 1) * (D(n - 1) + D(n - 2))."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Fraction to Recurring Decimal",
+    "description": "Given two integers representing the numerator and denominator of a fraction, return the fraction in string format. If the fractional part is repeating, enclose the repeating part in parentheses. For example, given the input 1 and 3, the output should be '0.(3)'. If the fraction is a whole number, return just the number.",
+    "topic": "Math",
+    "subtopic": "Fractions",
+    "tags": [
+      "Math",
+      "Fractions",
+      "String Manipulation"
+    ],
+    "input_format": "Two integers, numerator and denominator.",
+    "output_format": "A string representing the fraction in the required format.",
+    "constraints": [
+      "-2^31 <= numerator, denominator <= 2^31 - 1",
+      "denominator != 0"
+    ],
+    "examples": [
+      {
+        "input": "numerator = 1, denominator = 3",
+        "output": "0.(3)",
+        "explanation": "The fraction 1/3 is equal to 0.333..., which repeats 3, so we enclose it in parentheses."
+      },
+      {
+        "input": "numerator = 2, denominator = 1",
+        "output": "2",
+        "explanation": "The fraction 2/1 is a whole number."
+      },
+      {
+        "input": "numerator = 4, denominator = 333",
+        "output": "0.(012)",
+        "explanation": "The fraction 4/333 equals approximately 0.012012012..., thus the repeating part is 012."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a map to store previously seen remainders.",
+      "Keep track of the index where each remainder occurs."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Find Median from Data Stream",
+    "description": "The median is the middle value in a list of numbers. If the list has an even number of elements, the median is the average of the two middle values. Implement a data structure that supports the following operations: insertNum(int num) - Adds a integer number from the data stream, and findMedian() - Returns the median of all elements so far. Your solution should handle a stream of numbers efficiently.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Median"
+    ],
+    "input_format": "A stream of integers where each integer is added one at a time.",
+    "output_format": "A floating-point number representing the median of the elements received so far.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "insertNum(1), insertNum(2), findMedian()",
+        "output": "1.5",
+        "explanation": "The numbers currently in the data stream are [1, 2]. The median is (1 + 2) / 2 = 1.5."
+      },
+      {
+        "input": "insertNum(3), findMedian()",
+        "output": "2.0",
+        "explanation": "The numbers currently in the data stream are [1, 2, 3]. The median is 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use two heaps to maintain the larger and smaller half of the stream.",
+      "Ensure that you balance the sizes of the two heaps."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Steps to Make Two Strings Anagram",
+    "description": "Given two strings s and t, return the minimum number of steps required to make s and t anagram of each other. In one step, you can remove one character from either string. An anagram of a string is another string that contains the same characters, only the order of characters can be different. For example, 'anagram' and 'nagaram' are anagrams, but 'rat' and 'car' are not.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Anagram",
+      "Counting"
+    ],
+    "input_format": "Two strings s and t, separated by a space.",
+    "output_format": "An integer representing the minimum number of steps required.",
+    "constraints": [
+      "1 <= s.length, t.length <= 10^5",
+      "s and t consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'anagram' t = 'manga'",
+        "output": "3",
+        "explanation": "We need to remove the characters 'a', 'g', and 'n' from 'anagram' to make it an anagram of 'manga'."
+      },
+      {
+        "input": "s = 'hello' t = 'billion'",
+        "output": "10",
+        "explanation": "We need to remove the characters 'h', 'e', 'l', 'l', 'o', 'b', 'i', 'l', 'l', 'i', 'o', 'n' to make them anagrams."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count the frequency of each character in both strings.",
+      "Calculate the total deletions required by comparing character counts."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Find Peak Element",
+    "description": "A peak element in an array is an element that is strictly greater than its neighbors. Given an integer array nums, find any peak element and return its index. You may assume that the array is non-empty and has at least one peak element. You can return any peak index as your answer.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Peak Element"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the index of a peak element.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "2",
+        "explanation": "Index 2 is a peak element because nums[2] = 3 > nums[1] = 2 and nums[2] = 3 > nums[3] = 1."
+      },
+      {
+        "input": "nums = [1, 2, 1, 3, 5, 6, 4]",
+        "output": "1 or 5",
+        "explanation": "Both indices 1 and 5 are peak elements. At index 1, nums[1] = 2 > nums[0] = 1 and nums[1] = 2 > nums[2] = 1. At index 5, nums[5] = 6 > nums[4] = 5 and nums[5] = 6 > nums[6] = 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of peak elements.",
+      "You might want to use binary search to find a peak efficiently."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator II",
+    "description": "Implement a basic calculator to evaluate a simple expression string containing non-negative integers, '+', '-', '*', and '/' operators. The expression string should not contain any parentheses and will be evaluated using standard operator precedence. The input expression is guaranteed to be a valid expression consisting of integers and operators only, with at least one valid operator present.",
+    "topic": "String",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "String",
+      "Expression Evaluation",
+      "Calculator"
+    ],
+    "input_format": "A string expression containing non-negative integers and the operators '+', '-', '*', '/'.",
+    "output_format": "An integer representing the result of the evaluated expression.",
+    "constraints": [
+      "1 <= expression.length <= 10^4",
+      "The expression consists of valid characters, including digits and the operators: '+', '-', '*', and '/'.",
+      "No spaces are allowed within the expression."
+    ],
+    "examples": [
+      {
+        "input": "expression = '3+2*2'",
+        "output": "7",
+        "explanation": "Following operator precedence, the expression is evaluated as 3 + (2 * 2) = 3 + 4 = 7."
+      },
+      {
+        "input": "expression = ' 3/2 '",
+        "output": "1",
+        "explanation": "The evaluation is done as floor(3 / 2) which results in 1."
+      },
+      {
+        "input": "expression = ' 3 + 5 / 2 '",
+        "output": "5",
+        "explanation": "First, evaluate 5 / 2 = 2 (integer division). Then, 3 + 2 = 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to handle operator precedence.",
+      "You may want to use a stack for managing operations.",
+      "Consider how to deal with spaces in the input."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "1-bit and 2-bit Characters",
+    "description": "We have a binary array `bits` that only contains 0s and 1s. A character can be represented by either a '0' or a '10' or '11'. A character represented by '0' is called a 1-bit character, while '10' and '11' are called 2-bit characters. Given the array `bits`, determine if the last character must be a 1-bit character. You should return true if the last character can be a 1-bit character, otherwise return false.",
+    "topic": "Array",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Array",
+      "Bit Manipulation",
+      "Greedy"
+    ],
+    "input_format": "An array of integers bits (0s and 1s) where bits[i] is the i-th element of the array.",
+    "output_format": "A boolean value indicating if the last character must be a 1-bit character.",
+    "constraints": [
+      "1 <= bits.length <= 1000",
+      "bits[i] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "bits = [1, 0, 0]",
+        "output": "true",
+        "explanation": "The last character in this case is 0, which is a 1-bit character."
+      },
+      {
+        "input": "bits = [1, 1, 1, 0]",
+        "output": "false",
+        "explanation": "The last character in this case cannot be a 1-bit character since the last bits are 10."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the last bit and how many bits have been processed."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. All operations should be done in average O(1) time complexity. The data structure should store unique integers only. The insert operation adds an integer to the structure, the delete operation removes it, and the getRandom operation returns a random integer from the structure.",
+    "topic": "Data Structure",
+    "subtopic": "Implementing Data Structures",
+    "tags": [
+      "Hash Table",
+      "Array",
+      "Random"
+    ],
+    "input_format": "Each operation is represented by a string. The possible operations are: 'insert(val)', 'delete(val)', and 'getRandom()'.",
+    "output_format": "For getRandom(), return a random integer chosen from the current elements in the data structure.",
+    "constraints": [
+      "Each element in the data structure is unique.",
+      "The number of calls to insert, delete, and getRandom will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "insert(1); insert(2); insert(3); getRandom(); delete(1); getRandom();",
+        "output": "1 or 2 or 3, then 2 or 3",
+        "explanation": "After inserting 1, 2, and 3, getRandom can return any of these values. After deleting 1, getRandom can return 2 or 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to track indices of elements.",
+      "Use an array to store the elements for easy random access."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts",
+    "description": "You are given a rectangular cake represented by its width and height. The cake can be divided with horizontal and vertical cuts. You are provided with two arrays that represent the positions of these cuts: one array for horizontal cuts and another for vertical cuts. Your task is to find the maximum area of a piece of cake that can be obtained after making all the cuts. The area is defined by the width and height of the resulting pieces of cake. Ensure to return the area modulo 10^9 + 7.",
+    "topic": "Geometry",
+    "subtopic": "Area Calculation",
+    "tags": [
+      "Geometry",
+      "Arrays",
+      "Modulus"
+    ],
+    "input_format": "Two integers, height and width of the cake followed by two arrays of integers, horizontalCuts and verticalCuts.",
+    "output_format": "An integer representing the maximum area of a piece of cake mod 10^9 + 7.",
+    "constraints": [
+      "1 <= height, width <= 10^9",
+      "0 <= horizontalCuts.length <= min(100, height)",
+      "0 <= verticalCuts.length <= min(100, width)",
+      "0 <= horizontalCuts[i] < height",
+      "0 <= verticalCuts[j] < width"
+    ],
+    "examples": [
+      {
+        "input": "height = 5, width = 4, horizontalCuts = [1, 2, 4], verticalCuts = [1, 3]",
+        "output": "4",
+        "explanation": "The maximum area can be obtained in the piece defined by cuts: (2, 1) and (5, 3), which results in an area of 4."
+      },
+      {
+        "input": "height = 5, width = 4, horizontalCuts = [3], verticalCuts = [3]",
+        "output": "6",
+        "explanation": "The maximum area can be obtained in the piece defined by cuts: (0, 3) and (3, 4), which results in an area of 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Calculate the distances between the cuts to determine potential piece dimensions.",
+      "Use the modulo operation for large results."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "Given an integer array nums sorted in ascending order and possibly rotated at some pivot unknown to you beforehand, return the index of the target if it is in nums, or -1 if it is not in nums. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Searching"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An integer representing the index of target in nums or -1 if not found.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "\u201310^4 <= nums[i] <= 10^4",
+      "nums is guaranteed to be rotated at some pivot."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "The target 0 is found at index 4."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "The target 3 is not present in the array, hence -1."
+      },
+      {
+        "input": "nums = [1], target = 0",
+        "output": "-1",
+        "explanation": "The target 0 is not present in the single-element array, hence -1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider dividing the array into two parts.",
+      "Check which part is sorted and determine if the target is in that part.",
+      "Use binary search for a more efficient approach."
+    ],
+    "company": "IXL"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given a total of n courses that you have to take, labeled from 0 to n-1. Some courses may have prerequisites, which means that to take course i, you must first take course j. Given the integer n and a list of prerequisite pairs, determine if it is possible for you to finish all courses. Return true if you can finish all courses, otherwise return false.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "An integer n and a list of prerequisite pairs, where each pair [i, j] indicates that to take course i, you must first complete course j.",
+    "output_format": "Return true if you can finish all courses; otherwise, return false.",
+    "constraints": [
+      "The input prerequisites are a list of pairs where 0 <= prerequisites.length <= 10^4.",
+      "0 <= prerequisites[i][0], prerequisites[i][1] < n.",
+      "No duplicate prerequisites will exist."
+    ],
+    "examples": [
+      {
+        "input": "n = 2, prerequisites = [[1, 0]]",
+        "output": "true",
+        "explanation": "You can take course 0 first, and then take course 1."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1, 0], [0, 1]]",
+        "output": "false",
+        "explanation": "There is a cycle in the prerequisites; hence, you cannot finish all courses."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think of the courses as nodes in a graph.",
+      "Try to visualize the problem with topological sorting."
+    ],
+    "company": "IXL"
+  }
+]

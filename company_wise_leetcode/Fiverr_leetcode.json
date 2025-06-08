@@ -1,0 +1,71 @@
+[
+  {
+    "question_id": "",
+    "title": "Subsets",
+    "description": "Given a set of distinct integers, return all possible subsets (the power set). The solution set must not contain duplicate subsets. You may return the answer in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Subsets",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "Subsets"
+    ],
+    "input_format": "An array of distinct integers nums.",
+    "output_format": "A list of lists, where each list is a subset of the input array.",
+    "constraints": [
+      "0 <= nums.length <= 10",
+      "-10 <= nums[i] <= 10"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[[], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]]",
+        "explanation": "All subsets of [1, 2, 3] include the empty set, single elements, pairs, and the full set."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[[], [0]]",
+        "explanation": "The subsets of [0] are the empty set and the set containing 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to generate all possible subsets.",
+      "You can start with an empty subset and explore adding each element."
+    ],
+    "company": "Fiverr"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. It should support the following operations: get and put. The get operation retrieves an item from the cache, while the put operation adds an item to the cache. If the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structures",
+    "subtopic": "Cache",
+    "tags": [
+      "Cache",
+      "Data Structures",
+      "Design"
+    ],
+    "input_format": "The cache will be initialized with a positive capacity.",
+    "output_format": "Return the value of the key if the key exists, otherwise return -1 when calling the get method.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^4",
+      "The cache will be initialized with a positive capacity."
+    ],
+    "examples": [
+      {
+        "input": "cache = LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4)",
+        "output": "[1, -1, 3, 4]",
+        "explanation": "Cache capacity is 2. After adding (1, 1) and (2, 2), the cache contains {1=1, 2=2}. get(1) returns 1, so cache is now {2=2, 1=1} (1 is most recently used). Adding (3, 3) removes (2, 2), cache now contains {1=1, 3=3}. get(2) returns -1 since it's not found. Then adding (4, 4) removes (1, 1), leading to {3=3, 4=4}. Finally, get(1) returns -1, get(3) returns 3, and get(4) returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap for fast access.",
+      "A doubly linked list can help keep track of the order of usage."
+    ],
+    "company": "Fiverr"
+  }
+]

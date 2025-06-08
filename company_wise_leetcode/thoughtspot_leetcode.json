@@ -1,0 +1,452 @@
+[
+  {
+    "question_id": "",
+    "title": "Count Subarrays With Median K",
+    "description": "Given an integer array nums and an integer k, return the number of subarrays in which the median is equal to k. A subarray's median is defined as the middle element when the subarray is sorted. If the subarray has an even number of elements, the median is the average of the two middle elements. Your task is to count how many such subarrays exist.",
+    "topic": "Array",
+    "subtopic": "Subarray Counting",
+    "tags": [
+      "Array",
+      "Subarray",
+      "Counting"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the count of subarrays with median equal to k.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5",
+      "1 <= k <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 2, 4, 5], k = 3",
+        "output": "4",
+        "explanation": "The valid subarrays with median 3 are [3], [1, 3, 2, 4], [3, 2, 4], and [3, 2]."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4], k = 5",
+        "output": "0",
+        "explanation": "There are no subarrays with median equal to 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a sliding window approach to find possible subarrays.",
+      "Keep track of counts of elements to calculate medians efficiently.",
+      "Consider both odd and even lengths of subarrays for median calculations."
+    ],
+    "company": "thoughtspot"
+  },
+  {
+    "question_id": "",
+    "title": "Count Paths That Can Form a Palindrome in a Tree",
+    "description": "Given a binary tree, count the number of distinct paths that can form a palindrome. A path is defined as a sequence of nodes from the root to any leaf node, and a string can form a palindrome if at most one character has an odd frequency of occurrence. You need to consider the values of the nodes in the tree as characters for the purpose of palindrome formation.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "Depth-First Search",
+      "Palindrome"
+    ],
+    "input_format": "The input will be the root node of the binary tree.",
+    "output_format": "An integer representing the count of paths that can form a palindrome.",
+    "constraints": [
+      "1 <= Number of nodes <= 1000",
+      "Node values are lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "root = [2,3,1,3,1,null,1]",
+        "output": "2",
+        "explanation": "There are two paths that can form a palindrome: '231' and '211'."
+      },
+      {
+        "input": "root = [1,2,3,4,5,null,6]",
+        "output": "0",
+        "explanation": "No paths in the tree can form a palindrome."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a bit manipulation approach to keep track of frequencies of characters.",
+      "A path can form a palindrome if at most one character has an odd count."
+    ],
+    "company": "thoughtspot"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) Cache. The cache should support the following operations: get and put. The get operation will return the value of the key if the key exists in the cache, otherwise, it will return -1. The put operation will add or update the value of the key. If the number of keys exceeds the capacity, the least recently used key should be removed.",
+    "topic": "Data Structure",
+    "subtopic": "Cache",
+    "tags": [
+      "Data Structure",
+      "Cache",
+      "Design"
+    ],
+    "input_format": "The LRUCache constructor should be called with a positive capacity.",
+    "output_format": "For the get operation, return the value associated with the key. For the put operation, nothing is returned.",
+    "constraints": [
+      "The capacity of the cache is between 1 and 3000.",
+      "The keys and values for the operations are integers in the range of 1 to 10^4.",
+      "The number of operations will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1,-1,-1,4]",
+        "explanation": "After putting (1,1) and (2,2), the cache is {1=1, 2=2}. The get(1) returns 1, now the cache is {2=2, 1=1}. When we put (3,3), it evicts the key 2 since it is the least recently used. The subsequent operations result in the expected outputs."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to store key-value pairs for O(1) access.",
+      "Use a doubly linked list to keep track of the usage order."
+    ],
+    "company": "thoughtspot"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Window Substring",
+    "description": "Given two strings `s` and `t`, return the minimum window substring of `s` such that every character in `t` (including duplicates) is included in the window. If there is no such substring, return the empty string \"\". The test cases are generated such that the answer is unique.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Two Pointers",
+      "Hash Table"
+    ],
+    "input_format": "Two strings `s` and `t` where 1 <= s.length, t.length <= 10000.",
+    "output_format": "A string representing the minimum window substring that contains all characters of `t`.",
+    "constraints": [
+      "1 <= s.length, t.length <= 10^5",
+      "s and t consist of English letters, and `t` may contain duplicate characters."
+    ],
+    "examples": [
+      {
+        "input": "\"ADOBECODEBANC\", \"ABC\"",
+        "output": "\"BANC\"",
+        "explanation": "The smallest substring of `s` that contains all characters of `t` is \"BANC\"."
+      },
+      {
+        "input": "\"a\", \"a\"",
+        "output": "\"a\"",
+        "explanation": "The entire string `s` is the minimum window substring."
+      },
+      {
+        "input": "\"a\", \"aa\"",
+        "output": "\"\"",
+        "explanation": "There is no substring in `s` that contains all characters of `t`."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a hashmap to count characters from `t`.",
+      "Expand the right end of the window to include characters.",
+      "Contract the left end of the window to minimize the size."
+    ],
+    "company": "thoughtspot"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of K Consecutive Bit Flips",
+    "description": "You are given a binary string `s` and an integer `k`. Your goal is to determine the minimum number of bit flips needed to make all characters in the string the same. A bit flip changes a '0' to '1' or a '1' to '0'. You can only flip `k` consecutive bits at a time. If you cannot achieve a uniform string with the given `k`, return -1.",
+    "topic": "String",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "String",
+      "Bit Manipulation",
+      "Greedy"
+    ],
+    "input_format": "A binary string s and an integer k (0 < k <= s.length).",
+    "output_format": "An integer representing the minimum number of flips, or -1 if it's not possible.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of '0's and '1's only."
+    ],
+    "examples": [
+      {
+        "input": "s = \"1100\", k = 1",
+        "output": "2",
+        "explanation": "Flipping each bit individually leads to all bits being uniform after 2 flips."
+      },
+      {
+        "input": "s = \"1100\", k = 2",
+        "output": "1",
+        "explanation": "Flipping the first two bits results in the string becoming \"0000\"."
+      },
+      {
+        "input": "s = \"11110000\", k = 3",
+        "output": "2",
+        "explanation": "Flipping the first three bits twice will lead to a uniform string."
+      },
+      {
+        "input": "s = \"0000\", k = 5",
+        "output": "-1",
+        "explanation": "It is impossible to flip 5 bits in a string of length 4."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a greedy approach to minimize the number of flips.",
+      "A sliding window technique may help with keeping track of flips."
+    ],
+    "company": "thoughtspot"
+  },
+  {
+    "question_id": "",
+    "title": "Snakes and Ladders",
+    "description": "You are given a square board of size n x n, where the numbers from 1 to n^2 are arranged in a specific order. The player starts at square 1 and can roll a dice to move forward. The board includes snakes which take the player backward and ladders which advance the player forward. Your task is to determine the minimum number of moves required to reach the last square (n^2). If it is not possible to reach the last square, return -1.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "An integer n representing the size of the board followed by a list of pairs indicating the starts and endings of ladders and snakes.",
+    "output_format": "An integer representing the minimum number of moves to reach the last square or -1 if unreachable.",
+    "constraints": [
+      "1 <= n <= 30",
+      "The number of ladders and snakes does not exceed n^2."
+    ],
+    "examples": [
+      {
+        "input": "n = 6, snakes_and_ladders = [[2, 15], [5, 9], [9, 2]]",
+        "output": "3",
+        "explanation": "From square 1, the player can roll to square 2 (snake) then 15, then to 5 and finally 12 to reach the end in 3 moves."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use BFS to explore all possible moves.",
+      "Keep track of visited squares to avoid cycles."
+    ],
+    "company": "thoughtspot"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "Depth First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid of '1's and '0's, where 1 represents land and 0 represents water.",
+    "output_format": "An integer representing the number of islands.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,1,0,0,0],[1,1,0,0,0],[0,0,1,0,0],[0,0,0,1,1]]",
+        "output": "3",
+        "explanation": "There are three islands: one at the top left, one in the middle, and one at the bottom right."
+      },
+      {
+        "input": "grid = [[1,1,1,1,0],[1,0,0,1,0],[1,1,0,1,1],[0,0,0,0,0]]",
+        "output": "1",
+        "explanation": "All land cells are connected, forming a single island."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use Depth First Search (DFS) to traverse the grid.",
+      "Consider marking visited land cells to prevent counting them multiple times."
+    ],
+    "company": "thoughtspot"
+  },
+  {
+    "question_id": "",
+    "title": "Most Stones Removed with Same Row or Column",
+    "description": "You are given a 2D grid representing stones on a board. Each stone is represented by its coordinates (x, y). In one move, you can remove any stone from the board if and only if it is in the same row or the same column as another stone. Your task is to determine the maximum number of stones that can be removed from the board while still ensuring that there is at least one stone left after performing the moves.",
+    "topic": "Graph",
+    "subtopic": "Connected Components",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Union Find"
+    ],
+    "input_format": "A 2D array stones where stones[i] = [x, y] represents the coordinates of the i-th stone.",
+    "output_format": "An integer representing the maximum number of stones that can be removed.",
+    "constraints": [
+      "1 <= stones.length <= 10000",
+      "-10^4 <= stones[i][0], stones[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "stones = [[0,0],[0,1],[1,0],[1,1]]",
+        "output": "3",
+        "explanation": "You can remove three stones from the board: remove two stones from row 0 and one stone from row 1, or vice versa."
+      },
+      {
+        "input": "stones = [[0,0],[0,2],[1,1],[2,1]]",
+        "output": "3",
+        "explanation": "You can remove three stones, one from each row or column. So, two stones from row 0 or column 1 need to be removed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to group stones based on their rows and columns.",
+      "Consider using a graph-based approach to solve the problem."
+    ],
+    "company": "thoughtspot"
+  },
+  {
+    "question_id": "",
+    "title": "Subarray Sums Divisible by K",
+    "description": "Given an integer array nums and an integer k, return the number of subarrays that have a sum divisible by k. A subarray is defined as a contiguous non-empty sequence of elements in the array.",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "Prefix Sum",
+      "Divisibility"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the number of subarrays whose sum is divisible by k.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [4, 5, 0, -2, -3, 1], k = 5",
+        "output": "7",
+        "explanation": "The subarrays that have a sum divisible by 5 are: [4], [5], [0], [4, 5, 0, -2, -3, 1], [-2, -3], [5, 0, -2, -3], and [0]."
+      },
+      {
+        "input": "nums = [1, 2, 3], k = 3",
+        "output": "2",
+        "explanation": "The subarrays that have a sum divisible by 3 are: [3] and [1, 2]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to store the frequency of prefix sums modulo k.",
+      "Every time you find a prefix sum that has the same remainder, it indicates a valid subarray."
+    ],
+    "company": "thoughtspot"
+  },
+  {
+    "question_id": "",
+    "title": "Interleaving String",
+    "description": "Given three strings s1, s2, and s3, determine if s3 is formed by the interleaving of s1 and s2. An interleaving of two strings is a combination where characters from both strings maintain their relative order. The characters from s1 and s2 can appear in any order as long as they maintain their original sequence.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Interleaving"
+    ],
+    "input_format": "Three strings s1, s2, and s3 where 0 <= s1.length, s2.length, s3.length <= 100.",
+    "output_format": "A boolean value indicating whether s3 is an interleaving of s1 and s2.",
+    "constraints": [
+      "s1.length + s2.length == s3.length"
+    ],
+    "examples": [
+      {
+        "input": "s1 = 'aab', s2 = 'xyz', s3 = 'aaxyzb'",
+        "output": "true",
+        "explanation": "The string s3 can be formed by interleaving s1 and s2 while maintaining the relative positions of characters."
+      },
+      {
+        "input": "s1 = 'abc', s2 = 'def', s3 = 'dabcfe'",
+        "output": "false",
+        "explanation": "There's no way to interleave s1 and s2 to form s3 while preserving the order."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dynamic programming approach.",
+      "Think about a 2D array to track interleaving possibilities."
+    ],
+    "company": "thoughtspot"
+  },
+  {
+    "question_id": "",
+    "title": "Count Pairs of Connectable Servers in a Weighted Tree Network",
+    "description": "You are given a weighted tree network with 'n' servers where each edge is associated with a weight representing the connection cost between two servers. Your task is to count the number of pairs of servers (u, v) that can be connected such that the total path cost between them is less than or equal to a given limit 'k'. A valid pair of servers (u, v) is one where u and v are connected directly or indirectly through the tree. Return the total count of such pairs.",
+    "topic": "Graph",
+    "subtopic": "Tree",
+    "tags": [
+      "Graph",
+      "Tree",
+      "DFS",
+      "Count Pairs"
+    ],
+    "input_format": "A list of edges, where each edge is represented as a tuple (u, v, weight), followed by an integer k representing the connection cost limit.",
+    "output_format": "An integer representing the count of valid pairs of servers.",
+    "constraints": [
+      "1 <= n <= 10^4",
+      "1 <= weight <= 1000",
+      "1 <= k <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "edges = [(1, 2, 3), (1, 3, 2), (2, 4, 6)], k = 6",
+        "output": "4",
+        "explanation": "The valid pairs are (1, 2), (1, 3), (2, 4), and (3, 4) with costs <= 6."
+      },
+      {
+        "input": "edges = [(1, 2, 5), (1, 3, 5)], k = 5",
+        "output": "3",
+        "explanation": "The valid pairs are (1, 2), (1, 3), and the direct connection (2, 3) through 1 with cost <= 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use Depth First Search (DFS) to explore the tree.",
+      "Consider the cumulative weights along the paths.",
+      "Count pairs dynamically as you explore."
+    ],
+    "company": "thoughtspot"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber II",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only problem is that adjacent houses have security System connected and it will automatically contact the police if two adjacent houses were broken into on the same night. Given an integer array 'nums' representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police. This is a variation of House Robber I where the houses are arranged in a circle.",
+    "topic": "Dynamic Programming",
+    "subtopic": "House Robber Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers nums representing the money at each house.",
+    "output_format": "An integer representing the maximum amount of money that can be robbed.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 2]",
+        "output": "3",
+        "explanation": "Robbing house 2 (money = 3) is maximum since house 1 and house 3 are adjacent."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Robbing house 1 and house 3 (money = 1 + 3) gives the maximum."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "0",
+        "explanation": "No money to rob."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the subproblems by excluding the first or the last house.",
+      "Use dynamic programming to keep track of maximum amounts."
+    ],
+    "company": "thoughtspot"
+  }
+]

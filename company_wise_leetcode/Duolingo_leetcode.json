@@ -1,0 +1,159 @@
+[
+  {
+    "question_id": "",
+    "title": "Encrypt and Decrypt Strings",
+    "description": "You are tasked with creating a system that can encrypt and decrypt strings using a specific algorithm. The algorithm should take a string as input and return the corresponding encrypted string, and vice versa. You must define the encryption method, ensure that the decryption method correctly reverses the encryption, and handle edge cases such as empty strings and non-alphanumeric characters.",
+    "topic": "String Manipulation",
+    "subtopic": "Encryption and Decryption",
+    "tags": [
+      "String",
+      "Encryption",
+      "Decryption"
+    ],
+    "input_format": "A string s that needs to be encrypted or decrypted.",
+    "output_format": "The encrypted or decrypted string.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'hello'",
+        "output": "khoor",
+        "explanation": "The string 'hello' is encrypted using a simple Caesar cipher with a shift of 3, resulting in 'khoor'."
+      },
+      {
+        "input": "s = 'khoor'",
+        "output": "hello",
+        "explanation": "The string 'khoor' is decrypted back to 'hello' using the reverse of the Caesar cipher with a shift of 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a character map for both encoding and decoding.",
+      "Think about how you can handle characters that wrap around when encrypting."
+    ],
+    "company": "Duolingo"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of People to Teach",
+    "description": "In a group of people, each person has specific subjects they can teach. You want to determine the minimum number of people you need to teach all subjects in the group. Each subject can only be taught by the people who are willing to teach it. You need to return the minimum number of instructors required to cover all subjects.",
+    "topic": "Greedy",
+    "subtopic": "Set Cover",
+    "tags": [
+      "Greedy",
+      "Set Cover",
+      "Intervals"
+    ],
+    "input_format": "An array of pairs, where each pair consists of a subject index and a list of people who can teach that subject.",
+    "output_format": "An integer representing the minimum number of people required to teach all subjects.",
+    "constraints": [
+      "1 <= subjects.length <= 100",
+      "1 <= subjects[i].length <= 50",
+      "0 <= subjects[i][j] < n (n is the number of people)"
+    ],
+    "examples": [
+      {
+        "input": "[[0, [0, 1]], [1, [1, 2]], [2, [0, 2]]]",
+        "output": "2",
+        "explanation": "We can select person 0 to teach subject 0 and 2, and person 1 to teach subject 1."
+      },
+      {
+        "input": "[[0, [0]], [1, [1]], [2, [1, 2]]]",
+        "output": "2",
+        "explanation": "Person 0 can teach subject 0 and person 1 can teach subjects 1 and 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the subjects that each person can teach.",
+      "Try using a greedy approach to select the most effective instructors first."
+    ],
+    "company": "Duolingo"
+  },
+  {
+    "question_id": "",
+    "title": "K Radius Subarray Averages",
+    "description": "Given an integer array nums and an integer k, return an array of the averages of subarrays of size 2k + 1 centered at each element of nums. If there are elements in the subarray that are outside the bounds of the array, consider them as 0. The average should be computed as an integer (rounded down to the nearest integer).",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Average"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An array of integers representing the averages of each subarray of size 2k + 1.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= k < nums.length",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 5, 7, 9], k = 1",
+        "output": "[3, 5, 7]",
+        "explanation": "Subarrays are [1, 3, 5], [3, 5, 7], [5, 7, 9]. Their averages are [3, 5, 7]."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4, 5], k = 2",
+        "output": "[2, 3, 4]",
+        "explanation": "Subarrays are [0, 0, 1, 2, 3], [0, 1, 2, 3, 4], [1, 2, 3, 4, 5]. Their averages are [2, 3, 4] after rounding down."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window to calculate the average efficiently.",
+      "Don't forget to handle the boundaries of the array."
+    ],
+    "company": "Duolingo"
+  },
+  {
+    "question_id": "",
+    "title": "Task Scheduler II",
+    "description": "You are given a list of tasks represented by integers, where each integer represents a unique task. You also have a cooling period `n` (an integer) that denotes the minimum time that must pass between two same tasks. Your goal is to find the least time required to complete all tasks, with the cooling period enforced. If multiple tasks are to be scheduled for the same time, schedule them in any order. If it is impossible to complete all tasks, return -1.",
+    "topic": "Array",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Task Scheduling"
+    ],
+    "input_format": "An array of integers tasks representing the tasks to be scheduled, and an integer n representing the cooling period.",
+    "output_format": "An integer representing the least time required to complete all tasks or -1 if impossible.",
+    "constraints": [
+      "1 <= tasks.length <= 10^4",
+      "0 <= tasks[i] <= 100",
+      "0 <= n <= 100"
+    ],
+    "examples": [
+      {
+        "input": "tasks = [1, 1, 2, 1], n = 2",
+        "output": "7",
+        "explanation": "The optimal order is 1, 2, 1, 1 which results in a total time of 7 with the necessary cooling period."
+      },
+      {
+        "input": "tasks = [1, 2, 3, 1, 2, 3], n = 1",
+        "output": "6",
+        "explanation": "All tasks can be scheduled without violating the cooling period, resulting in a total time of 6."
+      },
+      {
+        "input": "tasks = [1, 1, 1, 2, 2, 2], n = 2",
+        "output": "8",
+        "explanation": "The optimal order is 1, 2, 1, 2, 1, 2, resulting in a total time of 8."
+      },
+      {
+        "input": "tasks = [1, 1, 2, 2, 3, 3, 3], n = 3",
+        "output": "-1",
+        "explanation": "It is impossible to schedule these tasks without violating the cooling period."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a frequency counter to track the number of each task.",
+      "Think about how to efficiently fill the time slots while respecting the cooling period."
+    ],
+    "company": "Duolingo"
+  }
+]

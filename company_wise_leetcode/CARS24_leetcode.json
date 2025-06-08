@@ -1,0 +1,311 @@
+[
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value data structure that supports the following operations: set, get, and get with timestamp. The set function stores a value with a given key and timestamp, the get function retrieves the latest value for a given key, and the get with timestamp retrieves the value for the key at a specific timestamp. If there is no value for a given timestamp, return the value with the next smallest timestamp. If no such value exists, return an empty string.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Data Structure",
+      "Design",
+      "Key-Value Store"
+    ],
+    "input_format": "Operations of type 'set(key, value, timestamp)', 'get(key)', and 'get(key, timestamp)'.",
+    "output_format": "Return value for the key at the requested timestamp or the latest value if no exact timestamp is found.",
+    "constraints": [
+      "1 <= key.length, value.length <= 100",
+      "1 <= timestamp <= 10^9",
+      "The number of operations will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "set('foo', 'bar', 1); set('foo', 'baz', 2); get('foo', 1); get('foo', 3); get('foo', 2); get('foo', 4);",
+        "output": "bar\nbaz\nbaz\n",
+        "explanation": "The value at timestamp 1 is 'bar', at timestamp 3 closest was 'baz', at timestamp 2 is 'baz', and at timestamp 4 there is no value, thus it returns the last known value 'baz'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dictionary to manage timestamps for each key.",
+      "Use a sorted list or tree to efficiently find the largest timestamp less than or equal to a given timestamp."
+    ],
+    "company": "CARS24"
+  },
+  {
+    "question_id": "",
+    "title": "Online Election",
+    "description": "In an online election, there are a number of candidates who receive votes from voters. Given an array of votes where each element represents the ID of a candidate who received a vote, you need to determine the candidate with the highest number of votes. If there is a tie, return the candidate with the smallest ID.",
+    "topic": "Hash Table",
+    "subtopic": "Counting Frequencies",
+    "tags": [
+      "Hash Table",
+      "Counting",
+      "Election"
+    ],
+    "input_format": "An array of integers votes where each integer is the ID of a candidate.",
+    "output_format": "An integer representing the ID of the candidate with the highest votes.",
+    "constraints": [
+      "1 <= votes.length <= 10^5",
+      "1 <= votes[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "votes = [1, 2, 2, 3, 3, 3]",
+        "output": "3",
+        "explanation": "Candidate 3 received the most votes (3 votes), while candidates 1 and 2 received 1 and 2 votes respectively."
+      },
+      {
+        "input": "votes = [1, 1, 2, 2]",
+        "output": "1",
+        "explanation": "Both candidates 1 and 2 received 2 votes, but candidate 1 has the smaller ID."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to count the number of votes for each candidate.",
+      "Iterate over the hash map to determine the candidate with the maximum votes."
+    ],
+    "company": "CARS24"
+  },
+  {
+    "question_id": "",
+    "title": "Rabbits in Forest",
+    "description": "In a forest, there are rabbits hiding in the bushes. Each rabbit can be either black or white, and you need to keep track of how many of each color there are. Given a list of rabbit colors represented as characters ('B' for black and 'W' for white), implement a function to find the total number of each color. Return the counts in the format {'B': count_of_black, 'W': count_of_white}.",
+    "topic": "Hash Table",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Hash Table",
+      "Counting",
+      "Strings"
+    ],
+    "input_format": "A string s representing the colors of the rabbits where 'B' is a black rabbit and 'W' is a white rabbit.",
+    "output_format": "A dictionary with keys 'B' and 'W', representing the counts of black and white rabbits respectively.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s[i] is either 'B' or 'W'."
+    ],
+    "examples": [
+      {
+        "input": "s = 'BBWWBW'",
+        "output": "{'B': 3, 'W': 3}",
+        "explanation": "There are three 'B' characters and three 'W' characters."
+      },
+      {
+        "input": "s = 'BWBWB'",
+        "output": "{'B': 3, 'W': 2}",
+        "explanation": "There are three 'B' characters and two 'W' characters."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dictionary to count the occurrences of each character.",
+      "Iterate through the string and update counts accordingly."
+    ],
+    "company": "CARS24"
+  },
+  {
+    "question_id": "",
+    "title": "Open the Lock",
+    "description": "You have a lock that has four wheels, each of which can be set to a digit from 0 to 9. Initially, all wheels are set to '0000'. Your goal is to open the lock by turning the wheels to reach a target combination. Each turn can be made by changing one wheel by +1 or -1. For example, turning '0' to '1' or '0' to '9' (a wrap-around). You are given a list of deadends, which are combinations that will cause the lock to remain locked. Write a function to determine the minimum number of turns required to open the lock, or return -1 if it's impossible.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "BFS",
+      "Graph",
+      "Hash Table"
+    ],
+    "input_format": "A string target representing the target combination and a list of strings deadends.",
+    "output_format": "An integer representing the minimum number of turns to open the lock, or -1 if impossible.",
+    "constraints": [
+      "1 <= deadends.length <= 1000",
+      "target.length == 4",
+      "deadends[i].length == 4",
+      "All entries in deadends will be unique."
+    ],
+    "examples": [
+      {
+        "input": {
+          "target": "0202",
+          "deadends": [
+            "0201",
+            "0101",
+            "0102",
+            "1212",
+            "2002"
+          ]
+        },
+        "output": "6",
+        "explanation": "From '0000', we can go to '0001', then '0002', then '0012', then '0022', then '0202', taking a total of 6 turns."
+      },
+      {
+        "input": {
+          "target": "8888",
+          "deadends": [
+            "0000"
+          ]
+        },
+        "output": "-1",
+        "explanation": "The combination '0000' is a deadend, and hence it's impossible to reach '8888'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use BFS to explore all potential combinations.",
+      "Keep track of visited combinations to avoid cycles.",
+      "Consider the wrap-around effect when turning wheels."
+    ],
+    "company": "CARS24"
+  },
+  {
+    "question_id": "",
+    "title": "Bulls and Cows",
+    "description": "You are given two strings, secret and guess, each consisting of only digits. 'Bulls' are the number of digits that are in the correct position, while 'Cows' are the number of digits that are in the guess but not in the correct position. Your task is to calculate the Bulls and Cows count based on these definitions and return the result in the format 'xAyB', where x is the number of Bulls and y is the number of Cows.",
+    "topic": "String",
+    "subtopic": "Counting",
+    "tags": [
+      "String",
+      "Count",
+      "Game"
+    ],
+    "input_format": "Two strings, secret and guess, each of length n (1 <= n <= 100).",
+    "output_format": "A string formatted as 'xAyB', representing the count of Bulls and Cows.",
+    "constraints": [
+      "1 <= secret.length, guess.length <= 100",
+      "secret and guess consist of digits only."
+    ],
+    "examples": [
+      {
+        "input": {
+          "secret": "1807",
+          "guess": "7810"
+        },
+        "output": "1A3B",
+        "explanation": "1 Bull (the digit 8), and 3 Cows (the digits 1, 0, and 7)."
+      },
+      {
+        "input": {
+          "secret": "1123",
+          "guess": "0111"
+        },
+        "output": "1A1B",
+        "explanation": "1 Bull (the digit 1 in the first position), and 1 Cow (the digit 1 in the guess)"
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a counting array to track occurrences of digits.",
+      "Iterate through both strings to find Bulls first."
+    ],
+    "company": "CARS24"
+  },
+  {
+    "question_id": "",
+    "title": "Counter",
+    "description": "Given a string, count and return the number of occurrences of each character in the string. The output should be a dictionary where keys are the characters and values are their respective counts. Characters are case-sensitive, meaning 'a' and 'A' are considered different characters.",
+    "topic": "String",
+    "subtopic": "Counting Characters",
+    "tags": [
+      "String",
+      "Count",
+      "Dictionary"
+    ],
+    "input_format": "A single string s, which may contain uppercase and lowercase letters, digits, and special characters.",
+    "output_format": "A dictionary representing the count of each character in the input string.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s can contain any printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'aabBcC'",
+        "output": "{'a': 2, 'B': 1, 'b': 1, 'C': 1, 'c': 1}",
+        "explanation": "'a' occurs 2 times, 'B' occurs 1 time, 'b' occurs 1 time, 'C' occurs 1 time, and 'c' occurs 1 time."
+      },
+      {
+        "input": "s = 'Hello, World!'",
+        "output": "{'H': 1, 'e': 1, 'l': 3, 'o': 2, ',': 1, ' ': 1, 'W': 1, 'r': 1, 'd': 1, '!': 1}",
+        "explanation": "Counts of each character based on their occurrences."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a dictionary to store character counts.",
+      "Iterate through each character in the string to update its count."
+    ],
+    "company": "CARS24"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected. If two adjacent houses were broken into on the same night, the alarm will automatically be triggered. Given an integer array 'nums' representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.",
+    "topic": "Dynamic Programming",
+    "subtopic": "House Robber Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An integer array nums where 1 <= nums.length <= 100, and 0 <= nums[i] <= 400.",
+    "output_format": "An integer representing the maximum amount of money you can rob.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 400"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 9, 3, 1]",
+        "output": "12",
+        "explanation": "Robbing house 1 (2) + house 3 (9) + house 5 (1) yields the maximum amount: 2 + 9 + 1 = 12."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Robbing house 1 (1) + house 3 (3) yields the maximum amount: 1 + 3 = 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how you can break down the problem into subproblems.",
+      "Consider the decision to rob or skip each house."
+    ],
+    "company": "CARS24"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, if you have two intervals [1,3] and [2,6], they overlap, so we merge them into [1,6]. The result should be a list of merged intervals sorted by their start values.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals",
+      "Merge"
+    ],
+    "input_format": "A list of intervals where each interval is represented as a list of two integers [start, end].",
+    "output_format": "A list of merged intervals sorted by their start values.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "[[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap and are merged into [1,6]."
+      },
+      {
+        "input": "[[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] overlap at 4 and are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the starting time.",
+      "Use a stack or a list to keep track of merged intervals."
+    ],
+    "company": "CARS24"
+  }
+]

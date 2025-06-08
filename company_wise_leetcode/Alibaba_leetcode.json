@@ -1,0 +1,211 @@
+[
+  {
+    "question_id": "",
+    "title": "Split Array with Equal Sum",
+    "description": "Given an integer array nums, you need to determine if it is possible to split nums into two non-empty subsets such that the sum of elements in both subsets is the same. You must return true if such a split is possible, otherwise return false.",
+    "topic": "Array",
+    "subtopic": "Subset Sum",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Subset",
+      "Backtracking"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A boolean value indicating whether the array can be split into two subsets with equal sums.",
+    "constraints": [
+      "1 <= nums.length <= 200",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 5, 11, 5]",
+        "output": "true",
+        "explanation": "The array can be split into two subsets: [1, 5, 5] and [11] which both have a sum of 11."
+      },
+      {
+        "input": "nums = [1, 2, 3, 5]",
+        "output": "false",
+        "explanation": "It is not possible to split the array into two subsets with equal sum."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to solve the subset sum problem.",
+      "The total sum must be even for it to be split into two equal parts.",
+      "Try to find a subset with a sum equal to half of the total sum."
+    ],
+    "company": "Alibaba"
+  },
+  {
+    "question_id": "",
+    "title": "Split Concatenated Strings",
+    "description": "You are given a list of strings where each string is a valid concatenation of one or more strings from the same list (i.e., a concatenated string). Your task is to determine if any of the strings in the list can be split into two non-empty parts such that both parts are also present in the list. If at least one such string exists, return true; otherwise, return false.",
+    "topic": "Strings",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Strings",
+      "Manipulation",
+      "Set"
+    ],
+    "input_format": "A list of strings 'words'.",
+    "output_format": "A boolean value indicating whether any string can be split into two parts found in the list.",
+    "constraints": [
+      "1 <= words.length <= 1000",
+      "1 <= words[i].length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "words = [\"cat\", \"cats\", \"and\", \"dog\", \"catdog\"]",
+        "output": "true",
+        "explanation": "The string 'catdog' can be split into 'cat' and 'dog', both of which are in the list."
+      },
+      {
+        "input": "words = [\"apple\", \"pen\", \"applepen\", \"pine\", \"pineapple\"]",
+        "output": "true",
+        "explanation": "The string 'applepen' can be split into 'apple' and 'pen', both of which are in the list."
+      },
+      {
+        "input": "words = [\"cats\", \"dog\", \"day\"]",
+        "output": "false",
+        "explanation": "No string can be concatenated from two non-empty strings found in the list."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a set for quick lookups.",
+      "Iterate over each string and try splitting it into all possible pairs."
+    ],
+    "company": "Alibaba"
+  },
+  {
+    "question_id": "",
+    "title": "Path Sum IV",
+    "description": "You are given a binary tree represented as a list of integers with a specific structure, which is rooted at index 0. The number at each index represents the value of a node, and for each node at index i, the left child can be found at index 2*i + 1 and the right child at index 2*i + 2. Given this representation, you need to determine if there exists a root-to-leaf path in the tree such that the sum of the values along that path equals a given target value.",
+    "topic": "Tree",
+    "subtopic": "Depth First Search",
+    "tags": [
+      "Tree",
+      "Depth First Search",
+      "Path Sum"
+    ],
+    "input_format": "Two inputs: an array of integers representing the tree and an integer target representing the desired path sum.",
+    "output_format": "A boolean value indicating whether such a path exists (true) or not (false).",
+    "constraints": [
+      "1 <= tree.length <= 1000",
+      "-1000 <= tree[i] <= 1000",
+      "-1000 <= target <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "tree = [5, 4, 8, 11, null, 13, 4], target = 22",
+        "output": "true",
+        "explanation": "The path 5 -> 4 -> 11 sums up to 20. Another path 5 -> 8 -> 4 sums up to 17. We find that 5 -> 4 -> 11 -> 2 does not work since 20 + 2 = 22 but we can take the right path."
+      },
+      {
+        "input": "tree = [1, 2, 3], target = 5",
+        "output": "false",
+        "explanation": "There is no path in the tree that sums up to 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use depth-first search to explore all paths.",
+      "Keep track of the current sum as you traverse the tree.",
+      "Check if the current node is a leaf node before adding to the sum."
+    ],
+    "company": "Alibaba"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parenthesis String",
+    "description": "Given a string s consisting of only the characters '(', ')', and '*', return true if s is valid. A string is considered valid if the brackets are closed in the correct order. The '*' character can represent either an empty string, '(', or ')'.",
+    "topic": "String",
+    "subtopic": "Validation",
+    "tags": [
+      "String",
+      "Validation",
+      "Greedy"
+    ],
+    "input_format": "A string s consisting of characters '(', ')', and '*'.",
+    "output_format": "A boolean value indicating whether the string is valid.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of characters '(', ')', and '*'"
+    ],
+    "examples": [
+      {
+        "input": "s = \"()\"",
+        "output": "true",
+        "explanation": "The string is already valid."
+      },
+      {
+        "input": "s = \"(*)\"",
+        "output": "true",
+        "explanation": "The '*' can be treated as an empty string for valid parentheses."
+      },
+      {
+        "input": "s = \"(*))\"",
+        "output": "true",
+        "explanation": "The '*' can be treated as '(', making the string valid."
+      },
+      {
+        "input": "s = \"((*)\"",
+        "output": "true",
+        "explanation": "The '*' can be treated as ')', making the string valid."
+      },
+      {
+        "input": "s = \")(\"",
+        "output": "false",
+        "explanation": "The parentheses are mismatched, making the string invalid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the effect of '*' as a variable entity.",
+      "Track the minimum and maximum number of open parentheses."
+    ],
+    "company": "Alibaba"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is defined as a contiguous sequence of characters within the string. Your task is to analyze the string and determine the maximum length of such a substring.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Substring"
+    ],
+    "input_format": "A string s consisting of English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 5 * 10^4",
+      "s consists of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is \"abc\", which has a length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is \"b\", with a length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is \"wke\", which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window to keep track of the current substring.",
+      "Utilize a set to monitor characters in the current window."
+    ],
+    "company": "Alibaba"
+  }
+]

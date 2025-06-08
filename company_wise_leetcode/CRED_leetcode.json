@@ -1,0 +1,75 @@
+[
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of parentheses characters.",
+    "output_format": "A boolean value indicating whether the input string is valid.",
+    "constraints": [
+      "0 <= s.length <= 10^4",
+      "s consists of parentheses only '()[]{}'"
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The string contains a pair of matching parentheses."
+      },
+      {
+        "input": "s = '([]{}())'",
+        "output": "true",
+        "explanation": "The string contains multiple pairs of matching brackets."
+      },
+      {
+        "input": "s = '(]}'",
+        "output": "false",
+        "explanation": "The brackets are not properly matched."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Make sure to match brackets by checking the last opened bracket."
+    ],
+    "company": "CRED"
+  },
+  {
+    "question_id": "",
+    "title": "Accounts Merge",
+    "description": "You are given a list of accounts, where each account is represented as an array of strings. The first string is the name of the account and the rest are emails associated with that account. Two accounts are considered the same if they have the same email address (no matter the case). You need to merge all accounts with shared emails into one account. The merged account should have the name of the first account and contain all unique email addresses, sorted in lexicographical order. Return a list of merged accounts.",
+    "topic": "Graph",
+    "subtopic": "Union Find",
+    "tags": [
+      "Graph",
+      "Union Find",
+      "String"
+    ],
+    "input_format": "A list of accounts, where each account is a list of strings.",
+    "output_format": "A list of merged accounts, where each account is a list with the first element as the name and the subsequent elements as the emails.",
+    "constraints": [
+      "1 <= accounts.length <= 1000",
+      "2 <= accounts[i].length <= 100",
+      "Each email is guaranteed to be a valid email."
+    ],
+    "examples": [
+      {
+        "input": "[['John', 'johnsmith@mail.com', 'john00@mail.com'], ['John', 'johnnybravo@mail.com'], ['John', 'johnsmith@mail.com', 'john_newyork@mail.com'], ['Mary', 'mary@mail.com']]",
+        "output": "[['John', 'john00@mail.com', 'john_newyork@mail.com', 'johnsmith@mail.com'], ['John', 'johnnybravo@mail.com'], ['Mary', 'mary@mail.com']]",
+        "explanation": "The first and third accounts share the email 'johnsmith@mail.com'. They are merged into a single account with the name 'John' and all unique emails sorted."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a Disjoint Set (Union-Find) structure.",
+      "You might want to use a map to link emails to account names."
+    ],
+    "company": "CRED"
+  }
+]

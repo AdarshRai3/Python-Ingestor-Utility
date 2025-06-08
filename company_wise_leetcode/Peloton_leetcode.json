@@ -1,0 +1,128 @@
+[
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1) - Duplicates Allowed",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. The operations should be performed in O(1) time complexity. Duplicates are allowed in the data structure. Your implemented data structure should support the following functions: \n\n- `insert(val)`: Inserts an item val into the data structure.\n- `delete(val)`: Removes an item val from the data structure.\n- `getRandom()`: Returns a random element from the current elements in the data structure. Each element must have the same probability of being chosen.\n\nNote that if a value is not present when calling `delete(val)`, do nothing.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Random"
+    ],
+    "input_format": "The input consists of a series of operations on the data structure, including `insert`, `delete`, and `getRandom` calls.",
+    "output_format": "The output consists of the results of `getRandom` calls, each representing a random element from the current elements in the data structure.",
+    "constraints": [
+      "1 <= val <= 10^6",
+      "The number of operations will not exceed 10^5."
+    ],
+    "examples": [
+      {
+        "input": [
+          "Insert(1)",
+          "Insert(1)",
+          "Insert(2)",
+          "GetRandom()",
+          "Delete(1)",
+          "GetRandom()"
+        ],
+        "output": "[1, 2]",
+        "explanation": "After inserting 1 two times and 2 once, the data structure has [1, 1, 2]. Calling `getRandom()` can return either 1 or 2. After deleting one 1, the possible elements are [1, 2]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a dictionary to map values to the indices of the list.",
+      "Ensure to maintain the list's structure after deletion to keep O(1) access for random retrieval."
+    ],
+    "company": "Peloton"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. Implement a class RandomizedSet that supports this functionality in average O(1) time complexity for each operation. The insert operation will add an item to the set if not present, the delete operation will remove an item from the set if present, and the getRandom operation will return a random element from the set. Each operation should handle edge cases gracefully.",
+    "topic": "Data Structures",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Hash Table",
+      "Random",
+      "Data Structure"
+    ],
+    "input_format": "N/A (Methods will be called directly on the RandomizedSet instance)",
+    "output_format": "N/A (Methods return values accordingly)",
+    "constraints": [
+      "All elements are unique.",
+      "The operations will be called at most 2 * 10^4 times."
+    ],
+    "examples": [
+      {
+        "input": "RandomizedSet randomSet = new RandomizedSet(); randomSet.insert(1); randomSet.remove(2); randomSet.insert(2); int rand1 = randomSet.getRandom(); randomSet.remove(1); int rand2 = randomSet.getRandom();",
+        "output": "2 or 2 (random element could be 2)",
+        "explanation": "After all operations, the set contains only the number 2, so getRandom should return 2."
+      },
+      {
+        "input": "RandomizedSet randomSet = new RandomizedSet(); randomSet.insert(1); randomSet.insert(2); randomSet.insert(3); int rand1 = randomSet.getRandom(); randomSet.remove(2); int rand2 = randomSet.getRandom();",
+        "output": "1 or 3 (random element could be either 1 or 3)",
+        "explanation": "After removing 2, the random set contains 1 and 3, so getRandom could return either."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to store the elements and their indices.",
+      "Use an array to store the elements for efficient random access."
+    ],
+    "company": "Peloton"
+  },
+  {
+    "question_id": "",
+    "title": "Subdomain Visit Count",
+    "description": "Given a list of strings representing domain visit counts, return the count of visits for each subdomain. A subdomain is defined as a domain plus all of its parent domains. For example, if 'google.com' is visited 3 times and 'mail.google.com' is visited 5 times, then the visits for 'google.com' should be reported as 8 (3 + 5) visits.",
+    "topic": "Hash Table",
+    "subtopic": "Count Frequencies",
+    "tags": [
+      "Hash Table",
+      "String",
+      "Counting"
+    ],
+    "input_format": "A list of strings, where each string has the format '<count> <domain>'.",
+    "output_format": "A list of strings where each string has the format '<count> <subdomain>'.",
+    "constraints": [
+      "1 <= visit_count <= 10^4",
+      "1 <= domain.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": [
+          "9001 discuss.leetcode.com",
+          "9001 leetcode.com",
+          "5 lamp.leetcode.com"
+        ],
+        "output": [
+          "9006 leetcode.com",
+          "5 lamp.leetcode.com",
+          "9001 discuss.leetcode.com"
+        ],
+        "explanation": "The visits can be summarized as: 'leetcode.com' has 9006 visits (9001 from itself and 5 from its subdomain 'lamp'), 'lamp.leetcode.com' has 5 visits, and 'discuss.leetcode.com' has 9001 visits."
+      },
+      {
+        "input": [
+          "600 google.com",
+          "50 mail.google.com",
+          "90 mobile.google.com"
+        ],
+        "output": [
+          "740 google.com",
+          "50 mail.google.com",
+          "90 mobile.google.com"
+        ],
+        "explanation": "The summarization gives 'google.com' a total of 740 visits including its subdomains."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to split the domain to get subdomains.",
+      "Use a map to keep track of counts for each subdomain."
+    ],
+    "company": "Peloton"
+  }
+]

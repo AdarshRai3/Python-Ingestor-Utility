@@ -1,0 +1,356 @@
+[
+  {
+    "question_id": "",
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "description": "Given a sorted array of integers and a target value, return the starting and ending position of the target value in the array. If the target is not found in the array, return [-1, -1]. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Searching"
+    ],
+    "input_format": "An array of integers nums followed by an integer target.",
+    "output_format": "A list of two integers representing the starting and ending positions of the target.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "10^4 <= nums[i] <= 10^4",
+      "nums is a non-decreasing array."
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 8",
+        "output": "[3, 4]",
+        "explanation": "The target 8 appears first at index 3 and last at index 4."
+      },
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 6",
+        "output": "[-1, -1]",
+        "explanation": "The target 6 is not present in the array."
+      },
+      {
+        "input": "nums = [], target = 0",
+        "output": "[-1, -1]",
+        "explanation": "The array is empty, so the target cannot be found."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to find the first and last positions.",
+      "You can modify the binary search to continue searching after finding the target."
+    ],
+    "company": "NetApp"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. The cache should support the following operations: get and put. The get operation should return the value of the key if the key exists in the cache, otherwise return -1. The put operation should insert or update the value of the key. When the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Cache",
+      "Design",
+      "Hash Table",
+      "Linked List"
+    ],
+    "input_format": "The constructor of LRUCache will receive an integer capacity representing the cache capacity. The get and put methods will receive a key (for get and put) and a value (for put).",
+    "output_format": "For get method, return the value associated with the key if the key exists, otherwise return -1. For put method, there is no return value.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^5",
+      "The operations get and put will be called at most 2 * 10^5 times."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "1, -1, 3, 4",
+        "explanation": "The statements do the following: put 1 and 2 in the cache, get 1 (returns 1), put 3 (evicts key 2), get 2 (returns -1), put 4 (evicts key 1), get 1 (returns -1), get 3 (returns 3), get 4 (returns 4)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to store keys and values.",
+      "Maintain the order of usage with a doubly linked list."
+    ],
+    "company": "NetApp"
+  },
+  {
+    "question_id": "",
+    "title": "Move Zeroes",
+    "description": "Given an integer array nums, move all the 0's to the end of it while maintaining the relative order of the non-zero elements. Note that you must do this in-place without making a copy of the array.",
+    "topic": "Array",
+    "subtopic": "In-place Manipulation",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "The array modified in place with all 0's moved to the end.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 1, 0, 3, 12]",
+        "output": "[1, 3, 12, 0, 0]",
+        "explanation": "The non-zero elements are 1, 3, and 12. After moving 0's to the end, they maintain their relative order."
+      },
+      {
+        "input": "nums = [0, 0, 1]",
+        "output": "[1, 0, 0]",
+        "explanation": "The non-zero element is 1, and it is moved to the front, with 0's following it."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers: one for the position of the last non-zero element and another to iterate through the array.",
+      "You can swap elements in the array to move zeros to the end."
+    ],
+    "company": "NetApp"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Linked List",
+    "description": "Given the head of a singly linked list, reverse the list, and return the reversed list.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Two Pointers"
+    ],
+    "input_format": "A ListNode representing the head of a singly linked list.",
+    "output_format": "A ListNode representing the head of the reversed linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000].",
+      "-5000 <= Node.val <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5]",
+        "output": "[5, 4, 3, 2, 1]",
+        "explanation": "Reversing the list [1, 2, 3, 4, 5] gives [5, 4, 3, 2, 1]."
+      },
+      {
+        "input": "head = []",
+        "output": "[]",
+        "explanation": "An empty list remains empty when reversed."
+      },
+      {
+        "input": "head = [1]",
+        "output": "[1]",
+        "explanation": "A single node list remains the same when reversed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using iterative or recursive techniques for reversal.",
+      "Keep track of the previous node while traversing."
+    ],
+    "company": "NetApp"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator II",
+    "description": "Implement a basic calculator to evaluate a simple expression string containing non-negative integers, '+', '-', '*', and '/' operators. The integer division should truncate toward zero, and the expression strings are guaranteed to be valid. Additionally, you need to ensure that the result is returned as an integer.",
+    "topic": "Mathematics",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "Math",
+      "Stack",
+      "String"
+    ],
+    "input_format": "A string expression representing a valid mathematical equation.",
+    "output_format": "An integer representing the result of the evaluated expression.",
+    "constraints": [
+      "The input string is non-empty and contains only non-negative integers and the operators '+', '-', '*', and '/'.",
+      "The operators will not be adjacent to each other, and no invalid characters will be present."
+    ],
+    "examples": [
+      {
+        "input": "s = '3+2*2'",
+        "output": "7",
+        "explanation": "According to the order of operations, multiply first: 2 * 2 = 4, then add: 3 + 4 = 7."
+      },
+      {
+        "input": "s = ' 3/2 '",
+        "output": "1",
+        "explanation": "The result of the division is 1 because it truncates toward zero."
+      },
+      {
+        "input": "s = ' 3+5 / 2 '",
+        "output": "5",
+        "explanation": "First, evaluate 5 / 2 = 2 (truncated), then 3 + 2 = 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to handle the operations.",
+      "Remember to handle operator precedence correctly.",
+      "Truncate the result of division toward zero."
+    ],
+    "company": "NetApp"
+  },
+  {
+    "question_id": "",
+    "title": "Alien Dictionary",
+    "description": "Given a list of words from an alien language that is sorted lexicographically according to a new dictionary order, you need to determine the order of characters in that alien language. The input consists of an array of words, where each word is composed of lowercase English letters. You must output a string representing the characters in the order they appear in the alien language. If the order cannot be determined, return an empty string.",
+    "topic": "Graph",
+    "subtopic": "Topological Sort",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "Ordering"
+    ],
+    "input_format": "An array of strings words, where 1 <= words.length <= 100 and 1 <= words[i].length <= 100.",
+    "output_format": "A string representing the order of characters in the alien language or an empty string if the order cannot be determined.",
+    "constraints": [
+      "1 <= words.length <= 100",
+      "1 <= words[i].length <= 100",
+      "All characters in words are lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"wrt\", \"wrf\", \"er\", \"ett\", \"rftt\"]",
+        "output": "wertf",
+        "explanation": "From the words, we can determine that 'w' > 'e', 'e' > 'r', 'r' > 't', and 't' > 'f'. Therefore, the order is 'wertf'."
+      },
+      {
+        "input": "words = [\"z\", \"x\"]",
+        "output": "zx",
+        "explanation": "The characters can be directly inferred from the two words. There are no conflicting orders."
+      },
+      {
+        "input": "words = [\"z\", \"x\", \"z\"]",
+        "output": "",
+        "explanation": "The same character 'z' appears in conflicting positions, therefore the order cannot be determined."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a graph to represent character order.",
+      "Consider in-degrees for topological sorting.",
+      "Check for cycles in the graph to determine if a valid order exists."
+    ],
+    "company": "NetApp"
+  },
+  {
+    "question_id": "",
+    "title": "Path Sum III",
+    "description": "You are given a binary tree where each node has an integer value. Your task is to find the number of paths that sum to a given value. A path is defined as any sequence of nodes from some starting node to any node in the subtree accessible from the starting node where the sum of the node values equals the target value. The path does not have to start or end at the root or a leaf. It can start and end at any node in the tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Recursion"
+    ],
+    "input_format": "The root node of the binary tree and an integer target representing the sum you want to find.",
+    "output_format": "An integer representing the number of paths that sum to the target value.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 1000].",
+      "-1000 <= Node.val <= 1000",
+      "-1000 <= target <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [10, 5, -3, 3, 2, null, 11], target = 8",
+        "output": "3",
+        "explanation": "There are three paths that sum to 8: [5, 3], [2, 5, 1], and [11, -3]."
+      },
+      {
+        "input": "root = [1, -2, -3, 1, 3, -2, null], target = -1",
+        "output": "1",
+        "explanation": "There is one path that sums to -1: [-2, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a depth-first search to explore all paths.",
+      "Keep track of the current path's sum as you traverse.",
+      "You can use a hashmap to store previous sums."
+    ],
+    "company": "NetApp"
+  },
+  {
+    "question_id": "",
+    "title": "Reconstruct Original Digits from English",
+    "description": "Given a non-empty string containing an assortment of letters, you need to reconstruct the digits from 0 to 9 based on the English representation of these digits in the string. The digits are uniquely represented by specific letters. For example, the word 'zero' represents the digit 0, 'one' represents the digit 1, etc. Return a string containing the digits in ascending order.",
+    "topic": "String",
+    "subtopic": "Counting and Frequency",
+    "tags": [
+      "String",
+      "Counting",
+      "Digits"
+    ],
+    "input_format": "A non-empty string s consisting of lowercase English letters.",
+    "output_format": "A string representing the digits from 0 to 9 in ascending order.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "owoztneoer",
+        "output": "012",
+        "explanation": "The string can be decomposed into 'zero' (0), 'one' (1), and 'two' (2)."
+      },
+      {
+        "input": "fviefuro",
+        "output": "45",
+        "explanation": "The string can be decomposed into 'four' (4) and 'five' (5)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Identify unique letters that can immediately identify certain numbers.",
+      "Consider how many times each number can be formed based on the letters present."
+    ],
+    "company": "NetApp"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "String",
+      "Hash Map"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of lists of strings, where each list contains all the anagrams of a specific word.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"eat\",\"tea\",\"ate\"],[\"tan\",\"nat\"],[\"bat\"]]",
+        "explanation": "The anagrams are grouped as: ['eat', 'tea', 'ate'], ['tan', 'nat'], and ['bat']."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "The only string is an empty string, so it forms its own group."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "A single character forms its own group."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using sorting to identify anagrams.",
+      "Use a hash map to group anagrams."
+    ],
+    "company": "NetApp"
+  }
+]

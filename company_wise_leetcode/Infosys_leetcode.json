@@ -1,0 +1,4028 @@
+[
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers, return the indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Map",
+    "tags": [
+      "Array",
+      "Hash Map",
+      "Two Sum"
+    ],
+    "input_format": "An array of integers 'nums' and an integer 'target'.",
+    "output_format": "An array of two integers representing the indices of the two numbers that add up to the target.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] is equal to target (2 + 7 = 9)."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] is equal to target (2 + 4 = 6)."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] is equal to target (3 + 3 = 6)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the difference between the target and each element."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Find Building Where Alice and Bob Can Meet",
+    "description": "Alice and Bob are living in a city represented as a straight line of buildings, each with a unique height. They want to meet at a building such that the difference in the height of the buildings they occupy is minimized. Your task is to find the index of the building where they should meet to minimize the height difference. If there are multiple solutions, return the index of the first building.",
+    "topic": "Binary Search",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Binary Search",
+      "Two Pointers",
+      "Greedy"
+    ],
+    "input_format": "An array of integers num_buildings representing the heights of the buildings.",
+    "output_format": "An integer representing the index of the building where they can meet.",
+    "constraints": [
+      "1 <= num_buildings.length <= 10^5",
+      "1 <= num_buildings[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "num_buildings = [5, 3, 6, 4]",
+        "output": "1",
+        "explanation": "Choosing buildings at index 1 (height 3) and index 0 (height 5) gives a height difference of 2, which is minimized."
+      },
+      {
+        "input": "num_buildings = [1, 2, 3, 4, 5]",
+        "output": "0",
+        "explanation": "Choosing buildings at index 0 (height 1) and index 1 (height 2) gives a height difference of 1, which is minimized."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider sorting the building heights for easier comparison.",
+      "Use binary search to find the ideal meeting point."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Reverse Operations",
+    "description": "Given a non-negative integer n, you are allowed to perform the following operations on n: You can choose to reverse the digits of n and then add it to n (e.g., if n = 123, then reversing it gives 321, and you can add 123 + 321). Your goal is to determine the minimum number of such operations required to reach a given target integer m. If it is not possible to reach m using these operations, return -1.",
+    "topic": "Mathematics",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Math",
+      "Dynamic Programming",
+      "Search"
+    ],
+    "input_format": "A non-negative integer n (the starting number) and a non-negative integer m (the target number).",
+    "output_format": "An integer representing the minimum number of operations required to reach the target m or -1 if it is not possible.",
+    "constraints": [
+      "0 <= n, m <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "n = 12, m = 21",
+        "output": "1",
+        "explanation": "One operation: reverse 12 to get 21."
+      },
+      {
+        "input": "n = 100, m = 199",
+        "output": "2",
+        "explanation": "First operation: reverse 100 to get 1, then 1 + 100 = 101. Second operation: reverse 101 to get 101, then 101 + 101 = 202; this reaches 199 after additional calculations."
+      },
+      {
+        "input": "n = 5, m = 10",
+        "output": "-1",
+        "explanation": "It is impossible to reach 10 due to the nature of operations allowed."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using BFS for exploring possible values.",
+      "Keep track of visited states to avoid infinite loops.",
+      "Think about how reversing the digits can impact the value."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Count the Number of Ideal Arrays",
+    "description": "You are given an integer array nums of length n. An ideal array is defined as an array where each element is greater than or equal to its index (0-based) and less than or equal to n. Your task is to find the count of all possible ideal arrays that can be formed using the elements of nums, such that the resulting arrays also satisfy the ideal condition.",
+    "topic": "Array",
+    "subtopic": "Counting Ideal Arrays",
+    "tags": [
+      "Array",
+      "Counting",
+      "Combinatorics"
+    ],
+    "input_format": "An array of integers nums with n elements.",
+    "output_format": "An integer representing the count of all possible ideal arrays.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "6",
+        "explanation": "The ideal arrays can be [1, 1, 1], [1, 1, 2], [1, 2, 2], [1, 2, 3], [2, 2, 2], [2, 2, 3] totaling 6 combinations."
+      },
+      {
+        "input": "nums = [0, 0, 0]",
+        "output": "1",
+        "explanation": "The only ideal array is [0, 0, 0], which meets the ideal condition."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the impact of each element being used multiple times.",
+      "Think about how to select elements that satisfy the ideal array condition."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Sum of Subsequence With Non-adjacent Elements",
+    "description": "Given an integer array nums, find the maximum sum of non-adjacent elements. You may assume that each element in the array can be included or excluded from the sum, but no two elements that are adjacent in the array can be included together in the sum. Return the maximum achievable sum.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Memoization",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Memoization"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum sum of non-adjacent elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 5, 10, 7]",
+        "output": "15",
+        "explanation": "Choose 3, 5, and 7. Their sum is 3 + 5 + 7 = 15."
+      },
+      {
+        "input": "nums = [3, 2, 7, 10]",
+        "output": "13",
+        "explanation": "Choose 3 and 10. Their sum is 3 + 10 = 13."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to build the solution iteratively.",
+      "You can maintain two variables to track the maximum sums including and excluding the current element.",
+      "Think about the base cases for the first few elements."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within the string. You may assume the input string only contains English letters, digits, symbols, and spaces.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A single string s that represents the input.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The answer is 'abc', with the length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The answer is 'b', with the length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The answer is 'wke', with the length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window technique to expand and contract the substring.",
+      "Keep track of the last seen index of each character.",
+      "Use a HashMap or set to track characters in the current substring."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Eat Pizzas!",
+    "description": "Alice and Bob are having a pizza party. They have `n` slices of pizza, and each slice has a specific amount of delicious toppings. The slices are arranged in a circular manner. Alice starts from the first slice and can eat up to `k` slices in one go, while Bob starts from the last slice and can also eat up to `k` slices in one go. The goal is to maximize the total number of toppings they can enjoy together. If they ever reach the same slice, that slice can only be consumed by one of them. Your task is to determine the maximum number of toppings they can eat together.",
+    "topic": "Greedy",
+    "subtopic": "Maximization Problem",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Maximization"
+    ],
+    "input_format": "An integer n (1 <= n <= 1000) representing the number of pizza slices, an integer k (1 <= k <= n) representing the maximum number of slices Alice and Bob can eat, and an array toppings of length n where toppings[i] (1 <= toppings[i] <= 1000) represents the number of toppings on the i-th slice.",
+    "output_format": "An integer indicating the maximum number of toppings Alice and Bob can eat together.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "1 <= k <= n",
+      "1 <= toppings[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": {
+          "n": 6,
+          "k": 2,
+          "toppings": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "output": "12",
+        "explanation": "Alice eats slices 1 and 2 (1 + 2 = 3) and Bob eats slices 6 and 5 (6 + 5 = 11). Together they enjoy 3 + 11 = 12 toppings."
+      },
+      {
+        "input": {
+          "n": 5,
+          "k": 3,
+          "toppings": [
+            4,
+            1,
+            2,
+            10,
+            9
+          ]
+        },
+        "output": "22",
+        "explanation": "Alice can eat slices 1, 2, and 3 (4 + 1 + 2 = 7) and Bob can eat slices 5 and 4 (9 + 10 = 19). Together they enjoy 7 + 19 = 22 toppings."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the overlapping slices when Alice and Bob eat.",
+      "Simulate the eating process for both Alice and Bob efficiently."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Transform Array by Parity",
+    "description": "Given an array of integers, rearrange the elements of the array such that all even elements appear before all odd elements, maintaining their relative order. You must not use any additional arrays to solve the problem.",
+    "topic": "Array",
+    "subtopic": "In-place Manipulation",
+    "tags": [
+      "Array",
+      "In-place",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing the rearranged elements with all even elements first followed by odd elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 1, 2, 4]",
+        "output": "[2, 4, 3, 1]",
+        "explanation": "Even numbers 2 and 4 are placed before odd numbers 3 and 1, maintaining the original order."
+      },
+      {
+        "input": "nums = [2, 4, 3, 1, 6]",
+        "output": "[2, 4, 6, 3, 1]",
+        "explanation": "The even numbers 2, 4, and 6 come first, followed by the odd numbers 3 and 1, preserving their positions."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a two-pointer approach.",
+      "Iterate through the array and swap elements accordingly."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Total Distance Traveled",
+    "description": "You are given a list of locations represented by their coordinates in a 2D plane. Your goal is to find the minimum total distance traveled to visit all the locations starting from the origin (0, 0). Each location can be visited only once, and the distance between two points (x1, y1) and (x2, y2) is defined as the Manhattan distance: |x1 - x2| + |y1 - y2|. Return the minimum total distance traveled.",
+    "topic": "Geometry",
+    "subtopic": "Distance Calculation",
+    "tags": [
+      "Geometry",
+      "Dynamic Programming",
+      "Pathfinding"
+    ],
+    "input_format": "A list of tuples, where each tuple contains two integers representing the coordinates of a location.",
+    "output_format": "An integer representing the minimum total distance traveled to visit all the locations.",
+    "constraints": [
+      "1 <= locations.length <= 10^5",
+      "-10^4 <= locations[i][0], locations[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "locations = [(1, 2), (3, 4), (5, 6)]",
+        "output": "12",
+        "explanation": "Starting from (0,0) to (1,2) -> (1,2) to (3,4) -> (3,4) to (5,6). The total distance is 12."
+      },
+      {
+        "input": "locations = [(0, 0), (1, 1)]",
+        "output": "2",
+        "explanation": "The total distance is simply the distance from (0,0) to (1,1), which is 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the properties of Manhattan distance.",
+      "Use dynamic programming to efficiently compute the minimal path."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Well-Performing Interval",
+    "description": "You are given an array `hours` where `hours[i]` is the number of hours worked in the ith day. A well-performing interval is an interval (i, j) where the number of hours worked in the interval is more than 8 hours for more than 50% of the days. Given this definition, return the length of the longest well-performing interval.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Interval"
+    ],
+    "input_format": "An array of integers `hours` representing hours worked for each day.",
+    "output_format": "An integer representing the length of the longest well-performing interval.",
+    "constraints": [
+      "1 <= hours.length <= 10^4",
+      "0 <= hours[i] <= 24"
+    ],
+    "examples": [
+      {
+        "input": "hours = [9, 9, 6, 0, 6, 6, 9]",
+        "output": "10",
+        "explanation": "The intervals (0, 1), (1, 2), (2, 5), (0, 5) are all well-performing. The longest interval is from index 0 to index 5."
+      },
+      {
+        "input": "hours = [6, 6, 6, 8, 6, 6]",
+        "output": "0",
+        "explanation": "There are no days with more than 8 hours, so the longest well-performing interval length is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep a count of the total days in an interval.",
+      "Use a two-pointer approach to track intervals."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Product After K Increments",
+    "description": "You are given an array of integers nums and an integer K. Your task is to maximize the product of the array after incrementing K elements of the array by 1. You can choose which K elements to increment, and the product is defined as the multiplication of all elements in the array. Return the maximum product you can achieve after the increments.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums, followed by an integer K.",
+    "output_format": "An integer representing the maximum product after K increments.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 1000",
+      "0 <= K <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3], K = 3",
+        "output": "64",
+        "explanation": "By incrementing each element once, the array becomes [2, 3, 4] and the product is 2 * 3 * 4 = 24. If we want to increment one more element, we can increment 4 to 5, resulting in the array [2, 3, 5] with a product of 30."
+      },
+      {
+        "input": "nums = [1, 2], K = 1",
+        "output": "6",
+        "explanation": "Incrementing the first element gives us [2, 2]. The product is 2 * 2 = 4, which is less than if we increment the second element to 3, getting [1, 3]. The product is 1 * 3 = 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to maximize each increment.",
+      "Greedily prefer incrementing the smallest elements first."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Segment Sum After Removals",
+    "description": "You are given an array of integers where you can perform a series of removals. In each removal operation, you can remove an element and all of its adjacent elements. Your task is to find the maximum segment sum that can be obtained after performing any number of removal operations. A segment is defined as a contiguous subarray of the original array. The sum of a segment is the sum of its elements. You need to determine the maximum segment sum that can be achieved after choosing the optimal removals.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Maximum Subarray Sum",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Segment Sum"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum segment sum after removals.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, -2, 5, -1]",
+        "output": "8",
+        "explanation": "The best strategy is to remove the segments with the negative values. The sum of the segment [3, 5] gives the maximum sum of 8."
+      },
+      {
+        "input": "nums = [-1, -2, -3]",
+        "output": "0",
+        "explanation": "Since all numbers are negative, the maximum segment sum achievable after removals is 0 (by removing all elements)."
+      },
+      {
+        "input": "[1, 2, 3, -4, 5, -6, 7]",
+        "output": "15",
+        "explanation": "Remove the segment [-4, 5, -6] to retain the positive segments [1, 2, 3] and [7]. The total sum is 1 + 2 + 3 + 7 = 15."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about using dynamic programming to store the maximum sums of segments.",
+      "Consider edge cases where all elements might be negative."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Sort the People",
+    "description": "You are given an array of strings names representing people and an array of integers heights representing their respective heights. Write a function that returns the names of the people sorted in descending order by their heights. If two people have the same height, their names should be sorted lexicographically in ascending order.",
+    "topic": "Sorting",
+    "subtopic": "Custom Sort",
+    "tags": [
+      "Sorting",
+      "Arrays",
+      "Strings"
+    ],
+    "input_format": "Two arrays: an array of strings names and an array of integers heights, where names[i] is the name of the ith person, and heights[i] is their height.",
+    "output_format": "An array of strings representing the names sorted by heights in descending order.",
+    "constraints": [
+      "1 <= names.length == heights.length <= 10^5",
+      "1 <= names[i].length <= 100",
+      "1 <= heights[i] <= 10^3"
+    ],
+    "examples": [
+      {
+        "input": {
+          "names": [
+            "Alice",
+            "Bob",
+            "Charlie"
+          ],
+          "heights": [
+            150,
+            180,
+            165
+          ]
+        },
+        "output": [
+          "Bob",
+          "Charlie",
+          "Alice"
+        ],
+        "explanation": "Bob has the highest height (180), followed by Charlie (165), and Alice (150)."
+      },
+      {
+        "input": {
+          "names": [
+            "John",
+            "Jane",
+            "Doe"
+          ],
+          "heights": [
+            180,
+            180,
+            175
+          ]
+        },
+        "output": [
+          "Jane",
+          "John",
+          "Doe"
+        ],
+        "explanation": "John and Jane both have the same height (180), but Jane comes before John lexicographically."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider pairing names with heights for sorting.",
+      "You can use built-in sort functions with custom keys."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Addition to Make Integer Beautiful",
+    "description": "Given a positive integer n, you need to find the minimum non-negative integer x such that n + x is a 'beautiful' integer. An integer is considered beautiful if the sum of its digits is divisible by k. Your task is to determine the smallest x that can be added to n to make it beautiful.",
+    "topic": "Math",
+    "subtopic": "Digit Sum",
+    "tags": [
+      "Math",
+      "Digit Sum",
+      "Divisibility"
+    ],
+    "input_format": "Two integers n and k, where n is the positive integer and k is the divisor.",
+    "output_format": "A single integer representing the minimum addition x required to make n + x beautiful.",
+    "constraints": [
+      "1 <= n <= 10^9",
+      "1 <= k <= 100"
+    ],
+    "examples": [
+      {
+        "input": "n = 38, k = 5",
+        "output": "2",
+        "explanation": "38 + 2 = 40, and the sum of digits of 40 is 4, which is divisible by 5."
+      },
+      {
+        "input": "n = 123, k = 9",
+        "output": "3",
+        "explanation": "123 + 3 = 126, and the sum of digits of 126 is 1 + 2 + 6 = 9, which is divisible by 9."
+      },
+      {
+        "input": "n = 99, k = 4",
+        "output": "3",
+        "explanation": "99 + 3 = 102, and the sum of digits of 102 is 1 + 0 + 2 = 3, which is not divisible by 4. However, 99 + 4 = 103, where the sum of digits is 1 + 0 + 3 = 4, which is divisible by 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to calculate the sum of digits efficiently.",
+      "Think about the relationship between n, x, and the digit sum.",
+      "Try iterating from x = 0 while checking the beauty condition."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Can Convert String in K Moves",
+    "description": "Given an input string `s` and an integer `k`, determine if it is possible to convert the string into another string by performing at most `k` moves. A move is defined as changing one character to any other character in the alphabet. You can assume that the string contains only lowercase English letters.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Greedy"
+    ],
+    "input_format": "Two inputs: a string s (1 <= |s| <= 1000) and an integer k (0 <= k <= 1000).",
+    "output_format": "A boolean value, 'true' if it is possible to convert the string to another with at most k moves, otherwise 'false'.",
+    "constraints": [
+      "1 <= |s| <= 1000",
+      "0 <= k <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "s = 'abc', k = 2",
+        "output": "true",
+        "explanation": "You can change 'a' to 'x' and 'b' to 'y', making the string 'xyc'."
+      },
+      {
+        "input": "s = 'aabbcc', k = 1",
+        "output": "false",
+        "explanation": "Only one move is allowed, and you cannot convert 'aabbcc' to a different string with just one character change."
+      },
+      {
+        "input": "s = 'aaa', k = 2",
+        "output": "true",
+        "explanation": "You can change two 'a' characters to 'b', resulting in the string 'bba'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the frequency of characters in the string.",
+      "You only need to check if the number of changes required is less than or equal to k."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Nodes With Value One",
+    "description": "Given the root of a binary tree, return the number of nodes that have the value 1. A binary tree is represented by the root node, and each node has a value, a left child, and a right child.",
+    "topic": "Trees",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Depth-First Search",
+      "Counting"
+    ],
+    "input_format": "The input is a binary tree represented by its root node.",
+    "output_format": "An integer representing the number of nodes with value 1.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "Node values are either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "root = [1,null,0,0,1]",
+        "output": "3",
+        "explanation": "There are three nodes with value 1 in the tree."
+      },
+      {
+        "input": "root = [0,0,0]",
+        "output": "0",
+        "explanation": "There are no nodes with value 1 in the tree."
+      },
+      {
+        "input": "root = [1,1,1]",
+        "output": "3",
+        "explanation": "All three nodes have the value 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a recursive approach to traverse the tree.",
+      "Count the current node if its value is 1.",
+      "Combine counts from left and right subtrees."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Sum of a k-avoiding Array",
+    "description": "Given an integer array nums and an integer k, you need to determine the minimum sum of the array such that no two elements in the sum are equal to k. If it is not possible to select any elements without violating the k-avoiding condition, return 0.",
+    "topic": "Array",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Array",
+      "Manipulation",
+      "Sum"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the minimum sum of elements that avoid the value k.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "-10^4 <= k <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 6, -2, 4, 5] k = 4",
+        "output": "9",
+        "explanation": "The chosen numbers are 3, 6, and -2. Their sum is 3 + 6 - 2 = 7, and excluding 4 gives us 9."
+      },
+      {
+        "input": "nums = [2, 4, 6, 8] k = 6",
+        "output": "10",
+        "explanation": "The chosen numbers are 2, 4, and 8. Their sum is 2 + 4 + 8 = 14, excluding 6 gives us 10."
+      },
+      {
+        "input": "nums = [1, 1, 1, 1] k = 1",
+        "output": "0",
+        "explanation": "It's impossible to pick any numbers without violating the k-avoiding condition. Hence, return 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a set to keep track of the collected numbers.",
+      "Try filtering out the numbers equal to k before summing."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Consecutive Values You Can Make",
+    "description": "You are given an integer array coins where coins[i] represents the value of the ith coin. You can use each coin any number of times. Write a function to determine the maximum number of consecutive integer values (starting from 1) that you can create using the coins. For example, if you have coins of value 1, 2, and 5, you can create values 1 through 7, but not 8.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Coins"
+    ],
+    "input_format": "An array of integers coins.",
+    "output_format": "An integer representing the maximum number of consecutive values that can be created.",
+    "constraints": [
+      "1 <= coins.length <= 100",
+      "1 <= coins[i] <= 1,000,000"
+    ],
+    "examples": [
+      {
+        "input": "coins = [1, 1, 1]",
+        "output": "4",
+        "explanation": "You can create 1, 2, 3, and 4 using the coins."
+      },
+      {
+        "input": "coins = [1, 2, 5]",
+        "output": "11",
+        "explanation": "You can create values from 1 to 11, but not 12."
+      },
+      {
+        "input": "coins = [5, 7]",
+        "output": "0",
+        "explanation": "You cannot create any consecutive values starting from 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider starting from the smallest value you can create.",
+      "Use a greedy approach to see if you can create the next value."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Beautiful Integers in the Range",
+    "description": "A beautiful integer is defined as an integer in a specified range [L, R] such that it contains only distinct digits. Given two integers L and R, your task is to count how many beautiful integers exist within that range.",
+    "topic": "Mathematics",
+    "subtopic": "Counting",
+    "tags": [
+      "Counting",
+      "Math",
+      "Brute Force"
+    ],
+    "input_format": "Two integers L and R where 1 <= L <= R <= 10^9.",
+    "output_format": "An integer representing the count of beautiful integers in the range [L, R].",
+    "constraints": [
+      "1 <= L, R <= 10^9",
+      "L <= R"
+    ],
+    "examples": [
+      {
+        "input": "L = 10, R = 20",
+        "output": "5",
+        "explanation": "The beautiful integers in this range are 10, 12, 13, 14, and 15."
+      },
+      {
+        "input": "L = 1, R = 100",
+        "output": "90",
+        "explanation": "All numbers 1 to 9 are beautiful (9), and from 10 to 99, the beautiful integers are 10, 12, 13, ..., 89 which totals to 81."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider brute force counting by checking the uniqueness of digits for each number.",
+      "Utilize sets to verify distinct digits efficiently."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Minimum Possible Sum of a Beautiful Array",
+    "description": "Given an integer n, create a beautiful array of length n such that the sum of its elements is minimized. A beautiful array is an array where no two elements are the same and each element can be a positive integer.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Generation",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Sum"
+    ],
+    "input_format": "An integer n (1 <= n <= 1000) representing the length of the beautiful array.",
+    "output_format": "An integer representing the minimum possible sum of the beautiful array.",
+    "constraints": [
+      "1 <= n <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "n = 5",
+        "output": "15",
+        "explanation": "The minimum beautiful array of length 5 is [1, 2, 3, 4, 5]. The sum is 1 + 2 + 3 + 4 + 5 = 15."
+      },
+      {
+        "input": "n = 3",
+        "output": "6",
+        "explanation": "The minimum beautiful array of length 3 is [1, 2, 3]. The sum is 1 + 2 + 3 = 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of a beautiful array.",
+      "Think about the smallest unique integers you can use."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Stone Game VIII",
+    "description": "Alice and Bob are playing a game with a pile of stones. In the beginning, there are n stones arranged in a circle. The ith stone has a value stones[i]. Alice and Bob take turns removing one stone from either end of the circle. The player who takes the last stone wins the game. However, under a special rule, Alice must also maximize her score based on the values of the stones she picks. Your task is to determine the maximum score that Alice can achieve assuming both players play optimally.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Game Theory",
+    "tags": [
+      "Dynamic Programming",
+      "Game Theory",
+      "Greedy"
+    ],
+    "input_format": "An array of integers stones representing the values of the stones in the circle.",
+    "output_format": "An integer representing the maximum score Alice can achieve.",
+    "constraints": [
+      "2 <= stones.length <= 10^5",
+      "-10^4 <= stones[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "stones = [5, 3, 1, 8, 9]",
+        "output": "17",
+        "explanation": "Alice can pick either the stone with value 5 or 9. If she picks 9, the optimal move for Bob results in Alice having a maximum score of 17."
+      },
+      {
+        "input": "stones = [1, 2, 3, 4]",
+        "output": "5",
+        "explanation": "Alice can take the stone with value 4, leaving Bob with the last move but ensuring Alice's score remains maximum."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how the score changes with each stone picked.",
+      "Use prefix sums to simplify the calculation of scores."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Number of Subsequences With Equal GCD",
+    "description": "Given an array of integers, you need to find the number of non-empty subsequences such that the greatest common divisor (GCD) of the elements in each subsequence is equal to a given integer k. Return the count of such subsequences modulo 10^9 + 7.",
+    "topic": "Mathematics",
+    "subtopic": "GCD",
+    "tags": [
+      "GCD",
+      "Subsequences",
+      "Mathematics"
+    ],
+    "input_format": "An integer n representing the size of the array followed by an array of integers nums of length n. Finally, an integer k representing the target GCD.",
+    "output_format": "An integer representing the number of subsequences with GCD equal to k, modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "1 <= nums[i] <= 10^9",
+      "1 <= k <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, nums = [2, 4, 6, 8, 10], k = 2",
+        "output": "15",
+        "explanation": "The valid subsequences with GCD 2 are (2), (4), (6), (8), (10), (2, 4), (2, 6), (2, 8), (2, 10), (4, 6), (4, 8), (4, 10), (6, 8), (6, 10), (8, 10), leading to 15 valid subsequences."
+      },
+      {
+        "input": "n = 3, nums = [3, 6, 9], k = 3",
+        "output": "7",
+        "explanation": "The valid subsequences with GCD 3 are (3), (6), (9), (3, 6), (3, 9), (6, 9), and (3, 6, 9), which totals to 7."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the properties of GCD when forming subsequences.",
+      "Utilize modular arithmetic to handle large numbers."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Maximize the Minimum Game Score",
+    "description": "You are given an array of integers representing the scores of a series of games. Your goal is to maximize the minimum score you can achieve by selecting k scores from the array. You can choose scores in such a way that you can eliminate scores that are less than a certain threshold after each selection. Determine the maximum possible minimum score after selecting k scores from the array while adhering to the game rules.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Greedy"
+    ],
+    "input_format": "An integer n (the number of scores) followed by an array of integers scores of length n, and an integer k (the number of scores to select).",
+    "output_format": "An integer representing the maximum possible minimum score.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "1 <= scores[i] <= 10^9",
+      "1 <= k <= n"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, scores = [1, 3, 5, 7, 9], k = 3",
+        "output": "5",
+        "explanation": "Selecting scores 5, 7, and 9 gives a minimum of 5."
+      },
+      {
+        "input": "n = 4, scores = [2, 4, 6, 8], k = 2",
+        "output": "6",
+        "explanation": "Selecting scores 6 and 8 yields a minimum score of 6."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the range of possible minimum scores.",
+      "Binary search can be useful for finding the optimal score."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing stock prices on different days.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price so far and calculate the potential profit at each step.",
+      "Only consider selling if the current price is higher than the minimum price."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "The Number of Beautiful Subsets",
+    "description": "Given an array of integers, you need to count the number of beautiful subsets. A subset is considered beautiful if the sum of its elements is even. You must find the total count of such subsets, including the empty subset. The input array can include both positive and negative integers.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum",
+    "tags": [
+      "Dynamic Programming",
+      "Subset",
+      "Even Sum"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the count of beautiful subsets.",
+    "constraints": [
+      "1 <= nums.length <= 20",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "5",
+        "explanation": "The beautiful subsets are: [], [2], [1, 3], [1, 2], [2, 3]."
+      },
+      {
+        "input": "nums = [4, 5, 1]",
+        "output": "4",
+        "explanation": "The beautiful subsets are: [], [4], [5, 1], [4, 1]. The subset [4, 5] is not included."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of even and odd sums.",
+      "Use bit manipulation to generate subsets."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if:\n\n1. Open brackets must be closed by the same type of brackets.\n2. Open brackets must be closed in the correct order.\n\nNote that an empty string is also considered valid.",
+    "topic": "String",
+    "subtopic": "Validation",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of the characters '(', ')', '{', '}', '[' and ']'",
+    "output_format": "Return true if the input string is valid, otherwise return false.",
+    "constraints": [
+      "0 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = \"()\"",
+        "output": "true",
+        "explanation": "The parentheses are matched and closed correctly, hence the output is true."
+      },
+      {
+        "input": "s = \"()[]{}\"",
+        "output": "true",
+        "explanation": "All types of brackets are correctly matched and closed, thus the output is true."
+      },
+      {
+        "input": "s = \"(]\"",
+        "output": "false",
+        "explanation": "The parentheses are mismatched, hence it is not valid, returning false."
+      },
+      {
+        "input": "s = \"([)]\"",
+        "output": "false",
+        "explanation": "The brackets are closed in the incorrect order, thus returning false."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Check for matching closing brackets by popping from the stack."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Number After Mutating Substring",
+    "description": "Given a string representing a non-negative integer, you are allowed to mutate a substring of this string by replacing each digit with an integer from 0 to 9, inclusive. Your goal is to maximize the overall number after the mutation. You can choose any substring to mutate, and the mutated digits cannot have leading zeros unless the entire number is zero. Return the maximum possible integer as a string after mutating a single contiguous substring.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Greedy",
+      "Substrings"
+    ],
+    "input_format": "A string s representing a non-negative integer.",
+    "output_format": "A string representing the maximum integer possible after one mutation.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of digits only, and s[0] != '0' unless s is '0'."
+    ],
+    "examples": [
+      {
+        "input": "s = '1234'",
+        "output": "9234",
+        "explanation": "By mutating the substring '1' to '9', the maximum number is 9234."
+      },
+      {
+        "input": "s = '0000'",
+        "output": "9000",
+        "explanation": "By mutating the substring '000' to '900', the maximum number is 9000."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider where you can start changing digits to maximize the value.",
+      "Focus on the leading digits first for higher impact on the overall number."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. The final merged array should be returned in nums1, which has a length of m + n, where m is the number of elements initialized in nums1 and n is the number of elements in nums2. Note that nums1 has a size equal to m + n, but initially contains m elements followed by n empty slots that should be filled with elements from nums2.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Merge"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2, where nums1 has enough space to hold additional elements from nums2.",
+    "output_format": "A merged and sorted array stored in nums1.",
+    "constraints": [
+      "0 <= m, n <= 200",
+      "1 <= m + n <= 400",
+      "-10^9 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 2, 3, 0, 0, 0], m = 3, nums2 = [2, 5, 6], n = 3",
+        "output": "[1, 2, 2, 3, 5, 6]",
+        "explanation": "After merging nums2 into nums1, the sorted array is [1, 2, 2, 3, 5, 6]."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "Since nums2 is empty, nums1 remains unchanged."
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "explanation": "All elements from nums2 are merged into nums1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the pointers for both arrays starting from the end.",
+      "Fill nums1 from the back to avoid overwriting."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicates from Sorted Array",
+    "description": "Given a sorted array of integers, you need to modify the array in-place by removing the duplicates such that each element appears only once, and return the new length of the array. Do not use additional space for another array; you must perform the operation in constant space.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-place"
+    ],
+    "input_format": "A sorted array of integers nums.",
+    "output_format": "An integer representing the new length of the array after removing duplicates.",
+    "constraints": [
+      "1 <= nums.length <= 3 * 10^4",
+      "-10^4 <= nums[i] <= 10^4",
+      "nums is sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2]",
+        "output": "2",
+        "explanation": "After removing duplicates, the array becomes [1, 2]. The new length is 2."
+      },
+      {
+        "input": "nums = [0,0,1,1,1,2,2,3,3,4]",
+        "output": "5",
+        "explanation": "After removing duplicates, the array becomes [0, 1, 2, 3, 4]. The new length is 5."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to track the unique elements.",
+      "The first pointer will traverse, while the second pointer will mark the position of the unique elements."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Next Permutation",
+    "description": "Implement an algorithm to find the next permutation of a sequence of numbers. The replacement must be in place and use only constant extra memory. The next permutation of an array of numbers is the next lexicographically greater permutation of its numbers. If such arrangement is not possible, it must be transformed to the lowest possible order (i.e., sorted in ascending order).",
+    "topic": "Array",
+    "subtopic": "Permutation",
+    "tags": [
+      "Array",
+      "Permutation",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums representing the sequence.",
+    "output_format": "Modify the input array to represent the next permutation.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[1, 3, 2]",
+        "explanation": "The next permutation for [1, 2, 3] is [1, 3, 2]."
+      },
+      {
+        "input": "nums = [3, 2, 1]",
+        "output": "[1, 2, 3]",
+        "explanation": "The next permutation for [3, 2, 1] is the lowest possible order: [1, 2, 3]."
+      },
+      {
+        "input": "nums = [1, 1, 5]",
+        "output": "[1, 5, 1]",
+        "explanation": "The next permutation for [1, 1, 5] is [1, 5, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Find the first decreasing element from the end.",
+      "Swap that element with the smallest larger element to its right.",
+      "Reverse the elements to the right of the swapped position."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Subarray"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the sum of the maximum subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The maximum subarray is [4,-1,2,1], and its sum is 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The maximum subarray is [1], and its sum is 1."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The maximum subarray is [5,4,-1,7,8], and its sum is 23."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Kadane's Algorithm.",
+      "Keep track of the current sum and the maximum sum found so far."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Number",
+    "description": "Determine if an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward. For example, 121 is a palindrome while 123 is not.",
+    "topic": "Math",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Palindrome",
+      "Math",
+      "Integer"
+    ],
+    "input_format": "An integer x.",
+    "output_format": "Return true if x is a palindrome, otherwise return false.",
+    "constraints": [
+      "-2^31 <= x <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "x = 121",
+        "output": "true",
+        "explanation": "121 reads the same backward and forward."
+      },
+      {
+        "input": "x = -121",
+        "output": "false",
+        "explanation": "-121 reads backward as 121- which is not the same as -121."
+      },
+      {
+        "input": "x = 10",
+        "output": "false",
+        "explanation": "10 reads backward as 01, which is not the same as 10."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how you can reverse the integer and compare it to the original.",
+      "Think about edge cases, especially negative numbers."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse String",
+    "description": "Write a function that takes a string as input and returns the string reversed.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Reverse"
+    ],
+    "input_format": "A single string s, where 1 <= s.length <= 10^5.",
+    "output_format": "A string which is the reversed version of the input string.",
+    "constraints": [
+      "1 <= s.length <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "s = 'hello'",
+        "output": "'olleh'",
+        "explanation": "The string 'hello' reversed is 'olleh'."
+      },
+      {
+        "input": "s = 'LeetCode'",
+        "output": "'edoCteeL'",
+        "explanation": "The string 'LeetCode' reversed is 'edoCteeL'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try using a two-pointer technique.",
+      "You can also use built-in functions of the language."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Image",
+    "description": "You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise). You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. Do not use an additional matrix to perform the rotation.",
+    "topic": "Array",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Array",
+      "Matrix",
+      "In-place"
+    ],
+    "input_format": "A 2D square matrix of integers where the dimensions are n x n.",
+    "output_format": "The 2D matrix modified in-place to represent the rotated image.",
+    "constraints": [
+      "1 <= n <= 20",
+      "-1000 <= matrix[i][j] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1,2,3],[4,5,6],[7,8,9]]",
+        "output": "[[7,4,1],[8,5,2],[9,6,3]]",
+        "explanation": "Rotating the given matrix 90 degrees clockwise results in the new arrangement."
+      },
+      {
+        "input": "matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]",
+        "output": "[[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]",
+        "explanation": "After rotating the matrix 90 degrees clockwise, this is the result."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to map each element in the matrix to its new location.",
+      "You can use the concept of layers when traversing the matrix."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Second Highest Salary",
+    "description": "Write a SQL query to find the second highest salary from the Employees table. If there is no second highest salary, the query should return null.",
+    "topic": "Database",
+    "subtopic": "SQL Queries",
+    "tags": [
+      "SQL",
+      "Database",
+      "Aggregation"
+    ],
+    "input_format": "A table named Employees with columns Id, Name, and Salary.",
+    "output_format": "A single value representing the second highest salary or null.",
+    "constraints": [
+      "The Employees table has at least two records.",
+      "Salaries are non-negative integers."
+    ],
+    "examples": [
+      {
+        "input": "Employees = [[1, 'John', 3000], [2, 'Jane', 1500], [3, 'Doe', 2000]]",
+        "output": "2000",
+        "explanation": "The highest salary is 3000 and the second highest is 2000."
+      },
+      {
+        "input": "Employees = [[1, 'John', 3000], [2, 'Jane', 3000]]",
+        "output": "null",
+        "explanation": "Both records have the same highest salary, so there is no second highest."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the DISTINCT keyword to filter duplicate salaries.",
+      "Use the LIMIT clause with OFFSET to fetch the second highest salary."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the height of walls, compute how much water it can trap after raining. The water trapped is determined by the height of the walls. Water can only be trapped between two walls; the amount of water trapped is determined by the minimum of the heights of the walls to its left and right minus the height of the wall itself.",
+    "topic": "Array",
+    "subtopic": "Two Pointer",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers heights, where heights[i] represents the height of a wall at index i.",
+    "output_format": "An integer representing the total amount of water trapped.",
+    "constraints": [
+      "0 <= heights.length <= 2 * 10^4",
+      "0 <= heights[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The total water trapped is 6 units (between the walls at indices 1-3, 2-5, and 8-11)."
+      },
+      {
+        "input": "heights = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The total water trapped is 9 units."
+      },
+      {
+        "input": "heights = [1,0,2]",
+        "output": "1",
+        "explanation": "The total water trapped is 1 unit between the walls at indices 0 and 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using two pointers to calculate the trapped water.",
+      "Maintain a max height from left and right for each position."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an array of integers nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Hash Table"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of unique triplets that sum up to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum up to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "There are no triplets in an empty array."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "There are no triplets that sum up to zero."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array first to make it easier to avoid duplicates.",
+      "Use a two-pointer approach to find pairs that sum to a specific value."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Fibonacci Number",
+    "description": "The Fibonacci sequence is a sequence of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. Your task is to write a function that returns the nth Fibonacci number.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Recursion",
+    "tags": [
+      "Dynamic Programming",
+      "Recursion",
+      "Mathematics"
+    ],
+    "input_format": "An integer n (0 <= n <= 30), representing the position in the Fibonacci sequence.",
+    "output_format": "An integer representing the nth Fibonacci number.",
+    "constraints": [
+      "0 <= n <= 30"
+    ],
+    "examples": [
+      {
+        "input": "n = 5",
+        "output": "5",
+        "explanation": "The first six Fibonacci numbers are 0, 1, 1, 2, 3, 5. Therefore, F(5) = 5."
+      },
+      {
+        "input": "n = 10",
+        "output": "55",
+        "explanation": "The Fibonacci sequence for n = 10 is 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55. Thus, F(10) = 55."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use recursion to calculate the Fibonacci numbers.",
+      "Consider storing previously computed values to optimize the solution."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Coin Change",
+    "description": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. You need to return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Coin Change Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array coins and an integer amount.",
+    "output_format": "An integer representing the fewest number of coins needed to make up the amount, or -1 if it's not possible.",
+    "constraints": [
+      "1 <= coins.length <= 12",
+      "1 <= coins[i] <= 2^31 - 1",
+      "0 <= amount <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "coins = [1, 2, 5], amount = 11",
+        "output": "3",
+        "explanation": "11 can be made up with two 5's and one 1, so the fewest number of coins is 3."
+      },
+      {
+        "input": "coins = [2], amount = 3",
+        "output": "-1",
+        "explanation": "Amount 3 cannot be made with coin denomination 2."
+      },
+      {
+        "input": "coins = [1], amount = 0",
+        "output": "0",
+        "explanation": "Amount 0 requires 0 coins."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to find the minimum number of coins needed.",
+      "You may want to maintain an array to keep track of the minimum coins required for each amount."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the strings into anagrams. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "Hash Table",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Hash Table",
+      "String",
+      "Anagram"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of groups of anagrams, where each group is a list of strings.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"eat\",\"tea\",\"ate\"],[\"tan\",\"nat\"],[\"bat\"]]",
+        "explanation": "The anagrams are grouped together: 'eat', 'tea', and 'ate' form one group, while 'tan' and 'nat' form another group, and 'bat' stands alone."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "Since there is only one string which is an empty string, it forms a group by itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "The single character 'a' forms its own group."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to collect words that have the same character count.",
+      "Sorting the characters in a string can help identify anagrams."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Integer",
+    "description": "Given a signed 32-bit integer, reverse the digits of the integer. If reversing the integer causes an overflow, return 0. The integer should be treated as a negative number if it's negative, and you should preserve the negative sign after reversal.",
+    "topic": "Math",
+    "subtopic": "Number Manipulation",
+    "tags": [
+      "Math",
+      "String Manipulation",
+      "Number Reversal"
+    ],
+    "input_format": "A signed 32-bit integer x.",
+    "output_format": "A signed 32-bit integer representing the reversed integer.",
+    "constraints": [
+      "-2^31 <= x <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "x = 123",
+        "output": "321",
+        "explanation": "Reversing the digits of 123 gives 321."
+      },
+      {
+        "input": "x = -123",
+        "output": "-321",
+        "explanation": "Reversing the digits of -123 gives -321."
+      },
+      {
+        "input": "x = 120",
+        "output": "21",
+        "explanation": "Reversing the digits of 120 gives 021, which is 21."
+      },
+      {
+        "input": "x = 1534236469",
+        "output": "0",
+        "explanation": "Reversing the digits causes an overflow, so the result is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how you can extract each digit of the integer.",
+      "Be mindful of handling overflows during the reversal."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. An interval is represented as a pair of integers, where the first number is the start time, and the second number is the end time. The intervals may not be given in order.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A list of intervals where each interval is represented as a list of two integers [start, end].",
+    "output_format": "A list of merged intervals, each represented as a list of two integers [start, end].",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "-10^4 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]",
+        "output": "[[1, 6], [8, 10], [15, 18]]",
+        "explanation": "The intervals [1, 3] and [2, 6] overlap, so they are merged into [1, 6]. The other intervals do not overlap."
+      },
+      {
+        "input": "intervals = [[1, 4], [4, 5]]",
+        "output": "[[1, 5]]",
+        "explanation": "The intervals [1, 4] and [4, 5] are merged as they touch at point 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Start by sorting the intervals based on their start times.",
+      "Use a stack to keep track of the merged intervals."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order. Start from the top-left corner of the matrix and proceed to traverse the outermost elements in a clockwise direction, moving inward layer by layer until all elements are traversed.",
+    "topic": "Matrix",
+    "subtopic": "Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Spiral"
+    ],
+    "input_format": "A 2D list of integers representing the matrix.",
+    "output_format": "A list of integers representing the elements of the matrix in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "m * n <= 10^4",
+      "-10^5 <= matrix[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The traversal starts from 1, moves right to 3, then down to 6, then left to 4, and finally goes up to 5, completing the circle."
+      },
+      {
+        "input": "matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]",
+        "output": "[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]",
+        "explanation": "The traversal goes from 1->4, then down to 8, right to 12, left to 9, and up to 5, going inward through the matrix."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to keep track of the boundaries of the layers.",
+      "Use direction vectors to facilitate movement in the matrix."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses. The generated parentheses should be valid, meaning that every opening parenthesis must have a corresponding closing parenthesis.",
+    "topic": "Backtracking",
+    "subtopic": "Generating Combinations",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Combination"
+    ],
+    "input_format": "An integer n (1 <= n <= 8) representing the number of pairs of parentheses.",
+    "output_format": "A list of strings, where each string represents a valid combination of parentheses.",
+    "constraints": [
+      "1 <= n <= 8"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\"]",
+        "explanation": "The valid combinations for 3 pairs of parentheses are: ((())), (()()), (())(), ()(()), and ()()."
+      },
+      {
+        "input": "n = 1",
+        "output": "[\"()\"]",
+        "explanation": "The only valid combination for 1 pair of parentheses is: ()."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the balance of opening and closing parentheses.",
+      "Use a recursive backtracking approach to try adding '(' and ')' at each step."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Product of Array Except Self",
+    "description": "Given an integer array nums, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i]. You must solve it without using the division operation and in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Product Calculation",
+    "tags": [
+      "Array",
+      "Product",
+      "O(n) Time"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing the product of array except self.",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-30 <= nums[i] <= 30",
+      "The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "[24, 12, 8, 6]",
+        "explanation": "For index 0: product of [2, 3, 4] = 24; for index 1: product of [1, 3, 4] = 12; for index 2: product of [1, 2, 4] = 8; for index 3: product of [1, 2, 3] = 6."
+      },
+      {
+        "input": "nums = [-1, 1, 0, -3, 3]",
+        "output": "[0, 0, 9, 0, 0]",
+        "explanation": "The products except for each index lead to an array filled with zeros and one entry of 9."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using prefix and suffix products.",
+      "Think about how to store intermediate results to avoid redundancy."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Array",
+    "description": "Given an array of integers 'nums' and an integer 'k', rotate the array to the right by 'k' steps. Note that 'k' can be greater than the length of the array.",
+    "topic": "Array",
+    "subtopic": "Rotation",
+    "tags": [
+      "Array",
+      "Rotation",
+      "In-place"
+    ],
+    "input_format": "The input consists of an array of integers nums and an integer k.",
+    "output_format": "The array after rotating it to the right by k steps.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= k <= 10^7",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5, 6, 7], k = 3",
+        "output": "[5, 6, 7, 1, 2, 3, 4]",
+        "explanation": "Rotating the array [1, 2, 3, 4, 5, 6, 7] by 3 steps results in [5, 6, 7, 1, 2, 3, 4]."
+      },
+      {
+        "input": "nums = [-1, -100, 3, 99], k = 2",
+        "output": "[3, 99, -1, -100]",
+        "explanation": "Rotating the array [-1, -100, 3, 99] by 2 steps yields [3, 99, -1, -100]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using modular arithmetic to handle cases where k is larger than the length of the array.",
+      "Reverse the entire array, then reverse the first k elements and the remaining elements."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum II - Input Array Is Sorted",
+    "description": "Given a 1-indexed array of integers 'numbers' that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Return the indices of the two numbers in a 1-indexed format. You may assume that each input would have exactly one solution and you may not use the same element twice. Your solution should be optimized for a time complexity better than O(n^2).",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Binary Search"
+    ],
+    "input_format": "An integer array 'numbers' sorted in non-decreasing order, followed by an integer 'target'.",
+    "output_format": "An integer array of size 2 containing the 1-indexed positions of the two numbers such that they add up to 'target'.",
+    "constraints": [
+      "2 <= numbers.length <= 3 * 10^4",
+      "-10^9 <= numbers[i] <= 10^9",
+      "numbers is sorted in non-decreasing order.",
+      "A valid answer exists for the given target."
+    ],
+    "examples": [
+      {
+        "input": "numbers = [2, 7, 11, 15], target = 9",
+        "output": "[1, 2]",
+        "explanation": "The numbers at index 1 and 2 (2 + 7) add up to 9."
+      },
+      {
+        "input": "numbers = [1, 2, 3, 4, 4, 9, 10], target = 8",
+        "output": "[4, 5]",
+        "explanation": "The numbers at index 4 and 5 (4 + 4) add up to 8."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a two-pointer approach.",
+      "If the current sum is less than the target, move the left pointer right.",
+      "If the current sum is greater than the target, move the right pointer left."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Rearrange Array Elements by Sign",
+    "description": "Given an array of integers, rearrange the elements such that all negative numbers appear first, followed by all positive numbers. Maintain the relative order of the elements within each group (negative numbers and positive numbers). The input array can contain zeros, and they should be positioned at the end of the array in their original order.",
+    "topic": "Array",
+    "subtopic": "Sorting and Rearrangement",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Rearrangement"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers with negative numbers first, followed by positive numbers and then zeros.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, -1, 4, -2, 0, -3, 5]",
+        "output": "[-1, -2, -3, 3, 4, 5, 0]",
+        "explanation": "The negative numbers -1, -2, and -3 are at the front, followed by the positive numbers 3, 4, and 5, with 0 at the end."
+      },
+      {
+        "input": "nums = [0, -1, -2, 0, 3, 0, -4]",
+        "output": "[-1, -2, -4, 0, 0, 3, 0]",
+        "explanation": "The negative numbers -1, -2, and -4 are grouped at the start, followed by zeros, and then the positive number 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two lists to hold negative and positive numbers separately.",
+      "After collecting the negatives and positives, combine them followed by the zeros."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Sort an Array",
+    "description": "Given an array of integers, write a function to sort the array in non-decreasing order. The sorting algorithm should be efficient and well-optimized for large datasets.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Algorithm"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A sorted array of integers in non-decreasing order.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 2, 9, 1, 5, 6]",
+        "output": "[1, 2, 5, 5, 6, 9]",
+        "explanation": "The numbers sorted in non-decreasing order are 1, 2, 5, 5, 6, and 9."
+      },
+      {
+        "input": "nums = [3, -1, 0, 2, -5]",
+        "output": "[-5, -1, 0, 2, 3]",
+        "explanation": "The numbers sorted in non-decreasing order are -5, -1, 0, 2, and 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using an efficient sorting algorithm like QuickSort or MergeSort.",
+      "In Python, the built-in sort function can achieve this in O(n log n) time."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Consecutive Sequence",
+    "description": "Given an unsorted array of integers, find the length of the longest consecutive elements sequence. Your algorithm should run in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Sorting"
+    ],
+    "input_format": "An unsorted array of integers nums.",
+    "output_format": "An integer representing the length of the longest consecutive sequence.",
+    "constraints": [
+      "0 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [100, 4, 200, 1, 3, 2]",
+        "output": "4",
+        "explanation": "The longest consecutive sequence is [1, 2, 3, 4], which has a length of 4."
+      },
+      {
+        "input": "nums = [0, -1]",
+        "output": "2",
+        "explanation": "The longest consecutive sequence is [-1, 0], which has a length of 2."
+      },
+      {
+        "input": "nums = []",
+        "output": "0",
+        "explanation": "There are no elements in the array, hence the longest consecutive sequence is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a Set to store the elements for fast access.",
+      "Iterate through the array to count consecutive sequences."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Common Prefix",
+    "description": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\".",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings strs, where 1 <= strs.length <= 200 and 0 <= strs[i].length <= 200.",
+    "output_format": "A string that represents the longest common prefix.",
+    "constraints": [
+      "0 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "All input strings consist of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\",\"flow\",\"flight\"]",
+        "output": "\"fl\"",
+        "explanation": "The longest common prefix is 'fl'."
+      },
+      {
+        "input": "strs = [\"dog\",\"racecar\",\"car\"]",
+        "output": "\"\"",
+        "explanation": "There is no common prefix among the strings."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "\"a\"",
+        "explanation": "Only one string, so the common prefix is 'a'."
+      },
+      {
+        "input": "strs = []",
+        "output": "\"\"",
+        "explanation": "Empty input list, thus the common prefix is an empty string."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Start by assuming the entire first string is the common prefix.",
+      "Compare the prefix with each string and shorten it accordingly.",
+      "The common prefix cannot be longer than the shortest string in the array."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Words in a String",
+    "description": "Given a string s, reverse the order of the words in the string. A word is defined as a sequence of characters delimited by spaces. The input string can contain leading, trailing, or multiple spaces between words. Your solution should trim the leading and trailing spaces and reduce multiple spaces to a single space.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Interleaving"
+    ],
+    "input_format": "A single string s, which can contain spaces.",
+    "output_format": "A single string representing the input string with words in reverse order.",
+    "constraints": [
+      "0 <= s.length <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "s = '  Hello World!  '",
+        "output": "'World! Hello'",
+        "explanation": "The words in the string reversed without leading or trailing spaces."
+      },
+      {
+        "input": "s = '  the sky is blue  '",
+        "output": "'blue is sky the'",
+        "explanation": "The words in the string are reversed, and extra spaces are removed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to split the string based on spaces.",
+      "Consider using a stack or a two-pointer technique."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, return true if t is an anagram of s and false otherwise. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Sorting and Comparing",
+    "tags": [
+      "String",
+      "Anagram",
+      "Sorting"
+    ],
+    "input_format": "Two strings s and t, where 0 <= s.length, t.length <= 5 * 10^4.",
+    "output_format": "A boolean value indicating whether t is an anagram of s.",
+    "constraints": [
+      "The characters in s and t are all lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"anagram\", t = \"nagaram\"",
+        "output": "true",
+        "explanation": "Both strings contain the same characters, so t is an anagram of s."
+      },
+      {
+        "input": "s = \"rat\", t = \"car\"",
+        "output": "false",
+        "explanation": "The strings do not contain the same characters, so t is not an anagram of s."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a frequency count of characters in both strings."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Largest Element in an Array",
+    "description": "Given an array of integers 'nums' and an integer 'k', return the k-th largest element in the array. Note that it is the k-th largest element in the sorted order, not the k-th distinct element. You must solve it in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Sorting and Selection",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Selection"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the k-th largest element.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 1, 5, 6, 4], k = 2",
+        "output": "5",
+        "explanation": "The second largest element in the sorted array [1, 2, 3, 4, 5, 6] is 5."
+      },
+      {
+        "input": "nums = [3, 2, 3, 1, 2, 4, 5, 5, 6], k = 4",
+        "output": "4",
+        "explanation": "The fourth largest element in the sorted array [1, 2, 2, 3, 3, 4, 5, 5, 6] is 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a quickselect algorithm.",
+      "You can use a max heap or min heap for this problem."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Sorted Lists",
+    "description": "Given the heads of two sorted linked lists, merge them into a single sorted linked list, and return the head of the merged linked list. The new list should be made by splicing together the nodes of the first two lists.",
+    "topic": "Linked List",
+    "subtopic": "Merge",
+    "tags": [
+      "Linked List",
+      "Merge",
+      "Sorting"
+    ],
+    "input_format": "The input consists of two linked lists represented as the head nodes of two separate linked lists.",
+    "output_format": "Return the head of the merged linked list as a single sorted linked list.",
+    "constraints": [
+      "The number of nodes in each list is in the range [0, 50].",
+      "The value of each node is in the range [-100, 100]."
+    ],
+    "examples": [
+      {
+        "input": "l1 = [1, 2, 4], l2 = [1, 3, 4]",
+        "output": "[1, 1, 2, 3, 4, 4]",
+        "explanation": "Merging the two lists results in 1 -> 1 -> 2 -> 3 -> 4 -> 4."
+      },
+      {
+        "input": "l1 = [], l2 = [0]",
+        "output": "[0]",
+        "explanation": "Since l1 is empty, the merged list is just l2."
+      },
+      {
+        "input": "l1 = [], l2 = []",
+        "output": "[]",
+        "explanation": "Both lists are empty, thus the merged list is also empty."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a dummy node to simplify the merging process."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Index of the First Occurrence in a String",
+    "description": "Given two strings `haystack` and `needle`, return the index of the first occurrence of `needle` in `haystack`. If `needle` is not part of `haystack`, return -1. You must implement this algorithm in O(n) time complexity.",
+    "topic": "String",
+    "subtopic": "Searching",
+    "tags": [
+      "String",
+      "Searching",
+      "Algorithm"
+    ],
+    "input_format": "Two input strings, `haystack` and `needle`. `haystack` is the string to be searched, and `needle` is the substring to find.",
+    "output_format": "An integer representing the index of the first occurrence of `needle` in `haystack`, or -1 if `needle` is not found.",
+    "constraints": [
+      "1 <= haystack.length <= 1000",
+      "0 <= needle.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "haystack = \"hello\", needle = \"ll\"",
+        "output": "2",
+        "explanation": "The substring \"ll\" occurs at index 2 in \"hello\"."
+      },
+      {
+        "input": "haystack = \"aaaaa\", needle = \"bba\"",
+        "output": "-1",
+        "explanation": "The substring \"bba\" is not found in \"aaaaa\"."
+      },
+      {
+        "input": "haystack = \"mississippi\", needle = \"iss\"",
+        "output": "1",
+        "explanation": "The substring \"iss\" occurs at index 1 in \"mississippi\"."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using the two-pointer technique to efficiently find the substring.",
+      "Make sure to handle the edge case when needle is an empty string."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Move Zeroes",
+    "description": "Given an array of integers, write a function that moves all 0's to the end of the array while maintaining the relative order of the non-zero elements. Note that you must do this in-place without making a copy of the array.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "In-place",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "The input array is modified in-place and returns nothing.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 1, 0, 3, 12]",
+        "output": "[1, 3, 12, 0, 0]",
+        "explanation": "The non-zero elements are 1, 3, 12, which maintain their relative order, and all zeros are moved to the end."
+      },
+      {
+        "input": "nums = [0, 0, 0, 0]",
+        "output": "[0, 0, 0, 0]",
+        "explanation": "There are no non-zero elements to move, so the output remains unchanged."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try to keep track of the position to insert non-zero elements.",
+      "A single pass through the array could be efficient."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Partitioning",
+    "description": "Given a string s, partition s such that every substring of the partition is a palindrome. Return all possible palindrome partitioning of s. A palindrome string is a string that reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Backtracking",
+    "tags": [
+      "String",
+      "Backtracking",
+      "Palindrome"
+    ],
+    "input_format": "A string s where 1 <= s.length <= 16 and s consists of only lowercase English letters.",
+    "output_format": "A list of lists of strings, where each inner list contains the substrings that form one of the valid palindrome partitioning of the input string.",
+    "constraints": [
+      "1 <= s.length <= 16",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "aab",
+        "output": [
+          [
+            "a",
+            "a",
+            "b"
+          ],
+          [
+            "aa",
+            "b"
+          ]
+        ],
+        "explanation": "The substrings 'a', 'a', and 'b' as well as 'aa' and 'b' are both palindromic partitions of the input string."
+      },
+      {
+        "input": "a",
+        "output": [
+          [
+            "a"
+          ]
+        ],
+        "explanation": "The only partitioning for the single character 'a' is itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use backtracking to explore all possible partitions.",
+      "Check if a substring is a palindrome before adding it to the current partition.",
+      "Utilize dynamic programming to optimize palindrome checks."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Gas Station",
+    "description": "There are n gas stations along a circular route, where the amount of gas at the i-th station is gas[i]. You can travel from a gas station to the next station by consuming one unit of gas. You start with an empty tank at one of the gas stations. Given two integer arrays, gas and cost, return the starting gas station's index if you can travel around the circuit once without running out of gas, otherwise return -1.",
+    "topic": "Greedy",
+    "subtopic": "Circular Array",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Simulation"
+    ],
+    "input_format": "Two integer arrays, gas and cost, where gas[i] is the amount of gas available at station i, and cost[i] is the gas needed to travel from station i to station (i + 1) % n.",
+    "output_format": "An integer representing the starting gas station index that allows completing the circuit, or -1 if not possible.",
+    "constraints": [
+      "1 <= gas.length <= 10^4",
+      "0 <= gas[i], cost[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "gas = [1,2,3,4,5], cost = [3,4,5,1,2]",
+        "output": "3",
+        "explanation": "Starting at station 3 (gas[3] = 4), you have enough gas to reach all other stations and return to station 3."
+      },
+      {
+        "input": "gas = [2,3,4], cost = [3,4,3]",
+        "output": "-1",
+        "explanation": "There is no starting station that allows completing the circuit."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the total amount of gas and total cost to find feasibility.",
+      "Maintain a balance of remaining gas as you simulate the travel."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber",
+    "description": "You are a professional thief planning to rob houses along a street. Each house has a certain amount of money stashed, but adjacent houses have security systems connected. If two adjacent houses are robbed, the alarm will automatically go off. Given an integer array 'nums' representing the amount of money of each house, return the maximum amount of money you can rob without triggering the alarm.",
+    "topic": "Dynamic Programming",
+    "subtopic": "One-Dimensional DP",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Maximal Subsequence"
+    ],
+    "input_format": "An integer array nums, where nums[i] represents the amount of money at the i-th house.",
+    "output_format": "An integer representing the maximum amount of money that can be robbed.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 400"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 9, 3, 1]",
+        "output": "12",
+        "explanation": "Robbing house 1 (2) and house 3 (9) and house 4 (1) gives a total of 12."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Robbing house 1 (1) and house 3 (3) gives a total of 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the maximum amount of money you could rob from the first n houses.",
+      "Use a dynamic programming approach to build the solution iteratively.",
+      "Think about whether to rob the current house or skip it."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "DFS",
+      "Graph",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid represented by a list of lists, where each inner list contains '1's and '0's.",
+    "output_format": "An integer representing the number of islands in the grid.",
+    "constraints": [
+      "1 <= grid.length <= 300",
+      "1 <= grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1,1,0,0,0],[1,1,0,0,0],[0,0,1,0,0],[0,0,0,1,1]]",
+        "output": "3",
+        "explanation": "There are three islands: one at the top, one in the middle, and one at the bottom right."
+      },
+      {
+        "input": "grid = [[1,1,1,1,0],[1,1,0,1,0],[1,1,0,0,0],[0,0,0,0,0]]",
+        "output": "1",
+        "explanation": "All land cells are connected, forming a single island."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use depth-first search (DFS) to explore the grid.",
+      "Mark visited land cells to avoid counts during exploration.",
+      "Iterate through each cell and initiate a DFS when you find an unvisited land cell."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Missing Number",
+    "description": "Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one number that is missing from the array.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Mathematics"
+    ],
+    "input_format": "An array of integers nums of size n, where n is the length of the array.",
+    "output_format": "An integer representing the missing number.",
+    "constraints": [
+      "1 <= n <= 10^4",
+      "0 <= nums[i] <= n"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 0, 1]",
+        "output": "2",
+        "explanation": "The numbers from 0 to 3 are 0, 1, 2, 3. The missing number is 2."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "1",
+        "explanation": "The numbers from 0 to 1 are 0, 1. The missing number is 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the sum of the first n natural numbers.",
+      "Use the XOR operation to find the missing number."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Climbing Stairs",
+    "description": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorial Problems",
+    "tags": [
+      "Dynamic Programming",
+      "Recursion",
+      "Combinatorial"
+    ],
+    "input_format": "An integer n representing the total number of steps.",
+    "output_format": "An integer representing the number of distinct ways to climb to the top.",
+    "constraints": [
+      "1 <= n <= 45"
+    ],
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "There are two ways to climb to the top: 1 step + 1 step or 2 steps."
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "explanation": "There are three ways to climb to the top: 1+1+1, 1+2, or 2+1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think about the number of ways to reach the step before the top.",
+      "Consider using a recurrence relation."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A palindrome is a string that reads the same backward as forward. You may assume that the input string is non-empty and that the maximum length of s is 1000.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s of length n.",
+    "output_format": "A string representing the longest palindromic substring in s.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only digits and English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"babad\"",
+        "output": "\"bab\"",
+        "explanation": "Both \"bab\" and \"aba\" are valid longest palindromic substrings."
+      },
+      {
+        "input": "s = \"cbbd\"",
+        "output": "\"bb\"",
+        "explanation": "\"bb\" is the longest palindromic substring in this case."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around the center for each character.",
+      "A palindrome may have even or odd length."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Sqrt(x)",
+    "description": "Given a non-negative integer x, return the truncation of the square root of x. The function should return the largest integer y such that y * y <= x.",
+    "topic": "Math",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Math",
+      "Binary Search",
+      "Square Root"
+    ],
+    "input_format": "A single non-negative integer x.",
+    "output_format": "An integer representing the truncated square root of x.",
+    "constraints": [
+      "0 <= x <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "x = 4",
+        "output": "2",
+        "explanation": "The square root of 4 is 2, and since 2 * 2 = 4, the output is 2."
+      },
+      {
+        "input": "x = 8",
+        "output": "2",
+        "explanation": "The square root of 8 is approximately 2.828. The largest integer y such that y * y <= 8 is 2."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using binary search to find the integer square root."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Single Element in a Sorted Array",
+    "description": "Given a sorted array, you need to find the element that appears only once in the array. Every other element appears exactly twice. Implement a function that returns this unique element.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Unique Element"
+    ],
+    "input_format": "An array of integers nums, sorted in ascending order.",
+    "output_format": "An integer representing the single element that appears only once.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^5",
+      "It is guaranteed that there is one unique element in the array."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2, 3, 3, 4, 4, 8, 8]",
+        "output": "2",
+        "explanation": "The array contains pairs (1, 1), (3, 3), (4, 4), (8, 8), and the only element that appears once is 2."
+      },
+      {
+        "input": "nums = [0, 1, 1, 2, 2, 3, 3, 4, 4]",
+        "output": "0",
+        "explanation": "The array contains pairs (1, 1), (2, 2), (3, 3), (4, 4), and the only element that appears once is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a binary search approach for efficiency.",
+      "The unique element's position will help in determining the side of the array to search next."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Add Two Numbers",
+    "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return it as a linked list.",
+    "topic": "Linked List",
+    "subtopic": "Addition",
+    "tags": [
+      "Linked List",
+      "Addition",
+      "Two Pointers"
+    ],
+    "input_format": "Two linked lists l1 and l2 of length n and m respectively.",
+    "output_format": "A linked list representing the sum of the two numbers, also stored in reverse order.",
+    "constraints": [
+      "The number of nodes in each linked list is in the range [1, 100].",
+      "0 <= Node.val <= 9",
+      "It is guaranteed that the input lists represent numbers that do not have leading zeros."
+    ],
+    "examples": [
+      {
+        "input": "l1 = [2, 4, 3], l2 = [5, 6, 4]",
+        "output": "[7, 0, 8]",
+        "explanation": "342 + 465 = 807, represented in reverse order as [7, 0, 8]."
+      },
+      {
+        "input": "l1 = [0], l2 = [0]",
+        "output": "[0]",
+        "explanation": "0 + 0 = 0."
+      },
+      {
+        "input": "l1 = [9, 9, 9], l2 = [1]",
+        "output": "[0, 0, 0, 1]",
+        "explanation": "999 + 1 = 1000, represented in reverse order as [0, 0, 0, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a carry variable to account for sums greater than 10.",
+      "Iterate through both linked lists until both are null."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given a linked list, reverse the nodes of the list k at a time and return its modified list. If the number of nodes is not a multiple of k, then the remaining nodes at the end should remain as they are. You may not alter the values in the nodes, only nodes themselves may be changed.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "In-place"
+    ],
+    "input_format": "A linked list and an integer k, where the linked list has nodes with unique values.",
+    "output_format": "The head of the modified linked list after reversing the nodes in groups of k.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000].",
+      "0 <= Node.val <= 1000",
+      "1 <= k <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1,2,3,4,5], k = 2",
+        "output": "[2,1,4,3,5]",
+        "explanation": "The first two nodes (1 and 2) are reversed to (2 and 1), and the next two nodes (3 and 4) are reversed to (4 and 3) while the last node (5) remains as it is."
+      },
+      {
+        "input": "head = [1,2,3,4,5], k = 3",
+        "output": "[3,2,1,4,5]",
+        "explanation": "The first three nodes (1, 2, and 3) are reversed to (3, 2, and 1), while the remaining nodes (4 and 5) remain in their original order."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a dummy node for easier manipulation.",
+      "Think about how to reverse a portion of the linked list in place.",
+      "You will encounter boundary conditions when the remaining nodes are fewer than k."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock II",
+    "description": "You are given an integer array where each element represents the price of a stock on a particular day. You can buy and sell the stock multiple times but cannot hold onto the stock after selling. Your goal is to maximize your profit by choosing the best days to buy and sell the stock.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers where each integer represents the stock price on a given day.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 3 * 10^4",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 3 (price = 5). Then buy on day 4 (price = 3) and sell on day 5 (price = 6). The total profit is (5 - 1) + (6 - 3) = 7."
+      },
+      {
+        "input": "prices = [1, 2, 3, 4, 5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5). The total profit is 5 - 1 = 4."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider when to buy and when to sell to maximize profit.",
+      "What happens when the price increases versus when it decreases?"
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Subsets",
+    "description": "Given a set of distinct integers, return all possible subsets (the power set). The solution set must not contain duplicate subsets. You may return the solution in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Subsets Generation",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "Subset"
+    ],
+    "input_format": "A list of distinct integers nums.",
+    "output_format": "A list of lists, where each list represents a unique subset.",
+    "constraints": [
+      "0 <= nums.length <= 10",
+      "-10 <= nums[i] <= 10"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]",
+        "explanation": "The subsets of [1, 2, 3] are all combinations of the elements, including the empty set."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[[], [0]]",
+        "explanation": "The subsets of [0] are the empty set and the set containing the single element 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to generate the subsets.",
+      "You can include or exclude each element in the input set."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "4Sum",
+    "description": "Given an array of integers `nums` and an integer target, return all unique quadruplets (a, b, c, d) such that a + b + c + d equals target. You may return the answer in any order. Each quadruplet should be sorted in non-decreasing order, and the output should not contain duplicate quadruplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An integer array nums and a target integer.",
+    "output_format": "A list of unique quadruplets that sum up to the target.",
+    "constraints": [
+      "0 <= nums.length <= 200",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 0, -1, 0, -2, 2], target = 0",
+        "output": "[[-2, -1, 0, 1], [0, 0, 0, 0], [-2, 0, 0, 2], [-1, 0, 0, 1]]",
+        "explanation": "The quadruplets that sum to target 0 are [-2, -1, 0, 1] and [-2, 0, 0, 2]."
+      },
+      {
+        "input": "nums = [2, 2, 2, 2, 2], target = 8",
+        "output": "[[2, 2, 2, 2]]",
+        "explanation": "The only quadruplet that sums to target 8 is [2, 2, 2, 2]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a two-pointer technique after sorting the array.",
+      "Avoid duplicates by checking consecutive elements when moving the pointers."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Kids With the Greatest Number of Candies",
+    "description": "There are n kids with candies. You are given an integer array candies, where candies[i] is the number of candies the ith kid has, and an integer extraCandies, denoting the number of extra candies that you have. You need to determine how many kids can have the greatest number of candies if you give each kid the extraCandies. A kid can be considered to have the greatest number of candies if their total number of candies is greater than or equal to the maximum number of candies any kid currently has.",
+    "topic": "Array",
+    "subtopic": "Basic Array Operations",
+    "tags": [
+      "Array",
+      "Logic",
+      "Simulation"
+    ],
+    "input_format": "An array of integers candies followed by an integer extraCandies.",
+    "output_format": "A list of booleans where each entry represents whether the corresponding kid can have the greatest number of candies.",
+    "constraints": [
+      "2 <= candies.length <= 100",
+      "1 <= candies[i] <= 100",
+      "0 <= extraCandies <= 50"
+    ],
+    "examples": [
+      {
+        "input": "candies = [2, 3, 5, 1, 3], extraCandies = 3",
+        "output": "[true, true, true, false, true]",
+        "explanation": "Kids with indices 0, 1, 2, and 4 can have the greatest or equal number of candies as kid 2 after giving extraCandies."
+      },
+      {
+        "input": "candies = [4, 2, 1, 1, 2], extraCandies = 1",
+        "output": "[true, false, false, false, false]",
+        "explanation": "Only the first kid can have the greatest number of candies after giving extraCandies."
+      },
+      {
+        "input": "candies = [12, 1, 12], extraCandies = 10",
+        "output": "[true, false, true]",
+        "explanation": "Kids with indices 0 and 2 can have the greatest number of candies."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Find the maximum number of candies a kid currently has.",
+      "Compare each kid's total candies with the maximum after adding extraCandies."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Create a DataFrame from List",
+    "description": "You are given a list of dictionaries where each dictionary represents a row of data. Your task is to create a DataFrame using this list. The resulting DataFrame should have columns based on the keys of the dictionaries, and each dictionary should correspond to a row in the DataFrame.",
+    "topic": "DataFrame",
+    "subtopic": "Data Manipulation",
+    "tags": [
+      "DataFrame",
+      "Pandas",
+      "Data Manipulation"
+    ],
+    "input_format": "A list of dictionaries where each dictionary has the same set of keys.",
+    "output_format": "A DataFrame where each key from the dictionaries becomes a column.",
+    "constraints": [
+      "1 <= len(data) <= 1000",
+      "Each dictionary can have between 1 and 10 keys."
+    ],
+    "examples": [
+      {
+        "input": "[{'name': 'Alice', 'age': 30}, {'name': 'Bob', 'age': 25}]",
+        "output": "DataFrame with columns ['name', 'age'] and rows [['Alice', 30], ['Bob', 25]]",
+        "explanation": "A DataFrame is created with 'name' and 'age' as column headers, and corresponding values from the dictionaries."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a library like Pandas to create DataFrames easily.",
+      "Look into how to convert a list of dictionaries into a DataFrame."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Depth of Binary Tree",
+    "description": "Given a binary tree, find its maximum depth. The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node. A leaf is a node with no children.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Depth",
+      "Binary Tree"
+    ],
+    "input_format": "The input consists of the root node of a binary tree.",
+    "output_format": "An integer representing the maximum depth of the binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [3,9,20,null,null,15,7]",
+        "output": "3",
+        "explanation": "The maximum depth is 3, corresponding to the path: 3 -> 20 -> 15."
+      },
+      {
+        "input": "root = [1,null,2]",
+        "output": "2",
+        "explanation": "The maximum depth is 2, corresponding to the path: 1 -> 2."
+      },
+      {
+        "input": "root = []",
+        "output": "0",
+        "explanation": "The maximum depth is 0 because the tree is empty."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a recursive approach to traverse the tree.",
+      "Consider both left and right subtrees when calculating depth."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Queue using Stacks",
+    "description": "Design a queue using two stacks. The queue should support the following operations: enqueue (adding an element to the back of the queue) and dequeue (removing the element from the front of the queue). Implement the queue methods enqueue and dequeue in such a way that each operation is performed in amortized O(1) time.",
+    "topic": "Data Structures",
+    "subtopic": "Stack and Queue",
+    "tags": [
+      "Stack",
+      "Queue",
+      "Data Structures"
+    ],
+    "input_format": "The function will be called multiple times for enqueue and dequeue operations.",
+    "output_format": "The output will be the result of the dequeue operation, which will return the front element of the queue.",
+    "constraints": [
+      "The total number of operations will not exceed 10000.",
+      "All elements added to the queue will be integers."
+    ],
+    "examples": [
+      {
+        "input": "enqueue(1), enqueue(2), enqueue(3), dequeue()",
+        "output": "1",
+        "explanation": "After enqueuing 1, 2, and 3, the first dequeued element is 1."
+      },
+      {
+        "input": "enqueue(5), enqueue(10), dequeue(), enqueue(15), dequeue()",
+        "output": "5",
+        "explanation": "The first dequeue removes 5. The next dequeue will remove 10."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two stacks to simulate the queue behavior.",
+      "Pop elements from the first stack to the second for dequeue operations."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Product of Three Numbers",
+    "description": "Given an integer array nums, return the maximum product of three numbers in the array. You may assume that the input array has at least three numbers. You can use the numbers in any order.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Greedy"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum product of any three numbers in the array.",
+    "constraints": [
+      "3 <= nums.length <= 1000",
+      "-1000 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "6",
+        "explanation": "The maximum product can be achieved with the numbers 1, 2, and 3, resulting in 1 * 2 * 3 = 6."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "24",
+        "explanation": "The maximum product can be obtained using the numbers 2, 3, and 4, resulting in 2 * 3 * 4 = 24."
+      },
+      {
+        "input": "nums = [-10, -10, 5, 2]",
+        "output": "500",
+        "explanation": "The maximum product can be achieved using -10, -10, and 5, resulting in -10 * -10 * 5 = 500."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider both positive and negative numbers.",
+      "The maximum product can be formed by the largest three numbers or two smallest and the largest."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "You are given an integer array nums sorted in ascending order, which is then rotated at some unknown pivot index. Write a function to search for a target value in the rotated array. If the target exists, then return its index. Otherwise, return -1. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Searching"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An integer representing the index of target if found, else -1.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      " -10^4 <= nums[i] <= 10^4",
+      "All integers in nums are unique.",
+      "Assume nums is rotated at some pivot."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "The target 0 is found at index 4."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "The target 3 is not in the array."
+      },
+      {
+        "input": "nums = [1], target = 0",
+        "output": "-1",
+        "explanation": "The target 0 is not in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of a rotated sorted array.",
+      "Use binary search to narrow down the search space."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "String to Integer (atoi)",
+    "description": "Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer (similar to C/C++'s atoi). The algorithm for myAtoi(string s) is as follows: 1. Read in and ignore any leading whitespace. 2. Check for the optional sign and read it. 3. Convert the characters until a non-digit character is encountered. 4. The resulting integer should be clamped within the 32-bit signed integer range [-2^31, 2^31 - 1]. 5. Return the integer value, or 0 if no valid conversion could be performed.",
+    "topic": "String",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Parsing",
+      "Integer Conversion"
+    ],
+    "input_format": "A string s representing the input to be converted.",
+    "output_format": "An integer representing the converted value, clamped within the 32-bit signed integer range.",
+    "constraints": [
+      "s is an English alphabetic character, digit, or a space.",
+      "The length of s is less than 2^31."
+    ],
+    "examples": [
+      {
+        "input": "s = '   -42'",
+        "output": "-42",
+        "explanation": "Leading spaces are ignored. The '-' sign indicates the number is negative, and '42' gets converted to -42."
+      },
+      {
+        "input": "s = '4193 with words'",
+        "output": "4193",
+        "explanation": "The leading numeric value is 4193; non-digit characters are ignored."
+      },
+      {
+        "input": "s = 'words and 987'",
+        "output": "0",
+        "explanation": "No valid conversion can be performed since there are no leading numeric characters."
+      },
+      {
+        "input": "s = '-91283472332'",
+        "output": "-2147483648",
+        "explanation": "The number exceeds the lower limit of a 32-bit signed integer, so it gets clamped to -2147483648."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a state variable to track the parsing state.",
+      "Handle edge cases regarding whitespace and signs carefully.",
+      "Use long or big integer types to manage overflow before clamping."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Subarray Sum Equals K",
+    "description": "Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k. A subarray is a contiguous part of an array.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "HashMap",
+      "Subarray"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the number of continuous subarrays whose sum equals to k.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "-10^4 <= nums[i] <= 10^4",
+      "[-10^9 <= k <= 10^9]"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 1], k = 2",
+        "output": "2",
+        "explanation": "The subarrays are [1, 1] (from index 0 to 1) and [1, 1] (from index 1 to 2), both of which sum to 2."
+      },
+      {
+        "input": "nums = [1, 2, 3], k = 3",
+        "output": "2",
+        "explanation": "The subarrays are [3] (from index 2) and [1, 2] (from index 0 to 1), both of which sum to 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to store cumulative sums and their frequencies.",
+      "Check the difference between the current cumulative sum and k."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Pow(x, n)",
+    "description": "Implement a function that computes x raised to the power n (x^n). This should support both positive and negative integer exponents, as well as zero. Do not use the built-in power function for this implementation.",
+    "topic": "Math",
+    "subtopic": "Exponentiation",
+    "tags": [
+      "Math",
+      "Exponentiation",
+      "Recursion"
+    ],
+    "input_format": "Two values: a float x and an integer n.",
+    "output_format": "A float representing the result of x raised to the power of n.",
+    "constraints": [
+      "-100.0 <= x <= 100.0",
+      "-10^4 <= n <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "x = 2.0, n = 10",
+        "output": "1024.0",
+        "explanation": "2 raised to the power of 10 is 1024."
+      },
+      {
+        "input": "x = 2.1, n = 3",
+        "output": "9.261",
+        "explanation": "2.1 raised to the power of 3 is approximately 9.261."
+      },
+      {
+        "input": "x = 2.0, n = -2",
+        "output": "0.25",
+        "explanation": "2 raised to the power of -2 is 1 / (2^2), which is 0.25."
+      },
+      {
+        "input": "x = 0.0, n = 5",
+        "output": "0.0",
+        "explanation": "0 raised to any positive power is 0."
+      },
+      {
+        "input": "x = 1.0, n = 0",
+        "output": "1.0",
+        "explanation": "Any number raised to the power of 0 is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to handle negative exponents.",
+      "Think about how to use recursion to simplify your function.",
+      "Pay attention to edge cases like x = 0."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Median"
+    ],
+    "input_format": "Two sorted arrays nums1 and nums2.",
+    "output_format": "A single floating-point number representing the median of the two sorted arrays.",
+    "constraints": [
+      "0 <= nums1.length <= 1000",
+      "0 <= nums2.length <= 1000",
+      "nums1 and nums2 are both sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 3], nums2 = [2]",
+        "output": "2.0",
+        "explanation": "Merged array = [1, 2, 3]. The median is 2."
+      },
+      {
+        "input": "nums1 = [1, 2], nums2 = [3, 4]",
+        "output": "2.5",
+        "explanation": "Merged array = [1, 2, 3, 4]. The median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using binary search to find the partition point."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Car Fleet",
+    "description": "There are 'n' cars going to the destination along a one-lane road. The cars are represented by their starting positions and speeds. If a car is faster than the car in front of it and catches up to it, they form a fleet. Given the position and speed of each car, return the total number of fleets that will arrive at the destination.",
+    "topic": "Greedy",
+    "subtopic": "Simulation",
+    "tags": [
+      "Greedy",
+      "Simulation",
+      "Array"
+    ],
+    "input_format": "Two arrays, position[n] and speed[n], representing the starting positions and speeds of each car respectively. An integer destination indicating the destination point.",
+    "output_format": "An integer representing the total number of car fleets that will arrive at the destination.",
+    "constraints": [
+      "1 <= n <= 10^4",
+      "0 <= position[i] < destination",
+      "1 <= speed[i] <= 10^6",
+      "All positions are unique."
+    ],
+    "examples": [
+      {
+        "input": {
+          "position": [
+            10,
+            8,
+            0,
+            5,
+            3
+          ],
+          "speed": [
+            2,
+            4,
+            1,
+            1,
+            3
+          ],
+          "destination": 12
+        },
+        "output": "3",
+        "explanation": "The car at position 10 will reach the destination at time 1. The car at position 8 will reach the destination at time 1 (speed 4). The car at position 0 will reach at time 12 (speed 1), while the car at position 5 will reach at time 12 (speed 1); both will not catch up to any front cars. Therefore, three distinct fleets arrive."
+      },
+      {
+        "input": {
+          "position": [
+            0,
+            4,
+            2
+          ],
+          "speed": [
+            2,
+            1,
+            3
+          ],
+          "destination": 5
+        },
+        "output": "1",
+        "explanation": "All cars will catch up to each other and form a fleet because the faster cars will reach the destination and catch up."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the time it takes for each car to reach the destination.",
+      "Use a stack to keep track of the fleets."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Edit Distance",
+    "description": "Given two strings word1 and word2, return the minimum number of operations required to transform word1 into word2. The possible operations are: Insert a character, Delete a character, or Replace a character.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Edit Distance"
+    ],
+    "input_format": "Two strings word1 and word2.",
+    "output_format": "An integer representing the minimum number of operations to convert word1 to word2.",
+    "constraints": [
+      "1 <= word1.length, word2.length <= 100",
+      "word1 and word2 consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "word1 = 'horse', word2 = 'ros'",
+        "output": "3",
+        "explanation": "The three operations are: replace 'h' with 'r', replace 'e' with 'r', and delete 'e'."
+      },
+      {
+        "input": "word1 = 'intention', word2 = 'execution'",
+        "output": "5",
+        "explanation": "The five operations are: replace 'i' with 'e', replace 'n' with 'x', delete 't', insert 'u', and insert 'i'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming.",
+      "Think about how you can represent the number of edits at each step."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an integer array nums and an integer k, return the maximum sliding window for each contiguous subarray of size k. You must implement an algorithm that operates in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Max"
+    ],
+    "input_format": "An integer array nums and an integer k (1 <= k <= nums.length).",
+    "output_format": "An array of integers representing the maximum values of each sliding window.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,3,-1,-3,5,3,6,7], k = 3",
+        "output": "[3, 3, 5, 5, 6, 7]",
+        "explanation": "The maximums for each window of size 3 are [3, 3, 5, 5, 6, 7]."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "Only one element is present, so the maximum is 1."
+      },
+      {
+        "input": "nums = [1,-1], k = 1",
+        "output": "[1, -1]",
+        "explanation": "In each sliding window of size 1, the maximums are [1, -1]."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a deque to store indices of the elements.",
+      "The deque should maintain the indices in a way that their corresponding values are in descending order."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Duplicate Number",
+    "description": "Given an array of integers nums containing n numbers where each number is between 1 and n (inclusive), find the duplicate number in the array. You must solve the problem without modifying the input array and using constant extra space.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums where 1 <= nums.length <= 10^5.",
+    "output_format": "An integer representing the duplicate number in the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= n",
+      "There is exactly one duplicate number."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 4, 2, 2]",
+        "output": "2",
+        "explanation": "The number 2 appears twice in the array."
+      },
+      {
+        "input": "nums = [3, 1, 3, 4, 2]",
+        "output": "3",
+        "explanation": "The number 3 appears twice in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Floyd's Tortoise and Hare algorithm.",
+      "You can think of this as a cycle detection problem."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Your goal is to determine if you can reach the last index starting from the first index. You can assume that you can always reach the last index if you are currently at an index that has a jump length of zero.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers nums representing the maximum jump lengths.",
+    "output_format": "A boolean value: true if you can reach the last index, otherwise false.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "true",
+        "explanation": "You can jump from index 0 to 1, and then jump from index 1 to the last index."
+      },
+      {
+        "input": "nums = [3, 2, 1, 0, 4]",
+        "output": "false",
+        "explanation": "You will reach index 3 where you cannot jump further."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how far you can go from each position.",
+      "Use a greedy approach to keep track of the farthest reachable index."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Score Words Formed by Letters",
+    "description": "You are given an array of strings 'words' and an integer array 'scores' where 'scores[i]' is the score of the ith letter in the English alphabet (a = 1, b = 2, ..., z = 26). Your task is to find the maximum score that can be obtained by concatenating words from the 'words' array, such that the concatenated string can be formed using the letters provided in a given 'letters' array, with each letter usable only as many times as it appears in 'letters'. Return this maximum score. If no words can be formed, return 0.",
+    "topic": "Greedy",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Greedy",
+      "String",
+      "Score"
+    ],
+    "input_format": "An array of strings 'words' representing the words, an array of integers 'scores' for the scores associated with letters, and an array of characters 'letters'.",
+    "output_format": "An integer representing the maximum score obtainable.",
+    "constraints": [
+      "1 <= words.length <= 10^4",
+      "1 <= words[i].length <= 50",
+      "scores.length == 26",
+      "1 <= letters.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "dog",
+            "cat",
+            "dad",
+            "good"
+          ],
+          "scores": [
+            1,
+            0,
+            9,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "letters": [
+            "a",
+            "a",
+            "d",
+            "d",
+            "g",
+            "o",
+            "o"
+          ]
+        },
+        "output": "23",
+        "explanation": "The word 'dad' scores 9 + 1 + 9 = 19 and 'go' scores 5 + 9 = 14. Choosing 'dad' (19) + 'go' (14) gives us 33, which is maximum."
+      },
+      {
+        "input": {
+          "words": [
+            "hello",
+            "world"
+          ],
+          "scores": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "letters": [
+            "h",
+            "e",
+            "l",
+            "o"
+          ]
+        },
+        "output": "0",
+        "explanation": "No valid score can be achieved as the score array does not contain any positive values."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a hashmap to count the available letters.",
+      "Try using a recursive approach with memoization to maximize the score.",
+      "Remember to check if a word can be formed with the available letters before calculating its score."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Combination Sum",
+    "description": "Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations of candidates where the chosen numbers sum to target. You may return the combinations in any order. The same number may be chosen from candidates an unlimited number of times. It is guaranteed that the solution set does not contain duplicate combinations.",
+    "topic": "Backtracking",
+    "subtopic": "Combination",
+    "tags": [
+      "Backtracking",
+      "Combination",
+      "Array"
+    ],
+    "input_format": "An array of distinct integers candidates and an integer target.",
+    "output_format": "A list of lists containing all unique combinations of candidates that sum up to target.",
+    "constraints": [
+      "1 <= candidates.length <= 30",
+      "1 <= candidates[i] <= 200",
+      "All elements of candidates are distinct.",
+      "0 <= target <= 500"
+    ],
+    "examples": [
+      {
+        "input": "candidates = [2, 3, 6, 7], target = 7",
+        "output": "[[7], [2, 2, 3]]",
+        "explanation": "The combinations that sum up to 7 are [7] and [2, 2, 3]."
+      },
+      {
+        "input": "candidates = [1], target = 2",
+        "output": "[[1, 1]]",
+        "explanation": "The only combination that sums up to 2 is [1, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Start with an empty combination and build upon it recursively.",
+      "Consider using backtracking to explore all possible combinations."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Average Time of Process per Machine",
+    "description": "You have a list of machine processes where each process has a start time and an end time. Your goal is to calculate the average time that each machine is busy processing tasks. Each machine may process multiple tasks consecutively. The average time should be rounded to two decimal places.",
+    "topic": "Array",
+    "subtopic": "Calculating Averages",
+    "tags": [
+      "Array",
+      "Average",
+      "Time Complexity"
+    ],
+    "input_format": "A list of tuples, where each tuple contains three integers: (machine_id, start_time, end_time).",
+    "output_format": "A dictionary where the keys are machine_ids and the values are the average processing times of the respective machines, rounded to two decimal places.",
+    "constraints": [
+      "1 <= processes.length <= 10^5",
+      "0 <= start_time < end_time <= 24"
+    ],
+    "examples": [
+      {
+        "input": "processes = [(1, 2, 5), (2, 1, 3), (1, 6, 8)]",
+        "output": "{1: 3.50, 2: 2.00}",
+        "explanation": "Machine 1 has a total processing time of (5-2) + (8-6) = 5 hours. Average = 5/2 = 2.50. Machine 2 has a total processing time of (3-1) = 2 hours. Average = 2/1 = 2.00."
+      },
+      {
+        "input": "processes = [(1, 0, 2), (1, 3, 5), (2, 4, 7)]",
+        "output": "{1: 2.00, 2: 3.00}",
+        "explanation": "Machine 1 has processing times of 2 and 2 hours (2 + 2) with an average of 2.00. Machine 2 has 3 hours from 4 to 7."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a dictionary to store total processing times for each machine.",
+      "Keep track of the number of processes for each machine to compute the average."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Koko Eating Bananas",
+    "description": "Koko loves to eat bananas, and she wants to eat all the bananas in her pile as quickly as possible. Koko can decide the speed at which she eats bananas. However, there are certain constraints on her eating speed that must be adhered to. Given a pile of bananas and a number of hours, your task is to calculate the minimum eating speed (in bananas per hour) that Koko must achieve in order to finish eating all the bananas within the given hours. If it is impossible for Koko to finish eating all the bananas within the given hours, return -1.",
+    "topic": "Binary Search",
+    "subtopic": "Search algorithms",
+    "tags": [
+      "Binary Search",
+      "Greedy",
+      "Simulation"
+    ],
+    "input_format": "An array of integers piles representing the number of bananas in each pile, and an integer h representing the number of hours.",
+    "output_format": "An integer representing the minimum eating speed (in bananas per hour) required for Koko to finish eating all the bananas in h hours, or -1 if it is not possible.",
+    "constraints": [
+      "1 <= piles.length <= 10^4",
+      "1 <= piles[i] <= 10^9",
+      "1 <= h <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "piles = [3, 6, 7, 11], h = 8",
+        "output": "4",
+        "explanation": "At a speed of 4 bananas per hour, Koko can finish in 8 hours: (3/4) + (6/4) + (7/4) + (11/4) = 8 hours."
+      },
+      {
+        "input": "piles = [30, 11, 23, 4, 20], h = 5",
+        "output": "30",
+        "explanation": "At a speed of 30 bananas per hour, Koko can finish in 5 hours."
+      },
+      {
+        "input": "piles = [30, 11, 23, 4, 20], h = 6",
+        "output": "23",
+        "explanation": "At a speed of 23 bananas per hour, Koko can finish in 6 hours."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to find the minimum speed.",
+      "Check if a given speed allows Koko to finish within h hours."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Container With Most Water",
+    "description": "Given n non-negative integers a1, a2, ..., an where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of the lines are at (i, 0) and (i, ai). Find two lines, which together with the x-axis forms a container, such that the container contains the most water. Return the maximum amount of water a container can store.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Greedy"
+    ],
+    "input_format": "An array of non-negative integers, where each integer represents the height of a vertical line.",
+    "output_format": "An integer representing the maximum area of water the container can hold.",
+    "constraints": [
+      "2 <= heights.length <= 3 * 10^4",
+      "0 <= heights[i] <= 3 * 10^4"
+    ],
+    "examples": [
+      {
+        "input": "heights = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The maximum area is formed between the lines at indices 1 and 8 (height = 7), yielding an area of (8 - 1) * min(7, 3) = 49."
+      },
+      {
+        "input": "heights = [1,1]",
+        "output": "1",
+        "explanation": "The area is 1 since both lines have height 1 and are spaced by 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about the relationship between the distance between lines and the height of the lines."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to Roman",
+    "description": "Given an integer, convert it to a Roman numeral. The input is guaranteed to be within the range from 1 to 3999.",
+    "topic": "Math",
+    "subtopic": "Conversion",
+    "tags": [
+      "Math",
+      "Conversion",
+      "Strings"
+    ],
+    "input_format": "An integer num, where 1 <= num <= 3999.",
+    "output_format": "A string representing the Roman numeral equivalent of the input integer.",
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "examples": [
+      {
+        "input": "num = 3",
+        "output": "III",
+        "explanation": "3 is represented as 'III' in Roman numerals."
+      },
+      {
+        "input": "num = 58",
+        "output": "LVIII",
+        "explanation": "58 is represented as 'LVIII' in Roman numerals, which is 'L' (50) + 'V' (5) + 'III' (3)."
+      },
+      {
+        "input": "num = 1994",
+        "output": "MCMXCIV",
+        "explanation": "1994 is represented as 'MCMXCIV', which is 'M' (1000) + 'CM' (900) + 'XC' (90) + 'IV' (4)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the values of Roman numerals and how they combine."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Sum of Total Strength of Wizards",
+    "description": "You are given an array of integers representing the strengths of various wizards. Your task is to calculate the total strength of wizards in such a way that the strength of each wizard can be influenced by their neighbors. Specifically, if a wizard at index i has a strength that is less than both of its neighbors, their strength is considered as influenced by both neighbors, and the total strength is calculated as the minimum of these three. If it's not influenced, it is counted as its original strength. Return the total strength of wizards after applying the rules.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers strengths, where 1 <= strengths.length <= 10^5 and 1 <= strengths[i] <= 10^6.",
+    "output_format": "An integer representing the total strength of the wizards after applying the influence rules.",
+    "constraints": [
+      "1 <= strengths.length <= 10^5",
+      "1 <= strengths[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "strengths = [5, 4, 3, 4, 5]",
+        "output": "18",
+        "explanation": "The wizard at index 2 (strength = 3) is influenced by its neighbors (5, 4, 5) so it contributes 3. The total strength considered is 5 + 4 + 3 + 4 + 5 = 21 - 3 = 18."
+      },
+      {
+        "input": "strengths = [8, 1, 9, 1, 8]",
+        "output": "33",
+        "explanation": "The wizard at index 1 and index 3 (both strength = 1) are influenced by their neighbors (8, 1, 9) and (9, 1, 8) respectively, but they retain value '1'. Therefore, total strength = 8 + 1 + 9 + 1 + 8 = 27."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the influence of neighbors carefully.",
+      "Use a loop to calculate the total strength iteratively.",
+      "Keep track of the influenced strengths and the original strengths."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Greatest Common Divisor of Strings",
+    "description": "Given two strings str1 and str2, return the largest string that can be constructed as the greatest common divisor (GCD) of those strings. The GCD of two strings is defined as the longest string that can be repeated some number of times to create both str1 and str2. If no such string exists, return an empty string.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "GCD",
+      "Manipulation"
+    ],
+    "input_format": "Two strings str1 and str2.",
+    "output_format": "A string representing the GCD of the two input strings, or an empty string if no GCD exists.",
+    "constraints": [
+      "1 <= str1.length, str2.length <= 1000",
+      "str1 and str2 consist of uppercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "str1 = 'ABCABC', str2 = 'ABC'",
+        "output": "ABC",
+        "explanation": "The GCD of 'ABCABC' and 'ABC' is 'ABC'. It can be repeated 2 and 1 times to form the respective strings."
+      },
+      {
+        "input": "str1 = 'ABABAB', str2 = 'ABAB'",
+        "output": "ABAB",
+        "explanation": "The GCD of 'ABABAB' and 'ABAB' is 'ABAB'. It can be repeated 1 and 1 times to form the respective strings."
+      },
+      {
+        "input": "str1 = 'LEET', str2 = 'CODE'",
+        "output": "",
+        "explanation": "There are no common divisors between 'LEET' and 'CODE', hence the output is an empty string."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the lengths of both strings and how they relate to their GCD.",
+      "Check the repetitive patterns in the strings."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Combination Sum II",
+    "description": "Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers add up to target. Each number in candidates may only be used once in the combination. The solution set must not contain duplicate combinations. Note that the order of combinations does not matter.",
+    "topic": "Backtracking",
+    "subtopic": "Combination Sum",
+    "tags": [
+      "Backtracking",
+      "Combination",
+      "DFS"
+    ],
+    "input_format": "An array of integers 'candidates' and an integer 'target'.",
+    "output_format": "A list of lists containing unique combinations that sum up to target.",
+    "constraints": [
+      "1 <= candidates.length <= 100",
+      "1 <= candidates[i] <= 50",
+      "target is a positive integer.",
+      "All numbers (including target) are integers."
+    ],
+    "examples": [
+      {
+        "input": {
+          "candidates": [
+            10,
+            1,
+            2,
+            7,
+            6,
+            1,
+            5
+          ],
+          "target": 8
+        },
+        "output": [
+          [
+            1,
+            1,
+            6
+          ],
+          [
+            1,
+            2,
+            5
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "explanation": "The unique combinations that sum up to 8 are: [1, 1, 6], [1, 2, 5], and [2, 6]."
+      },
+      {
+        "input": {
+          "candidates": [
+            2,
+            5,
+            2,
+            1,
+            2
+          ],
+          "target": 5
+        },
+        "output": [
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            5
+          ]
+        ],
+        "explanation": "The unique combinations that sum up to 5 are: [1, 2, 2] and [5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use backtracking to explore all combinations.",
+      "Consider sorting the input to handle duplicates efficiently.",
+      "Track the index to avoid using the same element more than once."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Palindrome",
+    "description": "Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases. A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "A single string s.",
+    "output_format": "Return true if s is a palindrome, otherwise return false.",
+    "constraints": [
+      "1 <= s.length <= 2 * 10^5",
+      "s consists only of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"A man, a plan, a canal: Panama\"",
+        "output": "true",
+        "explanation": "After removing non-alphanumeric characters and converting to lowercase, we get \"amanaplanacanalpanama\", which is a palindrome."
+      },
+      {
+        "input": "s = \"race a car\"",
+        "output": "false",
+        "explanation": "After processing, we get \"raceacar\", which is not a palindrome."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to compare characters from both ends.",
+      "Use a helper function to check if a character is alphanumeric."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Replace Employee ID With The Unique Identifier",
+    "description": "You are given a list of employee records, where each record consists of an employee ID and their corresponding unique identifier. Your task is to replace all employee IDs in the list with their associated unique identifiers. If an employee ID does not have a corresponding unique identifier, it should be left unchanged in the list.",
+    "topic": "Hash Table",
+    "subtopic": "Mapping",
+    "tags": [
+      "Hash Table",
+      "Mapping",
+      "Array"
+    ],
+    "input_format": "A list of tuples where each tuple contains an integer employee ID and its corresponding unique identifier as an integer.",
+    "output_format": "A list of integers representing the modified employee records with replaced IDs.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= employee_id, unique_identifier <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "records = [(1, 101), (2, 102), (3, 103)] \n ids_to_replace = [1, 2, 3]",
+        "output": "[101, 102, 103]",
+        "explanation": "The employee IDs 1, 2, and 3 are replaced by their corresponding unique identifiers 101, 102, and 103."
+      },
+      {
+        "input": "records = [(1, 101), (2, 102), (3, 103)] \n ids_to_replace = [1, 4, 3]",
+        "output": "[101, 4, 103]",
+        "explanation": "Employee ID 1 is replaced with 101, ID 4 has no unique identifier, so it stays 4, and ID 3 is replaced with 103."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a dictionary to map employee IDs to unique identifiers.",
+      "Iterate through the list and replace IDs based on the mapping."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Colors",
+    "description": "Given an array of integers representing the colors of a ball, where 0 is red, 1 is white, and 2 is blue, you need to sort the array in such a way that all 0's come first, followed by all 1's, and all 2's at the end. This problem can be solved in a single pass through the array with constant space.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums consisting of 0s, 1s, and 2s.",
+    "output_format": "The sorted array in-place.",
+    "constraints": [
+      "1 <= nums.length <= 300",
+      "nums[i] is either 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 0, 2, 1, 1, 0]",
+        "output": "[0, 0, 1, 1, 2, 2]",
+        "explanation": "After sorting, all 0's are moved to the front, followed by all 1's and then 2's."
+      },
+      {
+        "input": "nums = [2, 0, 1]",
+        "output": "[0, 1, 2]",
+        "explanation": "The sorted order places 0 first, followed by 1 and then 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the Dutch National Flag problem algorithm.",
+      "Use three pointers to keep track of the positions of 0, 1, and 2."
+    ],
+    "company": "Infosys"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Search",
+    "description": "Given a sorted array of integers and a target value, implement a function to search for the target in the array. If the target exists, return its index. Otherwise, return -1. You must write a solution that has a runtime complexity of O(log n).",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Searching"
+    ],
+    "input_format": "A sorted array of integers nums and an integer target.",
+    "output_format": "An integer which is the index of target in the array or -1 if target is not found.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5",
+      "nums is sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], target = 4",
+        "output": "3",
+        "explanation": "The target 4 is located at index 3."
+      },
+      {
+        "input": "nums = [1, 3, 5, 7, 9], target = 2",
+        "output": "-1",
+        "explanation": "The target 2 is not in the array, so the output is -1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the middle element of the array.",
+      "If the middle element is equal to the target, return the index.",
+      "If the target is less than the middle, search in the left half.",
+      "If the target is greater, search in the right half."
+    ],
+    "company": "Infosys"
+  }
+]

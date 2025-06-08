@@ -1,0 +1,222 @@
+[
+  {
+    "question_id": "",
+    "title": "Game Play Analysis V",
+    "description": "You are given a list of integers representing the game scores of players in a series of matches. Your task is to calculate the maximum possible score a player can achieve by playing optimally over the given matches. A player can only gain points from the current match or the previous two matches. If a player skips a match, they cannot gain points from matches that follow until they resume playing. Determine the maximum score a player can accumulate under these conditions.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Maximizing Score",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "A list of integers `scores`, where 0 <= scores.length <= 10^4 and -1000 <= scores[i] <= 1000.",
+    "output_format": "An integer representing the maximum score a player can achieve.",
+    "constraints": [
+      "0 <= scores.length <= 10^4",
+      "-1000 <= scores[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "scores = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Choosing matches 2 and 4 (scores 2 + 1) gives the maximum score of 4."
+      },
+      {
+        "input": "scores = [2, 7, 9, 3, 1]",
+        "output": "12",
+        "explanation": "Choosing matches 1, 3, and 5 (scores 2 + 9 + 1) leads to the maximum score of 12."
+      },
+      {
+        "input": "scores = [0]",
+        "output": "0",
+        "explanation": "No matches, so the score is 0."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to keep track of the maximum scores.",
+      "Think about the choices for each match: to play it or skip it.",
+      "Use an array to store maximum scores up to each match."
+    ],
+    "company": "GSN Games"
+  },
+  {
+    "question_id": "",
+    "title": "Game Play Analysis I",
+    "description": "You have a game where you record the total number of points scored by a player at each stage of the game. Given a list of integers representing points scored at various stages, your task is to determine the total points scored by the player at the end of the game. Additionally, you need to determine the maximum points scored at any stage of the game.",
+    "topic": "Array",
+    "subtopic": "Prefix Sum",
+    "tags": [
+      "Array",
+      "Prefix Sum",
+      "Game Analysis"
+    ],
+    "input_format": "An array of integers scores where each integer represents points scored at each stage.",
+    "output_format": "A tuple of two integers. The first integer is the total points scored, and the second integer is the maximum points scored at any stage.",
+    "constraints": [
+      "1 <= scores.length <= 10^5",
+      "0 <= scores[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "scores = [10, 15, 20, 25]",
+        "output": "(70, 25)",
+        "explanation": "The total points scored is 10 + 15 + 20 + 25 = 70. The maximum points scored at any stage is 25."
+      },
+      {
+        "input": "scores = [5, 3, 8, 6, 7]",
+        "output": "(29, 8)",
+        "explanation": "The total points scored is 5 + 3 + 8 + 6 + 7 = 29. The maximum points scored at any stage is 8."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "You can use a loop to calculate the total and maximum scores.",
+      "Remember to compare each score to maintain the maximum score."
+    ],
+    "company": "GSN Games"
+  },
+  {
+    "question_id": "",
+    "title": "Game Play Analysis II",
+    "description": "You are given two arrays, `players_score` and `games_played`, each of length `n`. Each index `i` in `players_score` represents the score of the `i-th` player, and each index `i` in `games_played` represents the number of games played by the `i-th` player. Your task is to return the average score of each player, rounded down to the nearest integer. If a player has not played any games, their average score should be considered as 0.",
+    "topic": "Array",
+    "subtopic": "Calculating Averages",
+    "tags": [
+      "Array",
+      "Average",
+      "Score"
+    ],
+    "input_format": "Two arrays `players_score` and `games_played`, both of length `n`.",
+    "output_format": "An array of integers representing the average score of each player.",
+    "constraints": [
+      "1 <= n <= 10^4",
+      "0 <= players_score[i] <= 10^6",
+      "0 <= games_played[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": {
+          "players_score": [
+            100,
+            200,
+            300
+          ],
+          "games_played": [
+            1,
+            2,
+            4
+          ]
+        },
+        "output": [
+          100,
+          100,
+          75
+        ],
+        "explanation": "The average scores are calculated as follows: Player 0: 100/1 = 100, Player 1: 200/2 = 100, Player 2: 300/4 = 75."
+      },
+      {
+        "input": {
+          "players_score": [
+            50,
+            150,
+            100,
+            0
+          ],
+          "games_played": [
+            0,
+            3,
+            0,
+            2
+          ]
+        },
+        "output": [
+          0,
+          50,
+          0,
+          0
+        ],
+        "explanation": "Player 0 and Player 2 haven't played any games, so their scores are 0. Player 1: 150/3 = 50, Player 3: 0/2 = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use integer division to round down the average.",
+      "Check for zero games played to avoid division by zero."
+    ],
+    "company": "GSN Games"
+  },
+  {
+    "question_id": "",
+    "title": "Game Play Analysis III",
+    "description": "You are given the scores of a series of game plays by two players over multiple rounds. Each round contributes a score to the players, and you need to determine the total score of each player after all rounds. Additionally, you need to calculate the average score for both players and return these values. The input is structured as a list of lists, where each inner list contains two integers representing the scores of Player 1 and Player 2 for each round. The goal is to return the total scores and average scores of both players as a list.",
+    "topic": "Array",
+    "subtopic": "Aggregation",
+    "tags": [
+      "Array",
+      "Aggregation",
+      "Score Calculation"
+    ],
+    "input_format": "A 2D list scores, where scores[i] = [score1, score2] for each round.",
+    "output_format": "A list containing two values: [total_score_player1, total_score_player2, average_score_player1, average_score_player2].",
+    "constraints": [
+      "1 <= scores.length <= 10^4",
+      "0 <= scores[i][0], scores[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "scores = [[10, 20], [30, 40], [50, 60]]",
+        "output": "[90, 120, 30.0, 40.0]",
+        "explanation": "Total score for Player 1 is 10 + 30 + 50 = 90, and for Player 2 is 20 + 40 + 60 = 120. Average for Player 1 is 90 / 3 = 30.0, and for Player 2 is 120 / 3 = 40.0."
+      },
+      {
+        "input": "scores = [[100, 200], [300, 400]]",
+        "output": "[400, 600, 200.0, 300.0]",
+        "explanation": "Total score for Player 1 is 100 + 300 = 400, and for Player 2 is 200 + 400 = 600. Average for Player 1 is 400 / 2 = 200.0, and for Player 2 is 600 / 2 = 300.0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use loops to accumulate the total scores.",
+      "To calculate averages, divide the total score by the number of rounds."
+    ],
+    "company": "GSN Games"
+  },
+  {
+    "question_id": "",
+    "title": "Game Play Analysis IV",
+    "description": "You are given two strings, 'playerOne' and 'playerTwo', representing the names of two players. Each player plays a number of games, and their scores are represented as characters in these strings. Each character corresponds to a score of 1, and the length of the strings represents the number of games played by each player. You need to analyze the game results to determine which player has more wins. A player wins a game if their score is greater than the other player's score. If they have equal scores in a game, it is considered a tie. Return the player with the most wins; if there's a tie in the number of wins, return 'Draw'.",
+    "topic": "String",
+    "subtopic": "Comparison",
+    "tags": [
+      "String",
+      "Comparison",
+      "Counting"
+    ],
+    "input_format": "Two strings, playerOne and playerTwo, where 1 <= playerOne.length, playerTwo.length <= 100.",
+    "output_format": "A string representing the player with the most wins, or 'Draw' if they have the same number of wins.",
+    "constraints": [
+      "1 <= playerOne.length, playerTwo.length <= 100",
+      "playerOne and playerTwo contain only lowercase letters ['a'-'j'] representing scores from 1 to 10."
+    ],
+    "examples": [
+      {
+        "input": "playerOne = 'abc', playerTwo = 'cde'",
+        "output": "'playerOne'",
+        "explanation": "Player One wins against Player Two in games 1 and 2, while Player Two wins in game 3. Player One has 2 wins."
+      },
+      {
+        "input": "playerOne = 'aaa', playerTwo = 'aaa'",
+        "output": "'Draw'",
+        "explanation": "Both players have equal scores in all games, resulting in a tie."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count wins for both players by comparing the scores in each game.",
+      "Keep track of wins in separate counters for each player."
+    ],
+    "company": "GSN Games"
+  }
+]

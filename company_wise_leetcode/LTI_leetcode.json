@@ -1,0 +1,168 @@
+[
+  {
+    "question_id": "",
+    "title": "Maximum White Tiles Covered by a Carpet",
+    "description": "You are given a 1-indexed array of integers `lengths` where `lengths[i]` represents the length of the `i-th` tile which is colored white. You have a carpet of length `carpetLength` that can cover a continuous segment of these tiles. Your task is to maximize the number of white tiles that can be covered by the carpet. You can place the carpet starting at any index of the tiles and can only cover a continuous segment. Return the maximum number of white tiles that can be covered by the carpet.",
+    "topic": "Greedy",
+    "subtopic": "Interval Coverage",
+    "tags": [
+      "Greedy",
+      "Interval",
+      "Array"
+    ],
+    "input_format": "An array of integers `lengths` and an integer `carpetLength`.",
+    "output_format": "An integer representing the maximum number of white tiles that can be covered by the carpet.",
+    "constraints": [
+      "1 <= lengths.length <= 10^5",
+      "1 <= lengths[i] <= 10^5",
+      "1 <= carpetLength <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "lengths = [1, 2, 3, 4, 5], carpetLength = 5",
+        "output": "5",
+        "explanation": "The carpet can cover the first 5 tiles (1 + 2 + 3 + 4 + 5) without exceeding its length."
+      },
+      {
+        "input": "lengths = [1, 2, 3, 4, 5], carpetLength = 3",
+        "output": "3",
+        "explanation": "The carpet can cover the first 3 tiles (1 + 2)."
+      },
+      {
+        "input": "lengths = [5, 1, 1, 2, 3], carpetLength = 4",
+        "output": "3",
+        "explanation": "The carpet can cover tiles index 2 and 3 (1 + 1 + 2)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window technique.",
+      "Consider the sum of lengths as you expand or contract the window.",
+      "Keep track of the covered length vs. the carpet length."
+    ],
+    "company": "LTI"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Integer",
+    "description": "Given a 32-bit signed integer, reverse the digits of the integer. If reversing the integer causes the value to go out of the 32-bit signed integer range [-2^31, 2^31 - 1], then return 0.",
+    "topic": "Math",
+    "subtopic": "Integer Manipulation",
+    "tags": [
+      "Math",
+      "Integer",
+      "Reverse"
+    ],
+    "input_format": "A single integer x within the range of a 32-bit signed integer.",
+    "output_format": "An integer which is the reversed version of x, or 0 if it overflows.",
+    "constraints": [
+      "-2^31 <= x <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "x = 123",
+        "output": "321",
+        "explanation": "Reversing 123 gives 321."
+      },
+      {
+        "input": "x = -123",
+        "output": "-321",
+        "explanation": "Reversing -123 gives -321."
+      },
+      {
+        "input": "x = 120",
+        "output": "21",
+        "explanation": "Reversing 120 gives 021, which is 21."
+      },
+      {
+        "input": "x = 1534236469",
+        "output": "0",
+        "explanation": "Reversing 1534236469 exceeds the 32-bit signed integer range, hence the output is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to handle negative numbers.",
+      "Think about converting the integer to a string and reversing it."
+    ],
+    "company": "LTI"
+  },
+  {
+    "question_id": "",
+    "title": "Closest Subsequence Sum",
+    "description": "Given an array of integers `nums` and an integer `target`, find the sum of a subsequence that is closest to `target`. A subsequence can be derived from the array by deleting some elements without changing the order of the remaining elements. Return the closest sum to the target. If there are multiple sums that are equally close, return the smaller sum.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Subsequence"
+    ],
+    "input_format": "An array of integers `nums` followed by a single integer `target`.",
+    "output_format": "An integer representing the closest sum to the target.",
+    "constraints": [
+      "1 <= nums.length <= 20",
+      "-1000 <= nums[i] <= 1000",
+      "-10^4 <= target <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], target = 9",
+        "output": "9",
+        "explanation": "The sum of the subsequence [4, 5] equals 9, which is the closest to the target."
+      },
+      {
+        "input": "nums = [1, -1, 2, -2, 3], target = 0",
+        "output": "0",
+        "explanation": "The empty subsequence gives a sum of 0, which is closest to target."
+      },
+      {
+        "input": "nums = [-1, -2, -3, -4, -5], target = -3",
+        "output": "-3",
+        "explanation": "The sum of the subsequence [-3] equals -3, which is equal to the target."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to track possible sums.",
+      "Try to explore all subsets of nums and find their sums."
+    ],
+    "company": "LTI"
+  },
+  {
+    "question_id": "",
+    "title": "Count Zero Request Servers",
+    "description": "You are tasked with finding the number of servers that receive zero requests in a given time frame. Given an array of integers representing the number of requests each server received, return the count of servers that received zero requests.",
+    "topic": "Array",
+    "subtopic": "Counting",
+    "tags": [
+      "Array",
+      "Counting",
+      "Zero Requests"
+    ],
+    "input_format": "An array of integers, requests, where each integer represents the number of requests received by each server.",
+    "output_format": "An integer representing the count of servers that received zero requests.",
+    "constraints": [
+      "1 <= requests.length <= 10^5",
+      "0 <= requests[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "requests = [0, 2, 0, 5, 3]",
+        "output": "2",
+        "explanation": "There are two servers that received zero requests."
+      },
+      {
+        "input": "requests = [1, 1, 1, 1, 1]",
+        "output": "0",
+        "explanation": "No servers received zero requests."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a simple count operation to iterate through the array.",
+      "Check each server's request count against zero."
+    ],
+    "company": "LTI"
+  }
+]

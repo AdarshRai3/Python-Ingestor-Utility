@@ -1,0 +1,382 @@
+[
+  {
+    "question_id": "",
+    "title": "Happy Number",
+    "description": "A happy number is a number which eventually reaches 1 when replaced by the sum of the square of each digit. If it does not reach 1, it will get stuck in a cycle that does not include 1. Write a function to determine if a given number is a happy number.",
+    "topic": "Math",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Math",
+      "Number Theory",
+      "Simulation"
+    ],
+    "input_format": "An integer n, where 1 <= n <= 2^31 - 1.",
+    "output_format": "Return true if n is a happy number, otherwise return false.",
+    "constraints": [
+      "1 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 19",
+        "output": "true",
+        "explanation": "19 is a happy number: 1^2 + 9^2 = 82, 8^2 + 2^2 = 68, 6^2 + 8^2 = 100, 1^2 + 0^2 + 0^2 = 1."
+      },
+      {
+        "input": "n = 2",
+        "output": "false",
+        "explanation": "2 is not a happy number, it gets stuck in a cycle: 2 -> 4 -> 16 -> 37 -> 58 -> 89 -> 145 -> 42 -> 20 -> 4."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a set to track numbers you've seen to identify cycles.",
+      "Calculate the sum of squares of the digits repeatedly."
+    ],
+    "company": "Nike"
+  },
+  {
+    "question_id": "",
+    "title": "Diagonal Traverse",
+    "description": "Given an m x n matrix of integers, return all elements of the matrix in diagonal order, traversing from top-left to bottom-right. The traversal should alternate its direction at each diagonal, starting from top-left.",
+    "topic": "Matrix",
+    "subtopic": "Diagonal Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Diagonal"
+    ],
+    "input_format": "A 2D array of integers matrix of size m x n.",
+    "output_format": "A list of integers representing the elements of the matrix in diagonal order.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "-100 <= matrix[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 4, 7, 5, 3, 6, 8, 9]",
+        "explanation": "The diagonal order traversal starts from 1, then moves to 2 and 4, then to 7, then up to 5, and continues on."
+      },
+      {
+        "input": "matrix = [[1, 2], [3, 4]]",
+        "output": "[1, 2, 4, 3]",
+        "explanation": "The diagonal traversal goes: 1 => 2 => 4 => 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a loop to iterate through the matrix diagonally.",
+      "Toggle the direction of traversal at each diagonal."
+    ],
+    "company": "Nike"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A single string s containing only the characters '(', ')', '{', '}', '[' and ']'",
+    "output_format": "Return true if the string is valid, otherwise return false.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The string consists of a pair of valid parentheses."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "The string consists of a combination of valid parentheses."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The brackets are not closed in the correct order."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Check for matching closing brackets."
+    ],
+    "company": "Nike"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. A subarray is a contiguous part of an array.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum sum of the contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The subarray [4,-1,2,1] has the largest sum = 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The single element is the contiguous subarray itself, thus the largest sum is 1."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The contiguous subarray [5,4,-1,7,8] has the largest sum = 23."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dynamic programming approach.",
+      "Keep track of the maximum sum found so far."
+    ],
+    "company": "Nike"
+  },
+  {
+    "question_id": "",
+    "title": "Min Stack",
+    "description": "Design a stack that supports the following operations: push, pop, top, and retrieving the minimum element. All operations should be performed in constant time (O(1)). Implement the MinStack class with the following methods:\n\n1. `void push(int val)`: Pushes the element `val` onto the stack.\n2. `void pop()`: Removes the element on the top of the stack.\n3. `int top()`: Gets the top element of the stack.\n4. `int getMin()`: Retrieves the minimum element in the stack.",
+    "topic": "Stack",
+    "subtopic": "Design",
+    "tags": [
+      "Stack",
+      "Design",
+      "Data Structures"
+    ],
+    "input_format": "Each operation (push, pop, top, getMin) will be called in the order specified in the input.",
+    "output_format": "The output should represent the returned values from the top() and getMin() methods.",
+    "constraints": [
+      "All operations are valid and the stack is not empty when top() or getMin() is called.",
+      "1 <= val <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "MinStack minStack = new MinStack();\nminStack.push(-2);\nminStack.push(0);\nminStack.push(-3);\nminStack.getMin(); // returns -3\nminStack.pop();\nminStack.top();    // returns 0\nminStack.getMin(); // returns -2",
+        "output": "-3, 0, -2",
+        "explanation": "The minimum value after pushing -2, 0, and -3 is -3. After popping -3, the top element is 0, and the minimum element is now -2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using an auxiliary stack to keep track of the minimum values."
+    ],
+    "company": "Nike"
+  },
+  {
+    "question_id": "",
+    "title": "Can Place Flowers",
+    "description": "You have a flowerbed represented as an array containing 0's and 1's. A 0 means the plot is empty, and a 1 means the plot has a flower. You need to assess if you can plant a flower at a specific position in the flowerbed, following these rules: You cannot plant flowers in adjacent plots; you can only plant a flower in an empty plot (0). Given the flowerbed and the number of flowers you want to plant, return true if you can plant all of them without violating the rules.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Simulation"
+    ],
+    "input_format": "An integer array flowerbed representing the flowerbed, and an integer n representing how many flowers you want to plant.",
+    "output_format": "Return a boolean value indicating if you can plant all the flowers.",
+    "constraints": [
+      "1 <= flowerbed.length <= 2 * 10^4",
+      "flowerbed[i] is 0 or 1",
+      "0 <= n <= flowerbed.length"
+    ],
+    "examples": [
+      {
+        "input": "flowerbed = [1, 0, 0, 0, 1], n = 1",
+        "output": "true",
+        "explanation": "You can plant a flower in the third plot, resulting in [1, 0, 1, 0, 1]."
+      },
+      {
+        "input": "flowerbed = [1, 0, 0, 0, 1], n = 2",
+        "output": "false",
+        "explanation": "There are not enough spaces to plant 2 flowers without violating the rules."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider checking each empty plot sequentially.",
+      "If you plant a flower at position i, skip checking positions i-1 and i+1."
+    ],
+    "company": "Nike"
+  },
+  {
+    "question_id": "",
+    "title": "Next Permutation",
+    "description": "Implement the function nextPermutation that takes an array of integers and rearranges the numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it to the lowest possible order (i.e., sorted in ascending order). The solution must be done in-place and uses only O(1) extra memory.",
+    "topic": "Array",
+    "subtopic": "Permutation",
+    "tags": [
+      "Array",
+      "Permutation",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums representing the current permutation.",
+    "output_format": "Nothing. Modify the input array in-place to the next permutation.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[1, 3, 2]",
+        "explanation": "The next permutation is obtained by swapping the last two elements."
+      },
+      {
+        "input": "nums = [3, 2, 1]",
+        "output": "[1, 2, 3]",
+        "explanation": "Since the array is in descending order, the next permutation is the smallest permutation, which is sorted in ascending order."
+      },
+      {
+        "input": "nums = [1, 1, 5]",
+        "output": "[1, 5, 1]",
+        "explanation": "The next permutation is obtained by swapping the last two elements."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Find the rightmost ascent in the array.",
+      "Look for the smallest number larger than the ascent number to swap.",
+      "Reverse the numbers after the ascent index."
+    ],
+    "company": "Nike"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A string s consisting of only English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is \"abc\", which has a length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is \"b\", which has a length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is \"wke\", which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window approach to keep track of characters and their indices.",
+      "Maintain a set to check for repeating characters efficiently."
+    ],
+    "company": "Nike"
+  },
+  {
+    "question_id": "",
+    "title": "Design Graph With Shortest Path Calculator",
+    "description": "You are tasked with designing a graph that implements a shortest path calculator. Your graph should support adding vertices and edges, as well as calculating the shortest path between two vertices using Dijkstra's algorithm. Furthermore, the graph should handle both directed and undirected edges, and allow for edge weights to be positive integers. Implement the graph using an adjacency list.",
+    "topic": "Graph",
+    "subtopic": "Shortest Path",
+    "tags": [
+      "Graph",
+      "Dijkstra",
+      "Shortest Path"
+    ],
+    "input_format": "You may implement a class with methods to add vertices, add edges, and compute the shortest path.",
+    "output_format": "The shortest path length from the source vertex to the target vertex as an integer.",
+    "constraints": [
+      "The graph can have at most 10^4 vertices.",
+      "Each vertex is represented by a unique integer ID.",
+      "Edge weights are positive integers and can be at most 100."
+    ],
+    "examples": [
+      {
+        "input": "Graph with edges [(0, 1, 4), (0, 2, 1), (1, 2, 2), (1, 3, 1), (2, 3, 5)] where source=0 and target=3",
+        "output": "5",
+        "explanation": "The shortest path from vertex 0 to vertex 3 is 0 -> 2 -> 1 -> 3 with a total weight of 4 + 2 + 1 = 5."
+      },
+      {
+        "input": "Graph with edges [(1, 2, 2), (2, 3, 3), (1, 3, 8)] where source=1 and target=3",
+        "output": "5",
+        "explanation": "The shortest path from vertex 1 to vertex 3 is 1 -> 2 -> 3 with a total weight of 2 + 3 = 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a priority queue to efficiently find the next vertex with the smallest tentative distance.",
+      "Initialize the distances to all vertices as infinity and set the source distance to 0."
+    ],
+    "company": "Nike"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock II",
+    "description": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, you can buy and sell the stock multiple times (i.e., you can make as many transactions as you want) as long as you do not hold more than one share of the stock at any time. Return the maximum profit you can achieve.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array prices representing the stock prices.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 3 * 10^4",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5 - 1 = 4. Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6 - 3 = 3. Total profit = 4 + 3 = 7."
+      },
+      {
+        "input": "prices = [1, 2, 3, 4, 5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5 - 1 = 4."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "There is no transaction that can give profit, so the maximum profit is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider what happens when the stock price increases."
+    ],
+    "company": "Nike"
+  }
+]

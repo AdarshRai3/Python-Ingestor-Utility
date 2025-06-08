@@ -1,0 +1,273 @@
+[
+  {
+    "question_id": "",
+    "title": "Rotting Oranges",
+    "description": "In a given grid of size m x n, each cell can have one of three values: 0 (empty cell), 1 (fresh orange), or 2 (rotten orange). Every minute, any fresh orange that is adjacent (up, down, left, or right) to a rotten orange becomes rotten. Your task is to determine the minimum number of minutes that must elapse until no fresh oranges remain. If this is impossible, return -1.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Graph",
+      "Breadth First Search",
+      "Simulation"
+    ],
+    "input_format": "A 2D grid of integers representing the oranges' state.",
+    "output_format": "An integer representing the minimum number of minutes until no fresh oranges remain. Return -1 if impossible.",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 10^4",
+      "grid[i][j] is 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[2,1,1],[1,1,0],[0,1,1]]",
+        "output": "4",
+        "explanation": "Initially, the rotten orange at (0,0) rots the oranges at (0,1) and (1,0), making the grid [[2,2,1],[2,1,0],[0,1,1]]. After 1 minute, the state is [[2,2,2],[2,2,0],[0,2,2]] and finally, all oranges are rotten in 4 minutes."
+      },
+      {
+        "input": "grid = [[2,1,1],[0,1,1],[1,0,0]]",
+        "output": "-1",
+        "explanation": "There is a fresh orange at (2,0) that can't rot because it is not adjacent to any rotten orange."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using BFS to simulate the rotting process.",
+      "Keep track of fresh oranges and the minutes passed.",
+      "Use a queue to propagate the rot from rotten oranges."
+    ],
+    "company": "DP world"
+  },
+  {
+    "question_id": "",
+    "title": "Count Zero Request Servers",
+    "description": "You are given a list of servers represented by integers, where each integer represents the number of requests a server has received. Your task is to count how many servers have received zero requests. Implement a function that takes this list and returns the count of such servers.",
+    "topic": "Array",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Array",
+      "Counting",
+      "Filter"
+    ],
+    "input_format": "A list of integers requests, where requests[i] is the number of requests received by the i-th server.",
+    "output_format": "An integer representing the number of servers that have received zero requests.",
+    "constraints": [
+      "1 <= requests.length <= 10^5",
+      "0 <= requests[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "requests = [0, 2, 3, 0, 4, 0, 1]",
+        "output": "3",
+        "explanation": "The servers at indices 0, 3, and 5 have received zero requests."
+      },
+      {
+        "input": "requests = [1, 1, 1, 1]",
+        "output": "0",
+        "explanation": "All servers have received non-zero requests."
+      },
+      {
+        "input": "requests = [0, 0, 0, 0, 0]",
+        "output": "5",
+        "explanation": "All servers have received zero requests."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Iterate through the list and count occurrences of zero.",
+      "Consider using built-in functions to simplify counting."
+    ],
+    "company": "DP world"
+  },
+  {
+    "question_id": "",
+    "title": "Set Intersection Size At Least Two",
+    "description": "Given a collection of intervals, your task is to determine the minimum size of a set `S` such that each interval in the collection intersects with at least two elements from the set `S`. You need to return the size of this minimum set `S`.",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Interval",
+      "Set Intersection"
+    ],
+    "input_format": "An array of intervals represented by pairs of integers, where each interval is [start, end].",
+    "output_format": "An integer representing the size of the minimum set S.",
+    "constraints": [
+      "1 <= intervals.length <= 3000",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] < intervals[i][1] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1, 3], [2, 5], [3, 6]]",
+        "output": "3",
+        "explanation": "The minimum set S can be {2, 3}, which intersects with all intervals."
+      },
+      {
+        "input": "intervals = [[1, 2], [2, 3], [2, 4], [3, 4]]",
+        "output": "5",
+        "explanation": "We can choose the set S as {2, 3, 4} to ensure at least two intersects with all intervals."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider a greedy approach to choose elements wisely.",
+      "Start by sorting intervals based on their ending values."
+    ],
+    "company": "DP world"
+  },
+  {
+    "question_id": "",
+    "title": "All Nodes Distance K in Binary Tree",
+    "description": "Given a binary tree, the task is to find all nodes that are at distance K from a given target node. The distance between two nodes is defined as the number of edges in the shortest path connecting them. You can consider the target node to be identified by its value. If there are no nodes at distance K, return an empty list.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Traversal"
+    ],
+    "input_format": "The input consists of a binary tree represented as a list of integers, where -1 represents a null pointer. Additionally, an integer target representing the value of the target node and a non-negative integer K indicating the distance.",
+    "output_format": "A list of integers representing the values of the nodes that are at distance K from the target node, in any order.",
+    "constraints": [
+      "The number of nodes in the binary tree is between 1 and 1000.",
+      "Each node's value is unique.",
+      "0 <= K <= 1000",
+      "The target value exists in the binary tree."
+    ],
+    "examples": [
+      {
+        "input": "tree = [3, 5, 1, 6, 2, 0, 8, -1, -1, 7, 4], target = 5, K = 2",
+        "output": "[7, 4, 1]",
+        "explanation": "The nodes at distance 2 from the target node 5 are 7 (left child of node 6), 4 (right child of node 2), and 1."
+      },
+      {
+        "input": "tree = [1, 2, 3, -1, -1, -1, 4], target = 3, K = 1",
+        "output": "[1]",
+        "explanation": "The node at distance 1 from the target node 3 is 1, which is the root."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use depth-first search (DFS) to navigate the binary tree.",
+      "Store parent nodes in a dictionary to easily access them.",
+      "Use a breadth-first search (BFS) to find nodes at the desired distance from the target."
+    ],
+    "company": "DP world"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "Given the array `nums` which is sorted in ascending order and then rotated at an unknown pivot, write a function to search for a target value in `nums`. If the target exists, return its index. Otherwise, return -1. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An array of integers `nums` and an integer `target`.",
+    "output_format": "An integer representing the index of `target` in `nums`, or -1 if `target` is not found.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "-10^4 <= nums[i] <= 10^4",
+      "All elements of nums are unique.",
+      "May assume the array is rotated at some pivot."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "Target 0 is found at index 4."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "Target 3 is not in the array."
+      },
+      {
+        "input": "nums = [1], target = 0",
+        "output": "-1",
+        "explanation": "Target 0 is not in the single-element array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of binary search.",
+      "Identify the pivot point."
+    ],
+    "company": "DP world"
+  },
+  {
+    "question_id": "",
+    "title": "Capacity To Ship Packages Within D Days",
+    "description": "You are given an array of packages where each package has a weight. You need to determine the least weight capacity of a ship that will enable you to ship all the packages within D days. When shipping, the ship can only carry up to its weight capacity. You must ship at least one package per day. If the total weight of the packages exceeds the ship's capacity in a single day, you will need to wait until the next day.",
+    "topic": "Binary Search",
+    "subtopic": "Search Algorithm",
+    "tags": [
+      "Binary Search",
+      "Array",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers 'weights' representing the weights of the packages and an integer 'D' representing the number of days.",
+    "output_format": "An integer representing the least weight capacity of the ship required to ship all packages within D days.",
+    "constraints": [
+      "1 <= weights.length <= 50000",
+      "1 <= weights[i] <= 500"
+    ],
+    "examples": [
+      {
+        "input": "[1,2,3,4,5,6,7,8,9,10], 5",
+        "output": "15",
+        "explanation": "The least weight capacity to ship packages within 5 days is 15. One possible way is to ship [1,2,3,4,5] on day 1 (total weight 15) and [6,7,8,9,10] on day 2 (total weight 40)."
+      },
+      {
+        "input": "[3,2,2,4,1,4], 3",
+        "output": "6",
+        "explanation": "You can ship [3,2] on day 1 (total weight 5), [2,4] on day 2 (total weight 6), and [1,4] on day 3 (total weight 5)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider binary search on the ship's capacity.",
+      "The minimum capacity should be at least the weight of the heaviest package."
+    ],
+    "company": "DP world"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Cameras",
+    "description": "Given a binary tree, you need to implement a function that returns the minimum number of cameras needed to monitor all nodes in the binary tree. A camera can be placed on a node, and it can monitor its parent, itself, and its immediate children. The camera must be installed on a node, which means that it cannot be placed between the edges. All nodes need to be monitored, including leaf nodes.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Dynamic Programming"
+    ],
+    "input_format": "The root of a binary tree.",
+    "output_format": "An integer representing the minimum number of cameras needed.",
+    "constraints": [
+      "The binary tree has at most 1000 nodes.",
+      "Node values are unique and within the range of 1 to 1000."
+    ],
+    "examples": [
+      {
+        "input": "root = [0,0,null,0,0]",
+        "output": "1",
+        "explanation": "Placing one camera at the root node covers all nodes."
+      },
+      {
+        "input": "root = [0,0,0,null,0,null,null]",
+        "output": "2",
+        "explanation": "Two cameras are needed: one at the leftmost child and one at the right child."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a post-order traversal to evaluate the state of each node.",
+      "Nodes can have three states: covered by a camera, covered without a camera, or not covered."
+    ],
+    "company": "DP world"
+  }
+]

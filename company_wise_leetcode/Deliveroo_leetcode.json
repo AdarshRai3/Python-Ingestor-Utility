@@ -1,0 +1,154 @@
+[
+  {
+    "question_id": "",
+    "title": "Find Words Containing Character",
+    "description": "Given a list of words and a character, return a list of words that contain the specified character at least once. The returned words should maintain their original order as they appeared in the input list.",
+    "topic": "String",
+    "subtopic": "Searching",
+    "tags": [
+      "String",
+      "Searching",
+      "Filter"
+    ],
+    "input_format": "A list of strings 'words' and a character 'char'.",
+    "output_format": "A list of strings containing all words that include 'char'.",
+    "constraints": [
+      "1 <= words.length <= 1000",
+      "1 <= words[i].length <= 100",
+      "char is a single lowercase alphabet character."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"apple\", \"banana\", \"cherry\", \"date\"], char = 'a'",
+        "output": "[\"apple\", \"banana\", \"date\"]",
+        "explanation": "The words 'apple', 'banana', and 'date' contain the character 'a'."
+      },
+      {
+        "input": "words = [\"kiwi\", \"grape\", \"mango\"], char = 'o'",
+        "output": "[\"mango\"]",
+        "explanation": "Only the word 'mango' contains the character 'o'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a loop to iterate through the words and check if the character is in each word."
+    ],
+    "company": "Deliveroo"
+  },
+  {
+    "question_id": "",
+    "title": "Search Suggestions System",
+    "description": "Implement a search suggestions system that takes a list of products and a customer search query. As the user types their query, return a list of suggested products that match the prefix of the query. Suggestions should be sorted lexicographically, and the maximum number of suggestions returned should be three. If there are no matches, return an empty list.",
+    "topic": "String",
+    "subtopic": "Prefix Search",
+    "tags": [
+      "String",
+      "Sorting",
+      "Search"
+    ],
+    "input_format": "A list of strings products representing the available products and a string customer_query representing the search query.",
+    "output_format": "A list of lists of strings, where each list contains up to 3 suggested product names for each prefix of the query.",
+    "constraints": [
+      "1 <= products.length <= 1000",
+      "1 <= products[i].length <= 100",
+      "customer_query.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": "products = [\"mobile\", \"mouse\", \"moneypot\", \"monitor\", \"mousepad\"], customer_query = \"mouse\"",
+        "output": "[[\"mouse\", \"mousepad\", \"moneypot\"]]",
+        "explanation": "As the user types \"mouse\", the suggestions are all products starting with \"mouse\"."
+      },
+      {
+        "input": "products = [\"havana\"], customer_query = \"h\"",
+        "output": "[[\"havana\"]]",
+        "explanation": "The only product that starts with \"h\" is \"havana\"."
+      },
+      {
+        "input": "products = [\"havana\"], customer_query = \"xyz\"",
+        "output": "[[]]",
+        "explanation": "No products match the prefix \"xyz\", so an empty list is returned."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a trie to store the products for efficient prefix search.",
+      "Sort the products lexicographically before inserting into the trie."
+    ],
+    "company": "Deliveroo"
+  },
+  {
+    "question_id": "",
+    "title": "Vertical Order Traversal of a Binary Tree",
+    "description": "Given the root of a binary tree, return the vertical order traversal of its nodes' values. For each node at position (x, y), its horizontal position is x, and its vertical position is -y; the root has position (0, 0), the node to the left of a node at (x, y) has position (x-1, y-1), and the node to the right has position (x+1, y-1). The output should be a list of lists of node values; each list represents the values at the same vertical level, starting from the leftmost level to the rightmost level. If two nodes have the same position, order them by their depth first (i.e., the earlier one in the level order traversal first).",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "The root of a binary tree, represented as a TreeNode.",
+    "output_format": "A list of lists of integers representing the vertical order traversal of the binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 100].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [3,9,20,null,null,15,7]",
+        "output": "[[9],[3,15],[20],[7]]",
+        "explanation": "The vertical order of the tree is: 9 on the left, then 3 and 15, then 20, and finally 7 on the right."
+      },
+      {
+        "input": "root = [1,2,3,4,5,6,7]",
+        "output": "[[4],[2],[1,5,6],[3],[7]]",
+        "explanation": "The vertical order of the tree is: 4 on the left, then 2, then 1 and its children 5, 6, then 3, and finally 7 on the right."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a map to track nodes at each vertical level.",
+      "A breadth-first search can help with level-order traversal."
+    ],
+    "company": "Deliveroo"
+  },
+  {
+    "question_id": "",
+    "title": "Count Number of Nice Subarrays",
+    "description": "Given an array of integers nums and an integer k, return the number of nice subarrays. A nice subarray is defined as an contiguous subarray where the number of odd numbers is exactly k.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Count"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the count of nice subarrays.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= k <= nums.length",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2, 1, 1], k = 3",
+        "output": "2",
+        "explanation": "The nice subarrays are [1, 1, 2, 1] and [1, 2, 1]."
+      },
+      {
+        "input": "nums = [2,4,6], k = 1",
+        "output": "0",
+        "explanation": "There are no nice subarrays since all numbers are even."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to track the number of odd numbers in the current window.",
+      "Consider using a sliding window technique to maintain counts.",
+      "Count the total number of nice subarrays and subtract unnecessary parts."
+    ],
+    "company": "Deliveroo"
+  }
+]

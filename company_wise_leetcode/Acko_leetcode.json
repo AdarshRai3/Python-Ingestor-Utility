@@ -1,0 +1,163 @@
+[
+  {
+    "question_id": "",
+    "title": "Fill Missing Data",
+    "description": "You are given an array of integers where some elements may be missing, represented by -1. Your task is to fill in these missing elements based on the average of their adjacent numbers. If a missing element is at the start or end of the array and does not have two adjacent elements, it should remain -1. Implement a function that modifies the input array in-place to reflect these changes.",
+    "topic": "Array",
+    "subtopic": "In-place Modification",
+    "tags": [
+      "Array",
+      "In-place",
+      "Average"
+    ],
+    "input_format": "An array of integers nums where -1 represents missing data.",
+    "output_format": "The modified input array with missing data filled in, returned in-place.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-1 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, -1, 3, -1, 5]",
+        "output": "[1, 2, 3, 4, 5]",
+        "explanation": "The average of 1 and 3 is 2, and the average of 3 and 5 is 4."
+      },
+      {
+        "input": "nums = [-1, 2, -1, -1, 5]",
+        "output": "[-1, 2, 3, 4, 5]",
+        "explanation": "The average between 2 and 5 gives 3 and 4 for the missing values."
+      },
+      {
+        "input": "nums = [10, -1, -1, -1]",
+        "output": "[10, -1, -1, -1]",
+        "explanation": "The first element is 10 and there are not enough values to calculate for the missing ones."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the elements immediately adjacent to -1 for computing the average.",
+      "Pay attention to edge cases where -1 is the first or last element of the array.",
+      "You may need to iterate through the array multiple times."
+    ],
+    "company": "Acko"
+  },
+  {
+    "question_id": "",
+    "title": "Count All Valid Pickup and Delivery Options",
+    "description": "A delivery company has a set of delivery routes and wants to calculate the number of valid pickup and delivery options available. A valid option consists of a unique pairing of pickup and delivery routes, where each delivery can only be made to its matching pickup route. Given `n` pairs of pickup and delivery options, compute the total number of valid options considering the routes cannot overlap in any delivery process. Since the result can be large, return it modulo 10^9 + 7.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorics",
+    "tags": [
+      "Dynamic Programming",
+      "Combinatorics",
+      "Math"
+    ],
+    "input_format": "An integer n (1 <= n <= 500).",
+    "output_format": "An integer representing the number of valid pickup and delivery options modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= n <= 500"
+    ],
+    "examples": [
+      {
+        "input": "n = 1",
+        "output": "1",
+        "explanation": "There is only one way to deliver from a single pickup route."
+      },
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "Two pairs can be delivered in two valid sequences: (P1, D1) followed by (P2, D2) or (P2, D2) followed by (P1, D1)."
+      },
+      {
+        "input": "n = 3",
+        "output": "12",
+        "explanation": "The valid sequences for three pairs can be computed as follows: (P1, D1), (P2, D2), (P3, D3) in all possible allocations."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using factorials to count the ways to arrange the pickups and deliveries.",
+      "Think about how to use dynamic programming to store intermediate results.",
+      "Recurrence relation can simplify the counting process."
+    ],
+    "company": "Acko"
+  },
+  {
+    "question_id": "",
+    "title": "Parallel Courses III",
+    "description": "You are given a list of courses that need to be completed, where each course can have a set of prerequisites. Your goal is to determine the minimum number of semesters needed to complete all courses, given that you can take up to k courses in a semester and you cannot take a course until all its prerequisites are completed. If it is impossible to complete all courses, return -1.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer n (1 <= n <= 15) representing the number of courses, a list of prerequisite pairs prerequisites, and an integer k (1 <= k <= n) representing the maximum number of courses that can be taken in a semester.",
+    "output_format": "An integer representing the minimum number of semesters needed to complete all courses, or -1 if it is impossible.",
+    "constraints": [
+      "1 <= n <= 15",
+      "0 <= prerequisites.length <= n * (n - 1) / 2",
+      "prerequisites[i] is a pair of integers [a, b] indicating that course a is a prerequisite of course b."
+    ],
+    "examples": [
+      {
+        "input": "n = 4, prerequisites = [[2,1],[3,1],[1,0]], k = 2",
+        "output": "3",
+        "explanation": "In the first semester, take courses 0 and 1. In the second semester, take course 2. In the third semester, take course 3."
+      },
+      {
+        "input": "n = 5, prerequisites = [[0,1],[0,2],[1,3],[2,3]], k = 1",
+        "output": "4",
+        "explanation": "You can take one course at a time, so it will take 4 semesters to complete all courses."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1,0],[0,1]], k = 2",
+        "output": "-1",
+        "explanation": "There is a cycle, so it's impossible to complete all courses."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using Kahn's algorithm for topological sorting.",
+      "Track the number of semesters for the courses you've completed.",
+      "Make use of dynamic programming to optimize your course selection."
+    ],
+    "company": "Acko"
+  },
+  {
+    "question_id": "",
+    "title": "Invalid Tweets",
+    "description": "Given a list of tweets, determine which tweets are invalid based on specific criteria. A tweet is considered invalid if it contains any of the following: a URL (starting with 'http://' or 'https://'), mentions (e.g., '@user'), or hashtags (e.g., '#hashtag'). Return a list of invalid tweets.",
+    "topic": "String",
+    "subtopic": "Validation",
+    "tags": [
+      "String",
+      "Validation",
+      "Tweet"
+    ],
+    "input_format": "A list of strings, where each string is a tweet.",
+    "output_format": "A list of strings representing the invalid tweets.",
+    "constraints": [
+      "1 <= tweets.length <= 1000",
+      "1 <= tweets[i].length <= 280"
+    ],
+    "examples": [
+      {
+        "input": "tweets = [\"Hello world!\", \"Check this out: https://example.com\", \"@user I agree!\", \"#hashtag is trending!\"]",
+        "output": "[\"Check this out: https://example.com\", \"@user I agree!\", \"#hashtag is trending!\"]",
+        "explanation": "The second, third, and fourth tweets are invalid due to the presence of a URL, a mention, and a hashtag respectively."
+      },
+      {
+        "input": "tweets = [\"Just a simple tweet.\", \"Another day in paradise.\"]",
+        "output": "[]",
+        "explanation": "Both tweets are valid as they do not contain any URLs, mentions, or hashtags."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check for patterns in the tweet text that match URLs, mentions, or hashtags."
+    ],
+    "company": "Acko"
+  }
+]

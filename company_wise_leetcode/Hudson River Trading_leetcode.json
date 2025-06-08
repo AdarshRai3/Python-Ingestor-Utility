@@ -1,0 +1,372 @@
+[
+  {
+    "question_id": "",
+    "title": "Detect Pattern of Length M Repeated K or More Times",
+    "description": "Given a string 's', you need to detect whether there exists a substring of length 'm' that appears at least 'k' times in the string. If such a substring exists, return the substring. If multiple substrings meet these criteria, return any of them. If no such substring exists, return an empty string.",
+    "topic": "String",
+    "subtopic": "Substring Search",
+    "tags": [
+      "String",
+      "Substring",
+      "Search"
+    ],
+    "input_format": "A string 's' followed by integers 'm' and 'k'.",
+    "output_format": "A string representing the repeating substring or an empty string if none exist.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= m <= s.length",
+      "1 <= k <= 100"
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcabcdabc', m = 3, k = 2",
+        "output": "abc",
+        "explanation": "'abc' appears 2 times in the string."
+      },
+      {
+        "input": "s = 'xyzxyzxyz', m = 3, k = 3",
+        "output": "xyz",
+        "explanation": "'xyz' appears 3 times in the string."
+      },
+      {
+        "input": "s = 'abcdefg', m = 2, k = 2",
+        "output": "",
+        "explanation": "No substring of length 2 appears at least 2 times."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hashmap to count the occurrences of each substring.",
+      "Iterate through the string and extract substrings of length m."
+    ],
+    "company": "Hudson River Trading"
+  },
+  {
+    "question_id": "",
+    "title": "Add Edges to Make Degrees of All Nodes Even",
+    "description": "In a given undirected graph represented as an adjacency list, your task is to determine the minimum number of edges that need to be added to the graph to ensure that all nodes have even degrees. The degree of a node is defined as the number of edges connected to it. If a node has an odd degree, add one edge connected to it to convert it to an even degree. The goal is to find the minimum number of such edges required.",
+    "topic": "Graph",
+    "subtopic": "Graph Theory",
+    "tags": [
+      "Graph",
+      "Even Degree",
+      "Minimum Edges"
+    ],
+    "input_format": "An integer n (the number of nodes) followed by a list of edges where each edge is represented by a pair of integers.",
+    "output_format": "An integer representing the minimum number of edges that need to be added.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "0 <= edges.length <= 10^5",
+      "edges[i] consists of two integers u and v representing an edge between nodes u and v."
+    ],
+    "examples": [
+      {
+        "input": "n = 5, edges = [[1, 2], [2, 3], [3, 4]]",
+        "output": "1",
+        "explanation": "Nodes 1, 4 achieve an odd degree. Adding one edge (4, 5) would make all nodes have even degrees."
+      },
+      {
+        "input": "n = 3, edges = [[1, 2], [2, 3]]",
+        "output": "0",
+        "explanation": "All nodes have odd degrees, but the minimum edges to make their degrees even is 0 as they already are connected."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Count the degree of each node and find which ones are odd.",
+      "Each pair of odd degree nodes can be connected with a single edge."
+    ],
+    "company": "Hudson River Trading"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Path With Different Adjacent Characters",
+    "description": "Given a grid of characters, find the length of the longest path that can be formed by moving in adjacent cells (up, down, left, or right) without visiting the same character twice. The path should consist of characters that are different from each other. Return the maximum length of such a path.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Backtracking"
+    ],
+    "input_format": "A 2D grid of characters represented as a list of lists, where each inner list represents a row of characters.",
+    "output_format": "An integer representing the length of the longest valid path.",
+    "constraints": [
+      "1 <= grid.length <= 20",
+      "1 <= grid[i].length <= 20",
+      "grid[i][j] is a lowercase English letter."
+    ],
+    "examples": [
+      {
+        "input": "[['a', 'b', 'c'], ['a', 'd', 'c'], ['b', 'd', 'c']]",
+        "output": "5",
+        "explanation": "The longest path is 'a', 'b', 'c', 'd', 'c' (the path visits different adjacent characters)."
+      },
+      {
+        "input": "[['a', 'a', 'a'], ['a', 'a', 'a'], ['a', 'a', 'a']]",
+        "output": "1",
+        "explanation": "Since all characters are the same, the longest path can only consist of 1 character."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use Depth-First Search (DFS) to explore all possible paths.",
+      "Keep track of visited characters to avoid repetition during the search."
+    ],
+    "company": "Hudson River Trading"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Total Importance of Roads",
+    "description": "You are given a list of roads connecting several cities, along with the importance value associated with each road. The goal is to calculate the maximum total importance that can be obtained by selecting a subset of these roads, ensuring no two selected roads connect the same city. Each road can only contribute its importance value if it is selected.",
+    "topic": "Graph",
+    "subtopic": "Graph Theory",
+    "tags": [
+      "Graph",
+      "DP",
+      "Greedy"
+    ],
+    "input_format": "An integer n (the number of cities), an integer m (the number of roads), and a list of m tuples (u, v, importance) where u and v are the cities connected by the road, and importance is the importance value of that road.",
+    "output_format": "An integer representing the maximum total importance of the selected roads.",
+    "constraints": [
+      "1 <= n <= 100",
+      "1 <= m <= 10^4",
+      "1 <= importance <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, m = 5, roads = [(1, 2, 5), (2, 3, 10), (1, 3, 4), (2, 4, 8), (3, 4, 6)]",
+        "output": "18",
+        "explanation": "Selecting roads (2, 3) and (2, 4) gives the maximum importance: 10 + 8 = 18."
+      },
+      {
+        "input": "n = 3, m = 3, roads = [(1, 2, 1), (2, 3, 2), (1, 3, 3)]",
+        "output": "4",
+        "explanation": "Choosing roads (1, 3) and (2, 3) provides the maximum importance: 3 + 2 = 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a greedy approach to select roads with the highest importance.",
+      "Think about how to represent city connections efficiently."
+    ],
+    "company": "Hudson River Trading"
+  },
+  {
+    "question_id": "",
+    "title": "Convert Integer to the Sum of Two No-Zero Integers",
+    "description": "Given a positive integer n, you need to find two integers a and b such that: \n1. a + b = n \n2. a and b are both positive integers \n3. a and b do not contain the digit '0' in their decimal representation. \nReturn the two integers a and b as an array [a, b]. If there are multiple valid answers, you may return any of them.",
+    "topic": "Math",
+    "subtopic": "Number Representation",
+    "tags": [
+      "Math",
+      "Greedy",
+      "Number Theory"
+    ],
+    "input_format": "A single integer n (1 <= n <= 10^9).",
+    "output_format": "An array of two integers [a, b] such that a + b = n and both a and b do not contain the digit '0'.",
+    "constraints": [
+      "1 <= n <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "n = 5",
+        "output": "[2, 3]",
+        "explanation": "2 + 3 = 5 and both numbers do not contain the digit '0'."
+      },
+      {
+        "input": "n = 10",
+        "output": "[1, 9]",
+        "explanation": "1 + 9 = 10 and both numbers do not contain the digit '0'."
+      },
+      {
+        "input": "n = 20",
+        "output": "[19, 1]",
+        "explanation": "19 + 1 = 20 and both numbers do not contain the digit '0'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider starting from 1 and look for pairs that add up to n.",
+      "Check if both numbers contain the digit '0'."
+    ],
+    "company": "Hudson River Trading"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Steps to Reduce a Number to Zero",
+    "description": "Given a non-negative integer num, return the number of steps required to reduce it to zero. In one step, you can either subtract 1 from it if it is odd, or divide it by 2 if it is even.",
+    "topic": "Mathematics",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Math",
+      "Bit Manipulation",
+      "Greedy"
+    ],
+    "input_format": "A single non-negative integer num.",
+    "output_format": "An integer representing the number of steps to reduce num to zero.",
+    "constraints": [
+      "0 <= num <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "num = 14",
+        "output": "6",
+        "explanation": "Steps: 14 is even -> 14/2 = 7 (1 step), 7 is odd -> 7-1 = 6 (1 step), 6 is even -> 6/2 = 3 (1 step), 3 is odd -> 3-1 = 2 (1 step), 2 is even -> 2/2 = 1 (1 step), 1 is odd -> 1-1 = 0 (1 step). Total steps = 6."
+      },
+      {
+        "input": "num = 8",
+        "output": "4",
+        "explanation": "Steps: 8 is even -> 8/2 = 4 (1 step), 4 is even -> 4/2 = 2 (1 step), 2 is even -> 2/2 = 1 (1 step), 1 is odd -> 1-1 = 0 (1 step). Total steps = 4."
+      },
+      {
+        "input": "num = 123",
+        "output": "12",
+        "explanation": "Steps involve a mix of subtracting and halving until reaching zero. Total steps = 12."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check if the number is odd or even at each step.",
+      "Dividing by 2 reduces the size of the number significantly."
+    ],
+    "company": "Hudson River Trading"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum 69 Number",
+    "description": "You are given a positive integer represented as a non-negative integer array, where each element is a digit of the integer. The integer may contain the digit '6' which can be changed to '9' to maximize the number. You need to determine the maximum integer that can be obtained by changing at most one '6' to '9'.",
+    "topic": "Greedy",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Integer"
+    ],
+    "input_format": "An array of integers representing the digits of the number.",
+    "output_format": "An integer representing the maximized number after changing at most one '6' to '9'.",
+    "constraints": [
+      "1 <= digits.length <= 10",
+      "0 <= digits[i] <= 9"
+    ],
+    "examples": [
+      {
+        "input": "[6, 6, 6]",
+        "output": "996",
+        "explanation": "Changing the first '6' to '9' gives the maximum number 996."
+      },
+      {
+        "input": "[6, 2, 3]",
+        "output": "923",
+        "explanation": "Changing '6' to '9' results in the maximum number 923."
+      },
+      {
+        "input": "[9, 9, 9]",
+        "output": "999",
+        "explanation": "No '6' to change, the number remains 999."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Look for the first occurrence of '6' to change."
+    ],
+    "company": "Hudson River Trading"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Score From Grid Operations",
+    "description": "You are given a grid consisting of non-negative integers. You can perform operations to increase the value of grid cells. In a single operation, you can choose any cell (i, j) and increase its value by the score of the operation. The score is defined as the Manhattan distance from the cell (i, j) to the top-left cell (0, 0). Your goal is to maximize the total score after performing at most k operations. The maximum score is calculated as the sum of the values in the grid after the operations. Determine the maximum score you can achieve.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Operations",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Maximization"
+    ],
+    "input_format": "A 2D grid of non-negative integers and an integer k representing the number of operations.",
+    "output_format": "An integer representing the maximum score obtainable after performing at most k operations.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "0 <= grid[i][j] <= 1000",
+      "1 <= k <= 1000"
+    ],
+    "examples": [
+      {
+        "input": {
+          "grid": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "k": 3
+        },
+        "output": "16",
+        "explanation": "After three operations, we can maximize the grid values leading to a total of 16."
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "k": 4
+        },
+        "output": "8",
+        "explanation": "We can perform operations to maximize all the grid values to 4 each, thus leading to a total of 8."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how the Manhattan distance will affect your choice of operations.",
+      "Think about dynamic programming to keep track of the maximum score."
+    ],
+    "company": "Hudson River Trading"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Comments",
+    "description": "Given a string represented code that potentially contains comments, remove all comments from the code. Comments can be either single-line comments starting with '//', or multi-line comments enclosed between '/*' and '*/'. Your task is to return the cleaned code as a single string without comments.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Comments"
+    ],
+    "input_format": "A single string 'code' which represents the source code with comments.",
+    "output_format": "A single string representing the code after removing comments.",
+    "constraints": [
+      "1 <= code.length <= 10^5",
+      "The input string may contain any printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "'// This is a comment\\nint a = 0; /* multi-line\ncomment */ int b = 1;'",
+        "output": "'\\nint a = 0;  int b = 1;'",
+        "explanation": "Single-line and multi-line comments are removed, leaving the actual code."
+      },
+      {
+        "input": "'int x = 10; /* Comment here */ int y = 20; // Another comment'",
+        "output": "'int x = 10;  int y = 20;'",
+        "explanation": "Both single-line and multi-line comments are stripped from the code."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use string methods to identify and remove comment patterns.",
+      "Be careful with nested comments or comments at the end of the string."
+    ],
+    "company": "Hudson River Trading"
+  }
+]

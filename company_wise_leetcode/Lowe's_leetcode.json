@@ -1,0 +1,121 @@
+[
+  {
+    "question_id": "",
+    "title": "The Number of Good Subsets",
+    "description": "You are given an array of integers `nums`. A subset of `nums` is considered 'good' if it contains only elements that are pairwise coprime, meaning that for any two integers a and b in the subset, the greatest common divisor (GCD) of a and b is 1. Your task is to find the total number of good subsets of the array. Note that the empty subset is not counted as a good subset.",
+    "topic": "Combinatorics",
+    "subtopic": "GCD and Prime Factorization",
+    "tags": [
+      "Combinatorics",
+      "GCD",
+      "Subset"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the number of good subsets.",
+    "constraints": [
+      "1 <= nums.length <= 20",
+      "1 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 6]",
+        "output": "4",
+        "explanation": "The good subsets are: {2}, {3}, {2, 3}, which gives us 4 because we have to exclude the empty subset."
+      },
+      {
+        "input": "nums = [4, 6, 10]",
+        "output": "2",
+        "explanation": "The only good subsets are: {4}, {6} and {10}, excluding the empty subset."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "You can use bit manipulation to generate all possible subsets.",
+      "Check if each subset is good by calculating the GCD of all elements in the subset."
+    ],
+    "company": "Lowe's"
+  },
+  {
+    "question_id": "",
+    "title": "Groups of Strings",
+    "description": "You are given an array of strings. Your task is to group the strings by their anagram characters. Two strings are considered anagrams if one string can be rearranged to form the other. Return a list of groups where each group contains strings that are anagrams of each other.",
+    "topic": "String",
+    "subtopic": "Anagrams",
+    "tags": [
+      "String",
+      "Hash Map",
+      "Sorting"
+    ],
+    "input_format": "An array of strings `words`.",
+    "output_format": "A list of lists, where each inner list contains grouped anagrams.",
+    "constraints": [
+      "1 <= words.length <= 1000",
+      "1 <= words[i].length <= 100",
+      "words[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"eat\",\"tea\",\"ate\"],[\"tan\",\"nat\"],[\"bat\"]]",
+        "explanation": "The strings 'eat', 'tea', and 'ate' are anagrams, so they form one group. The strings 'tan' and 'nat' form another group, while 'bat' is in its own group."
+      },
+      {
+        "input": "words = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "The only string given is an empty string, which forms its own group."
+      },
+      {
+        "input": "words = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "Similar to the previous case, 'a' forms its own group since there are no other strings."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how you can represent each string in a standardized manner to detect anagrams.",
+      "Using a hash map might simplify grouping the strings."
+    ],
+    "company": "Lowe's"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Operations to Make Array Values Equal to K",
+    "description": "Given an array of integers and an integer k, determine the minimum number of operations required to make all elements in the array equal to k. An operation consists of either increasing or decreasing an element by 1.",
+    "topic": "Array",
+    "subtopic": "Modification",
+    "tags": [
+      "Array",
+      "Modification",
+      "Math"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the minimum number of operations required.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i], k <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4], k = 3",
+        "output": "3",
+        "explanation": "To make all elements equal to 3, we need to perform 2 operations on 1 (1 -> 3) and 1 operation on 4 (4 -> 3). Total operations = 2 + 1 = 3."
+      },
+      {
+        "input": "nums = [5, 5, 5], k = 5",
+        "output": "0",
+        "explanation": "All elements are already equal to 5, so no operations are required."
+      },
+      {
+        "input": "nums = [10, 1, 8], k = 5",
+        "output": "12",
+        "explanation": "We need to reduce 10 to 5 (5 operations) and increase 1 to 5 (4 operations) and increase 8 to 5 (3 operations). Total operations = 5 + 4 + 3 = 12."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the absolute difference between each element and k.",
+      "Summing all differences will give you the total operations."
+    ],
+    "company": "Lowe's"
+  }
+]

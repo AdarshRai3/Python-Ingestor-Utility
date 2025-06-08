@@ -1,0 +1,188 @@
+[
+  {
+    "question_id": "",
+    "title": "Word Search",
+    "description": "Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where 'adjacent' cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.",
+    "topic": "Backtracking",
+    "subtopic": "Grid Search",
+    "tags": [
+      "Backtracking",
+      "Matrix",
+      "Depth First Search"
+    ],
+    "input_format": "A 2D board represented as an array of arrays of characters and a string representing the word.",
+    "output_format": "Return true if the word exists in the grid; otherwise, return false.",
+    "constraints": [
+      "1 <= board.length, board[i].length <= 6",
+      "1 <= word.length <= 15",
+      "board[i][j] is a lowercase English letter."
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCCED"
+        },
+        "output": "true",
+        "explanation": "The path 'A -> B -> C -> C -> E -> D' exists in the grid."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "SEE"
+        },
+        "output": "true",
+        "explanation": "The path 'S -> E -> E' exists in the grid."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCB"
+        },
+        "output": "false",
+        "explanation": "The path 'A -> B -> C -> B' does not exist in the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use depth-first search to traverse the grid.",
+      "Mark visited cells to avoid revisiting during the search."
+    ],
+    "company": "Faire"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Mountain in Array",
+    "description": "A mountain is defined as a sequence of integers that is strictly increasing, followed by a sequence that is strictly decreasing. Given an array of integers, your task is to find the length of the longest mountain in the array. If there is no mountain, return 0.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Length"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest mountain.",
+    "constraints": [
+      "3 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 1, 1, 5, 6, 2, 3, 1]",
+        "output": "5",
+        "explanation": "The longest mountain is [1, 5, 6, 2, 3] which has a length of 5."
+      },
+      {
+        "input": "nums = [2, 2, 2]",
+        "output": "0",
+        "explanation": "There are no mountains in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use two pointers to identify peaks and valleys.",
+      "A valid mountain must have at least one element on either side of the peak."
+    ],
+    "company": "Faire"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is defined as a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "HashMap",
+      "Sorting"
+    ],
+    "input_format": "An array of strings `strs`.",
+    "output_format": "A list of lists of strings, where each list contains all the anagrams that are grouped together.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"ate\",\"eat\",\"tea\"],[\"nat\",\"tan\"],[\"bat\"]]",
+        "explanation": "The output includes three groups of anagrams: ['ate', 'eat', 'tea'], ['nat', 'tan'], and ['bat']."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "There is only one string, thus it is an anagram of itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "There is only one character, thus it is an anagram of itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to use a hash map (dictionary) to group strings.",
+      "Sorting the characters of each string can help in identifying anagrams."
+    ],
+    "company": "Faire"
+  }
+]

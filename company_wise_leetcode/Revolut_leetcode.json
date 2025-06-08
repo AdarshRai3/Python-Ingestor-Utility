@@ -1,0 +1,424 @@
+[
+  {
+    "question_id": "",
+    "title": "Longest Common Prefix",
+    "description": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\". A common prefix is defined as a substring that appears at the beginning of each string in the array.",
+    "topic": "String",
+    "subtopic": "Prefix",
+    "tags": [
+      "String",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A string representing the longest common prefix.",
+    "constraints": [
+      "0 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "All inputs are in lowercase letters a-z."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\", \"flow\", \"flight\"]",
+        "output": "\"fl\"",
+        "explanation": "The longest common prefix is \"fl\"."
+      },
+      {
+        "input": "strs = [\"dog\", \"racecar\", \"car\"]",
+        "output": "\"\"",
+        "explanation": "There is no common prefix among the strings."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using vertical scanning to compare characters one by one.",
+      "If the first string is empty, the common prefix is also empty."
+    ],
+    "company": "Revolut"
+  },
+  {
+    "question_id": "",
+    "title": "Perfect Squares",
+    "description": "Given a positive integer n, you need to determine the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) that sum up to n. You must return this least count as the output.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Integer Partitioning",
+    "tags": [
+      "Dynamic Programming",
+      "Mathematics",
+      "Integer Partition"
+    ],
+    "input_format": "A single integer n (1 <= n <= 10^4).",
+    "output_format": "An integer representing the least number of perfect square numbers that sum up to n.",
+    "constraints": [
+      "1 <= n <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "n = 12",
+        "output": "3",
+        "explanation": "12 can be represented as 4 + 4 + 4 (3 perfect squares)."
+      },
+      {
+        "input": "n = 13",
+        "output": "2",
+        "explanation": "13 can be represented as 4 + 9 (2 perfect squares)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to build up solutions from smaller problems.",
+      "Note the largest perfect square less than or equal to n."
+    ],
+    "company": "Revolut"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Linked List II",
+    "description": "Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list. The nodes are 1-indexed, which means the head is the first node in the list.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "LinkedList",
+      "Reversal",
+      "TwoPointers"
+    ],
+    "input_format": "The first line contains an integer indicating the number of nodes in the linked list. The second line contains the values of the linked list nodes. The third line contains two integers left and right, indicating the range to reverse.",
+    "output_format": "The head of the modified linked list after the specified range has been reversed.",
+    "constraints": [
+      "1 <= length of list <= 500",
+      "1 <= left <= right <= length of list",
+      "-10^5 <= node.val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "5\n1 2 3 4 5\n2 4",
+        "output": "1 4 3 2 5",
+        "explanation": "Reversing nodes from positions 2 to 4 means nodes 2, 3, and 4 (which are 2, 3, 4) become 4, 3, 2 while node 1 and node 5 remain in their positions."
+      },
+      {
+        "input": "3\n1 2 3\n1 3",
+        "output": "3 2 1",
+        "explanation": "Reversing the entire list means all nodes (1, 2, 3) are in reverse order."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dummy node to make edge cases easier.",
+      "Think about how to maintain connections to nodes before and after the reversal."
+    ],
+    "company": "Revolut"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicates from Sorted List",
+    "description": "Given the head of a sorted linked list, remove all duplicates such that each element appears only once. Return the linked list sorted as well.",
+    "topic": "Linked List",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Linked List",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "The input will be the head of a singly linked list.",
+    "output_format": "Return the head of the linked list after removing duplicates.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 300].",
+      "-100 <= Node.val <= 100",
+      "The list is guaranteed to be sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 1, 2]",
+        "output": "[1, 2]",
+        "explanation": "The duplicates '1' are removed, leaving us with a list containing '1' and '2'."
+      },
+      {
+        "input": "head = [1, 1, 2, 3, 3]",
+        "output": "[1, 2, 3]",
+        "explanation": "The duplicates '1' and '3' are removed, resulting in a list of '1', '2', and '3'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a pointer to traverse the list and compare adjacent nodes.",
+      "If the current node's value is equal to the next node's value, skip the next node."
+    ],
+    "company": "Revolut"
+  },
+  {
+    "question_id": "",
+    "title": "Find All Anagrams in a String",
+    "description": "Given a string s and a non-empty string p, find all the start indices of p's anagrams in s. The order of output does not matter. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Anagrams"
+    ],
+    "input_format": "Two strings s and p, where 1 <= s.length <= 10000 and 1 <= p.length <= s.length.",
+    "output_format": "A list of integers representing the start indices of the anagrams of p in s.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "1 <= p.length <= s.length",
+      "s and p consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'cbaebabacd', p = 'abc'",
+        "output": "[0, 6]",
+        "explanation": "The substring starting at index 0 is 'cba', which is an anagram of 'abc'. The substring starting at index 6 is 'bac', which is also an anagram of 'abc'."
+      },
+      {
+        "input": "s = 'abab', p = 'ab'",
+        "output": "[0, 1, 2]",
+        "explanation": "The substring starting at index 0 is 'ab', which is an anagram of 'ab'. The substring starting at index 1 is 'ba', which is also an anagram of 'ab'. The substring starting at index 2 is 'ab', which is another anagram of 'ab'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to count the frequency of characters in p.",
+      "Use a sliding window approach to maintain a count of characters in the current window of s."
+    ],
+    "company": "Revolut"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Paths",
+    "description": "Given a binary tree, return all root-to-leaf paths. Each path should be represented as a string in the format 'node1->node2->node3'. A leaf is a node with no children.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Depth-First Search"
+    ],
+    "input_format": "The input is the root node of a binary tree.",
+    "output_format": "A list of strings representing all root-to-leaf paths.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 100].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [1,2,3,null,5]",
+        "output": "[\"1->2->5\",\"1->3\"]",
+        "explanation": "The paths from root to leaves are '1->2->5' and '1->3'."
+      },
+      {
+        "input": "root = [1]",
+        "output": "[\"1\"]",
+        "explanation": "The only path from root to leaf is '1'."
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "explanation": "There are no paths since the tree is empty."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use depth-first search (DFS) to explore the tree.",
+      "Check if a node is a leaf before adding a path to the result.",
+      "Concatenate node values using '->' for path representation."
+    ],
+    "company": "Revolut"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Level Order Traversal II",
+    "description": "Given the root of a binary tree, return the bottom-up level order traversal of its nodes' values. (i.e., from the last level to the first level). Each level must be returned as a list of values.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "Traversal",
+      "Binary Tree"
+    ],
+    "input_format": "A tree node denoted as root, representing the root of a binary tree.",
+    "output_format": "A list of lists, where each sublist contains the values of nodes at each level of the binary tree, starting from the bottom level.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 2000]",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [3,9,20,null,null,15,7]",
+        "output": "[[15,7],[9,20],[3]]",
+        "explanation": "The bottom level is [15, 7], the next level is [9, 20], and the root level is [3]."
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "explanation": "The tree is empty, hence the output is an empty list."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a queue to help with the level order traversal.",
+      "Consider using a stack to reverse the order of the levels after traversal."
+    ],
+    "company": "Revolut"
+  },
+  {
+    "question_id": "",
+    "title": "Permutation in String",
+    "description": "Given two strings s1 and s2, return true if s2 contains a permutation of s1. In other words, return true if one of s1's permutations is the substring of s2.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Map"
+    ],
+    "input_format": "Two strings s1 and s2, where 1 <= s1.length <= 100 and 1 <= s2.length <= 10^4.",
+    "output_format": "A boolean value indicating whether s2 contains a permutation of s1.",
+    "constraints": [
+      "1 <= s1.length <= 100",
+      "1 <= s2.length <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "s1 = 'abc', s2 = 'oidbcaf'",
+        "output": "true",
+        "explanation": "The substring 'bca' is a permutation of 'abc'."
+      },
+      {
+        "input": "s1 = 'abc', s2 = 'odicf'",
+        "output": "false",
+        "explanation": "There is no substring of 'odicf' that is a permutation of 'abc'."
+      },
+      {
+        "input": "s1 = 'ab', s2 = 'eidbaooo'",
+        "output": "true",
+        "explanation": "The substring 'ba' is a permutation of 'ab'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a frequency counter to track the counts of characters.",
+      "Check if the frequencies match in the sliding window."
+    ],
+    "company": "Revolut"
+  },
+  {
+    "question_id": "",
+    "title": "Random Pick with Weight",
+    "description": "You are given an array of positive integers `w` where `w[i]` describes the weight of the ith value. You want to randomly pick an index `i` such that the probability of picking `i` is proportional to `w[i]`. Implement the `pickIndex` method which randomly returns an index based on the weights.",
+    "topic": "Randomization",
+    "subtopic": "Weighted Random Sampling",
+    "tags": [
+      "Random",
+      "Probability",
+      "Sampling"
+    ],
+    "input_format": "An integer array `w` where 1 <= w.length <= 10^4 and 1 <= w[i] <= 10^5.",
+    "output_format": "An integer representing the randomly picked index.",
+    "constraints": [
+      "1 <= w.length <= 10^4",
+      "1 <= w[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "w = [1, 3]",
+        "output": "1",
+        "explanation": "The probability of picking index 0 is 1/4 and index 1 is 3/4, thus index 1 is more likely to be returned."
+      },
+      {
+        "input": "w = [1, 2, 3]",
+        "output": "2",
+        "explanation": "The probability of picking index 0 is 1/6, index 1 is 2/6, and index 2 is 3/6. Index 2 is most likely to be returned."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Cumulative weight can help in determining ranges for picking.",
+      "Use binary search to find the index efficiently."
+    ],
+    "company": "Revolut"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Sorted Lists",
+    "description": "Given the heads of two sorted linked lists, merge them into one sorted linked list. The merged list should be made by splicing together the nodes of the first two lists. Return the head of the new sorted list.",
+    "topic": "Linked List",
+    "subtopic": "Merging Lists",
+    "tags": [
+      "Linked List",
+      "Sorting",
+      "Merge"
+    ],
+    "input_format": "The input consists of two linked lists, each represented by the head node.",
+    "output_format": "The output is the head node of the merged sorted linked list.",
+    "constraints": [
+      "The number of nodes in both lists is in the range [0, 50].",
+      "The values of the nodes are in the range [-100, 100].",
+      "Both input linked lists are already sorted in non-decreasing order."
+    ],
+    "examples": [
+      {
+        "input": "list1 = [1, 2, 4], list2 = [1, 3, 4]",
+        "output": "[1, 1, 2, 3, 4, 4]",
+        "explanation": "Merging the two lists results in a sorted list: 1 -> 1 -> 2 -> 3 -> 4 -> 4."
+      },
+      {
+        "input": "list1 = [], list2 = [0]",
+        "output": "[0]",
+        "explanation": "Since list1 is empty, the output is simply the second list: 0."
+      },
+      {
+        "input": "list1 = [], list2 = []",
+        "output": "[]",
+        "explanation": "Both lists are empty, so the merged list is also empty."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try to maintain a pointer to the current node in the merged list.",
+      "Use a dummy node to simplify the merging process."
+    ],
+    "company": "Revolut"
+  },
+  {
+    "question_id": "",
+    "title": "Missing Number",
+    "description": "Given an array containing 'n' distinct numbers taken from 0, 1, 2, ..., n, find the one number that is missing from the array.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Bit Manipulation"
+    ],
+    "input_format": "An array nums of n distinct integers.",
+    "output_format": "An integer representing the missing number.",
+    "constraints": [
+      "n == nums.length",
+      "1 <= n <= 10^4",
+      "0 <= nums[i] <= n"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 0, 1]",
+        "output": "2",
+        "explanation": "The numbers 0, 1, 3 are present, so the missing number is 2."
+      },
+      {
+        "input": "nums = [0, 1]",
+        "output": "2",
+        "explanation": "The numbers 0 and 1 are present, so the missing number is 2."
+      },
+      {
+        "input": "nums = [9,6,4,2,3,5,7,0,1]",
+        "output": "8",
+        "explanation": "The numbers 0 to 9 are present, excluding 8."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using the formula for the sum of the first n natural numbers.",
+      "You can also use XOR to find the missing number."
+    ],
+    "company": "Revolut"
+  }
+]

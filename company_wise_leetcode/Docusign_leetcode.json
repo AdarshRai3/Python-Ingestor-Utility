@@ -1,0 +1,1353 @@
+[
+  {
+    "question_id": "",
+    "title": "Implement Trie (Prefix Tree)",
+    "description": "A Trie (pronounced as 'try') is a special type of tree used to store a dynamic set of strings where the keys are usually strings. It is an efficient way to store and query words in a dataset. Implement a Trie with the following operations: insert a word, search for a word, and check if any words in the Trie start with a given prefix.",
+    "topic": "Data Structures",
+    "subtopic": "Trie",
+    "tags": [
+      "Trie",
+      "Data Structure",
+      "String"
+    ],
+    "input_format": "You will be provided with commands to operate on the Trie: 'insert(word)', 'search(word)', and 'startsWith(prefix)'. Each command will be in the form of a string.",
+    "output_format": "For 'search' and 'startsWith' commands, return a boolean value indicating whether the word or prefix exists in the Trie.",
+    "constraints": [
+      "1 <= word.length, prefix.length <= 2000",
+      "word and prefix consist of lowercase English letters only.",
+      "The number of operations does not exceed 10000."
+    ],
+    "examples": [
+      {
+        "input": "insert('apple'); search('apple'); search('app'); startsWith('app'); insert('app'); search('app');",
+        "output": "true, false, true, true, true",
+        "explanation": "'apple' is inserted; searching for 'apple' returns true. 'app' is not yet inserted, so it returns false. 'app' starts with 'app', so it returns true. 'app' is then inserted, and searching for it returns true."
+      },
+      {
+        "input": "insert('banana'); startsWith('ban'); search('banana'); search('bana');",
+        "output": "true, true, true, false",
+        "explanation": "'banana' is inserted; 'ban' is a prefix of 'banana', so it returns true. Searching for 'banana' returns true. Searching for 'bana' returns false as it is not a complete word in the Trie."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how you can represent a Trie using nodes.",
+      "Each node can represent a character, and you will need to maintain a link to subsequent characters."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Copy List with Random Pointer",
+    "description": "You are given a linked list with the following structure: each node contains a value and a pointer to another node which could be random (i.e., not necessarily the next node in the list). Your task is to create a deep copy of the linked list such that each new node points to the same random node as the original. Implement a function that takes the head of the list as input and returns a deep copy of it.",
+    "topic": "Linked List",
+    "subtopic": "Deep Copy",
+    "tags": [
+      "Linked List",
+      "Deep Copy",
+      "Pointer"
+    ],
+    "input_format": "A reference to the head of a linked list with random pointers.",
+    "output_format": "A reference to the head of the new deep copy of the linked list.",
+    "constraints": [
+      "The linked list has at most 1000 nodes.",
+      "Each node's value is in the range [-10^6, 10^6].",
+      "The random pointer of a node can point to any node in the list or null."
+    ],
+    "examples": [
+      {
+        "input": "head = [[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "output": "[[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "explanation": "The list is represented as an array where each sub-array contains the value of the node and the index of the random pointer."
+      },
+      {
+        "input": "head = [[1,1],[2,1]]",
+        "output": "[[1,1],[2,1]]",
+        "explanation": "Both nodes point to the first node, represented in the output format."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to store the mapping of original nodes to their copies.",
+      "First, create copies of the nodes without the random pointers.",
+      "Then, update the random pointers for the copied nodes."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Rotting Oranges",
+    "description": "You are given an m x n grid where each cell can have one of three values: 0 representing an empty cell, 1 representing a fresh orange, and 2 representing a rotten orange. Every minute, any fresh orange that is adjacent (4-directionally) to a rotten orange will rot. Return the minimum number of minutes that must elapse until no fresh oranges remain. If it is impossible to rot all the fresh oranges, return -1.",
+    "topic": "Breadth-First Search",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "BFS",
+      "Graph",
+      "Matrix"
+    ],
+    "input_format": "An m x n grid of integers where each integer is either 0, 1, or 2.",
+    "output_format": "An integer representing the minimum number of minutes until no fresh oranges remain, or -1 if it is impossible.",
+    "constraints": [
+      "1 <= m, n <= 10",
+      "grid[i][j] is either 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[2,1,1],[1,1,0],[0,1,1]]",
+        "output": "4",
+        "explanation": "After 1 minute, the grid becomes [[2,2,1],[2,1,0],[0,1,1]]. After 2 minutes, it becomes [[2,2,2],[2,2,0],[0,2,2]]. After 3 minutes, it becomes [[2,2,2],[2,2,0],[0,2,2]]. After 4 minutes, all the oranges are rotten."
+      },
+      {
+        "input": "grid = [[2,1,1],[0,1,1],[1,0,2]]",
+        "output": "-1",
+        "explanation": "There is at least one fresh orange that cannot be rotted because it is isolated from the rotten oranges."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a queue to perform a breadth-first search.",
+      "Keep track of the number of fresh oranges.",
+      "Count the minutes it takes for all oranges to rot."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For example, if you have intervals [1,3], [2,6], [8,10], and [15,18], the merged intervals would be [1,6], [8,10], and [15,18]. Intervals are represented as pairs of integers where the first integer is less than or equal to the second integer.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Greedy"
+    ],
+    "input_format": "A 2D array of integers intervals where intervals[i] = [start_i, end_i].",
+    "output_format": "A 2D array of merged intervals.",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= start_i <= end_i <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap and can be merged into [1,6]."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] overlap and can be merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals by their start time.",
+      "Iterate through the sorted intervals and merge when necessary."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Elements",
+    "description": "Given a non-empty array of integers, return the k most frequent elements. You may return the answer in any order.",
+    "topic": "Hash Table",
+    "subtopic": "Frequency Counting",
+    "tags": [
+      "Hash Table",
+      "Sort",
+      "Frequency"
+    ],
+    "input_format": "An array of integers, nums, and an integer k.",
+    "output_format": "An array of the k most frequent elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "k is guaranteed to be at least 1 and k <= the number of unique elements."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,1,1,2,2,3], k = 2",
+        "output": "[1, 2]",
+        "explanation": "The numbers 1 and 2 appear most frequently."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "The only element is 1."
+      },
+      {
+        "input": "nums = [1,2,3,4,5,6,7,8,8,9,9,9], k = 3",
+        "output": "[9, 8, 1]",
+        "explanation": "The numbers 9 and 8 are the top two frequent elements, but any valid order is acceptable."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to count the frequency of each element.",
+      "Consider using a heap or bucket sort to find the top k elements."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) Cache. The cache should support the following operations: get and put. The get method will retrieve the value of the key if the key exists in the cache, otherwise it will return -1. The put method will update the value of the key if the key exists and if it does not exist, it should add the key-value pair to the cache. If the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Cache",
+      "Data Structures",
+      "LinkedList"
+    ],
+    "input_format": "The constructor of the LRUCache class will take an integer capacity as a parameter.",
+    "output_format": "The output will be the results of the get and put operations, returning values as specified.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key, value <= 10^4",
+      "The operations get and put will be called at most 10^4 times."
+    ],
+    "examples": [
+      {
+        "input": "cache = LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1,-1,3,4]",
+        "explanation": "Steps: 1. 1 is added, 2 is added. 2. Get 1 returns 1. 3. 3 is added, evicting 2. 4. 2 is not found, returns -1. 5. 4 is added, evicting 3. 6. 1 is not found, returns -1. 7. Get 3 returns 3. 8. Get 4 returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about which data structures to use for constant time retrieval and updates.",
+      "A combination of a hashmap and a doubly linked list could work well."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Excel Sheet Column Number",
+    "description": "Given a column title as it appears in an Excel sheet, return its corresponding column number. For example, 'A' corresponds to 1, 'B' to 2, 'C' to 3, ..., 'Z' to 26, 'AA' to 27, 'AB' to 28, and so on. Letters are case-insensitive and you may assume that the input will always be valid.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Excel",
+      "Mathematics"
+    ],
+    "input_format": "A string representing the column title in Excel.",
+    "output_format": "An integer representing the corresponding column number.",
+    "constraints": [
+      "1 <= s.length <= 7",
+      "s consists of uppercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'A'",
+        "output": "1",
+        "explanation": "'A' corresponds to the first column."
+      },
+      {
+        "input": "s = 'AB'",
+        "output": "28",
+        "explanation": "'AB' corresponds to the 28th column, calculated as 1 * 26^1 + 2 * 26^0 = 26 + 2."
+      },
+      {
+        "input": "s = 'ZY'",
+        "output": "701",
+        "explanation": "'ZY' corresponds to the 701st column, calculated as 26 * 26^1 + 25 * 26^0 = 676 + 25."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the base-26 number system as you convert letters to numbers.",
+      "You can use ASCII values to calculate the position of each character."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within a string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A string s consisting of English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 5 * 10^4",
+      "s consists of English letters, digits, symbols and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The answer is \"abc\", with the length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The answer is \"b\", with the length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The answer is \"wke\", with the length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to store the characters and their indices.",
+      "Maintain a sliding window to keep track of the current substring."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Reaching Points",
+    "description": "You are given a starting point (x, y) and a target point (a, b). Starting from (x, y), you can only reach a new point (x + y, y) or (x, x + y) in one move. You need to determine if it is possible to reach the target point (a, b) using any number of moves. You must use only the operations described above.",
+    "topic": "Mathematics",
+    "subtopic": "Geometry",
+    "tags": [
+      "Mathematics",
+      "Geometry",
+      "Simulation"
+    ],
+    "input_format": "The input consists of four integers, x, y, a, and b (0 <= x, y <= a, b <= 10^9).",
+    "output_format": "Return true if it is possible to reach the point (a, b) from (x, y), otherwise return false.",
+    "constraints": [
+      "0 <= x, y <= a, b <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "x = 1, y = 1, a = 3, b = 5",
+        "output": "true",
+        "explanation": "We can perform the operations to reach (3, 5) from (1, 1): (1, 1) -> (2, 1) -> (2, 3) -> (3, 5)."
+      },
+      {
+        "input": "x = 1, y = 2, a = 1, b = 2",
+        "output": "true",
+        "explanation": "We start at (1, 2) which is already our target (1, 2)."
+      },
+      {
+        "input": "x = 1, y = 1, a = 4, b = 2",
+        "output": "false",
+        "explanation": "It is not possible to reach (4, 2) from (1, 1) as the operations will always result in increasing the sum of coordinates."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the properties of the operations used to reach the target.",
+      "Try to work backwards from (a, b) to (x, y).",
+      "Using modulo operations might help simplify the conditions."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to Roman",
+    "description": "Given an integer, convert it to a Roman numeral. Roman numerals are represented by seven different symbols: I, V, X, L, C, D, and M. For example, 2 is represented as 'II' and 12 as 'XII'. The input integer will be between 1 and 3999.",
+    "topic": "Math",
+    "subtopic": "Conversion",
+    "tags": [
+      "Math",
+      "Conversion",
+      "String"
+    ],
+    "input_format": "An integer num representing the input to be converted to a Roman numeral.",
+    "output_format": "A string representing the Roman numeral equivalent of the input integer.",
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "examples": [
+      {
+        "input": "num = 3",
+        "output": "III",
+        "explanation": "The number 3 is represented as 'III' in Roman numerals."
+      },
+      {
+        "input": "num = 4",
+        "output": "IV",
+        "explanation": "The number 4 is represented as 'IV' in Roman numerals."
+      },
+      {
+        "input": "num = 9",
+        "output": "IX",
+        "explanation": "The number 9 is represented as 'IX' in Roman numerals."
+      },
+      {
+        "input": "num = 58",
+        "output": "LVIII",
+        "explanation": "The number 58 is represented as 'LVIII' in Roman numerals (50 + 5 + 3)."
+      },
+      {
+        "input": "num = 1994",
+        "output": "MCMXCIV",
+        "explanation": "The number 1994 is represented as 'MCMXCIV' in Roman numerals (1000 + 900 + 90 + 4)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the value of the symbols and how they are combined.",
+      "Use a greedy algorithm approach to build the Roman numeral."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Colors",
+    "description": "Given an array nums of n elements of 0, 1, and 2, sort the array in-place so that all 0s come first, followed by all 1s, and all 2s. You must do this without using the library's built-in sort function.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums where each integer is either 0, 1, or 2.",
+    "output_format": "The sorted array in-place.",
+    "constraints": [
+      "n == nums.length",
+      "1 <= n <= 300",
+      "nums[i] is 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 0, 2, 1, 1, 0]",
+        "output": "[0, 0, 1, 1, 2, 2]",
+        "explanation": "After sorting, all 0s are placed first, followed by all 1s and then all 2s."
+      },
+      {
+        "input": "nums = [2, 0, 1]",
+        "output": "[0, 1, 2]",
+        "explanation": "The sorted order of the colors is 0, followed by 1, and then 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to use a counting sort approach.",
+      "Use two pointers to keep track of the position of 0s and 2s."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Find Median from Data Stream",
+    "description": "Design a data structure that supports the following two operations: `addNum(int num)` - Add a integer number from the data stream to the data structure, and `findMedian()` - Return the median of all elements so far. The median is defined as follows: If the current number of elements is odd, the median is the middle element. If it is even, the median is the average of the two middle elements.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Heap",
+      "Design",
+      "Median"
+    ],
+    "input_format": "The `addNum` method takes in an integer `num`, and the `findMedian` method returns a float representing the median.",
+    "output_format": "The median value as a float, rounded to 5 decimal places if necessary.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "addNum(1), addNum(2), findMedian()",
+        "output": "1.5",
+        "explanation": "The numbers are [1, 2], the median is (1 + 2) / 2 = 1.5."
+      },
+      {
+        "input": "addNum(3), findMedian()",
+        "output": "2.0",
+        "explanation": "Now the numbers are [1, 2, 3], so the median is 2."
+      },
+      {
+        "input": "addNum(4), findMedian()",
+        "output": "2.5",
+        "explanation": "The numbers are [1, 2, 3, 4], the median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use two heaps to maintain the lower and upper halves of the data.",
+      "Make sure to balance the heaps after each addition."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber II",
+    "description": "You are a professional robber planning to rob houses along a circular street. Each house has a certain amount of money hidden in it. However, adjacent houses have security systems connected, and if two adjacent houses are broken into on the same night, the system will trigger an alarm. Given an integer array `nums` representing the amount of money of each house, return the maximum amount of money you can rob tonight without triggering the alarm. Note that the first and last houses are considered adjacent.",
+    "topic": "Dynamic Programming",
+    "subtopic": "House Robber",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer array nums representing the amount of money in each house.",
+    "output_format": "An integer representing the maximum amount of money that can be robbed.",
+    "constraints": [
+      "0 <= nums.length <= 100",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 2]",
+        "output": "3",
+        "explanation": "You cannot rob houses 1 and 3 because they are adjacent, but you can rob house 2."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Rob houses 1 and 3 to get 1 + 3 = 4."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "0",
+        "explanation": "No houses to rob, so the maximum amount is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the problem as a modified version of the House Robber I problem.",
+      "You can use the max of robbing excluding the first house or excluding the last house."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Bridge",
+    "description": "You are given a grid of 0s and 1s, where 1s represent land and 0s represent water. Your task is to find the shortest path to connect two islands of 1s by flipping 0s to 1s. The path must only consist of adjacent cells (horizontally or vertically). Return the minimum number of 0s you need to flip to connect the two islands.",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Island",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid of integers (0s and 1s) denoting the map.",
+    "output_format": "An integer representing the minimum number of flips required to connect the two islands.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "grid[i][j] is either 0 or 1.",
+      "There are at least two islands."
+    ],
+    "examples": [
+      {
+        "input": "[[0, 1], [1, 0]]",
+        "output": "1",
+        "explanation": "Flipping one 0 connects the two islands."
+      },
+      {
+        "input": "[[0, 1, 0, 0, 0], [0, 0, 0, 1, 1], [0, 0, 0, 0, 0], [0, 1, 0, 0, 0]]",
+        "output": "2",
+        "explanation": "Flipping two 0s connects the two islands vertically and horizontally."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use BFS to explore the water cells.",
+      "Keep track of distances while expanding from each island.",
+      "Consider edge cases where islands are adjacent."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Atoms",
+    "description": "Given a string representing a molecular formula, return the count of each atom in the formula. The formula may contain digits representing the quantity of each atom, and these may be nested or may appear in various combinations. The formula follows standard chemical notation and can contain elements represented by one or two uppercase letters followed by optional lowercase letters. Each atom can be followed by an integer, which specifies the quantity of that atom. Parentheses may be used to denote groups of atoms with their own quantity, and these groups can also be nested.",
+    "topic": "Parsing",
+    "subtopic": "Stack",
+    "tags": [
+      "Parsing",
+      "Stack",
+      "Math"
+    ],
+    "input_format": "A string `formula` representing the molecular formula.",
+    "output_format": "A dictionary where keys are atom types and values are their respective counts.",
+    "constraints": [
+      "1 <= formula.length <= 1000",
+      "The formula consists of uppercase letters, lowercase letters, digits, and parentheses."
+    ],
+    "examples": [
+      {
+        "input": "H2O",
+        "output": "{\"H\": 2, \"O\": 1}",
+        "explanation": "There are 2 Hydrogen atoms and 1 Oxygen atom."
+      },
+      {
+        "input": "K4(ON(SO3)2)2",
+        "output": "{\"K\": 4, \"O\": 14, \"N\": 2, \"S\": 4}",
+        "explanation": "K: 4, O: 14 (2 from SO3 * 2, 2 from ON * 2), N: 2, S: 4."
+      },
+      {
+        "input": "Mg(OH)2",
+        "output": "{\"Mg\": 1, \"O\": 2, \"H\": 2}",
+        "explanation": "There is 1 Magnesium, 2 Oxygen, and 2 Hydrogen atoms."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think of using a stack to manage nested structures.",
+      "Keep track of current counts as you parse through the string.",
+      "Remember to account for quantities specified after atoms or groups."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Pairs of Songs With Total Durations Divisible by 60",
+    "description": "You are given a list of integers representing the durations of songs in seconds. Your task is to find the number of pairs of songs that have a total duration divisible by 60 seconds. Each pair consists of two different songs. Count the total number of such pairs that meet this condition.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Counting"
+    ],
+    "input_format": "An array of integers, where each integer represents the duration of a song in seconds.",
+    "output_format": "An integer representing the number of pairs of songs with total durations divisible by 60.",
+    "constraints": [
+      "1 <= songs.length <= 10^4",
+      "0 <= songs[i] < 60"
+    ],
+    "examples": [
+      {
+        "input": "songs = [30, 20, 150, 100, 40]",
+        "output": "3",
+        "explanation": "The pairs are (30, 150), (20, 100), and (30, 30). The total durations of these pairs (180, 120) are divisible by 60."
+      },
+      {
+        "input": "songs = [60, 60, 60]",
+        "output": "3",
+        "explanation": "All pairs formed by (60, 60) have a total of 120, which is divisible by 60. The pairs are: (0, 1), (0, 2), (1, 2)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to track the remainders when divided by 60.",
+      "Consider how to count pairs of indices."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Design Add and Search Words Data Structure",
+    "description": "Implement a data structure that supports adding new words and searching for a string in the added words that can contain '.' to represent any character. The data structure should support the following operations:\n\n1. void addWord(String word) - Add a word into the data structure.\n2. boolean search(String word) - Search for a word in the data structure. A word can contain letters a-z and the '.' character, where '.' can represent any letter.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Design",
+      "Trie",
+      "Search"
+    ],
+    "input_format": "A string representing the word to add or search.",
+    "output_format": "A boolean value indicating whether the word exists in the data structure.",
+    "constraints": [
+      "1 <= word.length <= 25",
+      "The input words consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "addWord(\"bad\")\naddWord(\"dad\")\naddWord(\"mad\")\nsearch(\"pad\")",
+        "output": "false",
+        "explanation": "The word 'pad' has not been added to the data structure."
+      },
+      {
+        "input": "search(\"bad\")",
+        "output": "true",
+        "explanation": "The word 'bad' has been added to the data structure."
+      },
+      {
+        "input": "search(\".ad\")",
+        "output": "true",
+        "explanation": "The '.' can represent 'b' in the word 'bad'."
+      },
+      {
+        "input": "search(\"b..\")",
+        "output": "true",
+        "explanation": "The '.' can represent 'a' and 'd' in the word 'bad'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a Trie data structure to store the words.",
+      "For the search function, you will need to handle the '.' character."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Count Good Nodes in Binary Tree",
+    "description": "Given a binary tree, a node is considered 'good' if the current node's value is greater than or equal to all the values of the nodes on the path from the root to that node. Count the number of good nodes in the binary tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "DFS"
+    ],
+    "input_format": "A binary tree represented by its root node.",
+    "output_format": "An integer representing the count of good nodes in the binary tree.",
+    "constraints": [
+      "The number of nodes in the binary tree is in the range [1, 1000].",
+      "-10^4 <= Node.val <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "root = [3,1,4,3,null,1,5]",
+        "output": "4",
+        "explanation": "The good nodes are 3 (root), 4, 3 (left child of 3), and 5."
+      },
+      {
+        "input": "root = [3,3,null,4,2]",
+        "output": "3",
+        "explanation": "The good nodes are the root 3 and the left child 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS to traverse the tree.",
+      "Keep track of the maximum value seen on the path."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Search Suggestions System",
+    "description": "You are tasked with implementing a search suggestions system. Given an array of strings 'products' representing product names and a string 'searchWord' representing the search query, return a list of lists of suggested products for each step of the search query. Each suggestion list should contain up to three products that start with the current prefix of 'searchWord'. If there are fewer than three products, return the available products. The suggestions should be sorted lexicographically.",
+    "topic": "String",
+    "subtopic": "Searching",
+    "tags": [
+      "String",
+      "Binary Search",
+      "Sorting"
+    ],
+    "input_format": "An array of strings 'products' and a string 'searchWord'.",
+    "output_format": "A list of lists of suggested product names for each prefix of 'searchWord'.",
+    "constraints": [
+      "1 <= products.length <= 1000",
+      "1 <= products[i].length <= 100",
+      "1 <= searchWord.length <= 100",
+      "All strings in products are unique."
+    ],
+    "examples": [
+      {
+        "input": {
+          "products": [
+            "mobile",
+            "mouse",
+            "moneypot",
+            "monitor",
+            "mousepad"
+          ],
+          "searchWord": "m"
+        },
+        "output": [
+          [
+            "mobile",
+            "moneypot",
+            "monitor"
+          ],
+          [
+            "mobile",
+            "moneypot",
+            "monitor"
+          ],
+          [
+            "mouse",
+            "moneypot",
+            "monitor"
+          ],
+          [
+            "mouse",
+            "moneypot",
+            "monitor"
+          ],
+          [
+            "mouse",
+            "mousepad"
+          ]
+        ],
+        "explanation": "The first prefix is 'm', suggestions are the three products starting with 'm'."
+      },
+      {
+        "input": {
+          "products": [
+            "havana"
+          ],
+          "searchWord": "h"
+        },
+        "output": [
+          [
+            "havana"
+          ],
+          [
+            "havana"
+          ],
+          [
+            "havana"
+          ],
+          [
+            "havana"
+          ],
+          [
+            "havana"
+          ]
+        ],
+        "explanation": "Only one product is available, hence all steps return it."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the products beforehand.",
+      "Use binary search to efficiently find the starting point for suggestions."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Meeting Rooms II",
+    "description": "Given an array of meeting time intervals where each interval is represented as an array of two integers [start, end], return the minimum number of conference rooms required to hold all meetings simultaneously. A meeting can start at the same time another meeting ends.",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Sorting"
+    ],
+    "input_format": "An array of intervals where each interval is represented as [start, end].",
+    "output_format": "An integer representing the minimum number of conference rooms required.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "0 <= intervals[i][0] < intervals[i][1] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[0, 30], [5, 10], [15, 20]]",
+        "output": "2",
+        "explanation": "We need two rooms for the meetings at [0, 30] and [5, 10]."
+      },
+      {
+        "input": "intervals = [[7, 10], [2, 4]]",
+        "output": "1",
+        "explanation": "The two meetings do not overlap, so one room is sufficient."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the intervals based on their start times.",
+      "Use a min-heap to keep track of the end times of meetings."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Delete GetRandom O(1)",
+    "description": "Design a data structure that supports the following operations: insert, delete, and getRandom. All operations should be done in constant time (O(1)). Implement the RandomizedSet class:\n\n- `insert(val: int) -> bool`: Inserts an item val into the set. Returns true if the item was not already present.\n- `delete(val: int) -> bool`: Removes an item val from the set. Returns true if the item was present.\n- `getRandom() -> int`: Returns a random element from the current set of elements. Each element must have the same probability of being returned.\n\nYou must implement the solution using a data structure that allows for average-case O(1) time complexity for all three operations.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Hash Table",
+      "Randomized",
+      "Design"
+    ],
+    "input_format": "An integer value for insert and delete operations; for getRandom, no input is needed.",
+    "output_format": "A boolean for insert and delete operations, or an integer for getRandom operation.",
+    "constraints": [
+      "-2^31 <= val <= 2^31 - 1",
+      "The operations will be called at most 10^4 times."
+    ],
+    "examples": [
+      {
+        "input": "RandomizedSet obj = new RandomizedSet();\nobj.insert(1);\nobj.insert(2);\nobj.delete(1);\nint rand = obj.getRandom();",
+        "output": "2",
+        "explanation": "After inserting 1 and 2, and deleting 1, the only remaining element is 2, which getRandom returns."
+      },
+      {
+        "input": "RandomizedSet obj = new RandomizedSet();\nobj.insert(1);\nobj.insert(2);\nobj.insert(3);\nint rand1 = obj.getRandom();\nobj.delete(2);\nint rand2 = obj.getRandom();",
+        "output": "1 or 3",
+        "explanation": "Both 1 and 3 are still present after deleting 2. rand1 could be either 1, 2 or 3. rand2 could be either 1 or 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to store the values and their indices.",
+      "To delete efficiently, swap the last element with the one to be deleted."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers 'nums' and an integer 'target', return the indices of the two numbers such that they add up to 'target'. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums, followed by an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "The numbers at indices 0 and 1 are 2 and 7, which add up to the target 9."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "The numbers at indices 1 and 2 are 2 and 4, which add up to the target 6."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the indices of the numbers you\u2019ve seen.",
+      "Check if the complement (target - current number) exists in the hash map."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Inorder Successor in BST",
+    "description": "Given a binary search tree (BST), find the inorder successor of a given node in the tree. The inorder successor of a node is the node that would appear immediately after it in an inorder traversal of the BST. If the given node has no inorder successor, return null.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "BST",
+      "Successor"
+    ],
+    "input_format": "The input consists of two parts: the root of the BST (TreeNode type) and the target node (TreeNode type) whose inorder successor needs to be found.",
+    "output_format": "Return the inorder successor of the given node in the BST. If it does not exist, return null.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 10^4].",
+      "The values of the nodes in the tree are unique.",
+      "The target node is guaranteed to be a node in the BST."
+    ],
+    "examples": [
+      {
+        "input": "root = [2, 1, 3], target = 1",
+        "output": "2",
+        "explanation": "In the inorder traversal, the sequence is [1, 2, 3]. The inorder successor of 1 is 2."
+      },
+      {
+        "input": "root = [5, 3, 7, 2, 4, 6, 8], target = 3",
+        "output": "4",
+        "explanation": "In the inorder traversal, the sequence is [2, 3, 4, 5, 6, 7, 8]. The inorder successor of 3 is 4."
+      },
+      {
+        "input": "root = [5, 3, 7], target = 7",
+        "output": "null",
+        "explanation": "In the inorder traversal, the last node is 7, which has no successor."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of inorder traversal in a BST.",
+      "If the node has a right child, the successor is the minimum node in the right subtree.",
+      "If the node has no right child, traverse upward until you find a node which is a left child of its parent."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Reorder Routes to Make All Paths Lead to the City Zero",
+    "description": "You are given a list of routes where each route is represented as a directed edge from one city to another. Your task is to determine the minimum number of routes you need to reverse so that all paths lead to City Zero. City Zero is represented by the index 0 in the list of cities. You can assume there is at least one path from each city to City Zero.",
+    "topic": "Graph",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "Traversal",
+      "BFS",
+      "DFS"
+    ],
+    "input_format": "A list of n directed edges routes where each edge is represented as [fromCity, toCity].",
+    "output_format": "An integer representing the minimum number of routes to reverse.",
+    "constraints": [
+      "1 <= n <= 5000",
+      "routes[i].length == 2",
+      "0 <= fromCity, toCity < n"
+    ],
+    "examples": [
+      {
+        "input": "routes = [[0, 1], [1, 2]]",
+        "output": "0",
+        "explanation": "All paths already lead to City Zero."
+      },
+      {
+        "input": "routes = [[1, 0], [2, 1], [3, 2]]",
+        "output": "3",
+        "explanation": "All paths need to be reversed to lead to City Zero."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use BFS or DFS to traverse the graph from City Zero.",
+      "Count the edges that are directed away from City Zero."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Permutation",
+    "description": "Given a string, determine if any permutation of the string could form a palindrome. A palindrome is a word that reads the same backward as forward. The frequency of characters in the string must meet certain criteria for a permutation to be a palindrome.",
+    "topic": "String",
+    "subtopic": "Frequency Count",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Permutation"
+    ],
+    "input_format": "A single string s consisting of lowercase letters and spaces.",
+    "output_format": "A boolean value: true if a permutation of the string can form a palindrome, false otherwise.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists only of lowercase letters and spaces"
+    ],
+    "examples": [
+      {
+        "input": "s = \"civic\"",
+        "output": "true",
+        "explanation": "The string 'civic' can be rearranged to form a palindrome: 'civic'."
+      },
+      {
+        "input": "s = \"ivicc\"",
+        "output": "true",
+        "explanation": "The string 'ivicc' can be rearranged to form a palindrome: 'vicci'."
+      },
+      {
+        "input": "s = \"hello\"",
+        "output": "false",
+        "explanation": "The string 'hello' cannot be rearranged to form a palindrome."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to count the frequency of each character.",
+      "A palindrome can have at most one character with an odd frequency."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "IPO",
+    "description": "You are given a company's available capital and a list of projects, each with a cost and expected profit. You need to maximize your profit by selecting projects within your capital constraints. A project can only be selected if your current capital is greater than or equal to its cost. After selecting a project, your capital increases by the expected profit of that project. Your goal is to determine the maximum profit you can achieve after selecting a series of projects.",
+    "topic": "Greedy",
+    "subtopic": "Heap",
+    "tags": [
+      "Greedy",
+      "Heap",
+      "DP"
+    ],
+    "input_format": "An integer `capital` representing the initial capital and an array of project pairs, where each pair consists of `[cost, profit]`.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= capital <= 10^9",
+      "1 <= projects.length <= 10^4",
+      "0 <= projects[i][0], projects[i][1] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "capital = 0, projects = [[1, 2], [2, 1], [3, 5]]",
+        "output": "4",
+        "explanation": "Select the project with cost 1 first, then select the project with cost 2. Total profit is 2 + 2 = 4."
+      },
+      {
+        "input": "capital = 1, projects = [[2, 3], [3, 5], [5, 10]]",
+        "output": "0",
+        "explanation": "With a capital of 1, no projects can be selected as all have a cost greater than 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Sort projects based on costs and use a priority queue to maximize profits."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Optimal Partition of String",
+    "description": "You are given a string s. You need to partition the string into the minimum number of segments such that each letter appears in at most one segment. Each segment must be non-empty. After partitioning, return the total number of segments in the optimal partition.",
+    "topic": "String",
+    "subtopic": "Partitioning",
+    "tags": [
+      "String",
+      "Partitioning",
+      "Greedy"
+    ],
+    "input_format": "A string s consisting of lowercase English letters.",
+    "output_format": "An integer representing the minimum number of segments.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abac'",
+        "output": "2",
+        "explanation": "We can partition the string into 'aba' and 'c', where each letter belongs to only one segment."
+      },
+      {
+        "input": "s = 'aabbcc'",
+        "output": "3",
+        "explanation": "We can partition the string into 'a', 'b', and 'c' for the minimum segments."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to keep track of the last occurrence of each character.",
+      "Use a greedy approach to make optimal partitions."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Boats to Save People",
+    "description": "You are given an array `people` where each `people[i]` is the weight of a person. There are boats that can carry at most `limit` weight. Each boat can carry at most two people at a time (given that their combined weight does not exceed `limit`). You need to return the minimum number of boats required to carry every person across the water.\n\nImplement a function `numRescueBoats(people: List[int], limit: int) -> int` to solve the problem.",
+    "topic": "Greedy",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Greedy",
+      "Two Pointers",
+      "Array"
+    ],
+    "input_format": "An array of integers `people` representing the weights of the people, and an integer `limit` representing the weight limit of each boat.",
+    "output_format": "An integer representing the minimum number of boats required to carry all the people.",
+    "constraints": [
+      "1 <= people.length <= 50000",
+      "1 <= people[i] <= limit <= 30000"
+    ],
+    "examples": [
+      {
+        "input": "people = [1, 2, 3, 4, 5], limit = 5",
+        "output": "3",
+        "explanation": "You can carry people with weights 1 and 4 in one boat, 2 and 3 in another boat, and the last person with weight 5 in a third boat."
+      },
+      {
+        "input": "people = [3, 2, 2, 1], limit = 3",
+        "output": "3",
+        "explanation": "Each boat can carry only one person with weight 3. The two people with weights 2 and 1 can share a boat. This results in three boats in total."
+      },
+      {
+        "input": "people = [5, 1, 4, 2], limit = 6",
+        "output": "2",
+        "explanation": "You can carry the person with weight 5 and the person with weight 1 in one boat, and the person with weight 4 and the person with weight 2 in another boat."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the weights of the people first.",
+      "Try using a two-pointer technique to optimize the number of boats needed."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Product of Array Except Self",
+    "description": "Given an integer array nums, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].\n\nYou must solve it without using the division operation and in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Product",
+    "tags": [
+      "Array",
+      "Mathematics",
+      "Product"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of integers representing the product of all elements except the current one.",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-30 <= nums[i] <= 30",
+      "The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4]",
+        "output": "[24, 12, 8, 6]",
+        "explanation": "The output array is calculated as follows:\noutput[0] = 2 * 3 * 4 = 24\noutput[1] = 1 * 3 * 4 = 12\noutput[2] = 1 * 2 * 4 = 8\noutput[3] = 1 * 2 * 3 = 6"
+      },
+      {
+        "input": "nums = [-1, 1, 0, -3, 3]",
+        "output": "[0, 0, 9, 0, 0]",
+        "explanation": "The output array is:\noutput[0] = 1 * 0 * -3 * 3 = 0\noutput[1] = -1 * 0 * -3 * 3 = 0\noutput[2] = -1 * 1 * -3 * 3 = 9\noutput[3] = -1 * 1 * 0 * 3 = 0\noutput[4] = -1 * 1 * 0 * -3 = 0"
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two passes to calculate the result.",
+      "Use a running product for the prefix and suffix."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Clone Graph",
+    "description": "Given a connected undirected graph, you need to clone the graph. Each node in the graph contains a value and a list of its neighbors. You should return a deep copy of the graph. The deep copy should consist of nodes that are copied from the original graph, with their values intact and their neighbors being the corresponding nodes in the cloned graph.",
+    "topic": "Graph",
+    "subtopic": "DFS/BFS",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Clone"
+    ],
+    "input_format": "The input consists of the node of the graph, which is represented as a node structure with an integer value and a list of adjacent nodes.",
+    "output_format": "Return the node of the cloned graph.",
+    "constraints": [
+      "The number of nodes in the graph is in the range [0, 100].",
+      "1 <= Node.val <= 100",
+      "The graph is guaranteed to be connected."
+    ],
+    "examples": [
+      {
+        "input": "graph = [[2,4],[1,3],[2],[1]]",
+        "output": "[[2,4],[1,3],[2],[1]]",
+        "explanation": "The graph is represented as a list of adjacency lists. Each list corresponds to a node and contains its neighbors."
+      },
+      {
+        "input": "graph = []",
+        "output": "[]",
+        "explanation": "An empty graph should return an empty graph."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to keep track of cloned nodes.",
+      "You can use either DFS or BFS to traverse the graph."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if: 1. Open brackets must be closed by the same type of brackets. 2. Open brackets must be closed in the correct order. Note that an empty string is also considered valid.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of characters '(', ')', '{', '}', '[' and ']'.",
+    "output_format": "A boolean value indicating whether the input string is valid.",
+    "constraints": [
+      "0 <= s.length <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are matched correctly."
+      },
+      {
+        "input": "s = '(]']",
+        "output": "false",
+        "explanation": "The square brackets and parentheses do not match."
+      },
+      {
+        "input": "s = '({[]})'",
+        "output": "true",
+        "explanation": "All brackets are matched correctly in the right order."
+      },
+      {
+        "input": "s = ']('",
+        "output": "false",
+        "explanation": "Closing bracket comes before the opening bracket."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of the opening brackets.",
+      "Check if each closing bracket matches the top of the stack."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of lists of integers representing all unique triplets that sum up to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "No triplets can be formed from an empty array."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "No triplets can be formed that sum to zero."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to sort the array first to enable easier traversal.",
+      "Use a two-pointer technique to find pairs that complement your chosen number."
+    ],
+    "company": "Docusign"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "DFS/BFS",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Depth First Search",
+      "Breadth First Search"
+    ],
+    "input_format": "A 2D grid represented as a list of lists containing '1's and '0's.",
+    "output_format": "An integer representing the number of islands.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "[['1','1','1','1','0'],['1','1','0','1','0'],['1','1','0','0','0'],['0','0','0','0','0']]",
+        "output": "1",
+        "explanation": "The entire grid is one island."
+      },
+      {
+        "input": "[['1','1','0','0','0'],['1','1','0','0','0'],['0','0','1','0','0'],['0','0','0','1','1']]",
+        "output": "3",
+        "explanation": "There are three separate islands."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using DFS or BFS to explore the grid.",
+      "Mark visited land cells to avoid counting them multiple times."
+    ],
+    "company": "Docusign"
+  }
+]

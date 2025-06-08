@@ -1,0 +1,3348 @@
+[
+  {
+    "question_id": "",
+    "title": "Length of Longest V-Shaped Diagonal Segment",
+    "description": "Given a 2D grid of integers, find the length of the longest diagonal segment that forms a 'V' shape. A 'V' shape is defined as a segment that starts from a point (i, j) and extends down-left and down-right while meeting certain value criteria. The segment is valid if the sequence first decreases, then increases while maintaining a constant value for the lowest point of the 'V'. The length of the segment is counted by the number of cells involved in the 'V' shape.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "Matrix",
+      "Diagonal"
+    ],
+    "input_format": "A 2D grid of integers where grid[i][j] represents the value in the cell at row i and column j.",
+    "output_format": "An integer representing the length of the longest V-shaped diagonal segment.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 100",
+      "-10^5 <= grid[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1, 2, 3], [4, 5, 2], [3, 4, 1]]",
+        "output": "5",
+        "explanation": "The longest V-shape is formed starting from (1, 1) with value 5, going down to (2, 0) with 4, then down to (2, 2) with 1, thus forming a V of length 5."
+      },
+      {
+        "input": "grid = [[1, 2], [3, 4]]",
+        "output": "3",
+        "explanation": "Starting from cell (0, 1) with value 2 creates a V shape down to (1, 0) with 3, thus the length is 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider iterating through each cell as a potential peak of the V.",
+      "Use dynamic programming to store lengths of V-shaped segments based on previous results."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "target is a valid sum of two distinct elements in nums."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "The numbers at indices 0 and 1 are 2 and 7, which add up to 9."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "The numbers at indices 1 and 2 are 2 and 4, which add up to 6."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "The numbers at indices 0 and 1 are both 3, which add up to 6."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try using a hash map to keep track of the numbers you've seen.",
+      "Check if the complement of the current number exists in the hash map."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Split the Array",
+    "description": "Given an array of integers, you need to split the array into two parts such that the sum of the first part is equal to the sum of the second part. If such a split is possible, return true; otherwise, return false.",
+    "topic": "Array",
+    "subtopic": "Partitioning",
+    "tags": [
+      "Array",
+      "Partitioning",
+      "Sum"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A boolean value indicating whether the array can be split into two parts with equal sum.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 5, 11, 5]",
+        "output": "true",
+        "explanation": "The array can be split into [1, 5, 5] and [11] with equal sum of 11."
+      },
+      {
+        "input": "nums = [1, 2, 3, 5]",
+        "output": "false",
+        "explanation": "There is no way to split the array into two parts with equal sum."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try to find a subset of numbers that equals half of the total sum."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Rotating the Box",
+    "description": "You are given a 2D grid representing a box and a list of objects within the box. The objects can be represented as 'X' and empty spaces as '.'. Rotate the box 90 degrees clockwise and return the new representation of the box, moving all objects to the bottom of the box, filling any remaining spaces with '.' characters.",
+    "topic": "Array",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Rotation"
+    ],
+    "input_format": "A 2D array of characters box, where each element is either 'X' or '.' representing an object or empty space respectively.",
+    "output_format": "A 2D array of characters representing the rotated box.",
+    "constraints": [
+      "1 <= box.length <= 100",
+      "1 <= box[i].length <= 100",
+      "box[i][j] is either 'X' or '.'"
+    ],
+    "examples": [
+      {
+        "input": "box = [['#','.','.','#'],['#','X','.','#'],['.','.','.','#']]",
+        "output": "[['.','X','#','#'],['.','X','#','.'],['.','.','#','.'],['.','.','.','.']]",
+        "explanation": "After the rotation, the 'X' objects are moved to the bottom of their respective columns, resulting in the new box representation."
+      },
+      {
+        "input": "box = [['.']]",
+        "output": "[['.']]",
+        "explanation": "There's only one cell in the box which is empty, and rotating it does not change anything."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to iterate through the box to collect objects.",
+      "Think about building the new array after collecting the objects."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Create Target Array in the Given Order",
+    "description": "You are given two arrays of integers, nums and index. You need to create a target array based on the index array. The target array should be constructed by inserting each element of nums into the target array at the corresponding position specified in the index array. If the position is already occupied, the existing elements will be shifted to the right. Return the target array after processing all elements.",
+    "topic": "Array",
+    "subtopic": "Insertion",
+    "tags": [
+      "Array",
+      "Insertion",
+      "Construct"
+    ],
+    "input_format": "Two arrays of integers, nums and index, with the same length.",
+    "output_format": "An array representing the constructed target array.",
+    "constraints": [
+      "0 <= nums.length <= 100",
+      "0 <= index[i] <= target.length",
+      "-100 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 1, 2, 3, 4], index = [0, 1, 2, 2, 1]",
+        "output": "[0, 4, 1, 2, 3]",
+        "explanation": "The target array is constructed as follows: Insert 0 at index 0 -> [0]; Insert 1 at index 1 -> [0, 1]; Insert 2 at index 2 -> [0, 1, 2]; Insert 3 at index 2 -> [0, 1, 3, 2]; Insert 4 at index 1 -> [0, 4, 1, 3, 2]."
+      },
+      {
+        "input": "nums = [1], index = [0]",
+        "output": "[1]",
+        "explanation": "Only one element is inserted at the first (0-th) index."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think about the size of the target array as you insert elements.",
+      "You can use list insertion methods available in your programming language."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an array of n integers nums, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero. Note that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of unique triplets that sum up to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "No triplets can be formed from an empty array."
+      },
+      {
+        "input": "nums = [0, 0, 0]",
+        "output": "[[0, 0, 0]]",
+        "explanation": "The only triplet here is [0, 0, 0] which sums to zero."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash set to store the elements.",
+      "Sort the input array to make it easier to avoid duplicates."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Buy and Sell Stock",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where 0 <= prices.length <= 10^5 and 0 <= prices[i] <= 10^4.",
+    "output_format": "An integer representing the maximum profit. Return 0 if no profit can be made.",
+    "constraints": [
+      "0 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Maximum profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price observed so far.",
+      "Calculate the maximum profit at each step."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within the string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A single string s consisting of lowercase and uppercase letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The answer is \"abc\", with the length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The answer is \"b\", with the length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The answer is \"wke\", with the length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using a sliding window approach.",
+      "Use a HashMap or an array to track the characters and their indices."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Events That Can Be Attended",
+    "description": "You are given a list of events represented by their start and end times. Each event is represented as a pair (start, end). Your goal is to determine the maximum number of events that you can attend, assuming you can only attend one event at a time. Events that overlap cannot be attended together.",
+    "topic": "Greedy",
+    "subtopic": "Interval Scheduling",
+    "tags": [
+      "Greedy",
+      "Interval",
+      "Events"
+    ],
+    "input_format": "A list of events, where each event is represented by a pair of integers [start, end].",
+    "output_format": "An integer representing the maximum number of non-overlapping events that can be attended.",
+    "constraints": [
+      "1 <= events.length <= 10^5",
+      "0 <= start < end <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "[[1, 3], [2, 4], [3, 5]]",
+        "output": "2",
+        "explanation": "You can attend the first event [1, 3] and then the third event [3, 5]."
+      },
+      {
+        "input": "[[1, 2], [3, 4], [2, 3]]",
+        "output": "3",
+        "explanation": "You can attend all events as they do not overlap."
+      },
+      {
+        "input": "[[1, 10], [2, 3], [4, 5], [6, 7]]",
+        "output": "3",
+        "explanation": "You can attend events [2, 3], [4, 5], and [6, 7]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the events based on their end times.",
+      "Use a greedy approach to select events."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Match Alphanumerical Pattern in Matrix I",
+    "description": "Given a 2D matrix filled with alphanumeric characters, write a function that checks if a given alphanumeric pattern can be found in the matrix. The pattern can be matched horizontally, vertically, or diagonally (both left-to-right and right-to-left). The matching should be case-sensitive.",
+    "topic": "Matrix",
+    "subtopic": "Pattern Matching",
+    "tags": [
+      "Matrix",
+      "Pattern Matching",
+      "Alphanumeric"
+    ],
+    "input_format": "A 2D matrix of size m x n filled with alphanumeric characters and a string pattern.",
+    "output_format": "A boolean value indicating whether the pattern is found in the matrix.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "1 <= pattern.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "matrix": [
+            [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "F",
+              "G",
+              "H"
+            ],
+            [
+              "I",
+              "J",
+              "K",
+              "L"
+            ],
+            [
+              "M",
+              "N",
+              "O",
+              "P"
+            ]
+          ],
+          "pattern": "BEJK"
+        },
+        "output": "true",
+        "explanation": "The pattern can be found diagonally starting from B."
+      },
+      {
+        "input": {
+          "matrix": [
+            [
+              "A",
+              "B",
+              "C"
+            ],
+            [
+              "D",
+              "E",
+              "F"
+            ],
+            [
+              "G",
+              "H",
+              "I"
+            ]
+          ],
+          "pattern": "EFG"
+        },
+        "output": "false",
+        "explanation": "The pattern EFG cannot be found in the matrix."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Check all possible directions: horizontal, vertical, and diagonal.",
+      "Use recursive backtracking to explore each cell.",
+      "Consider using a visited matrix to avoid revisiting cells."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Divisor Game",
+    "description": "Alice and Bob are playing a game where they take turns choosing a positive integer from a pile of `N` stones. In each turn, a player must choose an integer `x`, such that `1 <= x < N` and `N` is divisible by `x`. The player who cannot make a move loses the game. Given the initial number of stones `N`, determine if Alice can win the game assuming both players play optimally.",
+    "topic": "Game Theory",
+    "subtopic": "Optimal Strategy",
+    "tags": [
+      "Game Theory",
+      "Dynamic Programming",
+      "Mathematics"
+    ],
+    "input_format": "An integer N representing the initial number of stones.",
+    "output_format": "A boolean value indicating if Alice can win the game.",
+    "constraints": [
+      "1 <= N <= 100"
+    ],
+    "examples": [
+      {
+        "input": "N = 2",
+        "output": "true",
+        "explanation": "Alice can pick 1 stone and leave Bob with 1 stone. Bob has no move and loses."
+      },
+      {
+        "input": "N = 3",
+        "output": "false",
+        "explanation": "Alice can only pick 1 stone, leaving Bob with 2 stones. Bob can then pick 1 stone and win."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the parity of N.",
+      "What happens if N is even vs. odd?"
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Odd String Difference",
+    "description": "Given two strings, s1 and s2, you need to determine if the characters at odd indices of s1 and s2 are the same when compared. If both odd indexed characters are same, return 'True', otherwise return 'False'.",
+    "topic": "String",
+    "subtopic": "String Comparison",
+    "tags": [
+      "String",
+      "Comparison",
+      "Odd Indices"
+    ],
+    "input_format": "Two strings s1 and s2, where 1 <= s1.length, s2.length <= 100.",
+    "output_format": "A boolean value indicating if the characters at odd indices are the same.",
+    "constraints": [
+      "1 <= s1.length, s2.length <= 100",
+      "Both strings consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s1 = 'abcde', s2 = 'fghij'",
+        "output": "False",
+        "explanation": "The odd indexed characters for s1 are 'b' and 'd', and for s2 are 'g' and 'h'. Since 'b' != 'g', the output is False."
+      },
+      {
+        "input": "s1 = 'abcdef', s2 = 'abdecf'",
+        "output": "True",
+        "explanation": "The odd indexed characters for both strings are 'b' and 'd'. Since 'b' == 'b', the output is True."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check characters at odd indices.",
+      "Use a loop to compare characters at the required positions."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Count Nodes With the Highest Score",
+    "description": "You are given a binary tree. Each node in the tree contains a positive integer value. The score of a node is defined as the product of the values of all of its descendants, including itself. Your task is to count how many nodes have the highest score in the tree. Return this count.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "DFS",
+      "Recursion"
+    ],
+    "input_format": "The input consists of the root of a binary tree.",
+    "output_format": "An integer representing the count of nodes with the highest score.",
+    "constraints": [
+      "The number of nodes in the tree is between 1 and 10^5.",
+      "Each node's value is between 1 and 1000."
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4, 5, null, 6]",
+        "output": "1",
+        "explanation": "The maximum score is from node 3, with a score of 18 (3 * 6). Thus, only one node has the highest score."
+      },
+      {
+        "input": "root = [1, 2, 3]",
+        "output": "2",
+        "explanation": "Nodes 2 and 3 both have the highest score of 2 and 3 respectively. Thus, there are two nodes with the highest score."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a depth-first search to calculate the scores.",
+      "You can maintain a running maximum score while traversing the tree."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Two Furthest Houses With Different Colors",
+    "description": "You are given an array of integers representing house colors, where each integer corresponds to a specific color. Your task is to find the maximum distance between two houses of different colors. The distance between two houses at indices i and j is defined as |i - j|. Return the maximum such distance.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Distance"
+    ],
+    "input_format": "An array of integers houses where 1 <= houses.length <= 10^5 and 1 <= houses[i] <= 100.",
+    "output_format": "An integer representing the maximum distance between two houses with different colors.",
+    "constraints": [
+      "1 <= houses.length <= 10^5",
+      "1 <= houses[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "houses = [1, 2, 1, 2, 1]",
+        "output": "4",
+        "explanation": "The furthest houses with different colors are at indices 0 and 4 (values 1 and 2). The distance is |0 - 4| = 4."
+      },
+      {
+        "input": "houses = [1, 1, 1, 1, 1]",
+        "output": "0",
+        "explanation": "There are no houses with different colors, so the maximum distance is 0."
+      },
+      {
+        "input": "houses = [1, 2, 3, 4, 1, 2]",
+        "output": "5",
+        "explanation": "The furthest houses with different colors are at indices 0 (1) and 5 (2). The distance is |0 - 5| = 5."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to explore potential distances efficiently.",
+      "Make sure to track different colors as you move through the array."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "Array",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Array",
+      "String",
+      "HashMap"
+    ],
+    "input_format": "An array of strings `strs`.",
+    "output_format": "A list of lists, where each sublist contains strings that are anagrams of each other.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "All inputs are in lowercase."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The groups of anagrams are ['eat', 'tea', 'ate'] and ['tan', 'nat'] and ['bat']."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "There's only one string which is an empty string, and it groups with itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "There's only one string which is 'a', and it groups with itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort each string and use the sorted string as a key.",
+      "Consider using a hash map to classify the anagrams."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Earliest Possible Day of Full Bloom",
+    "description": "In a garden, there are N flowers, and each flower has a blooming time given by an array of integers bloomDay, where bloomDay[i] indicates the day the i-th flower will bloom. A bouquet can be made of K adjacent flowers that are all blooming (bloomDay[i] <= day). Given an integer K, return the earliest day on which you can make M bouquets. If it is impossible to make M bouquets, return -1.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Greedy"
+    ],
+    "input_format": "An array of integers bloomDay, an integer K, and an integer M.",
+    "output_format": "An integer representing the earliest day when M bouquets can be made, or -1 if impossible.",
+    "constraints": [
+      "1 <= bloomDay.length <= 10^5",
+      "1 <= bloomDay[i] <= 10^9",
+      "1 <= K <= bloomDay.length",
+      "1 <= M <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "bloomDay = [1, 10, 3, 10, 2], K = 3, M = 1",
+        "output": "3",
+        "explanation": "On day 3, flowers bloom at days [1, 10, 3, 10, 2] => flowers [1, 3, 2] can make a bouquet."
+      },
+      {
+        "input": "bloomDay = [1, 2, 3, 4, 5], K = 2, M = 3",
+        "output": "3",
+        "explanation": "On day 3, the bouquets can be formed using pairs of adjacent flowers: [1, 2], [2, 3], and [3, 4]."
+      },
+      {
+        "input": "bloomDay = [1, 2, 3, 4, 5], K = 2, M = 4",
+        "output": "-1",
+        "explanation": "It is impossible to form 4 bouquets because there are not enough adjacent flowers to bloom."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using binary search on the 'day'.",
+      "Count how many bouquets can be formed on a given day.",
+      "The maximum day gives an upper bound for binary search."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Block Placement Queries",
+    "description": "You are given an array of blocks with their sizes and a series of queries. Each query asks if a given number of blocks can be placed sequentially with increasing sizes, starting from a specified block index. Your task is to determine for each query if the blocks can be placed in a valid fashion.",
+    "topic": "Array",
+    "subtopic": "Query Handling",
+    "tags": [
+      "Array",
+      "Queries",
+      "Sorting"
+    ],
+    "input_format": "Two integers n and q, followed by an array of integers blocks of length n, and then q queries, each consisting of two integers start and length.",
+    "output_format": "A list of boolean values where each value indicates whether the blocks can be placed sequentially for the corresponding query.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "1 <= q <= 10^5",
+      "1 <= blocks[i] <= 10^9",
+      "1 <= start <= n",
+      "1 <= length <= n - start + 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, blocks = [1, 2, 3, 2, 5], q = 2, queries = [(1, 3), (2, 4)]",
+        "output": "[true, false]",
+        "explanation": "For the first query, blocks[0] < blocks[1] < blocks[2] (1 < 2 < 3) so the answer is true. For the second query, blocks[1] < blocks[2] < blocks[3] < blocks[4] (2 < 3 < 2 < 5) is not satisfied, so the answer is false."
+      },
+      {
+        "input": "n = 6, blocks = [5, 1, 2, 3, 4, 6], q = 1, queries = [(1, 6)]",
+        "output": "[false]",
+        "explanation": "In this case, the blocks cannot be arranged in ascending order starting from index 1, as 5 is not less than 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using sorting to handle the placement check.",
+      "You may need to preprocess the block sizes for efficient querying."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. It should support the following operations: `get(key)` and `put(key, value)`. The `get(key)` method returns the value of the key if the key exists in the cache, otherwise it returns -1. The `put(key, value)` method updates the value of the key if the key exists. If the key does not exist, it inserts the key-value pair. If the cache reaches its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Data Structure",
+    "subtopic": "Cache",
+    "tags": [
+      "lru",
+      "cache",
+      "design"
+    ],
+    "input_format": "The cache is initialized with a positive capacity.",
+    "output_format": "The output for `get(key)` is the value associated with that key, or -1 if the key does not exist.",
+    "constraints": [
+      "The number of operations `get` and `put` will be at most 10^4.",
+      "The capacity of the cache is at most 300.",
+      "All keys and values are positive integers."
+    ],
+    "examples": [
+      {
+        "input": "cache = LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1, -1, 3, 4]",
+        "explanation": "The operations can be broken down as follows: after inserting (1,1) and (2,2), `get(1)` returns 1. Then (3,3) is inserted which evicts (2,2) since it is the least recently used. The next `get(2)` returns -1. (4,4) is added, evicting (1,1). `get(1)` returns -1, `get(3)` returns 3, and `get(4)` returns 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hashmap and a doubly linked list for efficient retrieval and updates."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Common Prefix",
+    "description": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\".",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A string representing the longest common prefix.",
+    "constraints": [
+      "0 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "All inputs are lowercase letters a-z."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\",\"flow\",\"flight\"]",
+        "output": "\"fl\"",
+        "explanation": "The longest common prefix is \"fl\"."
+      },
+      {
+        "input": "strs = [\"dog\",\"racecar\",\"car\"]",
+        "output": "\"\"",
+        "explanation": "There is no common prefix among the strings."
+      },
+      {
+        "input": "strs = []",
+        "output": "\"\"",
+        "explanation": "Since the array is empty, the common prefix is an empty string."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the first string as a potential prefix.",
+      "Iterate through the other strings and compare characters with the prefix."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array representing the height of bars in a histogram, compute how much water can be trapped between the bars after raining. The water can only be trapped in the spaces between the bars, and the heights of the bars are given in the input array.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer array height where height[i] represents the height of the i-th bar.",
+    "output_format": "An integer representing the total units of water that can be trapped.",
+    "constraints": [
+      "0 <= height.length <= 2 * 10^4",
+      "0 <= height[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]",
+        "output": "6",
+        "explanation": "The water can be trapped in the spaces of heights, leading to a total of 6 units of water."
+      },
+      {
+        "input": "height = [4, 2, 0, 3, 2, 5]",
+        "output": "9",
+        "explanation": "Water can be trapped above heights of 2 and 3, totaling 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the left and right maximum heights at each position.",
+      "Use two pointers to traverse the height array from both ends towards the center."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "You are given an integer array `nums` that is sorted in ascending order and then rotated at an unknown pivot index. The rotation is a shift to the right by some number of elements. For example, if `nums` = [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]. You are also given an integer `target`. Return the index of `target` in `nums` if it is in `nums`, or -1 if it is not in `nums`. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Binary Search",
+    "subtopic": "Searching",
+    "tags": [
+      "Binary Search",
+      "Array",
+      "Search"
+    ],
+    "input_format": "An array of integers `nums` and an integer `target`.",
+    "output_format": "An integer representing the index of `target` in `nums`, or -1 if not found.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "-10^4 <= nums[i] <= 10^4",
+      "All elements in `nums` are unique.",
+      "You must not use any extra space.",
+      "nums is guaranteed to be rotated at some pivot."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "The target 0 is located at index 4."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "The target 3 is not present in the array."
+      },
+      {
+        "input": "nums = [1], target = 0",
+        "output": "-1",
+        "explanation": "The target 0 is not present in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how rotation affects the sorted order.",
+      "You can apply binary search in a modified way."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string s consisting of just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s containing only the characters '(', ')', '{', '}', '[' and ']'.",
+    "output_format": "A boolean value indicating whether the input string is valid.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The parentheses are correctly matched."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "All types of brackets are correctly matched."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The brackets are not correctly matched."
+      },
+      {
+        "input": "s = '([)]'",
+        "output": "false",
+        "explanation": "The brackets are not correctly nested."
+      },
+      {
+        "input": "s = '{[]}'",
+        "output": "true",
+        "explanation": "The brackets are correctly matched and nested."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Check for matching pairs when encountering a closing bracket.",
+      "At the end, ensure the stack is empty."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a length maxWidth, format the text such that each line has exactly maxWidth characters and is fully justified. You should insert spaces between words so that each line has exactly maxWidth characters. The last line should be left-justified and no extra space is inserted between words. You need to return a list of strings representing the fully justified text.",
+    "topic": "String",
+    "subtopic": "Text Formatting",
+    "tags": [
+      "String",
+      "Justification",
+      "Text Manipulation"
+    ],
+    "input_format": "An array of words and an integer maxWidth.",
+    "output_format": "A list of strings representing the fully justified text.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 100",
+      "1 <= maxWidth <= 100"
+    ],
+    "examples": [
+      {
+        "input": [
+          "words = [\"This\", \"is\", \"an\", \"example\", \"of\", \"text\", \"justification.\"]",
+          "maxWidth = 16"
+        ],
+        "output": [
+          "This    is    an",
+          "example  of text",
+          "justification.  "
+        ],
+        "explanation": "The words are arranged to fit exactly 16 characters width, with additional spaces added where necessary."
+      },
+      {
+        "input": [
+          "words = [\"What\", \"must\", \"be\", \"acknowledgment\", \"shall\", \"be\"]",
+          "maxWidth = 16"
+        ],
+        "output": [
+          "What   must   be",
+          "acknowledgment  ",
+          "shall be        "
+        ],
+        "explanation": "The text is justified to fit within the specified width with proper spacing."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how spaces are distributed across words to fully justify each line.",
+      "Pay special attention to the last line, which should not be fully justified."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Walls and Gates",
+    "description": "You are given a 2D grid of integers where each cell can be one of three values: INF (indicating an empty room), -1 (indicating a wall), or 0 (indicating a gate). Fill each empty room with the distance to its nearest gate. If it is impossible to reach a gate, the room should remain as INF. The distance is defined as the number of steps to move to the adjacent cells (up, down, left, right).",
+    "topic": "Graph",
+    "subtopic": "Breadth-First Search",
+    "tags": [
+      "Graph",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid represented as a list of lists where each cell is an integer.",
+    "output_format": "The same 2D grid where each empty room is filled with the distance to its nearest gate.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 250",
+      "grid[i][j] is either -1, 0, or INF."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[INF, -1, 0, INF], [INF, INF, INF, -1], [0, -1, INF, INF]]",
+        "output": "[[3, -1, 0, 1], [2, 1, 2, -1], [0, -1, 1, 2]]",
+        "explanation": "The grid is filled such that each INF cell gets the distance to its nearest gate (0)."
+      },
+      {
+        "input": "grid = [[-1]]",
+        "output": "[[-1]]",
+        "explanation": "There are no gates in this grid, so the only cell is a wall and remains -1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use BFS to explore the distances from each gate.",
+      "Initialize the BFS queue with all gate positions.",
+      "Each step in BFS updates the distance for adjacent cells."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D binary grid (grid) where grid[i][j] is either '0' or '1'.",
+    "output_format": "An integer representing the number of islands.",
+    "constraints": [
+      "1 <= grid.length, grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "[['1','1','0','0','0'],['1','1','0','0','0'],['0','0','1','0','0'],['0','0','0','1','1']]",
+        "output": "3",
+        "explanation": "There are three islands: the first and second rows represent one island, the third row represents another, and the last two cells represent the third island."
+      },
+      {
+        "input": "[['1','1','1','1','0'],['1','1','0','1','0'],['1','1','0','0','0'],['0','0','0','0','0']]",
+        "output": "1",
+        "explanation": "This grid represents a single island consisting of the first three rows."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Depth-First Search (DFS) to explore the grid.",
+      "Mark visited landcells to avoid counting them multiple times."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Adjacent Elements With the Same Color",
+    "description": "You are given an array of strings where each string represents a color. Your task is to count the number of adjacent elements that have the same color. Two elements are considered adjacent if they are directly next to each other in the array. Implement a function that returns the count of such adjacent pairs.",
+    "topic": "Array",
+    "subtopic": "Counting Pairs",
+    "tags": [
+      "Array",
+      "Counting",
+      "String"
+    ],
+    "input_format": "An array of strings 'colors' representing different colors.",
+    "output_format": "An integer representing the number of adjacent elements with the same color.",
+    "constraints": [
+      "1 <= colors.length <= 10^5",
+      "1 <= colors[i].length <= 20"
+    ],
+    "examples": [
+      {
+        "input": "colors = ['red', 'red', 'blue', 'green', 'green', 'blue']",
+        "output": "3",
+        "explanation": "Adjacent pairs are ('red', 'red'), ('green', 'green'), and ('blue', 'blue'). Total: 3."
+      },
+      {
+        "input": "colors = ['yellow', 'blue', 'yellow', 'yellow']",
+        "output": "2",
+        "explanation": "Adjacent pairs are ('yellow', 'yellow') twice. Total: 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider iterating through the array once.",
+      "Use a counter to keep track of adjacent matches."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Simplify Path",
+    "description": "Given a string representing an absolute path for a file (Unix-style), simplify it. The path may contain '.' to refer to the current directory, '..' to refer to the parent directory, and '/' to separate the directories. You need to return the canonical path.",
+    "topic": "String",
+    "subtopic": "Path Manipulation",
+    "tags": [
+      "String",
+      "Path",
+      "Stack"
+    ],
+    "input_format": "A single string path representing a Unix-style absolute path.",
+    "output_format": "A string representing the simplified canonical path.",
+    "constraints": [
+      "1 <= path.length <= 3000",
+      "path consists of English letters, digits, '.', '..', and '/'",
+      "path is guaranteed to be a valid absolute path."
+    ],
+    "examples": [
+      {
+        "input": "/home/",
+        "output": "/home",
+        "explanation": "The path is already simplified; thus, the canonical path is '/home'."
+      },
+      {
+        "input": "/../",
+        "output": "/",
+        "explanation": "The path goes to the parent directory from the root, resulting in '/' as the simplified path."
+      },
+      {
+        "input": "/a/./b/../../c/",
+        "output": "/c",
+        "explanation": "The path navigates to 'a', then to 'b', yet goes back two directories to arrive at 'c'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the directories.",
+      "Ignore any '.' entries and handle '..' by popping the stack.",
+      "Make sure to handle leading and trailing slashes correctly."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A substring is a contiguous sequence of characters within a string. A palindrome is a string that reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Dynamic Programming"
+    ],
+    "input_format": "A single string s where 1 <= s.length <= 1000.",
+    "output_format": "A string representing the longest palindromic substring of s.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"babad\"",
+        "output": "\"bab\"",
+        "explanation": "Both \"bab\" and \"aba\" are valid answers, but \"bab\" is the first one."
+      },
+      {
+        "input": "s = \"cbbd\"",
+        "output": "\"bb\"",
+        "explanation": "\"bb\" is the longest palindromic substring."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider each character as a potential center of a palindrome.",
+      "Expand from the center and check for palindromes."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given a number of courses you need to take, labeled from 0 to n-1. Some courses may have prerequisites, which means you need to take one course before you can take another. You need to determine if you can finish all courses given the list of prerequisites. Implement a method that returns true if you can finish all courses, otherwise return false.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS"
+    ],
+    "input_format": "An integer number of courses numCourses and a list of prerequisite pairs prerequisites.",
+    "output_format": "A boolean value representing whether it is possible to finish all courses.",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0]]",
+        "output": "true",
+        "explanation": "You can take course 0, then take course 1."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "false",
+        "explanation": "There is a cycle, so you cannot finish the courses."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to represent the courses and prerequisites as a directed graph.",
+      "Use Depth-First Search (DFS) to detect cycles in the graph."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Linked List",
+    "description": "Given the head of a singly linked list, reverse the list and return the reversed list.",
+    "topic": "Linked List",
+    "subtopic": "Reversing a Linked List",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "In-place"
+    ],
+    "input_format": "A singly linked list represented by its head node.",
+    "output_format": "The head of the reversed singly linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 5000].",
+      "-5000 <= Node.val <= 5000"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5]",
+        "output": "[5, 4, 3, 2, 1]",
+        "explanation": "The original linked list is 1 -> 2 -> 3 -> 4 -> 5. After reversing, it becomes 5 -> 4 -> 3 -> 2 -> 1."
+      },
+      {
+        "input": "head = []",
+        "output": "[]",
+        "explanation": "An empty list remains empty after any operation."
+      },
+      {
+        "input": "head = [1]",
+        "output": "[1]",
+        "explanation": "A single-node list remains unchanged when reversed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use three pointers to reverse the links in the list.",
+      "Iterate through the list and keep track of the previous node."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Daily Temperatures",
+    "description": "Given an array of integers representing the daily temperatures, return an array such that, for each day in the input, tells you how many days you have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead.",
+    "topic": "Array",
+    "subtopic": "Stack",
+    "tags": [
+      "Array",
+      "Stack",
+      "Monotonic Stack"
+    ],
+    "input_format": "An array of integers temperatures, where 1 <= temperatures.length <= 30000 and 30 <= temperatures[i] <= 100.",
+    "output_format": "An array of integers representing the number of days until a warmer temperature, or 0 if none exists.",
+    "constraints": [
+      "1 <= temperatures.length <= 30000",
+      "30 <= temperatures[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "[73, 74, 75, 71, 69, 72, 76, 73]",
+        "output": "[1, 1, 4, 2, 1, 1, 0, 0]",
+        "explanation": "The temperatures for the next warmer days are: 74 (1 day), 75 (1 day), 76 (4 days), and so on."
+      },
+      {
+        "input": "[30, 40, 50, 60]",
+        "output": "[1, 1, 1, 0]",
+        "explanation": "Each day's temperature is lower than the next day until the last day, which has no warmer days."
+      },
+      {
+        "input": "[100, 90, 80, 70]",
+        "output": "[0, 0, 0, 0]",
+        "explanation": "No day is warmer than any of the preceding days."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to keep track of the days.",
+      "You can iterate through the temperatures array from the end to the beginning."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals. For instance, if the intervals are [[1,3],[2,6],[8,10],[15,18]], the merged intervals would be [[1,6],[8,10],[15,18]]. Your task is to write a function that takes a list of intervals and returns a merged list.",
+    "topic": "Array",
+    "subtopic": "Sorting & Intervals",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals"
+    ],
+    "input_format": "A list of intervals, where each interval is represented as a list of two integers [start, end]. The start of the interval is guaranteed to be less than or equal to the end.",
+    "output_format": "A list of merged intervals, each represented as a list of two integers [start, end].",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they are merged into [1,6]. The other intervals do not overlap."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] touch each other, so they are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals based on the start time.",
+      "Use a stack or a result list to keep track of merged intervals.",
+      "Compare the current interval with the last merged interval to determine overlap."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
+    "description": "Given an integer array nums and an integer limit, find the length of the longest continuous subarray such that the absolute difference between the maximum and minimum values in this subarray is less than or equal to the given limit.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Two Pointers"
+    ],
+    "input_format": "An integer array nums and an integer limit.",
+    "output_format": "An integer representing the length of the longest continuous subarray satisfying the condition.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^5",
+      "0 <= limit <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [8, 2, 4, 7], limit = 4",
+        "output": "4",
+        "explanation": "The subarray [8, 2, 4, 7] has a maximum value of 8 and a minimum value of 2. The absolute difference is 8 - 2 = 6, which is greater than the limit. The longest subarrays that meet the condition are [2, 4] (length 2) and [4, 7] (length 2). So the answer is still 4."
+      },
+      {
+        "input": "nums = [10, 1, 2, 4, 7, 2], limit = 5",
+        "output": "4",
+        "explanation": "The longest subarray is [1, 2, 4, 7] which has a maximum of 7 and a minimum of 1. The absolute difference is 7 - 1 = 6 > 5. Thus we check smaller segments and find [2, 4, 7] gives a diff of 5 satisfying the limit. The length is 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window technique to maintain the current subarray.",
+      "Utilize a deque to keep track of the maximum and minimum values efficiently.",
+      "Expand the right pointer until the absolute difference exceeds the limit, then slide the left pointer."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Words in a String",
+    "description": "Given a string s, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order. A word is defined as a sequence of non-space characters.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Reverse"
+    ],
+    "input_format": "A single string s consisting of words and spaces.",
+    "output_format": "A single string with the words reversed in order.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of printable ASCII characters and spaces."
+    ],
+    "examples": [
+      {
+        "input": "the sky is blue",
+        "output": "eht yks si eulb",
+        "explanation": "Each word is reversed but their order remains the same."
+      },
+      {
+        "input": "  hello world  ",
+        "output": "olleh dlrow",
+        "explanation": "Leading and trailing spaces are removed, words are reversed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider splitting the string by spaces.",
+      "Reverse each word individually.",
+      "Pay attention to multiple spaces."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An integer array nums.",
+    "output_format": "An integer representing the sum of the maximum subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The subarray [4,-1,2,1] has the largest sum = 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The only subarray is [1], and its sum is 1."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The subarray [5,4,-1,7,8] has the largest sum = 23."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Kadane's algorithm to optimize your solution.",
+      "Initialize two variables to track the max sum and the current sum."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Top K Frequent Elements",
+    "description": "Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Frequency Counting",
+    "tags": [
+      "Array",
+      "HashMap",
+      "Sorting"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An array of the k most frequent elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "k is a positive integer and k <= the number of unique elements in the array."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,1,1,2,2,3], k = 2",
+        "output": "[1, 2]",
+        "explanation": "The element 1 appears 3 times and the element 2 appears 2 times. Thus, the two most frequent elements are 1 and 2."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "The only element in the array is 1, so the most frequent element is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to count the frequency of each element.",
+      "Consider using a min-heap to keep track of the k most frequent elements."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Roman to Integer",
+    "description": "Implement a function that converts a Roman numeral to an integer. The Roman numeral system is based on certain letters representing specific values, and the combination of these letters conveys a number. The function should handle valid Roman numeral inputs according to the rules of Roman numerals.",
+    "topic": "String",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Parsing",
+      "Conversion"
+    ],
+    "input_format": "A string representing a Roman numeral.",
+    "output_format": "An integer representing the corresponding value of the Roman numeral.",
+    "constraints": [
+      "1 <= s.length <= 15",
+      "s consists of the characters 'I', 'V', 'X', 'L', 'C', 'D', 'M'.",
+      "It is guaranteed that the input is a valid Roman numeral."
+    ],
+    "examples": [
+      {
+        "input": "III",
+        "output": "3",
+        "explanation": "The numeral 'III' corresponds to 1 + 1 + 1 = 3."
+      },
+      {
+        "input": "IV",
+        "output": "4",
+        "explanation": "The numeral 'IV' corresponds to 5 - 1 = 4."
+      },
+      {
+        "input": "IX",
+        "output": "9",
+        "explanation": "The numeral 'IX' corresponds to 10 - 1 = 9."
+      },
+      {
+        "input": "LVIII",
+        "output": "58",
+        "explanation": "The numeral 'LVIII' corresponds to 50 + 5 + 1 + 1 + 1 = 58."
+      },
+      {
+        "input": "MCMXCIV",
+        "output": "1994",
+        "explanation": "The numeral 'MCMXCIV' corresponds to 1000 + (1000 - 100) + (100 - 10) + (5 - 1) = 1994."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the value of each Roman numeral character and its position.",
+      "Use a mapping of characters to values for conversion."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Restore IP Addresses",
+    "description": "Given a string containing only digits, restore it by returning all possible valid IP address combinations. An IP address consists of four numbers (each ranging from 0 to 255) separated by dots (.) and cannot have leading zeros. For example, '255.255.11.135' and '0.0.0.0' are valid IP addresses, while '256.256.256.256' and '01.01.01.01' are not.",
+    "topic": "Backtracking",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "IP Address"
+    ],
+    "input_format": "A string s where 1 <= s.length <= 20.",
+    "output_format": "A list of valid IP address combinations.",
+    "constraints": [
+      "The input string consists only of digits.",
+      "A valid IP address must have 4 parts."
+    ],
+    "examples": [
+      {
+        "input": "s = '25525511135'",
+        "output": [
+          "255.255.11.135",
+          "255.255.111.35"
+        ],
+        "explanation": "The valid combinations are formed as '255.255.11.135' and '255.255.111.35'."
+      },
+      {
+        "input": "s = '0000'",
+        "output": [
+          "0.0.0.0"
+        ],
+        "explanation": "The only valid combination is '0.0.0.0'."
+      },
+      {
+        "input": "s = '1111'",
+        "output": [
+          "1.1.1.1"
+        ],
+        "explanation": "The only valid combination is '1.1.1.1'."
+      },
+      {
+        "input": "s = '010010'",
+        "output": [
+          "0.10.0.10",
+          "0.100.1.0"
+        ],
+        "explanation": "The valid combinations are '0.10.0.10' and '0.100.1.0'. Leading zeros are not allowed in any segment except for '0'."
+      },
+      {
+        "input": "s = '101023'",
+        "output": [
+          "101.0.2.3",
+          "101.0.23.0",
+          "10.10.2.3",
+          "10.102.3",
+          "1.0.10.23",
+          "1.0.102.3"
+        ],
+        "explanation": "Multiple valid combinations can be formed, including '101.0.2.3' and '10.10.2.3'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider splitting the string into four parts.",
+      "Each part must be between 0 and 255, inclusive.",
+      "Ensure that segments do not have leading zeros unless they are exactly '0'."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search",
+    "description": "Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where 'adjacent' cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.",
+    "topic": "Backtracking",
+    "subtopic": "Depth First Search",
+    "tags": [
+      "Backtracking",
+      "DFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D board represented as a list of lists of characters and a string word.",
+    "output_format": "A boolean value indicating whether the word exists in the grid.",
+    "constraints": [
+      "1 <= board.length <= 20",
+      "1 <= board[i].length <= 20",
+      "board[i][j] is a lowercase English letter.",
+      "1 <= word.length <= 200"
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCCED"
+        },
+        "output": "true",
+        "explanation": "The word 'ABCCED' can be constructed from the grid by selecting the cells: (0,0) -> (0,1) -> (1,1) -> (1,2) -> (0,2) -> (0,3)."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "C",
+              "A",
+              "A"
+            ],
+            [
+              "A",
+              "A",
+              "A"
+            ],
+            [
+              "B",
+              "C",
+              "D"
+            ]
+          ],
+          "word": "AAB"
+        },
+        "output": "true",
+        "explanation": "The word 'AAB' can be constructed from the grid by selecting the cells: (0,1) -> (1,1) -> (1,0)."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "SEE"
+        },
+        "output": "true",
+        "explanation": "The word 'SEE' can be constructed from the grid by selecting the cells: (2,2) -> (1,2) -> (1,3)."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCB"
+        },
+        "output": "false",
+        "explanation": "The word 'ABCB' cannot be constructed from the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a depth-first search approach.",
+      "Use a boolean array to track visited cells."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Find Peak Element",
+    "description": "A peak element in an array is an element that is strictly greater than its neighbors. Given an integer array nums, you need to find one peak element and return its index. You may assume that the array is non-empty and there exists at least one peak element. You may also assume that the elements in the array are distinct.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Peak Element"
+    ],
+    "input_format": "An integer array nums[] with n elements.",
+    "output_format": "An integer representing the index of any peak element.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "2",
+        "explanation": "nums[2] = 3 is a peak because it is greater than its neighbors 2 and 1."
+      },
+      {
+        "input": "nums = [1, 2, 1, 3, 5, 6, 4]",
+        "output": "1 or 5",
+        "explanation": "nums[1] = 2 is a peak because it is greater than its neighbors 1 and 1. Alternatively, nums[5] = 6 is also a peak."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use binary search to reduce the search space efficiently.",
+      "Check the middle element and its neighbors to determine the direction to search."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate String",
+    "description": "Given two strings A and B, return true if and only if A can be rotated some number of times to get B. A rotation of a string consists of moving the leftmost character of the string to the rightmost position. For example, if A = 'abcde', then it can be rotated to 'cdeab', 'deabc', and 'eabcd'.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Rotation",
+      "Manipulation"
+    ],
+    "input_format": "Two strings A and B, where 0 <= A.length, B.length <= 100.",
+    "output_format": "A boolean value indicating whether string A can be rotated to match string B.",
+    "constraints": [
+      "A and B consist of lowercase English letters.",
+      "A and B can be of different lengths."
+    ],
+    "examples": [
+      {
+        "input": "A = 'abcde', B = 'cdeab'",
+        "output": "true",
+        "explanation": "String A can be rotated to 'cdeab' by moving 'a' and 'b' to the end."
+      },
+      {
+        "input": "A = 'abcde', B = 'abced'",
+        "output": "false",
+        "explanation": "There is no way to rotate 'abcde' to get 'abced'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "If A can be rotated to get B, then B must be a substring of A + A."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Palindrome",
+    "description": "Given a string s, you need to return the shortest palindrome you can create by adding characters in front of it. A palindrome is a string that reads the same backward as forward. For example, if the input string is 'aacecaa', the output should be 'aaacecaaa'.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Greedy"
+    ],
+    "input_format": "A single string s, where 1 <= s.length <= 1000.",
+    "output_format": "A string representing the shortest palindrome that can be created.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of lowercase English letters only."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcd'",
+        "output": "dcbabcd",
+        "explanation": "We need to add 'dcb' in front of 'abcd' to make it a palindrome."
+      },
+      {
+        "input": "s = 'aacecaa'",
+        "output": "aaacecaaa",
+        "explanation": "The input is already a palindrome, but we can add 'aa' in front to keep it the shortest."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider finding the longest prefix which is also a palindrome.",
+      "Utilize string hashing or KMP algorithm to find the longest palindromic prefix."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Check If Array Pairs Are Divisible by k",
+    "description": "You are given an integer array nums of even length and an integer k. Your task is to determine whether it is possible to form pairs of integers from the array such that the sum of each pair is divisible by k. Each element can be used at most once, and all pairs must be used. Return true if it is possible to form such pairs, otherwise return false.",
+    "topic": "Array",
+    "subtopic": "Math",
+    "tags": [
+      "Array",
+      "Math",
+      "Divisibility"
+    ],
+    "input_format": "An integer array nums of even length and an integer k.",
+    "output_format": "A boolean value indicating whether the pairs can be formed.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= k <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [9, 7, 5, 3], k = 6",
+        "output": "true",
+        "explanation": "The pairs (9, 3) and (7, 5) both sum to 12, which is divisible by 6."
+      },
+      {
+        "input": "nums = [1, 2, 3, 4], k = 3",
+        "output": "false",
+        "explanation": "There are no possible pairs that can be formed where the sum is divisible by 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a frequency array to count occurrences of remainders.",
+      "Pairs must have remainders that add up to k."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Operations to Write the Letter Y on a Grid",
+    "description": "You are given a 2D grid where each cell contains a lowercase letter. Your task is to convert the letters in the grid to form the letter 'Y' using the minimum number of operations. An operation consists of changing one letter in the grid to any other lowercase letter. For example, if you want to change 'a' to 'b', it counts as one operation. The shape of the letter 'Y' can be represented as follows:\n\n    Y\n   Y Y\n  Y   Y\n Y     Y\nY       Y\n\nYou must take into account that the grid can be larger or smaller than the shape of the letter 'Y'. You need to find the minimum number of operations required to achieve this transformation.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Manipulation",
+    "tags": [
+      "Grid",
+      "Dynamic Programming",
+      "Minimum Operations"
+    ],
+    "input_format": "A 2D grid of size m x n containing lowercase letters.",
+    "output_format": "An integer representing the minimum number of operations to form the letter 'Y'.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "The grid contains only lowercase letters."
+    ],
+    "examples": [
+      {
+        "input": "grid = [['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]",
+        "output": "5",
+        "explanation": "To transform into 'Y', we need to change letters such as 'a', 'b', 'd', etc. This requires a minimum of 5 operations."
+      },
+      {
+        "input": "grid = [['y', 'y', 'y'], ['y', 'a', 'y'], ['y', 'y', 'y']]",
+        "output": "0",
+        "explanation": "The grid already forms a 'Y'. Hence, no operations are required."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the shape of the 'Y' for different grid sizes.",
+      "Think about how you can calculate the cost of converting cells."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Black Blocks",
+    "description": "You are given a grid of N x M cells, each of which can either be colored black or white. Your task is to determine the number of distinct black blocks in this grid. A black block is formed by contiguous black cells that are adjacent either horizontally or vertically. Two black blocks are considered distinct if they are not directly connected by any black cells. Return the total number of distinct black blocks in the grid.",
+    "topic": "Graph",
+    "subtopic": "Depth First Search",
+    "tags": [
+      "Grid",
+      "Graph",
+      "DFS",
+      "Count"
+    ],
+    "input_format": "A 2D grid represented as a list of lists, where each cell contains either 'B' for black or 'W' for white.",
+    "output_format": "An integer representing the total number of distinct black blocks.",
+    "constraints": [
+      "1 <= N, M <= 100",
+      "grid[i][j] is either 'B' or 'W'"
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "B",
+            "B",
+            "W"
+          ],
+          [
+            "B",
+            "W",
+            "W"
+          ],
+          [
+            "W",
+            "B",
+            "B"
+          ]
+        ],
+        "output": 2,
+        "explanation": "There are two distinct black blocks: one in the top-left corner and another in the bottom-right corner."
+      },
+      {
+        "input": [
+          [
+            "W",
+            "W",
+            "W"
+          ],
+          [
+            "W",
+            "W",
+            "W"
+          ],
+          [
+            "W",
+            "W",
+            "W"
+          ]
+        ],
+        "output": 0,
+        "explanation": "There are no black blocks in the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS or BFS to explore all connected black cells.",
+      "Keep a visited set to avoid counting the same block multiple times."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Word Ladder",
+    "description": "Given two words, beginWord and endWord, and a dictionary's word list, find the length of the shortest transformation sequence from beginWord to endWord, such that: \n1. Only one letter can be changed at a time. \n2. Each transformed word must exist in the word list. \nReturn the number of words in the shortest transformation sequence, including both the beginWord and endWord. If there is no such transformation sequence, return 0.",
+    "topic": "Graph",
+    "subtopic": "BFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "String",
+      "Transformation"
+    ],
+    "input_format": "A string beginWord, a string endWord, and an array of strings wordList.",
+    "output_format": "An integer representing the length of the shortest transformation sequence.",
+    "constraints": [
+      "1 <= beginWord.length, endWord.length <= 10",
+      "1 <= wordList.length <= 5000",
+      "beginWord and endWord are of the same length.",
+      "All words are lowercase letters."
+    ],
+    "examples": [
+      {
+        "input": {
+          "beginWord": "hit",
+          "endWord": "cog",
+          "wordList": [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log",
+            "cog"
+          ]
+        },
+        "output": 5,
+        "explanation": "One shortest transformation is 'hit' -> 'hot' -> 'dot' -> 'dog' -> 'cog', which is 5 words long."
+      },
+      {
+        "input": {
+          "beginWord": "hit",
+          "endWord": "cog",
+          "wordList": [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log"
+          ]
+        },
+        "output": 0,
+        "explanation": "There is no possible transformation from 'hit' to 'cog' because 'cog' is not in the wordList."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use BFS to explore all possible words.",
+      "Consider using a queue to facilitate the BFS."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Container With Most Water",
+    "description": "Given n non-negative integers a1, a2, ..., an where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of the line i is at (i, ai) and (i, 0). Find two lines, which together with the x-axis forms a container, such that the container contains the most water. Return the maximum amount of water a container can store.",
+    "topic": "Two Pointers",
+    "subtopic": "Array",
+    "tags": [
+      "Two Pointers",
+      "Array",
+      "Geometry"
+    ],
+    "input_format": "An integer array height where height[i] represents the height of the i-th line.",
+    "output_format": "An integer representing the maximum area of water the container can store.",
+    "constraints": [
+      "2 <= height.length <= 10^5",
+      "0 <= height[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "height = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The maximum area is formed between lines at indices 1 and 8, which are of heights 8 and 7 respectively. The area is (8-1) * min(8, 7) = 7 * 7 = 49."
+      },
+      {
+        "input": "height = [1,1]",
+        "output": "1",
+        "explanation": "The only container is formed by the two lines of height, yielding an area of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using two pointers to scan the height array."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "K Closest Points to Origin",
+    "description": "Given an array of points where points[i] = [xi, yi] represents a point on a 2D plane, and an integer K, return the K closest points to the origin (0, 0). The distance between two points on the 2D plane is the Euclidean distance, which can be computed as distance = sqrt((xi - 0)^2 + (yi - 0)^2). You may return the answer in any order. The answer is guaranteed to be unique (except for the order of the points).",
+    "topic": "Geometry",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Geometry"
+    ],
+    "input_format": "An array of points where each point is represented as an array of two integers, followed by an integer K.",
+    "output_format": "An array of arrays, each representing the K closest points to the origin.",
+    "constraints": [
+      "1 <= K <= points.length <= 10^4",
+      "-10^4 <= xi, yi <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "points = [[1,3],[-2,2],[5,8],[0,1]], K = 2",
+        "output": "[[-2,2],[1,3]]",
+        "explanation": "The closest points to the origin are [-2, 2] and [1, 3]."
+      },
+      {
+        "input": "points = [[3,3],[5,-1],[-2,4]], K = 1",
+        "output": "[[3,3]]",
+        "explanation": "The closest point to the origin is [3,3]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "You may want to use a priority queue to keep track of the closest points.",
+      "The distance can be compared using squared distance to avoid computing square roots."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to Roman",
+    "description": "Given an integer, convert it to a Roman numeral. Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. For example, 2 is represented as 'II' in Roman numeral, just two ones added together. 12 is represented as 'XII', which is simply 'X' + 'II'. The number 27 is represented as 'XXVII', which is 'XX' + 'V' + 'II'. Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not 'IIII'. Instead, the number four is represented as 'IV'. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is represented as 'IX'. There are six instances where subtraction is used: I can be placed before V (5) and X (10) to make 4 and 9. X can be placed before L (50) and C (100) to make 40 and 90. C can be placed before D (500) and M (1000) to make 400 and 900. Given an integer num, return its corresponding Roman numeral.",
+    "topic": "Mathematics",
+    "subtopic": "Conversion",
+    "tags": [
+      "Math",
+      "Conversion",
+      "String"
+    ],
+    "input_format": "An integer num (1 <= num <= 3999).",
+    "output_format": "A string representing the Roman numeral of the input integer.",
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "examples": [
+      {
+        "input": "num = 3",
+        "output": "III",
+        "explanation": "3 is represented as 'III' in Roman numeral, which is simply 'I' + 'I' + 'I'."
+      },
+      {
+        "input": "num = 4",
+        "output": "IV",
+        "explanation": "4 is represented as 'IV', where 'I' is before 'V', meaning 1 subtracted from 5."
+      },
+      {
+        "input": "num = 9",
+        "output": "IX",
+        "explanation": "9 is represented as 'IX', meaning 1 subtracted from 10."
+      },
+      {
+        "input": "num = 58",
+        "output": "LVIII",
+        "explanation": "58 is represented as 'LVIII', which is 'L' (50) + 'V' (5) + 'III' (3)."
+      },
+      {
+        "input": "num = 1994",
+        "output": "MCMXCIV",
+        "explanation": "1994 is represented as 'MCMXCIV', which is 'M' (1000) + 'CM' (900) + 'XC' (90) + 'IV' (4)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider breaking down the number into thousands, hundreds, tens, and units.",
+      "Map each section of the number to its corresponding Roman values."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an integer array nums and an integer k, return the maximum sliding window for each sliding window of size k. The sliding window moves from left to right over the array and at each position, returns the maximum number among the current k elements in the window.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Deque"
+    ],
+    "input_format": "An array of integers nums and an integer k (1 <= k <= nums.length).",
+    "output_format": "An array of integers representing the maximum in each sliding window.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, -1, -3, 5, 3, 6, 7], k = 3",
+        "output": "[3, 3, 5, 5, 6, 7]",
+        "explanation": "The first sliding window is [1, 3, -1], the maximum is 3. The second window is [3, -1, -3], the maximum is 3. Continuing this way, we get [3, 5, 5, 6, 7]."
+      },
+      {
+        "input": "nums = [1, -1], k = 1",
+        "output": "[1, -1]",
+        "explanation": "Each window of size 1 contains only one element, so the maximum is the element itself."
+      },
+      {
+        "input": "nums = [9, 10, 9, -8, 5, 6, 7], k = 2",
+        "output": "[10, 10, 9, 6, 7]",
+        "explanation": "For each sliding window of size 2, we find the maximum as follows: [9, 10] -> 10, [10, 9] -> 10, [9, -8] -> 9, [5, 6] -> 6, [6, 7] -> 7."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a deque to maintain the maximum elements efficiently.",
+      "Keep track of the indices of the elements in the sliding window.",
+      "Remove elements that are out of the current window from the deque."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber II",
+    "description": "You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected, and it will automatically contact the police if two adjacent houses were broken into on the same night. This is the variation of the classic House Robber problem that is set in a circular street. Given an integer array 'nums' representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police. Since the houses are arranged in a circle, you cannot both rob the first and the last house simultaneously.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Robbery"
+    ],
+    "input_format": "An array of integers nums representing the amount of money at each house.",
+    "output_format": "An integer representing the maximum amount of money that can be robbed.",
+    "constraints": [
+      "0 <= nums.length <= 100",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 2]",
+        "output": "3",
+        "explanation": "You cannot rob houses 1 and 3 because they are adjacent, so you rob house 2, which gives you 3."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Robbing houses 1 and 3 gives you the maximum amount of 4."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "0",
+        "explanation": "There are no houses to rob."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the two cases when the first house is robbed and when it is not.",
+      "You may need to compute the max robbery amounts for two different ranges of the array."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Candy Crush",
+    "description": "You are playing a game similar to 'Candy Crush'. The game board is represented as a 2D grid of integers, where each integer represents a type of candy. When three or more candies of the same type are adjacent (either horizontally or vertically), they crush and disappear. Your task is to simulate one round of candy crushing and return the resulting board. You should also allow the candies above the crushed ones to fall down and fill the spaces. Any empty space should be represented with a 0.",
+    "topic": "Array",
+    "subtopic": "2D Array Manipulation",
+    "tags": [
+      "Array",
+      "Simulation",
+      "2D"
+    ],
+    "input_format": "A 2D array board, where board[i][j] represents the type of candy at row i and column j.",
+    "output_format": "A 2D array representing the resulting board after one round of candy crushing.",
+    "constraints": [
+      "1 <= board.length <= 200",
+      "1 <= board[i].length <= 200",
+      "0 <= board[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "board = [[1, 1, 1, 0], [4, 5, 6, 0], [0, 0, 6, 2], [0, 0, 2, 2]]",
+        "output": "[[4, 5, 6, 0], [0, 0, 6, 0], [0, 0, 2, 0], [0, 0, 0, 0]]",
+        "explanation": "The first row contains three adjacent 1's which crush. The candies above them fall down."
+      },
+      {
+        "input": "board = [[1, 2, 3], [3, 2, 1], [1, 2, 3]]",
+        "output": "[[1, 2, 3], [3, 2, 1], [1, 2, 3]]",
+        "explanation": "No candies are adjacent enough to crush, therefore the board remains unchanged."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Identify groups of candies that can be crushed.",
+      "Use a temporary grid to mark which candies to crush first.",
+      "Iterate the grid from bottom to top to allow candies to fall."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine if a 9x9 Sudoku board is valid according to the rules of Sudoku. The board is a 2D array where each cell contains a digit from '1' to '9', or '.' for empty cells. A valid Sudoku board requires that each number from '1' to '9' appears exactly once in each row, each column, and each of the nine 3x3 sub-boxes that compose the grid.",
+    "topic": "Matrix",
+    "subtopic": "Validation",
+    "tags": [
+      "Matrix",
+      "Validation",
+      "Backtracking"
+    ],
+    "input_format": "A 2D array of characters representing the Sudoku board, where board[i][j] is either a digit '1'-'9' or '.' (empty).",
+    "output_format": "Return true if the board is valid, otherwise false.",
+    "constraints": [
+      "The board is a 9x9 matrix.",
+      "Each element of the board is a digit '1'-'9' or '.'"
+    ],
+    "examples": [
+      {
+        "input": "board = [['5','3','.','.','7','.','.','.','.'], ['6','.','.','1','9','5','.','.','.'], ['.','9','8','.','.','.','.','6','.'], ['8','.','.','.','6','.','.','.','3'], ['4','.','.','8','.','3','.','.','1'], ['7','.','.','.','2','.','.','.','6'], ['.','6','.','.','.','.','2','8','.'], ['.', '.','.','4','1','9','.','.','5'], ['.','.','.','.','8','.','.','7','9']]",
+        "output": "true",
+        "explanation": "The given Sudoku board is valid as each row, column, and 3x3 box meets the required conditions."
+      },
+      {
+        "input": "board = [['8','3','.','.','7','.','.','.','.'], ['6','.','.','1','9','5','.','.','.'], ['.','9','8','.','.','.','.','6','.'], ['8','.','.','.','6','.','.','.','3'], ['4','.','.','8','.','3','.','.','1'], ['7','.','.','.','2','.','.','.','6'], ['.','6','.','.','.','.','2','8','.'], ['.', '.','.','4','1','9','.','.','5'], ['.','.','.','.','8','.','.','7','9']]",
+        "output": "false",
+        "explanation": "The given Sudoku board is invalid because the digit '8' appears twice in the first column."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a set to track numbers seen in each row, column, and box.",
+      "Remember to reset your sets for each new row, column, or box."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Partition Equal Subset Sum",
+    "description": "Given a non-empty array of positive integers nums, you are to partition this array into two subsets such that the sum of the elements in both subsets is equal. If this is possible, return true. Otherwise, return false.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Subset Sum",
+      "Backtracking"
+    ],
+    "input_format": "An array of positive integers nums.",
+    "output_format": "A boolean value indicating whether the array can be partitioned into two subsets with equal sum.",
+    "constraints": [
+      "1 <= nums.length <= 200",
+      "1 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 5, 11, 5]",
+        "output": "true",
+        "explanation": "The array can be partitioned into [1, 5, 5] and [11], both having a sum of 11."
+      },
+      {
+        "input": "nums = [1, 2, 3, 5]",
+        "output": "false",
+        "explanation": "The array cannot be partitioned into two subsets with equal sum."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Calculate the total sum of the array.",
+      "If the total is odd, return false.",
+      "Focus on finding a subset that sums up to half of the total."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Number",
+    "description": "Given a list of non-negative integers, arrange them such that they form the largest possible number. The result should be returned as a string, rather than an integer, to accommodate the handling of leading zeroes.",
+    "topic": "String",
+    "subtopic": "Sorting",
+    "tags": [
+      "String",
+      "Sorting",
+      "Greedy"
+    ],
+    "input_format": "A list of non-negative integers nums.",
+    "output_format": "A string representing the largest number that can be formed.",
+    "constraints": [
+      "0 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 2]",
+        "output": "210",
+        "explanation": "By arranging 2 and 10, the largest number we can form is 210."
+      },
+      {
+        "input": "nums = [3, 30, 34, 5, 9]",
+        "output": "9534330",
+        "explanation": "The largest number is formed by arranging the numbers as 9, 5, 34, 3, 30."
+      },
+      {
+        "input": "nums = [0, 0, 0]",
+        "output": "0",
+        "explanation": "All elements are zero, so the result is simply '0'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider implementing a custom comparator for sorting.",
+      "You may need to handle edge cases for numbers with leading zeroes."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Sorted Lists",
+    "description": "You are given the heads of two sorted linked lists. Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists. Return the head of the merged linked list.",
+    "topic": "Linked List",
+    "subtopic": "Merging Lists",
+    "tags": [
+      "Linked List",
+      "Sorting",
+      "Merge"
+    ],
+    "input_format": "The input consists of two ListNode objects, representing the heads of two sorted linked lists.",
+    "output_format": "Return a ListNode object that represents the head of the merged sorted linked list.",
+    "constraints": [
+      "The number of nodes in both lists is in the range [0, 50].",
+      "-100 <= Node.val <= 100",
+      "Both lists are already sorted in non-decreasing order."
+    ],
+    "examples": [
+      {
+        "input": "l1 = [1, 2, 4], l2 = [1, 3, 4]",
+        "output": "[1, 1, 2, 3, 4, 4]",
+        "explanation": "The merged list is 1 -> 1 -> 2 -> 3 -> 4 -> 4."
+      },
+      {
+        "input": "l1 = [], l2 = [0]",
+        "output": "[0]",
+        "explanation": "The merged list is just 0."
+      },
+      {
+        "input": "l1 = [], l2 = []",
+        "output": "[]",
+        "explanation": "Both lists are empty, so the merged list is also empty."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to traverse both lists.",
+      "Compare the current nodes and append the smaller one to the merged list."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Subarrays That Match a Pattern I",
+    "description": "Given an array of integers and a target pattern, find the number of subarrays that match the target pattern. A subarray is defined as a contiguous part of an array. The pattern consists of a series of integers representing the required start and end of the subarray, along with the total length desired. Count all valid subarrays that fit this criteria.",
+    "topic": "Array",
+    "subtopic": "Subarray Counting",
+    "tags": [
+      "Array",
+      "Subarray",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums, followed by an integer array pattern where pattern[0] is the starting value, pattern[1] is the ending value, and pattern[2] is the length of the subarray.",
+    "output_format": "An integer representing the number of valid subarrays that meet the target pattern.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5",
+      "1 <= pattern[2] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 2, 1, 3], pattern = [2, 1, 3]",
+        "output": "1",
+        "explanation": "The only valid subarray is [2, 1, 3] which matches the pattern."
+      },
+      {
+        "input": "nums = [1, 2, 2, 1, 2], pattern = [2, 2, 2]",
+        "output": "2",
+        "explanation": "The valid subarrays are [2, 2] from indexes [1, 2] and [2, 1] from indexes [2, 3]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window approach to check subarrays.",
+      "Track the counts of specific values as you traverse the array."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Substrings of Size Three with Distinct Characters",
+    "description": "Given a string s, return the number of substrings of size three that are composed of distinct characters. A substring is defined as a contiguous sequence of characters within the string.",
+    "topic": "String",
+    "subtopic": "Substring Operations",
+    "tags": [
+      "String",
+      "Substring",
+      "Counting"
+    ],
+    "input_format": "A single string s (1 <= s.length <= 100).",
+    "output_format": "An integer representing the number of substrings of size three with distinct characters.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "abcabc",
+        "output": "4",
+        "explanation": "The distinct character substrings of size three are 'abc', 'bca', 'cab', and 'abc'."
+      },
+      {
+        "input": "aaabc",
+        "output": "0",
+        "explanation": "There are no substrings of size three with distinct characters."
+      },
+      {
+        "input": "xyz",
+        "output": "1",
+        "explanation": "The only substring is 'xyz' which has all distinct characters."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a sliding window to keep track of substrings.",
+      "Check if all characters in the window are distinct."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order. Starting from the top-left corner and moving right, then down, left, and finally up, repeat this process until all elements have been traversed.",
+    "topic": "Array",
+    "subtopic": "Matrix Traversal",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Traversal"
+    ],
+    "input_format": "A 2D list of integers representing the matrix.",
+    "output_format": "A list of integers representing the elements of the matrix in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "m * n <= 10^6",
+      "-100 <= matrix[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The elements are traversed in the following order for the given matrix."
+      },
+      {
+        "input": "matrix = [[1]]",
+        "output": "[1]",
+        "explanation": "There is only one element in the matrix."
+      },
+      {
+        "input": "matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]",
+        "output": "[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]",
+        "explanation": "The spiral order traversal for the given matrix."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use four pointers to keep track of the boundaries of the matrix.",
+      "Iterate while the boundaries do not cross each other."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Time Difference",
+    "description": "You are given a list of 24-hour format time strings. Your task is to find the minimum time difference between any pair of times. The time strings will be in the format 'HH:MM', where 00 <= HH < 24 and 00 <= MM < 60. The difference should be calculated in minutes and should wrap around to consider the circular nature of the clock.",
+    "topic": "Array",
+    "subtopic": "Sorting & Searching",
+    "tags": [
+      "Array",
+      "Time",
+      "Sorting"
+    ],
+    "input_format": "A list of strings representing time in 'HH:MM' format.",
+    "output_format": "An integer representing the minimum time difference in minutes.",
+    "constraints": [
+      "1 <= times.length <= 100",
+      "times[i] is a valid time in 'HH:MM' format."
+    ],
+    "examples": [
+      {
+        "input": "times = [\"23:59\", \"00:00\"]",
+        "output": "1",
+        "explanation": "The time difference between 23:59 and 00:00 is 1 minute."
+      },
+      {
+        "input": "times = [\"00:00\", \"01:00\", \"02:00\"]",
+        "output": "60",
+        "explanation": "The minimum difference is between 00:00 and 01:00 or between 01:00 and 02:00, both giving a difference of 60 minutes."
+      },
+      {
+        "input": "times = [\"05:30\", \"15:30\", \"00:00\"]",
+        "output": "300",
+        "explanation": "The minimum difference is between 00:00 and 05:30 which gives a difference of 330 minutes. The time between 15:30 and 05:30 gives 300 minutes."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the time strings first.",
+      "Don't forget to check the difference between the first and last time after sorting."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock III",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Furthermore, you are allowed to complete at most two transactions. You must sell the stock before you buy again. Return the maximum profit you can achieve from this transaction. If you cannot make any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Stock Trading",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An array of integers prices where 1 <= prices.length <= 1000.",
+    "output_format": "An integer representing the maximum profit from at most two transactions.",
+    "constraints": [
+      "0 <= prices.length <= 1000",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [3,2,6,5,0,3]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 2) and sell on day 3 (price = 6), profit = 6-2 = 4. Then buy on day 5 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3. Total profit = 4 + 3 = 7."
+      },
+      {
+        "input": "prices = [1,2,3,4,5]",
+        "output": "4",
+        "explanation": "Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4."
+      },
+      {
+        "input": "prices = [7,6,4,3,1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to keep track of profits at different stages.",
+      "Think about when to buy and when to sell within the two allowed transactions."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays nums1 and nums2 of sizes m and n respectively, return their median. The overall run time complexity should be O(log (m+n)). You may assume nums1 and nums2 cannot be both empty.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Median"
+    ],
+    "input_format": "Two sorted arrays nums1 and nums2.",
+    "output_format": "A double representing the median of the two sorted arrays.",
+    "constraints": [
+      "0 <= nums1.length <= 1000",
+      "0 <= nums2.length <= 1000",
+      "nums1 and nums2 are sorted in non-decreasing order."
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 3], nums2 = [2]",
+        "output": "2.0",
+        "explanation": "The combined sorted array is [1, 2, 3], and the median is 2."
+      },
+      {
+        "input": "nums1 = [1, 2], nums2 = [3, 4]",
+        "output": "2.5",
+        "explanation": "The combined sorted array is [1, 2, 3, 4], and the median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider binary searching on the smaller array.",
+      "Keep track of the partitions between the two arrays."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Plus One",
+    "description": "Given a non-empty array of digits representing a non-negative integer, increment the integer by one and return the resulting array of digits. The digits are stored such that the most significant digit is at the head of the list, and each element in the array can be a value from 0 to 9. You may assume the integer does not contain any leading zeros, except for the zero itself.",
+    "topic": "Array",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Array",
+      "Math",
+      "Integer"
+    ],
+    "input_format": "An array of integers representing the digits of a number.",
+    "output_format": "An array of integers representing the digits of the resulting number after incrementing by one.",
+    "constraints": [
+      "1 <= digits.length <= 100",
+      "0 <= digits[i] <= 9",
+      "digits does not contain any leading zeros except for the zero itself."
+    ],
+    "examples": [
+      {
+        "input": "digits = [1, 2, 3]",
+        "output": "[1, 2, 4]",
+        "explanation": "Incrementing the integer represented by the digits 123 gives us 124."
+      },
+      {
+        "input": "digits = [4, 3, 2, 1]",
+        "output": "[4, 3, 2, 2]",
+        "explanation": "Incrementing the integer represented by the digits 4321 gives us 4322."
+      },
+      {
+        "input": "digits = [9]",
+        "output": "[1, 0]",
+        "explanation": "Incrementing the integer represented by the digits 9 gives us 10, which is represented as [1, 0]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how to handle carry when the digit is 9.",
+      "You may need to create a new array if the size has to increase."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Search a 2D Matrix",
+    "description": "You are given a 2D matrix of integers where each row is sorted in ascending order and each column is also sorted in ascending order. Write a function that takes the matrix and a target integer and returns true if the target is in the matrix, or false otherwise.",
+    "topic": "Matrix",
+    "subtopic": "Search",
+    "tags": [
+      "Matrix",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "A 2D array of integers matrix and an integer target.",
+    "output_format": "A boolean value indicating whether the target exists in the matrix.",
+    "constraints": [
+      "1 <= matrix.length, matrix[i].length <= 100",
+      "-10^4 <= matrix[i][j], target <= 10^4",
+      "All integers in the matrix are unique."
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 3, 5], [7, 9, 11], [12, 13, 15]], target = 9",
+        "output": "true",
+        "explanation": "The number 9 exists in the matrix."
+      },
+      {
+        "input": "matrix = [[1, 3, 5], [7, 9, 11], [12, 13, 15]], target = 4",
+        "output": "false",
+        "explanation": "The number 4 does not exist in the matrix."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the property of the sorted rows and columns to minimize search space.",
+      "You can use binary search for an efficient solution."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock with Cooldown",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. However, after you sell your stock, you cannot buy stock on the next day (i.e., cooldown one day). Return the maximum profit you can achieve.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Stock Buy and Sell",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the stock prices.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 5000",
+      "0 <= prices[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "prices = [1, 2, 3, 0, 2]",
+        "output": "3",
+        "explanation": "You can buy on day 0 (price = 1) and sell on day 2 (price = 3), then cooldown on day 3. The profit is 3 - 1 = 2. If you buy on day 1 (price = 2) and sell on day 2 (price = 3), then your profit will be 3 - 2 = 1, which is less."
+      },
+      {
+        "input": "prices = [2, 1, 4, 5, 2, 9, 0]",
+        "output": "8",
+        "explanation": "You buy on day 1 (price = 1) and sell on day 5 (price = 9), achieving a profit of 9 - 1 = 8."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use dynamic programming to keep track of profits.",
+      "Consider the cooldown period when deciding to sell."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Split Message Based on Limit",
+    "description": "You are tasked with splitting a message into multiple parts based on a given character limit. Each part should not exceed the limit provided, and should be broken at whitespace boundaries. If a word is longer than the limit, it should be placed in a new part by itself. Return the list of all message parts.",
+    "topic": "Strings",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Strings",
+      "Manipulation",
+      "Array"
+    ],
+    "input_format": "A string message and an integer limit, where 'message' represents the original message and 'limit' represents the maximum length of each part.",
+    "output_format": "A list of strings, each representing a part of the split message.",
+    "constraints": [
+      "1 <= message.length <= 10^5",
+      "1 <= limit <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": {
+          "message": "This is a test message for splitting.",
+          "limit": 10
+        },
+        "output": [
+          "This is a",
+          "test",
+          "message",
+          "for",
+          "splitting."
+        ],
+        "explanation": "The message is split into parts that do not exceed 10 characters, breaking at spaces where possible."
+      },
+      {
+        "input": {
+          "message": "LongWordExceedingLimit",
+          "limit": 5
+        },
+        "output": [
+          "LongW",
+          "ordEx",
+          "ceedi",
+          "ngLim",
+          "it"
+        ],
+        "explanation": "Each part contains at most 5 characters, even if it means splitting a word."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to handle spaces effectively when splitting.",
+      "You may need to iterate through the message and track the current length of each part."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Find Servers That Handled Most Number of Requests",
+    "description": "In a data center, multiple servers handle requests. Each server has a unique identifier and can handle multiple requests over a defined period. Your task is to determine which servers handled the most number of requests and return their identifiers. If multiple servers have the same number of requests, return them sorted in ascending order of their identifiers.",
+    "topic": "Database",
+    "subtopic": "Aggregation",
+    "tags": [
+      "Database",
+      "Aggregation",
+      "Counting"
+    ],
+    "input_format": "A list of tuples where each tuple contains (server_id, request_time). Each server_id is a string, and request_time is an integer that represents the time the request was received.",
+    "output_format": "A list of server_ids that handled the most requests, sorted in ascending order.",
+    "constraints": [
+      "1 <= len(requests) <= 10^5",
+      "1 <= server_id.length <= 100",
+      "0 <= request_time <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "[('server1', 1), ('server2', 2), ('server1', 3), ('server3', 2), ('server2', 4)]",
+        "output": "['server1', 'server2']",
+        "explanation": "server1 handled 2 requests, server2 handled 2 requests, and server3 handled 1 request. The highest count is 2."
+      },
+      {
+        "input": "[('serverA', 1), ('serverB', 1), ('serverC', 1)]",
+        "output": "['serverA', 'serverB', 'serverC']",
+        "explanation": "All servers handled 1 request, so return all of them in ascending order."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a dictionary to count requests for each server.",
+      "Sort the dictionary based on counts, and handle ties by sorting keys."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Cameras",
+    "description": "You are given the root of a binary tree. Each node in the binary tree can have a camera placed on it, which can monitor its parent, itself, and its immediate children. Your goal is to return the minimum number of cameras needed to monitor all nodes in the tree.\n\nA camera can be placed on any node of the binary tree, and every node must be monitored, either by having a camera on that node or by having a camera on one of its ancestors. \n\nYou may assume the binary tree has no nodes with a value of NULL.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Greedy"
+    ],
+    "input_format": "The input will be a binary tree represented by its root node.",
+    "output_format": "An integer representing the minimum number of cameras needed to monitor all nodes.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 1000].",
+      "Each node has a unique value."
+    ],
+    "examples": [
+      {
+        "input": "root = [0,0,null,0,null,0,null,null,0]",
+        "output": "2",
+        "explanation": "Place cameras on nodes 0 (the root) and 0 (the left child) to cover all nodes."
+      },
+      {
+        "input": "root = [0,0,0]",
+        "output": "1",
+        "explanation": "Place one camera on the root to cover all its children."
+      },
+      {
+        "input": "root = [0,null,0,null,0]",
+        "output": "2",
+        "explanation": "Place cameras on the rightmost nodes to ensure all nodes are monitored."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the needs of each node in terms of monitoring.",
+      "Use a post-order traversal approach to determine camera placement."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Find Score of an Array After Marking All Elements",
+    "description": "Given an array of integers, you need to calculate the score of the array after marking all elements. The score is calculated based on the following rules: Each positive integer contributes its value to the score, while each negative integer contributes zero to the score. Additionally, if an integer is marked (considered processed), it cannot be counted towards the final score again. The marking is done in a single pass from the start of the array. Your task is to return the final score after processing the entire array.",
+    "topic": "Array",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Score Calculation"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the total score of the array after marking all elements.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, -2, 3, 4, -5]",
+        "output": "8",
+        "explanation": "The positive integers are 1, 3, and 4. Their sum is 1 + 3 + 4 = 8."
+      },
+      {
+        "input": "nums = [-1, -2, -3, -4]",
+        "output": "0",
+        "explanation": "All integers are negative, so the score is 0."
+      },
+      {
+        "input": "nums = [5, 10, -3, 2]",
+        "output": "17",
+        "explanation": "The positive integers are 5, 10, and 2. Their sum is 5 + 10 + 2 = 17."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider iterating through the array once.",
+      "Keep track of the score using a simple addition."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in k-Group",
+    "description": "Given a linked list, you need to reverse every k nodes in the list. The remaining nodes at the end of the list that are less than k in number will remain as they are. Return the modified linked list after reversing the nodes in k-sized groups.",
+    "topic": "Linked List",
+    "subtopic": "Traversal and Manipulation",
+    "tags": [
+      "Linked List",
+      "Two Pointers",
+      "Recursion"
+    ],
+    "input_format": "The head of the singly linked list and an integer k, the size of groups to reverse.",
+    "output_format": "The head of the modified linked list after reversing the nodes in k-sized groups.",
+    "constraints": [
+      "The number of nodes in the list is n.",
+      "1 <= n <= 5000",
+      "0 <= Node.val <= 1000",
+      "1 <= k <= n"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[2, 1, 4, 3, 5]",
+        "explanation": "The first two nodes (1 and 2) are reversed to become (2 and 1). The next two nodes (3 and 4) are reversed to become (4 and 3). The last node (5) remains in place."
+      },
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 3",
+        "output": "[3, 2, 1, 4, 5]",
+        "explanation": "The first three nodes (1, 2, and 3) are reversed to become (3, 2, and 1). The last two nodes (4 and 5) remain in place."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a dummy node to simplify the edge cases.",
+      "Use a loop to reverse the nodes in groups of k."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Diameter of Binary Tree",
+    "description": "Given a binary tree, you need to calculate the diameter of the tree. The diameter is defined as the length of the longest path between any two nodes in a tree. This path may or may not pass through the root. The length of a path between two nodes is represented by the number of edges between them.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Depth-First Search"
+    ],
+    "input_format": "The input consists of the root node of a binary tree.",
+    "output_format": "An integer representing the diameter of the binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4, 5]",
+        "output": "3",
+        "explanation": "The longest path is between nodes 4 and 5, which consists of 3 edges."
+      },
+      {
+        "input": "root = [1]",
+        "output": "0",
+        "explanation": "The tree contains only one node, so the diameter is 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use Depth First Search (DFS) for calculating the height of each node.",
+      "Keep track of the maximum diameter at each node during the DFS."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Image Smoother",
+    "description": "Given a 2D integer array `img`, where each element represents the pixel value of the image, you need to implement an image smoother. The value of each pixel in the smoothed image is the average of the pixel values in a 3x3 square centered at that pixel, including the pixels that are out of bounds, which should be treated as having a value of 0. Note that the result should be rounded down to the nearest integer.",
+    "topic": "Array",
+    "subtopic": "Matrix Manipulation",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Smoothing"
+    ],
+    "input_format": "A 2D integer array `img` where 1 <= img.length, img[i].length <= 100.",
+    "output_format": "A 2D integer array representing the smoothed image.",
+    "constraints": [
+      "1 <= img.length, img[i].length <= 100",
+      "0 <= img[i][j] <= 255"
+    ],
+    "examples": [
+      {
+        "input": "img = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[[4, 4, 5], [5, 5, 6], [6, 6, 7]]",
+        "explanation": "The smoothed image is calculated using the average of surrounding pixels for each pixel."
+      },
+      {
+        "input": "img = [[100, 200, 100], [200, 50, 200], [100, 200, 100]]",
+        "output": "[[150, 125, 150], [125, 150, 125], [150, 125, 150]]",
+        "explanation": "Each pixel is averaged with its neighbors, producing the smoothed values."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using nested loops to access the surrounding pixels.",
+      "Be mindful of the edges and corners of the matrix when calculating averages."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Length of the Longest Common Prefix",
+    "description": "Write a function that takes an array of strings and returns the length of the longest common prefix among the given strings. If there is no common prefix, return 0.",
+    "topic": "String",
+    "subtopic": "Prefix",
+    "tags": [
+      "String",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "An integer representing the length of the longest common prefix.",
+    "constraints": [
+      "0 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "strs[i] consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\", \"flow\", \"flight\"]",
+        "output": "3",
+        "explanation": "The longest common prefix is \"fl\" and its length is 2."
+      },
+      {
+        "input": "strs = [\"dog\", \"racecar\", \"car\"]",
+        "output": "0",
+        "explanation": "There is no common prefix among the strings."
+      },
+      {
+        "input": "strs = []",
+        "output": "0",
+        "explanation": "An empty array has no common prefix."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "1",
+        "explanation": "The longest common prefix is \"a\" and its length is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the array to find the common prefix quickly.",
+      "Compare characters of the first and last strings after sorting."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Number",
+    "description": "Given an integer, determine whether it is a palindrome. An integer is a palindrome when it reads the same backward as forward. For example, 121 is a palindrome while 123 is not.",
+    "topic": "Math",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Integer",
+      "Palindrome",
+      "Math"
+    ],
+    "input_format": "An integer number x.",
+    "output_format": "Return true if x is a palindrome, and false otherwise.",
+    "constraints": [
+      "-2^31 <= x <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "x = 121",
+        "output": "true",
+        "explanation": "121 reads the same backward and forward."
+      },
+      {
+        "input": "x = -121",
+        "output": "false",
+        "explanation": "-121 reads 121- which is not the same."
+      },
+      {
+        "input": "x = 10",
+        "output": "false",
+        "explanation": "10 reads 01 backward which is not the same."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try reversing the integer and comparing it to the original.",
+      "Think about how to handle negative numbers."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Second Highest Salary",
+    "description": "Write a SQL query to find the second highest salary from the Employee table. If there is no second highest salary, the query should return null.",
+    "topic": "Database",
+    "subtopic": "SQL Query",
+    "tags": [
+      "SQL",
+      "Database",
+      "Query"
+    ],
+    "input_format": "The Employee table contains the following columns:\n- id (int): The primary key for the table.\n- salary (int): The salary of the employee.",
+    "output_format": "Return the second highest salary as an integer. If there is no such salary, return null.",
+    "constraints": [
+      "The Employee table will have at least one employee.",
+      "Salaries will be unique."
+    ],
+    "examples": [
+      {
+        "input": "SELECT salary FROM Employee;",
+        "output": "2000",
+        "explanation": "The highest salary is 3000, and the second highest salary is 2000."
+      },
+      {
+        "input": "SELECT salary FROM Employee;",
+        "output": "null",
+        "explanation": "There is only one unique salary in the table."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DISTINCT to filter unique salaries.",
+      "Order by salary in descending order and limit the results."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Palindrome",
+    "description": "Given a string s, determine if it is a palindrome, considering only alphanumeric characters and ignoring case. A palindrome is a string that reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "A single string s.",
+    "output_format": "A boolean value indicating whether the string is a palindrome.",
+    "constraints": [
+      "1 <= s.length <= 2 * 10^5",
+      "s consists only of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "A man, a plan, a canal: Panama",
+        "output": "true",
+        "explanation": "Ignoring non-alphanumeric characters and case, the string reads 'amanaplanacanalpanama' which is a palindrome."
+      },
+      {
+        "input": "race a car",
+        "output": "false",
+        "explanation": "Ignoring non-alphanumeric characters, the string reads 'raceacar' which is not a palindrome."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using two pointers to compare characters from both ends of the string.",
+      "Use functions to check if characters are alphanumeric.",
+      "Normalize the string to lower case for easy comparison."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Array",
+    "description": "Given an array of integers nums and an integer k, rotate the array to the right by k steps, where k is non-negative. The rotation should be done in-place, meaning you have to modify the input array directly without using any extra space.",
+    "topic": "Array",
+    "subtopic": "In-place Rotation",
+    "tags": [
+      "Array",
+      "In-place",
+      "Rotation"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "The modified array after rotating it to the right by k steps.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= k <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5, 6, 7], k = 3",
+        "output": "[5, 6, 7, 1, 2, 3, 4]",
+        "explanation": "After rotating the array to the right by 3 steps, the last three elements 5, 6, and 7 move to the front."
+      },
+      {
+        "input": "nums = [-1, -100, 3, 99], k = 2",
+        "output": "[3, 99, -1, -100]",
+        "explanation": "After rotating the array to the right by 2 steps, the last two elements 3 and 99 move to the front."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how the effective rotation works when k is greater than the length of the array.",
+      "Think about using the reverse method to solve this in-place."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Anagram",
+    "description": "Given two strings s and t, return true if t is an anagram of s and false otherwise. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hash Table",
+    "tags": [
+      "String",
+      "Hash Table",
+      "Anagram"
+    ],
+    "input_format": "Two strings s and t.",
+    "output_format": "A boolean value indicating whether t is an anagram of s.",
+    "constraints": [
+      "1 <= s.length, t.length <= 5 * 10^4",
+      "s and t consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'anagram', t = 'nagaram'",
+        "output": "true",
+        "explanation": "'nagaram' is an anagram of 'anagram'."
+      },
+      {
+        "input": "s = 'rat', t = 'car'",
+        "output": "false",
+        "explanation": "'car' is not an anagram of 'rat'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Count the frequency of each character in both strings.",
+      "Use a hash table or array for character counts.",
+      "Compare the character counts of the two strings."
+    ],
+    "company": "Visa"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Matching Subsequences",
+    "description": "Given a string s and an array of strings words, return the number of words in words that are a subsequence of s. A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., 'ace' is a subsequence of 'abcde' while 'aec' is not).",
+    "topic": "Strings",
+    "subtopic": "Subsequence",
+    "tags": [
+      "Strings",
+      "Subsequence",
+      "Counting"
+    ],
+    "input_format": "A string s followed by an array of strings words.",
+    "output_format": "An integer representing the number of matching subsequences.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= words.length <= 1000",
+      "1 <= words[i].length <= 1000",
+      "s and words[i] consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": {
+          "s": "abcde",
+          "words": [
+            "a",
+            "bb",
+            "acd",
+            "ace",
+            "f"
+          ]
+        },
+        "output": "3",
+        "explanation": "'a', 'acd', and 'ace' are subsequences of 'abcde'."
+      },
+      {
+        "input": {
+          "s": "dsahjpjauf",
+          "words": [
+            "ahjpjau",
+            "iax",
+            "hmr",
+            "pjau"
+          ]
+        },
+        "output": "2",
+        "explanation": "'ahjpjau' and 'pjau' are subsequences of 'dsahjpjauf'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a two-pointer technique for subsequence checking.",
+      "You might want to preprocess the string to optimize search."
+    ],
+    "company": "Visa"
+  }
+]

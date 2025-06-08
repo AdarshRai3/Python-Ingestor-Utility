@@ -1,0 +1,71 @@
+[
+  {
+    "question_id": "",
+    "title": "Online Stock Span",
+    "description": "The Stock Span Problem is a financial problem where, given a series of daily stock prices, you need to calculate the span of stock prices. The span of a stock's price on a given day is defined as the maximum number of consecutive days (starting from that day and going backwards) during which the stock price was less than or equal to today's price. You need to implement a method that returns an array of spans for each day.",
+    "topic": "Stack",
+    "subtopic": "Monotonic Stack",
+    "tags": [
+      "Stack",
+      "Monotonic Stack",
+      "Array",
+      "Finance"
+    ],
+    "input_format": "An array of integers prices, where prices[i] is the price of the stock on the i-th day.",
+    "output_format": "An array of integers representing the span of the stock price for each day.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [100, 80, 60, 70, 60, 75, 85]",
+        "output": "[1, 1, 1, 2, 1, 4, 6]",
+        "explanation": "The spans for the given stock prices are calculated as follows:\n- Day 1: 100 (span = 1, no previous prices)\n- Day 2: 80 (span = 1, only day 1's price is greater)\n- Day 3: 60 (span = 1, only day 2's price is greater)\n- Day 4: 70 (span = 2, days 2 and 3's prices are less than 70)\n- Day 5: 60 (span = 1, only day 4's price is greater)\n- Day 6: 75 (span = 4, days 5, 4, 3, and 2's prices are less than 75)\n- Day 7: 85 (span = 6, all previous prices are less than 85)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of indices of the stock prices.",
+      "For each day, pop from the stack while the current price is greater than the price at the index stored at the top of the stack."
+    ],
+    "company": "INDmoney"
+  },
+  {
+    "question_id": "",
+    "title": "Count Nodes Equal to Average of Subtree",
+    "description": "Given the root of a binary tree, return the number of nodes where the value of the node is equal to the average of the values in its subtree. Each subtree is defined by a node and includes that node and all its descendants. The average is computed as the integer division of the sum of values in the subtree by the number of nodes in the subtree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "DFS",
+      "Recursion"
+    ],
+    "input_format": "The input consists of the root of a binary tree as a TreeNode object.",
+    "output_format": "An integer representing the count of nodes that are equal to the average of their subtree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 100].",
+      "-10^5 <= Node.val <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "root = [4, 8, 5, 0, 1, 6, 9]",
+        "output": "5",
+        "explanation": "Nodes with values 4, 8, 5, 0, and 1 are equal to the average of their respective subtrees."
+      },
+      {
+        "input": "root = [1]",
+        "output": "1",
+        "explanation": "The single node with value 1 is equal to its own average."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a recursive function to compute the sum and count of nodes in the subtree.",
+      "Consider using a helper function that returns both sum and count."
+    ],
+    "company": "INDmoney"
+  }
+]

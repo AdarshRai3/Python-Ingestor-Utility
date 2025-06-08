@@ -1,0 +1,129 @@
+[
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum sum of the contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The contiguous subarray [4,-1,2,1] has the largest sum = 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The maximum subarray is [1], with a sum of 1."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The contiguous subarray [5,4,-1,7,8] has the largest sum = 23."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try using a variable to keep track of the current sum.",
+      "If the current sum becomes negative, reset it to zero.",
+      "Keep track of the maximum sum found so far."
+    ],
+    "company": "Upstart"
+  },
+  {
+    "question_id": "",
+    "title": "Simplify Path",
+    "description": "Given a string representing an absolute path for a file (Unix-style), simplify it. The path may contain '.' to denote the current directory and '..' to denote the parent directory. Return the simplified canonical path. For example, the path '/a/./b/../../c/' should be simplified to '/c'.",
+    "topic": "Strings",
+    "subtopic": "Path Manipulation",
+    "tags": [
+      "String",
+      "Path",
+      "Manipulation"
+    ],
+    "input_format": "A single string path representing a Unix-style file path.",
+    "output_format": "A simplified string representing the canonical path.",
+    "constraints": [
+      "1 <= path.length <= 3000",
+      "path only contains English letters, digits, '/', '.', and '..'"
+    ],
+    "examples": [
+      {
+        "input": "/a/./b/../../c/",
+        "output": "/c",
+        "explanation": "The path takes you to 'a', then to current directory '.', then goes up two directories to the root, and finally to 'c'."
+      },
+      {
+        "input": "/../",
+        "output": "/",
+        "explanation": "Going to the parent directory from root leads you to root itself."
+      },
+      {
+        "input": "/home//foo/",
+        "output": "/home/foo",
+        "explanation": "Double slashes '//' are treated as single slashes in the path."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to handle the path components.",
+      "Ignore any components that are '.' or empty.",
+      "Pop the stack when you encounter '..'."
+    ],
+    "company": "Upstart"
+  },
+  {
+    "question_id": "",
+    "title": "Next Permutation",
+    "description": "Implement the function nextPermutation that takes an array of integers nums and modifies it to be the next lexicographical permutation of its integer values. If such arrangement is not possible, it must rearrange it to the lowest possible order (i.e., sorted in ascending order). The replacement must be done in-place and use only constant extra memory.",
+    "topic": "Array",
+    "subtopic": "Permutation",
+    "tags": [
+      "Array",
+      "Permutation",
+      "In-place",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums of length n.",
+    "output_format": "The array nums, modified to be the next permutation.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[1, 3, 2]",
+        "explanation": "The next permutation of [1, 2, 3] is [1, 3, 2]."
+      },
+      {
+        "input": "nums = [3, 2, 1]",
+        "output": "[1, 2, 3]",
+        "explanation": "As there is no higher permutation, it resets to the lowest, which is [1, 2, 3]."
+      },
+      {
+        "input": "nums = [1, 1, 5]",
+        "output": "[1, 5, 1]",
+        "explanation": "The next permutation of [1, 1, 5] is [1, 5, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Look for the first decreasing element from the end.",
+      "Find the smallest element larger than the found element to the right.",
+      "Reverse the elements to the right of the found element."
+    ],
+    "company": "Upstart"
+  }
+]

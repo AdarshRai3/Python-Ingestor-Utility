@@ -1,0 +1,75 @@
+[
+  {
+    "question_id": "",
+    "title": "Detonate the Maximum Bombs",
+    "description": "You are given a list of bombs, where each bomb is represented by a tuple containing its position (x, y) and its radius r. When a bomb detonates, it can destroy all other bombs within its radius. Your task is to find the maximum number of bombs that can be detonated by triggering one bomb. You can trigger any bomb to start the chain reaction. Each bomb can only be detonated once and detonating a bomb will cause others to detonate if they fall within its radius.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Simulation"
+    ],
+    "input_format": "A list of tuples, where each tuple contains three integers (x, y, r) representing the bomb's position and its radius.",
+    "output_format": "An integer representing the maximum number of bombs that can be detonated.",
+    "constraints": [
+      "1 <= bombs.length <= 100",
+      "-10^4 <= x, y <= 10^4",
+      "1 <= r <= 100"
+    ],
+    "examples": [
+      {
+        "input": "bombs = [[1, 2, 3], [2, 3, 1], [4, 5, 2]]",
+        "output": "2",
+        "explanation": "Triggering the bomb at (1, 2) will detonate the bomb at (2, 3) within its radius. Thus, a total of 2 bombs can be detonated."
+      },
+      {
+        "input": "bombs = [[0, 0, 5], [1, 1, 2], [2, 2, 2]]",
+        "output": "3",
+        "explanation": "The first bomb will trigger the second and third bombs due to their proximity, resulting in a total of 3 detonated bombs."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Represent the bombs as a graph.",
+      "Use DFS to explore the chain reaction of detonations."
+    ],
+    "company": "Chime"
+  },
+  {
+    "question_id": "",
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from 2 to 9 inclusive, return all possible letter combinations that the number could represent. Each digit maps to letters as follows: 2 -> 'abc', 3 -> 'def', 4 -> 'ghi', 5 -> 'jkl', 6 -> 'mno', 7 -> 'pqrs', 8 -> 'tuv', and 9 -> 'wxyz'. The mapping does not include the digits 0 and 1. You may assume that the input is always valid, and there are no digits 0 or 1 in the input.",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Generation",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "String"
+    ],
+    "input_format": "A string digits representing the input phone number.",
+    "output_format": "A list of strings containing all possible letter combinations.",
+    "constraints": [
+      "0 <= digits.length <= 4",
+      "digits[i] is one of '2'-'9'"
+    ],
+    "examples": [
+      {
+        "input": "digits = '23'",
+        "output": "[\"ad\", \"ae\", \"af\", \"bd\", \"be\", \"bf\", \"cd\", \"ce\", \"cf\"]",
+        "explanation": "The digit '2' maps to 'abc' and '3' maps to 'def', thus the combinations of characters are formed as combinations of letters corresponding to each digit."
+      },
+      {
+        "input": "digits = ''",
+        "output": "[]",
+        "explanation": "An empty input results in an empty output."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think of using backtracking to explore all combinations.",
+      "Start by mapping digits to their corresponding letters."
+    ],
+    "company": "Chime"
+  }
+]

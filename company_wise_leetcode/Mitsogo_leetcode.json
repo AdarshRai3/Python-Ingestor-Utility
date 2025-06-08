@@ -1,0 +1,633 @@
+[
+  {
+    "question_id": "",
+    "title": "Find the Integer Added to Array I",
+    "description": "You are given an integer array nums containing n distinct numbers taken from 0 to n. This means that there is one integer from 0 to n that is not present in the array. Your task is to find that missing integer. You must implement an efficient solution with O(n) time complexity and O(1) space complexity.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Math"
+    ],
+    "input_format": "An array of integers nums with length n, where 0 <= nums[i] <= n.",
+    "output_format": "An integer representing the missing number.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "All numbers in nums are distinct."
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 0, 1]",
+        "output": "2",
+        "explanation": "The numbers from 0 to 3 are [0, 1, 2, 3]. The number 2 is missing."
+      },
+      {
+        "input": "nums = [0, 1]",
+        "output": "2",
+        "explanation": "The numbers from 0 to 2 are [0, 1, 2]. The number 2 is missing."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using the sum formula for an arithmetic series.",
+      "Think about how to leverage the properties of numbers."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Integer Added to Array II",
+    "description": "You are given an integer array nums containing n elements, which are all distinct, and another integer, target. You need to find the integer that, when added to the sum of the numbers in the array, results in the target. The array does not have any repeated elements, and you may not need to account for negative outputs. If no such integer exists, return -1.",
+    "topic": "Array",
+    "subtopic": "Search",
+    "tags": [
+      "Array",
+      "Search",
+      "Mathematics"
+    ],
+    "input_format": "An array of distinct integers nums and an integer target.",
+    "output_format": "An integer representing the value needed to reach the target sum, or -1 if not possible.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "-10^4 <= nums[i] <= 10^4",
+      "-10^4 <= target <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], target = 15",
+        "output": "0",
+        "explanation": "The sum of the array is 15. Adding 0 keeps the sum equal to the target."
+      },
+      {
+        "input": "nums = [5, 10, 15], target = 50",
+        "output": "20",
+        "explanation": "The sum of the array is 30. Adding 20 results in 50."
+      },
+      {
+        "input": "nums = [1, 2, 3], target = 10",
+        "output": "4",
+        "explanation": "The sum of the array is 6. Adding 4 results in 10."
+      },
+      {
+        "input": "nums = [5, 6, 7], target = 12",
+        "output": "-1",
+        "explanation": "The sum of the array is 18. No integer can reduce the sum to 12."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Calculate the sum of the given array.",
+      "Use the equation target - sum to find the required integer."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Substring Partition of Equal Character Frequency",
+    "description": "Given a string s, partition it into the minimum number of substrings such that each substring contains the same frequency of characters. A valid partition must ensure that each character in the substring appears the same number of times. Return the minimum number of such partitions possible.",
+    "topic": "String",
+    "subtopic": "Substring Partitioning",
+    "tags": [
+      "String",
+      "Partitioning",
+      "Frequency"
+    ],
+    "input_format": "A single string s of length n, where 1 <= n <= 1000 and contains only lowercase English letters.",
+    "output_format": "An integer representing the minimum number of substrings where each substring has characters with equal frequency.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters"
+    ],
+    "examples": [
+      {
+        "input": "aaabbb",
+        "output": "2",
+        "explanation": "We can partition the string into 'aaa' and 'bbb', where both substrings have characters with equal frequency."
+      },
+      {
+        "input": "abcabc",
+        "output": "3",
+        "explanation": "We can partition the string into 'a', 'b', and 'c', each appearing once."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider frequency counts of each character.",
+      "Try to find the greatest common divisor of character frequencies.",
+      "Explore how to group characters efficiently."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Construct String with Minimum Cost",
+    "description": "You are given a string `s` and an array of costs `cost` where `cost[i]` is the cost of deleting the character `s[i]`. Your task is to construct the string with the minimum total deletion cost. The string constructed must not have any adjacent characters that are the same. Return the minimum total cost required to achieve this.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "A string `s` of length n and an array `cost` of integers of length n where 1 <= n <= 10^5.",
+    "output_format": "An integer representing the minimum total cost to construct the desired string.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "1 <= cost[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "s = 'aaabcccd', cost = [1, 2, 3, 4, 5, 6, 7, 8]",
+        "output": "8",
+        "explanation": "Deleting the first 'a' (cost 1) and the second 'a' (cost 2) leaves us with 'abcccd'. Total cost is 1 + 2 = 3. We can delete 'c' (cost 6) from 'abcccd' to get 'abc' with total cost 8."
+      },
+      {
+        "input": "s = 'abc', cost = [1, 2, 3]",
+        "output": "0",
+        "explanation": "No characters are adjacent duplicates, so no deletion is needed."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a greedy approach to select which characters to delete.",
+      "Keep track of costs while iterating through the string."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Total Reward Using Operations I",
+    "description": "You are given an integer array 'rewards' where rewards[i] represents the reward obtained by performing an operation on the i-th element in the array. You can perform one operation on any element of the array at most once. Your task is to maximize the total reward you can obtain by determining the best elements (up to k) to perform operations on. You must return the maximum total reward you can achieve.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Maximization Problems",
+    "tags": [
+      "Dynamic Programming",
+      "Maximization",
+      "Greedy"
+    ],
+    "input_format": "An integer array rewards of length n (1 <= n <= 10^5) and an integer k (1 <= k <= n).",
+    "output_format": "An integer representing the maximum total reward achievable.",
+    "constraints": [
+      "1 <= rewards.length <= 10^5",
+      "0 <= rewards[i] <= 10^6",
+      "1 <= k <= rewards.length"
+    ],
+    "examples": [
+      {
+        "input": "rewards = [3, 2, 5, 10, 7], k = 3",
+        "output": "15",
+        "explanation": "By performing operations on the elements 10, 5, and 3, the total reward is 10 + 5 + 3 = 18."
+      },
+      {
+        "input": "rewards = [1, 4, 3, 6], k = 2",
+        "output": "10",
+        "explanation": "Choosing the elements 4 and 6 gives the highest total reward of 10."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the array first.",
+      "Remember to pick only the largest k elements for maximum reward."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Total Reward Using Operations II",
+    "description": "You are given a list of integers where each integer represents a reward for completing an operation. You can perform a series of operations, where each operation can either be a 'gain' (adding a reward) or a 'loss' (losing a reward). The goal is to maximize the total reward after a series of operations. Each operation can be repeated any number of times. Determine the maximum possible reward you can achieve given a sequence of predefined operations along with their rewards or losses.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Maximization Problem",
+    "tags": [
+      "Dynamic Programming",
+      "Maximization",
+      "Greedy"
+    ],
+    "input_format": "An integer list rewards representing the rewards of the operations.",
+    "output_format": "An integer representing the maximum total reward achievable.",
+    "constraints": [
+      "1 <= rewards.length <= 10^5",
+      "-10^3 <= rewards[i] <= 10^3"
+    ],
+    "examples": [
+      {
+        "input": "rewards = [1, -1, 2, 3]",
+        "output": "6",
+        "explanation": "The optimal choice is to perform operations with rewards 1, 2, and 3, maximizing the total to 6."
+      },
+      {
+        "input": "rewards = [-5, -2, -3]",
+        "output": "0",
+        "explanation": "All operations result in a loss, so the maximum reward we can achieve is 0 by performing no operations."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how many times you should choose each operation to maximize the reward.",
+      "Think about dynamic programming or greedy strategies for picking operations.",
+      "Keep track of net contributions from positive and negative rewards."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Subarray With OR at Least K II",
+    "description": "Given an integer array nums and an integer k, find the length of the shortest non-empty subarray of nums such that the bitwise OR of the elements in that subarray is at least k. If there is no such subarray, return -1.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Bitwise Operations",
+      "Sliding Window",
+      "Array"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the length of the shortest subarray with OR at least k or -1 if no such subarray exists.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^9",
+      "0 <= k <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], k = 7",
+        "output": "2",
+        "explanation": "The shortest subarray is [3, 4] whose OR is 7."
+      },
+      {
+        "input": "nums = [1, 1, 1, 1], k = 2",
+        "output": "-1",
+        "explanation": "No subarray can achieve an OR of at least 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the properties of bitwise OR.",
+      "Use a sliding window technique to explore subarrays.",
+      "Keep track of OR sums effectively."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Shortest Subarray With OR at Least K",
+    "description": "Given an integer array nums and an integer k, find the length of the shortest non-empty subarray of nums such that the bitwise OR of the elements in that subarray is at least k. If no such subarray exists, return -1.",
+    "topic": "Array",
+    "subtopic": "Bit Manipulation",
+    "tags": [
+      "Array",
+      "Bit Manipulation",
+      "Sliding Window"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "An integer representing the length of the shortest subarray with a bitwise OR at least k, or -1 if no such subarray exists.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^9",
+      "1 <= k <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], k = 7",
+        "output": "2",
+        "explanation": "The subarray [3, 4] has a bitwise OR of 7, which is at least k."
+      },
+      {
+        "input": "nums = [1, 2, 3], k = 6",
+        "output": "1",
+        "explanation": "The subarray [3] has a bitwise OR of 3, which is less than k, but any other combination also fails to reach 6."
+      },
+      {
+        "input": "nums = [5, 1, 2, 3, 4], k = 15",
+        "output": "3",
+        "explanation": "The subarray [2, 3, 4] has a bitwise OR of 7 which is not enough. The shortest subarray with OR >= 15 needs to cover more elements."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a sliding window approach to explore all subarrays.",
+      "Remember that bitwise OR is cumulative."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Right Triangles",
+    "description": "Given the lengths of three sides of a triangle, determine if it can form a right triangle. A triangle is a right triangle if the squares of the lengths of the two shorter sides sum up to the square of the length of the longest side.",
+    "topic": "Geometry",
+    "subtopic": "Triangle Properties",
+    "tags": [
+      "Geometry",
+      "Triangle",
+      "Mathematics"
+    ],
+    "input_format": "Three integers a, b, c representing the lengths of the sides of the triangle.",
+    "output_format": "A boolean indicating whether the triangle with the given sides is a right triangle.",
+    "constraints": [
+      "1 <= a, b, c <= 10^6."
+    ],
+    "examples": [
+      {
+        "input": "a = 3, b = 4, c = 5",
+        "output": "true",
+        "explanation": "3^2 + 4^2 = 9 + 16 = 25 = 5^2, so it is a right triangle."
+      },
+      {
+        "input": "a = 5, b = 12, c = 13",
+        "output": "true",
+        "explanation": "5^2 + 12^2 = 25 + 144 = 169 = 13^2, so it is a right triangle."
+      },
+      {
+        "input": "a = 2, b = 2, c = 3",
+        "output": "false",
+        "explanation": "2^2 + 2^2 = 4 + 4 = 8, which is not equal to 3^2 = 9, so it is not a right triangle."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Check which side is the longest, as it will be the hypotenuse."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Symmetric Coordinates",
+    "description": "Given a list of coordinates in a 2D plane, determine if there exists a vertical line such that each coordinate has a symmetric counterpart on the opposite side of the line. A coordinate (x, y) has a symmetric counterpart at (d-x, y) for some line x = d.",
+    "topic": "Geometry",
+    "subtopic": "Coordinate System",
+    "tags": [
+      "Geometry",
+      "Coordinates",
+      "Symmetry"
+    ],
+    "input_format": "A list of integer pairs representing the coordinates in the form [[x1, y1], [x2, y2], ..., [xn, yn]].",
+    "output_format": "A boolean value, 'true' if symmetric coordinates exist; otherwise, 'false'.",
+    "constraints": [
+      "1 <= coordinates.length <= 10^4",
+      "-10^4 <= coordinates[i][0], coordinates[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "[[1, 2], [3, 2], [2, 2], [4, 2]]",
+        "output": "true",
+        "explanation": "The line x = 2.5 is a vertical line of symmetry since for each coordinate, the symmetric counterpart exists."
+      },
+      {
+        "input": "[[1, 1], [2, 2], [3, 3]]",
+        "output": "false",
+        "explanation": "No vertical line can separate these coordinates symmetrically."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the average of the x-coordinates to find the potential line of symmetry.",
+      "Use a set to track seen coordinates for quick lookup."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Pascal's Triangle",
+    "description": "Given an integer numRows, generate the first numRows of Pascal's triangle. In Pascal's triangle, each number is the sum of the two numbers directly above it. The triangle starts with a single 1 at the top (the 0th row). For example, the first six rows of Pascal's triangle are as follows:\n\n```\n     1\n    1 1\n   1 2 1\n  1 3 3 1\n 1 4 6 4 1\n1 5 10 10 5 1\n```\nReturn the generated triangle as a list of lists.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorial",
+    "tags": [
+      "Dynamic Programming",
+      "Combinatorics",
+      "Triangle"
+    ],
+    "input_format": "An integer numRows representing the number of rows in Pascal's triangle to generate.",
+    "output_format": "A list of lists representing the first numRows of Pascal's triangle.",
+    "constraints": [
+      "1 <= numRows <= 30"
+    ],
+    "examples": [
+      {
+        "input": "numRows = 5",
+        "output": "[[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]",
+        "explanation": "The first 5 rows of Pascal's triangle are as shown in the output."
+      },
+      {
+        "input": "numRows = 1",
+        "output": "[[1]]",
+        "explanation": "With only one row, Pascal's triangle consists of a single 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how each entry in the triangle is derived from the previous row."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Next Permutation",
+    "description": "Implement an algorithm to rearrange the numbers in an array into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it to the lowest possible order (i.e., sorted in ascending order). The replacement must be in place and use only constant extra memory.",
+    "topic": "Array",
+    "subtopic": "Permutations",
+    "tags": [
+      "Array",
+      "Permutations",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "The array of integers rearranged into its next permutation.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[1, 3, 2]",
+        "explanation": "The next permutation of [1, 2, 3] is [1, 3, 2]."
+      },
+      {
+        "input": "nums = [3, 2, 1]",
+        "output": "[1, 2, 3]",
+        "explanation": "For the array [3, 2, 1], there is no next greater permutation. It must be rearranged to [1, 2, 3]."
+      },
+      {
+        "input": "nums = [1, 1, 5]",
+        "output": "[1, 5, 1]",
+        "explanation": "The next permutation of [1, 1, 5] is [1, 5, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Find the rightmost ascent in the array.",
+      "Swap the number found with the next greater number to its right.",
+      "Reverse the sequence to the right of the swapped position."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Next Greater Element III",
+    "description": "Given a positive integer n, find the smallest integer that is greater than n and has the same digits as n. If no such integer exists, return -1. The digits of the integer can be rearranged to form a larger value.",
+    "topic": "Mathematics",
+    "subtopic": "Permutation",
+    "tags": [
+      "Math",
+      "Permutation",
+      "Greedy"
+    ],
+    "input_format": "An integer n, where 1 <= n <= 10^9.",
+    "output_format": "An integer representing the next greater element, or -1 if none exists.",
+    "constraints": [
+      "1 <= n <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "n = 12",
+        "output": "21",
+        "explanation": "The next greater element with the same digits as 12 is 21."
+      },
+      {
+        "input": "n = 21",
+        "output": "-1",
+        "explanation": "There is no greater element with the same digits as 21."
+      },
+      {
+        "input": "n = 1234",
+        "output": "1243",
+        "explanation": "The next greater element with the same digits is 1243."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to swap digits to create a larger number.",
+      "Look for the rightmost ascent in the digit order.",
+      "Think about how to rearrange the digits after finding the ascent."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Zigzag Conversion",
+    "description": "The string is read line by line in a zigzag pattern on a given number of rows. You need to write a function to convert a given string into the zigzag pattern and then read it line by line. For instance, if the input string is 'PAYPALISHIRING' and the number of rows is 3, the zigzag pattern is:\n\nP   A   H   N\nA P L S I I G\nY   I   A\n\nAnd the output string should be 'PAHNAPLSIIGYI'.",
+    "topic": "String",
+    "subtopic": "Conversion",
+    "tags": [
+      "String",
+      "Zigzag",
+      "Conversion"
+    ],
+    "input_format": "Two inputs: a string s and an integer numRows.",
+    "output_format": "A string that represents the zigzag conversion of the input string.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= numRows <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "s = 'PAYPALISHIRING', numRows = 3",
+        "output": "PAHNAPLSIIGYI",
+        "explanation": "The zigzag conversion forms three rows, and when read from top to bottom, left to right, gives 'PAHNAPLSIIGYI'."
+      },
+      {
+        "input": "s = 'A', numRows = 1",
+        "output": "A",
+        "explanation": "With only one character and one row, the output is just that character 'A'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Visualize the zigzag pattern using a matrix.",
+      "Use a variable to track the current row while iterating through the string."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game II",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Your task is to return the minimum number of jumps needed to reach the last index. If you cannot reach the last index, return -1.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Greedy",
+      "Dynamic Programming",
+      "Array"
+    ],
+    "input_format": "An array of non-negative integers nums where nums[i] represents the maximum jump length from that position.",
+    "output_format": "An integer representing the minimum number of jumps needed to reach the last index, or -1 if it is not possible.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then 1 jump to the last index."
+      },
+      {
+        "input": "nums = [2, 3, 0, 1, 4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then jump to the last index."
+      },
+      {
+        "input": "nums = [0, 1, 2, 3]",
+        "output": "-1",
+        "explanation": "Cannot move from the first index."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how far you can reach from each index.",
+      "Use a variable to keep track of the maximum reach at every step.",
+      "Keep a count of jumps made until you can reach the end."
+    ],
+    "company": "Mitsogo"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. Every opening bracket must have a corresponding closing bracket of the same type.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s consisting of characters '(', ')', '{', '}', '[' and ']' with length n.",
+    "output_format": "A boolean value indicating whether the string s is valid or not.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of parentheses only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The string has one opening bracket and one closing bracket of the same type."
+      },
+      {
+        "input": "s = '([{}])'",
+        "output": "true",
+        "explanation": "All opening brackets are matched with closing brackets in the correct order."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The brackets are not closed in the correct order."
+      },
+      {
+        "input": "s = '({[()]})'",
+        "output": "true",
+        "explanation": "Each opening bracket has a corresponding closing bracket in the correct order."
+      },
+      {
+        "input": "s = '((())'",
+        "output": "false",
+        "explanation": "There is one unmatched opening bracket."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Check if the top of the stack matches the closing bracket if you encounter one."
+    ],
+    "company": "Mitsogo"
+  }
+]

@@ -1,0 +1,4430 @@
+[
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design and implement a data structure for a Least Recently Used (LRU) cache. It should support the following operations: get and put. The get function retrieves the value of the key if the key exists in the cache; otherwise, it returns -1. The put function updates the value of the key if the key exists. If the key does not exist in the cache and the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.",
+    "topic": "Design",
+    "subtopic": "Data Structure",
+    "tags": [
+      "Cache",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "The constructor of the LRUCache class takes an integer capacity as input, followed by a series of get and put operations.",
+    "output_format": "The output for each call to the get function should be either the value associated with the key or -1. The put operation does not return anything.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^4",
+      "For each call to get, the key is guaranteed to be a valid key.",
+      "The input for put is guaranteed to be a valid key-value pair."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "[1, -1, 3, 4]",
+        "explanation": "The output corresponds to the result of the get operations: 1 is retrieved, 2 is evicted, and then 3 and 4 are retrieved."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a combination of a hash map and a doubly linked list.",
+      "The hash map provides quick access to the cache items.",
+      "The doubly linked list can maintain the order of usage for LRU eviction."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Islands",
+    "description": "Given a 2D grid of '1's (land) and '0's (water), you need to count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search (DFS)",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D grid represented as a list of lists, where each sub-list contains '1's and '0's.",
+    "output_format": "An integer representing the number of islands in the grid.",
+    "constraints": [
+      "1 <= grid.length <= 300",
+      "1 <= grid[i].length <= 300",
+      "grid[i][j] is '0' or '1'."
+    ],
+    "examples": [
+      {
+        "input": "grid = [[1, 1, 0, 0, 0], [1, 1, 0, 0, 1], [0, 0, 0, 1, 1], [0, 0, 0, 0, 0]]",
+        "output": "3",
+        "explanation": "There are three islands in the given grid."
+      },
+      {
+        "input": "grid = [[1, 1, 1, 1, 0], [0, 1, 0, 0, 0], [1, 1, 0, 1, 1]]",
+        "output": "1",
+        "explanation": "There is one large island formed by connecting the land cells."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS or BFS to traverse the grid.",
+      "Mark visited land cells to avoid counting them multiple times."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Map",
+    "tags": [
+      "Array",
+      "Hash Map",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers `nums` and an integer `target`.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hash map to keep track of the numbers you've seen.",
+      "Check if the complement (target - current number) exists in the hash map."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within a string. Return the length of the longest substring that does not contain any repeating characters.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Map"
+    ],
+    "input_format": "A single string s of length n.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 5 * 10^4",
+      "s consists of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'abc', which has a length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is 'b', with a length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'wke', with a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window technique to keep track of the characters and their indices.",
+      "Utilize a hash map to store the last index of each character."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Intervals",
+    "description": "Given a collection of intervals, merge all overlapping intervals and return the resulting list of intervals. Each interval is represented as a pair of integers [start, end], where start is less than or equal to end. If two intervals overlap, they must be merged into a single interval covering the entirety of the overlapped region.",
+    "topic": "Array",
+    "subtopic": "Sorting and Merging",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Intervals",
+      "Merging"
+    ],
+    "input_format": "A list of intervals, where each interval is represented as a list of two integers [start, end].",
+    "output_format": "A list of merged intervals in the same format [[start1, end1], [start2, end2], ...].",
+    "constraints": [
+      "1 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "0 <= intervals[i][0] <= intervals[i][1] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[2,6],[8,10],[15,18]]",
+        "output": "[[1,6],[8,10],[15,18]]",
+        "explanation": "The intervals [1,3] and [2,6] overlap, so they are merged into [1,6]. The other intervals do not overlap."
+      },
+      {
+        "input": "intervals = [[1,4],[4,5]]",
+        "output": "[[1,5]]",
+        "explanation": "The intervals [1,4] and [4,5] overlap at 4, so they are merged into [1,5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the intervals by their starting points.",
+      "Use a stack or a result list to keep track of merged intervals."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Anagrams",
+      "Hashing"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of lists, where each sublist contains strings that are anagrams of each other.",
+    "constraints": [
+      "1 <= strs.length <= 1000",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The words 'eat', 'tea', and 'ate' are anagrams. The words 'tan' and 'nat' are also anagrams. 'bat' has no anagrams."
+      },
+      {
+        "input": "strs = [\"silent\", \"listen\"]",
+        "output": "[[\"silent\",\"listen\"]]",
+        "explanation": "The words 'silent' and 'listen' are anagrams of each other."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting each string to find anagrams.",
+      "Use a dictionary to group the sorted string keys."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A substring is a contiguous sequence of characters within the string. You may assume that the input string has at least one character and that the longest palindromic substring is unique.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s, where 1 <= s.length <= 1000.",
+    "output_format": "A string representing the longest palindromic substring in s.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only digits and English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"babad\"",
+        "output": "\"bab\"",
+        "explanation": "The longest palindromic substrings are \"bab\" and \"aba\", both have the same length."
+      },
+      {
+        "input": "s = \"cbbd\"",
+        "output": "\"bb\"",
+        "explanation": "The longest palindromic substring is \"bb\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around the center of a palindrome.",
+      "Check both single characters and pairs for potential centers."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Container With Most Water",
+    "description": "Given n non-negative integers a1, a2, ..., an where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with the x-axis, form a container, such that the container contains the most water. Return the area of water that the container can store. Note that you may not slant the container.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Greedy"
+    ],
+    "input_format": "An array of integers heights where heights[i] is the height of the i-th vertical line.",
+    "output_format": "An integer representing the maximum area that can be formed.",
+    "constraints": [
+      "2 <= heights.length <= 10^5",
+      "0 <= heights[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "heights = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The optimal lines are at indices 1 and 8, which gives the area: min(8,7) * (8-1) = 49."
+      },
+      {
+        "input": "heights = [1,1]",
+        "output": "1",
+        "explanation": "The only possible container forms area of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the two-pointer technique for an optimal solution.",
+      "The area is determined by the shorter line."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Merge k Sorted Lists",
+    "description": "You are given an array of k linked lists, each linked list is sorted in ascending order. Merge all the linked lists into one sorted linked list and return it. The resulting linked list should also be sorted.",
+    "topic": "Linked List",
+    "subtopic": "Merge",
+    "tags": [
+      "Linked List",
+      "Sorting",
+      "Heap"
+    ],
+    "input_format": "An array of k linked lists, where each linked list is represented by the head node.",
+    "output_format": "The head node of the merged sorted linked list.",
+    "constraints": [
+      "k == lists.length",
+      "0 <= k <= 10^4",
+      "0 <= lists[i].length <= 500"
+    ],
+    "examples": [
+      {
+        "input": "lists = [[1,4,5],[1,3,4],[2,6]]",
+        "output": "[1,1,2,3,4,4,5,6]",
+        "explanation": "The merged linked list is 1->1->2->3->4->4->5->6."
+      },
+      {
+        "input": "lists = []",
+        "output": "[]",
+        "explanation": "The merged linked list is empty since there are no lists provided."
+      },
+      {
+        "input": "lists = [[-1,1],[0,2]]",
+        "output": "[-1,0,1,2]",
+        "explanation": "The merged linked list is -1->0->1->2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a min-heap for efficient merging.",
+      "You can represent a linked list with a ListNode class."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Sliding Window Maximum",
+    "description": "Given an integer array nums and an integer k, return the maximum sliding window for each sliding window of size k. You must solve it in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Deque"
+    ],
+    "input_format": "An array of integers nums, and an integer k, where 1 <= k <= nums.length.",
+    "output_format": "An array of integers representing the maximum value of each sliding window of size k.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1,3,-1,-3,5,3,6,7], k = 3",
+        "output": "[3,3,5,5,6,7]",
+        "explanation": "The maximum values in each sliding window are 3, 3, 5, 5, 6, and 7."
+      },
+      {
+        "input": "nums = [1], k = 1",
+        "output": "[1]",
+        "explanation": "When k is 1, the maximum for each window of size 1 is the element itself."
+      },
+      {
+        "input": "nums = [1,-1], k = 1",
+        "output": "[1,-1]",
+        "explanation": "Each window of size 1 contains just one element."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a deque to help maintain the maximum values.",
+      "Iterate through the array while keeping track of indices where potential maximums exist."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "Given an integer array 'nums' that is sorted in ascending order and then rotated at an unknown pivot, write a function to search for a target value in the array. If the target exists, return its index. Otherwise, return -1. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Binary Search",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An integer array nums and an integer target.",
+    "output_format": "An integer representing the index of the target in the array, or -1 if not found.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "-10^4 <= nums[i] <= 10^4",
+      "All integers in nums are unique.",
+      "nums is guaranteed to be rotated at some pivot.",
+      "You may assume that nums is always sorted."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "The target value 0 is found at index 4."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "The target value 3 is not found in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how the sorted structure of the array changes after the rotation.",
+      "You might need to adjust your binary search to account for the pivot."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Right Side View",
+    "description": "Given a binary tree, you are tasked with returning the values of the nodes that are visible from the right side of the tree. The right side view is defined as the set of nodes you can see when looking at the tree from the right side, level by level.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Depth-First Search",
+      "Breadth-First Search"
+    ],
+    "input_format": "The root node of a binary tree.",
+    "output_format": "An array of integers representing the values of the nodes visible from the right side.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, null, 5, null, 4]",
+        "output": "[1, 3, 4]",
+        "explanation": "The right side view is [1, 3, 4] because from the right, we see node 1 (the root), then node 3 at level 2, and node 4 at level 3."
+      },
+      {
+        "input": "root = [1, null, 3]",
+        "output": "[1, 3]",
+        "explanation": "The right side view is [1, 3] as there are no other nodes visible from the right."
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "explanation": "An empty tree returns an empty array since there are no nodes."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using depth-first or breadth-first search to traverse the tree.",
+      "Keep track of the last node visited at each level."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given a 2D matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order. You should traverse the matrix starting from the top left corner, moving right, down, left, and finally up, repeating the process until you cover all elements.",
+    "topic": "Array",
+    "subtopic": "Matrix Traversal",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Traversal"
+    ],
+    "input_format": "A 2D list of integers representing the matrix.",
+    "output_format": "A list of integers representing the elements in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 10^4",
+      "m * n <= 10^4",
+      "-10^5 <= matrix[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The elements are traversed in the order: 1 -> 2 -> 3 -> 6 -> 9 -> 8 -> 7 -> 4 -> 5."
+      },
+      {
+        "input": "matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]",
+        "output": "[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]",
+        "explanation": "The elements are traversed in the order: 1 -> 2 -> 3 -> 4 -> 8 -> 12 -> 11 -> 10 -> 9 -> 5 -> 6 -> 7."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the boundaries of the matrix.",
+      "Use a loop to iterate until all layers are processed."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Add Two Numbers",
+    "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return it as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself.",
+    "topic": "Linked List",
+    "subtopic": "Addition",
+    "tags": [
+      "Linked List",
+      "Addition",
+      "Mathematics"
+    ],
+    "input_format": "Two linked lists representing two non-negative integers.",
+    "output_format": "A linked list representing the sum of the two numbers.",
+    "constraints": [
+      "The number of nodes in each linked list is in the range [1, 100].",
+      "0 <= Node.val <= 9",
+      "It is guaranteed that the result will not exceed 10^2."
+    ],
+    "examples": [
+      {
+        "input": "l1 = [2, 4, 3], l2 = [5, 6, 4]",
+        "output": "[7, 0, 8]",
+        "explanation": "342 + 465 = 807, return [7, 0, 8]."
+      },
+      {
+        "input": "l1 = [0], l2 = [0]",
+        "output": "[0]",
+        "explanation": "0 + 0 = 0, return [0]."
+      },
+      {
+        "input": "l1 = [9, 9, 9, 9, 9, 9, 9], l2 = [9, 9, 9, 9]",
+        "output": "[8, 9, 9, 9, 0, 0, 1]",
+        "explanation": "9999999 + 9999 = 10009998, return [8, 9, 9, 9, 0, 0, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a carry variable to handle sums greater than 9.",
+      "Iterate through both lists simultaneously."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Consecutive Sequence",
+    "description": "Given an unsorted array of integers, find the length of the longest consecutive elements sequence. Your algorithm should run in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Set"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the length of the longest consecutive elements sequence.",
+    "constraints": [
+      "0 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [100, 4, 200, 1, 3, 2]",
+        "output": "4",
+        "explanation": "The longest consecutive sequence is [1, 2, 3, 4], which has a length of 4."
+      },
+      {
+        "input": "nums = [0, -1]",
+        "output": "2",
+        "explanation": "The longest consecutive sequence is [-1, 0], which has a length of 2."
+      },
+      {
+        "input": "nums = []",
+        "output": "0",
+        "explanation": "There are no elements in the array, hence the length is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash set to store elements for O(1) average time complexity.",
+      "Iterate through each number and check if it is the start of a sequence."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of non-negative integers representing the height of bars, compute how much water is trapped after raining. The water trapped above a bar depends on the heights of the tallest bars to its left and right.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers representing bar heights.",
+    "output_format": "An integer representing the total units of trapped rainwater.",
+    "constraints": [
+      "0 <= nums.length <= 2 * 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water trapped above the bars is 6 units."
+      },
+      {
+        "input": "nums = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The water trapped is 9 units (2 units on the left, 1 unit in the middle, and 6 units on the right)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about how much water each bar can hold.",
+      "Use two pointers to track the left and right boundaries."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Linked List",
+    "description": "Given the head of a singly linked list, reverse the list and return the reversed list.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "Linked List",
+      "Reversal",
+      "Pointer Manipulation"
+    ],
+    "input_format": "The input is a singly linked list represented by its head node.",
+    "output_format": "The output is the head node of the reversed linked list.",
+    "constraints": [
+      "The number of nodes in the list is within the range [0, 5000].",
+      "The value of each node is within the range [-100, 100]."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5]",
+        "output": "[5, 4, 3, 2, 1]",
+        "explanation": "The linked list [1, 2, 3, 4, 5] is reversed to [5, 4, 3, 2, 1]."
+      },
+      {
+        "input": "head = [1]",
+        "output": "[1]",
+        "explanation": "A single node linked list [1] remains the same when reversed."
+      },
+      {
+        "input": "head = []",
+        "output": "[]",
+        "explanation": "An empty linked list remains empty when reversed."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using three pointers: previous, current, and next.",
+      "Iterate through the list, reversing the links one by one."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Your goal is to determine if you can reach the last index starting from the first index. You can jump from index i to any index j such that i < j <= i + nums[i].",
+    "topic": "Greedy",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Greedy",
+      "Dynamic Programming",
+      "Array"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "A boolean indicating whether you can reach the last index.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "true",
+        "explanation": "You can jump to index 1 (3) and then jump to the last index (4)."
+      },
+      {
+        "input": "nums = [3, 2, 1, 0, 4]",
+        "output": "false",
+        "explanation": "You will always be stuck at index 3 as you can't reach the last index (4)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the farthest position you can reach.",
+      "If you can reach the last index or beyond, return true."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Each triplet must be unique, and the order of the triplets does not matter. Your solution should not exceed O(n^2) time complexity.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of unique triplets that sum up to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "There are no numbers, hence no triplets."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "No triplets sum to zero."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array first.",
+      "Use a two-pointer technique to find the pairs."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given a number of courses you need to take, each represented as a prerequisite, indicating which courses need to be completed before others. Determine if it is possible for you to finish all the courses.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "An integer numCourses representing the total number of courses and an array prerequisites where prerequisites[i] = [a, b], indicating that course a must be completed before course b.",
+    "output_format": "Return true if you can finish all courses, otherwise return false.",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2"
+    ],
+    "examples": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0]]",
+        "output": "true",
+        "explanation": "You can finish course 0 before taking course 1."
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "false",
+        "explanation": "There is a circular dependency between courses 0 and 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Depth First Search (DFS) or Breadth First Search (BFS) to detect cycles.",
+      "Keep track of visited nodes to avoid reprocessing them."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Roman to Integer",
+    "description": "Given a string representing a Roman numeral, convert it to an integer. Roman numerals are represented by the following symbols: I, V, X, L, C, D, and M. Each symbol has a corresponding integer value, and the values are usually added together to form a total. However, there are exceptions where a smaller numeral appears before a larger numeral and is subtracted instead.",
+    "topic": "String",
+    "subtopic": "Conversion",
+    "tags": [
+      "String",
+      "Math",
+      "Conversion"
+    ],
+    "input_format": "A string s representing a Roman numeral, where 1 <= s.length <= 15.",
+    "output_format": "An integer representing the equivalent decimal value of the Roman numeral.",
+    "constraints": [
+      "1 <= s.length <= 15",
+      "s consists of valid Roman numeral symbols."
+    ],
+    "examples": [
+      {
+        "input": "s = 'III'",
+        "output": "3",
+        "explanation": "The Roman numeral III represents 1 + 1 + 1 = 3."
+      },
+      {
+        "input": "s = 'IV'",
+        "output": "4",
+        "explanation": "The Roman numeral IV represents 5 - 1 = 4."
+      },
+      {
+        "input": "s = 'IX'",
+        "output": "9",
+        "explanation": "The Roman numeral IX represents 10 - 1 = 9."
+      },
+      {
+        "input": "s = 'LVIII'",
+        "output": "58",
+        "explanation": "The Roman numeral LVIII represents 50 + 5 + 3 = 58."
+      },
+      {
+        "input": "s = 'MCMXCIV'",
+        "output": "1994",
+        "explanation": "The Roman numeral MCMXCIV represents 1000 + (1000 - 100) + (100 - 10) + 5 = 1994."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a mapping of Roman symbols to their values.",
+      "Iterate over the string and apply the rules for addition and subtraction."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Pow(x, n)",
+    "description": "Implement a function that calculates x raised to the power n (x^n). This function should support both positive and negative integers for n. Additionally, handle edge cases where x is 0 and when n is 0.",
+    "topic": "Mathematics",
+    "subtopic": "Exponentiation",
+    "tags": [
+      "Math",
+      "Recursion",
+      "Exponentiation"
+    ],
+    "input_format": "Two values, x (a float) and n (an integer) representing the base and exponent.",
+    "output_format": "A float representing the result of x raised to the power n.",
+    "constraints": [
+      "-10^4 <= x <= 10^4",
+      "-10^9 <= n <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "x = 2.0, n = 10",
+        "output": "1024.0",
+        "explanation": "Calculating 2.0 raised to the power of 10 gives 1024.0."
+      },
+      {
+        "input": "x = 2.1, n = 3",
+        "output": "9.261",
+        "explanation": "Calculating 2.1 raised to the power of 3 gives approximately 9.261."
+      },
+      {
+        "input": "x = 2.0, n = -2",
+        "output": "0.25",
+        "explanation": "Calculating 2.0 raised to the power of -2 gives 1/(2.0^2) which is 0.25."
+      },
+      {
+        "input": "x = 0, n = 0",
+        "output": "1.0",
+        "explanation": "0 raised to the power of 0 is defined as 1."
+      },
+      {
+        "input": "x = 0, n = 2",
+        "output": "0.0",
+        "explanation": "Calculating 0 raised to the power of 2 gives 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using recursion for solving the power function.",
+      "Remember the case when n is negative to handle the inversion."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Maximum Path Sum",
+    "description": "Given a non-empty binary tree, find the maximum path sum. A path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to pass through the root.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Depth-First Search",
+      "Recursion"
+    ],
+    "input_format": "The input is the root node of a binary tree.",
+    "output_format": "An integer representing the maximum path sum.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 3 * 10^4].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [-10, 9, 20, null, null, 15, 7]",
+        "output": "42",
+        "explanation": "The maximum path sum is 15 -> 20 -> 7 = 42."
+      },
+      {
+        "input": "root = [1, 2, 3]",
+        "output": "6",
+        "explanation": "The maximum path sum is 1 -> 2 -> 3 = 6."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider every node as a potential root for the maximum path.",
+      "Use recursion to compute the maximum gain from left and right subtrees."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Zigzag Level Order Traversal",
+    "description": "Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. (i.e., from left to right, then right to left for the next level and alternate their order every level).",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Traversal",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "BFS",
+      "Traversal"
+    ],
+    "input_format": "The root of a binary tree, where each node contains an integer value.",
+    "output_format": "A list of lists of integers representing the zigzag level order traversal.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 2000].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [3, 9, 20, null, null, 15, 7]",
+        "output": "[[3], [20, 9], [15, 7]]",
+        "explanation": "Level 0 is [3]. Level 1 is [9, 20] (reversed). Level 2 is [15, 7]. So the result is [[3], [20, 9], [15, 7]]."
+      },
+      {
+        "input": "root = [1]",
+        "output": "[[1]]",
+        "explanation": "The tree has only one node, so the result is [[1]]."
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "explanation": "An empty tree results in an empty list of lists."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a queue to perform a level order traversal.",
+      "Keep track of the current level's order to alternate.",
+      "Consider using a double-ended queue (deque) for more efficient insertions."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. Write a function that calculates the maximum profit you can achieve from a single transaction. You must buy before you sell the stock. If you cannot achieve any profit, return 0.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices, where prices[i] is the price of a given stock on the ith day.",
+    "output_format": "An integer representing the maximum profit you can achieve from a single transaction.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). Profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price encountered so far.",
+      "Calculate the profit at each step and update the maximum profit."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Search a 2D Matrix II",
+    "description": "Write an efficient algorithm that searches for a target value in an m x n integer matrix. This matrix has the following properties: 1) Integers in each row are sorted in ascending from left to right, 2) Integers in each column are sorted in ascending from top to bottom. Return true if the target exists in the matrix, otherwise return false.",
+    "topic": "Matrix",
+    "subtopic": "Search",
+    "tags": [
+      "Matrix",
+      "Binary Search",
+      "Two Pointers"
+    ],
+    "input_format": "A 2D array of integers matrix and an integer target.",
+    "output_format": "A boolean value indicating whether the target exists in the matrix.",
+    "constraints": [
+      "m == matrix.length",
+      "n == matrix[i].length",
+      "1 <= m, n <= 300",
+      "-10^4 <= matrix[i][j], target <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 3, 5], [7, 9, 11], [15, 17, 19]], target = 9",
+        "output": "true",
+        "explanation": "The target 9 exists in the matrix."
+      },
+      {
+        "input": "matrix = [[1, 3, 5], [7, 9, 11], [15, 17, 19]], target = 4",
+        "output": "false",
+        "explanation": "The target 4 does not exist in the matrix."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider starting your search from the top-right corner of the matrix.",
+      "If the current number is larger than your target, move left.",
+      "If the current number is smaller than your target, move down."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Sorted Lists",
+    "description": "You are given the heads of two sorted linked lists, list1 and list2. Merge the two lists into one sorted list. The sorted list should be made by splicing together the nodes of the first two lists. Return the head of the merged linked list.",
+    "topic": "Linked List",
+    "subtopic": "Merging Lists",
+    "tags": [
+      "Linked List",
+      "Sorting",
+      "Merge"
+    ],
+    "input_format": "The input consists of two linked list nodes, list1 and list2.",
+    "output_format": "Return the head of the merged sorted linked list.",
+    "constraints": [
+      "The number of nodes in both lists is in the range [0, 50]",
+      "-100 <= Node.val <= 100",
+      "Both lists are already sorted in non-decreasing order."
+    ],
+    "examples": [
+      {
+        "input": "list1 = [1, 2, 4], list2 = [1, 3, 4]",
+        "output": "[1, 1, 2, 3, 4, 4]",
+        "explanation": "Merging the two lists results in a sorted list: 1 -> 1 -> 2 -> 3 -> 4 -> 4."
+      },
+      {
+        "input": "list1 = [], list2 = []",
+        "output": "[]",
+        "explanation": "Both lists are empty, so the merged list is also empty."
+      },
+      {
+        "input": "list1 = [], list2 = [0]",
+        "output": "[0]",
+        "explanation": "The second list contains a single element, which is returned as the merged list."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a dummy node to simplify merging.",
+      "You can use pointers to traverse through both lists."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Gas Station",
+    "description": "There are n gas stations along a circular route, where the amount of gas at the ith station is gas[i]. You have a car with an unlimited gas tank, but it consumes gas[i] liters of gas to travel from the ith station to the (i + 1)th station. Given two integer arrays gas and cost of length n, return the starting gas station's index if you can travel around the circuit once without running out of gas. Otherwise, return -1.",
+    "topic": "Greedy",
+    "subtopic": "Simulation",
+    "tags": [
+      "Greedy",
+      "Array",
+      "Simulation"
+    ],
+    "input_format": "Two arrays of integers gas and cost, each of length n.",
+    "output_format": "An integer representing the starting gas station's index or -1 if not possible.",
+    "constraints": [
+      "1 <= gas.length <= 10^4",
+      "0 <= gas[i], cost[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "gas = [1,2,3,4,5], cost = [3,4,5,1,2]",
+        "output": "3",
+        "explanation": "Starting from station 3, the car can travel to 4 (3 - 1 = 2), to 0 (2 - 2 = 0), to 1 (0 - 3 = -3), to 2 (not reachable), but it can complete the circuit."
+      },
+      {
+        "input": "gas = [2,3,4], cost = [3,4,3]",
+        "output": "-1",
+        "explanation": "Starting from any station, the car cannot complete the circuit."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Calculate the net gas gained at each station.",
+      "Track the total gas and total cost to determine feasibility."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Common Prefix",
+    "description": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\".",
+    "topic": "Strings",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Strings",
+      "Prefix",
+      "Array"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A string representing the longest common prefix.",
+    "constraints": [
+      "0 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "All inputs are in lowercase letters a-z."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"flower\", \"flow\", \"flight\"]",
+        "output": "\"fl\"",
+        "explanation": "The longest common prefix is 'fl'."
+      },
+      {
+        "input": "strs = [\"dog\", \"racecar\", \"car\"]",
+        "output": "\"\"",
+        "explanation": "There is no common prefix, so the output is an empty string."
+      },
+      {
+        "input": "strs = [\"abc\", \"abc\", \"abc\"]",
+        "output": "\"abc\"",
+        "explanation": "All strings are the same, so the longest common prefix is 'abc'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider checking the characters of the strings one by one.",
+      "An empty string input means there is no common prefix."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule II",
+    "description": "There are a total of n courses you have to take, labeled from 0 to n-1. Some courses may have prerequisites, while others may not. You are given an array of prerequisite pairs, where prerequisites[i] = [a, b] indicates that taking course b is a prerequisite for taking course a. Your task is to determine the order in which you can take all courses. If it is impossible to finish all courses, return an empty array. Otherwise, return an array representing the course order. You may assume that if there are no prerequisites, you can take the courses in any order.",
+    "topic": "Graph",
+    "subtopic": "Topological Sort",
+    "tags": [
+      "Graph",
+      "Topological Sort",
+      "BFS",
+      "DFS"
+    ],
+    "input_format": "An integer n (0 <= n <= 2000) representing the number of courses, and an array of pairs representing prerequisites.",
+    "output_format": "An array of integers representing the order of courses, or an empty array if it's impossible to finish all courses.",
+    "constraints": [
+      "The number of courses, n, is in the range [1, 2000].",
+      "The length of prerequisites is in the range [0, n]."
+    ],
+    "examples": [
+      {
+        "input": "n = 4, prerequisites = [[1, 0], [2, 1], [3, 2]]",
+        "output": "[0, 1, 2, 3]",
+        "explanation": "You can take course 0 first, then course 1, followed by course 2, and finally course 3."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1, 0], [0, 1]]",
+        "output": "[]",
+        "explanation": "It's impossible to finish all courses because of a cycle between course 0 and course 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use adjacency list to represent the graph.",
+      "Check for cycles in the graph during the topological sort.",
+      "Consider using Kahn's algorithm or DFS for topological sorting."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Kadane's Algorithm"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum sum of the contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        "output": "6",
+        "explanation": "The contiguous subarray [4,-1,2,1] has the largest sum = 6."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The contiguous subarray [1] has the largest sum = 1."
+      },
+      {
+        "input": "nums = [5,4,-1,7,8]",
+        "output": "23",
+        "explanation": "The contiguous subarray [5,4,-1,7,8] has the largest sum = 23."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a variable to track the maximum sum found so far.",
+      "A variable can also be used to track the current sum of the subarray you're examining."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search",
+    "description": "Given a 2D board and a string word, return true if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where 'adjacent' cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.",
+    "topic": "Backtracking",
+    "subtopic": "Matrix",
+    "tags": [
+      "Backtracking",
+      "DFS",
+      "Matrix"
+    ],
+    "input_format": "A 2D board represented as a list of lists of characters, and a string word.",
+    "output_format": "A boolean value, true if the word exists in the grid, false otherwise.",
+    "constraints": [
+      "1 <= board.length <= 200",
+      "1 <= board[i].length <= 200",
+      "board[i][j] is a lowercase English letter.",
+      "1 <= word.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCCED"
+        },
+        "output": "true",
+        "explanation": "The word 'ABCCED' can be found in the grid by navigating from (0,0) -> (0,1) -> (0,2) -> (1,2) -> (1,1) -> (2,1)."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "SEE"
+        },
+        "output": "true",
+        "explanation": "The word 'SEE' can be found starting at (2,1) -> (2,2) -> (1,2)."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCB"
+        },
+        "output": "false",
+        "explanation": "The word 'ABCB' cannot be constructed from the given grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use Depth-First Search to explore the grid.",
+      "Keep track of visited cells to avoid reusing them.",
+      "Consider boundary conditions when exploring neighbors."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Min Stack",
+    "description": "Design a stack that supports the following operations: push, pop, top, and retrieving the minimum element. All operations should be done in constant time O(1). Implement a MinStack class with the following methods: \n\n- `push(val: int)`: Pushes the element `val` onto the stack. \n- `pop()`: Removes the element on the top of the stack. \n- `top() -> int`: Get the top element. \n- `getMin() -> int`: Retrieve the minimum element in the stack.",
+    "topic": "Stack",
+    "subtopic": "Design",
+    "tags": [
+      "Stack",
+      "Design",
+      "Data Structure"
+    ],
+    "input_format": "A series of operations to perform on the MinStack instance.",
+    "output_format": "The results of calling top() and getMin() during the operations.",
+    "constraints": [
+      "The number of operations performed will be in the range [1, 1000].",
+      "All elements pushed onto the stack are integers in the range [-10^6, 10^6]."
+    ],
+    "examples": [
+      {
+        "input": "MinStack minStack = new MinStack(); minStack.push(-2); minStack.push(0); minStack.push(-3); minStack.getMin(); minStack.pop(); minStack.top(); minStack.getMin();",
+        "output": "[-3, 0, -2]",
+        "explanation": "The minimum after pushing -2, 0, -3 is -3. After popping -3, the top becomes 0 and the minimum remains -2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use an auxiliary stack to keep track of the minimum values."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Colors",
+    "description": "Given an array containing red, white, and blue pegs represented by the integers 0, 1, and 2, sort them in-place so that pegs of the same color are adjacent, with the red pegs (0) on the left, the white pegs (1) in the middle, and the blue pegs (2) on the right. You must do this without using the library's sort function and in a single pass.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Two Pointers"
+    ],
+    "input_format": "An array nums where nums[i] is either 0, 1, or 2.",
+    "output_format": "The same array sorted in-place with 0s, 1s, and 2s.",
+    "constraints": [
+      "1 <= nums.length <= 300",
+      "nums[i] is 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 0, 2, 1, 1, 0]",
+        "output": "[0, 0, 1, 1, 2, 2]",
+        "explanation": "After sorting, 0s are moved to the front, followed by 1s, and finally 2s."
+      },
+      {
+        "input": "nums = [2, 0, 1]",
+        "output": "[0, 1, 2]",
+        "explanation": "Sorted in-place, 0 comes first, then 1, followed by 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use three pointers to track the boundaries of each color.",
+      "Iterate through the array and swap elements to their correct position."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Largest Element in an Array",
+    "description": "Given an integer array `nums` and an integer `k`, return the k-th largest element in the array. Note that it is the k-th largest element in the sorted order, not the k-th distinct element. You must solve it in O(n) time complexity.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "Heap",
+      "Quickselect"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the k-th largest element.",
+    "constraints": [
+      "1 <= k <= nums.length",
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 1, 5, 6, 4], k = 2",
+        "output": "5",
+        "explanation": "The second largest element in the array is 5."
+      },
+      {
+        "input": "nums = [3, 2, 3, 1, 2, 4, 5, 5, 6], k = 4",
+        "output": "4",
+        "explanation": "The fourth largest element in the array is 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a max heap or quickselect algorithm.",
+      "Sorting the array may lead to a simpler solution but with higher time complexity."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "First Missing Positive",
+    "description": "Given an unsorted integer array, find the smallest missing positive integer. Your algorithm should run in O(n) time and use constant extra space.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Searching",
+      "Integer"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the smallest missing positive integer.",
+    "constraints": [
+      "1 <= nums.length <= 30000",
+      "-2^31 <= nums[i] <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 4, -1, 1]",
+        "output": "2",
+        "explanation": "The positive integers in the array are 1, 3, and 4. The smallest missing positive integer is 2."
+      },
+      {
+        "input": "nums = [1, 2, 0]",
+        "output": "3",
+        "explanation": "The positive integers in the array are 1 and 2. The smallest missing positive integer is 3."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Try using the input array itself for storage.",
+      "Consider the range of numbers you need to check."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Set Matrix Zeroes",
+    "description": "Given an m x n integer matrix, if an element is 0, set its entire row and column to 0. Do this in place and without using extra space for another matrix.",
+    "topic": "Matrix",
+    "subtopic": "In-Place Manipulation",
+    "tags": [
+      "Matrix",
+      "In-Place",
+      "Array Manipulation"
+    ],
+    "input_format": "A 2D array of integers matrix, where 1 <= m, n <= 200.",
+    "output_format": "The modified matrix with rows and columns set to zero.",
+    "constraints": [
+      "m == matrix.length",
+      "n == matrix[i].length",
+      "-10^3 <= matrix[i][j] <= 10^3"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1,1,1],[1,0,1],[1,1,1]]",
+        "output": "[[1,0,1],[0,0,0],[1,0,1]]",
+        "explanation": "The element at (1,1) is 0, so we set its entire row and column to 0."
+      },
+      {
+        "input": "matrix = [[0,1],[1,1]]",
+        "output": "[[0,0],[0,1]]",
+        "explanation": "The element at (0,0) is 0, so we set its entire row and column to 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using the first row and first column to mark which rows and columns need to be set to zero.",
+      "Make sure to handle the case where the first row or first column needs to be zeroed."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Validate Binary Search Tree",
+    "description": "Given a binary tree, determine if it is a valid binary search tree (BST). A binary search tree is defined as a tree in which all left subtree nodes are less than the root node, and all right subtree nodes are greater than the root node. Both subtrees must also be binary search trees.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "Binary Search Tree",
+      "Validation"
+    ],
+    "input_format": "The input consists of a binary tree represented by its root node.",
+    "output_format": "Return true if the binary tree is a valid binary search tree, otherwise return false.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 10^4].",
+      "Each node's value is in the range [-10^4, 10^4]."
+    ],
+    "examples": [
+      {
+        "input": "root = [2, 1, 3]",
+        "output": "true",
+        "explanation": "The binary tree is a valid BST as the left child (1) is less than the root (2) and the right child (3) is greater than the root."
+      },
+      {
+        "input": "root = [5, 1, 4, null, null, 3, 6]",
+        "output": "false",
+        "explanation": "The binary tree is not a valid BST because the left child (4) is greater than the root (5)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use recursion to traverse the tree and check the BST properties.",
+      "Keep track of the valid range for each node's value."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Linked List Cycle",
+    "description": "Given a linked list, determine if it has a cycle in it. A cycle is defined as a situation where a node's next pointer points back to a previous node in the list. You must return true if there is a cycle, and false otherwise.",
+    "topic": "Linked List",
+    "subtopic": "Cycle Detection",
+    "tags": [
+      "Linked List",
+      "Cycle",
+      "Two Pointers"
+    ],
+    "input_format": "A head node of a linked list, where each node contains an integer value and a pointer to the next node.",
+    "output_format": "A boolean value, true if there is a cycle in the linked list, false otherwise.",
+    "constraints": [
+      "The linked list has at most 10^4 nodes.",
+      "The node values are within the range of [-10^5, 10^5]."
+    ],
+    "examples": [
+      {
+        "input": "head = [3,2,0,-4], pos = 1",
+        "output": "true",
+        "explanation": "In this case, the second node points back to the first node, resulting in a cycle."
+      },
+      {
+        "input": "head = [1,2], pos = 0",
+        "output": "true",
+        "explanation": "Here, the first node points back to itself, indicating a cycle."
+      },
+      {
+        "input": "head = [1], pos = -1",
+        "output": "false",
+        "explanation": "This linked list has only one node and no cycle."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers, one moving slowly and the other moving faster."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Combination Sum",
+    "description": "Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to target. Each number in candidates may be used an unlimited number of times in a combination. The solution set must not contain duplicate combinations.",
+    "topic": "Backtracking",
+    "subtopic": "Combination Sum",
+    "tags": [
+      "Backtracking",
+      "Combination",
+      "Sum"
+    ],
+    "input_format": "An array of distinct integers candidates and an integer target.",
+    "output_format": "A list of unique combinations where the sum of each combination equals target.",
+    "constraints": [
+      "1 <= candidates.length <= 30",
+      "1 <= candidates[i] <= 200",
+      "target <= 500"
+    ],
+    "examples": [
+      {
+        "input": "candidates = [2, 3, 6, 7], target = 7",
+        "output": "[[7], [2, 2, 3]]",
+        "explanation": "The combination [7] sums to target. The combination [2, 2, 3] also sums to target."
+      },
+      {
+        "input": "candidates = [1], target = 2",
+        "output": "[[1, 1]]",
+        "explanation": "The only combination that sums to 2 is [1, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to explore combinations.",
+      "Sort candidates for easier handling of duplicates.",
+      "Use a loop to explore further with the same candidate."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Jump Game II",
+    "description": "You are given an array of non-negative integers nums. Each element in the array represents your maximum jump length at that position. Your goal is to reach the last index in the minimum number of jumps. Write a function that returns the minimum number of jumps needed to reach the last index.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy",
+    "tags": [
+      "Array",
+      "Greedy",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "An integer representing the minimum number of jumps required to reach the last index.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, 1, 1, 4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then jump 2 steps to reach the last index."
+      },
+      {
+        "input": "nums = [2, 3, 0, 1, 4]",
+        "output": "2",
+        "explanation": "Jump 1 step from index 0 to 1, then jump 3 steps to reach the last index."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "0",
+        "explanation": "You are already at the last index."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "You can use a greedy approach to minimize the number of jumps.",
+      "Keep track of the farthest point you can reach.",
+      "Count jumps each time you reach the end of the current jump segment."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Lowest Common Ancestor of a Binary Tree",
+    "description": "Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree. According to the definition of LCA on the binary tree, the lowest common ancestor is the lowest node that has both nodes as descendants (where we allow a node to be a descendant of itself).",
+    "topic": "Binary Tree",
+    "subtopic": "Tree Traversal",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Depth-First Search"
+    ],
+    "input_format": "The root of the binary tree, and two nodes p and q.",
+    "output_format": "The lowest common ancestor of the two nodes.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [2, 10^5].",
+      "All nodes' values are unique.",
+      "p and q are different and both values will be present in the tree."
+    ],
+    "examples": [
+      {
+        "input": "root = [3, 5, 1, 6, 2, 0, 8, null, null, 7, 4], p = 5, q = 1",
+        "output": "3",
+        "explanation": "The LCA of nodes 5 and 1 is 3."
+      },
+      {
+        "input": "root = [3, 5, 1, 6, 2, 0, 8, null, null, 7, 4], p = 5, q = 4",
+        "output": "5",
+        "explanation": "The LCA of nodes 5 and 4 is 5 since 5 is an ancestor of 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a recursive approach to traverse the tree.",
+      "If either p or q matches the root's value, return the root.",
+      "Check both left and right subtrees for p and q."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. A mapping of digits to letters is provided below, following a similar mapping as used on a traditional phone keypad:\n\n2 -> 'abc'\n3 -> 'def'\n4 -> 'ghi'\n5 -> 'jkl'\n6 -> 'mno'\n7 -> 'pqrs'\n8 -> 'tuv'\n9 -> 'wxyz'\n\nThe input string will not contain any leading zeroes and will have at most a length of 4.",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Problems",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Combinatorial"
+    ],
+    "input_format": "A string containing digits (from '2' to '9').",
+    "output_format": "A list of strings representing all possible letter combinations.",
+    "constraints": [
+      "0 <= digits.length <= 4",
+      "digits[i] is a digit in the range ['2', '9']"
+    ],
+    "examples": [
+      {
+        "input": "digits = '23'",
+        "output": "[\"ad\", \"ae\", \"af\", \"bd\", \"be\", \"bf\", \"cd\", \"ce\", \"cf\"]",
+        "explanation": "The digits '2' and '3' map to 'abc' and 'def', resulting in combinations: ad, ae, af, bd, be, bf, cd, ce, cf."
+      },
+      {
+        "input": "digits = ''",
+        "output": "[]",
+        "explanation": "An empty input string leads to no combinations, hence the output is an empty list."
+      },
+      {
+        "input": "digits = '2'",
+        "output": "[\"a\", \"b\", \"c\"]",
+        "explanation": "The digit '2' maps to 'abc', resulting in the combinations: a, b, c."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think of using a backtracking approach to generate combinations.",
+      "You can use a mapping array to easily access letters corresponding to digits."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses. For example, if n = 3, the function should return the following combinations: '((()))', '(()())', '(())()', '()(())', '()()()'.",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Generation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Combinatorics"
+    ],
+    "input_format": "An integer n representing the number of pairs of parentheses.",
+    "output_format": "A list of strings representing all combinations of well-formed parentheses.",
+    "constraints": [
+      "1 <= n <= 8"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[\"((()))\", \"(()())\", \"(())()\", \"()(())\", \"()()()\"]",
+        "explanation": "These are all the valid combinations of three pairs of parentheses."
+      },
+      {
+        "input": "n = 1",
+        "output": "[\"()\"]",
+        "explanation": "With one pair of parentheses, the only valid combination is '()'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a backtracking approach to generate valid combinations.",
+      "Maintain a count of opened and closed parentheses."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Zigzag Conversion",
+    "description": "The string 'PAYPALISHIRING' is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)\n\nP   A   H   N\nA P L S I I G\nY   I   A\n\nAnd then read line by line: 'PAHNAPLSIIGYAI'. Write the function that will convert a given string into this zigzag pattern by following the given number of rows and then reading it line by line.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Zigzag",
+      "Pattern"
+    ],
+    "input_format": "A string s representing the input string and an integer numRows representing the number of rows.",
+    "output_format": "A string representing the converted zigzag pattern.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= numRows <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "s = 'PAYPALISHIRING', numRows = 3",
+        "output": "'PAHNAPLSIIGYI'",
+        "explanation": "The zigzag pattern is formed with 3 rows, reading line by line gives 'PAHNAPLSIIGYI'."
+      },
+      {
+        "input": "s = 'A', numRows = 1",
+        "output": "'A'",
+        "explanation": "With only one row, the output is the same as the input."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to fill the characters in each row frame.",
+      "Use a loop to traverse the string while managing the row index."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Maximal Square",
+    "description": "Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.",
+    "topic": "Dynamic Programming",
+    "subtopic": "2D DP",
+    "tags": [
+      "Dynamic Programming",
+      "Matrix",
+      "Binary"
+    ],
+    "input_format": "A 2D binary matrix represented as a list of lists.",
+    "output_format": "An integer representing the area of the largest square containing only 1's.",
+    "constraints": [
+      "1 <= matrix.length <= 300",
+      "1 <= matrix[i].length <= 300",
+      "matrix[i][j] is '0' or '1'"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [['1','0','1','0','0'], ['1','0','1','1','1'], ['1','1','1','1','1'], ['1','0','0','1','0']]",
+        "output": "4",
+        "explanation": "The largest square has a side length of 2, and its area is 2 * 2 = 4."
+      },
+      {
+        "input": "matrix = [['0','1'], ['1','0']]",
+        "output": "1",
+        "explanation": "The largest square has a side length of 1, and its area is 1 * 1 = 1."
+      },
+      {
+        "input": "matrix = [['1']]",
+        "output": "1",
+        "explanation": "The largest square has a side length of 1, and its area is 1 * 1 = 1."
+      },
+      {
+        "input": "matrix = [['0']]",
+        "output": "0",
+        "explanation": "There are no 1's, so the area is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a dynamic programming approach.",
+      "Think about how to build the solution based on smaller subproblems.",
+      "Keep track of the largest square found so far."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "description": "Given a sorted array of integers and a target value, return the starting and ending position of the target value in the array. If the target is not found in the array, return [-1, -1]. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Search"
+    ],
+    "input_format": "An array of integers nums sorted in ascending order, and an integer target.",
+    "output_format": "An array of two integers representing the starting and ending positions of the target value in nums.",
+    "constraints": [
+      "0 <= nums.length <= 10^5",
+      "nums is sorted in ascending order.",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 8",
+        "output": "[3, 4]",
+        "explanation": "The target 8 appears at indices 3 and 4."
+      },
+      {
+        "input": "nums = [5, 7, 7, 8, 8, 10], target = 6",
+        "output": "[-1, -1]",
+        "explanation": "The target 6 is not found in the array."
+      },
+      {
+        "input": "nums = [], target = 0",
+        "output": "[-1, -1]",
+        "explanation": "The array is empty, so the target cannot be found."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search to find the target.",
+      "After finding the target, expand to both sides to find the first and last positions."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Delete Node in a Linked List",
+    "description": "You are given a reference to a node in a singly linked list. Your task is to delete that node from the linked list, given only access to that node. It is guaranteed that the node to be deleted is not a tail node.",
+    "topic": "Linked List",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Linked List",
+      "Manipulation",
+      "Deletion"
+    ],
+    "input_format": "A reference to a node in a singly linked list.",
+    "output_format": "The linked list after the deletion of the given node.",
+    "constraints": [
+      "The node to be deleted is guaranteed to be not null and not a tail node."
+    ],
+    "examples": [
+      {
+        "input": "Node with value 5 in the linked list 4 -> 5 -> 1 -> 9",
+        "output": "4 -> 1 -> 9",
+        "explanation": "After deleting the node with value 5, the linked list will become 4 -> 1 -> 9."
+      },
+      {
+        "input": "Node with value 1 in the linked list 4 -> 5 -> 1 -> 9",
+        "output": "4 -> 5 -> 9",
+        "explanation": "After deleting the node with value 1, the linked list will become 4 -> 5 -> 9."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "To delete the node, copy the value of the next node to the current node and then link to the node after the next node."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Median of Two Sorted Arrays",
+    "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays. The overall run time complexity should be O(log(min(m,n))). You may assume that the combined arrays are non-empty and that the median is a single element if the count is odd.",
+    "topic": "Array",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Array",
+      "Binary Search",
+      "Median"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2, both sorted in non-decreasing order.",
+    "output_format": "A single float value representing the median of the two sorted arrays.",
+    "constraints": [
+      "0 <= nums1.length <= 1000",
+      "0 <= nums2.length <= 1000",
+      "nums1 and nums2 are sorted in non-decreasing order."
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1, 3], nums2 = [2]",
+        "output": "2.0",
+        "explanation": "The merged array is [1, 2, 3] and the median is 2."
+      },
+      {
+        "input": "nums1 = [1, 2], nums2 = [3, 4]",
+        "output": "2.5",
+        "explanation": "The merged array is [1, 2, 3, 4] and the median is (2 + 3) / 2 = 2.5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the properties of the median and how you can use binary search to find it efficiently."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Isomorphic Strings",
+    "description": "Given two strings s and t, determine if they are isomorphic. Two strings are isomorphic if the characters in s can be replaced to get t. All occurrences of a character must map to exactly one character while no two characters may map to the same character.",
+    "topic": "String",
+    "subtopic": "Character Mapping",
+    "tags": [
+      "String",
+      "Isomorphic",
+      "Character Mapping"
+    ],
+    "input_format": "Two strings s and t.",
+    "output_format": "A boolean value indicating whether the strings are isomorphic.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "1 <= t.length <= 10^5",
+      "s and t consist of any printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"egg\", t = \"add\"",
+        "output": "true",
+        "explanation": "The character 'e' maps to 'a' and 'g' maps to 'd'."
+      },
+      {
+        "input": "s = \"foo\", t = \"add\"",
+        "output": "false",
+        "explanation": "The character 'f' cannot map to 'a' since 'o' also maps to 'd'."
+      },
+      {
+        "input": "s = \"paper\", t = \"title\"",
+        "output": "true",
+        "explanation": "The character 'p' maps to 't' and 'a' maps to 'i', while 'e' maps to 'l' and 'r' maps to 'e'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hashmap to keep track of character mappings.",
+      "Consider the lengths of both strings before comparing.",
+      "Check for characters mapping in both directions."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Size Subarray Sum",
+    "description": "Given an array of integers nums and an integer target, find the minimal length of a contiguous subarray of which the sum is greater than or equal to target. If there is no such subarray, return 0 instead.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Prefix Sum"
+    ],
+    "input_format": "An integer array nums and an integer target.",
+    "output_format": "An integer representing the minimal length of the subarray, or 0 if no such subarray exists.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^4",
+      "0 <= target <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2,3,1,2,4,3], target = 7",
+        "output": "2",
+        "explanation": "The subarray [4,3] has the minimal length under the condition that its sum is 7."
+      },
+      {
+        "input": "nums = [1,4,4], target = 4",
+        "output": "1",
+        "explanation": "The subarray [4] has a sum of 4, and its length is 1."
+      },
+      {
+        "input": "nums = [1,1,1,1,1,1], target = 11",
+        "output": "0",
+        "explanation": "No subarray can sum up to 11, thus the output is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a two-pointer technique to find the subarray.",
+      "Keep track of the current sum and the minimum length as you iterate."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Kth Smallest Element in a BST",
+    "description": "Given a binary search tree (BST), write a function to find the kth smallest element in it. A binary search tree is defined such that for each node, all elements in the left subtree are less than the node, and all elements in the right subtree are greater than the node.",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "Binary Search Tree",
+      "Recursion"
+    ],
+    "input_format": "The root of a binary search tree and an integer k.",
+    "output_format": "An integer representing the kth smallest element in the BST.",
+    "constraints": [
+      "The number of nodes in the tree is n.",
+      "1 <= k <= n",
+      "0 <= node.val <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "root = [3, 1, 4, null, 2], k = 1",
+        "output": "1",
+        "explanation": "The smallest element in the BST is 1."
+      },
+      {
+        "input": "root = [5, 3, 6, 2, 4, null, null, 1], k = 3",
+        "output": "3",
+        "explanation": "The third smallest element in the BST is 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider an in-order traversal of the BST.",
+      "Use a counter to track the number of elements visited."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Image",
+    "description": "You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise). You have to rotate the matrix in-place, which means you have to do it without using any extra space. The rotation must be done in such a way that the pixels move accordingly in the matrix.",
+    "topic": "Matrix",
+    "subtopic": "In-place Algorithm",
+    "tags": [
+      "Matrix",
+      "In-place",
+      "Array Manipulation"
+    ],
+    "input_format": "A 2D array of integers, representing the n x n matrix that needs to be rotated.",
+    "output_format": "The input matrix rotated by 90 degrees clockwise.",
+    "constraints": [
+      "1 <= n <= 20",
+      "-1000 <= matrix[i][j] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[[7, 4, 1], [8, 5, 2], [9, 6, 3]]",
+        "explanation": "Rotating the given matrix 90 degrees clockwise results in a new matrix where the first row becomes the last column, the second row becomes the second last column, and so on."
+      },
+      {
+        "input": "matrix = [[1]]",
+        "output": "[[1]]",
+        "explanation": "A single element matrix remains unchanged when rotated."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using layer by layer approach to perform the rotation.",
+      "Think about how the coordinates of the pixels change during the rotation."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Combination Sum II",
+    "description": "Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to the target. Each number in candidates may only be used once in the combination. Note that the solution set must not contain duplicate combinations.",
+    "topic": "Backtracking",
+    "subtopic": "Combination Sum",
+    "tags": [
+      "Backtracking",
+      "DFS",
+      "Combination"
+    ],
+    "input_format": "An array of integers candidates and an integer target.",
+    "output_format": "A list of lists of integers representing all unique combinations that sum to the target.",
+    "constraints": [
+      "1 <= candidates.length <= 100",
+      "10 <= target <= 500",
+      "0 <= candidates[i] <= 30"
+    ],
+    "examples": [
+      {
+        "input": "candidates = [10, 1, 2, 7, 6, 1, 5], target = 8",
+        "output": "[[1, 1, 6], [1, 2, 5], [2, 6], [7]]",
+        "explanation": "The unique combinations are [1, 1, 6], [1, 2, 5], [2, 6], and [7]."
+      },
+      {
+        "input": "candidates = [2, 5, 2, 1, 2], target = 5",
+        "output": "[[1, 2, 2], [5]]",
+        "explanation": "The unique combinations are [1, 2, 2] and [5]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to explore combinations.",
+      "Make sure to sort the candidates to efficiently skip duplicates.",
+      "Use a boolean array to track used elements in the current combination."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Integer to Roman",
+    "description": "Convert an integer into its corresponding Roman numeral representation. Roman numerals are represented by the combination of letters from the Latin alphabet: I, V, X, L, C, D, and M. The following are the symbols and their values:\n\n- I   = 1\n- V   = 5\n- X   = 10\n- L   = 50\n- C   = 100\n- D   = 500\n- M   = 1000\n\nFor example, the integer 3 is represented as 'III', and the integer 4 is represented as 'IV'.",
+    "topic": "Mathematics",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Mathematics",
+      "String",
+      "Conversion"
+    ],
+    "input_format": "An integer num (1 <= num <= 3999).",
+    "output_format": "A string representing the Roman numeral equivalent of the integer.",
+    "constraints": [
+      "1 <= num <= 3999"
+    ],
+    "examples": [
+      {
+        "input": "num = 3",
+        "output": "III",
+        "explanation": "The integer 3 is represented as 'III'."
+      },
+      {
+        "input": "num = 4",
+        "output": "IV",
+        "explanation": "The integer 4 is represented as 'IV'."
+      },
+      {
+        "input": "num = 9",
+        "output": "IX",
+        "explanation": "The integer 9 is represented as 'IX'."
+      },
+      {
+        "input": "num = 58",
+        "output": "LVIII",
+        "explanation": "The integer 58 is represented as 'LVIII' which is 50 + 5 + 3."
+      },
+      {
+        "input": "num = 1994",
+        "output": "MCMXCIV",
+        "explanation": "The integer 1994 is represented as 'MCMXCIV' which is 1000 + (1000-100) + (100-10) + (5-1)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a map for Roman numeral symbols and their corresponding values.",
+      "Start from the largest symbol and work down to the smallest.",
+      "Subtract values from the number as they are used."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate Array",
+    "description": "Given an integer array 'nums' of length 'n' and an integer 'k', rotate the array to the right by 'k' steps, where 'k' is non-negative. Do this in-place without using extra space for another array.",
+    "topic": "Array",
+    "subtopic": "In-place Array Manipulation",
+    "tags": [
+      "Array",
+      "Rotation",
+      "In-place"
+    ],
+    "input_format": "An integer array nums and an integer k.",
+    "output_format": "The rotated array nums.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "0 <= k <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5, 6, 7], k = 3",
+        "output": "[5, 6, 7, 1, 2, 3, 4]",
+        "explanation": "After rotating the array to the right by 3 steps, the last three elements [5, 6, 7] move to the front."
+      },
+      {
+        "input": "nums = [-1, -100, 3, 99], k = 2",
+        "output": "[3, 99, -1, -100]",
+        "explanation": "After rotating the array to the right by 2 steps, the last two elements [3, 99] move to the front."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how rotating affects the indices of the array.",
+      "You can use reverse operations to achieve the rotation."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Number",
+    "description": "Given a list of non-negative integers, arrange them such that they form the largest possible number. Return that largest number as a string. Note that the result may be very large, so you should return it as a string instead of a numerical value.",
+    "topic": "Sorting",
+    "subtopic": "Custom Sorting",
+    "tags": [
+      "Sorting",
+      "Greedy",
+      "String"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "A string representing the largest number formed by the integers.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [10, 2]",
+        "output": "210",
+        "explanation": "By arranging 2 and 10, we get the largest number 210."
+      },
+      {
+        "input": "nums = [3, 30, 34, 5, 9]",
+        "output": "9534330",
+        "explanation": "The largest number can be formed by arranging the numbers as 9, 5, 34, 3, 30."
+      },
+      {
+        "input": "nums = [0, 0, 0]",
+        "output": "0",
+        "explanation": "All numbers are zero, hence the result is '0'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how concatenating two numbers in different orders affects their value.",
+      "Implement a custom comparator for sorting."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Majority Element",
+    "description": "Given an array of size n, find the majority element. The majority element is the element that appears more than n/2 times in the array. You may assume that the majority element always exists in the array.",
+    "topic": "Array",
+    "subtopic": "Counting Elements",
+    "tags": [
+      "Array",
+      "Hash Map",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums of size n.",
+    "output_format": "An integer representing the majority element.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 2, 3]",
+        "output": "3",
+        "explanation": "The element 3 appears 2 times, which is more than n/2 (1.5)."
+      },
+      {
+        "input": "nums = [2, 2, 1, 1, 1, 2, 2]",
+        "output": "2",
+        "explanation": "The element 2 appears 4 times, which is more than n/2 (3.5)."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hash map to count frequency of elements.",
+      "You can also think about Boyer-Moore Voting Algorithm."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Copy List with Random Pointer",
+    "description": "A linked list is given such that each node contains an additional random pointer, which could point to any node in the list or null. You need to return a deep copy of the list. The deep copy should consist of exactly the same nodes as the original list, where each node is a new instance of the original node. The `next` pointer and the `random` pointer for each newly created node should point to the new copy of the node in the copied list. The order in the copied list should also match the original list.",
+    "topic": "Linked List",
+    "subtopic": "Deep Copy",
+    "tags": [
+      "Linked List",
+      "DFS",
+      "BFS",
+      "Hash Table"
+    ],
+    "input_format": "The input is a reference to the head of the list.",
+    "output_format": "Return a reference to the head of the copied linked list.",
+    "constraints": [
+      "The number of nodes in the list is in the range [0, 100].",
+      "Node.val is unique for each node.",
+      "The random pointer for any node in the list is null or is pointing to a node in the list."
+    ],
+    "examples": [
+      {
+        "input": "head = [[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "output": "[[7,null],[13,0],[11,4],[10,2],[1,0]]",
+        "explanation": "The deep copy of the linked list should maintain the random pointer relationships."
+      },
+      {
+        "input": "head = [[1,1],[2,1]]",
+        "output": "[[1,1],[2,1]]",
+        "explanation": "The linked list has two nodes where both nodes' random pointers point to the first node."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to keep track of the mapping between original nodes and copied nodes.",
+      "First, clone the nodes and store them in the hash map based on their original position.",
+      "Set the next and random pointers for the copied nodes using the hash map."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Word Break II",
+    "description": "Given a string s and a dictionary of strings wordDict, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences in any order. Note that the same word in the dictionary may be reused multiple times in the segmentation.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Backtracking",
+    "tags": [
+      "Backtracking",
+      "Dynamic Programming",
+      "String"
+    ],
+    "input_format": "A string s and a list of strings wordDict.",
+    "output_format": "A list of all possible sentences that can be formed from the string s.",
+    "constraints": [
+      "1 <= s.length <= 20",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 10",
+      "All strings in wordDict are unique."
+    ],
+    "examples": [
+      {
+        "input": {
+          "s": "catsanddog",
+          "wordDict": [
+            "cat",
+            "cats",
+            "and",
+            "sand",
+            "dog"
+          ]
+        },
+        "output": [
+          "cats and dog",
+          "cat sand dog"
+        ],
+        "explanation": "The string can be segmented into 'cats' and 'and dog' or 'cat' and 'sand dog'."
+      },
+      {
+        "input": {
+          "s": "pineapplepenapple",
+          "wordDict": [
+            "apple",
+            "pen",
+            "applepen",
+            "pine",
+            "pineapple"
+          ]
+        },
+        "output": [
+          "pine apple pen apple",
+          "pineapple pen apple",
+          "pine applepen apple"
+        ],
+        "explanation": "Multiple valid segmentations of the input string result in the above sentences."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using recursion and backtracking.",
+      "Keep track of valid words found in the input.",
+      "Build sentences dynamically while checking against the dictionary."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Permutations",
+    "description": "Given an array of distinct integers, return all the possible permutations of the array. You can return the answer in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Permutations",
+    "tags": [
+      "Backtracking",
+      "Permutations",
+      "Recursion"
+    ],
+    "input_format": "An array of distinct integers nums.",
+    "output_format": "A list of lists containing all possible permutations of the input array.",
+    "constraints": [
+      "1 <= nums.length <= 6",
+      "-10 <= nums[i] <= 10"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]",
+        "explanation": "The permutations of [1, 2, 3] are all the possible arrangements of the elements."
+      },
+      {
+        "input": "nums = [0, 1]",
+        "output": "[[0,1],[1,0]]",
+        "explanation": "The permutations of [0, 1] are the two arrangements possible."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a recursive backtracking approach.",
+      "Swap elements to generate new permutations.",
+      "Keep track of the current permutation and the used elements."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicates from Sorted Array",
+    "description": "Given a sorted array of integers, you need to remove the duplicates in-place such that each element appears only once and returns the new length of the array. The order of elements should be maintained. Since it is required to modify the input array in-place, you must do this without using extra space (i.e., O(1) space complexity).",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-place"
+    ],
+    "input_format": "An integer array nums sorted in ascending order.",
+    "output_format": "An integer representing the new length of the array with duplicates removed.",
+    "constraints": [
+      "1 <= nums.length <= 3 * 10^4",
+      "-100 <= nums[i] <= 100",
+      "nums is sorted in non-decreasing order."
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 1, 2]",
+        "output": "2",
+        "explanation": "The array after removing duplicates is [1, 2], and the new length is 2."
+      },
+      {
+        "input": "nums = [0,0,1,1,1,2,2,3,3,4]",
+        "output": "5",
+        "explanation": "The array after removing duplicates is [0, 1, 2, 3, 4], and the new length is 5."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to track the current position of unique elements."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Restore IP Addresses",
+    "description": "Given a string containing only digits, restore it by returning all possible valid IP address combinations. An IP address consists of four integers (each between 0 and 255) separated by dots. The integers must not have leading zeros (except for the number '0' itself).",
+    "topic": "Backtracking",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "IP Addresses"
+    ],
+    "input_format": "A string 's' representing the digits of the IP address to restore.",
+    "output_format": "A list of valid IP address combinations.",
+    "constraints": [
+      "0 <= s.length <= 12",
+      "s consists of digits only"
+    ],
+    "examples": [
+      {
+        "input": "s = \"25525511135\"",
+        "output": "[\"255.255.11.135\", \"255.255.111.35\"]",
+        "explanation": "The possible valid IP addresses formed by the string are 255.255.11.135 and 255.255.111.35."
+      },
+      {
+        "input": "s = \"0000\"",
+        "output": "[\"0.0.0.0\"]",
+        "explanation": "The only valid IP address formed is 0.0.0.0."
+      },
+      {
+        "input": "s = \"1111\"",
+        "output": "[\"1.1.1.1\"]",
+        "explanation": "The only valid IP address is 1.1.1.1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to split the string into four parts.",
+      "Ensure each part is within the range of 0 to 255.",
+      "Avoid leading zeros unless the part is '0'."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Decode Ways",
+    "description": "A message containing letters from A-Z can be encoded into numbers using the following mapping: 'A' -> 1, 'B' -> 2, ..., 'Z' -> 26. Given a string s consisting of digits, return the number of ways to decode it. The input string may contain leading zeros, which should be disregarded. If s is an empty string, it denotes no valid decoding options.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Decoding",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Recursion"
+    ],
+    "input_format": "A string s of digits (1 <= s.length <= 100).",
+    "output_format": "An integer representing the number of ways to decode the string.",
+    "constraints": [
+      "s consists of digits and may contain leading zeros.",
+      "s is a non-empty string."
+    ],
+    "examples": [
+      {
+        "input": "s = '12'",
+        "output": "2",
+        "explanation": "The string can be decoded as 'AB' (1 2) or 'L' (12)."
+      },
+      {
+        "input": "s = '226'",
+        "output": "3",
+        "explanation": "The string can be decoded as 'BZ' (2 26), 'VF' (22 6), or 'BBF' (2 2 6)."
+      },
+      {
+        "input": "s = '06'",
+        "output": "0",
+        "explanation": "The string starts with a leading zero which can\u2019t be decoded."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how many possible decodings exist for each position in the string.",
+      "Use dynamic programming to maintain the count of decodings up to each index."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Valid Parentheses",
+    "description": "Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Stack"
+    ],
+    "input_format": "A string s of length n, where s consists of '(' and ')'.",
+    "output_format": "An integer representing the length of the longest valid parentheses substring.",
+    "constraints": [
+      "0 <= n <= 10^4",
+      "s[i] is either '(' or ')'."
+    ],
+    "examples": [
+      {
+        "input": "s = \")()())\"",
+        "output": "4",
+        "explanation": "The longest valid parentheses substring is \"()()\", which has a length of 4."
+      },
+      {
+        "input": "s = \"()(()\"",
+        "output": "2",
+        "explanation": "The longest valid parentheses substring is \"()\", which has a length of 2."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to manage indices of the parentheses.",
+      "Keep track of the last unmatched parenthesis index."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Sorted Array",
+    "description": "You are given two integer arrays, nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively. You need to merge nums2 into nums1 as one sorted array. The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. Note that you must do this in-place without making a copy of the arrays.",
+    "topic": "Array",
+    "subtopic": "Merging Arrays",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-place"
+    ],
+    "input_format": "Two integer arrays nums1 and nums2, and two integers m and n.",
+    "output_format": "The merged array nums1 in sorted order.",
+    "constraints": [
+      "0 <= m, n <= 200",
+      "1 <= m + n <= 200",
+      "-10^9 <= nums1[i], nums2[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3",
+        "output": "[1,2,2,3,5,6]",
+        "explanation": "After merging, nums1 will contain [1,2,2,3,5,6]."
+      },
+      {
+        "input": "nums1 = [1], m = 1, nums2 = [], n = 0",
+        "output": "[1]",
+        "explanation": "nums1 is already sorted and contains one element."
+      },
+      {
+        "input": "nums1 = [0], m = 0, nums2 = [1], n = 1",
+        "output": "[1]",
+        "explanation": "Merging nums2 into nums1 results in nums1 containing [1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers starting from the end of both arrays.",
+      "Compare elements from the end and place the larger one at the end of nums1."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Find Peak Element",
+    "description": "An array element is called a peak if it is greater than or equal to its neighbors. For corner elements, we consider only one neighbor. Given an integer array nums, return the index of any peak element in the array. You may assume that the input array is non-empty, and there exists at least one peak element.",
+    "topic": "Array",
+    "subtopic": "Searching",
+    "tags": [
+      "Array",
+      "Peak Element",
+      "Binary Search"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the index of a peak element.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "2",
+        "explanation": "3 is a peak element, as it is greater than its neighbors (2 and 1)."
+      },
+      {
+        "input": "nums = [1, 2, 1, 3, 5, 6, 4]",
+        "output": "1 or 5",
+        "explanation": "Both indices 1 (value 2) and 5 (value 6) are peak elements."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using binary search for a more efficient solution.",
+      "If nums[mid] < nums[mid + 1], then there is a peak element on the right side."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Paths",
+    "description": "A robot is located at the top-left corner of a m x n grid. The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid. How many unique paths are there for the robot to reach the goal?",
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid Paths",
+    "tags": [
+      "Dynamic Programming",
+      "Grid",
+      "Mathematics"
+    ],
+    "input_format": "Two integers m and n representing the number of rows and columns in the grid.",
+    "output_format": "An integer representing the number of unique paths from the top-left corner to the bottom-right corner.",
+    "constraints": [
+      "1 <= m, n <= 100"
+    ],
+    "examples": [
+      {
+        "input": "m = 3, n = 7",
+        "output": "28",
+        "explanation": "There are 28 unique paths to go from the top-left corner to the bottom-right corner in a 3x7 grid."
+      },
+      {
+        "input": "m = 3, n = 2",
+        "output": "3",
+        "explanation": "There are 3 unique paths in a 3x2 grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the problem as a combinatorial path counting.",
+      "Think about using dynamic programming to break the problem into smaller subproblems."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Rotate List",
+    "description": "Given a linked list, rotate the list to the right by k places, where k is non-negative. The rotation should be done in such a way that the first node of the original list becomes the head of the new rotated list.",
+    "topic": "Linked List",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Linked List",
+      "Rotation",
+      "Moderate"
+    ],
+    "input_format": "The head of the linked list and an integer k.",
+    "output_format": "The head of the rotated linked list.",
+    "constraints": [
+      "The number of nodes in the linked list is in the range [0, 500].",
+      "-100 <= Node.val <= 100",
+      "0 <= k <= 2 * 10^9"
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 3, 4, 5], k = 2",
+        "output": "[4, 5, 1, 2, 3]",
+        "explanation": "Rotating the list to the right by 2 places results in the list: 4 -> 5 -> 1 -> 2 -> 3."
+      },
+      {
+        "input": "head = [0, 1, 2], k = 4",
+        "output": "[2, 0, 1]",
+        "explanation": "Rotating the list to the right by 4 places (which is equivalent to rotating by 1 place due to the length of the list) results in: 2 -> 0 -> 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the length of the linked list.",
+      "Use a two-pointer approach to find the new tail of the list.",
+      "Make sure to handle cases where k is greater than the length of the list."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Insert Interval",
+    "description": "Given a collection of intervals, which may be overlapping, the task is to insert a new interval into the intervals (merge if necessary) and return the new list of intervals. The intervals are represented as pairs of integers, where each pair consists of a start and an end time. Your solution should ensure that the resulting list of intervals is non-overlapping and sorted.",
+    "topic": "Intervals",
+    "subtopic": "Merge Intervals",
+    "tags": [
+      "Intervals",
+      "Merge",
+      "Sorting"
+    ],
+    "input_format": "A list of intervals, where each interval is represented as a pair of integers [start, end] and a single interval [new_start, new_end] to be inserted.",
+    "output_format": "A list of non-overlapping intervals after the new interval has been inserted.",
+    "constraints": [
+      "0 <= intervals.length <= 10^4",
+      "intervals[i].length == 2",
+      "start <= end for each interval",
+      "-10^5 <= start, end <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "intervals = [[1,3],[6,9]], new_interval = [2,5]",
+        "output": "[[1,5],[6,9]]",
+        "explanation": "The new interval [2,5] overlaps with [1,3]. Therefore, they merge to form [1,5]."
+      },
+      {
+        "input": "intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], new_interval = [4,8]",
+        "output": "[[1,2],[3,10],[12,16]]",
+        "explanation": "The new interval [4,8] overlaps with [3,5] and [6,7] leading to a merged interval [3,10]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to handle overlapping intervals.",
+      "A sorted list of intervals will simplify the merging process."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Invert Binary Tree",
+    "description": "Given the root of a binary tree, invert the tree and return its root. Inverting a binary tree means swapping the left and right children of all nodes in the tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Recursion",
+      "DFS"
+    ],
+    "input_format": "A binary tree node represented by a TreeNode structure where each node contains an integer value and pointers to the left and right child nodes.",
+    "output_format": "The root of the inverted binary tree.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 100].",
+      "-100 <= Node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "root = [4,2,7,1,3,6,9]",
+        "output": "[4,7,2,9,6,3,1]",
+        "explanation": "The original tree is:\n    4\n   / \\\n  2   7\n / \\ / \\\n1  3 6  9\n\nAfter inversion, it becomes:\n    4\n   / \\\n  7   2\n / \\ / \\\n9  6 3  1"
+      },
+      {
+        "input": "root = [2,1,3]",
+        "output": "[2,3,1]",
+        "explanation": "The original tree is:\n    2\n   / \\\n  1   3\n\nAfter inversion, it becomes:\n    2\n   / \\\n  3   1"
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "explanation": "An empty tree remains empty after inversion."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a recursive approach to swap the left and right children.",
+      "Consider using a depth-first search (DFS) method.",
+      "Base case for recursion: return null if the node is null."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Number",
+    "description": "Given an integer x, return true if x is a palindrome, and false otherwise. A palindrome is a number that remains the same when its digits are reversed. For example, 121 is a palindrome, while 123 is not.",
+    "topic": "Mathematics",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Palindrome",
+      "Integer",
+      "Mathematics"
+    ],
+    "input_format": "An integer x.",
+    "output_format": "A boolean value indicating whether x is a palindrome.",
+    "constraints": [
+      "-2^31 <= x <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "121",
+        "output": "true",
+        "explanation": "121 reads the same forwards and backwards."
+      },
+      {
+        "input": "-121",
+        "output": "false",
+        "explanation": "-121 reads 121- which is not the same."
+      },
+      {
+        "input": "10",
+        "output": "false",
+        "explanation": "10 reads 01, which is not the same."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try to reverse the integer and compare it with the original."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Max Points on a Line",
+    "description": "Given an array of points where points[i] = [xi, yi] represents a point on the Cartesian plane, return the maximum number of points that lie on the same straight line.",
+    "topic": "Geometry",
+    "subtopic": "Line and Point",
+    "tags": [
+      "Geometry",
+      "Line",
+      "Points"
+    ],
+    "input_format": "An array of points, where each point is represented as an array of two integers [xi, yi].",
+    "output_format": "An integer representing the maximum number of points that can lie on the same straight line.",
+    "constraints": [
+      "1 <= points.length <= 3000",
+      "-10^4 <= xi, yi <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "points = [[1,1],[2,2],[3,3]]",
+        "output": "3",
+        "explanation": "All three points lie on the line y = x."
+      },
+      {
+        "input": "points = [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]",
+        "output": "4",
+        "explanation": "The points [1,1], [2,3], [3,2], and [4,1] lie on the same line."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use the concept of slopes to compare points.",
+      "Store slopes in a hashmap to count occurrences."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Sudoku Solver",
+    "description": "Write a program that solves a Sudoku puzzle by filling the empty cells. A Sudoku puzzle is a 9 x 9 grid filled with digits ranging from 1 to 9, where each digit must appear only once in each row, column, and 3 x 3 sub-grid. An empty cell is represented by the character '.' (dot). The program should take this partially filled grid and return the completely filled grid. Note that there will be only one solution to the puzzle and it is guaranteed that the input will be valid.",
+    "topic": "Backtracking",
+    "subtopic": "Sudoku",
+    "tags": [
+      "Backtracking",
+      "Recursion",
+      "Matrix"
+    ],
+    "input_format": "A 2D array of characters, where '.' represents an empty cell.",
+    "output_format": "A 2D array of characters representing the solved Sudoku grid.",
+    "constraints": [
+      "The input grid will be a 9 x 9 array.",
+      "Each element of the grid will be a character from '1' to '9' or '.'"
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "5",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "."
+          ],
+          [
+            "4",
+            ".",
+            "9",
+            ".",
+            ".",
+            ".",
+            ".",
+            "5",
+            "."
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            "3",
+            ".",
+            ".",
+            ".",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            "8",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": [
+          [
+            "5",
+            "3",
+            "4",
+            "6",
+            "7",
+            "8",
+            "9",
+            "1",
+            "2"
+          ],
+          [
+            "6",
+            "7",
+            "2",
+            "1",
+            "9",
+            "5",
+            "3",
+            "4",
+            "8"
+          ],
+          [
+            "1",
+            "9",
+            "8",
+            "3",
+            "4",
+            "2",
+            "5",
+            "6",
+            "7"
+          ],
+          [
+            "8",
+            "5",
+            "9",
+            "7",
+            "6",
+            "1",
+            "4",
+            "2",
+            "3"
+          ],
+          [
+            "4",
+            "2",
+            "6",
+            "8",
+            "5",
+            "3",
+            "7",
+            "9",
+            "1"
+          ],
+          [
+            "7",
+            "1",
+            "3",
+            "9",
+            "2",
+            "4",
+            "8",
+            "5",
+            "6"
+          ],
+          [
+            "9",
+            "6",
+            "1",
+            "5",
+            "3",
+            "7",
+            "2",
+            "8",
+            "4"
+          ],
+          [
+            "2",
+            "8",
+            "7",
+            "4",
+            "1",
+            "9",
+            "6",
+            "3",
+            "5"
+          ],
+          [
+            "3",
+            "4",
+            "5",
+            "2",
+            "8",
+            "6",
+            "1",
+            "7",
+            "9"
+          ]
+        ],
+        "explanation": "The input represents a partially filled Sudoku grid, and the output is the completed Sudoku grid with all the cells filled according to Sudoku rules."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using backtracking to explore possible placements.",
+      "Make sure to validate placements by checking rows, columns, and sub-grids."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Populating Next Right Pointers in Each Node",
+    "description": "Given a perfect binary tree, you need to populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL. Initially, all next pointers are set to NULL. Note that you can only use constant extra space.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Pointer"
+    ],
+    "input_format": "The root of a perfect binary tree.",
+    "output_format": "The same binary tree with the next pointers populated.",
+    "constraints": [
+      "The number of nodes in the tree is between 0 and 6000.",
+      "Each node has a unique value.",
+      "The tree is perfect (all leaves are at the same level and every parent has two children)."
+    ],
+    "examples": [
+      {
+        "input": "root = [1, 2, 3, 4, 5, 6, 7]",
+        "output": "[1 -> NULL, 2 -> 3 -> NULL, 4 -> 5 -> 6 -> 7 -> NULL]",
+        "explanation": "After populating the next pointers, each node points to its immediate right neighbor or NULL."
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "explanation": "An empty tree does not have any nodes, and as such the next pointers remain NULL."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a level order traversal to connect nodes at the same level.",
+      "Utilize the properties of a perfect binary tree."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Count Number of Pairs With Absolute Difference K",
+    "description": "Given an array of integers and an integer k, return the number of unique pairs (i, j) such that |nums[i] - nums[j]| = k. The pairs (i, j) and (j, i) are considered the same and should be counted only once.",
+    "topic": "Array",
+    "subtopic": "Hashing",
+    "tags": [
+      "Array",
+      "Hashing",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums and an integer k.",
+    "output_format": "An integer representing the number of unique pairs with the absolute difference of k.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^9",
+      "0 <= k <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], k = 2",
+        "output": "3",
+        "explanation": "The pairs with absolute difference of 2 are (1, 3), (2, 4), and (3, 5)."
+      },
+      {
+        "input": "nums = [1, 1, 1, 1], k = 0",
+        "output": "1",
+        "explanation": "The only unique pair is (1, 1) with absolute difference of 0."
+      },
+      {
+        "input": "nums = [1, 5, 9, 8, 5], k = 4",
+        "output": "2",
+        "explanation": "The pairs are (1, 5) and (5, 9) with absolute difference of 4."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a set to track seen numbers.",
+      "Consider both adding k and subtracting k for each number."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Queue using Stacks",
+    "description": "Design a queue using two stacks. Implement the following operations: push, pop, and peek. Your implementation should support the standard operations of a queue (FIFO principle), but using two stacks as the underlying data structure. Be sure to handle edge cases and optimize your performance where possible.",
+    "topic": "Data Structure",
+    "subtopic": "Stack",
+    "tags": [
+      "Queue",
+      "Stack",
+      "Data Structure"
+    ],
+    "input_format": "A series of operations: 'push(x)' to add an element 'x' to the queue, 'pop()' to remove the front element, and 'peek()' to get the front element without removing it.",
+    "output_format": "Return the output of the 'pop()' and 'peek()' operations.",
+    "constraints": [
+      "1 <= x <= 10^5",
+      "The number of operations will not exceed 1000."
+    ],
+    "examples": [
+      {
+        "input": "push(1); push(2); pop(); peek();",
+        "output": "1, 2",
+        "explanation": "After pushing 1 and 2, popping returns 1. Peeking returns the next front element 2."
+      },
+      {
+        "input": "push(3); pop(); push(4); peek();",
+        "output": "3, 4",
+        "explanation": "Popping after pushing 3 returns 3. After pushing 4, peeking returns 4."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how to transfer elements between the two stacks.",
+      "You may need to maintain one stack for incoming elements and one for the outgoing elements."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Palindrome Linked List",
+    "description": "Given a singly linked list, determine if it is a palindrome. A linked list is considered a palindrome if the elements read the same forward and backward. You must do this in O(n) time and O(1) space.",
+    "topic": "Linked List",
+    "subtopic": "Palindrome",
+    "tags": [
+      "Linked List",
+      "Palindrome",
+      "Two Pointers"
+    ],
+    "input_format": "The head of a singly linked list.",
+    "output_format": "A boolean value indicating whether the linked list is a palindrome.",
+    "constraints": [
+      "The number of nodes in the list is in the range [1, 10^5].",
+      "The value of each node is within the range [-10^5, 10^5]."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 2, 2, 1]",
+        "output": "true",
+        "explanation": "The list reads the same forwards and backwards."
+      },
+      {
+        "input": "head = [1, 2]",
+        "output": "false",
+        "explanation": "The list reads differently forwards (1, 2) and backwards (2, 1)."
+      },
+      {
+        "input": "head = [1]",
+        "output": "true",
+        "explanation": "A single element list is always a palindrome."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Try to traverse the list to find the midpoint.",
+      "Use two pointers: one moving at twice the speed of the other."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Implement Stack using Queues",
+    "description": "Design a stack using only two queues. The implementation should support the following operations: push, pop, top, and isEmpty. Implement the stack such that the push method complexity is amortized O(1), and all other methods are O(1) as well.",
+    "topic": "Data Structures",
+    "subtopic": "Stack & Queue",
+    "tags": [
+      "Stack",
+      "Queue",
+      "Data Structures"
+    ],
+    "input_format": "The input consists of a series of commands to manipulate the stack, represented as a list of strings, where each command can be 'push', 'pop', 'top', or 'isEmpty'. 'push' command includes an integer value that needs to be pushed onto the stack.",
+    "output_format": "The output should be the result of each 'pop', 'top', and 'isEmpty' command as a list of boolean or integer values.",
+    "constraints": [
+      "The number of operations will not exceed 1000.",
+      "Each push operation will have an integer value in the range of [-1000, 1000]."
+    ],
+    "examples": [
+      {
+        "input": "commands = ['push', 'push', 'top', 'pop', 'isEmpty'], values = [[1], [2], [], [], []]",
+        "output": "[2, 2, false]",
+        "explanation": "After pushing 1 and 2, the top of the stack is 2. After popping, the stack is not empty."
+      },
+      {
+        "input": "commands = ['push', 'pop', 'isEmpty'], values = [[3], [], []]",
+        "output": "[3, false]",
+        "explanation": "After pushing 3, popping it leads to the stack being empty."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Think about how you can use the properties of queues to simulate a stack.",
+      "You may need to manage the order of elements when pushing and popping."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Basic Calculator",
+    "description": "Implement a basic calculator to evaluate a simple expression string containing non-negative integers, '+', '-', '*', and '/' operators. The string is guaranteed to be a valid expression but may not have whitespaces. You need to account for operator precedence where '*' and '/' have higher precedence than '+' and '-'.",
+    "topic": "Math",
+    "subtopic": "Expression Evaluation",
+    "tags": [
+      "Math",
+      "String",
+      "Expression Evaluation"
+    ],
+    "input_format": "A string expression s representing the mathematical expression.",
+    "output_format": "An integer representing the result of the evaluated expression.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of digits, '+', '-', '*', '/' operators, and is guaranteed to be a valid expression."
+    ],
+    "examples": [
+      {
+        "input": "s = '3+2*2'",
+        "output": "7",
+        "explanation": "The expression evaluates to 3 + (2 * 2) = 3 + 4 = 7."
+      },
+      {
+        "input": "s = ' 3/2 '",
+        "output": "1",
+        "explanation": "The expression evaluates to 3 / 2 = 1."
+      },
+      {
+        "input": "s = ' 3+5 / 2 '",
+        "output": "5",
+        "explanation": "The expression evaluates to 3 + (5 / 2) = 3 + 2 = 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a stack to handle operator precedence.",
+      "Keep track of the current number and the last operator seen.",
+      "Make sure to handle division correctly, especially with integer results."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Unique Good Subsequences",
+    "description": "Given a binary string s, return the number of unique good subsequences of s. A good subsequence is defined as any subsequence that contains at least one '1'. The result must be returned modulo 10^9 + 7.",
+    "topic": "String",
+    "subtopic": "Subsequences",
+    "tags": [
+      "String",
+      "Subsequence",
+      "Combinatorics"
+    ],
+    "input_format": "A binary string s of length n (1 <= n <= 10^5).",
+    "output_format": "An integer representing the number of unique good subsequences, modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists only of '0's and '1's."
+    ],
+    "examples": [
+      {
+        "input": "s = '001'",
+        "output": "2",
+        "explanation": "The good subsequences are '1' and '01'."
+      },
+      {
+        "input": "s = '111'",
+        "output": "7",
+        "explanation": "The good subsequences are '1', '11', '111', '1', '11', '1', and '1'."
+      },
+      {
+        "input": "s = '000'",
+        "output": "0",
+        "explanation": "There are no good subsequences since there are no '1's."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the influence of '1's and '0's on subsequence count.",
+      "Dynamic programming might help manage subsequences efficiently.",
+      "Remember to use modulo operations to handle large results."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a length maxWidth, format the text such that each line has exactly maxWidth characters and is fully justified. You should pack the words together with spaces, so that each line is exactly maxWidth characters long, except for the last line, which should be left-justified. You need to consider how to distribute space optimally such that the text looks even and organized. Each line should have as many words as possible without exceeding the line width, and the spaces should be distributed as evenly as possible between the words.",
+    "topic": "String",
+    "subtopic": "Text Justification",
+    "tags": [
+      "String",
+      "Justification",
+      "Formatting"
+    ],
+    "input_format": "A list of words (strings) and an integer maxWidth.",
+    "output_format": "A list of strings, where each string represents a fully justified line.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 100",
+      "1 <= maxWidth <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "This",
+            "is",
+            "an",
+            "example",
+            "of",
+            "text",
+            "justification."
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "This    is    an",
+          "example  of text",
+          "justification.  "
+        ],
+        "explanation": "The first line contains 'This', 'is', and 'an' with spaces distributed to reach maxWidth. The second line contains 'example', 'of', and 'text' similarly formatted."
+      },
+      {
+        "input": {
+          "words": [
+            "What",
+            "must",
+            "be",
+            "acknowledgment",
+            "shall",
+            "be"
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "What   must   be",
+          "acknowledgment  ",
+          "shall be        "
+        ],
+        "explanation": "The second line contains one word only and is left justified; thus, it is padded with spaces."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to distribute spaces between words.",
+      "You may need to handle the last line differently.",
+      "Keep track of the number of characters and spaces as you build each line."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Window Substring",
+    "description": "Given two strings s and t, return the smallest substring of s that contains all the characters in t (including duplicates). If there is no such substring, return an empty string. The order of characters in t does not matter.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Map"
+    ],
+    "input_format": "Two strings s and t, where 1 <= s.length, t.length <= 10^5.",
+    "output_format": "A string representing the smallest substring of s that contains all characters of t, or an empty string if no such substring exists.",
+    "constraints": [
+      "1 <= s.length, t.length <= 10^5",
+      "s and t consist of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"ADOBECODEBANC\", t = \"ABC\"",
+        "output": "\"BANC\"",
+        "explanation": "The smallest substring of s that contains all characters of t is \"BANC\"."
+      },
+      {
+        "input": "s = \"a\", t = \"a\"",
+        "output": "\"a\"",
+        "explanation": "The smallest substring of s is the string itself since it contains the character 'a'."
+      },
+      {
+        "input": "s = \"A\", t = \"AA\"",
+        "output": "\"\"",
+        "explanation": "There is no substring of s that contains all characters of t."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a hash map to count the occurrences of characters in t.",
+      "Use two pointers to represent the current window in s.",
+      "Expand the window until it contains all characters of t, then shrink from the left to minimize the window."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum II - Input Array Is Sorted",
+    "description": "Given a sorted array of integers 'numbers' and an integer 'target', return the indices of the two numbers such that they add up to 'target'. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "A sorted array of integers 'numbers' and an integer 'target'.",
+    "output_format": "An array of two integers representing the 1-based indices of the two numbers.",
+    "constraints": [
+      "2 <= numbers.length <= 3 * 10^4",
+      "-10^7 <= numbers[i] <= 10^7",
+      "numbers is sorted in ascending order.",
+      "You may assume that there is exactly one solution, and you may not use the same element twice."
+    ],
+    "examples": [
+      {
+        "input": "numbers = [2, 7, 11, 15], target = 9",
+        "output": "[1, 2]",
+        "explanation": "numbers[0] + numbers[1] = 2 + 7 = 9, hence the answer is [1, 2]."
+      },
+      {
+        "input": "numbers = [2, 3, 4], target = 6",
+        "output": "[1, 3]",
+        "explanation": "numbers[0] + numbers[2] = 2 + 4 = 6, hence the answer is [1, 3]."
+      },
+      {
+        "input": "numbers = [-1, 0], target = -1",
+        "output": "[1, 2]",
+        "explanation": "numbers[0] + numbers[1] = -1 + 0 = -1, hence the answer is [1, 2]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use two pointers to find the pair that sums to target efficiently.",
+      "If the current sum is less than the target, move the left pointer to the right to increase the sum.",
+      "If the current sum is more than the target, move the right pointer to the left to decrease the sum."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Regular Expression Matching",
+    "description": "Implement a function that performs regular expression matching with support for '.' and '*'. The character '.' matches any single character, while '*' matches zero or more of the preceding element. The matching should cover the entire input string (not partial).",
+    "topic": "String",
+    "subtopic": "Regular Expressions",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Recursion"
+    ],
+    "input_format": "A string s representing the input text and a string p representing the pattern.",
+    "output_format": "A boolean indicating whether the string matches the pattern.",
+    "constraints": [
+      "0 <= s.length <= 20",
+      "0 <= p.length <= 30"
+    ],
+    "examples": [
+      {
+        "input": "s = 'aa', p = 'a'",
+        "output": "false",
+        "explanation": "'a' does not match 'aa'."
+      },
+      {
+        "input": "s = 'aa', p = 'a*'",
+        "output": "true",
+        "explanation": "'a*' matches 'aa' because '*' means zero or more occurrences of the previous character."
+      },
+      {
+        "input": "s = 'ab', p = '.*'",
+        "output": "true",
+        "explanation": "'.*' matches 'ab' because '.' matches any character and '*' allows for any number of occurrences."
+      },
+      {
+        "input": "s = 'aab', p = 'c*a*b'",
+        "output": "true",
+        "explanation": "'c*' matches the empty string and 'a*b' matches 'aab'."
+      },
+      {
+        "input": "s = 'mississippi', p = 'mis*is*p*.'",
+        "output": "false",
+        "explanation": "'mis*is*p*.' does not match 'mississippi'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to solve this problem.",
+      "You can utilize a 2D table to keep track of matches."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Path Sum II",
+    "description": "Given a binary tree, find all root-to-leaf paths where each path's sum equals a given target sum. A root-to-leaf path is defined as any path from the root node down to any leaf node. Each step in the path must be one of the two child nodes, and a leaf is a node that has no children. Return a list of all such paths as lists of node values.",
+    "topic": "Tree",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Tree",
+      "DFS",
+      "Backtracking"
+    ],
+    "input_format": "A binary tree represented as a root node and an integer target sum.",
+    "output_format": "A list of lists, where each inner list represents a valid root-to-leaf path that sums up to the target.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [0, 1000].",
+      "-1000 <= node.val <= 1000",
+      "The target sum is an integer within the range [-1000, 1000]."
+    ],
+    "examples": [
+      {
+        "input": "root = [5, 4, 8, 11, null, 13, 4], target_sum = 22",
+        "output": "[[5, 4, 11, 2], [5, 8, 4, 5]]",
+        "explanation": "The paths that sum to 22 are 5 -> 4 -> 11 -> 2 and 5 -> 8 -> 4 -> 5."
+      },
+      {
+        "input": "root = [1, 2, 3], target_sum = 5",
+        "output": "[]",
+        "explanation": "There are no root-to-leaf paths that sum to 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS to explore paths from the root to the leaves.",
+      "Keep track of the current path and the current sum during traversal.",
+      "Add a path to the result when you reach a leaf node and the current sum matches the target."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Remove Duplicates from Sorted List",
+    "description": "Given a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.",
+    "topic": "Linked List",
+    "subtopic": "Manipulation",
+    "tags": [
+      "Linked List",
+      "Sorting",
+      "Duplicate Removal"
+    ],
+    "input_format": "The input consists of the head of a sorted linked list.",
+    "output_format": "Return the head of the linked list after removing duplicates.",
+    "constraints": [
+      "The linked list has at most 100 nodes.",
+      "-100 <= Node.val <= 100",
+      "The linked list is sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "head = [1, 1, 2]",
+        "output": "[1, 2]",
+        "explanation": "The duplicated element '1' is removed, leaving only one instance of '1' and '2'."
+      },
+      {
+        "input": "head = [1, 1, 2, 3, 3]",
+        "output": "[1, 2, 3]",
+        "explanation": "Duplicate elements '1' and '3' are removed, leaving '1', '2', and '3'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a pointer to traverse the list and compare adjacent nodes."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Sort List",
+    "description": "Given a list of integers, sort the integers in ascending order and return the sorted list. The sorting must be done in-place and with a time complexity of O(n log n).",
+    "topic": "Sorting",
+    "subtopic": "In-place Sorting",
+    "tags": [
+      "Sorting",
+      "Array",
+      "In-place"
+    ],
+    "input_format": "A list of integers nums, where 1 <= nums.length <= 10^5.",
+    "output_format": "A list of integers representing the sorted integers in ascending order.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [5, 3, 8, 1, 2]",
+        "output": "[1, 2, 3, 5, 8]",
+        "explanation": "The integers are sorted in ascending order."
+      },
+      {
+        "input": "nums = [-1, 0, 2, -3, 1]",
+        "output": "[-3, -1, 0, 1, 2]",
+        "explanation": "The integers include negative and positive numbers and are sorted correctly."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a divide and conquer algorithm.",
+      "Keep track of indices to perform an in-place sort."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Divide Two Integers",
+    "description": "Given two integers dividend and divisor, divide two integers without using multiplication, division, or modulo operators. Return the quotient after dividing dividend by divisor. The result should be truncated towards zero, meaning that if the result is negative, it should be rounded towards zero instead of rounding towards negative infinity. If the quotient is greater than 2^31 - 1, return 2^31 - 1. If the quotient is less than -2^31, return -2^31.",
+    "topic": "Math",
+    "subtopic": "Binary Search",
+    "tags": [
+      "Math",
+      "Binary Search",
+      "Division"
+    ],
+    "input_format": "Two integers, dividend and divisor.",
+    "output_format": "An integer representing the quotient of the division.",
+    "constraints": [
+      "-2^31 <= dividend, divisor <= 2^31 - 1",
+      "divisor != 0"
+    ],
+    "examples": [
+      {
+        "input": "dividend = 10, divisor = 3",
+        "output": "3",
+        "explanation": "10 divided by 3 is 3.33333, and truncating towards zero returns 3."
+      },
+      {
+        "input": "dividend = 7, divisor = -3",
+        "output": "-2",
+        "explanation": "7 divided by -3 is -2.33333, and truncating towards zero returns -2."
+      },
+      {
+        "input": "dividend = 0, divisor = 1",
+        "output": "0",
+        "explanation": "0 divided by any non-zero number is 0."
+      },
+      {
+        "input": "dividend = 1, divisor = 1",
+        "output": "1",
+        "explanation": "1 divided by 1 is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using bit manipulation for division.",
+      "Think about how you can use subtraction repeatedly."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Excel Sheet Column Title",
+    "description": "Given a positive integer number, return its corresponding column title as it appears in an Excel sheet. For example, 1 corresponds to 'A', 2 to 'B', 26 to 'Z', and 27 to 'AA'. The characters 'A' to 'Z' represent the numbers 1 to 26 respectively.",
+    "topic": "Math",
+    "subtopic": "Number Representation",
+    "tags": [
+      "Math",
+      "String",
+      "Conversion"
+    ],
+    "input_format": "An integer n representing the column number.",
+    "output_format": "A string representing the corresponding column title.",
+    "constraints": [
+      "1 <= n <= 2^31 - 1"
+    ],
+    "examples": [
+      {
+        "input": "n = 1",
+        "output": "A",
+        "explanation": "1 corresponds to the first column, which is 'A'."
+      },
+      {
+        "input": "n = 28",
+        "output": "AB",
+        "explanation": "28 corresponds to the 28th column, which is 'AB'."
+      },
+      {
+        "input": "n = 701",
+        "output": "ZY",
+        "explanation": "701 corresponds to the 701st column, which is 'ZY'."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use modulo and integer division to convert the number to a string.",
+      "Consider how you would map 1-26 to A-Z."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Find Subsequence of Length K With the Largest Sum",
+    "description": "Given an array of integers nums and an integer k, find the maximum sum of any subsequence of length k. A subsequence can be derived from the array by deleting some or no elements without changing the order of the remaining elements.",
+    "topic": "Array",
+    "subtopic": "Subsequence",
+    "tags": [
+      "Array",
+      "Subsequence",
+      "Sum"
+    ],
+    "input_format": "An array of integers nums followed by an integer k.",
+    "output_format": "An integer representing the maximum sum of a subsequence of length k.",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "1 <= k <= nums.length",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 4, 5], k = 3",
+        "output": "12",
+        "explanation": "The maximum sum subsequence of length 3 is [3, 4, 5]. Their sum is 3 + 4 + 5 = 12."
+      },
+      {
+        "input": "nums = [5, 1, 2, 6, 3], k = 2",
+        "output": "11",
+        "explanation": "The maximum sum subsequence of length 2 is [5, 6]. Their sum is 5 + 6 = 11."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider taking the largest k elements from the array.",
+      "You can sort the array and sum the last k elements."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Product Subarray",
+    "description": "Given an integer array 'nums', find the contiguous subarray within an array (containing at least one number) which has the largest product, and return the product. This is often a challenging problem when the array contains both negative and positive numbers, as a negative number can convert a smaller product into a larger one when multiplied with another negative number.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Product"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum product of a contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "-10 <= nums[i] <= 10"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, -2, 4]",
+        "output": "6",
+        "explanation": "The contiguous subarray [2, 3] has the largest product 6."
+      },
+      {
+        "input": "nums = [-2, 0, -1]",
+        "output": "0",
+        "explanation": "The contiguous subarray [0] has the largest product 0."
+      },
+      {
+        "input": "nums = [-2, 3, -4]",
+        "output": "24",
+        "explanation": "The contiguous subarray [3, -4] gives the largest product 24."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider handling negative numbers specially.",
+      "Use two variables to track maximum and minimum products.",
+      "Update the maximum product at each position."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Sudoku",
+    "description": "Determine whether a given 9x9 Sudoku board is valid according to the rules of Sudoku. The board may be partially filled, where empty cells are represented by the character '.' (dot). A valid Sudoku board requires that each row, column, and 3x3 sub-box (also known as a nonet) contains the digits 1 through 9 without repetition.",
+    "topic": "Hash Table",
+    "subtopic": "Set",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Backtracking"
+    ],
+    "input_format": "A 2D array of characters representing a 9x9 Sudoku board.",
+    "output_format": "A boolean value: true if the Sudoku board is valid, and false otherwise.",
+    "constraints": [
+      "The board is a 9x9 grid.",
+      "The input characters are '.' or digits '1' to '9'."
+    ],
+    "examples": [
+      {
+        "input": [
+          [
+            "5",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "true",
+        "explanation": "The provided Sudoku board is valid according to Sudoku rules."
+      },
+      {
+        "input": [
+          [
+            "8",
+            "3",
+            ".",
+            ".",
+            "7",
+            ".",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            "6",
+            ".",
+            ".",
+            "1",
+            "9",
+            "5",
+            ".",
+            ".",
+            "."
+          ],
+          [
+            ".",
+            "9",
+            "8",
+            ".",
+            ".",
+            ".",
+            ".",
+            "6",
+            "."
+          ],
+          [
+            "8",
+            ".",
+            ".",
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            "3"
+          ],
+          [
+            "4",
+            ".",
+            ".",
+            "8",
+            ".",
+            "3",
+            ".",
+            ".",
+            "1"
+          ],
+          [
+            "7",
+            ".",
+            ".",
+            ".",
+            "2",
+            ".",
+            ".",
+            ".",
+            "6"
+          ],
+          [
+            ".",
+            "6",
+            ".",
+            ".",
+            ".",
+            ".",
+            "2",
+            "8",
+            "."
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            "4",
+            "1",
+            "9",
+            ".",
+            ".",
+            "5"
+          ],
+          [
+            ".",
+            ".",
+            ".",
+            ".",
+            "8",
+            ".",
+            ".",
+            "7",
+            "9"
+          ]
+        ],
+        "output": "false",
+        "explanation": "The provided Sudoku board is invalid because the number '8' appears twice in the first column."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use sets to track seen numbers for rows, columns, and boxes.",
+      "Make sure to convert the 2D board into the respective row, column, and box indices."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Lowest Common Ancestor of a Binary Search Tree",
+    "description": "Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST. According to the definition of LCA on a binary tree, the lowest common ancestor is defined between two nodes p and q as the lowest node that has both p and q as descendants (where we allow a node to be a descendant of itself).",
+    "topic": "Tree",
+    "subtopic": "Binary Search Tree",
+    "tags": [
+      "Tree",
+      "Binary Search Tree",
+      "Lowest Common Ancestor"
+    ],
+    "input_format": "The function will receive the root of the BST and two nodes p and q.",
+    "output_format": "Return the lowest common ancestor of the two nodes.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [2, 10^5].",
+      "Each node has a unique value.",
+      "p and q are different and both values will exist in the BST."
+    ],
+    "examples": [
+      {
+        "input": "root = [6, 2, 8, 0, 4, 7, 9], p = 2, q = 8",
+        "output": "6",
+        "explanation": "The LCA of 2 and 8 is 6."
+      },
+      {
+        "input": "root = [6, 2, 8, 0, 4, 7, 9], p = 2, q = 4",
+        "output": "2",
+        "explanation": "The LCA of 2 and 4 is 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the properties of a BST to navigate the tree.",
+      "If both p and q are less than the root, LCA lies in the left subtree.",
+      "If both p and q are greater than the root, LCA lies in the right subtree."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Climbing Stairs",
+    "description": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "topic": "Dynamic Programming",
+    "subtopic": "Fibonacci Sequence",
+    "tags": [
+      "Dynamic Programming",
+      "Fibonacci",
+      "Recursion"
+    ],
+    "input_format": "An integer n, representing the number of steps in the staircase.",
+    "output_format": "An integer representing the number of distinct ways to climb to the top.",
+    "constraints": [
+      "1 <= n <= 45"
+    ],
+    "examples": [
+      {
+        "input": "n = 2",
+        "output": "2",
+        "explanation": "There are two ways to climb to the top: 1 step + 1 step or 2 steps."
+      },
+      {
+        "input": "n = 3",
+        "output": "3",
+        "explanation": "There are three ways to climb to the top: 1 + 1 + 1, 1 + 2, or 2 + 1."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how many ways you can reach the last step.",
+      "Use a relationship to relate the current step to the previous two steps."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Intersection of Two Linked Lists",
+    "description": "Given the heads of two singly linked lists, determine the node at which the two lists intersect. If the two linked lists have no intersection, return null. A node is defined by its value. Your task is to find the first node where the two lists merge in memory. It is guaranteed that the intersection will not occur at the head of either list.",
+    "topic": "Linked List",
+    "subtopic": "Intersection",
+    "tags": [
+      "Linked List",
+      "Two Pointers",
+      "Intersection"
+    ],
+    "input_format": "The function receives the heads of two singly linked lists as parameters.",
+    "output_format": "Return the node at which the two linked lists intersect, or null if there is no intersection.",
+    "constraints": [
+      "The number of nodes in both linked lists is in the range [0, 10^4].",
+      "The values of the nodes are in the range [-10^4, 10^4]."
+    ],
+    "examples": [
+      {
+        "input": "listA = [4,1,8,4,5], listB = [5,0,1,8,4,5]",
+        "output": "[8,4,5]",
+        "explanation": "The lists intersect at the node with value 8."
+      },
+      {
+        "input": "listA = [2,6,4], listB = [1,5]",
+        "output": "null",
+        "explanation": "The two lists do not intersect."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use two pointers to traverse both lists.",
+      "If one pointer reaches the end of a list, switch it to the head of the other list."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Pascal's Triangle",
+    "description": "Given an integer numRows, return the first numRows of Pascal's triangle. In Pascal's triangle, each number is the sum of the two numbers directly above it. The triangle starts with a single 1 at the top, followed by rows that expand outward. The next row will always have one more element than the previous row.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Triangle",
+    "tags": [
+      "Dynamic Programming",
+      "Triangle",
+      "Math"
+    ],
+    "input_format": "An integer numRows representing the number of rows in Pascal's triangle to return.",
+    "output_format": "A list of lists of integers representing the first numRows of Pascal's triangle.",
+    "constraints": [
+      "1 <= numRows <= 30"
+    ],
+    "examples": [
+      {
+        "input": "numRows = 5",
+        "output": "[[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]",
+        "explanation": "The first 5 rows of Pascal's triangle are: 1, 1 1, 1 2 1, 1 3 3 1, 1 4 6 4 1."
+      },
+      {
+        "input": "numRows = 1",
+        "output": "[[1]]",
+        "explanation": "The first row of Pascal's triangle is simply [1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Each element at position j in row i can be calculated as row[i-1][j-1] + row[i-1][j].",
+      "Start with the first row being [1]."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Maximal Rectangle",
+    "description": "Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Matrix",
+    "tags": [
+      "Dynamic Programming",
+      "Matrix",
+      "Area"
+    ],
+    "input_format": "A 2D array of integers (matrix) where each element is either 0 or 1.",
+    "output_format": "An integer representing the area of the largest rectangle containing only 1's.",
+    "constraints": [
+      "1 <= matrix.length, matrix[i].length <= 200",
+      "matrix[i][j] is either 0 or 1."
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1,0,1,0,0],[1,0,1,1,1],[1,1,1,1,1],[1,0,0,1,0]]",
+        "output": "6",
+        "explanation": "The maximal rectangle is shown in the matrix. It consists of 6 '1's."
+      },
+      {
+        "input": "matrix = [[0]]",
+        "output": "0",
+        "explanation": "There are no '1's in the matrix, so the area is 0."
+      },
+      {
+        "input": "matrix = [[1]]",
+        "output": "1",
+        "explanation": "The single '1' forms a rectangle of area 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a histogram approach.",
+      "Exploit the properties of heights in a dynamic manner."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "Delete Duplicate Emails",
+    "description": "You are given a list of email addresses, and your task is to remove any duplicate emails. An email is considered a duplicate if it has the same local part and domain as another email. The local part of an email is the part before the '@' symbol, and the domain is the part after it. Note that, the local part can contain '.' which can be ignored, and '+' characters indicate the start of an alias. For example, 'test.email+alex@leetcode.com' and 'test.e.mail+bob@leetcode.com' both refer to 'testemail@leetcode.com'. Your goal is to return a list of unique emails after processing duplicates accordingly.",
+    "topic": "String",
+    "subtopic": "Processing Emails",
+    "tags": [
+      "String",
+      "Email",
+      "Set"
+    ],
+    "input_format": "A list of strings where each string is an email address.",
+    "output_format": "A list of strings representing unique email addresses.",
+    "constraints": [
+      "1 <= emails.length <= 1000",
+      "Each email address is guaranteed to be a valid email format."
+    ],
+    "examples": [
+      {
+        "input": "emails = ['test.email+alex@leetcode.com', 'test.e.mail+bob@leetcode.com', 'testemail@leetcode.com']",
+        "output": "['testemail@leetcode.com']",
+        "explanation": "All three emails refer to the same unique email after processing."
+      },
+      {
+        "input": "emails = ['test.email@leetcode.com', 'testemail@leetcode.com', 'test.email@leetcode.com']",
+        "output": "['testemail@leetcode.com']",
+        "explanation": "The second and third entry are duplicates."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Focus on extracting the local part and domain separately.",
+      "Use a set to store unique emails."
+    ],
+    "company": "Oracle"
+  },
+  {
+    "question_id": "",
+    "title": "4Sum",
+    "description": "Given an array of integers nums and an integer target, return all unique quadruplets (a, b, c, d) such that a + b + c + d == target. You may return the answer in any order. Each quadruplet must be unique in the result set, hence the same number may appear multiple times in the input, but should not contribute to duplicate quadruplets in the output.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Hash Table"
+    ],
+    "input_format": "An integer array nums and an integer target.",
+    "output_format": "A list of unique quadruplets that sum up to the target.",
+    "constraints": [
+      "0 <= nums.length <= 200",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 0, -1, 0, -2, 2], target = 0",
+        "output": "[[-2, -1, 0, 1], [-2, 0, 0, 2], [-1, 0, 0, 1]]",
+        "explanation": "The only quadruplets that sum to zero are the ones mentioned in the output."
+      },
+      {
+        "input": "nums = [], target = 0",
+        "output": "[]",
+        "explanation": "An empty input will result in an empty output as there are no quadruplets to form."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the array first to facilitate easier duplicate checking.",
+      "Use a hash set to keep track of unique quadruplets."
+    ],
+    "company": "Oracle"
+  }
+]

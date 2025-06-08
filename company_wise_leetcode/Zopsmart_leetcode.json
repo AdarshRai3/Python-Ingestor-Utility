@@ -1,0 +1,555 @@
+[
+  {
+    "question_id": "",
+    "title": "Zigzag Conversion",
+    "description": "The input string is to be written in a zigzag pattern on a given number of rows and then read line by line. The string 'PAYPALISHIRING' is written in a zigzag pattern on 3 rows as follows:\n\nP   A   H   N\nA P L S I I G\nY   I   \n\nAnd reading line by line from top to bottom gives 'PAHN'. Write a function that converts a given string to its zigzag form based on the specified number of rows.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Zigzag",
+      "Conversion"
+    ],
+    "input_format": "A string s and an integer numRows, where s is the input string to be converted and numRows represents the number of rows in the zigzag pattern.",
+    "output_format": "A string that represents the zigzag conversion of the input string.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= numRows <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "s = 'PAYPALISHIRING', numRows = 3",
+        "output": "PAHN",
+        "explanation": "Writing the string in zigzag format over 3 rows gives 'PAHN' when read from top to bottom."
+      },
+      {
+        "input": "s = 'PAYPALISHIRING', numRows = 4",
+        "output": "PINALSIGYAHR",
+        "explanation": "The zigzag pattern for 4 rows results in 'PINALSIGYAHR' when read line by line."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about the direction of the zigzag movement.",
+      "You can use an array of strings to store the rows.",
+      "Iterate through the characters, adjusting the row index accordingly based on the direction."
+    ],
+    "company": "Zopsmart"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Nodes in Even Length Groups",
+    "description": "Given a linked list, you need to reverse the nodes of the list in groups of even length. The size of each group should be determined sequentially by the number of nodes remaining in the list. If there are fewer nodes than the current group size, no reversal should occur for that group. For instance, if the linked list is [1, 2, 3, 4, 5, 6, 7, 8, 9], the nodes will be reversed in groups of size 2, 4, and so on, as long as there are sufficient nodes for reversal.",
+    "topic": "Linked List",
+    "subtopic": "Reversal",
+    "tags": [
+      "LinkedList",
+      "Reversal",
+      "GroupProcessing"
+    ],
+    "input_format": "A singly-linked list represented by its head node.",
+    "output_format": "The head of the modified linked list after reversing nodes in even length groups.",
+    "constraints": [
+      "The number of nodes in the list is between 1 and 10^4.",
+      "Node values are between -10^5 and 10^5."
+    ],
+    "examples": [
+      {
+        "input": "[1, 2, 3, 4, 5, 6]",
+        "output": "[2, 1, 3, 4, 6, 5]",
+        "explanation": "The first group of 2 (1, 2) is reversed to (2, 1), and the second group of 4 (3, 4, 5, 6) is reversed to (6, 5, 4, 3), as there are sufficient nodes."
+      },
+      {
+        "input": "[1, 2, 3, 4, 5, 6, 7]",
+        "output": "[2, 1, 4, 3, 5, 6, 7]",
+        "explanation": "After reversing the first group of 2 (1, 2) into (2, 1) and the second group of only 3 nodes (3, 4, 5) no reversal occurs as it is of odd length."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the current position and size of the group.",
+      "Use a pointer to handle the head of the reversed portion."
+    ],
+    "company": "Zopsmart"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of integers representing the heights of bars, compute how much water it can trap after raining. The water trapped above a bar can be calculated by considering the heights of the tallest bars to its left and right. If the height of the current bar is less than the minimum of the tallest bars on both sides, it can trap water.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers heights, where heights[i] represents the height of the ith bar.",
+    "output_format": "An integer representing the total units of trapped rainwater.",
+    "constraints": [
+      "1 <= heights.length <= 2 * 10^4",
+      "0 <= heights[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The water trapped above the bars can be visualized as 6 units."
+      },
+      {
+        "input": "heights = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "The total water trapped is equal to 9 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how much water can be trapped above each bar.",
+      "Use two pointers to determine the boundaries for trapping water."
+    ],
+    "company": "Zopsmart"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Window Substring",
+    "description": "Given two strings s and t, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string \"\".",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "Two strings s and t, where 1 <= s.length, t.length <= 10^5.",
+    "output_format": "A string representing the minimum window substring of s that contains all the characters of t.",
+    "constraints": [
+      "1 <= s.length, t.length <= 10^5",
+      "s and t consist of English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'ADOBECODEBANC', t = 'ABC'",
+        "output": "'BANC'",
+        "explanation": "The minimum window substring is 'BANC' which contains all characters of t."
+      },
+      {
+        "input": "s = 'a', t = 'a'",
+        "output": "'a'",
+        "explanation": "The minimum window substring is 'a' which contains all characters of t."
+      },
+      {
+        "input": "s = 'a', t = 'aa'",
+        "output": "''",
+        "explanation": "There is no substring that contains all characters of t."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a hashmap to count characters in t.",
+      "Expand the window to the right until it satisfies the condition.",
+      "Contract the window from the left until it no longer satisfies the condition."
+    ],
+    "company": "Zopsmart"
+  },
+  {
+    "question_id": "",
+    "title": "Fraction Addition and Subtraction",
+    "description": "You are given a list of fractions represented as strings. Each fraction is in the form of 'numerator/denominator'. Your task is to add and subtract these fractions based on their representation in the list. Return the result in its simplest form. If the result is an improper fraction, return it as 'whole_part numerator/denominator'.",
+    "topic": "Mathematics",
+    "subtopic": "Fractions",
+    "tags": [
+      "Fractions",
+      "Mathematics",
+      "Addition",
+      "Subtraction"
+    ],
+    "input_format": "A list of strings, where each string is a fraction in the format 'numerator/denominator'.",
+    "output_format": "A single string representing the result in the simplest form.",
+    "constraints": [
+      "1 <= fractions.length <= 100",
+      "1 <= |numerator|, |denominator| <= 1000",
+      "denominator must not be zero"
+    ],
+    "examples": [
+      {
+        "input": "['1/3', '1/2', '1/6']",
+        "output": "'1/1'",
+        "explanation": "1/3 + 1/2 + 1/6 = 6/6 = 1."
+      },
+      {
+        "input": "['1/2', '1/3', '1/4']",
+        "output": "'13/12'",
+        "explanation": "1/2 + 1/3 + 1/4 = (6 + 4 + 3) / 12 = 13/12."
+      },
+      {
+        "input": "['2/3', '1/9', '1/3']",
+        "output": "'1/1'",
+        "explanation": "2/3 + 1/9 + 1/3 = (6 + 1 + 3) / 9 = 10/9 = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Find a common denominator to perform addition or subtraction.",
+      "Simplify the fraction by dividing by the greatest common divisor (GCD).",
+      "Handle improper fractions by separating whole parts from the fractional part."
+    ],
+    "company": "Zopsmart"
+  },
+  {
+    "question_id": "",
+    "title": "Remove K Digits",
+    "description": "Given a non-negative integer represented as a string num, and an integer k, return the smallest possible number after removing k digits from num. If the result is empty, return '0'.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Stack",
+      "Greedy"
+    ],
+    "input_format": "A string num representing a non-negative integer and an integer k (0 <= k <= num.length).",
+    "output_format": "A string representing the smallest possible number after removing k digits.",
+    "constraints": [
+      "1 <= num.length <= 10^5",
+      "num consists of only digits."
+    ],
+    "examples": [
+      {
+        "input": "num = '1432219', k = 3",
+        "output": "1219",
+        "explanation": "After removing '4', '3', and '2', the smallest number we can obtain is '1219'."
+      },
+      {
+        "input": "num = '10200', k = 1",
+        "output": "200",
+        "explanation": "After removing '1', the smallest number we can obtain is '200'."
+      },
+      {
+        "input": "num = '10', k = 2",
+        "output": "0",
+        "explanation": "After removing both digits, no digits remain, and we return '0'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to keep track of the digits.",
+      "Remove digits greedily to maintain the smallest order."
+    ],
+    "company": "Zopsmart"
+  },
+  {
+    "question_id": "",
+    "title": "Bulls and Cows",
+    "description": "You are given two strings: secret and guess, where 'secret' is the target number that is to be guessed and 'guess' is the number that you have guessed. Each character in the strings represents a digit in the number. Your task is to calculate the number of 'bulls' and 'cows' in your guess. 'Bulls' are the digits that are in the correct position, while 'cows' are the digits that are correct but in the wrong position. Return the result in the format 'xAyB', where x is the number of bulls and y is the number of cows.",
+    "topic": "String",
+    "subtopic": "Counting",
+    "tags": [
+      "String",
+      "Hashmap",
+      "Counting"
+    ],
+    "input_format": "Two strings, secret and guess, each representing a 4-digit number.",
+    "output_format": "A string in the format 'xAyB', where x is the number of bulls and y is the number of cows.",
+    "constraints": [
+      "The length of both secret and guess will be exactly 4.",
+      "Both strings contain only digits."
+    ],
+    "examples": [
+      {
+        "input": "secret = '1234', guess = '1324'",
+        "output": "2A2B",
+        "explanation": "2 bulls (1 and 2 are in the correct positions) and 2 cows (3 and 4 are both present but in the wrong positions)."
+      },
+      {
+        "input": "secret = '1234', guess = '5678'",
+        "output": "0A0B",
+        "explanation": "No bulls and no cows since there are no matching digits."
+      },
+      {
+        "input": "secret = '1122', guess = '2211'",
+        "output": "0A4B",
+        "explanation": "No bulls and 4 cows since all digits are present but in wrong positions."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to store the counts of each digit.",
+      "Carefully account for bulls before counting cows."
+    ],
+    "company": "Zopsmart"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once. Return the grouped anagrams as a list of lists, where each sublist contains anagrams.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Sorting"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of lists, where each sublist contains grouped anagrams.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "strs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The strings can be grouped into 3 groups of anagrams."
+      },
+      {
+        "input": "strs = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "A single empty string is an anagram of itself."
+      },
+      {
+        "input": "strs = [\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "A single character string is also an anagram of itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sorting mechanism to identify anagrams.",
+      "A hashmap can be useful to group strings by their sorted form."
+    ],
+    "company": "Zopsmart"
+  },
+  {
+    "question_id": "",
+    "title": "Container With Most Water",
+    "description": "Given n non-negative integers a1, a2, ..., an where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with the x-axis forms a container, such that the container contains the most water. Note that you may not slant the container.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Greedy"
+    ],
+    "input_format": "An array of non-negative integers height representing the height of lines.",
+    "output_format": "An integer representing the maximum amount of water that can be contained.",
+    "constraints": [
+      "2 <= height.length <= 10^5",
+      "0 <= height[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "height = [1,8,6,2,5,4,8,3,7]",
+        "output": "49",
+        "explanation": "The lines at index 1 and index 8 provide the maximum area, which is 7 (width) * 7 (height) = 49."
+      },
+      {
+        "input": "height = [1,1]",
+        "output": "1",
+        "explanation": "The only container is between the two lines given, which yields an area of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try to maximize the area by considering the distance between lines.",
+      "Use a two-pointer approach to traverse the height array."
+    ],
+    "company": "Zopsmart"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Words in a String",
+    "description": "Given a string s, you need to reverse the order of the words in the string. A word is defined as a sequence of non-space characters. The words in the input string are separated by one or more spaces. The resulting string should not have leading or trailing spaces, and there should be exactly one space between words.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Reversal"
+    ],
+    "input_format": "A single string s, where 1 <= s.length <= 10^5.",
+    "output_format": "A string that represents the words in the reversed order.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "s consists of English letters, digits, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = 'The sky is blue'",
+        "output": "'blue is sky The'",
+        "explanation": "The words 'The', 'sky', 'is', and 'blue' are in reverse order."
+      },
+      {
+        "input": "s = '  hello world  '",
+        "output": "'world hello'",
+        "explanation": "Leading and trailing spaces are removed. The words 'hello' and 'world' are reversed."
+      },
+      {
+        "input": "s = '  a good   example  '",
+        "output": "'example good a'",
+        "explanation": "Extra spaces between words are reduced to a single space and the words are reversed."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Trim the input string to remove leading and trailing spaces.",
+      "Split the string by spaces to get the words.",
+      "Join the words in reverse order."
+    ],
+    "company": "Zopsmart"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array where the ith element is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Buy and Sell Stock",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices where prices[i] is the price of a given stock on the ith day.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6). The profit is 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate the profit at each step and keep track of the maximum profit."
+    ],
+    "company": "Zopsmart"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an array of integers, nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of lists of triplets that sum up to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "There are no triplets in an empty array."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "No triplet can sum to zero from the given numbers."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the array to help avoid duplicates.",
+      "Use two pointers to find pairs that sum to a target."
+    ],
+    "company": "Zopsmart"
+  },
+  {
+    "question_id": "",
+    "title": "Add Two Numbers",
+    "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return it as a linked list. You may assume the two numbers do not contain any leading zeros, except the number 0 itself.",
+    "topic": "Linked List",
+    "subtopic": "Adding Numbers",
+    "tags": [
+      "Linked List",
+      "Math",
+      "Two Pointers"
+    ],
+    "input_format": "The input consists of two linked lists, l1 and l2, which represent the two numbers.",
+    "output_format": "The output will be a linked list representing the sum of the two numbers.",
+    "constraints": [
+      "The number of nodes in each linked list is in the range [1, 100].",
+      "0 <= Node.val <= 9",
+      "It is guaranteed that the input lists are non-empty."
+    ],
+    "examples": [
+      {
+        "input": "l1 = [2, 4, 3], l2 = [5, 6, 4]",
+        "output": "[7, 0, 8]",
+        "explanation": "342 + 465 = 807, which is represented in reverse order as [7, 0, 8]."
+      },
+      {
+        "input": "l1 = [0], l2 = [0]",
+        "output": "[0]",
+        "explanation": "0 + 0 = 0, which is represented as a single node list [0]."
+      },
+      {
+        "input": "l1 = [9, 9, 9, 9, 9, 9, 9], l2 = [9, 9, 9, 9]",
+        "output": "[8, 9, 9, 9, 0, 0, 1]",
+        "explanation": "9999999 + 9999 = 10009998, which is represented in reverse order as [8, 9, 9, 9, 0, 0, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a carry variable for summation.",
+      "Iterate through both linked lists until you reach the end of both."
+    ],
+    "company": "Zopsmart"
+  },
+  {
+    "question_id": "",
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters. \n\nExample mapping:\n2 -> 'abc'\n3 -> 'def'\n4 -> 'ghi'\n5 -> 'jkl'\n6 -> 'mno'\n7 -> 'pqrs'\n8 -> 'tuv'\n9 -> 'wxyz'\n\nThe output can be returned in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Search",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Combination"
+    ],
+    "input_format": "A string digits (1 <= digits.length <= 4) where each digit is between '2' and '9'.",
+    "output_format": "A list of all possible letter combinations.",
+    "constraints": [
+      "1 <= digits.length <= 4",
+      "digits[i] is a digit from '2' to '9'."
+    ],
+    "examples": [
+      {
+        "input": "digits = '23'",
+        "output": "[\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]",
+        "explanation": "The digit '2' maps to ['a', 'b', 'c'] and '3' maps to ['d', 'e', 'f']. Combinations are formed from these letters."
+      },
+      {
+        "input": "digits = '2'",
+        "output": "[\"a\", \"b\", \"c\"]",
+        "explanation": "For a single digit '2', the combinations are simply the letters it maps to."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a backtracking approach.",
+      "Think of how to map the letters for each digit.",
+      "Use a recursive function to build combinations."
+    ],
+    "company": "Zopsmart"
+  }
+]

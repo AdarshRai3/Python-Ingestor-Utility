@@ -1,0 +1,121 @@
+[
+  {
+    "question_id": "",
+    "title": "Maximize the Number of Partitions After Operations",
+    "description": "You are given an array of integers nums. You can perform operations to partition the array at any position. Each operation splits the array into two parts. Your goal is to maximize the number of partitions such that the sum of the integers in each partition is equal. Determine the maximum number of valid partitions you can create after performing the operations.",
+    "topic": "Array",
+    "subtopic": "Partitioning",
+    "tags": [
+      "Array",
+      "Partitioning",
+      "Greedy"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum number of valid partitions.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 3, 2, 1]",
+        "output": "3",
+        "explanation": "You can partition the array into [1, 2], [3], [3, 2, 1]. Each partition sums to 3."
+      },
+      {
+        "input": "nums = [1, 1, 1, 1, 1]",
+        "output": "5",
+        "explanation": "Every single element can be its own partition since they all sum to 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the total sum of the array and how it can be divided.",
+      "Use prefix sums to track the current sum while iterating."
+    ],
+    "company": "HiLabs"
+  },
+  {
+    "question_id": "",
+    "title": "Water Bottles",
+    "description": "You have a certain number of water bottles, and each bottle has a specific capacity. Each time you fill a bottle, you can only fill it to its full capacity. Your task is to determine how many total water bottles you can fully fill given a starting amount of water and how much water each bottle can hold. If you fill a bottle, you can then refill it from your water supply until the supply is exhausted. Return the total number of bottle fills you can achieve.",
+    "topic": "Greedy",
+    "subtopic": "Simulation",
+    "tags": [
+      "Greedy",
+      "Simulation",
+      "Water Bottles"
+    ],
+    "input_format": "An integer amount representing the starting amount of water, followed by a list of integers capacities representing the capacity of each bottle.",
+    "output_format": "An integer representing the total number of times you were able to fill the bottles completely.",
+    "constraints": [
+      "1 <= amount <= 10^6",
+      "1 <= capacities.length <= 100",
+      "1 <= capacities[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "amount = 20, capacities = [5, 7, 2]",
+        "output": "6",
+        "explanation": "You can fill the 5-capacity bottle four times (20 -> 15 -> 10 -> 5 -> 0), then fill the 7-capacity bottle two times (0 + 5 = 5; 5 -> 0), resulting in a total of 6 fills."
+      },
+      {
+        "input": "amount = 10, capacities = [3, 4, 5]",
+        "output": "3",
+        "explanation": "You fill the 5-capacity bottle twice (10 -> 5 -> 0), and then fill the 3-capacity bottle once (0 + 3 = 3; 3 -> 0), summing up to a total of 3 fills."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how many times you can fill each bottle based on its capacity.",
+      "Keep track of the total amount of water after each fill."
+    ],
+    "company": "HiLabs"
+  },
+  {
+    "question_id": "",
+    "title": "Parsing A Boolean Expression",
+    "description": "You're tasked with parsing a boolean expression represented as a string consisting of characters 'T' (true), 'F' (false), '&' (and), '|' (or), and '!' (not). You must evaluate whether the boolean expression evaluates to true or false. The expression will be well-formed, meaning that for every operator there will be sufficient operands. Implement a function that takes the boolean expression and returns the result of the evaluation.",
+    "topic": "String",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Boolean Expression",
+      "Stack"
+    ],
+    "input_format": "A string expression containing characters 'T', 'F', '&', '|', and '!' representing the boolean expression.",
+    "output_format": "A boolean value indicating whether the expression evaluates to true ('T') or false ('F').",
+    "constraints": [
+      "1 <= expression.length <= 1000",
+      "The expression will not have any spaces."
+    ],
+    "examples": [
+      {
+        "input": "expression = 'T|F'",
+        "output": "T",
+        "explanation": "The expression evaluates to true because T or F is T."
+      },
+      {
+        "input": "expression = 'T&F'",
+        "output": "F",
+        "explanation": "The expression evaluates to false because T and F is F."
+      },
+      {
+        "input": "expression = '!T|F'",
+        "output": "F",
+        "explanation": "The expression evaluates to false because not T is F, and F or F is F."
+      },
+      {
+        "input": "expression = '!(T&F)'",
+        "output": "T",
+        "explanation": "The expression evaluates to true because T and F is F, and not F is T."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to manage the operators and operands.",
+      "Pay attention to the precedence of operators while evaluating."
+    ],
+    "company": "HiLabs"
+  }
+]

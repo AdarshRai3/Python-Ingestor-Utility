@@ -1,0 +1,254 @@
+[
+  {
+    "question_id": "",
+    "title": "Complement of Base 10 Integer",
+    "description": "Given a base 10 integer n, return its complement. The complement of a number is obtained by flipping all of its bits in binary representation. For example, the complement of the binary number 0101 is 1010, which is 10 in base 10.",
+    "topic": "Bit Manipulation",
+    "subtopic": "Complement",
+    "tags": [
+      "Bit Manipulation",
+      "Complement",
+      "Binary"
+    ],
+    "input_format": "An integer n (0 <= n < 10^9).",
+    "output_format": "An integer representing the complement of n.",
+    "constraints": [
+      "0 <= n < 10^9"
+    ],
+    "examples": [
+      {
+        "input": "n = 5",
+        "output": "2",
+        "explanation": "The binary representation of 5 is 101. Flipping the bits gives 010, which is 2."
+      },
+      {
+        "input": "n = 1",
+        "output": "0",
+        "explanation": "The binary representation of 1 is 1. Flipping the bit gives 0."
+      },
+      {
+        "input": "n = 10",
+        "output": "5",
+        "explanation": "The binary representation of 10 is 1010. Flipping the bits gives 0101, which is 5."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider how to find the bit length of n.",
+      "You can create a mask of all 1's for n's bit length."
+    ],
+    "company": "Cloudera"
+  },
+  {
+    "question_id": "",
+    "title": "Number Complement",
+    "description": "Given a positive integer num, output its complement number. The complement strategy is to flip the bits of its binary representation. For example, the complement of 5, which is '101' in binary, is '010' which is 2 in decimal.",
+    "topic": "Bit Manipulation",
+    "subtopic": "Bitwise Operations",
+    "tags": [
+      "Bit Manipulation",
+      "Complement",
+      "Binary"
+    ],
+    "input_format": "A single positive integer num.",
+    "output_format": "A single integer representing the complement of the input number.",
+    "constraints": [
+      "1 <= num <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "num = 5",
+        "output": "2",
+        "explanation": "The binary representation of 5 is '101'. Flipping the bits gives '010', which is 2 in decimal."
+      },
+      {
+        "input": "num = 1",
+        "output": "0",
+        "explanation": "The binary representation of 1 is '1'. Flipping the bit gives '0', which is 0 in decimal."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using bitwise NOT operation.",
+      "Calculate the number of bits in the binary representation of the number."
+    ],
+    "company": "Cloudera"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "Given an array prices where prices[i] is the price of a given stock on the i-th day, return the maximum profit you can achieve from this transaction. You may complete at most one transaction (i.e., buy one and sell one share of the stock). Note that you cannot sell a stock before you buy it.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the stock prices.",
+    "output_format": "An integer representing the maximum profit you can achieve.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price observed so far.",
+      "Calculate potential profit on each day and update the maximum profit accordingly."
+    ],
+    "company": "Cloudera"
+  },
+  {
+    "question_id": "",
+    "title": "Cheapest Flights Within K Stops",
+    "description": "Given an array of flights where flights[i] = [from_i, to_i, price_i], find the cheapest price to travel from the source city to the destination city within at most K stops. If there is no such route, return -1. You can assume all cities are different, and there will be no duplicates in the input list.",
+    "topic": "Graph",
+    "subtopic": "Shortest Path",
+    "tags": [
+      "Graph",
+      "Dijkstra's Algorithm",
+      "Dynamic Programming"
+    ],
+    "input_format": "An integer n representing the number of cities, an array of flights, where flights[i] = [from_i, to_i, price_i], and two integers src and dst along with an integer K.",
+    "output_format": "An integer representing the cheapest price to travel from src to dst with at most K stops.",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= flights.length <= 600",
+      "flights[i].length == 3",
+      "0 <= from_i, to_i < n",
+      "1 <= price_i <= 10^4",
+      "0 <= K <= n - 1"
+    ],
+    "examples": [
+      {
+        "input": {
+          "n": 4,
+          "flights": [
+            [
+              0,
+              1,
+              100
+            ],
+            [
+              1,
+              2,
+              100
+            ],
+            [
+              2,
+              0,
+              100
+            ],
+            [
+              1,
+              3,
+              600
+            ],
+            [
+              2,
+              3,
+              200
+            ]
+          ],
+          "src": 0,
+          "dst": 3,
+          "K": 1
+        },
+        "output": "Inf",
+        "explanation": "The only route from 0 to 3 is through 1 (with a price of 600), but within 1 stop, you cannot reach 3."
+      },
+      {
+        "input": {
+          "n": 4,
+          "flights": [
+            [
+              0,
+              1,
+              100
+            ],
+            [
+              0,
+              2,
+              500
+            ],
+            [
+              1,
+              2,
+              100
+            ],
+            [
+              1,
+              3,
+              600
+            ],
+            [
+              2,
+              3,
+              200
+            ]
+          ],
+          "src": 0,
+          "dst": 3,
+          "K": 2
+        },
+        "output": "700",
+        "explanation": "The cheapest route within 2 stops is 0 -> 1 -> 2 -> 3 with a total price of 100 + 100 + 200 = 700."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a priority queue for efficient shortest path search.",
+      "Remember that you can visit a city multiple times, but keep track of the number of stops."
+    ],
+    "company": "Cloudera"
+  },
+  {
+    "question_id": "",
+    "title": "Lexicographically Smallest Equivalent String",
+    "description": "Given two strings, `s1` and `s2`, and a third string `baseStr`, determine the lexicographically smallest equivalent string of `baseStr` using the relationship defined by `s1` and `s2`. Each character in `s1` corresponds to the character in the same position in `s2`. The characters in `s1` and `s2` can be used interchangeably in forming equivalent strings. If a character in `baseStr` can be substituted, replace it with the lexicographically smallest option available from `s1` or `s2` characters that correspond to it. If a character has no correspondence, keep it unchanged.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Union-Find"
+    ],
+    "input_format": "Three strings, s1, s2, and baseStr, where 1 <= s1.length, s2.length, baseStr.length <= 100.",
+    "output_format": "A string representing the lexicographically smallest equivalent string of baseStr.",
+    "constraints": [
+      "s1 and s2 will have the same length.",
+      "s1 and s2 will contain lowercase English letters.",
+      "baseStr will also contain only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s1 = \"parker\", s2 = \"morris\", baseStr = \"parser\"",
+        "output": "morris",
+        "explanation": "The `p` in `parser` can be replaced by `m`, the `r` by `r`, and the `s` by `s`, hence the result is `morris`."
+      },
+      {
+        "input": "s1 = \"hello\", s2 = \"world\", baseStr = \"hold\"",
+        "output": "hord",
+        "explanation": "Substituting `h` with `h`, `o` with `o`, `l` with `r` and keeping `d`, we get `hord`."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a union-find structure to manage the equivalences.",
+      "You may need to sort the groups of equivalent characters."
+    ],
+    "company": "Cloudera"
+  }
+]

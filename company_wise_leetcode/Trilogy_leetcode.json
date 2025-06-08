@@ -1,0 +1,226 @@
+[
+  {
+    "question_id": "",
+    "title": "Substring XOR Queries",
+    "description": "You are given a string 's' which consists only of characters '0' and '1'. You need to perform a series of substring XOR queries on 's'. Each query consists of two integers, 'l' and 'r', which represent the starting and ending indices of the substring (inclusive) you need to consider. Your task is to return the XOR of all binary numbers represented by the substrings between indices 'l' and 'r' (inclusive).",
+    "topic": "String",
+    "subtopic": "Binary Manipulation",
+    "tags": [
+      "String",
+      "XOR",
+      "Binary",
+      "Queries"
+    ],
+    "input_format": "A binary string s and a list of queries, where each query is a list of two integers [l, r].",
+    "output_format": "An array of integers representing the results of each query.",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "0 <= l <= r < s.length",
+      "0 <= number of queries <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": {
+          "s": "101",
+          "queries": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "output": [
+          1,
+          1
+        ],
+        "explanation": "For the query [0, 1], substring is '10' which is 2 in decimal (2 % 2 = 0), XOR = 1. For query [1, 2], substring is '01' which is 1 in decimal (1 % 2 = 1)."
+      },
+      {
+        "input": {
+          "s": "111",
+          "queries": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        "output": [
+          0,
+          1
+        ],
+        "explanation": "For the query [0, 2], the substring is '111' which is 7 in decimal (7 % 2 = 0). For query [0, 1], substring is '11' which is 3 in decimal (3 % 2 = 1)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using an XOR prefix array to optimize query results.",
+      "Remember that XORing a number with itself results in 0.",
+      "Pay attention to the binary representation of your substrings."
+    ],
+    "company": "Trilogy"
+  },
+  {
+    "question_id": "",
+    "title": "Handling Sum Queries After Update",
+    "description": "You are given an array of integers and a series of update queries. Each query will update a specific index in the array. After each update, you need to handle sum queries that ask for the sum of elements within a specific range of indices. Implement a data structure that can efficiently perform updates and sum queries.",
+    "topic": "Data Structures",
+    "subtopic": "Segment Tree",
+    "tags": [
+      "Data Structure",
+      "Segment Tree",
+      "Range Queries",
+      "Update"
+    ],
+    "input_format": "An array of integers `nums`, followed by an integer `q` representing the number of queries. Each query consists of an operation type: 'update' or 'sum', where 'update' has a format of (index, value) and 'sum' has a format of (left, right).",
+    "output_format": "For each 'sum' query, return the sum of the elements in the specified range as an integer.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^5 <= nums[i] <= 10^5",
+      "1 <= q <= 10^5",
+      "0 <= index < nums.length, 0 <= left <= right < nums.length"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 3, 5], queries = [['sum', 0, 2], ['update', 1, 2], ['sum', 0, 2]]",
+        "output": "[9, 8]",
+        "explanation": "The first sum query returns 9 (1 + 3 + 5). After updating index 1 to value 2, the array becomes [1, 2, 5]. The second sum query returns 8 (1 + 2 + 5)."
+      },
+      {
+        "input": "nums = [7, 7, 7], queries = [['update', 2, 10], ['sum', 0, 2]]",
+        "output": "[24]",
+        "explanation": "After the update, the array becomes [7, 7, 10]. The sum query returns 24 (7 + 7 + 10)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a Segment Tree for efficient range queries and updates.",
+      "Keep track of the sum of segments in the Segment Tree nodes."
+    ],
+    "company": "Trilogy"
+  },
+  {
+    "question_id": "",
+    "title": "Bitwise XOR of All Pairings",
+    "description": "Given an array of integers, calculate the bitwise XOR for all possible pairings of elements. A pairing consists of two elements selected from the array, and the XOR result of each pairing should be returned as an array of integers. The output must contain the XOR results for each unique pairing, and the order of results should match the order of pairings in a nested list format: [[firstPairingResult], [secondPairingResult], ...].",
+    "topic": "Bit Manipulation",
+    "subtopic": "XOR Operations",
+    "tags": [
+      "Bit Manipulation",
+      "XOR",
+      "Pairing"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An array of arrays, where each inner array consists of the XOR result for a unique pairing.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "-10^4 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[[3], [1], [2]]",
+        "explanation": "The pairings are (1,2), (1,3), and (2,3) producing the results (1 XOR 2 = 3), (1 XOR 3 = 2), and (2 XOR 3 = 1) respectively."
+      },
+      {
+        "input": "nums = [5, 7, 9]",
+        "output": "[[2], [14], [8]]",
+        "explanation": "The pairings are (5,7), (5,9), and (7,9) producing the results (5 XOR 7 = 2), (5 XOR 9 = 12), and (7 XOR 9 = 14) respectively."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use nested loops to access all possible pairings.",
+      "Remember the property of XOR: A XOR A = 0 and A XOR 0 = A."
+    ],
+    "company": "Trilogy"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Time to Kill All Monsters",
+    "description": "You are given a list of monsters, each represented with a health value. You can kill any monster by using a weapon that inflicts a specific amount of damage. However, the weapon's damage has a cooldown period, meaning you can only use it after a certain number of turns. Your task is to determine the minimum time it takes to kill all monsters. You need to account for the cooldown period of your weapon when calculating the total time required.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Minimum Time"
+    ],
+    "input_format": "A list of integers `health` representing the health values of the monsters and an integer `damage` representing weapon damage, and an integer `cooldown` representing the cooldown time in turns.",
+    "output_format": "An integer representing the minimum time required to kill all monsters.",
+    "constraints": [
+      "1 <= health.length <= 10^5",
+      "1 <= health[i] <= 10^4",
+      "1 <= damage <= 100",
+      "1 <= cooldown <= 10"
+    ],
+    "examples": [
+      {
+        "input": "health = [10, 20, 30], damage = 10, cooldown = 1",
+        "output": "6",
+        "explanation": "The minimum time to kill all monsters: Turn 1 kills the first monster, Turn 2 kills the second monster, then there's a cooldown, Turn 5 kills the third monster."
+      },
+      {
+        "input": "health = [50, 10, 30], damage = 25, cooldown = 2",
+        "output": "7",
+        "explanation": "Kill the first monster on Turn 1 and Turn 2, then cooldown activates. Use Turn 5 and 6 to kill the remaining monsters."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a priority queue to efficiently manage which monster to attack next.",
+      "Think about how the cooldown impacts your strategy based on the damages."
+    ],
+    "company": "Trilogy"
+  },
+  {
+    "question_id": "",
+    "title": "Distinct Subsequences",
+    "description": "Given two strings s and t, return the number of distinct subsequences of s which equals t. A subsequence of a string is a new string formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., 'ACE' is a subsequence of 'ABCDE' while 'AEC' is not).",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Matching",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Subsequence"
+    ],
+    "input_format": "Two strings s and t, where 0 <= |s|, |t| <= 1000.",
+    "output_format": "An integer representing the number of distinct subsequences of s that equals t.",
+    "constraints": [
+      "0 <= |s|, |t| <= 1000",
+      "All characters of s and t are lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'rabbbit', t = 'rabbit'",
+        "output": "3",
+        "explanation": "'rabbbit' has 3 distinct subsequences which equal 'rabbit': 'ra_b_b_bit', 'ra_b_b_b_it', and 'rab_bit'."
+      },
+      {
+        "input": "s = 'abc', t = 'abc'",
+        "output": "1",
+        "explanation": "The only distinct subsequence of 'abc' that equals 'abc' is 'abc' itself."
+      },
+      {
+        "input": "s = 'a', t = 'aa'",
+        "output": "0",
+        "explanation": "'a' has no distinct subsequences that equal 'aa'."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a dynamic programming approach.",
+      "Use a table to store intermediate results.",
+      "Think about how to build up the solution using previous results."
+    ],
+    "company": "Trilogy"
+  }
+]

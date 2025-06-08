@@ -1,0 +1,249 @@
+[
+  {
+    "question_id": "",
+    "title": "Keys and Rooms",
+    "description": "There are N rooms and you start in room 0. Each room has a list of keys, where keys[i] is a list of the keys that can be found in room i. Initially, all the rooms are locked except for room 0. You can access a room if you have a key for it. Your task is to determine if you can visit all the rooms starting from room 0.",
+    "topic": "Graph",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Backtracking"
+    ],
+    "input_format": "A list of lists of integers, representing the keys in each room.",
+    "output_format": "A boolean value indicating whether all rooms can be visited.",
+    "constraints": [
+      "1 <= rooms.length <= 100",
+      "0 <= rooms[i].length <= 100",
+      "0 <= rooms[i][j] < rooms.length"
+    ],
+    "examples": [
+      {
+        "input": "rooms = [[1], [2], [3], []]",
+        "output": "true",
+        "explanation": "You can visit all rooms by going from room 0 to room 1, then to room 2, and finally to room 3."
+      },
+      {
+        "input": "rooms = [[1,3], [3,0,1], [2], [0]]",
+        "output": "false",
+        "explanation": "You can access rooms 0 and 1, but cannot reach room 2."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using Depth-First Search or Breadth-First Search to traverse the rooms.",
+      "Track which rooms have been visited to avoid cycles."
+    ],
+    "company": "Graviton"
+  },
+  {
+    "question_id": "",
+    "title": "Course Schedule",
+    "description": "You are given a total of n courses labeled from 0 to n-1. Some courses may have prerequisites, forming a directed graph. You should determine if it is possible for a student to take all courses given the prerequisites. You can assume that there are no cycles in the prerequisites. Return true if it is possible to finish all courses, otherwise return false.",
+    "topic": "Graph",
+    "subtopic": "Topological Sorting",
+    "tags": [
+      "Graph",
+      "Topological Sorting",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "An integer n representing the number of courses and a list of pairs prerequisites, where each pair [a, b] indicates that course a is a prerequisite of course b.",
+    "output_format": "A boolean value indicating whether all courses can be finished.",
+    "constraints": [
+      "1 <= n <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i].length == 2",
+      "0 <= prerequisites[i][0], prerequisites[i][1] < n",
+      "prerequisites[i][0] != prerequisites[i][1]"
+    ],
+    "examples": [
+      {
+        "input": "n = 2, prerequisites = [[1, 0]]",
+        "output": "true",
+        "explanation": "Course 0 must be completed before course 1, and both can be completed."
+      },
+      {
+        "input": "n = 2, prerequisites = [[1, 0], [0, 1]]",
+        "output": "false",
+        "explanation": "Course 0 must be completed before course 1, and course 1 must be completed before course 0, forming a cycle."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use DFS or BFS to detect cycles in directed graphs.",
+      "Maintain an in-degree array to track prerequisites."
+    ],
+    "company": "Graviton"
+  },
+  {
+    "question_id": "",
+    "title": "Largest Number",
+    "description": "Given a list of non-negative integers, arrange them such that they form the largest possible number. The result should be returned as a string. For example, for the input [3, 30, 34, 5, 9], the largest number formed is '9534330'.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "String"
+    ],
+    "input_format": "An array of non-negative integers nums.",
+    "output_format": "A string representing the largest number that can be formed.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "0 <= nums[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "nums = [3, 30, 34, 5, 9]",
+        "output": "9534330",
+        "explanation": "The largest number formed is from arranging the numbers as 9, 5, 34, 3, 30."
+      },
+      {
+        "input": "nums = [10, 2]",
+        "output": "210",
+        "explanation": "The largest number formed is from arranging the numbers as 2 and 10."
+      },
+      {
+        "input": "nums = [1]",
+        "output": "1",
+        "explanation": "The largest number formed is just 1."
+      },
+      {
+        "input": "nums = [0, 0]",
+        "output": "0",
+        "explanation": "The largest number formed is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how to compare two numbers when forming larger combinations.",
+      "Think about using a custom sorting strategy."
+    ],
+    "company": "Graviton"
+  },
+  {
+    "question_id": "",
+    "title": "Decode Ways",
+    "description": "A message containing letters from A-Z can be encoded into numbers using the following mapping: 'A' -> 1, 'B' -> 2, ..., 'Z' -> 26. Given a string s consisting of digits, return the total number of ways to decode it. For example, given the string '12', it can be decoded as 'AB' (1 2) or 'L' (12). So the output should be 2.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Decoding",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Recursion"
+    ],
+    "input_format": "A string s, consisting of digits (1-9).",
+    "output_format": "An integer representing the total number of ways to decode the string.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s[i] != '0'"
+    ],
+    "examples": [
+      {
+        "input": "s = '12'",
+        "output": "2",
+        "explanation": "The string '12' can be decoded as 'AB' (1 2) or 'L' (12)."
+      },
+      {
+        "input": "s = '226'",
+        "output": "3",
+        "explanation": "The string '226' can be decoded as 'BBF' (2 2 6), 'BZ' (2 26), or 'VF' (22 6)."
+      },
+      {
+        "input": "s = '06'",
+        "output": "0",
+        "explanation": "'06' cannot be decoded because '0' does not map to any letter."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider dynamic programming to solve subproblems.",
+      "You can keep track of ways to decode up to each digit."
+    ],
+    "company": "Graviton"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Cameras",
+    "description": "Given a binary tree, you need to place cameras on some nodes of the tree such that every node is monitored. A camera placed on a node can monitor its parent, itself, and its immediate children. The goal is to minimize the number of cameras used to monitor the entire tree. You have to return the minimum number of cameras required to monitor all nodes of the binary tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Greedy"
+    ],
+    "input_format": "The input consists of the root node of the binary tree.",
+    "output_format": "An integer representing the minimum number of cameras needed to monitor all nodes.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 1000].",
+      "Node values are unique."
+    ],
+    "examples": [
+      {
+        "input": "TreeNode(0, TreeNode(0), TreeNode(0))",
+        "output": "1",
+        "explanation": "Place a camera on the root node to monitor all nodes."
+      },
+      {
+        "input": "TreeNode(0, TreeNode(0, TreeNode(0)), TreeNode(0))",
+        "output": "2",
+        "explanation": "Place cameras at the root and one of the children to monitor all nodes."
+      },
+      {
+        "input": "TreeNode(0, TreeNode(0, TreeNode(0), TreeNode(0)), TreeNode(0, null, TreeNode(0)))",
+        "output": "2",
+        "explanation": "Cameras can be placed on two different nodes to monitor the entire tree."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using Depth-First Search (DFS) to traverse the tree.",
+      "Think about the state of each node: whether it has a camera, is monitored, or is not monitored."
+    ],
+    "company": "Graviton"
+  },
+  {
+    "question_id": "",
+    "title": "Collect Coins in a Tree",
+    "description": "You are given a binary tree where each node contains a certain number of coins. Your task is to collect the maximum number of coins possible by starting from the root of the tree and traveling to any leaf node. However, you are only allowed to move to the left or right child nodes. Additionally, collecting coins from the nodes incurs a cost of moving to child nodes, which is defined as the number of coins present in the parent node. The final score is calculated by subtracting the total moving cost from the total coins collected. You need to return the maximum score at any leaf node.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Dynamic Programming",
+      "Depth First Search"
+    ],
+    "input_format": "The input will consist of the root of the binary tree represented by a TreeNode class, where each node contains an integer value representing the coins at that node.",
+    "output_format": "An integer representing the maximum score of coins that can be collected when reaching any leaf node.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 10^4]",
+      "0 <= node.val <= 100"
+    ],
+    "examples": [
+      {
+        "input": "Input: root = [5,2,1,3,4];",
+        "output": "8",
+        "explanation": "Collect 5 coins from root, cost 0. Move to left child (2), collect 2 coins, cost 5. Move to right child (3), collect 3 coins, total = 5 + 2 + 3 - 5 = 5. Alternatively, collect from 4, total = 5 + 4 - 2 = 7."
+      },
+      {
+        "input": "Input: root = [1];",
+        "output": "1",
+        "explanation": "Only one node with 1 coin, maximum score is 1."
+      },
+      {
+        "input": "Input: root = [0,0,0];",
+        "output": "0",
+        "explanation": "All nodes have 0 coins, thus the maximum score is also 0."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use Depth-First Search (DFS) to traverse the tree.",
+      "Calculate cumulative coins collected and moving costs dynamically.",
+      "Consider using memoization to avoid recalculating scores at the same node."
+    ],
+    "company": "Graviton"
+  }
+]

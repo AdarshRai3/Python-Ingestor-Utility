@@ -1,0 +1,916 @@
+[
+  {
+    "question_id": "",
+    "title": "Cycle Length Queries in a Tree",
+    "description": "You are given a tree represented as an array of edges. Each edge connects two nodes. Implement a function that will receive several queries, and for each query, determine the length of the unique cycle that can be formed by taking the path between two nodes in the tree and connecting them back with an edge. The cycle length is defined as the number of edges in the path multiplied by two.",
+    "topic": "Graph",
+    "subtopic": "Tree",
+    "tags": [
+      "Graph",
+      "Tree",
+      "Cycle Length",
+      "Queries"
+    ],
+    "input_format": "An array of edges representing the tree, and an array of queries where each query consists of two integers representing node indices.",
+    "output_format": "An array of integers representing the cycle lengths for each query.",
+    "constraints": [
+      "1 <= edges.length <= 10^5",
+      "1 <= queries.length <= 10^5",
+      "0 <= edges[i][0], edges[i][1] < n",
+      "1 <= n <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": {
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "queries": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        "output": [
+          4,
+          4,
+          4
+        ],
+        "explanation": "The path from 0 to 2 is 0 -> 1 -> 2 which has length 2, thus 2 * 2 = 4. Similarly, for 0 to 3 and 2 to 3."
+      },
+      {
+        "input": {
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "queries": [
+            [
+              1,
+              4
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "output": [
+          6,
+          8
+        ],
+        "explanation": "The path from 1 to 4 is 1 -> 2 -> 4 (length 3) and 3 to 0 is 3 -> 2 -> 1 -> 0 (length 4), thus respective cycle lengths are 3 * 2 = 6, and 4 * 2 = 8."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using DFS or BFS to find the path lengths.",
+      "Storing parent nodes can help in reconstructing paths."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Length of Subarray With Positive Product",
+    "description": "Given an integer array nums, you need to find the length of the longest subarray that has a positive product. A subarray is defined as a contiguous part of the array. Your task is to return the maximum length of such subarray. If there are no subarrays with positive product, return 0.",
+    "topic": "Array",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "Array",
+      "Sliding Window",
+      "Product"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum length of subarray with a positive product.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, -2, -3, 4]",
+        "output": "4",
+        "explanation": "The entire array has a positive product, hence the maximum length is 4."
+      },
+      {
+        "input": "nums = [0, 1, -2, -3, -4]",
+        "output": "3",
+        "explanation": "The subarray [1, -2, -3] has a product of 6 (positive), hence the maximum length is 3."
+      },
+      {
+        "input": "nums = [-1, -2, -3, 0, 60]",
+        "output": "2",
+        "explanation": "The subarray [-2, -3] has a product of 6 (positive), hence the maximum length is 2."
+      },
+      {
+        "input": "nums = [-1, -1, -1, -1]",
+        "output": "0",
+        "explanation": "All products will be negative and hence there are no subarrays with positive products."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Keep track of the current product and update the maximum length based on it.",
+      "Remember to reset your count when you encounter a 0.",
+      "Use the property of negative numbers: two negative numbers make a positive product."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Maximize the Confusion of an Exam",
+    "description": "In an exam with n questions, each question can either be 'correct' or 'incorrect'. You are given a string 'answers', where 'answers[i]' represents the answer to the i-th question. Your goal is to determine the maximum number of questions that can be made confusing by flipping the answers of exactly k questions, ensuring that the total number of correct answers becomes maximally unclear. A question is considered confusing if its answer does not align with the other answers. Determine how many questions can be confused maximally by changing k responses.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Greedy",
+      "Counting"
+    ],
+    "input_format": "A string answers of length n (1 <= n <= 100) and an integer k (0 <= k <= n).",
+    "output_format": "An integer representing the maximum number of confusing questions.",
+    "constraints": [
+      "1 <= answers.length <= 100",
+      "0 <= k <= answers.length"
+    ],
+    "examples": [
+      {
+        "input": "answers = \"AABBBCC\", k = 1",
+        "output": "5",
+        "explanation": "Changing one 'A' to 'B' makes the confusion maximum by giving three 'B's, and the rest 'C's, confusing 5 questions."
+      },
+      {
+        "input": "answers = \"AAABBB\", k = 2",
+        "output": "4",
+        "explanation": "Changing two 'A's to 'B's can confuse 4 questions with two of each."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about what happens when you change the answers of k questions.",
+      "Count the occurrences of each type of answer."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Count Collisions on a Road",
+    "description": "You are given a string representing a road with cars facing either left ('L'), right ('R'), or standing still ('.'). A collision will happen when cars moving in opposite directions meet each other. The task is to count the total number of collisions that occur on the road.",
+    "topic": "String",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "String",
+      "Simulation",
+      "Counting"
+    ],
+    "input_format": "A string road of length n (1 <= n <= 10^5) consisting of characters 'L', 'R', and '.' only.",
+    "output_format": "An integer representing the total number of collisions that occurred.",
+    "constraints": [
+      "1 <= road.length <= 10^5",
+      "road consists of 'L', 'R', and '.' only"
+    ],
+    "examples": [
+      {
+        "input": "road = 'RL...LR'",
+        "output": "4",
+        "explanation": "There are two pairs of cars that will collide: the 'R' and 'L' respectively. Each will result in two collisions due to the '.' in between."
+      },
+      {
+        "input": "road = 'RR.L'",
+        "output": "1",
+        "explanation": "The 'R' at the position moves towards 'L' resulting in one collision."
+      },
+      {
+        "input": "road = 'LLR...RLL'",
+        "output": "6",
+        "explanation": "Each left-moving car collides with every right-moving car leading to more collisions when they pass each other."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how cars interact as they move.",
+      "Simulate the movement and track the positions of cars."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Number of People Aware of a Secret",
+    "description": "A group of n people (numbered from 1 to n) is forming a secret. The secret is initially known only to one person (person 1). Every time a person learns the secret, they will share it with another person the next day. Given the number of days and the pairs of people sharing the secret, determine how many people are aware of the secret by the end of the given days.",
+    "topic": "Graph",
+    "subtopic": "BFS/DFS",
+    "tags": [
+      "Graph",
+      "BFS",
+      "DFS",
+      "Simulation"
+    ],
+    "input_format": "An integer n (1 <= n <= 1000), an integer m (0 <= m <= 5000), and a list of pairs of integers representing the connections between people who will share the secret.",
+    "output_format": "An integer representing the total number of people who are aware of the secret after the given days.",
+    "constraints": [
+      "1 <= n <= 1000",
+      "0 <= m <= 5000",
+      "1 <= pairs[i][0], pairs[i][1] <= n"
+    ],
+    "examples": [
+      {
+        "input": "n = 4, m = 2, pairs = [[1, 2], [1, 3]], days = 2",
+        "output": "4",
+        "explanation": "After day 1: person 1 shares the secret with persons 2 and 3. On day 2: persons 2 and 3 can share it with person 4 making all 4 people aware."
+      },
+      {
+        "input": "n = 3, m = 1, pairs = [[1, 2]], days = 1",
+        "output": "2",
+        "explanation": "After day 1: person 1 shares it only with person 2. Only persons 1 and 2 are aware by the end of day 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using BFS to simulate the sharing of the secret.",
+      "Keep track of the days and the people who have already learned the secret."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Partition Array Into Two Arrays to Minimize Sum Difference",
+    "description": "Given an array of integers, partition it into two subsets such that the difference between the sums of the subsets is minimized. Return the minimum possible difference between the sums of the two subsets.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Subset",
+      "Minimum Difference"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the minimum possible difference between the sums of the two subsets.",
+    "constraints": [
+      "1 <= nums.length <= 200",
+      "0 <= nums[i] <= 10000"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 6, 11, 5]",
+        "output": "1",
+        "explanation": "The two subsets can be [1, 5, 6] and [11]. Their sums are 12 and 11, respectively, and the difference is 1."
+      },
+      {
+        "input": "nums = [1, 2, 3, 5]",
+        "output": "1",
+        "explanation": "The two subsets can be [5] and [1, 2, 3]. Their sums are 5 and 6, respectively, and the difference is 1."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Try to use a subset sum approach to find the possible sums.",
+      "Consider the total sum of the array and the possible partitioning into two subsets."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "House Robber",
+    "description": "You are a professional burglar planning to rob houses along a street. Each house has a certain amount of money stashed, but adjacent houses have security systems connected. If two adjacent houses are robbed on the same night, the security systems will trigger an alarm. Given an integer array 'nums' representing the amount of money at each house, return the maximum amount of money you can rob without triggering the alarms.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "Array",
+      "Greedy"
+    ],
+    "input_format": "An array of integers nums, where each integer represents the amount of money at each house.",
+    "output_format": "An integer representing the maximum amount of money that can be robbed.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 400"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 9, 3, 1]",
+        "output": "12",
+        "explanation": "Robbing the houses with amounts 2, 9, and 1 gives the total 2 + 9 + 1 = 12."
+      },
+      {
+        "input": "nums = [1, 2, 3, 1]",
+        "output": "4",
+        "explanation": "Robbing the first and the third house gives 1 + 3 = 4."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider a dynamic programming approach to store solutions of subproblems.",
+      "You can decide to rob or skip each house."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Possible Bipartition",
+    "description": "Given a set of N people (represented by integers from 1 to N), you want to split them into two groups such that no two people in the same group dislike each other. You are given an array of pairs where each pair (a, b) indicates that person a dislikes person b. Return true if it is possible to split the people into two groups in such a way, or false otherwise.",
+    "topic": "Graph",
+    "subtopic": "Graph Traversal",
+    "tags": [
+      "Graph",
+      "DFS",
+      "Bipartition"
+    ],
+    "input_format": "An integer N representing the number of people and an array of pairs [[a1, b1], [a2, b2], ..., [ak, bk]] representing the dislike relationships.",
+    "output_format": "A boolean value indicating whether it is possible to split the people into two groups.",
+    "constraints": [
+      "1 <= N <= 100",
+      "0 <= dislikes.length <= N * (N - 1) / 2",
+      "1 <= dislikes[i][0], dislikes[i][1] <= N",
+      "dislikes[i][0] != dislikes[i][1]"
+    ],
+    "examples": [
+      {
+        "input": "N = 4, dislikes = [[1,2],[1,3],[2,4]]",
+        "output": "true",
+        "explanation": "We can split them into group 1: [1, 4] and group 2: [2, 3]."
+      },
+      {
+        "input": "N = 3, dislikes = [[1,2],[1,3],[2,3]]",
+        "output": "false",
+        "explanation": "It is not possible to split them into two groups without having dislikes within the same group."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use BFS or DFS to color the graph representing relationships.",
+      "If two adjacent nodes have the same color, return false."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Stone Game VI",
+    "description": "Alice and Bob play a game with a pile of stones, represented by an array of integers. In each turn, they can either take the first or the last stone in the array. The goal is to maximize their total score. Given the array of stones, return the maximum score difference that Alice can achieve over Bob with optimal play for both players. Consider that Alice plays first.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Game Theory",
+    "tags": [
+      "Dynamic Programming",
+      "Game Theory",
+      "Greedy"
+    ],
+    "input_format": "An array of integers stones, where each integer represents the value of a stone.",
+    "output_format": "An integer representing the maximum score difference Alice can achieve over Bob.",
+    "constraints": [
+      "1 <= stones.length <= 10^5",
+      "1 <= stones[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "stones = [5, 3, 1, 4, 2]",
+        "output": "6",
+        "explanation": "Alice can take the first stone (5), then Bob will be left with stones [3, 1, 4, 2]. No matter what Bob picks next, Alice can always ensure the maximum difference by making optimal choices."
+      },
+      {
+        "input": "stones = [1, 2, 3, 7]",
+        "output": "5",
+        "explanation": "Alice can take the last stone (7), leaving [1, 2, 3] for Bob. Bob can take 3 or 1, Alice will maximize her score afterward."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to track scores based on choices.",
+      "Think about the subproblems defined by the indices of stones being considered."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Search in Rotated Sorted Array",
+    "description": "You are given an integer array nums sorted in ascending order, and an integer target. The array has been rotated at an unknown pivot, and you need to determine if the target is in the array. If it is, return its index. Otherwise, return -1. You must write an algorithm with O(log n) runtime complexity.",
+    "topic": "Binary Search",
+    "subtopic": "Search",
+    "tags": [
+      "Binary Search",
+      "Array",
+      "Search"
+    ],
+    "input_format": "An integer array nums followed by an integer target.",
+    "output_format": "An integer representing the index of target in nums, or -1 if target is not found.",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "-10^4 <= nums[i] <= 10^4",
+      "nums is guaranteed to be rotated at some pivot."
+    ],
+    "examples": [
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 0",
+        "output": "4",
+        "explanation": "The target 0 is at index 4 in the rotated array."
+      },
+      {
+        "input": "nums = [4,5,6,7,0,1,2], target = 3",
+        "output": "-1",
+        "explanation": "The target 3 is not present in the array."
+      },
+      {
+        "input": "nums = [1], target = 1",
+        "output": "0",
+        "explanation": "The target 1 is at index 0 in the array."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider applying binary search on the rotated array.",
+      "Check which side of the array is sorted.",
+      "Use the properties of the sorted and rotated array to determine the next steps."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Find the Count of Monotonic Pairs I",
+    "description": "Given an array of integers, your task is to count the number of monotonic pairs in the array. A monotonic pair is defined as a pair of indices (i, j) such that 0 <= i < j < n and either nums[i] <= nums[j] (non-decreasing) or nums[i] >= nums[j] (non-increasing).",
+    "topic": "Array",
+    "subtopic": "Counting Pairs",
+    "tags": [
+      "Array",
+      "Pairs",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the count of monotonic pairs in the array.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3]",
+        "output": "6",
+        "explanation": "The pairs are (1, 2), (1, 2), (1, 3), (2, 2), (2, 3), and (2, 3)."
+      },
+      {
+        "input": "nums = [3, 2, 1]",
+        "output": "3",
+        "explanation": "The pairs are (3, 2), (3, 1), and (2, 1)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a two-pointer technique to count valid pairs efficiently.",
+      "You may need to check for both non-decreasing and non-increasing conditions."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Binary Tree Maximum Path Sum",
+    "description": "Given a non-empty binary tree, find the maximum path sum. The path may start and end at any node in the tree. The path must always be downwards, which means you can only move to child nodes. The maximum path sum is defined as the largest sum of node values along any path in the tree.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree",
+    "tags": [
+      "Tree",
+      "Recursion",
+      "Dynamic Programming"
+    ],
+    "input_format": "The input consists of the root node of a binary tree, represented as a binary tree node structure.",
+    "output_format": "An integer representing the maximum path sum.",
+    "constraints": [
+      "The number of nodes in the tree is in the range [1, 3 * 10^4].",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "root = [1,2,3]",
+        "output": "6",
+        "explanation": "The maximum path sum is formed by taking the nodes 2 -> 1 -> 3, which gives a sum of 2 + 1 + 3 = 6."
+      },
+      {
+        "input": "root = [-10,9,20,null,null,15,7]",
+        "output": "42",
+        "explanation": "The maximum path sum is formed by taking the nodes 15 -> 20 -> 7, which gives a sum of 15 + 20 + 7 = 42."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider each node and calculate the maximum contribution it can make to the path sum.",
+      "Utilize a recursive function to explore all possible paths from each node.",
+      "Keep track of the maximum encountered path sum in a global variable."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Next Permutation",
+    "description": "Implement the function nextPermutation that takes an array of integers and modifies it to its next lexicographical permutation. If such an arrangement is not possible, it must rearrange it to the lowest possible order (i.e., sorted in ascending order). The solution must be done in-place without allocating additional memory.",
+    "topic": "Array",
+    "subtopic": "Permutation",
+    "tags": [
+      "Array",
+      "Permutation",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "The array nums is modified to its next permutation in place.",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3]",
+        "output": "[1, 3, 2]",
+        "explanation": "The next permutation of [1, 2, 3] is [1, 3, 2]."
+      },
+      {
+        "input": "nums = [3, 2, 1]",
+        "output": "[1, 2, 3]",
+        "explanation": "Since [3, 2, 1] is the last permutation, the next permutation is the first permutation, which is [1, 2, 3]."
+      },
+      {
+        "input": "nums = [1, 1, 5]",
+        "output": "[1, 5, 1]",
+        "explanation": "The next permutation of [1, 1, 5] is [1, 5, 1]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Find the longest non-increasing suffix.",
+      "Identify the pivot just before the suffix.",
+      "Swap the pivot with the rightmost successor in the suffix.",
+      "Reverse the suffix to get the next permutation."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Sort Colors",
+    "description": "Given an array containing red, white, and blue objects represented by integers 0, 1, and 2, sort them in-place so that objects of the same color are grouped together. The algorithm should run in O(n) time and use only constant space.",
+    "topic": "Array",
+    "subtopic": "Sorting",
+    "tags": [
+      "Array",
+      "Sorting",
+      "In-place"
+    ],
+    "input_format": "An array of integers nums, where each integer is either 0, 1, or 2.",
+    "output_format": "The sorted array of integers in-place.",
+    "constraints": [
+      "1 <= nums.length <= 300",
+      "nums[i] is either 0, 1, or 2."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 0, 2, 1, 1, 0]",
+        "output": "[0, 0, 1, 1, 2, 2]",
+        "explanation": "The array is sorted in-place to group the colors together: [0, 0, 1, 1, 2, 2]."
+      },
+      {
+        "input": "nums = [2, 0, 1]",
+        "output": "[0, 1, 2]",
+        "explanation": "The array is sorted to group the colors: [0, 1, 2]."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use the Dutch National Flag algorithm.",
+      "Maintain three pointers to manage the placement of colors."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Surrounded Regions",
+    "description": "Given a 2D board containing 'X' and 'O', capture all regions surrounded by 'X'. A region is captured by flipping all 'O's into 'X's in that surrounded region. An 'O' is considered to be surrounded if it is completely surrounded by 'X's (i.e. there are no 'O's connected to the border).",
+    "topic": "Depth-First Search",
+    "subtopic": "Graph",
+    "tags": [
+      "DFS",
+      "Grid",
+      "Matrix"
+    ],
+    "input_format": "A 2D board (a list of lists) where each element is either 'X' or 'O'.",
+    "output_format": "The modified board after capturing all surrounded regions.",
+    "constraints": [
+      "The board must have at least 1 row and 1 column.",
+      "The number of rows and columns should not exceed 100."
+    ],
+    "examples": [
+      {
+        "input": "board = [['X', 'X', 'X', 'X'], ['X', 'O', 'O', 'X'], ['X', 'X', 'O', 'X'], ['X', 'O', 'X', 'X']]",
+        "output": "[['X', 'X', 'X', 'X'], ['X', 'X', 'X', 'X'], ['X', 'X', 'X', 'X'], ['X', 'O', 'X', 'X']]",
+        "explanation": "The 'O's in the second row are surrounded by 'X's, so they are flipped to 'X'. The 'O' in the last row is not surrounded."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how you can identify 'O's that are not surrounded.",
+      "You may use depth-first search to explore regions."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Product Subarray",
+    "description": "Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest product and return that product. It is guaranteed that the result will fit in a 32-bit integer.",
+    "topic": "Array",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Product"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the maximum product of a contiguous subarray.",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "-10 <= nums[i] <= 10"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 3, -2, 4]",
+        "output": "6",
+        "explanation": "The subarray [2, 3] has the largest product 6."
+      },
+      {
+        "input": "nums = [-2, 0, -1]",
+        "output": "0",
+        "explanation": "The subarrays [-2], [0], and [-1] yield products of -2, 0, and -1 respectively. The maximum product is 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider how negative numbers affect the product.",
+      "Keep track of both the maximum and minimum products at each step."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. A substring is a contiguous sequence of characters within the string.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Hash Map"
+    ],
+    "input_format": "A single string s consisting of English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 5 * 10^4",
+      "s consists of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abcabcbb\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is \"abc\", which has a length of 3."
+      },
+      {
+        "input": "s = \"bbbbb\"",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is \"b\", with a length of 1."
+      },
+      {
+        "input": "s = \"pwwkew\"",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is \"wke\", which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window technique.",
+      "Use a hash map to store the last index of each character."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Edit Distance",
+    "description": "Given two strings word1 and word2, return the minimum number of operations required to transform word1 into word2. You can perform three types of operations: insert a character, delete a character, or replace a character.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Edit Distance"
+    ],
+    "input_format": "Two strings word1 and word2 where 1 <= word1.length, word2.length <= 1000.",
+    "output_format": "An integer representing the minimum number of operations required to convert word1 to word2.",
+    "constraints": [
+      "1 <= word1.length, word2.length <= 1000",
+      "word1 and word2 consist of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "word1 = 'horse', word2 = 'ros'",
+        "output": "3",
+        "explanation": "horse -> rorse (replace 'h' with 'r') -> roset (replace 'h' with 's') -> ros (remove 'e')"
+      },
+      {
+        "input": "word1 = 'intention', word2 = 'execution'",
+        "output": "5",
+        "explanation": "intention -> inention (remove 't') -> enention (replace 'i' with 'e') -> exection (replace 'n' with 'x') -> exection (insert 'c') -> execution (insert 'u')"
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a dynamic programming approach.",
+      "Think about how the edit distance evolves based on operations."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Diagonal Traverse",
+    "description": "Given a matrix of dimensions m x n, return all elements of the matrix in diagonal order. The traversal should start from the top-left corner, moving towards the bottom-right corner. When the boundary is hit, the direction of traversal should be toggled. For example, after reaching the top row, the traversal should move downward, and after reaching the right column, it should move leftward.",
+    "topic": "Array",
+    "subtopic": "Matrix Traversal",
+    "tags": [
+      "Array",
+      "Matrix",
+      "Traversal"
+    ],
+    "input_format": "A 2D matrix of integers of size m x n.",
+    "output_format": "A list of integers representing the elements of the matrix in diagonal order.",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "-10^5 <= matrix[i][j] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 4, 7, 5, 3, 6, 8, 9]",
+        "explanation": "The elements are traversed diagonally: 1 -> 2 -> 4 -> 7 -> 5 -> 3 -> 6 -> 8 -> 9."
+      },
+      {
+        "input": "matrix = [[1]]",
+        "output": "[1]",
+        "explanation": "Only one element present, so the output is [1]."
+      },
+      {
+        "input": "matrix = [[1, 2], [3, 4]]",
+        "output": "[1, 2, 4, 3]",
+        "explanation": "The elements are traversed diagonally: 1 -> 2 -> 4 -> 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to handle the transitions between boundaries.",
+      "Keep track of the direction of traversal using a flag.",
+      "Use two pointers to navigate through the matrix."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Insertion Steps to Make a String Palindrome",
+    "description": "Given a string s, return the minimum number of insertions required to make s a palindrome. An insertion is defined as adding a single character at any position in the string. The goal is to transform the given string into its palindrome form with the least number of insertions.",
+    "topic": "Dynamic Programming",
+    "subtopic": "String Manipulation",
+    "tags": [
+      "Dynamic Programming",
+      "String",
+      "Palindrome"
+    ],
+    "input_format": "A single lowercase string s of length n.",
+    "output_format": "An integer representing the minimum number of insertions required to make s a palindrome.",
+    "constraints": [
+      "1 <= n <= 500",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abc\"",
+        "output": "2",
+        "explanation": "We can insert 'b' at the end and 'a' at the beginning to make it 'abcba'."
+      },
+      {
+        "input": "s = \"race\"",
+        "output": "3",
+        "explanation": "We can insert 'e', 'c', and 'a' to make it 'racecar'."
+      },
+      {
+        "input": "s = \"a\"",
+        "output": "0",
+        "explanation": "The string is already a palindrome."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using dynamic programming to find the longest palindromic subsequence.",
+      "The minimum insertions can be derived from the length of the string and the length of this subsequence."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock IV",
+    "description": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by making at most k transactions. Note that you cannot engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again). return the maximum profit you can achieve after making at most k transactions. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Stock Buy and Sell",
+    "tags": [
+      "Dynamic Programming",
+      "Greedy",
+      "Array"
+    ],
+    "input_format": "An integer k for the maximum number of transactions, followed by an array of integers prices representing the stock prices on each day.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "0 <= k <= 100",
+      "0 <= prices.length <= 1000",
+      "0 <= prices[i] <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "k = 2, prices = [2,4,1]",
+        "output": "2",
+        "explanation": "Buy on day 1 (price = 2) and sell on day 2 (price = 4) for a profit of 2."
+      },
+      {
+        "input": "k = 2, prices = [3,2,6,5,0,3]",
+        "output": "7",
+        "explanation": "Buy on day 2 (price = 2) and sell on day 3 (price = 6) for a profit of 4. Then buy on day 5 (price = 0) and sell on day 6 (price = 3) for a profit of 3. Total profit = 4 + 3 = 7."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use dynamic programming to keep track of profits.",
+      "Consider the maximum number of transactions you can make.",
+      "Make use of the states for transactions."
+    ],
+    "company": "Arcesium"
+  },
+  {
+    "question_id": "",
+    "title": "Pow(x, n)",
+    "description": "Implement a function that computes x raised to the n-th power (i.e., x^n). This function should be able to handle both positive and negative integers for n and will also work for fractional values of x.",
+    "topic": "Mathematics",
+    "subtopic": "Exponentiation",
+    "tags": [
+      "Mathematics",
+      "Exponentiation",
+      "Recursion"
+    ],
+    "input_format": "Two inputs: a floating-point number x and an integer n.",
+    "output_format": "A floating-point number representing the result of x raised to the power of n.",
+    "constraints": [
+      "-100.0 <= x <= 100.0",
+      "-10^4 <= n <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "x = 2.00000, n = 10",
+        "output": "1024.00000",
+        "explanation": "2 raised to the power of 10 is 1024."
+      },
+      {
+        "input": "x = 2.10000, n = 3",
+        "output": "9.26100",
+        "explanation": "2.1 raised to the power of 3 is approximately 9.261."
+      },
+      {
+        "input": "x = 2.00000, n = -2",
+        "output": "0.25000",
+        "explanation": "2 raised to the power of -2 is 1/(2^2) = 1/4 = 0.25."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using recursion for efficient power calculation.",
+      "Pay attention to negative exponents."
+    ],
+    "company": "Arcesium"
+  }
+]

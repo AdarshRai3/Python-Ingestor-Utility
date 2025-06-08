@@ -1,0 +1,111 @@
+[
+  {
+    "question_id": "",
+    "title": "Create Binary Tree From Descriptions",
+    "description": "Given an array of tuples representing parent-child relationships, create a binary tree and return its root node. Each tuple has three values: the parent value, the left child value, and the right child value. If a child value is None, it means that particular child does not exist.",
+    "topic": "Tree",
+    "subtopic": "Binary Tree Construction",
+    "tags": [
+      "Tree",
+      "Binary Tree",
+      "Construction"
+    ],
+    "input_format": "An array of tuples, where each tuple is of the form (parent, left_child, right_child).",
+    "output_format": "The root node of the binary tree.",
+    "constraints": [
+      "1 <= len(tuples) <= 1000",
+      "-10^5 <= parent, left_child, right_child <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "tuples = [(1, 2, 3), (2, 4, None), (3, None, 5)]",
+        "output": "1",
+        "explanation": "This represents the binary tree: \n    1\n   / \\\n  2   3\n /     \\\n4       5\nThe root is 1."
+      },
+      {
+        "input": "tuples = [(1, None, 3), (3, 4, None)]",
+        "output": "1",
+        "explanation": "This represents the binary tree: \n    1\n     \\\n      3\n     / \n    4\nThe root is 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a dictionary to map parent values to their children.",
+      "Carefully handle the case where a child value is None."
+    ],
+    "company": "Clari"
+  },
+  {
+    "question_id": "",
+    "title": "Group Employees of the Same Salary",
+    "description": "You are given a list of employee records where each record contains an employee's unique ID and their salary. Your task is to group the employees by their salaries and return a list of groups. Each group should be a list of employee IDs who share the same salary. The output should be sorted in ascending order based on salary. If multiple groups have the same salary, maintain the order of appearance.",
+    "topic": "Hash Table",
+    "subtopic": "Grouping",
+    "tags": [
+      "Hash Table",
+      "Grouping",
+      "Sorting"
+    ],
+    "input_format": "A list of tuples, where each tuple consists of an integer ID and an integer salary (i.e., `employees = [(id1, salary1), (id2, salary2), ...]`).",
+    "output_format": "A list of lists, where each inner list contains the IDs of employees sharing the same salary.",
+    "constraints": [
+      "1 <= employees.length <= 10^4",
+      "1 <= id <= 10^6",
+      "1 <= salary <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "employees = [(1, 3000), (2, 2000), (3, 3000), (4, 1000)]",
+        "output": "[[4], [2], [1, 3]]",
+        "explanation": "There are four employees. Employee 4 has a salary of 1000, Employee 2 has a salary of 2000, and Employees 1 and 3 share a salary of 3000. The groups are sorted by salary."
+      },
+      {
+        "input": "employees = [(1, 4000), (2, 4000), (3, 5000)]",
+        "output": "[[1, 2], [3]]",
+        "explanation": "Employees 1 and 2 share a salary of 4000, and Employee 3 has a salary of 5000. The output lists the groups sorted by salary."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash table to map the salaries to lists of employee IDs.",
+      "Iterate through the employee records to populate the hash table.",
+      "Sort the results based on the salary keys before returning."
+    ],
+    "company": "Clari"
+  },
+  {
+    "question_id": "",
+    "title": "Unique Binary Search Trees",
+    "description": "Given an integer n, the task is to count the number of unique binary search trees (BSTs) that can be formed with values from 1 to n. A unique BST is defined as a binary tree that follows the properties of a BST and contains a unique set of values.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Combinatorics",
+    "tags": [
+      "Dynamic Programming",
+      "Binary Search Tree",
+      "Combinatorial"
+    ],
+    "input_format": "An integer n (1 <= n <= 19), representing the number of unique values to be used for constructing BSTs.",
+    "output_format": "An integer representing the number of unique BSTs that can be formed.",
+    "constraints": [
+      "1 <= n <= 19"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "5",
+        "explanation": "The unique BSTs that can be built with values from 1 to 3 are: (1,2,3), (1,3,2), (2,1,3), (3,1,2), and (2,3,1). So, there are 5 unique BSTs."
+      },
+      {
+        "input": "n = 1",
+        "output": "1",
+        "explanation": "There is only one unique BST that can be formed with the value 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using dynamic programming to build up the solution.",
+      "Use the Catalan number formula for counting unique BSTs."
+    ],
+    "company": "Clari"
+  }
+]

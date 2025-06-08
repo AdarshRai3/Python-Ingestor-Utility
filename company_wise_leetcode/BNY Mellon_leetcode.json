@@ -1,0 +1,854 @@
+[
+  {
+    "question_id": "",
+    "title": "Count Visited Nodes in a Directed Graph",
+    "description": "Given a directed graph represented as an adjacency list, determine the number of nodes that can be visited starting from a given source node. A node is considered 'visited' if it can be reached from the source node through one or more directed edges.",
+    "topic": "Graph",
+    "subtopic": "Traversal",
+    "tags": [
+      "Graph",
+      "DFS",
+      "BFS",
+      "Traversal"
+    ],
+    "input_format": "An adjacency list represented as a list of lists, where each list contains integers representing the nodes that can be reached from the index node. An integer representing the source node (0-based index).",
+    "output_format": "An integer representing the count of distinct visited nodes.",
+    "constraints": [
+      "1 <= adjacency_list.length <= 10^4",
+      "0 <= adjacency_list[i].length <= 10^4",
+      "0 <= adjacency_list[i][j] < adjacency_list.length",
+      "0 <= source < adjacency_list.length"
+    ],
+    "examples": [
+      {
+        "input": "[ [1, 2], [2], [3], [] ], 0",
+        "output": "4",
+        "explanation": "Starting from node 0, we can visit nodes 1, 2, and 3, totaling 4 visited nodes."
+      },
+      {
+        "input": "[ [1], [], [1]], 2",
+        "output": "2",
+        "explanation": "Starting from node 2, we can visit node 1 (from which there is no further path), totaling 2 visited nodes (2 and 1)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using Depth First Search or Breadth First Search to explore accessible nodes.",
+      "Use a set to keep track of visited nodes to avoid counting duplicates."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts",
+    "description": "You have a rectangular cake with a width 'h' and a height 'w'. You are allowed to make horizontal and vertical cuts. Given two integer arrays horizontalCuts and verticalCuts, where horizontalCuts[i] is the position of the ith horizontal cut and verticalCuts[j] is the position of the jth vertical cut, your task is to find the maximum area of a piece of cake after making all the cuts. Since the answer can be very large, return it modulo 10^9 + 7.",
+    "topic": "Geometry",
+    "subtopic": "Area Calculation",
+    "tags": [
+      "Geometry",
+      "Area",
+      "Math",
+      "Modulo"
+    ],
+    "input_format": "Two integers h and w, followed by two arrays horizontalCuts and verticalCuts.",
+    "output_format": "An integer representing the maximum area of a piece of cake after the cuts, modulo 10^9 + 7.",
+    "constraints": [
+      "1 <= h, w <= 10^9",
+      "1 <= horizontalCuts.length, verticalCuts.length <= 10^5",
+      "0 < horizontalCuts[i] < h",
+      "0 < verticalCuts[j] < w",
+      "All elements in horizontalCuts are distinct.",
+      "All elements in verticalCuts are distinct."
+    ],
+    "examples": [
+      {
+        "input": "h = 5, w = 4, horizontalCuts = [1, 2, 4], verticalCuts = [1, 3]",
+        "output": "4",
+        "explanation": "After the cuts, the piece of cake with corresponding maximum area has a width of 2 and a height of 2."
+      },
+      {
+        "input": "h = 5, w = 4, horizontalCuts = [3, 1], verticalCuts = [1]",
+        "output": "3",
+        "explanation": "The maximum area obtainable is from the section with height of 3 and width of 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the cut positions to calculate the maximum lengths.",
+      "Subtraction of adjacent cuts gives you the segments' sizes."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Sum of Distances",
+    "description": "You are given an integer array `positions` where `positions[i]` represents the position of the ith point on a number line. The distance between two points `i` and `j` is defined as the absolute difference of their positions: |positions[i] - positions[j]|. Your task is to return the sum of distances from each point to every other point. Formally, compute the sum of all distances for each point in the array.",
+    "topic": "Array",
+    "subtopic": "Sum Calculation",
+    "tags": [
+      "Array",
+      "Calculations",
+      "Distance"
+    ],
+    "input_format": "An array of integers positions.",
+    "output_format": "An integer representing the total sum of distances.",
+    "constraints": [
+      "1 <= positions.length <= 10^5",
+      "-10^9 <= positions[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "positions = [1, 2, 3]",
+        "output": "2",
+        "explanation": "The distances are |1-2| + |1-3| + |2-1| + |2-3| + |3-1| + |3-2| = 1 + 2 + 1 + 1 + 2 + 1 = 8, and each point contributes twice except the minimum and maximum. Thus, the final sum is reduced to calculate directly."
+      },
+      {
+        "input": "positions = [1, 4, 6]",
+        "output": "8",
+        "explanation": "The distances here are calculated as |1-4| + |1-6| + |4-1| + |4-6| + |6-1| + |6-4| = 3 + 5 + 3 + 2 + 5 + 2 = 20, and similar logic brings it down to their minimal contribution."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the contribution of each point to the total distance.",
+      "The idea of prefix and suffix sums could be useful."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Minimize Length of Array Using Operations",
+    "description": "You are given an array of integers. You can perform the following operation: remove any element from the array. The goal is to minimize the length of the array in such a way that no two elements in the array are equal. Return the minimum length of the array after performing the necessary operations.",
+    "topic": "Array",
+    "subtopic": "Operations",
+    "tags": [
+      "Array",
+      "HashSet",
+      "Greedy"
+    ],
+    "input_format": "An integer array nums, where 1 <= nums.length <= 10^5.",
+    "output_format": "An integer representing the minimum length of the array after operations.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3, 4, 4]",
+        "output": "4",
+        "explanation": "After removing one occurrence of 2 and one occurrence of 4, the array can be [1, 2, 3, 4]."
+      },
+      {
+        "input": "nums = [1, 1, 1, 1]",
+        "output": "1",
+        "explanation": "Only one number exists, hence, the minimum length is 1."
+      },
+      {
+        "input": "nums = [5, 6, 7, 8, 9]",
+        "output": "5",
+        "explanation": "All elements are unique, so the length remains 5."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a HashSet to track unique elements.",
+      "Removing duplicates will reduce the length of the array."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "Hashing",
+      "Anagrams"
+    ],
+    "input_format": "An array of strings strs.",
+    "output_format": "A list of groups of anagrams, where each group is a list of strings.",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "[\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"eat\",\"tea\",\"ate\"],[\"tan\",\"nat\"],[\"bat\"]]",
+        "explanation": "The groups of anagrams are ['eat', 'tea', 'ate'], ['tan', 'nat'], and ['bat']."
+      },
+      {
+        "input": "[\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "There is only one empty string, so it's its own group."
+      },
+      {
+        "input": "[\"a\"]",
+        "output": "[[\"a\"]]",
+        "explanation": "There is only one single character string, so it's its own group."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to count the frequency of characters.",
+      "Sorting the strings may help in grouping them easily."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Taps to Open to Water a Garden",
+    "description": "You have a garden represented as a number line from 0 to n. There are n + 1 taps located at positions 0 through n, where the i-th tap can water the area from i - range[i] to i + range[i]. Your task is to find the minimum number of taps you need to open to water the entire garden. If it's impossible to water the garden return -1.",
+    "topic": "Greedy",
+    "subtopic": "Interval Coverage",
+    "tags": [
+      "Greedy",
+      "Dynamic Programming",
+      "Intervals"
+    ],
+    "input_format": "An integer n representing the length of the garden, followed by an array of integers range of length n + 1.",
+    "output_format": "An integer representing the minimum number of taps needed to water the garden, or -1 if it's impossible.",
+    "constraints": [
+      "1 <= n <= 10000",
+      "0 <= range[i] <= n"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, range = [3,4,1,1,0,0]",
+        "output": "1",
+        "explanation": "Opening tap 1 at position 1 can cover the entire garden from 0 to 5."
+      },
+      {
+        "input": "n = 3, range = [0,0,0,0]",
+        "output": "-1",
+        "explanation": "It's impossible to cover the garden because all taps have 0 range."
+      },
+      {
+        "input": "n = 7, range = [1,2,1,0,2,1,0,1]",
+        "output": "3",
+        "explanation": "Opening taps 0, 1, and 4 will cover the entire range from 0 to 7."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Think about how you can use the ranges to cover the intervals effectively.",
+      "Consider using a greedy approach with sorting the intervals."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Palindromic Substrings",
+    "description": "Given a string, your task is to count the number of palindromic substrings in that string. A substring is a contiguous sequence of characters within a string. A palindrome is a string that reads the same forward and backward.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s, where 1 <= s.length <= 1000.",
+    "output_format": "An integer representing the total number of palindromic substrings in the input string.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abc\"",
+        "output": "3",
+        "explanation": "The palindromic substrings are \"a\", \"b\", and \"c\"."
+      },
+      {
+        "input": "s = \"aaa\"",
+        "output": "6",
+        "explanation": "The palindromic substrings are \"a\", \"a\", \"a\", \"aa\", \"aa\", and \"aaa\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around the center of each character.",
+      "Check for both odd and even length palindromes."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Minimum Number of Groups to Create a Valid Assignment",
+    "description": "You are tasked with creating an assignment for a group of students. Each student has a skill level, and you want to divide them into the minimum number of groups such that each group can complete the assignment in a valid manner. A valid assignment requires that the difference in skill levels between any two students in the same group should not exceed a certain limit. Given the skill levels of the students and the maximum skill difference allowed, return the minimum number of groups required.",
+    "topic": "Greedy",
+    "subtopic": "Sorting",
+    "tags": [
+      "Greedy",
+      "Sorting",
+      "Groups"
+    ],
+    "input_format": "An array of integers `skills` representing the skill levels of students, and an integer `max_difference` representing the maximum allowed difference in skill levels within the same group.",
+    "output_format": "An integer representing the minimum number of groups needed.",
+    "constraints": [
+      "1 <= skills.length <= 1000",
+      "0 <= skills[i] <= 10^6",
+      "1 <= max_difference <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "skills = [1, 3, 6, 7, 8], max_difference = 2",
+        "output": "3",
+        "explanation": "Groups can be formed as [1, 3], [6, 7], and [8] \u2014 thus requiring 3 groups."
+      },
+      {
+        "input": "skills = [10, 20, 30, 40], max_difference = 10",
+        "output": "4",
+        "explanation": "Each student has more than 10 units difference from others; thus, each one must be in their own group."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Sort the skill levels first.",
+      "Try to form groups greedily based on skill levels."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Array Manipulation",
+    "tags": [
+      "Array",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "input_format": "An array of integers prices representing the stock prices on consecutive days.",
+    "output_format": "An integer representing the maximum profit that can be achieved.",
+    "constraints": [
+      "1 <= prices.length <= 10^5",
+      "0 <= prices[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": "prices = [7, 1, 5, 3, 6, 4]",
+        "output": "5",
+        "explanation": "Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6 - 1 = 5."
+      },
+      {
+        "input": "prices = [7, 6, 4, 3, 1]",
+        "output": "0",
+        "explanation": "In this case, no transactions are done and the max profit = 0."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Keep track of the minimum price seen so far.",
+      "Calculate potential profit as you iterate through the prices."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Gas Station",
+    "description": "There are n gas stations along a circular route, where the amount of gas at the ith gas station is gas[i]. You have a car with an infinite gas tank, and it costs cost[i] gas to travel from the ith station to its next (i + 1)th station. You begin the journey with an empty tank at one of the gas stations. Determine the starting gas station's index from where you can travel around the circuit once without running out of gas. If there is no such station, return -1.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Greedy Algorithm",
+    "tags": [
+      "Greedy",
+      "Dynamic Programming",
+      "Array"
+    ],
+    "input_format": "Two arrays, gas and cost, where gas[i] and cost[i] are both non-negative integers.",
+    "output_format": "An integer representing the index of the gas station from which you can start the journey, or -1 if it's not possible.",
+    "constraints": [
+      "1 <= gas.length == cost.length <= 10^4",
+      "0 <= gas[i], cost[i] <= 10^4"
+    ],
+    "examples": [
+      {
+        "input": {
+          "gas": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "cost": [
+            3,
+            4,
+            5,
+            1,
+            2
+          ]
+        },
+        "output": "3",
+        "explanation": "Starting from station 3, you will come back to station 3 without running out of gas."
+      },
+      {
+        "input": {
+          "gas": [
+            2,
+            3,
+            4
+          ],
+          "cost": [
+            3,
+            4,
+            3
+          ]
+        },
+        "output": "-1",
+        "explanation": "No starting gas station can fulfill the journey."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Track the total net gas balance to determine feasibility.",
+      "If you can't complete a circuit from a certain start, skip to the next station."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Count Vowel Substrings of a String",
+    "description": "Given a string s, return the number of non-empty substrings that contain only vowels. A vowel is defined as one of the characters in the set { 'a', 'e', 'i', 'o', 'u' }. Substrings may overlap, and the same substring counted multiple times should be included in the total.",
+    "topic": "String",
+    "subtopic": "Substring",
+    "tags": [
+      "String",
+      "Substring",
+      "Vowels"
+    ],
+    "input_format": "A string s consisting of lowercase English letters.",
+    "output_format": "An integer representing the total count of vowel-only substrings.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists only of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"aeiou\"",
+        "output": "15",
+        "explanation": "The possible vowel substrings are: 'a', 'e', 'i', 'o', 'u', 'ae', 'ai', 'ao', 'au', 'ei', 'eo', 'eu', 'io', 'iu', 'ou', totaling to 15."
+      },
+      {
+        "input": "s = \"abc\"",
+        "output": "1",
+        "explanation": "The only vowel substring is 'a'."
+      },
+      {
+        "input": "s = \"abbas\"",
+        "output": "2",
+        "explanation": "The only vowel substring is 'a'. Both occurrences count separately."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Iterate through the string and keep track of the length of contiguous vowel substrings.",
+      "The number of substrings that can be formed from a contiguous substring of length n is n * (n + 1) / 2."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Car Fleet",
+    "description": "N cars are going to the same destination along a one-lane road. The destination is `target` miles away. Each car 'i' has a position `position[i]` and a speed `speed[i]`. A car can catch up to another car if it reaches the same position. When a car catches up to another, they form a fleet, which will move at the speed of the slower car. Return the total number of fleets that will arrive at the destination.",
+    "topic": "Greedy",
+    "subtopic": "Simulation",
+    "tags": [
+      "Greedy",
+      "Simulation",
+      "Array"
+    ],
+    "input_format": "An array of integers `position`, an array of integers `speed`, and an integer `target`.",
+    "output_format": "An integer representing the number of fleets that will arrive at the destination.",
+    "constraints": [
+      "1 <= position.length, speed.length <= 10^4",
+      "0 <= position[i] < target",
+      "1 <= speed[i] <= 10^6",
+      "position.length == speed.length"
+    ],
+    "examples": [
+      {
+        "input": "position = [10, 8, 0, 5, 3], speed = [2, 4, 1, 1, 3], target = 12",
+        "output": "3",
+        "explanation": "Car 1 and 2 will form a fleet, car 3 will reach target alone, car 4 will reach target separately, so there are 3 fleets."
+      },
+      {
+        "input": "position = [3, 5, 8], speed = [2, 1, 4], target = 10",
+        "output": "2",
+        "explanation": "Car 1 will reach target in 3.5 time, Car 2 in 5 time and Car 3 in 0.5 time. Car 1 and Car 2 will form a fleet and Car 3 will reach target alone."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of fleets.",
+      "Calculate time to reach the target and compare them."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Total Cost to Hire K Workers",
+    "description": "You are given a list of costs where the cost[i] is the cost to hire the ith worker. You need to hire K workers such that the total cost is minimized. You can hire workers in any order, but you must pay the lowest cost available among the remaining workers every time you hire a worker. Return the minimum total cost to hire exactly K workers.",
+    "topic": "Greedy",
+    "subtopic": "Sorting",
+    "tags": [
+      "Greedy",
+      "Sorting",
+      "Priority Queue"
+    ],
+    "input_format": "A list of integers costs, and an integer K.",
+    "output_format": "An integer representing the minimum total cost to hire K workers.",
+    "constraints": [
+      "1 <= costs.length <= 10^4",
+      "1 <= costs[i] <= 10^5",
+      "1 <= K <= costs.length"
+    ],
+    "examples": [
+      {
+        "input": "costs = [10, 20, 5, 30], K = 2",
+        "output": "15",
+        "explanation": "The minimum cost to hire 2 workers is by hiring the workers with costs 5 and 10, totaling 15."
+      },
+      {
+        "input": "costs = [1, 2, 3, 4, 5], K = 3",
+        "output": "6",
+        "explanation": "The minimum cost to hire 3 workers is by hiring workers with costs 1, 2, and 3, totaling 6."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the costs to easily access the lowest costs.",
+      "Use a priority queue to efficiently retrieve the lowest costs if necessary."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Hashing"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "A list of unique triplets that add up to zero.",
+    "constraints": [
+      "0 <= nums.length <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets [-1, -1, 2] and [-1, 0, 1] are the only combinations that sum up to 0."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "No elements in array means no triplets can be formed."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "No combination of three numbers can sum up to 0."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use sorting to facilitate finding triplets.",
+      "Consider using a HashSet to avoid duplicate triplets."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Count of Monotonic Pairs II",
+    "description": "Given an array of integers, the task is to count the number of monotonic pairs in the array. A pair (i, j) is defined as monotonic if the values from index i to j are either non-decreasing or non-increasing. Your algorithm should find the count of such pairs efficiently.",
+    "topic": "Array",
+    "subtopic": "Pair Counting",
+    "tags": [
+      "Array",
+      "Monotonic",
+      "Counting"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the count of monotonic pairs.",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^6 <= nums[i] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 2, 3, 1]",
+        "output": "8",
+        "explanation": "The monotonic pairs are (0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3), (3, 4), and (1, 4)."
+      },
+      {
+        "input": "nums = [5, 3, 1, 2, 4]",
+        "output": "6",
+        "explanation": "The monotonic pairs are (0, 1), (0, 2), (0, 3), (0, 4), (1, 2), and (1, 4)."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider the relationship between adjacent elements.",
+      "Use a two-pointer approach to find counts efficiently."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers nums followed by an integer target.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9",
+      "Each input would have exactly one solution."
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 2 + 7 = 9."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "nums[1] + nums[2] = 2 + 4 = 6."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "nums[0] + nums[1] = 3 + 3 = 6."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a hash map to store the indices of the elements."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Move Zeroes",
+    "description": "Given an array of integers, write a function that moves all zeroes in the array to the end while maintaining the relative order of the non-zero elements. Modify the input array in-place.",
+    "topic": "Array",
+    "subtopic": "In-Place Manipulation",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "In-Place"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "The modified input array with all zeroes moved to the end.",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [0, 1, 0, 3, 12]",
+        "output": "[1, 3, 12, 0, 0]",
+        "explanation": "After moving all zeroes to the end, the array becomes [1, 3, 12, 0, 0]."
+      },
+      {
+        "input": "nums = [0]",
+        "output": "[0]",
+        "explanation": "There is only one element which is zero, so the output remains the same."
+      },
+      {
+        "input": "nums = [1, 2, 0, 0, 3, 0, 4]",
+        "output": "[1, 2, 3, 4, 0, 0, 0]",
+        "explanation": "The non-zero elements maintain their relative order and all zeroes are moved to the end."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a two-pointer technique to track the positions of non-zero elements."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string 's', find the length of the longest substring without repeating characters. A substring is defined as a contiguous sequence of characters within the string. The function should return an integer, representing the maximum length of such a substring.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "Substring"
+    ],
+    "input_format": "A string s consisting of lowercase and uppercase English letters, digits, symbols, and spaces.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 5 * 10^4",
+      "'s' consists of English letters, digits, symbols, and spaces."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'abc', which has a length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The longest substring without repeating characters is 'b', which has a length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The longest substring without repeating characters is 'wke', which has a length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a sliding window to track the characters in the substring.",
+      "Utilize a hash set to keep track of characters already in the current substring."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Reverse Words in a String III",
+    "description": "Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order. A word is defined as a sequence of non-space characters. The reversal of a word does not affect the order of the words in the sentence.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Manipulation",
+      "Reversal"
+    ],
+    "input_format": "A single string s, representing the sentence to be processed.",
+    "output_format": "A new string with the characters of each word reversed but the order of words preserved.",
+    "constraints": [
+      "1 <= s.length <= 500",
+      "s consists of printable ASCII characters.",
+      "There will be at least one word in the input string."
+    ],
+    "examples": [
+      {
+        "input": "Let's take LeetCode contest",
+        "output": "s'teL ekat edoCteeL tsetnoc",
+        "explanation": "Each word in the input string is reversed, but their order remains the same."
+      },
+      {
+        "input": "God Ding",
+        "output": "doG gniD",
+        "explanation": "The words 'God' and 'Ding' are reversed to 'doG' and 'gniD' respectively."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider splitting the string by spaces to isolate the words.",
+      "You can use string manipulation functions to reverse each word."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Roman to Integer",
+    "description": "Given a string s representing a Roman numeral, convert it to an integer. Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. The value of each symbol is as follows: I=1, V=5, X=10, L=50, C=100, D=500, M=1000. In Roman numerals, the same symbols can be combined to form other values. For example, II is 2, and XIII is 13. However, there are specific rules for certain combinations: If a smaller numeral appears before a larger numeral, you subtract the smaller one. For instance, IV is 4 and IX is 9. Given the string representation of a Roman numeral, your task is to compute its integer value.",
+    "topic": "String",
+    "subtopic": "Conversion",
+    "tags": [
+      "String",
+      "Math",
+      "Conversion"
+    ],
+    "input_format": "A string s representing a Roman numeral (1 <= s.length <= 15).",
+    "output_format": "An integer representing the corresponding integer value of the Roman numeral.",
+    "constraints": [
+      "Valid Roman numerals are given as input.",
+      "1 <= s.length <= 15"
+    ],
+    "examples": [
+      {
+        "input": "s = \"III\"",
+        "output": "3",
+        "explanation": "The symbols I, I, I represent the values 1, 1, 1 respectively, summing to 3."
+      },
+      {
+        "input": "s = \"IV\"",
+        "output": "4",
+        "explanation": "The symbol I before V means 1 is subtracted from 5, yielding 4."
+      },
+      {
+        "input": "s = \"IX\"",
+        "output": "9",
+        "explanation": "The symbol I before X means 1 is subtracted from 10, yielding 9."
+      },
+      {
+        "input": "s = \"LVIII\"",
+        "output": "58",
+        "explanation": "The symbols L, V, I, I, I represent 50 + 5 + 1 + 1 + 1 = 58."
+      },
+      {
+        "input": "s = \"MCMXCIV\"",
+        "output": "1994",
+        "explanation": "The symbols M, CM, XC, IV represent 1000 + (1000 - 100) + (100 - 10) + (5 - 1) = 1994."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider the numeric values of each Roman symbol.",
+      "Use a mapping of Roman symbols to their integer values.",
+      "Check for subtractive combinations to handle values correctly."
+    ],
+    "company": "BNY Mellon"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Palindromic Substring",
+    "description": "Given a string s, return the longest palindromic substring in s. A substring is a contiguous sequence of characters within a string. A palindrome is a string that reads the same forward and backward.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s, where 1 <= s.length <= 1000.",
+    "output_format": "A string representing the longest palindromic substring.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"babad\"",
+        "output": "\"bab\"",
+        "explanation": "Both \"bab\" and \"aba\" are valid longest palindromic substrings; we can return any of them."
+      },
+      {
+        "input": "s = \"cbbd\"",
+        "output": "\"bb\"",
+        "explanation": "The longest palindromic substring is \"bb\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around the center of each character.",
+      "Keep track of the maximum length palindrome found."
+    ],
+    "company": "BNY Mellon"
+  }
+]

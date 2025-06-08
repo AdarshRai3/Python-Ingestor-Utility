@@ -1,0 +1,142 @@
+[
+  {
+    "question_id": "",
+    "title": "Time Based Key-Value Store",
+    "description": "Design a time-based key-value data structure that can store multiple values for the same key at different time points. The key-value store should support three operations: set, get, and getLatest. The 'set' operation should store a value associated with a key and a timestamp, the 'get' operation should retrieve the value associated with a key at a specific timestamp, and the 'getLatest' operation should retrieve the most recent value for a key before or at a specific timestamp.",
+    "topic": "Data Structures",
+    "subtopic": "Key-Value Store",
+    "tags": [
+      "Data Structures",
+      "Hash Table",
+      "Time Complexity"
+    ],
+    "input_format": "Operations will be executed via a series of strings representing the commands and necessary parameters.",
+    "output_format": "For each get and getLatest operation, return the associated value or an empty string if not found.",
+    "constraints": [
+      "The number of operations will not exceed 10^4.",
+      "The timestamps will be positive integers and will be unique.",
+      "Keys and values are non-empty strings."
+    ],
+    "examples": [
+      {
+        "input": "set('foo', 'bar', 1); set('foo', 'baz', 3); get('foo', 2); getLatest('foo', 3); getLatest('foo', 4);",
+        "output": "'', 'baz', 'baz'",
+        "explanation": "At timestamp 2, 'foo' has no value, so it returns ''. At timestamps 3 and 4, the latest value for 'foo' is 'baz'."
+      },
+      {
+        "input": "set('key', 'value1', 1); set('key', 'value2', 2); get('key', 1); get('key', 2); get('key', 3);",
+        "output": "'value1', 'value2', 'value2'",
+        "explanation": "At timestamps 1 and 2, it retrieves 'value1' and 'value2'. At timestamp 3, the latest value is still 'value2'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hash map to store multiple values for each key.",
+      "A sorted collection may be helpful for efficiently retrieving the latest value at a given timestamp.",
+      "You may need to explore binary search techniques for optimized retrieval."
+    ],
+    "company": "Notion"
+  },
+  {
+    "question_id": "",
+    "title": "Text Justification",
+    "description": "Given an array of words and a length maxWidth, format the text such that each line has exactly maxWidth characters and is left justified. To achieve this, you should align the words in such a way that you fill the line with words, distributing extra spaces evenly between words. If the number of spaces is not evenly divisible by the number of gaps between words, the extra spaces should be distributed starting from the leftmost gap. If a single word exceeds maxWidth, it will be placed on a new line. Return the fully justified text as an array of strings.",
+    "topic": "String",
+    "subtopic": "Text Formatting",
+    "tags": [
+      "String",
+      "Justification",
+      "Array"
+    ],
+    "input_format": "A list of words and an integer maxWidth.",
+    "output_format": "A list of strings representing the justified text.",
+    "constraints": [
+      "1 <= words.length <= 3000",
+      "1 <= words[i].length <= 20",
+      "1 <= maxWidth <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "words": [
+            "This",
+            "is",
+            "an",
+            "example",
+            "of",
+            "text",
+            "justification."
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "This    is    an",
+          "example  of text",
+          "justification.  "
+        ],
+        "explanation": "The first line contains 'This', 'is', 'an' with 3 spaces distributing to fill the 16-width. The second line is similarly justified."
+      },
+      {
+        "input": {
+          "words": [
+            "What",
+            "must",
+            "be",
+            "acknowledgment",
+            "shall",
+            "be"
+          ],
+          "maxWidth": 16
+        },
+        "output": [
+          "What   must   be",
+          "acknowledgment  ",
+          "shall be        "
+        ],
+        "explanation": "Spaces are distributed as needed including at the ends."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to distribute spaces between words.",
+      "Handle edge cases where a single word is longer than maxWidth."
+    ],
+    "company": "Notion"
+  },
+  {
+    "question_id": "",
+    "title": "Design a Todo List",
+    "description": "You are tasked with designing a Todo List application that allows users to manage their tasks. Users should be able to add, remove, and mark tasks as completed. Additionally, they should be able to view the list of all tasks, as well as filter tasks based on their completion status. The application should support the following operations:\n1. Add a task.\n2. Remove a task by its ID.\n3. Mark a task as completed.\n4. Get all tasks.\n5. Get all completed tasks.\n6. Get all pending tasks.",
+    "topic": "Design",
+    "subtopic": "Object-Oriented Design",
+    "tags": [
+      "Design",
+      "OOP",
+      "Todo List"
+    ],
+    "input_format": "A series of operations on the Todo List represented as strings in the format: 'add', 'remove', 'complete', 'get_all', 'get_completed', 'get_pending'.",
+    "output_format": "A list of tasks for 'get_all', 'get_completed', and 'get_pending' operations, and a confirmation message for 'add', 'remove', and 'complete'.",
+    "constraints": [
+      "1 <= number of operations <= 1000",
+      "Task descriptions are non-empty strings with at most 100 characters."
+    ],
+    "examples": [
+      {
+        "input": "add 'Buy groceries', add 'Walk the dog', complete 1, get_all",
+        "output": "['Buy groceries', 'Walk the dog']",
+        "explanation": "Both tasks are added. Task with ID 1 is marked completed. The get_all operation returns the current task list."
+      },
+      {
+        "input": "add 'Read a book', remove 1, get_pending",
+        "output": "[]",
+        "explanation": "Task with ID 1 is removed, leaving no pending tasks."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a class to represent the Todo List.",
+      "A unique ID for each task will be useful for identification."
+    ],
+    "company": "Notion"
+  }
+]

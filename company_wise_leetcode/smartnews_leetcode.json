@@ -1,0 +1,156 @@
+[
+  {
+    "question_id": "",
+    "title": "Largest Palindromic Number",
+    "description": "Given a string of digits, return the largest palindromic number that can be formed using the digits of the string. If no palindromic number can be formed, return an empty string. A palindromic number is a number that reads the same backward as forward.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Palindrome",
+      "Greedy"
+    ],
+    "input_format": "A single string `digits` representing digits from '0' to '9'.",
+    "output_format": "A string representing the largest palindromic number that can be formed. If none can be formed, return an empty string.",
+    "constraints": [
+      "1 <= digits.length <= 100",
+      "digits consists of digits from '0' to '9'."
+    ],
+    "examples": [
+      {
+        "input": "digits = \"9876543210\"",
+        "output": "987789",
+        "explanation": "The largest palindromic number that can be formed is 987789."
+      },
+      {
+        "input": "digits = \"0000\"",
+        "output": "0",
+        "explanation": "The only palindromic number that can be formed is 0."
+      },
+      {
+        "input": "digits = \"12345\"",
+        "output": "",
+        "explanation": "No palindromic number can be formed with the given digits."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Count the occurrences of each digit.",
+      "Use the most frequent digits to form the first half of the palindrome.",
+      "A single digit can be used in the middle if needed."
+    ],
+    "company": "smartnews"
+  },
+  {
+    "question_id": "",
+    "title": "Maximal Network Rank",
+    "description": "You are given a list of integer pairs, where each pair (a, b) represents a direct connection between two nodes in a network. The 'rank' of a network is defined as the total number of edges connected to the two most connected nodes in the network, counted without double counting the edge between the two nodes (if it exists). Your task is to find and return the maximal network rank from the given connections.",
+    "topic": "Graph",
+    "subtopic": "Network Connectivity",
+    "tags": [
+      "Graph",
+      "Network",
+      "Rank"
+    ],
+    "input_format": "A list of pairs of integers representing the connections between nodes.",
+    "output_format": "An integer representing the maximal network rank.",
+    "constraints": [
+      "1 <= connections.length <= 2000",
+      "0 <= connections[i][0], connections[i][1] < 10000",
+      "No duplicate connections."
+    ],
+    "examples": [
+      {
+        "input": "connections = [[1, 2], [2, 3], [1, 3]]",
+        "output": "4",
+        "explanation": "Node 1 is connected to nodes 2 and 3, with a total degree of 2. Node 2 is connected to nodes 1 and 3, also with a total degree of 2. Their combined rank is 2 + 2 = 4."
+      },
+      {
+        "input": "connections = [[1, 2], [2, 3], [4, 5]]",
+        "output": "3",
+        "explanation": "Node 1 is connected to node 2 (degree 1), node 2 is connected to nodes 1 and 3 (degree 2), and nodes 4 and 5 have no connections to other nodes, yielding the highest rank from nodes 1 and 2 as 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hashmap to count the degree of each node.",
+      "Consider both nodes in each connection when calculating their degrees."
+    ],
+    "company": "smartnews"
+  },
+  {
+    "question_id": "",
+    "title": "LRU Cache",
+    "description": "Design a data structure that follows the constraints of a Least Recently Used (LRU) cache. The LRUCache class should have the following methods: \n\n- LRUCache(int capacity): Initialize the LRU cache with a positive size capacity. \n- int get(int key): Return the value of the key if the key exists, otherwise return -1. \n- void put(int key, int value): Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity, evict the least recently used key.\n\nThe cache should be able to fetch and insert values in O(1) time complexity.",
+    "topic": "Data Structure",
+    "subtopic": "Cache",
+    "tags": [
+      "Design",
+      "Data Structure",
+      "Cache",
+      "LRU"
+    ],
+    "input_format": "Constructor: LRUCache(int capacity). Method: int get(int key), void put(int key, int value).",
+    "output_format": "Return the value for the get method, and no return value for the put method.",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10^4",
+      "0 <= value <= 10^5",
+      "At most 10^4 calls will be made to get and put."
+    ],
+    "examples": [
+      {
+        "input": "LRUCache cache = new LRUCache(2); cache.put(1, 1); cache.put(2, 2); cache.get(1); cache.put(3, 3); cache.get(2); cache.put(4, 4); cache.get(1); cache.get(3); cache.get(4);",
+        "output": "1,-1,3,4",
+        "explanation": "The series of operations demonstrate adding and evicting elements based on LRU policy."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a combination of a hash map and a doubly linked list.",
+      "The most recently used item should be moved to the front."
+    ],
+    "company": "smartnews"
+  },
+  {
+    "question_id": "",
+    "title": "3Sum",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Sorting"
+    ],
+    "input_format": "An integer array nums of length n.",
+    "output_format": "A list of unique triplets that sum up to zero.",
+    "constraints": [
+      "0 <= n <= 3000",
+      "-10^5 <= nums[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "nums = [-1, 0, 1, 2, -1, -4]",
+        "output": "[[-1, -1, 2], [-1, 0, 1]]",
+        "explanation": "The triplets that sum to zero are [-1, -1, 2] and [-1, 0, 1]."
+      },
+      {
+        "input": "nums = []",
+        "output": "[]",
+        "explanation": "There are no triplets in an empty array."
+      },
+      {
+        "input": "nums = [0, 1, 1]",
+        "output": "[]",
+        "explanation": "There are no triplets that sum to zero."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider sorting the array first to help with duplicate avoidance.",
+      "Use two pointers to find pairs that make up the third number needed."
+    ],
+    "company": "smartnews"
+  }
+]

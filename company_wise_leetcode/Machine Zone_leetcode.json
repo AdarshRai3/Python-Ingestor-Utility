@@ -1,0 +1,65 @@
+[
+  {
+    "question_id": "",
+    "title": "Range Module",
+    "description": "Design a Range Module that can add and remove ranges of numbers. It should support the following operations: addRange(int start, int end) and queryRange(int start, int end). The addRange method adds the range [start, end) to the module, and the queryRange method returns true if the range [start, end) is completely within at least one of the added ranges, false otherwise. Implement the Range Module with efficient time complexity.",
+    "topic": "Design",
+    "subtopic": "Data Structures",
+    "tags": [
+      "Design",
+      "Data Structures",
+      "Range Query"
+    ],
+    "input_format": "A series of operations in the form of tuples (operation, start, end).",
+    "output_format": "A boolean value indicating if the queried range is fully covered by the added ranges.",
+    "constraints": [
+      "The number of operations will not exceed 10000.",
+      "The range values will be in the range of 0 to 10^9."
+    ],
+    "examples": [
+      {
+        "input": "[('addRange', 10, 20), ('queryRange', 10, 14), ('queryRange', 14, 20), ('removeRange', 14, 16), ('queryRange', 14, 16)]",
+        "output": "[true, true, false]",
+        "explanation": "After adding the range [10, 20), the range [10, 14) and [14, 20) are fully inside the added ranges. After removing [14, 16), the range [14, 16) is no longer covered."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to efficiently manage overlapping intervals.",
+      "Use a data structure that supports interval addition and querying, such as a balanced tree."
+    ],
+    "company": "Machine Zone"
+  },
+  {
+    "question_id": "",
+    "title": "Number of Transactions per Visit",
+    "description": "You are given a list of transactions for users visiting a website. Each transaction is represented by a pair where the first element is the user ID and the second element is the transaction amount. You need to calculate the total number of transactions made by each user and the average transaction amount during their visits. Return a list of tuples containing user IDs, their total number of transactions, and their average transaction amount in descending order of transaction counts. If two users have the same count, order them by user ID in ascending order.",
+    "topic": "Array",
+    "subtopic": "Data Aggregation",
+    "tags": [
+      "Array",
+      "HashMap",
+      "Statistics"
+    ],
+    "input_format": "A list of tuples where each tuple contains a user ID (a string) and a transaction amount (a float).",
+    "output_format": "A list of tuples where each tuple contains a user ID, the total number of transactions, and the average transaction amount.",
+    "constraints": [
+      "1 <= transactions.length <= 10^5",
+      "0 <= transaction amount <= 10^4",
+      "1 <= user ID.length <= 50"
+    ],
+    "examples": [
+      {
+        "input": "[('user1', 100.0), ('user2', 150.0), ('user1', 200.0), ('user3', 300.0), ('user2', 100.0)]",
+        "output": "[('user1', 2, 150.0), ('user2', 2, 125.0), ('user3', 1, 300.0)]",
+        "explanation": "user1 made 2 transactions with an average of (100 + 200)/2 = 150. user2 has 2 transactions with an average of (150 + 100)/2 = 125. user3 made 1 transaction of 300."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Use a dictionary to count transactions and accumulate amounts.",
+      "Remember to calculate the average amount properly."
+    ],
+    "company": "Machine Zone"
+  }
+]

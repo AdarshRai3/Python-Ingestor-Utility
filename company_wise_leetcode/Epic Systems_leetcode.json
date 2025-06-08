@@ -1,0 +1,538 @@
+[
+  {
+    "question_id": "",
+    "title": "Additive Number",
+    "description": "An additive number is a string whose digits can form an additive sequence. A valid additive sequence is defined as follows: You can split the string into three parts, A, B, and C, where A, B, and C are non-empty strings, and A + B = C (where + denotes string concatenation) must hold true. Given a string 'num', return true if it is an additive number, otherwise return false.",
+    "topic": "String",
+    "subtopic": "Backtracking",
+    "tags": [
+      "String",
+      "Backtracking",
+      "Additive Sequence"
+    ],
+    "input_format": "A string num representing the digits to check.",
+    "output_format": "A boolean value indicating whether the string represents an additive number.",
+    "constraints": [
+      "0 < num.length <= 35",
+      "num consists of only digits."
+    ],
+    "examples": [
+      {
+        "input": "num = \"112358\"",
+        "output": "true",
+        "explanation": "The additive sequence is 1, 1, 2, 3, 5, 8. This forms 1 + 1 = 2, 1 + 2 = 3, 2 + 3 = 5, and 3 + 5 = 8."
+      },
+      {
+        "input": "num = \"123\"",
+        "output": "true",
+        "explanation": "The additive sequence is 1, 2, 3. This forms 1 + 2 = 3."
+      },
+      {
+        "input": "num = \"1023\"",
+        "output": "false",
+        "explanation": "There is no valid additive sequence that satisfies the condition."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Try splitting the string into two parts for A and B, and calculate C.",
+      "Remember to check for leading zeros."
+    ],
+    "company": "Epic Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Letter Combinations of a Phone Number",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. A mapping of digit to letters is given as follows: \n\n2 -> 'abc'\n3 -> 'def'\n4 -> 'ghi'\n5 -> 'jkl'\n6 -> 'mno'\n7 -> 'pqrs'\n8 -> 'tuv'\n9 -> 'wxyz'\n\nThe output should be in any order.",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Problem",
+    "tags": [
+      "Backtracking",
+      "Combinatorial",
+      "String"
+    ],
+    "input_format": "A string digits where 1 <= digits.length <= 4.",
+    "output_format": "A list of strings representing all possible letter combinations.",
+    "constraints": [
+      "digits only contain digits from 2-9.",
+      "1 <= digits.length <= 4"
+    ],
+    "examples": [
+      {
+        "input": "digits = '23'",
+        "output": "['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']",
+        "explanation": "For the input '23', the possible combinations are formed by taking letters corresponding to each digit."
+      },
+      {
+        "input": "digits = '2'",
+        "output": "['a', 'b', 'c']",
+        "explanation": "There are only 3 letters for the digit '2'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to generate combinations.",
+      "Use a mapping of digits to characters to retrieve combinations."
+    ],
+    "company": "Epic Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Self Dividing Numbers",
+    "description": "A self-dividing number is a number that is divisible by every digit it contains. For example, 128 is a self-dividing number since 1, 2, and 8 divide it without leaving a remainder. Given a range of integers from left to right, return a list of all self-dividing numbers in that range.",
+    "topic": "Mathematics",
+    "subtopic": "Number Theory",
+    "tags": [
+      "Mathematics",
+      "Number Theory",
+      "Divisibility"
+    ],
+    "input_format": "Two integers left and right representing the inclusive range.",
+    "output_format": "A list of integers that are self-dividing numbers in the given range.",
+    "constraints": [
+      "1 <= left <= right <= 10000"
+    ],
+    "examples": [
+      {
+        "input": "left = 1, right = 22",
+        "output": "[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 14, 15, 22]",
+        "explanation": "The self-dividing numbers between 1 and 22 are 1-9 and 11, 12, 14, 15, and 22."
+      },
+      {
+        "input": "left = 100, right = 150",
+        "output": "[128]",
+        "explanation": "Among numbers from 100 to 150, only 128 is a self-dividing number."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Check if each digit of the number is not zero.",
+      "Use modulo and integer division to extract each digit.",
+      "A number is self-dividing if it's divisible by all of its non-zero digits."
+    ],
+    "company": "Epic Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Spiral Matrix",
+    "description": "Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order. The matrix should be traversed starting from the top-left corner, moving right, then downwards, then left, and then upwards until you have traversed all elements.",
+    "topic": "Matrix",
+    "subtopic": "Spiral Traversal",
+    "tags": [
+      "Matrix",
+      "Traversal",
+      "Spiral"
+    ],
+    "input_format": "A 2D list of integers representing the matrix.",
+    "output_format": "A list of integers representing the elements of the matrix in spiral order.",
+    "constraints": [
+      "1 <= m, n <= 20",
+      "-100 <= matrix[i][j] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]",
+        "output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+        "explanation": "The spiral order of the given matrix is 1, 2, 3, 6, 9, 8, 7, 4, 5."
+      },
+      {
+        "input": "matrix = [[1, 2], [3, 4]]",
+        "output": "[1, 2, 4, 3]",
+        "explanation": "The spiral order of the given matrix is 1, 2, 4, 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the boundaries of the matrix and how they change after each full traversal.",
+      "Use a loop to control the direction of traversal."
+    ],
+    "company": "Epic Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Stepping Numbers",
+    "description": "A stepping number is a number such that all adjacent digits have an absolute difference of 1. For instance, 123 and 321 are stepping numbers, while 135 is not. Given two integers `low` and `high`, return all stepping numbers in the range `[low, high]` (inclusive). The result should be sorted in ascending order.",
+    "topic": "Backtracking",
+    "subtopic": "Number Generation",
+    "tags": [
+      "Backtracking",
+      "DFS",
+      "BFS"
+    ],
+    "input_format": "Two integers `low` and `high` denoting the inclusive range.",
+    "output_format": "A sorted list of integers representing all stepping numbers within the given range.",
+    "constraints": [
+      "0 <= low <= high <= 10^9",
+      "The total number of stepping numbers to return will not exceed 10^4."
+    ],
+    "examples": [
+      {
+        "input": "low = 10, high = 20",
+        "output": "[10, 12, 21]",
+        "explanation": "The stepping numbers between 10 and 20 are 10, 12, and 21."
+      },
+      {
+        "input": "low = 0, high = 100",
+        "output": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 21, 23, 32, 34, 43, 45, 54, 56, 65, 67, 76, 78, 87, 89, 90]",
+        "explanation": "All single-digit numbers plus 10, 12, 21, 23, ..., and so forth are stepping numbers between 0 and 100."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider generating stepping numbers using digits.",
+      "Use depth-first search (DFS) or breadth-first search (BFS) to explore number possibilities."
+    ],
+    "company": "Epic Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Valid Parentheses",
+    "description": "Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if the brackets are closed in the correct order. You must ensure that each opening bracket has a corresponding closing bracket and they are properly nested.",
+    "topic": "String",
+    "subtopic": "Stack",
+    "tags": [
+      "String",
+      "Stack",
+      "Validation"
+    ],
+    "input_format": "A string s representing the sequence of brackets.",
+    "output_format": "A boolean value indicating whether the string is valid.",
+    "constraints": [
+      "1 <= s.length <= 10^4",
+      "s consists of '()', '{}', '[]' characters only."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "true",
+        "explanation": "The string has matching opening and closing brackets."
+      },
+      {
+        "input": "s = '()[]{}'",
+        "output": "true",
+        "explanation": "All brackets are correctly nested and matched."
+      },
+      {
+        "input": "s = '(]'",
+        "output": "false",
+        "explanation": "The brackets are not properly ordered."
+      },
+      {
+        "input": "s = '([)]'",
+        "output": "false",
+        "explanation": "The brackets are not properly nested."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Use a stack to keep track of opening brackets.",
+      "Pop from the stack when a closing bracket is encountered.",
+      "Check if the popped bracket matches the corresponding opening bracket."
+    ],
+    "company": "Epic Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Word Search",
+    "description": "Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where 'adjacent' cells are horizontally or vertically neighboring. The same letter cell may not be used more than once. Return true if the word exists in the grid, false otherwise.",
+    "topic": "Backtracking",
+    "subtopic": "Depth-First Search",
+    "tags": [
+      "Backtracking",
+      "DFS",
+      "Grid"
+    ],
+    "input_format": "The first input is an m x n grid represented as a 2D character array board. The second input is a string word.",
+    "output_format": "Return true if the word exists in the grid, false otherwise.",
+    "constraints": [
+      "1 <= board.length <= 200",
+      "1 <= board[i].length <= 200",
+      "board[i][j] is a lowercase English letter.",
+      "1 <= word.length <= 100"
+    ],
+    "examples": [
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCCED"
+        },
+        "output": "true",
+        "explanation": "The word 'ABCCED' can be constructed by moving through the grid."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "SEE"
+        },
+        "output": "true",
+        "explanation": "The word 'SEE' can be constructed by moving through the grid."
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "A",
+              "B",
+              "C",
+              "E"
+            ],
+            [
+              "S",
+              "F",
+              "C",
+              "S"
+            ],
+            [
+              "A",
+              "D",
+              "E",
+              "E"
+            ]
+          ],
+          "word": "ABCB"
+        },
+        "output": "false",
+        "explanation": "The word 'ABCB' cannot be constructed from the grid."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using backtracking to explore possible paths.",
+      "You can use a visited array to keep track of cells that have been used in the current path."
+    ],
+    "company": "Epic Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Angle Between Hands of a Clock",
+    "description": "Given two integers representing the hours and minutes of a clock, calculate the angle in degrees between the hour hand and the minute hand. The input will represent the current time in a 12-hour format. Return the smaller angle between the two hands.",
+    "topic": "Mathematics",
+    "subtopic": "Geometry",
+    "tags": [
+      "Mathematics",
+      "Geometry",
+      "Clock"
+    ],
+    "input_format": "Two integers, hour (1 <= hour <= 12) and minute (0 <= minute < 60).",
+    "output_format": "A float representing the smaller angle between the hour and minute hands in degrees.",
+    "constraints": [
+      "1 <= hour <= 12",
+      "0 <= minute < 60"
+    ],
+    "examples": [
+      {
+        "input": "hour = 3, minute = 30",
+        "output": "165.0",
+        "explanation": "At 3:30, the hour hand is at 105 degrees and the minute hand is at 180 degrees. The smaller angle is 180 - 105 = 75 degrees."
+      },
+      {
+        "input": "hour = 12, minute = 15",
+        "output": "52.5",
+        "explanation": "At 12:15, the hour hand is at 7.5 degrees and the minute hand is at 90 degrees. The smaller angle is 90 - 7.5 = 82.5 degrees."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "The minute hand moves 6 degrees per minute.",
+      "The hour hand moves 30 degrees per hour plus 0.5 degrees per minute."
+    ],
+    "company": "Epic Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Two Sum",
+    "description": "Given an array of integers `nums` and an integer `target`, return the indices of the two numbers such that they add up to `target`. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.",
+    "topic": "Array",
+    "subtopic": "Hash Table",
+    "tags": [
+      "Array",
+      "Hash Table",
+      "Two Pointers"
+    ],
+    "input_format": "An array of integers `nums` and an integer `target`.",
+    "output_format": "An array of two integers representing the indices of the two numbers.",
+    "constraints": [
+      "2 <= nums.length <= 10^4",
+      "-10^9 <= nums[i] <= 10^9",
+      "-10^9 <= target <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "nums = [2, 7, 11, 15], target = 9",
+        "output": "[0, 1]",
+        "explanation": "Because nums[0] + nums[1] == 9, we return [0, 1]."
+      },
+      {
+        "input": "nums = [3, 2, 4], target = 6",
+        "output": "[1, 2]",
+        "explanation": "Because nums[1] + nums[2] == 6, we return [1, 2]."
+      },
+      {
+        "input": "nums = [3, 3], target = 6",
+        "output": "[0, 1]",
+        "explanation": "Because nums[0] + nums[1] == 6, we return [0, 1]."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a hash map to store the numbers and their indices."
+    ],
+    "company": "Epic Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Substring Without Repeating Characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters. This substring must not contain any character that appears more than once within it. Return the length of this substring.",
+    "topic": "String",
+    "subtopic": "Sliding Window",
+    "tags": [
+      "String",
+      "Sliding Window",
+      "HashMap"
+    ],
+    "input_format": "A single string s consisting of uppercase and lowercase letters, digits, and symbols.",
+    "output_format": "An integer representing the length of the longest substring without repeating characters.",
+    "constraints": [
+      "0 <= s.length <= 10^5",
+      "s consists of printable ASCII characters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'abcabcbb'",
+        "output": "3",
+        "explanation": "The answer is 'abc', with the length of 3."
+      },
+      {
+        "input": "s = 'bbbbb'",
+        "output": "1",
+        "explanation": "The answer is 'b', with the length of 1."
+      },
+      {
+        "input": "s = 'pwwkew'",
+        "output": "3",
+        "explanation": "The answer is 'wke', with the length of 3."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a sliding window approach.",
+      "Use a HashMap to keep track of the index of characters."
+    ],
+    "company": "Epic Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Bulls and Cows",
+    "description": "You are playing a game called 'Bulls and Cows'. The game is based on guessing a secret four-digit code. In this game, you will receive feedback on how many digits in your guess are correct but in the wrong position (Cows), and how many are in the correct position (Bulls). Given a secret string and a guessed string, return the number of Bulls and Cows you have as a string in the format 'xAyB', where 'x' is the number of Bulls and 'y' is the number of Cows.",
+    "topic": "String",
+    "subtopic": "Counting",
+    "tags": [
+      "String",
+      "Counting",
+      "Game"
+    ],
+    "input_format": "A string secret representing the secret code and a string guess representing the guessed code. Both strings are of the same length and consist only of digits.",
+    "output_format": "A string in the format 'xAyB' where x is the number of Bulls and y is the number of Cows.",
+    "constraints": [
+      "1 <= secret.length, guess.length <= 1000",
+      "secret and guess contain only digits."
+    ],
+    "examples": [
+      {
+        "input": "secret = '1807', guess = '7810'",
+        "output": "1A3B",
+        "explanation": "There is 1 Bull (the digit '8') and 3 Cows ('1', '0', '7' are in the wrong position)."
+      },
+      {
+        "input": "secret = '1123', guess = '0111'",
+        "output": "1A1B",
+        "explanation": "There is 1 Bull (the digit '1' in the first position) and 1 Cow (the digit '1' from '0111' in the wrong position)."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a hash map to count occurrences of each digit.",
+      "Iterate through the data to calculate Bulls first, then Cows."
+    ],
+    "company": "Epic Systems"
+  },
+  {
+    "question_id": "",
+    "title": "Palindromic Substrings",
+    "description": "Given a string s, return the number of distinct palindromic substrings in s. A substring is a contiguous sequence of characters within the string, and a palindrome is a string that reads the same forward and backward.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Palindrome"
+    ],
+    "input_format": "A single string s consisting of lowercase English letters.",
+    "output_format": "An integer representing the number of distinct palindromic substrings in the string.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of only lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = \"abc\"",
+        "output": "3",
+        "explanation": "The palindromic substrings are: \"a\", \"b\", and \"c\"."
+      },
+      {
+        "input": "s = \"aaa\"",
+        "output": "6",
+        "explanation": "The palindromic substrings are: \"a\", \"a\", \"a\", \"aa\", \"aa\", \"aaa\"."
+      },
+      {
+        "input": "s = \"ababa\"",
+        "output": "7",
+        "explanation": "The palindromic substrings are: \"a\", \"b\", \"aba\", \"bab\", \"ababa\", \"aa\", and \"b\"."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider expanding around potential centers of palindromes.",
+      "Keep track of already counted palindromes to avoid duplicates."
+    ],
+    "company": "Epic Systems"
+  }
+]

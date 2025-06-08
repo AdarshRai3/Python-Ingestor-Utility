@@ -1,0 +1,257 @@
+[
+  {
+    "question_id": "",
+    "title": "Reach a Number",
+    "description": "You are standing at position 0 on an infinite number line. Your goal is to reach a specific position target. You can take steps of increasing size: in the first step, you can go 1 unit, in the second step, you can go 2 units, in the third step, you can go 3 units, and so on. Your step can be in either direction (forward or backward). The challenge is to find the minimum number of steps required to reach the target position, or determine whether it is not possible.",
+    "topic": "Math",
+    "subtopic": "Geometry",
+    "tags": [
+      "Greedy",
+      "Math",
+      "Search"
+    ],
+    "input_format": "An integer target representing the position to reach.",
+    "output_format": "An integer representing the minimum number of steps to reach the target.",
+    "constraints": [
+      "-10^9 <= target <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": "target = 3",
+        "output": "2",
+        "explanation": "You can reach the target with a series of steps: 1 (forward) and 2 (forward), which totals to 3."
+      },
+      {
+        "input": "target = 2",
+        "output": "3",
+        "explanation": "You can reach the target with steps of -1 (backward), 2 (forward) and 2 (forward) to reach 2."
+      },
+      {
+        "input": "target = 0",
+        "output": "0",
+        "explanation": "You are already at position 0, so no steps are required."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the sum of the first n natural numbers.",
+      "Check if you can reach the target by adjusting the direction of your steps."
+    ],
+    "company": "InMobi"
+  },
+  {
+    "question_id": "",
+    "title": "Partition Labels",
+    "description": "You are given a string s. We want to partition the string into as many parts as possible so that each letter appears in at most one part. After partitioning, each part is a substring of s. Return a list of integers representing the size of these parts.",
+    "topic": "String",
+    "subtopic": "Partitioning",
+    "tags": [
+      "String",
+      "Partitioning",
+      "Greedy"
+    ],
+    "input_format": "A string s of lowercase English letters.",
+    "output_format": "A list of integers representing the sizes of the partitions.",
+    "constraints": [
+      "1 <= s.length <= 500",
+      "s consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "s = 'ababcbaca'",
+        "output": "[9]",
+        "explanation": "The entire string can be partitioned into one part since 'a', 'b', and 'c' all appear in the same substring."
+      },
+      {
+        "input": "s = 'eccbbbbdec'",
+        "output": "[10]",
+        "explanation": "The string can be partitioned as follows: 'eccb', 'bb', 'dec' where each letter appears in exactly one partition."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider the last occurrence of each character in the string.",
+      "Use a greedy approach to form partitions."
+    ],
+    "company": "InMobi"
+  },
+  {
+    "question_id": "",
+    "title": "Maximum Number of Robots Within Budget",
+    "description": "You are given a list of robots, each characterized by a cost and a performance score. Your task is to determine the maximum number of robots you can buy without exceeding a given budget. Each robot's cost is a non-negative integer, and you can buy any combination of robots. The performance is not relevant for this task but is provided for context.",
+    "topic": "Greedy Algorithms",
+    "subtopic": "Optimization",
+    "tags": [
+      "Greedy",
+      "Budget",
+      "Optimization"
+    ],
+    "input_format": "Two lists: `costs` and `performance` both containing n integers, and an integer `budget`.",
+    "output_format": "An integer representing the maximum number of robots you can buy.",
+    "constraints": [
+      "1 <= costs.length <= 10^5",
+      "0 <= costs[i] <= 10^5",
+      "1 <= budget <= 10^9"
+    ],
+    "examples": [
+      {
+        "input": {
+          "costs": [
+            10,
+            20,
+            30,
+            40
+          ],
+          "performance": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "budget": 60
+        },
+        "output": "3",
+        "explanation": "You can buy the robots with costs 10, 20, and 30. Total cost is 10 + 20 + 30 = 60."
+      },
+      {
+        "input": {
+          "costs": [
+            5,
+            10,
+            15
+          ],
+          "performance": [
+            1,
+            1,
+            1
+          ],
+          "budget": 25
+        },
+        "output": "3",
+        "explanation": "You can buy all three robots for 5 + 10 + 15 = 30, which exceeds the budget."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider sorting the robots by their costs.",
+      "Use a greedy approach to maximize the count within the budget constraints."
+    ],
+    "company": "InMobi"
+  },
+  {
+    "question_id": "",
+    "title": "Redundant Connection",
+    "description": "In a directed graph, you are given a list of edges represented as pairs [u, v], where u is the starting node and v is the ending node. Your task is to identify a redundant directed edge in the graph. A redundant edge is one that, when removed, doesn't affect the ability to reach from any node to any other node. If there are multiple redundant edges, return the last one you find in the list.",
+    "topic": "Graph",
+    "subtopic": "DFS/BFS",
+    "tags": [
+      "Graph",
+      "Depth-First Search",
+      "Breadth-First Search"
+    ],
+    "input_format": "A list of edges, where each edge is a pair [u, v] indicating a directed edge from u to v.",
+    "output_format": "A pair [u, v] representing the redundant edge.",
+    "constraints": [
+      "1 <= edges.length <= 1000",
+      "1 <= u, v <= n (where n is the number of nodes in the graph)",
+      "u != v"
+    ],
+    "examples": [
+      {
+        "input": "[[1,2],[1,3],[2,3]]",
+        "output": "[2,3]",
+        "explanation": "Removing edge [2, 3] allows for all nodes to remain reachable from one to another."
+      },
+      {
+        "input": "[[1,2],[2,3],[3,4],[4,1],[1,5]]",
+        "output": "[4,1]",
+        "explanation": "Removing edge [4, 1] still allows for reaching from any node to any other node."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using depth-first or breadth-first search to check connectivity between nodes.",
+      "Keep track of edges as you explore the graph to identify redundancy."
+    ],
+    "company": "InMobi"
+  },
+  {
+    "question_id": "",
+    "title": "Longest Valid Parentheses",
+    "description": "Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.",
+    "topic": "String",
+    "subtopic": "Dynamic Programming",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Stack"
+    ],
+    "input_format": "A string s consisting of only '(' and ')'.",
+    "output_format": "An integer representing the length of the longest valid parentheses substring.",
+    "constraints": [
+      "0 <= s.length <= 10^4",
+      "s[i] is either '(' or ')'."
+    ],
+    "examples": [
+      {
+        "input": "s = \"(()))\"",
+        "output": "4",
+        "explanation": "The longest valid parentheses substring is \"(())\" with length 4."
+      },
+      {
+        "input": "s = \")()())\"",
+        "output": "4",
+        "explanation": "The longest valid parentheses substring is \"()()\" with length 4."
+      },
+      {
+        "input": "s = \"\"",
+        "output": "0",
+        "explanation": "There are no valid parentheses, hence the length is 0."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider using a stack to track the indices of opening brackets.",
+      "Think about how to keep track of the last unmatched closing bracket."
+    ],
+    "company": "InMobi"
+  },
+  {
+    "question_id": "",
+    "title": "Trapping Rain Water",
+    "description": "Given an array of integers representing the height of bars in a histogram, calculate how much rain water can be trapped between the bars after raining. The width of each bar is 1 unit.",
+    "topic": "Array",
+    "subtopic": "Two Pointers",
+    "tags": [
+      "Array",
+      "Two Pointers",
+      "Dynamic Programming"
+    ],
+    "input_format": "An array of integers heights representing the height of each bar.",
+    "output_format": "An integer representing the total amount of water that can be trapped.",
+    "constraints": [
+      "n == heights.length",
+      "1 <= n <= 2 * 10^4",
+      "0 <= heights[i] <= 10^5"
+    ],
+    "examples": [
+      {
+        "input": "heights = [0,1,0,2,1,0,1,3,2,1,2,1]",
+        "output": "6",
+        "explanation": "The area gained is 1 + 0 + 1 + 3 + 0 + 1 = 6."
+      },
+      {
+        "input": "heights = [4,2,0,3,2,5]",
+        "output": "9",
+        "explanation": "Water can be trapped between bars of height 4 and 2, leading to a total of 9."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider how to calculate the water level of each bar.",
+      "Utilize two pointers to traverse from both ends of the array.",
+      "Precompute the max height on both sides for each bar."
+    ],
+    "company": "InMobi"
+  }
+]

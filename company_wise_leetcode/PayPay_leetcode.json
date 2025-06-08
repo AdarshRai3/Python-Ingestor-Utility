@@ -1,0 +1,117 @@
+[
+  {
+    "question_id": "",
+    "title": "Largest 3-Same-Digit Number in String",
+    "description": "Given a string of digits, you need to find the largest number that can be formed by three identical digits. If no such number exists, return -1.",
+    "topic": "String",
+    "subtopic": "Manipulation",
+    "tags": [
+      "String",
+      "Digits",
+      "Search"
+    ],
+    "input_format": "A string s consisting of digits from '0' to '9'.",
+    "output_format": "An integer representing the largest 3-same-digit number, or -1 if none exists.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of digits only."
+    ],
+    "examples": [
+      {
+        "input": "s = '12344555667'",
+        "output": "555",
+        "explanation": "The largest identical digit is '5', and its maximum three-digit number is 555."
+      },
+      {
+        "input": "s = '9876543210'",
+        "output": "-1",
+        "explanation": "There are no identical digits that appear at least three times."
+      },
+      {
+        "input": "s = '000111222333444'",
+        "output": "444",
+        "explanation": "The largest identical digit is '4', which can form the number 444."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Count the occurrences of each digit.",
+      "Look for the maximum digit that appears at least three times."
+    ],
+    "company": "PayPay"
+  },
+  {
+    "question_id": "",
+    "title": "Block Placement Queries",
+    "description": "You are given a series of blocks indexed from 1 to n. Each block has a certain capacity, and you are also given a sequence of queries where each query specifies a list of items to be placed into the blocks. Your task is to determine whether all items for each query can be successfully placed within the given blocks according to their capacities. Each block can hold a limited amount of weight, and no more than that can be stored in it. Blocks can be filled in order, and if a block cannot accommodate the next item, you must move to the next block. If there are no blocks left that can accommodate an item, the placement fails for that query.",
+    "topic": "Greedy",
+    "subtopic": "Greedy Algorithms",
+    "tags": [
+      "Greedy",
+      "Block Placement",
+      "Queries"
+    ],
+    "input_format": "An integer n representing the number of blocks, an array of integers capacities[1..n] representing the capacity of each block, followed by m queries where each query contains an array of integers items.",
+    "output_format": "A boolean value for each query indicating whether the items can be successfully placed in the blocks.",
+    "constraints": [
+      "1 <= n <= 10^5",
+      "1 <= capacities[i] <= 10^6",
+      "1 <= m <= 10^3",
+      "1 <= items[j] <= 10^6"
+    ],
+    "examples": [
+      {
+        "input": "n = 5, capacities = [10, 15, 5, 20, 10], queries = [[5, 5, 5], [10, 15], [20, 5]]",
+        "output": "[true, true, false]",
+        "explanation": "The first query can be placed in the first block. The second query can fit in the first and the second blocks. The third query cannot fit in any block."
+      },
+      {
+        "input": "n = 3, capacities = [1, 1, 1], queries = [[1, 1, 1], [2]]",
+        "output": "[false, false]",
+        "explanation": "No block can accommodate the first query which requires 3 units, and the second query requires 2 units."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider iterating through the blocks and checking if the current item fits.",
+      "Use a greedy approach to minimize the usage of blocks."
+    ],
+    "company": "PayPay"
+  },
+  {
+    "question_id": "",
+    "title": "Zigzag Conversion",
+    "description": "The string 'PAYPALISHIRING' is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better visualization)  \n\nP   A   H   N  \nA P L S I I G  \nY   I   A  \n\nAnd then read line by line: 'PAHNAPLSIIGY'  \n\nWrite the code to convert the given string to the zigzag pattern for a given number of rows. The conversion should be done in a way that the characters are arranged in a zigzag manner across the specified number of rows and then concatenated line by line to produce the final string output.",
+    "topic": "String",
+    "subtopic": "Zigzag Pattern",
+    "tags": [
+      "String",
+      "Zigzag",
+      "Conversion"
+    ],
+    "input_format": "A string s and an integer numRows indicating the number of rows.",
+    "output_format": "A single string which is the zigzag converted string.",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "1 <= numRows <= 1000"
+    ],
+    "examples": [
+      {
+        "input": "s = 'PAYPALISHIRING', numRows = 3",
+        "output": "'PAHNAPLSIIGY'",
+        "explanation": "The zigzag conversion for 'PAYPALISHIRING' with 3 rows is 'PAHNAPLSIIGY'."
+      },
+      {
+        "input": "s = 'A', numRows = 1",
+        "output": "'A'",
+        "explanation": "With only one character and one row, the output is the string itself."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to cycle through rows when placing characters.",
+      "Utilize a variable to track the current row and direction of traversal."
+    ],
+    "company": "PayPay"
+  }
+]

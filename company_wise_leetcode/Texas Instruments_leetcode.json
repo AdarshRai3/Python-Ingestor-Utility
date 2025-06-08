@@ -1,0 +1,164 @@
+[
+  {
+    "question_id": "",
+    "title": "Group Anagrams",
+    "description": "Given an array of strings, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "topic": "String",
+    "subtopic": "Hashing",
+    "tags": [
+      "String",
+      "HashMap",
+      "Sorting"
+    ],
+    "input_format": "An array of strings words.",
+    "output_format": "A list of lists, where each inner list contains the grouped anagrams.",
+    "constraints": [
+      "1 <= words.length <= 10^4",
+      "0 <= words[i].length <= 100",
+      "words[i] consists of lowercase English letters."
+    ],
+    "examples": [
+      {
+        "input": "words = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "explanation": "The groups of anagrams are: ['bat'], ['nat', 'tan'], and ['ate', 'eat', 'tea']."
+      },
+      {
+        "input": "words = [\"\"]",
+        "output": "[[\"\"]]",
+        "explanation": "Since there's only one empty string, it forms its own group."
+      },
+      {
+        "input": "words = [\"abc\",\"bca\",\"cab\",\"dog\",\"god\"]",
+        "output": "[[\"abc\",\"bca\",\"cab\"],[\"dog\",\"god\"]]",
+        "explanation": "The first group contains the anagrams of 'abc', and the second group contains 'dog' and 'god'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a hashmap to group anagrams.",
+      "Sorting each word can help in identifying anagrams easily.",
+      "Explore the use of character counts for grouping."
+    ],
+    "company": "Texas Instruments"
+  },
+  {
+    "question_id": "",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses. A pair of parentheses is considered well-formed if every opening parenthesis has a corresponding closing parenthesis and they are properly nested.",
+    "topic": "Backtracking",
+    "subtopic": "Combinatorial Generation",
+    "tags": [
+      "Backtracking",
+      "String",
+      "Recursion"
+    ],
+    "input_format": "An integer n representing the number of pairs of parentheses.",
+    "output_format": "A list of strings representing all combinations of well-formed parentheses.",
+    "constraints": [
+      "0 <= n <= 8"
+    ],
+    "examples": [
+      {
+        "input": "n = 3",
+        "output": "[\"((()))\",\"(()())\",\"(())()\",\"()(())\",\"()()()\"]",
+        "explanation": "There are five combinations of well-formed parentheses for n = 3."
+      },
+      {
+        "input": "n = 1",
+        "output": "[\"()\"]",
+        "explanation": "There is only one combination for n = 1."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Think about how to build valid parentheses pairs recursively.",
+      "Use a counter to keep track of the number of '(' and ')' used."
+    ],
+    "company": "Texas Instruments"
+  },
+  {
+    "question_id": "",
+    "title": "Partition Array Into Two Arrays to Minimize Sum Difference",
+    "description": "Given an integer array nums, partition it into two subsets such that the sum of the elements in both subsets is as close as possible. Return the minimum possible difference between the sums of the two subsets.",
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum",
+    "tags": [
+      "Dynamic Programming",
+      "Subset Sum",
+      "Minimization"
+    ],
+    "input_format": "An array of integers nums.",
+    "output_format": "An integer representing the minimum possible difference between the sums of the two subsets.",
+    "constraints": [
+      "1 <= nums.length <= 200",
+      "1 <= nums[i] <= 100"
+    ],
+    "examples": [
+      {
+        "input": "nums = [1, 2, 3, 9]",
+        "output": "3",
+        "explanation": "One possible partition is [9] and [1, 2, 3], the difference between their sums is |9 - (1 + 2 + 3)| = |9 - 6| = 3."
+      },
+      {
+        "input": "nums = [1, 2, 7, 1, 5]",
+        "output": "0",
+        "explanation": "One possible partition is [7, 1] and [1, 2, 5], their sums are both equal to 8, giving a difference of 0."
+      },
+      {
+        "input": "nums = [31, 26, 33, 21, 40]",
+        "output": "5",
+        "explanation": "One possible partition can be [31, 26] and [33, 21, 40], their sums are 57 and 94, leading to a minimum difference of |57 - 94| = 5."
+      }
+    ],
+    "difficulty": "Hard",
+    "hints": [
+      "Consider a dynamic programming approach to solve the subset sum problem.",
+      "The goal is to determine if a subset exists which can sum to certain values.",
+      "The total sum of nums can provide a clue for the range of possible subset sums."
+    ],
+    "company": "Texas Instruments"
+  },
+  {
+    "question_id": "",
+    "title": "Merge Two Sorted Lists",
+    "description": "You are given the heads of two sorted linked lists. Merge the two lists into one sorted list. The merged list should be made by splicing together the nodes of the first two lists. Return the head of the merged linked list.",
+    "topic": "Linked List",
+    "subtopic": "Merging Lists",
+    "tags": [
+      "Linked List",
+      "Sorting",
+      "Merge"
+    ],
+    "input_format": "Two heads of sorted linked lists, list1 and list2, where each list node contains an integer value.",
+    "output_format": "The head of the merged linked list.",
+    "constraints": [
+      "The number of nodes in both lists is in the range [0, 50].",
+      "-100 <= Node.val <= 100",
+      "Both list1 and list2 are guaranteed to be sorted in ascending order."
+    ],
+    "examples": [
+      {
+        "input": "list1 = [1, 2, 4], list2 = [1, 3, 4]",
+        "output": "[1, 1, 2, 3, 4, 4]",
+        "explanation": "The merged list contains the nodes from both lists, sorted in non-decreasing order."
+      },
+      {
+        "input": "list1 = [], list2 = [0]",
+        "output": "[0]",
+        "explanation": "Since list1 is empty, the merged list will just be list2."
+      },
+      {
+        "input": "list1 = [], list2 = []",
+        "output": "[]",
+        "explanation": "Both lists are empty, so the result is also an empty list."
+      }
+    ],
+    "difficulty": "Easy",
+    "hints": [
+      "Consider using a dummy node to simplify the merge process.",
+      "Iterate through both lists and compare the current nodes."
+    ],
+    "company": "Texas Instruments"
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "question_id": "",
+    "title": "Decode String",
+    "description": "Given an encoded string, return its decoded string. The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. You may assume that the input string is always valid. No extra white spaces, square brackets are well-formed, etc. Note that k is a positive integer and encoded_string can be empty. The decoding of strings is recursive, which means that if you encounter k[abc]def, the abc inside the square brackets can also be encoded and you need to decode it before using it.",
+    "topic": "String",
+    "subtopic": "Decoding",
+    "tags": [
+      "String",
+      "Recursion",
+      "Decoding"
+    ],
+    "input_format": "A single encoded string s.",
+    "output_format": "A decoded string.",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s consists of digits, lowercase English letters, and square brackets '[]'."
+    ],
+    "examples": [
+      {
+        "input": "s = '3[a2[c]]'",
+        "output": "accaccacc",
+        "explanation": "The string is decoded as follows: 3 times 'a2[c]' results in 'acaaccacc'. Here, '2[c]' results in 'cc'. Thus, the final output is 'accaccacc'."
+      },
+      {
+        "input": "s = '2[abc]3[cd]ef'",
+        "output": "abcabccdcdcdef",
+        "explanation": "Decoding gives 'abc' repeated 2 times followed by 'cd' repeated 3 times and 'ef' resulting in the final string 'abcabccdcdcdef'."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Consider using a stack to manage the current state during decoding.",
+      "Watch for nested patterns while traversing the string."
+    ],
+    "company": "Mountblue"
+  },
+  {
+    "question_id": "",
+    "title": "Score of Parentheses",
+    "description": "Given a string s consisting of only the characters '(' and ')', return the score of parentheses. The score is calculated as follows: The score of an empty string is 0. The score of a single pair of parentheses '()' is 1. For every additional pair of parentheses '()', the score is doubled if it is within another pair of parentheses. For example, the score of '(())' is 2, and the score of '()()' is 1 + 1 = 2. The score of nested parentheses like '(()())' is calculated as 1 + 2 = 3.",
+    "topic": "String",
+    "subtopic": "Parsing",
+    "tags": [
+      "String",
+      "Dynamic Programming",
+      "Stack"
+    ],
+    "input_format": "A string s consisting of characters '(' and ')'.",
+    "output_format": "An integer representing the score of the parentheses.",
+    "constraints": [
+      "0 <= s.length <= 100",
+      "s consists of '(' and ')'."
+    ],
+    "examples": [
+      {
+        "input": "s = '()'",
+        "output": "1",
+        "explanation": "The only pair of parentheses '()' has a score of 1."
+      },
+      {
+        "input": "s = '(())'",
+        "output": "2",
+        "explanation": "The nested pair of parentheses '(())' doubles the score of the inner pair to become 2."
+      },
+      {
+        "input": "s = '()()'",
+        "output": "2",
+        "explanation": "There are two separate pairs of parentheses, each contributing a score of 1."
+      },
+      {
+        "input": "s = '(()())'",
+        "output": "3",
+        "explanation": "The score is calculated as 1 for the outer pair and 2 for the inner pair."
+      }
+    ],
+    "difficulty": "Medium",
+    "hints": [
+      "Use a stack to keep track of the scores.",
+      "Consider how nested parentheses affect the scoring."
+    ],
+    "company": "Mountblue"
+  }
+]
