@@ -68,8 +68,7 @@ class JsonIngestor(IIngestor):
         Returns:
             Dict[str, Any]: Cleaned version of the record.
         """
-        # Drop 'question_id' if present
-        record.pop("question_id", None)
+        
 
         # Remove all keys with empty string values
         record = {k: v for k, v in record.items() if v != ""}
