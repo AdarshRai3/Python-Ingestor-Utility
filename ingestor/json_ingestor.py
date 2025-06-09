@@ -60,7 +60,7 @@ class JsonIngestor(IIngestor):
 
     def _clean_record(self, record: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Sanitize a single record by removing unnecessary fields.
+        Sanitize a single record by removing unnecessary or empty fields.
 
         Args:
             record (Dict[str, Any]): The raw input record.
@@ -68,7 +68,12 @@ class JsonIngestor(IIngestor):
         Returns:
             Dict[str, Any]: Cleaned version of the record.
         """
-        record.pop("question_id", None)  # Drop transient ID if present
+        # Drop 'question_id' if present
+        record.pop("question_id", None)
+
+        # Remove all keys with empty string values
+        record = {k: v for k, v in record.items() if v != ""}
+
         return record
 
     def ingest_records(self, records: List[Dict[str, Any]]) -> None:

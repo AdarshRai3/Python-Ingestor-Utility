@@ -2,21 +2,13 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-
 # Load .env from the project root
 env_path = Path(__file__).resolve().parent / ".env"
 load_dotenv(dotenv_path=env_path)
 
 
 class Settings:
-    """
-    Centralized settings loader that reads from environment variables.
-
-    Ensures required variables are present and provides fallbacks for optional ones.
-    """
-
     def __init__(self) -> None:
-        # Optional: validate once on init if desired
         _ = self.pg_dsn  # Trigger validation early
 
     @property
@@ -43,5 +35,7 @@ class Settings:
         raise RuntimeError(f"❌ Missing required environment variable: {name}")
 
 
-# Singleton instance to be imported across modules
+# Step 1: Load and use env settings
 settings = Settings()
+print(f"[DEBUG] Loaded PG_DSN from .env: {settings.pg_dsn}")
+
