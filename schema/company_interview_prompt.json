@@ -1,0 +1,46 @@
+{
+  "schema_name": "public",
+  "table_name": "company_interview_prompt",
+  "columns": [
+    {
+      "name": "id",
+      "type": "UUID",
+      "primary_key": true,
+      "default": "gen_random_uuid()"
+    },
+    {
+      "name": "company_name",
+      "type": "TEXT",
+      "json_path": "company",
+      "index": true
+    },
+    {
+      "name": "company_type",
+      "type": "TEXT",
+      "json_path": "company_type",
+      "index": true
+    },
+    {
+      "name": "technical_question_prompt",
+      "type": "TEXT",
+      "json_path": "interview.technical"
+    },
+    {
+      "name": "hr_question_prompt",
+      "type": "TEXT",
+      "json_path": "interview.hr"
+    },
+    {
+      "name": "coding_question_prompt",
+      "type": "TEXT",
+      "json_path": "interview.coding"
+    },
+    {
+      "name": "status",
+      "type": "TEXT",
+      "json_path": "status",
+      "default": "'active'",
+      "check": "status IN ('active', 'expire')"
+    }
+  ]
+}
