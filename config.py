@@ -32,7 +32,7 @@ class Settings:
 
     @staticmethod
     def _missing(name: str) -> None:
-        raise RuntimeError(f"❌ Missing required environment variable: {name}")
+        raise RuntimeError(f"Missing required environment variable: {name}")
 
 
 # Step 1: Load and use env settings
